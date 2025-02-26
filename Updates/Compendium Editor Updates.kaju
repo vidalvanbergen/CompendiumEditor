@@ -8,14 +8,24 @@
             "ImageScale": 1,
             "ImageURL": "",
             "MinimumRequiredVersion": "",
-            "ReleaseNotes": "<!— https://vitalis.heliohost.org/files/latest.html —>\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul>\n  <li class=“new”>Initial Release</li>\n</ul>",
+            "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul>\n  <li class=“new”>Initial Release</li>\n</ul>",
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "TsGCdl94Cuo=",
+            "Security Token": "cbpFFb2Q2nI=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
+            },
+            "WindowsBinary": {
+                "Hash": "6E0F7FDFD4466E0A56DEFFBDBCF8261F",
+                "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_Windows.zip",
+                "ExecutableName": "Compendium Editor.exe"
+            },
+            "LinuxBinary": {
+                "Hash": "D36BB397B2D76EDE5930FAAE26012589",
+                "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_Linux.zip",
+                "ExecutableName": "Compendium Editor"
             }
         }
     ]

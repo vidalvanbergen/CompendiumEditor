@@ -1,0 +1,450 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=VideoMatroska
+		Extension=.mkv;.mk3d;.mka;.mks
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MKV
+		Name=video/x-matroska
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoOgg
+		Extension=.ogg;.ogv;.oga;.ogx;.spx;.opus;.ogm
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=OggS
+		Name=video/ogg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationXQuicktimeplayer
+		Extension=.qtl;.qt
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=qtlk
+		Name=application/x-quicktimeplayer
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoRealplayer
+		Extension=.ram;.rm;.rmvb;.ts;.strm
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=video/realplayer
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMisc
+		Extension=.divx;.h264;.iso;.img;.xvid;.3dsbs;.3dtab;.dvr-ms;.60d;.ajp;.avchd;.bik;.bix;.box;.cam;.dat;.dmf;.dv;.evo;.gvi;.gvp;.mjp;.mxf;.nsv;.nut;.movhd;.movx;.mpv2;.mpv;.omf;.ps;.vfw;.video;.viv;.vivo;.vro;.wrap;.wvx;.wx
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=video/misc
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Video3gpp
+		Extension=.3gp;.3gpp
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=3gpp
+		Name=video/3gpp
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Video3gpp2
+		Extension=.3g2;.3gp2
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=3gp2
+		Name=video/3gpp2
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoAvi
+		Extension=.avi;.vfw;.avi
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=VfW 
+		Name=video/avi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoFlc
+		Extension=.flc;.fli;.cell;.flic;.flx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=FLI 
+		Name=video/flc
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoFlv
+		Extension=.flv;.swf
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=FLV
+		Name=video/flash
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMp4
+		Extension=.mp4
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=mpg4
+		Name=video/mp4
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMpeg
+		Extension=.mpe;.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mp2;.mpm;.mpv;.mpa;.m2ts;.m2v
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=video/mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMsvideo
+		Extension=.avi;.vfw
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=VfW 
+		Name=video/msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoQuicktime
+		Extension=.moov;.mov;.qt;.mqv;.movie
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MooV
+		Name=video/quicktime
+		UTI=com.apple.quicktime-movie
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoSdVideo
+		Extension=.sdv
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=sdv 
+		Name=video/sd-video
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXDv
+		Extension=.dv;.dif
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=dvc!
+		Name=video/x-dv
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXM4v
+		Extension=.m4v
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4V 
+		Name=video/x-m4v
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMpeg
+		Extension=.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mp2;.mpm;.mpv;.mpa;.mpe;.mqv
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=video/x-mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsAsf
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-asf
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsAsx
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-asx
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsWm
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-wm
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsWmv
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-wmv
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsWmx
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-wmx
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsWvx
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=video/x-ms-wvx
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsvideo
+		Extension=.vfw;.avi
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=VfW 
+		Name=video/x-msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoVob
+		Extension=.vob
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=VOD
+		Name=video/vob
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoBDMV
+		Extension=.bdmv
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=BDMV
+		Name=video/bdmv
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoDvd
+		Extension=.dvdmedia
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=DVD
+		Name=video/dvd
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

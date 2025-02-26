@@ -1,0 +1,114 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ApplicationZip
+		Extension=.zip;.ZIP;.cbz
+		Flags=&h0
+		MacCreator=SITx
+		MacType=ZIP 
+		Name=application/zip
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationXTar
+		Extension=.tar
+		Flags=&h0
+		MacCreator=S691
+		MacType=TARF
+		Name=application/x-tar
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationXStuffit
+		Extension=.sit;.SIT
+		Flags=&h0
+		MacCreator=????
+		MacType=SITD
+		Name=application/x-stuffit
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationXGzip
+		Extension=.gz;.tgz
+		Flags=&h0
+		MacCreator=SITx
+		MacType=Gzip
+		Name=application/x-gzip
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationRar
+		Extension=.rar;.RAR;.cbr
+		Flags=&h0
+		MacCreator=SITx
+		MacType=RAR
+		Name=application/rar
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VirtualDiskimage
+		Extension=.iso;.img
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=virtual/diskimage
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Application7z
+		Extension=.7z
+		Flags=&h0
+		MacCreator=SITx
+		MacType=7z
+		Name=application/7z
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

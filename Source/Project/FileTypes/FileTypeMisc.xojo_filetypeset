@@ -1,0 +1,50 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=SpecialFolder
+		Extension=
+		Flags=&h0
+		MacCreator=MACS
+		MacType=fold
+		Name=special/folder
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Any
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=special/any
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Xml
+		Extension=xml
+		Flags=&h2
+		MacCreator=
+		MacType=
+		Name=special/xml
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

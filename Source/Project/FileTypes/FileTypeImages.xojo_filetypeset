@@ -1,0 +1,82 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Jpeg
+		Extension=.jfif;.jpe;.jpeg;.jpg
+		Flags=&h0
+		MacCreator=prvw
+		MacType=JPEG
+		Name=image/jpeg
+		UTI=public.jpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Png
+		Extension=.png
+		Flags=&h0
+		MacCreator=ogle
+		MacType=PNGf
+		Name=image/png
+		UTI=public.png
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageGif
+		Extension=.gif
+		Flags=&h0
+		MacCreator=prvw
+		MacType=GIFf
+		Name=image/gif
+		UTI=com.compuserve.gif
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageTiff
+		Extension=.jfx;.tif;.tiff
+		Flags=&h0
+		MacCreator=????
+		MacType=TIFF
+		Name=image/tiff
+		UTI=public.tiff
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageTbn
+		Extension=.tbn
+		Flags=&h0
+		MacCreator=prvw
+		MacType=JPEG
+		Name=image/tbn
+		UTI=public.tbn
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

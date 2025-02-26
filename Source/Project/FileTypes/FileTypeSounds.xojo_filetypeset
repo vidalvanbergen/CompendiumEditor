@@ -1,0 +1,642 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Mp3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/mp3
+		UTI=public.mp3
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4a
+		Extension=.m4a
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4A 
+		Name=audio/m4a
+		UTI=public.mpeg-4-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4b
+		Extension=.m4b
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4B 
+		Name=audio/m4b
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4p
+		Extension=.m4p
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4P 
+		Name=audio/m4p
+		UTI=com.apple.protected-mpeg-4-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMid
+		Extension=.mid;.midi;.smf;.kar
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Midi
+		Name=audio/mid
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMidi
+		Extension=.mid;.midi;.smf;.kar
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Midi
+		Name=audio/midi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpeg
+		Extension=.mpeg;.mpg;.m1s;.m1a;.mp2;.mpm;.mpa;.m2a;.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=audio/mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpeg3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/mpeg3
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpegurl
+		Extension=.m3u
+		Flags=&h0
+		MacCreator=hook
+		MacType=MP3U
+		Name=audio/mpegurl
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioScpls
+		Extension=.pls
+		Flags=&h0
+		MacCreator=hook
+		MacType=PLS 
+		Name=audio/scpls
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioSpeex
+		Extension=.spx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=OggS
+		Name=audio/speex
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioVndQcelp
+		Extension=.qcp
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=celp
+		Name=audio/vnd.qcelp
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioWav
+		Extension=.wav;.bwf
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=.WAV
+		Name=audio/wav
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXAac
+		Extension=.aac;.adts
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=adts
+		Name=audio/x-aac
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=AIFF
+		Name=audio/x-aiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXAudible
+		Extension=.aa
+		Flags=&h0
+		MacCreator=hook
+		MacType=AUDB
+		Name=audio/x-audible
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXCaf
+		Extension=.caf
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=caff
+		Name=audio/x-caf
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXGsm
+		Extension=.gsm
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=GSM 
+		Name=audio/x-gsm
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXM4a
+		Extension=.m4a
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4A 
+		Name=audio/x-m4a
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXM4b
+		Extension=.m4b
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4B 
+		Name=audio/x-m4b
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXM4p
+		Extension=.m4p
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4P 
+		Name=audio/x-m4p
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMidi
+		Extension=.mid;.midi;.smf;.kar
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Midi
+		Name=audio/x-midi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMp3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/x-mp3
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMpeg
+		Extension=.mpeg;.mpg;.m1s;.m1a;.mp2;.mpm;.mpa;.m2a;.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=audio/x-mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMpeg3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/x-mpeg3
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMpegurl
+		Extension=.m3u
+		Flags=&h0
+		MacCreator=hook
+		MacType=MP3U
+		Name=audio/x-mpegurl
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMsWax
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=audio/x-ms-wax
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXMsWma
+		Extension=.wmv;.wma;.wm;.asf;.ass;.wvx;.wmx;.wax;.asx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ASF_
+		Name=audio/x-ms-wma
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXPnRealaudio
+		Extension=.ra;.ram;.rm
+		Flags=&h0
+		MacCreator=PNst
+		MacType=PNRM
+		Name=audio/x-pn-realaudio
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXScpls
+		Extension=.pls
+		Flags=&h0
+		MacCreator=hook
+		MacType=PLS 
+		Name=audio/x-scpls
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXSd2
+		Extension=.sd2
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Sd2f
+		Name=audio/x-sd2
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXSpeex
+		Extension=.spx
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=OggS
+		Name=audio/x-speex
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXWav
+		Extension=.wav;.bwf
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=.WAV
+		Name=audio/x-wav
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Audio3gpp
+		Extension=.3gp;.3gpp
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=3gpp
+		Name=audio/3gpp
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Audio3gpp2
+		Extension=.3g2;.3gp2
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=3gp2
+		Name=audio/3gpp2
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAac
+		Extension=.aac;.adts
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=adts
+		Name=audio/aac
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=AIFF
+		Name=audio/aiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAMR
+		Extension=.AMR
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=amr 
+		Name=audio/AMR
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAudible
+		Extension=.aa
+		Flags=&h0
+		MacCreator=hook
+		MacType=AUDB
+		Name=audio/audible
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioBasic
+		Extension=.ul;.au;.snd;.ulw
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ULAW
+		Name=audio/basic
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

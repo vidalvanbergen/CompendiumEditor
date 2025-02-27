@@ -355,7 +355,7 @@ Begin ContainerControl ccSourceInfoEditor
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   125
    End
    Begin DateTimePicker dtPubDate
       AllowAutoDeactivate=   True
@@ -368,7 +368,7 @@ Begin ContainerControl ccSourceInfoEditor
       HourMode        =   2
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   132
+      Left            =   157
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -431,7 +431,7 @@ Begin ContainerControl ccSourceInfoEditor
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   316
+      Left            =   341
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True

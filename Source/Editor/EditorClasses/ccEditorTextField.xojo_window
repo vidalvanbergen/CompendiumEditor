@@ -108,7 +108,7 @@ Begin ContainerControl ccEditorTextField
       BevelStyle      =   7
       Bold            =   False
       ButtonStyle     =   0
-      Caption         =   ""
+      Caption         =   "≡"
       CaptionAlignment=   3
       CaptionDelta    =   0
       CaptionPosition =   1

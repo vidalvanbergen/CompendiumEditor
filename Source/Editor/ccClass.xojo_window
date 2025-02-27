@@ -80,7 +80,7 @@ Begin ContainerControl ccClass
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Class features gained at the indicated level. If a feature is optional, set ""optional"" to 'YES'. If the level isn't automatically added, set or correct it by clicking on the level and entering the desired level."
          Top             =   1138
          Transparent     =   True
          UseMode         =   ""
@@ -165,7 +165,7 @@ Begin ContainerControl ccClass
          TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Tracker for usage of class or subclass features. (e.g., Rage or Ki Points)"
          Top             =   1662
          Transparent     =   False
          Underline       =   False
@@ -241,7 +241,7 @@ Begin ContainerControl ccClass
          Text            =   ""
          TextAlignment   =   0
          TextColor       =   &c00000000
-         Tooltip         =   ""
+         Tooltip         =   "Comma separated list of spell names for the class or subclass."
          Top             =   1874
          Transparent     =   False
          Underline       =   False
@@ -327,7 +327,7 @@ Begin ContainerControl ccClass
          BevelStyle      =   7
          Bold            =   False
          ButtonStyle     =   0
-         Caption         =   ""
+         Caption         =   "≡"
          CaptionAlignment=   3
          CaptionDelta    =   0
          CaptionPosition =   1
@@ -394,7 +394,7 @@ Begin ContainerControl ccClass
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Class name. (e.g. Barbarian, Sorcerer, Warlock)"
       Top             =   20
       Transparent     =   True
       UseLowercase    =   False
@@ -457,7 +457,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Hit Die. Input the die number. (e.g., 8 for a d8)"
          Top             =   122
          Transparent     =   True
          UseLowercase    =   False
@@ -494,7 +494,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Number of class skills to be chosen from when creating a character."
          Top             =   326
          Transparent     =   True
          UseLowercase    =   False
@@ -531,7 +531,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Armor and shield proficiencies."
          Top             =   156
          Transparent     =   True
          UseLowercase    =   False
@@ -568,7 +568,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Weapon proficiencies."
          Top             =   190
          Transparent     =   True
          UseLowercase    =   False
@@ -605,7 +605,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Tool proficiencies."
          Top             =   224
          Transparent     =   True
          UseLowercase    =   False
@@ -642,7 +642,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Starting wealth. Enter a formula that determines a 1st-level character's starting gold."
          Top             =   122
          Transparent     =   True
          UseLowercase    =   False
@@ -679,7 +679,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Saving throw proficiencies that players can choose from. Enter names of abilities separated by commas."
          Top             =   258
          Transparent     =   True
          UseLowercase    =   False
@@ -716,7 +716,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Class skill proficiencies that players can choose from. Enter names of skills separated by commas"
          Top             =   292
          Transparent     =   True
          UseLowercase    =   False
@@ -783,7 +783,7 @@ Begin ContainerControl ccClass
          TabIndex        =   11
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Check if the class's spell slots are optional."
          Top             =   394
          Transparent     =   False
          Underline       =   False
@@ -835,7 +835,7 @@ Begin ContainerControl ccClass
          TabIndex        =   13
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Spell slots per class and spell level. Optional 'Spells Known' counter."
          Top             =   418
          Transparent     =   False
          Underline       =   False
@@ -872,7 +872,7 @@ Begin ContainerControl ccClass
          TabIndex        =   14
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Optional class description traits."
          Top             =   941
          Transparent     =   True
          UseMode         =   ""
@@ -941,7 +941,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spellcasting ability. (e.g., Intelligence, Charisma, etc.)"
          Top             =   360
          Transparent     =   True
          UseLowercase    =   False
@@ -978,7 +978,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell slots reset on short or long rests."
          Top             =   360
          Transparent     =   True
          UseLowercase    =   False
@@ -1015,7 +1015,7 @@ Begin ContainerControl ccClass
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "A comma separated list of levels on which an Ability Score Improvement occurs."
          Top             =   1103
          Transparent     =   True
          UseLowercase    =   False
@@ -1094,7 +1094,7 @@ Begin ContainerControl ccClass
       FontUnit        =   0
       Height          =   20
       Index           =   -2147483648
-      InitialValue    =   ""
+      InitialValue    =   "Add or select a subclass."
       Italic          =   False
       Left            =   157
       LockBottom      =   False
@@ -1143,7 +1143,7 @@ Begin ContainerControl ccClass
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the source material and a page number this class came from. (e.g. Player's Handbook p. 128)"
       Top             =   88
       Transparent     =   True
       UseLowercase    =   False

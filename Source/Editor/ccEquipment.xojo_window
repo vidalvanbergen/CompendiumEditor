@@ -55,7 +55,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Item name."
       Top             =   54
       Transparent     =   True
       UseLowercase    =   False
@@ -148,7 +148,7 @@ Begin ContainerControl ccEquipment
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Check this box if the armor causes the wearer to have disadvantage on Dexterithy (stealth) checks."
          Top             =   494
          Transparent     =   False
          Underline       =   False
@@ -186,7 +186,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Armor class."
          Top             =   426
          Transparent     =   True
          UseLowercase    =   False
@@ -223,7 +223,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Strength score required to wear armor, the armor reduces the wearer’s speed by 10 feet unless the wearer has a Strength score equal to or higher than the listed score."
          Top             =   460
          Transparent     =   True
          UseLowercase    =   False
@@ -287,7 +287,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "One-handed weapon damage."
          Top             =   323
          Transparent     =   True
          UseLowercase    =   False
@@ -324,7 +324,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Two-handed weapon damage."
          Top             =   324
          Transparent     =   True
          UseLowercase    =   False
@@ -361,7 +361,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Damage type or element."
          Top             =   357
          Transparent     =   True
          UseLowercase    =   False
@@ -398,7 +398,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "The weapon's normal range in feet. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
          Top             =   391
          Transparent     =   True
          UseLowercase    =   False
@@ -435,7 +435,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "The weapon's long range in feet. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
          Top             =   391
          Transparent     =   True
          UseLowercase    =   False
@@ -472,7 +472,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Weapon properties. (multiple values allowed)"
          Top             =   290
          Transparent     =   True
          UseLowercase    =   False
@@ -510,7 +510,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Name of the base item in case of a named treasure, or the category it falls under."
       Top             =   88
       Transparent     =   True
       UseLowercase    =   False
@@ -547,7 +547,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Item rarity and attunement requirements. (only visible on iOS and macOS)"
       Top             =   122
       Transparent     =   True
       UseLowercase    =   False
@@ -584,7 +584,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The type of item."
       Top             =   156
       Transparent     =   True
       UseLowercase    =   False
@@ -621,7 +621,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Item weight."
       Top             =   222
       Transparent     =   True
       UseLowercase    =   False
@@ -658,7 +658,7 @@ Begin ContainerControl ccEquipment
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Gold value of the item."
       Top             =   256
       Transparent     =   True
       UseLowercase    =   False
@@ -692,7 +692,7 @@ Begin ContainerControl ccEquipment
       TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Check this box if the item is magical."
       Top             =   190
       Transparent     =   True
       Visible         =   True
@@ -749,7 +749,7 @@ Begin ContainerControl ccEquipment
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Item description."
          Top             =   526
          Transparent     =   True
          Value           =   ""
@@ -780,7 +780,7 @@ Begin ContainerControl ccEquipment
          TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Dice roll formulas."
          Top             =   972
          Transparent     =   True
          Visible         =   True
@@ -810,7 +810,7 @@ Begin ContainerControl ccEquipment
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
          Top             =   1142
          Transparent     =   True
          Visible         =   True
@@ -845,7 +845,7 @@ Begin ContainerControl ccEquipment
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "The name of the source material and a page number this item came from. (e.g. Player's Handbook p. 128)"
          Top             =   938
          Transparent     =   True
          UseLowercase    =   False
@@ -879,7 +879,7 @@ Begin ContainerControl ccEquipment
       TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Choose a base item to load as a template."
       Top             =   22
       Transparent     =   False
       Underline       =   False

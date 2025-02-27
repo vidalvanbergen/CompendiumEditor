@@ -55,7 +55,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the feat."
       Top             =   20
       Transparent     =   True
       UseLowercase    =   False
@@ -92,7 +92,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Any prerequisites for the feat."
       Top             =   54
       Transparent     =   True
       UseLowercase    =   False
@@ -129,7 +129,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
       Top             =   384
       Transparent     =   True
       UseLowercase    =   False
@@ -162,7 +162,7 @@ Begin ContainerControl ccFeat
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Feat description."
       Top             =   88
       Transparent     =   True
       Value           =   ""
@@ -198,7 +198,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
       Top             =   418
       Transparent     =   True
       UseLowercase    =   False
@@ -235,7 +235,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the source material and a page number this feat came from. (e.g. Player's Handbook p. 128)"
       Top             =   350
       Transparent     =   True
       UseLowercase    =   False
@@ -267,7 +267,7 @@ Begin ContainerControl ccFeat
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
       Top             =   452
       Transparent     =   True
       Visible         =   True

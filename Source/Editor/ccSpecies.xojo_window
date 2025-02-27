@@ -55,7 +55,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Name of the species."
       Top             =   20
       Transparent     =   True
       UseLowercase    =   False
@@ -92,7 +92,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Creature size."
       Top             =   88
       Transparent     =   True
       UseLowercase    =   False
@@ -129,7 +129,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Speed in feet."
       Top             =   122
       Transparent     =   True
       UseLowercase    =   False
@@ -166,7 +166,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
       Top             =   156
       Transparent     =   True
       UseLowercase    =   False
@@ -203,7 +203,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Spellcasting ability (e.g., Intelligence, Charisma, etc.)."
       Top             =   190
       Transparent     =   True
       UseLowercase    =   False
@@ -235,7 +235,7 @@ Begin ContainerControl ccSpecies
       TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
       Top             =   606
       Transparent     =   True
       Visible         =   True
@@ -270,7 +270,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Ability score increases. List abilities with increase amounts, separated by commas."
       Top             =   54
       Transparent     =   True
       UseLowercase    =   False
@@ -306,7 +306,7 @@ Begin ContainerControl ccSpecies
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
       Top             =   258
       Transparent     =   True
       UseMode         =   ""

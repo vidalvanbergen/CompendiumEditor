@@ -53,7 +53,7 @@ Begin Window wndCreatureFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Name of the trait or attack."
       Top             =   58
       Transparent     =   True
       UseLowercase    =   False
@@ -86,7 +86,7 @@ Begin Window wndCreatureFeature
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Description of the trait or attack."
       Top             =   92
       Transparent     =   True
       Value           =   ""
@@ -213,7 +213,7 @@ Begin Window wndCreatureFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Number needed to roll on d6 to recharge ability."
       Top             =   454
       Transparent     =   True
       UseLowercase    =   False
@@ -296,7 +296,7 @@ Begin Window wndCreatureFeature
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Attack rolls notation as name, value to hit, and roll for damage. A field can be left empty."
       Top             =   488
       Transparent     =   False
       Underline       =   False

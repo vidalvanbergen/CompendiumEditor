@@ -55,7 +55,7 @@ Begin ContainerControl ccBackground
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the background."
       Top             =   20
       Transparent     =   True
       UseLowercase    =   False
@@ -92,7 +92,7 @@ Begin ContainerControl ccBackground
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
       Top             =   88
       Transparent     =   True
       UseLowercase    =   False
@@ -128,7 +128,7 @@ Begin ContainerControl ccBackground
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Background traits. Multiple traits are allowed."
       Top             =   156
       Transparent     =   True
       UseMode         =   ""
@@ -159,7 +159,7 @@ Begin ContainerControl ccBackground
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
       Top             =   418
       Transparent     =   True
       Visible         =   True
@@ -194,7 +194,7 @@ Begin ContainerControl ccBackground
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the source material and a page number this background came from. (e.g. Player's Handbook p. 128)"
       Top             =   122
       Transparent     =   True
       UseLowercase    =   False
@@ -231,7 +231,7 @@ Begin ContainerControl ccBackground
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the background this one is based on."
       Top             =   54
       Transparent     =   True
       UseLowercase    =   False

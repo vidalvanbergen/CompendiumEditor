@@ -53,7 +53,7 @@ Begin Window wndFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Name of the feature."
       Top             =   58
       Transparent     =   True
       UseLowercase    =   False
@@ -86,7 +86,7 @@ Begin Window wndFeature
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Description of the feature."
       Top             =   92
       Transparent     =   True
       Value           =   ""
@@ -122,7 +122,7 @@ Begin Window wndFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
       Top             =   488
       Transparent     =   True
       UseLowercase    =   False
@@ -159,7 +159,7 @@ Begin Window wndFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
       Top             =   522
       Transparent     =   True
       UseLowercase    =   False
@@ -191,7 +191,7 @@ Begin Window wndFeature
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
       Top             =   556
       Transparent     =   True
       Visible         =   True
@@ -345,7 +345,7 @@ Begin Window wndFeature
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Give the feature an optional category."
          Top             =   11
          Transparent     =   False
          Underline       =   False
@@ -382,7 +382,7 @@ Begin Window wndFeature
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "The name of the source material and a page number this background came from. (e.g. Player's Handbook p. 128)"
       Top             =   454
       Transparent     =   True
       UseLowercase    =   False
@@ -509,6 +509,10 @@ End
 		        end if
 		      next
 		      'end if
+		      
+		      if TheNode.Name = "Feature" then
+		        popCategory.Tooltip = "Set to 'YES' if this feature is optional."
+		      end if
 		      
 		      
 		      Select case xChild.Name

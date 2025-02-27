@@ -53,7 +53,7 @@ Begin Window wndSimpleTrait
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Name of the trait."
       Top             =   58
       Transparent     =   True
       UseLowercase    =   False
@@ -86,7 +86,7 @@ Begin Window wndSimpleTrait
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Description of the trait."
       Top             =   92
       Transparent     =   True
       Value           =   ""

@@ -55,7 +55,7 @@ Begin ContainerControl ccSpell
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   ""
+      Tooltip         =   "Spell name."
       Top             =   28
       Transparent     =   True
       UseLowercase    =   False
@@ -87,7 +87,7 @@ Begin ContainerControl ccSpell
       TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "Check if the spell is a subclass spell, adding a subclass to an existing named spell."
       Top             =   4
       Transparent     =   False
       Underline       =   False
@@ -147,7 +147,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   8
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Spell description."
          Top             =   332
          Transparent     =   True
          Value           =   ""
@@ -220,7 +220,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell duration."
          Top             =   298
          Transparent     =   True
          UseLowercase    =   False
@@ -257,7 +257,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "The material components of the spell."
          Top             =   264
          Transparent     =   True
          UseLowercase    =   False
@@ -294,7 +294,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell components: Vocal, Somatic and/or Material."
          Top             =   230
          Transparent     =   True
          UseLowercase    =   False
@@ -331,7 +331,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell range."
          Top             =   196
          Transparent     =   True
          UseLowercase    =   False
@@ -368,7 +368,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Casting time."
          Top             =   162
          Transparent     =   True
          UseLowercase    =   False
@@ -405,7 +405,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell level."
          Top             =   62
          Transparent     =   True
          UseLowercase    =   False
@@ -442,7 +442,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   ""
+         Tooltip         =   "Spell school."
          Top             =   96
          Transparent     =   True
          UseLowercase    =   False
@@ -476,7 +476,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Check this box if the spell is a ritual."
          Top             =   130
          Transparent     =   True
          Visible         =   True
@@ -613,7 +613,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Classes that can use this spell."
          Top             =   617
          Transparent     =   False
          Underline       =   False
@@ -708,7 +708,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   ""
+         Tooltip         =   "Dice roll formulas. Add a short, optional descriptions for spells, such as a level for spells with different rolls on higher levels."
          Top             =   815
          Transparent     =   True
          Visible         =   True
@@ -1044,7 +1044,7 @@ End
 		        'else
 		        'cDescription.Value = cDescription.Value + EndOfLine + xValue
 		        'end if
-		         
+		        
 		      else
 		        Break
 		        

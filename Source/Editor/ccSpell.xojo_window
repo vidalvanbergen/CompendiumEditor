@@ -708,7 +708,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
-         Tooltip         =   "Dice roll formulas. Add a short, optional descriptions for spells, such as a level for spells with different rolls on higher levels."
+         Tooltip         =   "Dice roll formulas. Add a short, optional descriptions, such as a level for spells with different rolls on higher levels."
          Top             =   815
          Transparent     =   True
          Visible         =   True

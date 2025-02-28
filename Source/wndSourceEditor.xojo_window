@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -741,7 +741,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   9
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -2721,6 +2721,16 @@ End
 		    
 		    base.AddMenu new MenuItem("Duplicate """ + name + """")
 		    base.AddMenu new MenuItem("Remove """ + name + """")
+		    base.AddMenu new MenuItem("-")
+		    base.AddMenu new MenuItem("Copy """ + name + """")
+		  end if
+		  
+		  var c as new Clipboard
+		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") then
+		    var xNode as XMLNode = c.Text.ToXML
+		    if xNode <> Nil then
+		      base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
+		    end if
 		  end if
 		  
 		  base.AddMenu new MenuItem("-")
@@ -2787,7 +2797,7 @@ End
 		      
 		      
 		      // Templates
-		    elseif selectedItem.Tag.StringValue.StartsWith("Append:") then
+		    elseif selectedItem.Tag <> Nil and selectedItem.Tag.Type = Variant.TypeString and selectedItem.Tag.StringValue.StartsWith("Append:") then
 		      var type as string = selectedItem.Tag.StringValue.Replace("Append:","")
 		      
 		      AppendToDocument(type)
@@ -2800,6 +2810,24 @@ End
 		        
 		      elseif selectedItem.Text.StartsWith("Duplicate") then
 		        DuplicateItem
+		        
+		      elseif selectedItem.Text.StartsWith("Copy") then
+		        if me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
+		          var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
+		          
+		          var c as new Clipboard
+		          c.Text = xNode.ToString
+		        end if
+		        
+		      elseif selectedItem.Text.StartsWith("Paste") then
+		        if selectedItem.Tag IsA XMLNode then
+		          var xNode as XMLNode = selectedItem.Tag
+		          
+		          me.xDoc.AppendChildCopy( xNode )
+		          me.BuildList( me.xDoc )
+		          me.SelectedRowIndex = me.LastRowIndex
+		        end if
+		        
 		        
 		      elseif selectedItem.Text = "Sort by Name" then
 		        me.xDoc = SortXMLDocumentByName( me.xDoc )

@@ -2823,7 +2823,7 @@ End
 		        if selectedItem.Tag IsA XMLNode then
 		          var xNode as XMLNode = selectedItem.Tag
 		          
-		          me.xDoc.AppendChildCopy( xNode )
+		          me.xDoc.FirstChild.AppendChildCopy( xNode )
 		          me.BuildList( me.xDoc )
 		          me.SelectedRowIndex = me.LastRowIndex
 		        end if

@@ -745,6 +745,7 @@ Folder=CommonControls;Editor/EditorClasses/CommonControls;&h00000000404A3FFF;&h0
 Class=ccProficiencies;Editor/EditorClasses/CommonControls/ccProficiencies.xojo_code;&h00000000346107FF;&h00000000404A3FFF;false
 Class=ccSpecialTraits;Editor/EditorClasses/CommonControls/ccSpecialTraits.xojo_code;&h0000000038CDFFFF;&h00000000404A3FFF;false
 Window=ccEditorCheckbox;Editor/EditorClasses/ccEditorCheckbox.xojo_window;&h00000000652CC7FF;&h000000004A073FFF;false
+Window=ccEditorSpells;Editor/EditorClasses/ccEditorSpells.xojo_window;&h00000000118467FF;&h000000004A073FFF;false
 Window=wndFeature;Editor/EditorClasses/wndFeature.xojo_window;&h0000000021DD77FF;&h000000004A073FFF;false
 Window=ccCreature;Editor/ccCreature.xojo_window;&h00000000712B1FFF;&h000000002A2847FF;false
 Window=wndCreatureFeature;Editor/EditorClasses/wndCreatureFeature.xojo_window;&h00000000044327FF;&h000000004A073FFF;false

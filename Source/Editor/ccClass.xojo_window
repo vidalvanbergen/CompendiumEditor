@@ -10,7 +10,7 @@ Begin ContainerControl ccClass
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   2029
+   Height          =   1999
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -34,7 +34,7 @@ Begin ContainerControl ccClass
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   871
+      Height          =   841
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -200,169 +200,35 @@ Begin ContainerControl ccClass
          Visible         =   True
          Width           =   72
       End
-      Begin TextArea txtSpells
+      Begin ccEditorSpells cSpells
          AllowAutoDeactivate=   True
-         AllowFocusRing  =   True
-         AllowSpellChecking=   True
-         AllowStyledText =   True
-         AllowTabs       =   False
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
          BackgroundColor =   &cFFFFFF00
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
+         DoubleBuffer    =   False
          Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Format          =   ""
-         HasBorder       =   True
-         HasHorizontalScrollbar=   False
-         HasVerticalScrollbar=   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
          Height          =   100
-         HideSelection   =   True
          Index           =   -2147483648
          InitialParent   =   "cvsClassFeatures"
-         Italic          =   False
-         Left            =   157
-         LineHeight      =   0.0
-         LineSpacing     =   1.0
+         Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
-         MaximumCharactersAllowed=   0
-         Multiline       =   True
-         ReadOnly        =   False
          Scope           =   2
-         TabIndex        =   5
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   ""
-         TextAlignment   =   0
-         TextColor       =   &c00000000
-         Tooltip         =   "Comma separated list of spell names for the class or subclass."
-         Top             =   1874
-         Transparent     =   False
-         Underline       =   False
-         UnicodeMode     =   1
-         ValidationMask  =   ""
-         Visible         =   True
-         Width           =   469
-      End
-      Begin Label lblSpells
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   -2147483648
-         InitialParent   =   "cvsClassFeatures"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   2
-         Selectable      =   False
          TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "Class Spells:"
-         TextAlignment   =   3
-         TextColor       =   &c00000000
          Tooltip         =   ""
          Top             =   1874
-         Transparent     =   False
-         Underline       =   False
+         Transparent     =   True
          Visible         =   True
-         Width           =   125
-      End
-      Begin Label lblSpellListDescription
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   11.0
-         FontUnit        =   0
-         Height          =   68
-         Index           =   -2147483648
-         InitialParent   =   "cvsClassFeatures"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   True
-         Scope           =   2
-         Selectable      =   False
-         TabIndex        =   7
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Comma separated list of spell names."
-         TextAlignment   =   3
-         TextColor       =   &c00000000
-         Tooltip         =   ""
-         Top             =   1898
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   125
-      End
-      Begin BevelButton bvlCommonSpellNames
-         AllowAutoDeactivate=   True
-         AllowFocus      =   True
-         BackgroundColor =   &c00000000
-         BevelStyle      =   7
-         Bold            =   False
-         ButtonStyle     =   0
-         Caption         =   "≡"
-         CaptionAlignment=   3
-         CaptionDelta    =   0
-         CaptionPosition =   1
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         HasBackgroundColor=   False
-         Height          =   22
-         Icon            =   0
-         IconAlignment   =   0
-         IconDeltaX      =   0
-         IconDeltaY      =   0
-         Index           =   -2147483648
-         InitialParent   =   "cvsClassFeatures"
-         Italic          =   False
-         Left            =   638
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
-         LockTop         =   True
-         MenuStyle       =   0
-         Scope           =   2
-         TabIndex        =   6
-         TabPanelIndex   =   0
-         TabStop         =   True
-         TextColor       =   &c00000000
-         Tooltip         =   ""
-         Top             =   1874
-         Transparent     =   False
-         Underline       =   False
-         Value           =   False
-         Visible         =   True
-         Width           =   22
+         Width           =   640
       End
    End
    Begin ccEditorTextField cName
@@ -1059,14 +925,13 @@ Begin ContainerControl ccClass
       Visible         =   True
       Width           =   125
    End
-   BeginSegmented AddRemoveEditButton areSubclasses
+   BeginSegmented AddRemoveButton areSubclasses
       AddEnabled      =   False
-      EditEnabled     =   False
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   580
+      Left            =   604
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -1075,15 +940,15 @@ Begin ContainerControl ccClass
       MacControlStyle =   0
       RemoveEnabled   =   False
       Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
+      Segments        =   "+\n\nFalse\r-\n\nFalse"
       SelectionType   =   2
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
-      Top             =   54
+      Top             =   56
       Transparent     =   False
       Visible         =   True
-      Width           =   72
+      Width           =   48
    End
    Begin PopupMenuPro popSubclasses
       AllowAutoDeactivate=   True
@@ -1112,7 +977,7 @@ Begin ContainerControl ccClass
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   411
+      Width           =   435
    End
    Begin ccEditorTextField cSource
       AllowAutoDeactivate=   True
@@ -1511,9 +1376,9 @@ End
 		  
 		  
 		  if xSubclassNames.LastIndex > -1 then 'and txtSpells.Text.trim <> "" then
-		    SaveSubclassSpells( cName.Value + " (" + xSubclassNames(0) + ")", txtSpells.Text.SplitString(",") )
+		    SaveSubclassSpells( cName.Value + " (" + xSubclassNames(0) + ")", cSpells.Value.SplitString(",") )
 		  elseif isMainClass then
-		    SaveSubclassSpells( cName.Value, txtSpells.Text.SplitString(",") )
+		    SaveSubclassSpells( cName.Value, cSpells.Value.SplitString(",") )
 		  end if
 		  
 		  
@@ -1758,7 +1623,8 @@ End
 		    cAbilityScoreImprovementLevels.SetMultiValues( AbilityScoreIncreaseAutoLevels )
 		    
 		    // Find spells
-		    txtSpells.Text = ""
+		    'txtSpells.Text = ""
+		    cSpells.Value = ""
 		    var spellFinderClassName as String = cName.Value
 		    if popSubclasses.SelectedRowIndex > 0 then
 		      spellFinderClassName = spellFinderClassName + " (" + popSubclasses.SelectedRowValue + ")"
@@ -1781,7 +1647,8 @@ End
 		    end if
 		    'SpellNames.Sort
 		    'SpellNames.RemoveDuplicates
-		    txtSpells.Text = StringFromArray( SpellNames, ", " )
+		    'txtSpells.Text = StringFromArray( SpellNames, ", " )
+		    cSpells.Value = StringFromArray( SpellNames, ", " )
 		    
 		  end if // @END TheNode <> NIl
 		End Sub
@@ -1863,7 +1730,7 @@ End
 		  lstCounter.DeleteAllRows
 		  lstCounter.Invalidate
 		  
-		  txtSpells.Text = ""
+		  cSpells.Value = ""
 		  
 		End Sub
 	#tag EndMethod
@@ -2326,61 +2193,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events txtSpells
-	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  dim AscKey as Integer = Asc( key )
-		  
-		  
-		  if (TargetMacOS and Keyboard.AsyncCommandKey) OR (TargetWindows and Keyboard.AsyncControlKey) then
-		    
-		    Select case AscKey
-		      
-		      
-		    case 108 ' L
-		      txtSpells.Text = FormatSpelllist( txtSpells.Text )
-		      
-		      Return True
-		      
-		    End Select
-		    
-		  end if
-		  
-		  
-		  Return False
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events bvlCommonSpellNames
-	#tag Event
-		Sub Action()
-		  
-		  var basemenu as new MenuItem
-		  
-		  basemenu.AddMenu new MenuItem( "Format Spells" )
-		  basemenu.AddMenu new MenuItem( "-" )
-		  
-		  basemenu.AppendBaseSpellLists
-		  
-		  if basemenu <> Nil then
-		    
-		    var hitItem as MenuItem = basemenu.PopUp
-		    
-		    if hitItem <> Nil then
-		      if hitItem.Text = "Format Spells" then
-		        txtSpells.Text = FormatSpelllist( txtSpells.Text )
-		        
-		      elseif txtSpells.Text = "" then
-		        txtSpells.Text = hitItem.Text
-		      else
-		        txtSpells.Text = txtSpells.Text + ", " + hitItem.Text
-		      end if
-		    end if
-		    
-		  end if
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events cName
 	#tag Event
 		Sub Open()
@@ -2660,54 +2472,18 @@ End
 #tag Events areSubclasses
 	#tag Event
 		Sub ActionAdd()
-		  'SubclassAdd("Test")
 		  
 		  var newSubclassName as String = InputDialog.ShowPrompt( "Subclass name", "Enter a name for the new subclass" )
 		  
 		  if newSubclassName.Trim <> "" then
 		    SubclassAdd( newSubclassName.Trim )
 		  end if
-		  
-		  
-		  'if lstSources.RowTagAt( lstSources.SelectedRowIndex ) IsA SourceCore then
-		  'var source as SourceCore = lstSources.RowTagAt( lstSources.SelectedRowIndex )
-		  'var parent as FolderItem = source.ParentFolder 'lstSources.RowTagAt( lstSources.SelectedRowIndex )
-		  '
-		  'var SourceName as string = InputDialog.ShowPrompt( "Folder Name", "Enter a name for the folder:" )
-		  'var childname as string = SourceName.ReplaceAll(" ", "_")
-		  'childname = childname.ReplaceAll(":", "-")
-		  '
-		  'while childname.StartsWith(".")
-		  'childname = childname.Right(childname.Length-1)
-		  'wend
-		  '
-		  'if childname.Trim <> "" then
-		  'if not parent.Child( childname ).Exists then
-		  'parent.Child( childname ).CreateFolder
-		  '
-		  'lstSources.RowExpandableAt( lstSources.SelectedRowIndex ) = True
-		  'lstSources.RowExpandedAt( lstSources.SelectedRowIndex ) = False
-		  'lstSources.RowExpandedAt( lstSources.SelectedRowIndex ) = True
-		  'else
-		  'MessageBox "Could not create folder, item with the same name already exists."
-		  'end if
-		  'end if
-		  '
-		  '
-		  'end if
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionEdit()
-		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub ActionRemove()
 		  if popSubclasses.SelectedRowIndex > 0 then
 		    SubclassRemove( popSubclasses.SelectedRowValue )
-		    'popSubclasses.RemoveRowAt( popSubclasses.SelectedRowIndex )
-		    'popSubclasses.SelectedRowIndex = 0
 		  end if
 		End Sub
 	#tag EndEvent
@@ -2728,7 +2504,6 @@ End
 		  end if
 		  
 		  areSubclasses.RemoveEnabled = ( me.SelectedRowIndex > 0 )
-		  areSubclasses.EditEnabled = ( me.SelectedRowIndex > 0 )
 		  
 		  // Show only related features
 		  if me.SelectedRowIndex > 0 then
@@ -2738,22 +2513,6 @@ End
 		    cvsMainClass.Visible = True
 		    cvsClassFeatures.Top = cvsMainClass.Top + cvsMainClass.Height + 12
 		  end if
-		  
-		  
-		  // Features Templates
-		  'var TemplateMenu as new MenuItem("Templates")
-		  '
-		  'var archetype as String = ArchetypeFor( cName.Value )
-		  '
-		  'TemplateMenu.AddMenu new MenuItem( archetype + ": " + popSubclasses.SelectedRowValue )
-		  'TemplateMenu.AddMenu new MenuItem( popSubclasses.SelectedRowValue + ": FeatureName" )
-		  'TemplateMenu.AddMenu new MenuItem( "FeatureName (" + popSubclasses.SelectedRowValue + ")" )
-		  'TemplateMenu.AddMenu new MenuItem( "-" )
-		  'TemplateMenu.AddMenu new MenuItem( popSubclasses.SelectedRowValue + ": Channel Divinity: FeatureName" )
-		  'TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName (" + popSubclasses.SelectedRowValue + ")" )
-		  '
-		  ''me.SetTemplateMenu( TemplateMenu )
-		  'cClassFeatures.TemplateMenu = TemplateMenu
 		End Sub
 	#tag EndEvent
 #tag EndEvents

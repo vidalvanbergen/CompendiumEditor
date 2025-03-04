@@ -1290,90 +1290,6 @@ Begin ContainerControl ccCreature
       Visible         =   True
       Width           =   640
    End
-   Begin Label lblSpells
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   38
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Spells:"
-      TextAlignment   =   3
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   2174
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   125
-   End
-   Begin TextArea txtSpells
-      AllowAutoDeactivate=   True
-      AllowFocusRing  =   True
-      AllowSpellChecking=   True
-      AllowStyledText =   True
-      AllowTabs       =   False
-      BackgroundColor =   &cFFFFFF00
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Format          =   ""
-      HasBorder       =   True
-      HasHorizontalScrollbar=   False
-      HasVerticalScrollbar=   True
-      Height          =   100
-      HideSelection   =   True
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   157
-      LineHeight      =   0.0
-      LineSpacing     =   1.0
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MaximumCharactersAllowed=   0
-      Multiline       =   True
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   39
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   ""
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   "A comma seperated list of spell names that the creature knows or has prepared."
-      Top             =   2174
-      Transparent     =   False
-      Underline       =   False
-      UnicodeMode     =   1
-      ValidationMask  =   ""
-      Visible         =   True
-      Width           =   469
-   End
    Begin Label lblSpellSlots
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -1521,91 +1437,6 @@ Begin ContainerControl ccCreature
       Visible         =   True
       Width           =   640
    End
-   Begin Label lblSpellsDescription
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   11.0
-      FontUnit        =   0
-      Height          =   76
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Multiline       =   True
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   41
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Comma separated list of spell names."
-      TextAlignment   =   3
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   2198
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   125
-   End
-   Begin DesktopBevelButton btnDropdown
-      Active          =   False
-      AllowAutoDeactivate=   True
-      AllowFocus      =   True
-      AllowTabStop    =   True
-      BackgroundColor =   &c00000000
-      BevelStyle      =   7
-      Bold            =   False
-      ButtonStyle     =   0
-      Caption         =   "≡"
-      CaptionAlignment=   3
-      CaptionDelta    =   0
-      CaptionPosition =   1
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      HasBackgroundColor=   False
-      Height          =   22
-      Icon            =   0
-      IconAlignment   =   0
-      IconDeltaX      =   0
-      IconDeltaY      =   0
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   638
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
-      LockTop         =   True
-      MenuStyle       =   0
-      PanelIndex      =   0
-      Scope           =   0
-      TabIndex        =   40
-      TabPanelIndex   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   2174
-      Transparent     =   False
-      Underline       =   False
-      Value           =   False
-      Visible         =   True
-      Width           =   22
-      _mIndex         =   0
-      _mInitialParent =   ""
-      _mName          =   ""
-      _mPanelIndex    =   0
-   End
    Begin ccTraits cFeatureActionsBonus
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -1673,6 +1504,36 @@ Begin ContainerControl ccCreature
       Top             =   1962
       Transparent     =   True
       UseMode         =   ""
+      Visible         =   True
+      Width           =   640
+   End
+   Begin ccEditorSpells cSpells
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   100
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   45
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   2174
+      Transparent     =   True
       Visible         =   True
       Width           =   640
    End
@@ -1933,8 +1794,8 @@ End
 		    xCreature.AppendSimpleChild( "slots", txtSpellSlots.Text.Trim.ReplaceAll(" ", "") )
 		  end if
 		  // Spells
-		  if txtSpells.Text.Trim <> "" then
-		    xCreature.AppendSimpleChild( "spells", txtSpells.Text.Trim )
+		  if cSpells.Value.Trim <> "" then
+		    xCreature.AppendSimpleChild( "spells", cSpells.Value.Trim )
 		  end if
 		  
 		  // Description
@@ -2167,73 +2028,14 @@ End
 		      case "description", "text"
 		        descriptionLines.Add xValue
 		        
-		        'if cDescription.Value = "" then
-		        'cDescription.Value = xValue
-		        'else // Consideration for multiple <text>
-		        'if xValue = "" then
-		        'xValue = EndOfLine
-		        'end if
-		        'cDescription.Value = cDescription.Value + EndOfLine + xValue
-		        'End if
-		        
 		        
 		      case "slots"
 		        txtSpellSlots.Text = xValue
 		        
 		      case "spells"
-		        txtSpells.Text = xValue
+		        cSpells.Value = xValue
 		        
 		      End Select
-		      
-		      
-		      
-		      
-		      
-		      '
-		      '
-		      'case "prerequisite"
-		      'cPrerequisite.Value = TheValue
-		      '
-		      'case "text"
-		      'if cDescription.Value = "" then
-		      'cDescription.Value = TheValue
-		      'else // Consideration for multiple <text>
-		      'if TheValue = "" then
-		      'TheValue = EndOfLine
-		      'end if
-		      'cDescription.Value = cDescription.Value + EndOfLine + TheValue
-		      'End if
-		      '
-		      'case "proficiency"
-		      'cProficiencies.Value = TheValue
-		      '
-		      'cProficiencies.Values = TheValue.Split(",")
-		      'for i as Integer = 0 to cProficiencies.Values.LastIndex
-		      'cProficiencies.Values(i) = cProficiencies.Values(i).Trim
-		      'next
-		      'cProficiencies.Tags = cProficiencies.Values
-		      '
-		      'case "special"
-		      'cSpecialTraits.Value = TheValue
-		      '
-		      'cSpecialTraits.Values = TheValue.Split(",")
-		      'for i as Integer = 0 to cSpecialTraits.Values.LastIndex
-		      'cSpecialTraits.Values(i) = cSpecialTraits.Values(i).Trim
-		      'next
-		      'cSpecialTraits.Tags = cSpecialTraits.Values
-		      '
-		      'case "modifier"
-		      'if xProperty.GetAttribute("category") <> "" then
-		      'cModifiers.addrow xProperty.GetAttribute("category").Titlecase, TheValue
-		      'else
-		      'cModifiers.addrow "Bonus", TheValue
-		      'Break
-		      'end if
-		      '
-		      'else
-		      'Break
-		      '
-		      'End Select
 		      
 		      
 		    next
@@ -2299,12 +2101,8 @@ End
 		  cSource.Reset
 		  cSpeed.Reset
 		  
-		  txtSpells.Text = ""
+		  cSpells.Value = ""
 		  txtSpellSlots.Text = ""
-		  
-		  'cFeatureLair.FeatureAddNew( "Description" )
-		  'cFeatureLair.FeatureAddNew( "Lair Actions" )
-		  'cFeatureLair.FeatureAddNew( "Regional Effects" )
 		  
 		  me.Invalidate
 		End Sub
@@ -3067,124 +2865,11 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events txtSpells
-	#tag Event
-		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
-		  'base.AddMenu new MenuItem("Format Spells")
-		  'base.AddMenu new MenuItem("Add '[2024]' Tag")
-		  'base.AddMenu new MenuItem("Sort by name")
-		  'Return True
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
-		  
-		  if HitItem <> Nil then
-		    
-		    Select case HitItem.Text
-		      
-		    case "Sort by Name"
-		      var names() as String = SplitString( txtSpells.Text, "," )
-		      names.Sort
-		      txtSpells.Text = StringFromArray( names, ", " )
-		      
-		      Return True
-		      
-		    case "Format spells"
-		      txtSpells.Text = FormatSpelllist( txtSpells.Text )
-		      
-		      Return True
-		      
-		    case "Add '[2024]' Tag"
-		      var names() as String = SplitString( txtSpells.Text, "," )
-		      for index as Integer = 0 to names.LastIndex
-		        if NOT names(index).Contains("[2024]") then
-		          names(index) = names(index) + " [2024]"
-		        end if
-		      next
-		      txtSpells.Text = String.FromArray( names, ", " )
-		      
-		      Return True
-		      
-		    End Select
-		    
-		  end if
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  dim AscKey as Integer = Asc( key )
-		  
-		  
-		  if (TargetMacOS and Keyboard.AsyncCommandKey) OR (TargetWindows and Keyboard.AsyncControlKey) then
-		    
-		    Select case AscKey
-		      
-		      
-		    case 108 ' L
-		      txtSpells.Text = FormatSpelllist( txtSpells.Text )
-		      
-		      Return True
-		      
-		    End Select
-		    
-		  end if
-		  
-		  
-		  Return False
-		End Function
-	#tag EndEvent
-#tag EndEvents
 #tag Events cSource
 	#tag Event
 		Sub Open()
 		  
 		  me.SetMode ccEditorTextField.Mode.Textfield
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events btnDropdown
-	#tag Event
-		Sub Pressed()
-		  
-		  
-		  var basemenu as new MenuItem
-		  
-		  var miFormatSpells as new MenuItem("Format Spells")
-		  miFormatSpells.Shortcut = "L"
-		  basemenu.AddMenu miFormatSpells
-		  basemenu.AddMenu new MenuItem("Add '[2024]' Tag")
-		  basemenu.AddMenu new MenuItem("-")
-		  basemenu.AddMenu new MenuItem("Sort by name")
-		  
-		  var HitItem as MenuItem = basemenu.PopUp
-		  
-		  
-		  
-		  if HitItem <> Nil then
-		    
-		    Select case HitItem.Text
-		      
-		    case "Sort by Name"
-		      var names() as String = SplitString( txtSpells.Text, "," )
-		      names.Sort
-		      txtSpells.Text = StringFromArray( names, ", " )
-		      
-		    case "Format spells"
-		      txtSpells.Text = FormatSpelllist( txtSpells.Text )
-		      
-		    case "Add '[2024]' Tag"
-		      var names() as String = SplitString( txtSpells.Text, "," )
-		      for index as Integer = 0 to names.LastIndex
-		        if NOT names(index).Contains("[2024]") then
-		          names(index) = names(index) + " [2024]"
-		        end if
-		      next
-		      txtSpells.Text = String.FromArray( names, ", " )
-		      
-		    End Select
-		    
-		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

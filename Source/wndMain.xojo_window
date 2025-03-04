@@ -801,6 +801,11 @@ End
 		  FolderRemove
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.Tooltip = "Add/Remove Folder"
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events sldListSize
 	#tag Event

@@ -2285,7 +2285,7 @@ End
 	#tag Event
 		Sub Open()
 		  me.AddRowWithTagAndPicture "Species", "race", template_compendium_species_32
-		  me.AddRowWithTagAndPicture "Class", "class", template_compendium_classes_32
+		  me.AddRowWithTagAndPicture "Class and Subclasses", "class", template_compendium_classes_32
 		  'me.AddRowWithTagAndPicture "Subclass", "subclass", templatesmall_swords
 		  me.AddRowWithTagAndPicture "Background", "background", template_compendium_banner_32
 		  me.AddRowWithTagAndPicture "Equipment", "item", template_compendium_treasure_32

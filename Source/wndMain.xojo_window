@@ -188,7 +188,7 @@ Begin WindowPro wndMain
          RemoveEnabled   =   False
          Scope           =   0
          Segments        =   "+\n\nFalse\r-\n\nFalse"
-         SelectionType   =   0
+         SelectionType   =   2
          TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   False

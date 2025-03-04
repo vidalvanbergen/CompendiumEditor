@@ -2649,7 +2649,7 @@ End
 		Sub Open()
 		  me.FieldName = "Proficiency Bonus:"
 		  me.SetMode ccEditorTextFieldVertical.Mode.Dropdown
-		  'me.txtField.ValidationMask = "####"
+		  me.IsPrefixedNumber = True
 		  
 		  for index as Integer = 0 to 99
 		    me.BaseMenu.Append new MenuItem( "+" + str(index) )
@@ -2862,6 +2862,13 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("Underdark")
 		  me.BaseMenu.AddMenu new MenuItem("Underwater")
 		  me.BaseMenu.AddMenu new MenuItem("Urban")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDescription
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Description:"
 		End Sub
 	#tag EndEvent
 #tag EndEvents

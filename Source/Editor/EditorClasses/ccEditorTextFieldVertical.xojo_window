@@ -97,7 +97,7 @@ Begin ContainerControl ccEditorTextFieldVertical
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   445
+      Width           =   426
    End
    Begin DesktopBevelButton btnDropdown
       Active          =   False
@@ -220,6 +220,10 @@ End
 		FieldName As String
 	#tag EndComputedProperty
 
+	#tag Property, Flags = &h0
+		IsPrefixedNumber As Boolean = False
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private mBaseMenu As MenuItem
 	#tag EndProperty
@@ -313,23 +317,37 @@ End
 		Function KeyDown(key As String) As Boolean
 		  dim AscKey as Integer = Asc( key )
 		  
-		  if me.Text.IsNumericString then
+		  if IsPrefixedNumber or me.Text.Replace("+","").Replace("-", "").IsNumericString then
+		    var NumericValue as Integer = val( me.Text.Replace("+","") )
 		    
 		    Select case AscKey
 		      
 		    case 30 ' Up
-		      me.Text = Str( Val( me.Text ) + 1 )
-		      Return True
+		      NumericValue = NumericValue + 1
+		      
 		      
 		    case 31 ' Down
-		      me.Text = Str( Val( me.Text ) - 1 )
-		      Return True
+		      NumericValue = NumericValue - 1
 		      
 		    End Select
 		    
+		    
+		    if AscKey = 30 or AscKey = 31 then
+		      
+		      if IsPrefixedNumber then
+		        var PreFix as String
+		        if NumericValue > -1 then
+		          PreFix = "+"
+		        end if
+		        
+		        me.Text = PreFix + Str( NumericValue )
+		      else
+		        me.Text = Str( NumericValue )
+		      end if
+		      
+		      Return True
+		    end if
 		  end if
-		  
-		  
 		End Function
 	#tag EndEvent
 #tag EndEvents

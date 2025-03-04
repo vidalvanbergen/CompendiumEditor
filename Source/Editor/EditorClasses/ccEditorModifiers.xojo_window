@@ -65,7 +65,7 @@ Begin ContainerControl ccEditorModifiers
       AllowFocusRing  =   True
       AllowResizableColumns=   False
       AllowRowDragging=   False
-      AllowRowReordering=   False
+      AllowRowReordering=   True
       Bold            =   False
       ColumnCount     =   2
       ColumnWidths    =   "100, *"

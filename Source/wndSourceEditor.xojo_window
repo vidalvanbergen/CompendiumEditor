@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -741,7 +741,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   6
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -2728,10 +2728,17 @@ End
 		  var c as new Clipboard
 		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") then
 		    var xNode as XMLNode = c.Text.ToXML
-		    if xNode <> Nil then
-		      base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
-		    end if
+		    
+		    Select case xNode.Name
+		      
+		    case "race", "class", "background", "item", "feat", "spell", "monster"
+		      if xNode <> Nil then
+		        base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
+		      end if
+		      
+		    End Select
 		  end if
+		  
 		  
 		  base.AddMenu new MenuItem("-")
 		  

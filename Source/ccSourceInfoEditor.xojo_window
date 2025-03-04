@@ -324,7 +324,7 @@ Begin ContainerControl ccSourceInfoEditor
    End
    Begin Label lblPubDate
       AllowAutoDeactivate=   True
-      Bold            =   True
+      Bold            =   False
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True

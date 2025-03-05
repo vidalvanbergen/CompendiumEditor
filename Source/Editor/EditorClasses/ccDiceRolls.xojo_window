@@ -64,7 +64,7 @@ Begin ContainerControl ccDiceRolls
       AllowExpandableRows=   False
       AllowFocusRing  =   True
       AllowResizableColumns=   False
-      AllowRowDragging=   False
+      AllowRowDragging=   True
       AllowRowReordering=   True
       Bold            =   False
       ColumnCount     =   2

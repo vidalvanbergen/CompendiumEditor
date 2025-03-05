@@ -1762,7 +1762,7 @@ End
 		  // Bonus Actions
 		  var traitsNode() as XMLNode = cFeatureActionsBonus.GetFeatures 'xFeaturesRoot
 		  for index as Integer = 0 to traitsNode.LastIndex 'ChildCount-1
-		    var xChild as XMLNode = traitsNode.Child(index)
+		    var xChild as XMLNode = traitsNode(index)
 		    
 		    var xName as string = xChild.ValueOfNodeWithName("name")
 		    if xName <> "" and NOT xName.Contains( "(Bonus Action)" ) then

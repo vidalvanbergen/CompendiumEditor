@@ -2128,7 +2128,7 @@ End
 		    
 		    var hitItem as MenuItem = baseMenu.PopUp '( self.Left + me.Left + x,  self.Top + me.Top + y )
 		    
-		    if hitItem <> Nil and hitItem.Tag <> "" then
+		    if hitItem <> Nil then
 		      me.CellValueAt( row, column ) = hitItem.Tag
 		    end if
 		    

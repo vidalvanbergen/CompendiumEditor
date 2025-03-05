@@ -820,6 +820,25 @@ End
 		    base.AddMenu new MenuItem( "Edit" )
 		    base.AddMenu new MenuItem( "Duplicate" )
 		    base.AddMenu new MenuItem( "Remove" )
+		    base.AddMenu new MenuItem( "-" )
+		    
+		    if me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
+		      var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
+		      if xNode <> Nil then
+		        base.AddMenu new MenuItem( "Copy """ + xNode.ValueOfNodeWithName("name") + """" )
+		      end if
+		    end if
+		    
+		  end if
+		  
+		  var c as new Clipboard
+		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") then
+		    var xNode as XMLNode = c.Text.ToXML
+		    
+		    if xNode <> Nil and xNode.Name = FeatureType then
+		      base.AddMenu new MenuItem( "Paste """ + xNode.ValueOfNodeWithName("name") + """" )
+		    end if
+		    
 		  end if
 		  
 		  Return True
@@ -874,6 +893,31 @@ End
 		          
 		        end if
 		        Return True
+		        
+		      else
+		        if hitItem.Text.StartsWith( "Copy" ) then
+		          if lstTraits.SelectedRowIndex > -1 and lstTraits.RowTagAt( lstTraits.SelectedRowIndex ) IsA XMLNode then
+		            var xNode as XMLNode = lstTraits.RowTagAt( lstTraits.SelectedRowIndex )
+		            
+		            var c as new Clipboard
+		            c.Text = xNode.ToString
+		          end if
+		          
+		          Return True
+		          
+		        elseif hitItem.Text.StartsWith( "Paste" ) then
+		          var c as new Clipboard
+		          if c.Text.StartsWith("<") and c.Text.EndsWith(">") then
+		            var xNode as XMLNode = c.Text.ToXML
+		            
+		            if xNode <> Nil and xNode.Name = self.FeatureType then
+		              FeatureAdd( xNode )
+		            else
+		              Break
+		            end if
+		          end if
+		          
+		        end if
 		        
 		      End Select
 		      

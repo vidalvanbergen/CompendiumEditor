@@ -1760,8 +1760,8 @@ End
 		  cFeatureActions.AddFeaturesToXMLNode( xCreature )
 		  
 		  // Bonus Actions
-		  var traitsNode as XMLNode = cFeatureActionsBonus.xFeaturesRoot
-		  for index as Integer = 0 to traitsNode.ChildCount-1
+		  var traitsNode() as XMLNode = cFeatureActionsBonus.GetFeatures 'xFeaturesRoot
+		  for index as Integer = 0 to traitsNode.LastIndex 'ChildCount-1
 		    var xChild as XMLNode = traitsNode.Child(index)
 		    
 		    var xName as string = xChild.ValueOfNodeWithName("name")
@@ -1780,9 +1780,9 @@ End
 		  
 		  // Lair
 		  'cFeatureLair.AddFeaturesToXMLNode( xCreature )
-		  var lairNode as XMLNode = cFeatureLair.xFeaturesRoot
-		  for index as Integer = 0 to lairNode.ChildCount-1
-		    var xChild as XMLNode = lairNode.Child(index)
+		  var lairNode() as XMLNode = cFeatureLair.GetFeatures 'xFeaturesRoot
+		  for index as Integer = 0 to lairNode.LastIndex
+		    var xChild as XMLNode = lairNode(index)
 		    xChild.SetAttribute( "category", "lair" )
 		    
 		    xCreature.AppendChildCopy( xChild )

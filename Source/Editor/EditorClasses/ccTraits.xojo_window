@@ -497,6 +497,24 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function GetFeatures() As XMLNode()
+		  var xNodes() as XMLNode
+		  
+		  if lstTraits.LastRowIndex > -1 then
+		    for row as Integer = 0 to lstTraits.LastRowIndex
+		      if lstTraits.RowTagAt( row ) IsA XMLNode then
+		        xNodes.Add( lstTraits.RowTagAt( row ) )
+		      else
+		        Break
+		      end if
+		    next
+		  end if
+		  
+		  Return xNodes
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub ImportNode(s as String)
 		  var xNode as XMLNode = s.ToXML
 		  

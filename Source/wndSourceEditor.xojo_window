@@ -741,7 +741,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   6
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -2235,35 +2235,27 @@ End
 		    
 		    Select case ppEditorPanels.Value
 		      
-		    case 0
-		      oldNode = cFeat.xNode
-		      cFeat.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
-		      'newNode = cFeat.GetXMLNode
+		    case 0 // BLANK
 		      
-		    case 1
-		      oldNode = cBackground.xNode
-		      cBackground.SetData( oldNode, Source.SourceInfo.Lookup("source", "") ) ', "", Source.SourceInfo.Lookup("category","") )
-		      
-		      
-		    case 2
-		      oldNode = cSpell.xNode
-		      cSpell.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
-		      'newNode = cSpell.GetXMLNode
-		      
-		    case 3
-		      oldNode = cSpecies.xNode
-		      cSpecies.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
-		      'newNode = cSpecies.GetXMLNode
-		      
-		    case 4
+		    case 1 // Backgrounds
 		      oldNode = cBackground.xNode
 		      cBackground.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
-		      'newNode = cBackground.GetXMLNode
 		      
-		    case 5
+		    case 2 // Class
+		      oldNode = cClass.xNode
+		      cClass.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
+		      
+		    case 3 // Creature
+		      oldNode = cCreature.xNode
+		      cCreature.SetData( oldNode, Source.SourceInfo.Lookup("source","") )
+		      
+		    case 4 // Equipment
 		      oldNode = cEquipment.xNode
 		      cEquipment.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
-		      'newNode = cEquipment.GetXMLNode
+		      
+		    case 5 // Feats
+		      oldNode = cFeat.xNode
+		      cFeat.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
 		      
 		    case 6 // Species
 		      oldNode = cSpecies.xNode
@@ -2274,7 +2266,10 @@ End
 		      cSpell.SetData( oldNode, Source.SourceInfo.Lookup("source", "") )
 		      
 		    case 8 // #TEXT
-		      ' soldNode.Value = " " + txtXML.Text + " "
+		      
+		    else
+		      Break
+		      
 		    End Select
 		    
 		  end if

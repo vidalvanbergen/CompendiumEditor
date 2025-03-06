@@ -10,7 +10,7 @@ Begin ContainerControl ccCreature
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   3144
+   Height          =   2930
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -1410,7 +1410,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   804
+      Height          =   590
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -1587,8 +1587,8 @@ Begin ContainerControl ccCreature
       Left            =   600
       LockBottom      =   False
       LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
+      LockLeft        =   False
+      LockRight       =   True
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0

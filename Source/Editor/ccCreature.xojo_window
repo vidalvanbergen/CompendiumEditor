@@ -41,6 +41,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -110,6 +111,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -147,6 +149,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -184,6 +187,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -204,7 +208,7 @@ Begin ContainerControl ccCreature
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   640
+      Width           =   568
    End
    Begin ccEditorTextField cBaseCreature
       AllowAutoDeactivate=   True
@@ -221,6 +225,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -258,6 +263,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -295,6 +301,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -332,6 +339,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   356
       LockBottom      =   False
       LockedInPosition=   False
@@ -369,6 +377,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -406,6 +415,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   356
       LockBottom      =   False
       LockedInPosition=   False
@@ -443,6 +453,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -480,6 +491,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -517,6 +529,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   501
       LockBottom      =   False
       LockedInPosition=   False
@@ -552,6 +565,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   329
       LockBottom      =   False
       LockedInPosition=   False
@@ -587,6 +601,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   157
       LockBottom      =   False
       LockedInPosition=   False
@@ -622,6 +637,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   157
       LockBottom      =   False
       LockedInPosition=   False
@@ -657,6 +673,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   329
       LockBottom      =   False
       LockedInPosition=   False
@@ -692,6 +709,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   501
       LockBottom      =   False
       LockedInPosition=   False
@@ -727,6 +745,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -764,6 +783,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -801,6 +821,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -838,6 +859,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -875,6 +897,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -912,6 +935,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -949,6 +973,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -986,6 +1011,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   157
       LockBottom      =   False
       LockedInPosition=   False
@@ -1021,6 +1047,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   329
       LockBottom      =   False
       LockedInPosition=   False
@@ -1056,6 +1083,7 @@ Begin ContainerControl ccCreature
       Height          =   44
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   501
       LockBottom      =   False
       LockedInPosition=   False
@@ -1091,6 +1119,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -1268,6 +1297,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -1415,6 +1445,7 @@ Begin ContainerControl ccCreature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -1517,6 +1548,7 @@ Begin ContainerControl ccCreature
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
+      FieldName       =   ""
       HasBackgroundColor=   False
       Height          =   100
       Index           =   -2147483648
@@ -1534,8 +1566,41 @@ Begin ContainerControl ccCreature
       Tooltip         =   ""
       Top             =   2174
       Transparent     =   True
+      Value           =   ""
       Visible         =   True
       Width           =   640
+   End
+   Begin PushButton btnSortName
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Set"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   600
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   46
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   54
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   60
    End
 End
 #tag EndWindow
@@ -2917,6 +2982,19 @@ End
 		  'contextMenu.AddMenu new MenuItem( "Lairs", cFeatureLair )
 		  
 		  me.ContextMenu = contextMenu
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnSortName
+	#tag Event
+		Sub Action()
+		  var nameParts() as String = cName.Value.Split( " " )
+		  if nameParts.LastIndex > 0 then
+		    var first as string = nameParts(0)
+		    nameParts.RemoveAt(0)
+		    cNameSort.Value = StringFromArray( nameParts, " " ) + ", " + first
+		    cBaseCreature.Value = StringFromArray( nameParts, " " )
+		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

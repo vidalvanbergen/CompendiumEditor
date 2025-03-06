@@ -1934,6 +1934,9 @@ End
 		    backgroundImage.Graphics.DrawPicture CoverImage, 0, 0, backgroundImage.Width, backgroundImage.Height,   0, CoverImage.Height/4, CoverImage.Width, CoverImage.Height
 		    
 		    g.DrawPicture backgroundImage, 0, 0
+		  else
+		    g.DrawingColor = CommonModule.HeaderStartColor
+		    g.FillRectangle 0, 0, g.Width, g.Height
 		  end if
 		  
 		  // Overlay Gradient

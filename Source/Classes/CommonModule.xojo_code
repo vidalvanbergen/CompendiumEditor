@@ -125,6 +125,10 @@ Protected Module CommonModule
 		      Description = Description.ReplaceAllRegEx( "Source:(.*?)\Z", "" )
 		    end if
 		    
+		    if Description.Contains("Source:") then
+		      Description = Description.Left( Description.InStr("Source:")-1 ).Trim
+		    end if
+		    
 		  end if
 		  
 		  Return Description

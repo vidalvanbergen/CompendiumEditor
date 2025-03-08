@@ -7,7 +7,7 @@
 				Begin BuildProjectStep Build
 				End
 				Begin SignProjectStep Sign
-				  DeveloperID=
+				  DeveloperID=Vianna van Bergen
 				End
 				Begin CopyFilesBuildStep CopyFilesToResources
 					AppliesTo = 0
@@ -16,6 +16,8 @@
 					Destination = 1
 					Subdirectory = 
 					FolderItem = Li4vUmVzb3VyY2VzL0Fzc2V0cy5jYXI=
+				End
+				Begin IDEScriptBuildStep Script1 , AppliesTo = 0, Architecture = 0, Target = 0
 				End
 			End
 			Begin BuildStepList Windows

@@ -210,6 +210,7 @@ Begin ContainerControl ccClass
          DoubleBuffer    =   False
          Enabled         =   True
          EraseBackground =   True
+         FieldName       =   ""
          HasBackgroundColor=   False
          Height          =   100
          Index           =   -2147483648
@@ -227,6 +228,7 @@ Begin ContainerControl ccClass
          Tooltip         =   ""
          Top             =   1874
          Transparent     =   True
+         Value           =   ""
          Visible         =   True
          Width           =   640
       End
@@ -246,6 +248,7 @@ Begin ContainerControl ccClass
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -309,6 +312,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -346,6 +350,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -383,6 +388,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -420,6 +426,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -457,6 +464,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -494,6 +502,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   296
          LockBottom      =   False
          LockedInPosition=   False
@@ -531,6 +540,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -568,6 +578,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -793,6 +804,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -830,6 +842,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   360
          LockBottom      =   False
          LockedInPosition=   False
@@ -867,6 +880,7 @@ Begin ContainerControl ccClass
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -994,6 +1008,7 @@ Begin ContainerControl ccClass
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -2190,6 +2205,13 @@ End
 		    end if
 		    
 		  end if
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSpells
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Spells:"
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -2985,6 +2985,13 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events cSpells
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Spells:"
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events btnSortName
 	#tag Event
 		Sub Action()

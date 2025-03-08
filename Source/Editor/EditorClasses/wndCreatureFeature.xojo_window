@@ -39,6 +39,7 @@ Begin Window wndCreatureFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -199,6 +200,7 @@ Begin Window wndCreatureFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   True
       LockedInPosition=   False
@@ -382,19 +384,26 @@ End
 	#tag Method, Flags = &h0
 		Sub AddCalculation()
 		  
-		  var result as string
+		  var result, damageType as string
 		  
-		  if lstDiceRolls.LastRowIndex = -1 then
-		    result = cDescription.Value.Match("Hit: \d+ \((.*?)\)", 1)
-		  elseif lstDiceRolls.LastRowIndex = 0 then
-		    result = cDescription.Value.Match("plus \d+ \((.*?)\) \w+", 1 )
-		  else
-		    result = cDescription.Value.Match("\d+ \((.*?)\) (\w+ damage)", 1 )
-		  end if
-		  
-		  'if lstDiceRolls.SelectedRowIndex > -1 then
-		  'result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 2 )
+		  'if lstDiceRolls.LastRowIndex = -1 then
+		  'result = cDescription.Value.Match("Hit: \d+ \((.*?)\)", 1)
+		  'elseif lstDiceRolls.LastRowIndex = 0 then
+		  'result = cDescription.Value.Match("plus \d+ \((.*?)\) \w+", 1 )
+		  'else
+		  'result = cDescription.Value.Match("\d+ \((.*?)\) (\w+ damage)", 1 )
 		  'end if
+		  
+		  
+		  var multiresult() as String = cDescription.Value.MatchAll("\((.*?d.*?)\)", 1 )
+		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((.*?d.*?)\) (\w+) damage", 2 )
+		  
+		  if result = "" and multiresult.LastIndex >= lstDiceRolls.LastAddedRowIndex+1 then
+		    result = multiresult(lstDiceRolls.LastAddedRowIndex+1)
+		    if multidamagetypes.LastIndex >= lstDiceRolls.LastAddedRowIndex+1 then
+		      damageType = multidamagetypes(lstDiceRolls.LastAddedRowIndex+1).Titlecase
+		    end if
+		  end if
 		  
 		  result = SummonCalculator( result, True )
 		  
@@ -412,10 +421,20 @@ End
 		      if tohit = "" then
 		        tohit = cDescription.Value.Match( "(\-\d+) to hit", 1 )
 		      end if
-		    elseif lstDiceRolls.LastRowIndex = 0 then
-		      name = cDescription.Value.Match("plus \d+ \(.*?\) (\w+)", 1 ).Titlecase
-		    else
-		      name = cDescription.Value.Match("\(.*?\) (\w+) damage", 1 ).Titlecase
+		      'elseif lstDiceRolls.LastRowIndex = 0 then
+		      'name = cDescription.Value.Match("plus \d+ \(.*?\) (\w+)", 1 ).Titlecase
+		      'else
+		      'name = cDescription.Value.Match("\(.*?\) (\w+) damage", 1 ).Titlecase
+		    end if
+		    
+		    if name = "" then
+		      name = damageType
+		    end if
+		    if name = "" then
+		      name = cName.Value
+		      if name.Contains("(") and name.Contains(")") then
+		        name = name.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
+		      end if
 		    end if
 		    
 		    lstDiceRolls.AddRow name, tohit, result

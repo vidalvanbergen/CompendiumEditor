@@ -395,13 +395,13 @@ End
 		  'end if
 		  
 		  
-		  var multiresult() as String = cDescription.Value.MatchAll("\((.*?d.*?)\)", 1 )
+		  var multiresult() as String = cDescription.Value.MatchAll("\((.*?d.*?)\) (\w+) damage", 1 )
 		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((.*?d.*?)\) (\w+) damage", 2 )
 		  
-		  if result = "" and multiresult.LastIndex >= lstDiceRolls.LastAddedRowIndex+1 then
-		    result = multiresult(lstDiceRolls.LastAddedRowIndex+1)
-		    if multidamagetypes.LastIndex >= lstDiceRolls.LastAddedRowIndex+1 then
-		      damageType = multidamagetypes(lstDiceRolls.LastAddedRowIndex+1).Titlecase
+		  if result = "" and multiresult.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		    result = multiresult(lstDiceRolls.LastRowIndex+1)
+		    if multidamagetypes.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		      damageType = multidamagetypes(lstDiceRolls.LastRowIndex+1).Titlecase
 		    end if
 		  end if
 		  
@@ -807,29 +807,45 @@ End
 		  
 		  
 		  // Hit the dice
+		  var multiresult() as String = cDescription.Value.MatchAll("\((.*?d.*?)\) (\w+) damage", 1 )
+		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((.*?d.*?)\) (\w+) damage", 2 )
+		  
 		  var toHit as string = Description.Match( "Attack: (.*?\d+) to hit", 1 )
 		  if toHit <> "" and NOT toHit.Contains("-") and NOT toHit.Contains("+") then
 		    toHit = "+" + toHit
 		  end if
-		  var Attack as string = Description.Match( "Hit: \d+ \((.*?)\)", 1 )
+		  'var Attack as string = Description.Match( "Hit: \d+ \((.*?)\)", 1 )
 		  
-		  if Attack <> "" then
-		    lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack )
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( Attack )
-		  end if
+		  'if Attack <> "" then
+		  'lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack )
+		  'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( Attack )
+		  'end if
 		  
-		  
-		  
-		  var AltAttack as String = Description.Match("plus \d+ \((.*?)\) \w+", 1 )
-		  if AltAttack <> "" then
-		    var altAttackType as string = Description.Match("plus \d+ \(.*?\) (\w+) damage", 1 )
-		    if altAttackType = "" then
-		      altAttackType = Title
+		  for index as Integer = 0 to multiresult.LastIndex
+		    if index = 0 and toHit <> "" then
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack )
+		    else
+		      var damageType as string = ""
+		      if multidamagetypes.LastIndex >= index then
+		        damageType = multidamagetypes(index)
+		      end if
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack ))
 		    end if
-		    
-		    lstDiceRolls.AddRow altAttackType.Titlecase, "", DiceCalculatorMethods.PrettifyMath( AltAttack )
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AltAttack )
-		  end if
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( Attack )
+		  next
+		  
+		  
+		  
+		  'var AltAttack as String = Description.Match("plus \d+ \((.*?)\) \w+", 1 )
+		  'if AltAttack <> "" then
+		  'var altAttackType as string = Description.Match("plus \d+ \(.*?\) (\w+) damage", 1 )
+		  'if altAttackType = "" then
+		  'altAttackType = Title
+		  'end if
+		  '
+		  'lstDiceRolls.AddRow altAttackType.Titlecase, "", DiceCalculatorMethods.PrettifyMath( AltAttack )
+		  'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AltAttack )
+		  'end if
 		  
 		  // Recharge
 		  if Title.Contains( "short rest" ) or Title.Contains( "short or long rest" ) then

@@ -741,7 +741,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   8
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -2700,8 +2700,8 @@ End
 		  var AppendTypeMenu as new DesktopMenuItem( "Add New" )
 		  
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Specie", "Append:race" )
-		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Class", "Append:class" )
-		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Subclass", "Append:subclass" )
+		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Class and Subclasses", "Append:class" )
+		  'AppendTypeMenu.AddMenu new DesktopMenuItem( "Subclass", "Append:subclass" )
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Background", "Append:background" )
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Equipment", "Append:item" )
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Feat", "Append:feat" )

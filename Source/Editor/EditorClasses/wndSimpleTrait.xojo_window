@@ -39,6 +39,7 @@ Begin Window wndSimpleTrait
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False

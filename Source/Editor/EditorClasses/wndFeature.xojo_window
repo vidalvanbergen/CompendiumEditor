@@ -39,6 +39,7 @@ Begin Window wndFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -108,6 +109,7 @@ Begin Window wndFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -145,6 +147,7 @@ Begin Window wndFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -317,7 +320,7 @@ Begin Window wndFeature
          TextColor       =   &cFAFAFA00
          Tooltip         =   ""
          Top             =   9
-         Transparent     =   False
+         Transparent     =   True
          Underline       =   False
          Visible         =   False
          Width           =   125
@@ -346,7 +349,7 @@ Begin Window wndFeature
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Give the feature an optional category."
-         Top             =   11
+         Top             =   9
          Transparent     =   False
          Underline       =   False
          Visible         =   False
@@ -368,6 +371,7 @@ Begin Window wndFeature
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False

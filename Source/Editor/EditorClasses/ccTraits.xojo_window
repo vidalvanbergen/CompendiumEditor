@@ -169,15 +169,15 @@ End
 		  xNode.AppendSimpleChild( "name", "Unnamed" )
 		  
 		  if IsAutoLevelFeature then
-		    var LastLevel as String = "1"
+		    'var LastLevel as String = "1"
 		    
 		    'if lstTraits.SelectedRowIndex > -1 then
 		    'LastLevel = lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 )
 		    'PageNr = lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 2 )
 		    'else
-		    if lstTraits.LastRowIndex > -1 then
-		      LastLevel = lstTraits.CellValueAt( lstTraits.LastRowIndex, 0 )
-		    end if
+		    'if lstTraits.LastRowIndex > -1 then
+		    'LastLevel = lstTraits.CellValueAt( lstTraits.LastRowIndex, 0 )
+		    'end if
 		    
 		    
 		    if lstTraits.LastRowIndex > -1 then
@@ -202,7 +202,7 @@ End
 		    'PageNr = lstTraits.CellValueAt( lstTraits.LastRowIndex, 2 )
 		    
 		    
-		    lstTraits.AddRow LastLevel, "Unnamed"
+		    lstTraits.AddRow "", "Unnamed"
 		  else
 		    lstTraits.AddRow "Unnamed", xNode.GetAttribute("category")'.Titlecase
 		  end if
@@ -456,10 +456,16 @@ End
 		    
 		    
 		    if IsAutoLevelFeature then
-		      var level as string = xNode.ToString.Match( "(\d+)(st|nd|rd|th) level", 1 )
-		      
-		      if level <> "" then
-		        lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Level
+		      if lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = "" then
+		        var level as string = xNode.ToString.Match( "(\d+)(st|nd|rd|th) level", 1 )
+		        
+		        if level = "" and lstTraits.SelectedRowIndex > 0 then
+		          level = lstTraits.CellValueAt( lstTraits.SelectedRowIndex-1, 0 )
+		        end if
+		        
+		        if level <> "" then
+		          lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Level
+		        end if
 		      end if
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = Name
 		      'lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 2 ) = PageNr

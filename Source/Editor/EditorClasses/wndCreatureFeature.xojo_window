@@ -823,15 +823,15 @@ End
 		  
 		  for index as Integer = 0 to multiresult.LastIndex
 		    if index = 0 and toHit <> "" then
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack )
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
 		    else
 		      var damageType as string = ""
 		      if multidamagetypes.LastIndex >= index then
 		        damageType = multidamagetypes(index)
 		      end if
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( Attack ))
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
 		    end if
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( Attack )
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
 		  next
 		  
 		  

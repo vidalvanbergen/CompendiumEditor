@@ -367,8 +367,11 @@ End
 		  
 		  if me.SelectedRowIndex <> row then
 		    g.DrawAlternatingRows(row)
-		    Return True
+		  else
+		    g.DrawingColor = CommonModule.SelectionColor
+		    g.FillRect 0, 0, g.Width, g.Height
 		  end if
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event

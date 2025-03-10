@@ -711,8 +711,9 @@ End
 		  
 		  if me.SelectedRowIndex <> row then
 		    g.DrawAlternatingRows(row)
-		    
-		    'Return True
+		  else
+		    g.DrawingColor = CommonModule.SelectionColor
+		    g.FillRect 0, 0, g.Width, g.Height
 		  end if
 		  
 		  
@@ -738,7 +739,6 @@ End
 		      
 		    End Select
 		    
-		    'g.FillOval 4, 2, g.Height-4, g.Height-4
 		    g.FillRect 0, 0, 4, g.Height
 		  end if
 		  

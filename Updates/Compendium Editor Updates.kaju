@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "6mvIINczP1o=",
+            "Security Token": "3HXkEi07bVA=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -37,10 +37,10 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "P+6FrDYjeR8=",
+            "Security Token": "l0yUea43kCo=",
             "MacBinary": {
                 "Hash": "3007B7B98BBA1AF1E8F60709DBDA2628",
-                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_MacOS.dmg"
+                "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
             },
             "WindowsBinary": {
                 "Hash": "86B815C580B67F24226DF1E9C7CC8C6D",

@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "VuhNcl77upk=",
+            "Security Token": "BhPrIsE26ds=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -37,9 +37,9 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "NF0Ds/hENRk=",
+            "Security Token": "J+wb4+PRZXg=",
             "MacBinary": {
-                "Hash": "8618E5CC73E709DE52C7196907487F42",
+                "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
             },
             "WindowsBinary": {

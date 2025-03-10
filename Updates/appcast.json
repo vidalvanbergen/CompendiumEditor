@@ -1,15 +1,15 @@
-KAJU 6A5E8D65A1FB8D966FD502281D9C43E137FE1B5B077CF2D901E8FCA002CDF331C2B9300CD07539B8C3000DA180809A774785D85282D631ADFCA2D9976244F006D1ECED87CF0E733F4484A57ED8314EB1B0180272EBDD6DCDBAECC1276358CC0DF231112A47EB7159FD91D5CEC576EA93D3BD838C00201B06CA32B60022612630BE022853C73210304DF4E6088BB5AA7DFDA29125487174BCB306FD026F9F70C9A04B28B9372DF4EAB4453C3B318A213EC2663CFF9462652B06366347D5031D5B5F1AF66D6EBFD2993F1CBE790F9630F34B8E289BA93724EB1563AE37F4E16C436790C020A78EAA09F516DCA8F48C090F6547AA8999ED1D7784CF3E9B92945897
+KAJU 174CEFC8EA801EAADC87EC2B7B408C306FBA02356FF7B9A8782CE9748D5DEADA31C504E650CDC8C73FF6BD7A944D131B7B8E2DA98346941B1CECD8B3A5E66BB7F8DCAD12F8FDEE0A0164957354583D4C4604CEF99E87AB85CB17A69AC14C561114E688C39A52401C1E0EBBD10B07743CEB21D82BCC923CB435580E7B3AA8B905BB510332559EE06FFC4C212FE6327E708666CE47E06F19D21DF3E8C0FBA47F365EB0EE7225D7AB35BDC33A041FAB09666BFF36BE5E72B76EE1F0AE3339664F8DF13E74EFCE33EAA7B6706870250A99C942300A29263952AB967225142547BA8F591ACB58DD313A43898BF2E69D86A1B8ACF69D9F8EC9311E80028EFF623F6F8F
 [
     {
         "AppName": "Compendium Editor",
         "ImageScale": 1,
         "ImageURL": "",
         "MinimumRequiredVersion": "",
-        "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul>\n  <li class=“new”>Initial Release</li>\n</ul>",
+        "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul class=\"update\">\n  <li class=\"new\">Initial Release.</li>\n</ul>\n\n<hr>\n  <h3>Developer notes:</h3>\n  <p><i>If the autoupdate fails, get the latest release from GitHub:</i></p>\n\n\n  <a class=\"button\" href=\"https://github.com/vidalvanbergen/CompendiumEditor/releases/\">Download the latest release from Github</a>",
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.0.0",
-        "Security Token": "2kzsSkeE1Hw=",
+        "Security Token": "S+4ByrPRgNc=",
         "MacBinary": {
             "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -22,6 +22,31 @@ KAJU 6A5E8D65A1FB8D966FD502281D9C43E137FE1B5B077CF2D901E8FCA002CDF331C2B9300CD07
         "LinuxBinary": {
             "Hash": "D36BB397B2D76EDE5930FAAE26012589",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_Linux.zip",
+            "ExecutableName": "Compendium Editor"
+        }
+    },
+    {
+        "AppName": "Compendium Editor",
+        "ImageScale": 1,
+        "ImageURL": "",
+        "MinimumRequiredVersion": "",
+        "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
+        "RequiresPayment": false,
+        "UseTransparency": true,
+        "Version": "1.1.0",
+        "Security Token": "n5Z8OFMQWIo=",
+        "MacBinary": {
+            "Hash": "3007B7B98BBA1AF1E8F60709DBDA2628",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_MacOS.dmg"
+        },
+        "WindowsBinary": {
+            "Hash": "86B815C580B67F24226DF1E9C7CC8C6D",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_Win64.zip",
+            "ExecutableName": "Compendium Editor.exe"
+        },
+        "LinuxBinary": {
+            "Hash": "2611BC888A278E2FDEEBCC3DF602851F",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_Linux64.zip",
             "ExecutableName": "Compendium Editor"
         }
     }

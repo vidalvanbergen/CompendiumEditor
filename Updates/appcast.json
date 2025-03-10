@@ -1,4 +1,4 @@
-KAJU 4B4F1D29E9AD8C10FCC5A5BF477587EC78B607ABF64FFFC8A0AA06D3F79D61CBFF64FBB26122420CE18D7C6D1A22C135B27415CAA0957E0191DDAC72D75983D5AD69D0240B4DD37961FD993CDE47D64401AD57B973FA38B4FF042330CFEF5D55247F8CA73F8A906F1FA26F62465E6BD77FFA3D6AA19F131F15A6CE8B62458BE95E2AF8DA794FCDE578A9AB9151D7059767BDCBD02AD1C4E60A161FE466028875C02D13234C83699905B9D6374E29C2A7B540E71A1C339A2863E72A0215F0478E39B6A10577DDE3C18049E1A8223F1C532B4832803F4CAB0ADEB496CE2D128364DC788CFE4CA6785350CEC4D6AEB39B743A683BFC4C22504AFE396738775B883C
+KAJU 50928309BF3A75F16075ADB3972AB6C8CA58796D97F8360194FCD84517FF9D277DFF052CCDDBF64E7B24B859D3E7CC95311AEFCA137FFE2762CC523F0C4C24A316BDF02DD500F27AEE103982939B8D4951CE927BA8696F197940143FAA59F5DB2740EEF29CA35161339863E1B4FA34FF6696F1090E9F258353D1A2ED8CE05B6B5DCF6375F7D4549882747018B195A4176A36D716B96CED238C32D1F426EC90A48B3FF0FEC68D1C2A72736FBFF52688517581342E4AB5019B33650D3B94A81338D5BC62304FF5B7DBE2EFF2B6A20067FF88DF82D2851A9DE468A2DB5E9803F43636CBE21A2C5319F4C1C6D9B5B0A87ED4DF480E03B78DA3575143239F623E34EB
 [
     {
         "AppName": "Compendium Editor",
@@ -9,7 +9,7 @@ KAJU 4B4F1D29E9AD8C10FCC5A5BF477587EC78B607ABF64FFFC8A0AA06D3F79D61CBFF64FBB2612
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.0.0",
-        "Security Token": "ul+Nbzah0gQ=",
+        "Security Token": "J7LoqfZb6go=",
         "MacBinary": {
             "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -30,11 +30,11 @@ KAJU 4B4F1D29E9AD8C10FCC5A5BF477587EC78B607ABF64FFFC8A0AA06D3F79D61CBFF64FBB2612
         "ImageScale": 1,
         "ImageURL": "",
         "MinimumRequiredVersion": "",
-        "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
+        "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.1.0",
-        "Security Token": "hKtp4q2aFaA=",
+        "Security Token": "6O0QOeBAp5Y=",
         "MacBinary": {
             "Hash": "3007B7B98BBA1AF1E8F60709DBDA2628",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_MacOS.dmg"

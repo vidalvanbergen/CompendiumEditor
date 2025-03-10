@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "zllmAHYmj4E=",
+            "Security Token": "6mvIINczP1o=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -33,11 +33,11 @@
             "ImageScale": 1,
             "ImageURL": "",
             "MinimumRequiredVersion": "",
-            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
+            "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "uhwnuTkoHHI=",
+            "Security Token": "P+6FrDYjeR8=",
             "MacBinary": {
                 "Hash": "3007B7B98BBA1AF1E8F60709DBDA2628",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_MacOS.dmg"

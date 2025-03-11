@@ -17,8 +17,6 @@
 					Subdirectory = 
 					FolderItem = Li4vUmVzb3VyY2VzL0Fzc2V0cy5jYXI=
 				End
-				Begin IDEScriptBuildStep Script1 , AppliesTo = 0, Architecture = 0, Target = 0
-				End
 			End
 			Begin BuildStepList Windows
 				Begin BuildProjectStep Build

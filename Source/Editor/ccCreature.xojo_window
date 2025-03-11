@@ -2996,13 +2996,13 @@ End
 	#tag Event
 		Sub Action()
 		  var nameParts() as String = cName.Value.Split( " " )
-		  if nameParts.LastIndex > -1 then
+		  if nameParts.LastIndex > 0 then
 		    var first as string = nameParts(0)
 		    nameParts.RemoveAt(0)
 		    cNameSort.Value = StringFromArray( nameParts, " " ) + ", " + first
-		    if cBaseCreature.Value.Trim = "" then
-		      cBaseCreature.Value = StringFromArray( nameParts, " " )
-		    end if
+		  end if
+		  if cBaseCreature.Value.Trim = "" then
+		    cBaseCreature.Value = StringFromArray( nameParts, " " )
 		  end if
 		End Sub
 	#tag EndEvent

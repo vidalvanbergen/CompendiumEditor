@@ -20,7 +20,7 @@ Begin WindowPro wndSourceEditor
    MinimumHeight   =   480
    MinimumWidth    =   768
    Resizeable      =   True
-   Title           =   ""
+   Title           =   "Editor"
    Type            =   0
    Visible         =   True
    Width           =   1024
@@ -1486,9 +1486,9 @@ End
 		      
 		      var type as string = xnode.Name
 		      if type = "Monster" then
-		        type = "Creature"
+		        type = "creature"
 		      elseif type = "race" then
-		        type = "Species"
+		        type = "species"
 		      end if
 		      
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = type

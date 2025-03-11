@@ -1483,7 +1483,15 @@ End
 		      xnode = lstXML.xDoc.FirstChild.AppendChildCopy( xnode )
 		      
 		      lstXML.AddRowAt( lstXML.SelectedRowIndex+1, xnode.ValueOfNodeWithName("name") )
-		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = xnode.Name
+		      
+		      var type as string = xnode.Name
+		      if type = "Monster" then
+		        type = "Creature"
+		      elseif type = "race" then
+		        type = "Species"
+		      end if
+		      
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = type
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xnode
 		      
 		      lstXML.SortByRow

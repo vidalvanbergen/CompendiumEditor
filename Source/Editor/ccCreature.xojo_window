@@ -3000,7 +3000,9 @@ End
 		    var first as string = nameParts(0)
 		    nameParts.RemoveAt(0)
 		    cNameSort.Value = StringFromArray( nameParts, " " ) + ", " + first
-		    cBaseCreature.Value = StringFromArray( nameParts, " " )
+		    if cBaseCreature.Value.Trim = "" then
+		      cBaseCreature.Value = StringFromArray( nameParts, " " )
+		    end if
 		  end if
 		End Sub
 	#tag EndEvent

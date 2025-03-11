@@ -134,7 +134,7 @@ Begin WindowPro wndSourceEditor
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
-         TabIndex        =   2
+         TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Publisher"
@@ -169,7 +169,7 @@ Begin WindowPro wndSourceEditor
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
-         TabIndex        =   3
+         TabIndex        =   5
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Publish Date"
@@ -214,7 +214,7 @@ Begin WindowPro wndSourceEditor
          LockTop         =   True
          MenuStyle       =   0
          Scope           =   0
-         TabIndex        =   4
+         TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
@@ -240,19 +240,19 @@ Begin WindowPro wndSourceEditor
          InitialParent   =   "cvsHeader"
          InitialValue    =   ""
          Italic          =   False
-         Left            =   382
+         Left            =   107
          LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
+         LockLeft        =   True
+         LockRight       =   False
          LockTop         =   True
          Scope           =   0
          SelectedRowIndex=   0
-         TabIndex        =   5
+         TabIndex        =   6
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   15
+         Top             =   83
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -264,21 +264,21 @@ Begin WindowPro wndSourceEditor
          Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsHeader"
-         Left            =   594
+         Left            =   319
          LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
+         LockLeft        =   True
+         LockRight       =   False
          LockTop         =   True
          MacControlStyle =   0
          RemoveEnabled   =   False
          Scope           =   0
          Segments        =   "+\n\nFalse\r-\n\nFalse"
          SelectionType   =   2
-         TabIndex        =   6
+         TabIndex        =   7
          TabPanelIndex   =   0
          TabStop         =   False
-         Top             =   12
+         Top             =   80
          Transparent     =   True
          Visible         =   True
          Width           =   48
@@ -315,7 +315,7 @@ Begin WindowPro wndSourceEditor
          LockTop         =   True
          MenuStyle       =   0
          Scope           =   0
-         TabIndex        =   7
+         TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
@@ -521,7 +521,7 @@ Begin WindowPro wndSourceEditor
             LockTop         =   True
             MacButtonStyle  =   0
             Scope           =   0
-            TabIndex        =   8
+            TabIndex        =   1
             TabPanelIndex   =   3
             TabStop         =   True
             Tooltip         =   ""
@@ -553,7 +553,7 @@ Begin WindowPro wndSourceEditor
             LockTop         =   True
             MacButtonStyle  =   0
             Scope           =   0
-            TabIndex        =   12
+            TabIndex        =   0
             TabPanelIndex   =   3
             TabStop         =   True
             Tooltip         =   ""
@@ -562,99 +562,6 @@ Begin WindowPro wndSourceEditor
             Underline       =   False
             Visible         =   True
             Width           =   75
-         End
-         Begin Label lblAddType
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            DataField       =   ""
-            DataSource      =   ""
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   20
-            Index           =   -2147483648
-            InitialParent   =   "cvsToolbar$2"
-            Italic          =   False
-            Left            =   0
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            Multiline       =   False
-            Scope           =   0
-            Selectable      =   False
-            TabIndex        =   13
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Text            =   "Add:"
-            TextAlignment   =   3
-            TextColor       =   &cFAFAFA00
-            Tooltip         =   ""
-            Top             =   132
-            Transparent     =   True
-            Underline       =   False
-            Visible         =   True
-            Width           =   50
-         End
-         Begin PopupMenu popCompendiumTypes
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            DataField       =   ""
-            DataSource      =   ""
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   20
-            Index           =   -2147483648
-            InitialParent   =   "cvsToolbar$2"
-            InitialValue    =   ""
-            Italic          =   False
-            Left            =   62
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            Scope           =   0
-            SelectedRowIndex=   0
-            TabIndex        =   14
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Tooltip         =   ""
-            Top             =   132
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   True
-            Width           =   180
-         End
-         BeginSegmented AddDuplicateRemoveButton arSourceType
-            AddEnabled      =   False
-            DuplicateEnabled=   False
-            Enabled         =   True
-            Height          =   24
-            Index           =   -2147483648
-            InitialParent   =   "cvsToolbar$2"
-            Left            =   254
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            MacControlStyle =   0
-            RemoveEnabled   =   False
-            Scope           =   0
-            Segments        =   "+\n\nFalse\r⿻\n\nFalse\r-\n\nFalse"
-            SelectionType   =   2
-            TabIndex        =   15
-            TabPanelIndex   =   3
-            TabStop         =   False
-            Top             =   130
-            Transparent     =   True
-            Visible         =   True
-            Width           =   72
          End
       End
       Begin EmbedControl ecSourceEditor
@@ -1028,7 +935,7 @@ Begin WindowPro wndSourceEditor
          HasHorizontalScrollbar=   False
          HasVerticalScrollbar=   True
          HeadingIndex    =   -1
-         Height          =   615
+         Height          =   575
          IgnoreChange    =   False
          Index           =   -2147483648
          InitialParent   =   "ppSourceEditor"
@@ -1049,7 +956,7 @@ Begin WindowPro wndSourceEditor
          RestoreOnChange =   False
          RowSelectionType=   0
          Scope           =   0
-         TabIndex        =   3
+         TabIndex        =   1
          TabPanelIndex   =   3
          TabStop         =   True
          Tooltip         =   ""
@@ -1060,6 +967,99 @@ Begin WindowPro wndSourceEditor
          Width           =   330
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
+      End
+      BeginSegmented AddDuplicateRemoveButton arSourceType
+         AddEnabled      =   False
+         DuplicateEnabled=   False
+         Enabled         =   True
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "ppSourceEditor"
+         Left            =   246
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   False
+         MacControlStyle =   0
+         RemoveEnabled   =   False
+         Scope           =   0
+         Segments        =   "+\n\nFalse\r⿻\n\nFalse\r-\n\nFalse"
+         SelectionType   =   2
+         TabIndex        =   5
+         TabPanelIndex   =   3
+         TabStop         =   False
+         Top             =   744
+         Transparent     =   True
+         Visible         =   True
+         Width           =   72
+      End
+      Begin PopupMenu popCompendiumTypes
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "ppSourceEditor"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   62
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   False
+         Scope           =   0
+         SelectedRowIndex=   0
+         TabIndex        =   4
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   747
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   172
+      End
+      Begin Label lblAddType
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "ppSourceEditor"
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   False
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   3
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Text            =   "Add:"
+         TextAlignment   =   3
+         TextColor       =   &cFAFAFA00
+         Tooltip         =   ""
+         Top             =   747
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   50
       End
    End
    Begin BevelButton bvlSourceTypes
@@ -1094,7 +1094,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1138,7 +1138,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1182,7 +1182,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1226,7 +1226,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1270,7 +1270,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1314,7 +1314,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1358,7 +1358,7 @@ Begin WindowPro wndSourceEditor
       LockTop         =   False
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1390,6 +1390,14 @@ End
 	#tag EndEvent
 
 	#tag Event
+		Sub EnableMenuItems()
+		  if lstXML.Active and lstXML.SelectedRowIndex > -1 then
+		    EditCopy.Enabled = True
+		  end if
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Sub Resizing()
 		  ecSourceEditor.Width = Min( 650, ppSourceEditor.Width )
 		  ecSourceEditor.Left = ( ppSourceEditor.Width/2 ) - ( ecSourceEditor.Width / 2 )
@@ -1409,6 +1417,21 @@ End
 		End Sub
 	#tag EndEvent
 
+
+	#tag MenuHandler
+		Function EditCopy() As Boolean Handles EditCopy.Action
+		  if lstXML.Active and lstXML.SelectedRowIndex > -1 then
+		    if lstXML.RowTagAt( lstXML.SelectedRowIndex ) IsA XMLNode then
+		      var xNode as XMLNode = lstXML.RowTagAt( lstXML.SelectedRowIndex )
+		      
+		      var c as new Clipboard
+		      c.Text = xNode.ToString
+		    end if
+		    Return True
+		  end if
+		  
+		End Function
+	#tag EndMenuHandler
 
 	#tag MenuHandler
 		Function FileSaveFile() As Boolean Handles FileSaveFile.Action
@@ -1474,44 +1497,28 @@ End
 		  
 		  if lstXML.SelectedRowIndex > -1 then
 		    
-		    'var lindex as Integer = lstXML.SelectedRowIndex
-		    'var type as string = lstXML.CellTextAt( lstXML.SelectedRowIndex, 1 )
-		    
-		    
 		    if lstXML.RowTagAt( lstXML.SelectedRowIndex ) IsA XMLNode then
 		      var xnode as XMLNode = lstXML.RowTagAt( lstXML.SelectedRowIndex )
 		      xnode = lstXML.xDoc.FirstChild.AppendChildCopy( xnode )
 		      
 		      lstXML.AddRowAt( lstXML.SelectedRowIndex+1, xnode.ValueOfNodeWithName("name") )
 		      
-		      var type as string = xnode.Name
-		      if type = "Monster" then
-		        type = "creature"
-		      elseif type = "race" then
-		        type = "species"
+		      var itemtype as String = xNode.Name
+		      if xNode.Name = "race" then
+		        itemtype = "species"
+		      elseif xNode.Name = "monster" then
+		        itemtype = "creature"
 		      end if
 		      
-		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = type
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = itemtype
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xnode
 		      
 		      lstXML.SortByRow
 		      
 		      lstXML.SelectedRowIndex = lstXML.LastAddedRowIndex
-		      
-		      'var xDoc as XMLDocument = xnode.OwnerDocument
-		      'xDoc.DocumentElement.RemoveChild( xnode )
-		      
-		      'lstXML.RemoveRowAt( lstXML.SelectedRowIndex )
 		    else
 		      Break
 		    end if
-		    
-		    // Restore selection
-		    'if lindex-1 > -1 then
-		    'lstXML.SelectedRowIndex = lindex-1
-		    'elseif lstXML.LastRowIndex > -1 then
-		    'lstXML.SelectedRowIndex = 0
-		    'end if
 		    
 		  end if
 		End Sub
@@ -1887,6 +1894,14 @@ End
 
 	#tag Property, Flags = &h0
 		cFeat As ccFeat
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		ChangesMadeToFile As Boolean = False
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		ChangesMadeToSource As Boolean = False
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -2287,53 +2302,16 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events popCompendiumTypes
-	#tag Event
-		Sub Open()
-		  me.AddRowWithTagAndPicture "Species", "race", template_compendium_species_32
-		  me.AddRowWithTagAndPicture "Class and Subclasses", "class", template_compendium_classes_32
-		  'me.AddRowWithTagAndPicture "Subclass", "subclass", templatesmall_swords
-		  me.AddRowWithTagAndPicture "Background", "background", template_compendium_banner_32
-		  me.AddRowWithTagAndPicture "Equipment", "item", template_compendium_treasure_32
-		  me.AddRowWithTagAndPicture "Feat", "feat", template_compendium_feat_32
-		  me.AddRowWithTagAndPicture "Spell", "spell", template_compendium_magic_32
-		  me.AddRowWithTagAndPicture "Creature", "monster", template_compendium_creature_32
-		  'me.AddRowWithTagAndPicture "NPC", "monster", templatesmall_dragon
-		  #if DebugBuild then
-		    me.AddRow "-"
-		    me.AddRowWithTagAndPicture "Template", "itemtemplate", template_compendium_32
-		  #endif
-		  
-		  me.SelectedRowIndex = 0
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events arSourceType
-	#tag Event
-		Sub ActionAdd()
-		  if Keyboard.AsyncAltKey then
-		    DuplicateItem
-		  else
-		    AppendToDocument( popCompendiumTypes.RowTagAt( popCompendiumTypes.SelectedRowIndex ).StringValue )
-		  end if
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionRemove()
-		  RemoveFromDocument
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionDuplicate()
-		  DuplicateItem
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events ecSourceEditor
 	#tag Event
 		Sub Open()
 		  me.Embed( SourceInfoEditorPanel )
 		  me.AdjustScroller
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ContentsChanged()
+		  me.Window.ContentsChanged = True
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2461,13 +2439,6 @@ End
 		Sub ImageRemoved()
 		  Source.CoverImageFile = Nil
 		  Source.ResetImages
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events ppEditorPanels
-	#tag Event
-		Sub Open()
-		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2707,7 +2678,7 @@ End
 		  
 		  var AppendTypeMenu as new DesktopMenuItem( "Add New" )
 		  
-		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Specie", "Append:race" )
+		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Species", "Append:race" )
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Class and Subclasses", "Append:class" )
 		  'AppendTypeMenu.AddMenu new DesktopMenuItem( "Subclass", "Append:subclass" )
 		  AppendTypeMenu.AddMenu new DesktopMenuItem( "Background", "Append:background" )
@@ -2889,6 +2860,48 @@ End
 		  'me.ColumnSortTypeAt(0) = DesktopListBox.SortTypes.NotSortable
 		  'me.ColumnSortTypeAt(1) = DesktopListBox.SortTypes.NotSortable
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events arSourceType
+	#tag Event
+		Sub ActionAdd()
+		  if Keyboard.AsyncAltKey then
+		    DuplicateItem
+		  else
+		    AppendToDocument( popCompendiumTypes.RowTagAt( popCompendiumTypes.SelectedRowIndex ).StringValue )
+		  end if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionRemove()
+		  RemoveFromDocument
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionDuplicate()
+		  DuplicateItem
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events popCompendiumTypes
+	#tag Event
+		Sub Open()
+		  me.AddRowWithTagAndPicture "Species", "race", template_compendium_species_32
+		  me.AddRowWithTagAndPicture "Class and Subclasses", "class", template_compendium_classes_32
+		  'me.AddRowWithTagAndPicture "Subclass", "subclass", templatesmall_swords
+		  me.AddRowWithTagAndPicture "Background", "background", template_compendium_banner_32
+		  me.AddRowWithTagAndPicture "Equipment", "item", template_compendium_treasure_32
+		  me.AddRowWithTagAndPicture "Feat", "feat", template_compendium_feat_32
+		  me.AddRowWithTagAndPicture "Spell", "spell", template_compendium_magic_32
+		  me.AddRowWithTagAndPicture "Creature", "monster", template_compendium_creature_32
+		  'me.AddRowWithTagAndPicture "NPC", "monster", templatesmall_dragon
+		  #if DebugBuild then
+		    me.AddRow "-"
+		    me.AddRowWithTagAndPicture "Template", "itemtemplate", template_compendium_32
+		  #endif
+		  
+		  me.SelectedRowIndex = 0
 		End Sub
 	#tag EndEvent
 #tag EndEvents

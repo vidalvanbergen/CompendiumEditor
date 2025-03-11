@@ -84,7 +84,7 @@ Begin Window wndFeature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the feature."
@@ -119,7 +119,7 @@ Begin Window wndFeature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -157,7 +157,7 @@ Begin Window wndFeature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -191,7 +191,7 @@ Begin Window wndFeature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -381,7 +381,7 @@ Begin Window wndFeature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -426,7 +426,7 @@ Begin Window wndFeature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000

@@ -84,7 +84,7 @@ Begin Window wndCreatureFeature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait or attack."
@@ -210,7 +210,7 @@ Begin Window wndCreatureFeature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -242,7 +242,7 @@ Begin Window wndCreatureFeature
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   4
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Dice Rolls:"
@@ -295,7 +295,7 @@ Begin Window wndCreatureFeature
       RequiresSelection=   False
       RowSelectionType=   0
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Attack rolls notation as name, value to hit, and roll for damage. A field can be left empty."
@@ -325,7 +325,7 @@ Begin Window wndCreatureFeature
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   522
@@ -365,7 +365,7 @@ Begin Window wndCreatureFeature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000

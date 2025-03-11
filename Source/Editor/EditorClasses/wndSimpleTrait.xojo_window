@@ -84,7 +84,7 @@ Begin Window wndSimpleTrait
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait."
@@ -142,7 +142,7 @@ Begin Window wndSimpleTrait
          LockTop         =   True
          MacButtonStyle  =   0
          Scope           =   0
-         TabIndex        =   3
+         TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
@@ -174,7 +174,7 @@ Begin Window wndSimpleTrait
          LockTop         =   True
          MacButtonStyle  =   0
          Scope           =   0
-         TabIndex        =   2
+         TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
@@ -217,7 +217,7 @@ Begin Window wndSimpleTrait
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000

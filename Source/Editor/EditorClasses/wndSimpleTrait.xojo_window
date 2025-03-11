@@ -20,7 +20,7 @@ Begin Window wndSimpleTrait
    MinimumHeight   =   802
    MinimumWidth    =   600
    Resizeable      =   True
-   Title           =   "Feature"
+   Title           =   "Trait"
    Type            =   8
    Visible         =   True
    Width           =   600

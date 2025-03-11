@@ -261,7 +261,7 @@ Begin Window wndCreatureFeature
       AllowExpandableRows=   False
       AllowFocusRing  =   True
       AllowResizableColumns=   False
-      AllowRowDragging=   False
+      AllowRowDragging=   True
       AllowRowReordering=   False
       Bold            =   False
       ColumnCount     =   3

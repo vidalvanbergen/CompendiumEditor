@@ -910,7 +910,7 @@ End
 		  if NOT chkSubclassSpell.Value then
 		    
 		    // Description
-		    if cDescription.Value <> "" then
+		    if cDescription.Value.Trim <> "" or cSource.Value.Trim <> "" then
 		      SetDescription( xNode, cDescription.Value, cSource.Value )
 		    end if
 		    

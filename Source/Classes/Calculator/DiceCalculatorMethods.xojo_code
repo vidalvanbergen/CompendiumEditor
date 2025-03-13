@@ -29,6 +29,8 @@ Protected Module DiceCalculatorMethods
 		  
 		  DisplayText = DisplayText.ReplaceAll( "  ", " " )
 		  
+		  DisplayText = DisplayText.ReplaceAll("De × ", "DEX")
+		  
 		  Return DisplayText
 		End Function
 	#tag EndMethod

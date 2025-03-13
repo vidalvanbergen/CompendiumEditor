@@ -2984,6 +2984,19 @@ End
 		  me.ContextMenu = contextMenu
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub BuildTemplateMenu()
+		  // Features Templates
+		  var tTemplateMenu as new MenuItem("Templates")
+		  
+		  tTemplateMenu.AddMenu new MenuItem("A Creature's Lair" )
+		  tTemplateMenu.AddMenu new MenuItem("Lair Actions" )
+		  tTemplateMenu.AddMenu new MenuItem("Regional Effects" )
+		  
+		  me.TemplateMenu = tTemplateMenu
+		  'cClassFeatures.TemplateMenu = TemplateMenu
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cSpells
 	#tag Event

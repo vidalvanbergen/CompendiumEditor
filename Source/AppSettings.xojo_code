@@ -76,8 +76,14 @@ Protected Module AppSettings
 
 	#tag Method, Flags = &h1
 		Protected Sub InitializeKaju()
-		  if UpdateChecker = Nil then
+		  if UpdateChecker = Nil and SupportFolder <> Nil then
 		    UpdateChecker = new Kaju.UpdateChecker( SupportFolder )
+		  else
+		    #if DebugBuild then
+		      MessageBox  "Could not initiate updatechecker"
+		    #endif
+		    
+		    Return
 		  end if
 		  
 		  UpdateChecker.ServerPublicRSAKey = kPublicRSAKey

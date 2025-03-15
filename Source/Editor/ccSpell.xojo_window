@@ -1459,6 +1459,13 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events cDiceRolls
+	#tag Event
+		Sub FindTextIn(ByRef Source as String)
+		  Source = cDescription.Value
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events bvlClipboard
 	#tag Event
 		Sub Action()

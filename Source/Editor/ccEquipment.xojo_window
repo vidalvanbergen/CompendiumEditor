@@ -41,6 +41,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -172,6 +173,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsArmor"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -209,6 +211,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsArmor"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -273,6 +276,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -310,6 +314,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   356
          LockBottom      =   False
          LockedInPosition=   False
@@ -347,6 +352,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -384,6 +390,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -421,6 +428,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   356
          LockBottom      =   False
          LockedInPosition=   False
@@ -458,6 +466,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -496,6 +505,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -533,6 +543,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -570,6 +581,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -607,6 +619,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -644,6 +657,7 @@ Begin ContainerControl ccEquipment
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -831,6 +845,7 @@ Begin ContainerControl ccEquipment
          Height          =   22
          Index           =   -2147483648
          InitialParent   =   "cvsPlacard"
+         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
@@ -1939,6 +1954,13 @@ End
 		  templatesMenu.AddMenu new MenuItem( "Inhaled", "template:" + kPoisonInhaled )
 		  
 		  me.TemplateMenu = templatesMenu
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDiceRolls
+	#tag Event
+		Sub FindTextIn(ByRef Source as String)
+		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent
 #tag EndEvents

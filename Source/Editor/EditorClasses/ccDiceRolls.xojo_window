@@ -177,10 +177,20 @@ End
 #tag WindowCode
 	#tag Method, Flags = &h0
 		Sub AddCalculation()
+		  var Source as String
+		  RaiseEvent FindTextIn( Source )
 		  
 		  var result, description as string
 		  
-		  if lstDiceRolls.SelectedRowIndex > -1 then
+		  if Source <> "" then
+		    var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?).*?(\w+|\.)", 1 )
+		    
+		    
+		    if multiResults.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		      result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
+		    end if
+		    
+		  elseif lstDiceRolls.SelectedRowIndex > -1 then
 		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
 		    description = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
 		  end if
@@ -281,6 +291,11 @@ End
 		  lstDiceRolls.Invalidate
 		End Sub
 	#tag EndMethod
+
+
+	#tag Hook, Flags = &h0
+		Event FindTextIn(ByRef Source as String)
+	#tag EndHook
 
 
 #tag EndWindowCode

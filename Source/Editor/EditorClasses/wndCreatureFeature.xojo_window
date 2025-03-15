@@ -381,6 +381,29 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  dim AscKey as Integer = Asc( key )
+		  
+		  if (TargetMacOS AND Keyboard.AsyncCommandKey) OR (NOT TargetMacOS AND Keyboard.AsyncControlKey) then
+		    
+		    Select case AscKey
+		      
+		    case 61 '=
+		      AddCalculation
+		      Return True
+		      
+		    case 105 'i
+		      ImportFromClipboard
+		      Return True
+		      
+		    End Select
+		    
+		  end if
+		End Function
+	#tag EndEvent
+
+
 	#tag Method, Flags = &h0
 		Sub AddCalculation()
 		  
@@ -525,6 +548,105 @@ End
 		    end if
 		  end if
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ImportFromClipboard()
+		  var c as new Clipboard
+		  
+		  var Title as string
+		  var Description as String = c.Text
+		  
+		  Description = NormalizeLineEndings( Description )
+		  
+		  Title = c.Text.Match( "(.*?)(\.|:)", 1 )
+		  if Title <> "" then
+		    if c.Text.StartsWith( Title + "." ) then
+		      Description = c.Text.Replace( Title + ".", "" )
+		    elseif c.Text.StartsWith( Title + ":" ) then
+		      Description = c.Text.Replace( Title + ":", "" )
+		    end if
+		    Description = Description.Trim
+		  end if
+		  
+		  cName.Value = Title
+		  
+		  if Description.Contains( "• " ) or Description.Contains("slots):") or Description.Contains("(at will)") or Description.Contains( "/day" ) then
+		    'cDescription.FormatParagraphs( Description, False )
+		    'cDescription.FormatLists( Description, false )
+		  else
+		    Description = Description.ReplaceAll( chr(13), " " ).ReplaceAll( EndOfLine, " " )
+		  end if
+		  cDescription.Value = Description
+		  
+		  
+		  // Hit the dice
+		  var multiresult() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\)", 1 )
+		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\) (\w+) damage", 2 )
+		  
+		  var toHit as string = Description.Match( "Attack: (.*?\d+) to hit", 1 )
+		  if toHit <> "" and NOT toHit.Contains("-") and NOT toHit.Contains("+") then
+		    toHit = "+" + toHit
+		  end if
+		  
+		  
+		  for index as Integer = 0 to multiresult.LastIndex
+		    if index = 0 and toHit <> "" then
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
+		    else
+		      var damageType as string = ""
+		      if multidamagetypes.LastIndex >= index then
+		        damageType = multidamagetypes(index)
+		      end if
+		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
+		    end if
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
+		  next
+		  
+		  
+		  // Recharge
+		  if Title.Contains( "short rest" ) or Title.Contains( "short or long rest" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "SHORT" )
+		    cRecharge.Tag = "SHORT"
+		    
+		  elseif Title.Contains( "long rest" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "LONG" )
+		    cRecharge.Tag = "LONG"
+		    
+		  elseif Title.Contains( "(Recharge 6" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D6" )
+		    cRecharge.Tag = "D6"
+		    
+		  elseif Title.Contains( "(Recharge 5" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D5" )
+		    cRecharge.Tag = "D5"
+		    
+		  elseif Title.Contains( "(Recharge 4" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D4" )
+		    cRecharge.Tag = "D4"
+		    
+		  elseif Title.Contains( "(Recharge 3" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D3" )
+		    cRecharge.Tag = "D3"
+		    
+		  elseif Title.Contains( "(Recharge 2" ) then
+		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D2" )
+		    cRecharge.Tag = "D2"
+		    
+		  elseif Title.Contains("/Day") then
+		    cRecharge.Value = Replace( Title.Match ( "(\d+\/Day)", 1 ), "day", "Day" )
+		    cRecharge.Tag = cRecharge.Value
+		    
+		    cName.Value = Title.Replace( "/day", "/Day" )
+		    
+		  elseif Title.Contains( "/Turn") then
+		    cRecharge.Value = Replace( Title.Match ( "(\d+\/Turn)", 1 ), "turn", "Turn" )
+		    cRecharge.Tag = cRecharge.Value
+		    
+		    cName.Value = Title.Replace( "/turn", "/Turn" )
+		    
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -752,13 +874,45 @@ End
 		  End Select
 		End Function
 	#tag EndEvent
+	#tag Event
+		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
+		  
+		  var AddMenu as new MenuItem("Add")
+		  AddMenu.Shortcut = "+"
+		  
+		  var RemoveMenu as new MenuItem("Remove")
+		  'RemoveMenu.Shortcut = Asc(8)
+		  
+		  base.AddMenu AddMenu
+		  base.AddMenu new MenuItem( "Edit" )
+		  base.AddMenu RemoveMenu
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
+		  if hitItem <> Nil then
+		    
+		    Select case hitItem.Text
+		      
+		    case "Add"
+		      AddCalculation
+		    case "Edit"
+		      EditCalculation
+		    case "Remove"
+		      RemoveCalculation
+		      
+		    End Select
+		    
+		    Return True
+		  end if
+		End Function
+	#tag EndEvent
 #tag EndEvents
 #tag Events areModifier
 	#tag Event
 		Sub ActionAdd()
-		  'lstModifiers.AddRow popCategory.Text, cbModifierValue.Text
-		  'lstModifiers.SelectedRowIndex = lstModifiers.LastAddedRowIndex
-		  
 		  AddCalculation
 		End Sub
 	#tag EndEvent
@@ -778,100 +932,7 @@ End
 #tag Events bvlClipboard
 	#tag Event
 		Sub Action()
-		  var c as new Clipboard
-		  
-		  var Title as string
-		  var Description as String = c.Text
-		  
-		  Description = NormalizeLineEndings( Description )
-		  
-		  Title = c.Text.Match( "(.*?)(\.|:)", 1 )
-		  if Title <> "" then
-		    if c.Text.StartsWith( Title + "." ) then
-		      Description = c.Text.Replace( Title + ".", "" )
-		    elseif c.Text.StartsWith( Title + ":" ) then
-		      Description = c.Text.Replace( Title + ":", "" )
-		    end if
-		    Description = Description.Trim
-		  end if
-		  
-		  cName.Value = Title
-		  
-		  if Description.Contains( "• " ) or Description.Contains("slots):") or Description.Contains("(at will)") or Description.Contains( "/day" ) then
-		    'cDescription.FormatParagraphs( Description, False )
-		    'cDescription.FormatLists( Description, false )
-		  else
-		    Description = Description.ReplaceAll( chr(13), " " ).ReplaceAll( EndOfLine, " " )
-		  end if
-		  cDescription.Value = Description
-		  
-		  
-		  // Hit the dice
-		  var multiresult() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\)", 1 )
-		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\) (\w+) damage", 2 )
-		  
-		  var toHit as string = Description.Match( "Attack: (.*?\d+) to hit", 1 )
-		  if toHit <> "" and NOT toHit.Contains("-") and NOT toHit.Contains("+") then
-		    toHit = "+" + toHit
-		  end if
-		  
-		  
-		  for index as Integer = 0 to multiresult.LastIndex
-		    if index = 0 and toHit <> "" then
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
-		    else
-		      var damageType as string = ""
-		      if multidamagetypes.LastIndex >= index then
-		        damageType = multidamagetypes(index)
-		      end if
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
-		    end if
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
-		  next
-		  
-		  
-		  // Recharge
-		  if Title.Contains( "short rest" ) or Title.Contains( "short or long rest" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "SHORT" )
-		    cRecharge.Tag = "SHORT"
-		    
-		  elseif Title.Contains( "long rest" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "LONG" )
-		    cRecharge.Tag = "LONG"
-		    
-		  elseif Title.Contains( "(Recharge 6" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D6" )
-		    cRecharge.Tag = "D6"
-		    
-		  elseif Title.Contains( "(Recharge 5" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D5" )
-		    cRecharge.Tag = "D5"
-		    
-		  elseif Title.Contains( "(Recharge 4" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D4" )
-		    cRecharge.Tag = "D4"
-		    
-		  elseif Title.Contains( "(Recharge 3" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D3" )
-		    cRecharge.Tag = "D3"
-		    
-		  elseif Title.Contains( "(Recharge 2" ) then
-		    cRecharge.Value = TitleForMenuWithTag( cRecharge.BaseMenu, "D2" )
-		    cRecharge.Tag = "D2"
-		    
-		  elseif Title.Contains("/Day") then
-		    cRecharge.Value = Replace( Title.Match ( "(\d+\/Day)", 1 ), "day", "Day" )
-		    cRecharge.Tag = cRecharge.Value
-		    
-		    cName.Value = Title.Replace( "/day", "/Day" )
-		    
-		  elseif Title.Contains( "/Turn") then
-		    cRecharge.Value = Replace( Title.Match ( "(\d+\/Turn)", 1 ), "turn", "Turn" )
-		    cRecharge.Tag = cRecharge.Value
-		    
-		    cName.Value = Title.Replace( "/turn", "/Turn" )
-		    
-		  end if
+		  ImportFromClipboard
 		End Sub
 	#tag EndEvent
 #tag EndEvents

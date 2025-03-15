@@ -233,6 +233,25 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  dim AscKey as Integer = Asc( key )
+		  
+		  if (TargetMacOS AND Keyboard.AsyncCommandKey) OR (NOT TargetMacOS AND Keyboard.AsyncControlKey) then
+		    
+		    Select case AscKey
+		      
+		    case 105 'i
+		      ImportFromClipboard
+		      Return True
+		      
+		    End Select
+		    
+		  end if
+		End Function
+	#tag EndEvent
+
+
 	#tag Method, Flags = &h0
 		Sub CompileXML()
 		  xNode.RemoveAllChildren
@@ -243,6 +262,40 @@ End
 		  
 		  // Description 
 		  SetDescription( xNode, cDescription.Value, "" )
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ImportFromClipboard()
+		  var c as new Clipboard
+		  
+		  var Title as string
+		  var Description as String
+		  if c.Text <> "" then
+		    
+		    var lines() as string = NormalizeLineEndings( c.Text ).Split( EndOfLine )
+		    
+		    if lines.LastIndex > -1 then
+		      
+		      if lines(0).Length <= 50 then
+		        Title = lines(0)
+		        lines.RemoveAt(0)
+		      end if
+		      
+		      Description = string.FromArray( lines, EndOfLine )
+		    end if
+		  end if
+		  
+		  cDescription.FormatParagraphs( Description, False )
+		  cDescription.FormatLists( Description, false )
+		  
+		  
+		  if cName.Value.Contains( "FeatureName" ) then
+		    cName.Value = cName.Value.Replace("FeatureName", Title)
+		  else
+		    cName.Value = Title
+		  end if
+		  cDescription.Value = Description
 		End Sub
 	#tag EndMethod
 
@@ -389,35 +442,7 @@ End
 #tag Events bvlClipboard
 	#tag Event
 		Sub Action()
-		  var c as new Clipboard
-		  
-		  var Title as string
-		  var Description as String
-		  if c.Text <> "" then
-		    
-		    var lines() as string = NormalizeLineEndings( c.Text ).Split( EndOfLine )
-		    
-		    if lines.LastIndex > -1 then
-		      
-		      if lines(0).Length <= 50 then
-		        Title = lines(0)
-		        lines.RemoveAt(0)
-		      end if
-		      
-		      Description = string.FromArray( lines, EndOfLine )
-		    end if
-		  end if
-		  
-		  cDescription.FormatParagraphs( Description, False )
-		  cDescription.FormatLists( Description, false )
-		  
-		  
-		  if cName.Value.Contains( "FeatureName" ) then
-		    cName.Value = cName.Value.Replace("FeatureName", Title)
-		  else
-		    cName.Value = Title
-		  end if
-		  cDescription.Value = Description
+		  ImportFromClipboard
 		End Sub
 	#tag EndEvent
 #tag EndEvents

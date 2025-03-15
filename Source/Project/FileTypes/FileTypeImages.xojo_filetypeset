@@ -7,7 +7,7 @@
 		MacType=JPEG
 		Name=image/jpeg
 		UTI=public.jpeg
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -23,7 +23,7 @@
 		MacType=PNGf
 		Name=image/png
 		UTI=public.png
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -39,7 +39,7 @@
 		MacType=GIFf
 		Name=image/gif
 		UTI=com.compuserve.gif
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -55,7 +55,7 @@
 		MacType=TIFF
 		Name=image/tiff
 		UTI=public.tiff
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -71,7 +71,7 @@
 		MacType=JPEG
 		Name=image/tbn
 		UTI=public.tbn
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True

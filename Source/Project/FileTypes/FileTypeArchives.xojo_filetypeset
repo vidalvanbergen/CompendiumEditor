@@ -7,7 +7,7 @@
 		MacType=ZIP 
 		Name=application/zip
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -23,7 +23,7 @@
 		MacType=TARF
 		Name=application/x-tar
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -39,7 +39,7 @@
 		MacType=SITD
 		Name=application/x-stuffit
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -55,7 +55,7 @@
 		MacType=Gzip
 		Name=application/x-gzip
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -71,7 +71,7 @@
 		MacType=RAR
 		Name=application/rar
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -87,7 +87,7 @@
 		MacType=????
 		Name=virtual/diskimage
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -103,7 +103,7 @@
 		MacType=7z
 		Name=application/7z
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True

@@ -7,7 +7,7 @@
 		MacType=MKV
 		Name=video/x-matroska
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -23,7 +23,7 @@
 		MacType=OggS
 		Name=video/ogg
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -39,7 +39,7 @@
 		MacType=qtlk
 		Name=application/x-quicktimeplayer
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -55,7 +55,7 @@
 		MacType=????
 		Name=video/realplayer
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -71,7 +71,7 @@
 		MacType=????
 		Name=video/misc
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -87,7 +87,7 @@
 		MacType=3gpp
 		Name=video/3gpp
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -103,7 +103,7 @@
 		MacType=3gp2
 		Name=video/3gpp2
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -119,7 +119,7 @@
 		MacType=VfW 
 		Name=video/avi
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -135,7 +135,7 @@
 		MacType=FLI 
 		Name=video/flc
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -151,7 +151,7 @@
 		MacType=FLV
 		Name=video/flash
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -167,7 +167,7 @@
 		MacType=mpg4
 		Name=video/mp4
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -183,7 +183,7 @@
 		MacType=MPEG
 		Name=video/mpeg
 		UTI=public.mpeg
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -199,7 +199,7 @@
 		MacType=VfW 
 		Name=video/msvideo
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -215,7 +215,7 @@
 		MacType=MooV
 		Name=video/quicktime
 		UTI=com.apple.quicktime-movie
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -231,7 +231,7 @@
 		MacType=sdv 
 		Name=video/sd-video
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -247,7 +247,7 @@
 		MacType=dvc!
 		Name=video/x-dv
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -263,7 +263,7 @@
 		MacType=M4V 
 		Name=video/x-m4v
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -279,7 +279,7 @@
 		MacType=MPEG
 		Name=video/x-mpeg
 		UTI=public.mpeg
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -295,7 +295,7 @@
 		MacType=ASF_
 		Name=video/x-ms-asf
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -311,7 +311,7 @@
 		MacType=ASF_
 		Name=video/x-ms-asx
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -327,7 +327,7 @@
 		MacType=ASF_
 		Name=video/x-ms-wm
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -343,7 +343,7 @@
 		MacType=ASF_
 		Name=video/x-ms-wmv
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -359,7 +359,7 @@
 		MacType=ASF_
 		Name=video/x-ms-wmx
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -375,7 +375,7 @@
 		MacType=ASF_
 		Name=video/x-ms-wvx
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -391,7 +391,7 @@
 		MacType=VfW 
 		Name=video/x-msvideo
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -407,7 +407,7 @@
 		MacType=VOD
 		Name=video/vob
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -423,7 +423,7 @@
 		MacType=BDMV
 		Name=video/bdmv
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -439,7 +439,7 @@
 		MacType=DVD
 		Name=video/dvd
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True

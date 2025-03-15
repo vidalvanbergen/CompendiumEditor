@@ -7,7 +7,7 @@
 		MacType=Mp3 
 		Name=audio/mp3
 		UTI=public.mp3
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -23,7 +23,7 @@
 		MacType=M4A 
 		Name=audio/m4a
 		UTI=public.mpeg-4-audio
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -39,7 +39,7 @@
 		MacType=M4B 
 		Name=audio/m4b
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -55,7 +55,7 @@
 		MacType=M4P 
 		Name=audio/m4p
 		UTI=com.apple.protected-mpeg-4-audio
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -71,7 +71,7 @@
 		MacType=Midi
 		Name=audio/mid
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -87,7 +87,7 @@
 		MacType=Midi
 		Name=audio/midi
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -103,7 +103,7 @@
 		MacType=MPEG
 		Name=audio/mpeg
 		UTI=public.mpeg
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -119,7 +119,7 @@
 		MacType=Mp3 
 		Name=audio/mpeg3
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -135,7 +135,7 @@
 		MacType=MP3U
 		Name=audio/mpegurl
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -151,7 +151,7 @@
 		MacType=PLS 
 		Name=audio/scpls
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -167,7 +167,7 @@
 		MacType=OggS
 		Name=audio/speex
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -183,7 +183,7 @@
 		MacType=celp
 		Name=audio/vnd.qcelp
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -199,7 +199,7 @@
 		MacType=.WAV
 		Name=audio/wav
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -215,7 +215,7 @@
 		MacType=adts
 		Name=audio/x-aac
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -231,7 +231,7 @@
 		MacType=AIFF
 		Name=audio/x-aiff
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -247,7 +247,7 @@
 		MacType=AUDB
 		Name=audio/x-audible
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -263,7 +263,7 @@
 		MacType=caff
 		Name=audio/x-caf
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -279,7 +279,7 @@
 		MacType=GSM 
 		Name=audio/x-gsm
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -295,7 +295,7 @@
 		MacType=M4A 
 		Name=audio/x-m4a
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -311,7 +311,7 @@
 		MacType=M4B 
 		Name=audio/x-m4b
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -327,7 +327,7 @@
 		MacType=M4P 
 		Name=audio/x-m4p
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -343,7 +343,7 @@
 		MacType=Midi
 		Name=audio/x-midi
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -359,7 +359,7 @@
 		MacType=Mp3 
 		Name=audio/x-mp3
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -375,7 +375,7 @@
 		MacType=MPEG
 		Name=audio/x-mpeg
 		UTI=public.mpeg
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -391,7 +391,7 @@
 		MacType=Mp3 
 		Name=audio/x-mpeg3
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -407,7 +407,7 @@
 		MacType=MP3U
 		Name=audio/x-mpegurl
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -423,7 +423,7 @@
 		MacType=ASF_
 		Name=audio/x-ms-wax
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -439,7 +439,7 @@
 		MacType=ASF_
 		Name=audio/x-ms-wma
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -455,7 +455,7 @@
 		MacType=PNRM
 		Name=audio/x-pn-realaudio
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -471,7 +471,7 @@
 		MacType=PLS 
 		Name=audio/x-scpls
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -487,7 +487,7 @@
 		MacType=Sd2f
 		Name=audio/x-sd2
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -503,7 +503,7 @@
 		MacType=OggS
 		Name=audio/x-speex
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -519,7 +519,7 @@
 		MacType=.WAV
 		Name=audio/x-wav
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -535,7 +535,7 @@
 		MacType=3gpp
 		Name=audio/3gpp
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -551,7 +551,7 @@
 		MacType=3gp2
 		Name=audio/3gpp2
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -567,7 +567,7 @@
 		MacType=adts
 		Name=audio/aac
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -583,7 +583,7 @@
 		MacType=AIFF
 		Name=audio/aiff
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -599,7 +599,7 @@
 		MacType=amr 
 		Name=audio/AMR
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -615,7 +615,7 @@
 		MacType=AUDB
 		Name=audio/audible
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True
@@ -631,7 +631,7 @@
 		MacType=ULAW
 		Name=audio/basic
 		UTI=
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True

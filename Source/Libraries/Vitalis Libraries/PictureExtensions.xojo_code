@@ -45,6 +45,32 @@ Protected Module PictureExtensions
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h1
+		Protected Function Blend(top As Color, base As Color, opacity As Double) As Color
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  '
+		  '    This function blends two Color values and has a similar effect as blending a picture
+		  '    with a mask.  The opacity parameter refers to the transparency value of the "top" 
+		  '    pixel... and works very similar to Photoshop's transparency.  The max is 1.0 and is 
+		  '    fully opaque, whereas 0.0 is fully transparent.
+		  '
+		  '    NOTE: the function overhead is too high to make this effective in a loop (see Gradiant)
+		  '
+		  '    Returns the blended Color.
+		  '
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  
+		  If (opacity > 1.0) Then opacity = 1.0
+		  Dim inver As Double = 1.0 - opacity
+		  
+		  Return RGB( _
+		  (top.Red * opacity) + (base.Red * inver), _
+		  (top.Green * opacity) + (base.Green * inver), _
+		  (top.Blue * opacity) + (base.Blue * inver) _
+		  )
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Function Copy(extends p As Picture, force32Bit As Boolean = False) As Picture
 		  #pragma DisableBackgroundTasks

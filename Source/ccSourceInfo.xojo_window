@@ -260,7 +260,7 @@ End
 
 	#tag Method, Flags = &h0
 		Sub Load(Source as SourceCore)
-		  var t as new TimeFunction( "ccSourceInfo.Load( " + Parent.Name + " )" )
+		  'var t as new TimeFunction( "ccSourceInfo.Load( " + Parent.Name + " )" )
 		  
 		  lblSourceName.Text = ""
 		  lblSourcePublisher.Text = ""

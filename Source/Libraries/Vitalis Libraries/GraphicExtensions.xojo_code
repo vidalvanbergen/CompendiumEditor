@@ -94,6 +94,118 @@ Protected Module GraphicExtensions
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub DrawArrow(Extends g As Graphics, Dir As Integer, x As Integer, y As Integer, Width As Integer, Height As Integer)
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  '
+		  '    Draws an arrow to the screen.
+		  '
+		  '    Note: The x and y start in the top left hand corner.
+		  '
+		  '    Variables:
+		  '    g - The Graphics Object
+		  '    Dir - The direction the arrow is pointing
+		  '        Values:
+		  '            0 - None
+		  '            1 - North
+		  '            2 - North East
+		  '            3 - East
+		  '            4 - South East
+		  '            5 - South
+		  '            6 - South West
+		  '            7 - West
+		  '            8 - North West
+		  '    x - The x coordinate for the arrow
+		  '    y - The y coordinate for the arrow
+		  '    Width - The width of the arrow
+		  '    Height - The height of the arrow
+		  '
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  
+		  Dim fx As New FigureShape
+		  Dim pW, pH As Single
+		  
+		  If Width > Height Then
+		    x = x + ((Width - Height)/2)
+		    Width = Height
+		  Else
+		    y = y + ((Height - Width)/2)
+		    Height = Width
+		  End If
+		  
+		  fx.X = Width/2
+		  fx.Y = Height/2
+		  
+		  fx.Border = 0
+		  fx.FillColor = g.ForeColor
+		  
+		  pW = Width/100
+		  pH = Height/100
+		  
+		  
+		  Select Case Dir
+		  Case 0 'None
+		    fx.AddLine 30*pW, 30*pH, 70*pW, 30*pH
+		    fx.AddLine 70*pW, 70*pH, 30*pW, 70*pH
+		    
+		  Case 1 'North
+		    fx.AddLine 50*pW, 0*pH, 100*pW, 50*pH
+		    fx.AddLine 80*pW, 50*pH, 80*pW, 100*pH
+		    fx.AddLine 20*pW, 100*pH, 20*pW, 50*pH
+		    fx.AddLine 0*pW, 50*pH, 50*pW, 0*pH
+		    
+		  Case 2 'North East
+		    fx.AddLine 100*pW, 0*pH, 100*pW, 80*pH
+		    fx.AddLine 80*pW, 60*pH, 40*pW, 100*pH
+		    fx.AddLine 0*pW, 60*pH, 40*pW, 20*pH
+		    fx.AddLine 20*pW, 0*pH, 100*pW, 0*pH
+		    
+		  Case 3 'East
+		    fx.AddLine 100*pW, 50*pH, 50*pW, 100*pH
+		    fx.AddLine 50*pW, 80*pH, 0*pW, 80*pH
+		    fx.AddLine 0*pW, 20*pH, 50*pW, 20*pH
+		    fx.AddLine 50*pW, 0*pH, 100*pW, 50*pH
+		    
+		  Case 4 'South East
+		    fx.AddLine 100*pW, 100*pH, 20*pW, 100*pH
+		    fx.AddLine 40*pW, 80*pH, 0*pW, 40*pH
+		    fx.AddLine 40*pW, 0*pH, 80*pW, 40*pH
+		    fx.AddLine 100*pW, 20*pH, 100*pW, 100*pH
+		    
+		  Case 5 'South
+		    fx.AddLine 50*pW, 100*pH, 0*pW, 50*pH
+		    fx.AddLine 20*pW, 50*pH, 20*pW, 0*pH
+		    fx.AddLine 80*pW, 0*pH, 80*pW, 50*pH
+		    fx.AddLine 100*pW, 50*pH, 50*pW, 100*pH
+		    
+		  Case 6 'South West
+		    fx.AddLine 0*pW, 100*pH, 0*pW, 20*pH
+		    fx.AddLine 20*pW, 40*pH, 60*pW, 0*pH
+		    fx.AddLine 100*pW, 40*pH, 60*pW, 80*pH
+		    fx.AddLine 80*pW, 100*pH, 0*pW, 100*pH
+		    
+		  Case 7 'West
+		    fx.AddLine 0*pW, 50*pH, 50*pW, 0*pH
+		    fx.AddLine 50*pW, 20*pH, 100*pW, 20*pH
+		    fx.AddLine 100*pW, 80*pH, 50*pW, 80*pH
+		    fx.AddLine 50*pW, 100*pH, 0*pW, 50*pH
+		    
+		  Case 8 'North West
+		    fx.AddLine 0*pW, 0*pH, 80*pW, 0*pH
+		    fx.AddLine 60*pW, 20*pH, 100*pW, 60*pH
+		    fx.AddLine 60*pW, 100*pH, 20*pW, 60*pH
+		    fx.AddLine 0*pW, 80*pH, 0*pW, 0*pH
+		    
+		  Else
+		    Exit Sub
+		    
+		  End
+		  
+		  g.DrawObject(fx, x, y)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub DrawDiagonalText(extends g As Graphics, Text As String, x As Integer, y As Integer, Width As Integer, Height As Integer)
 		  dim s As New StringShape
 		  s.Bold = True
@@ -114,61 +226,62 @@ Protected Module GraphicExtensions
 
 	#tag Method, Flags = &h0
 		Sub DrawFade(extends g as graphics, ColorStart As Color, ColorEnd As Color, FadeDir As integer = 0, x As Integer = - 1, y As Integer = - 1, Width As integer = - 1, Height As Integer = - 1)
-		  dim j, w As Integer
-		  dim pct As Double
-		  dim colorset() As color
+		  Dim j As Int32
+		  Dim w As Double
+		  Dim pct As Double
+		  Dim colorset() As Color
 		  
-		  if x = -1 Or y = -1 Or Width = -1 Or Height = -1 then
-		    x = 0
-		    y = 0
+		  If x <= 0.0 Or y <= 0.0 Or Width <= 0.0 Or Height <= 0.0 Then
+		    x = 0.0
+		    y = 0.0
 		    Width = g.Width
 		    Height = g.Height
 		    
-		  else
+		  Else
 		    g = g.Clip(x, y, Width, Height)
 		    
-		  end if
+		  End If
 		  
-		  select case FadeDir
-		  case 0 // Vertical
+		  Select Case FadeDir
+		  Case 0 // Vertical
 		    w = Height
 		    
-		  case 1 // Horz
+		  Case 1 // Horz
 		    w = Width
 		    
-		    dim tmpColor As Color
+		    Dim tmpColor As Color
 		    tmpColor = ColorStart
 		    ColorStart = ColorEnd
 		    ColorEnd = tmpColor
 		    
-		  case 2 // Vertical
+		  Case 2 // Vertical
 		    w = Height
 		    
-		    dim tmpColor As Color
+		    Dim tmpColor As Color
 		    tmpColor = ColorStart
 		    ColorStart = ColorEnd
 		    ColorEnd = tmpColor
 		    
-		  case 3 // Horz
+		  Case 3 // Horz
 		    w = Width
 		    
-		  end
+		  End
 		  
-		  colorset = ColorExtensions.Gradient(ColorEnd, ColorStart, w)
+		  colorset = ColorLib.Gradiant(ColorEnd, ColorStart, w)
 		  
-		  for j = 0 to w
+		  For j = 0 To CType(w, Int32)
 		    pct = j / w
-		    g.forecolor = colorset(j)
+		    g.DrawingColor = colorset(j)
 		    
-		    select case FadeDir
-		    case 0, 2 // Vertical
-		      g.drawline(0, j, Width, j)
+		    Select Case FadeDir
+		    Case 0, 2 // Vertical
+		      g.DrawLine(0.0, j, Width, j)
 		      
-		    case 1, 3
-		      g.drawline(j, 0, j, Height)
+		    Case 1, 3
+		      g.DrawLine(j, 0.0, j, Height)
 		      
-		    end
-		  next
+		    End
+		  Next
 		End Sub
 	#tag EndMethod
 
@@ -205,23 +318,44 @@ Protected Module GraphicExtensions
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub DrawImageWell(Extends g as graphics, x As Integer, y As Integer, Width As Integer, Height As Integer)
+		  // Draw ImageWell border in a canvas
+		  Dim offset As Integer = 0
+		  
+		  g.ForeColor = &cE9E9E900
+		  offset = 1
+		  g.PenWidth = 5
+		  g.PenHeight = 5
+		  g.DrawRoundRect(x+offset, y+offset, Width-(offset*2), Height-(offset*2), 6, 6)
+		  
+		  g.ForeColor = &cF4F4F400
+		  offset = 1
+		  g.PenWidth = 2
+		  g.PenHeight = 2
+		  g.DrawRoundRect(x+offset, y+offset, Width-(offset*2), Height-(offset*2), 6, 6)
+		  
+		  g.ForeColor = &c9D9D9D00
+		  offset = 3
+		  g.PenWidth = 1
+		  g.PenHeight = 1
+		  g.DrawRoundRect(x+offset, y+offset, Width-(offset*2), Height-(offset*2), 6, 6)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub DrawImg(extends g As Graphics, p As Picture, mode As Integer, x As Integer, y As Integer, w As Integer, h As Integer, Vert As Integer = 1, Horz As Integer = 1)
-		  dim subx, suby, subw, subh As Integer
-		  dim Transparency As Double
-		  dim Aspect As Double
+		  Dim subx, suby, subw, subh As Integer
+		  Dim Transparency As Double
+		  Dim Aspect As Double
 		  'Mode
-		  '0 - Fill Screen (Keep AR)
-		  '1 - Fit To Screen (Keep AR)
-		  '2 - Strech to Screen
+		  '0 - Scale to Fill (Keep AR)
+		  '1 - Scale to Fit (Keep AR)
+		  '2 - Stretch to Screen
 		  '3 - Center (Keep AR)
 		  
-		  if p = Nil then
-		    Exit Sub
-		  end if
-		  
-		  if p.Width < 1 Or p.Height < 1 then
-		    Exit Sub
-		  end if
+		  If p = Nil Then Exit Sub
+		  If p.Width < 1 Or p.Height < 1 Then Exit Sub
 		  
 		  Transparency = g.Transparency
 		  g = g.Clip(x, y, w, h)
@@ -520,6 +654,234 @@ Protected Module GraphicExtensions
 		    suby = (g.TextHeight * i) + yOffset
 		    
 		    g.DrawString(tparts(i), x+subx, y+suby+g.TextAscent)
+		    
+		    i = i + 1
+		  Wend
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub DrawTextAsc(Extends g As Graphics, txt As String, x As Double, y As Double, Width As Double = -1, Height As Double = -1, Vert As Integer = 1, Horz As Integer = 1, WordWrap As Boolean = False, Max As Boolean = False)
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  '
+		  '    Draws text to the screen as the size you want and in the orientation you want.
+		  '
+		  '    Note: The x and y start in the top left hand corner.
+		  '
+		  '    Variables
+		  '        g        - The Graphics Object
+		  '        txt      - The text to be drawn
+		  '        x        - The x coordinate for the arrow
+		  '        y        - The y coordinate for the arrow
+		  '        Width    - The width of the arrow
+		  '        Height   - The height of the arrow
+		  '        (The following options require the Width and height to be set)
+		  '        Vert     - Sets the vertical alignment of the text
+		  '                       0: Top
+		  '                       1: Middle
+		  '                       2: Bottom
+		  '        Horz     - Sets the horizontal alignment of the text
+		  '                       0: Left
+		  '                       1: Center
+		  '                       2: Right
+		  '        WordWrap - Wraps text with breaks on spaces
+		  '        Max      - Auto sizes the text to fill the max amount of space
+		  '    
+		  '
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  
+		  Dim i, t, M, id As Integer
+		  Dim subx, suby As Double
+		  Dim yOffset As Double
+		  Dim tParts(0) As String
+		  Dim Words() As String
+		  Dim clipy As Boolean
+		  
+		  Clipy = True
+		  
+		  If txt.Trim = "" Then
+		    Exit Sub
+		    
+		  End If
+		  
+		  If Width <= 0.0 Or Height <= 0.0 Then
+		    Exit Sub
+		    
+		  End If
+		  
+		  txt = txt.ReplaceLineEndings(EndOfLine).Trim
+		  
+		  If Width <= 0.0 Or Height <= 0.0 Then
+		    Horz = 0
+		    Vert = 0
+		    WordWrap = False
+		    Max = False
+		    Clipy = False
+		    
+		  Else
+		    If Clipy Then
+		      g = g.Clip(x, y, Width, Height)
+		      x = 0.0
+		      y = 0.0
+		      
+		    End If
+		    
+		  End If
+		  
+		  If Max = True Then
+		    g.FontSize = 1.0
+		    
+		  End If
+		  
+		  If txt.IndexOf(" ") = 0 Or txt.IndexOf(EndOfLine) > 0  Then
+		    WordWrap = False
+		    
+		  End If
+		  
+		  If WordWrap = True Then
+		    txt = txt.ReplaceLineEndings(" ") // This is a fix for new lines with word wrap. They dont seem to be compatable.
+		    
+		    Words = txt.Split(" ")
+		    
+		    If Max = True Then
+		      Do
+		        i = 0
+		        t = 0
+		        M = Words.LastIndex
+		        Redim tParts(0)
+		        tParts(0) = Words(0).Trim
+		        While i < M
+		          If g.StringWidth(tParts(t) + " " + Words(i+1).Trim) < Width Then
+		            tParts(t) = tParts(t) + " " + Words(i+1).Trim
+		            
+		          Else
+		            t = t + 1
+		            Redim tParts(t)
+		            tParts(t) = Words(i+1)
+		            
+		          End If
+		          
+		          i = i + 1
+		        Wend
+		        
+		        If (UBound(tParts)+1)*(g.TextAscent) < Height Then
+		          g.FontSize = g.FontSize + 1.0
+		          
+		        Else
+		          g.FontSize = g.FontSize - 1.0
+		          Exit Do
+		          
+		        End If
+		        
+		      Loop
+		      
+		    End If
+		    
+		    i = 0
+		    t = 0
+		    M = Words.LastIndex
+		    Redim tParts(0)
+		    tParts(0) = Words(0).Trim
+		    While i < M
+		      If g.StringWidth(tParts(t) + " " + Trim(Words(i+1))) < Width Then
+		        tParts(t) = tParts(t) + " " + Trim(Words(i+1))
+		        
+		      Else
+		        t = t + 1
+		        Redim tParts(t)
+		        tParts(t) = Words(i+1)
+		        
+		      End If
+		      
+		      i = i + 1
+		    Wend
+		    
+		    If UBound(tParts) = UBound(Words) Then
+		      i = 0
+		      M = Words.LastIndex + 1
+		      While i < M
+		        While g.StringWidth(Words(i)) > Width AND g.TextSize > 1
+		          g.FontSize = g.FontSize - 1
+		          
+		        Wend
+		        i = i + 1
+		        
+		      Wend
+		      
+		    End If
+		    
+		  Else
+		    If InStr(Trim(txt), EndOfLine) > 0 Then
+		      Redim tParts(CountFields(txt, EndOfLine)-1)
+		      
+		    End If
+		    
+		    If Max = True Then
+		      While g.StringWidth(txt) < Width And g.TextAscent*(UBound(tParts)+1) < Height
+		        g.FontSize = g.FontSize + 1.0
+		        
+		      Wend
+		      g.FontSize = g.FontSize - 1.0
+		      
+		    End If
+		    
+		    tparts = txt.Split(EndOfLine)
+		  End If
+		  
+		  If Max = False And Width > 0.0 And Height > 0.0 Then
+		    If g.StringWidth(tparts(0)) > Width Or (((UBound(tParts)+1)*g.FontAscent) > Height And tParts.LastIndex > 0) Then
+		      If ((tParts.LastIndex+1)*g.FontAscent) > Height And tParts.LastIndex > 0 Then
+		        Dim size As Integer
+		        size = Floor(Height/g.FontAscent)-1
+		        If size < 0 Then
+		          size = 0
+		          
+		        End If
+		        Redim tParts(size)
+		        
+		      End If
+		      
+		      id = UBound(tParts)
+		      Do
+		        If g.StringWidth(Trim(tparts(id)) + "...") > Width And Len(tparts(id)) <> 0 Then
+		          tparts(id) = Trim(Left(tparts(id), Len(tparts(id))-1))
+		          
+		        Else
+		          tparts(id) = Trim(tparts(id)) + "..."
+		          Exit Do
+		          
+		        End If
+		        
+		      Loop
+		      
+		    End If
+		    
+		  End If
+		  
+		  Select Case Vert
+		  Case 0
+		    yOffset = 0
+		  Case 1
+		    yOffset = Height - (Height + ((UBound(tParts)+1)*g.FontAscent))/2
+		  Case 2
+		    yOffset = Height - ((UBound(tParts)+1)*g.FontAscent)
+		  End Select
+		  
+		  i = 0
+		  M = tparts.LastIndex + 1
+		  While i < M
+		    Select Case Horz
+		    Case 0
+		      subx = 0.0
+		    Case 1
+		      subx = (width - g.TextWidth(tparts(i)))/2
+		    Case 2
+		      subx = width-g.TextWidth(tparts(i))
+		    End Select
+		    
+		    suby = (g.FontAscent * i) + yOffset
+		    
+		    g.DrawText(tparts(i), x+subx, y+suby+g.FontAscent)
 		    
 		    i = i + 1
 		  Wend

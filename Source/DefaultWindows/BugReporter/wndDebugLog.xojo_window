@@ -10,7 +10,7 @@ Begin WindowPro wndDebugLog
    HasBackColor    =   False
    Height          =   710
    ImplicitInstance=   True
-   LiveResize      =   True
+   LiveResize      =   "True"
    MacProcID       =   0
    MaxHeight       =   32000
    MaximizeButton  =   False

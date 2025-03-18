@@ -116,6 +116,8 @@ Protected Module CommonModule
 		Function DescriptionWithoutSource(Description as String) As String
 		  if Description.Contains("Source:") then
 		    
+		    Description = NormalizeLineEndings( Description )
+		    
 		    Description = Description.ReplaceAllRegEx( "(\n+)Source:(.*?)\Z", "" )
 		    
 		    'Description = Description.ReplaceAllRegEx( "\n\n\nSource:(.*?)\Z", "" )

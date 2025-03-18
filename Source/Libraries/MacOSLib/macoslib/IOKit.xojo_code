@@ -159,17 +159,17 @@ Protected Module IOKit
 		    dim matchingservices as UInt32 = FindInternetInterfaces
 		    dim MACAddress as String = GetMACAddress(matchingservices)
 		    
-		    finally
-		      dim err as Integer
-		      if matchingservices <> 0 then
-		        soft declare function IOObjectRelease lib IOKit (obj as UInt32) as Integer
-		        
-		        err = IOObjectRelease(matchingservices)
-		      end if
-		      return MACAddress
+		    // finally
+		    dim err as Integer
+		    if matchingservices <> 0 then
+		      soft declare function IOObjectRelease lib IOKit (obj as UInt32) as Integer
 		      
-		      // Keep the compiler from complaining
-		      #pragma unused err
+		      err = IOObjectRelease(matchingservices)
+		    end if
+		    return MACAddress
+		    
+		    // Keep the compiler from complaining
+		    #pragma unused err
 		  #endif
 		End Function
 	#tag EndMethod

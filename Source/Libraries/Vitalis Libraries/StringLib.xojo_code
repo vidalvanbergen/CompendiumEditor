@@ -43,6 +43,60 @@ Protected Module StringLib
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h1
+		Protected Function BaseConvert(num As String, FromBase As UInt8, ToBase As UInt8) As String
+		  Dim CharSet As String = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/"
+		  Dim Output As String = ""
+		  Dim intNum As Integer
+		  Dim intChar As Integer
+		  Dim i, strlen As Integer
+		  
+		  If FromBase > 64 or FromBase < 2 Then Return ""
+		  If ToBase > 64 or ToBase < 2 Then Return ""
+		  
+		  if FromBase <> 10 Then
+		    strlen = len(num)
+		    i = strlen - 1
+		    while i >= 0
+		      'astr = num.Mid(strlen-i, 1)
+		      'aa = val(astr)
+		      'ab = (FromBase^i)
+		      'ac = aa*ab
+		      'intNum = intNum +ac
+		      
+		      intNum = intNum +(val(num.Mid(strlen-i, 1))*(FromBase^i))
+		      
+		      i = i - 1
+		    wend
+		    
+		  Else
+		    intNum = val(num)
+		    
+		  End if
+		  
+		  if ToBase <> 10 Then
+		    i = 0
+		    While intNum > 0
+		      'a = base^ (i+1)
+		      'b =num MOD a
+		      'c = b/base^ (i)
+		      
+		      intChar = (intNum Mod (ToBase ^(i+1)))/ToBase ^i
+		      Output = CharSet.Mid(intChar+1,1)+Output
+		      intNum = intNum - (intChar*(ToBase ^i))
+		      
+		      i = i + 1
+		    Wend
+		    
+		  Else
+		    Output = str(intNum)
+		    
+		  End if
+		  
+		  Return Output
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Function BooleanValue(extends s as String) As Boolean
 		  #pragma DisableBackgroundTasks
@@ -379,6 +433,27 @@ Protected Module StringLib
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h1
+		Protected Function CountRegEx(s As String, pattern As String) As Integer
+		  // Count the number of occurrences of a RegEx pattern within a string.
+		  
+		  Dim out As Integer
+		  
+		  Dim re As New RegEx
+		  Dim rm As RegExMatch
+		  
+		  re.SearchPattern = pattern
+		  rm = re.Search( s )
+		  While rm <> Nil
+		    'System.DebugLog rm.SubExpressionString(0) + " at " + str(rm.SubExpressionStartB(0)) + " matches " + pattern + " in " + s
+		    out = out + 1
+		    rm = re.Search
+		  Wend
+		  
+		  Return out
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Function DecimalSeparator() As String
 		  #pragma DisableBackgroundTasks
@@ -599,6 +674,16 @@ Protected Module StringLib
 		  Loop
 		  
 		  Return URL
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function EndsWithB(extends s As String, withWhat As String) As Boolean
+		  // Return true if 's' ends with the string 'withWhat',
+		  // doing a binary comparison.
+		  
+		  Return StrComp( RightB(s, withWhat.LenB), withWhat, 0 ) = 0
+		  
 		End Function
 	#tag EndMethod
 
@@ -1165,6 +1250,34 @@ Protected Module StringLib
 		  End If
 		  
 		  Return False
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function JoinQuoted(fields() as String, delimiter as String) As String
+		  // Join the given strings with a delimiter, just like RB's intrinsic Join
+		  // method, except that if any of the fields contains the delimiter,
+		  // that item will be surrounded by quotes in the output.  See
+		  // SplitQuoted for the inverse function.
+		  
+		  // Approach: copy the items into a second array, putting quotes
+		  // around any that contain the delimiter, then Join them.  This
+		  // way we don't mutate the array that's passed in.
+		  
+		  Dim quoted() As String
+		  Dim ub As Integer = UBound( fields )
+		  Redim quoted( ub )
+		  for i As Integer = 0 to ub
+		    Dim fld As String = fields(i)
+		    if Instr( fld, Delimiter ) > 0 then
+		      quoted(i) = """" + fld + """"
+		    else
+		      quoted(i) = fld
+		    end if
+		  next
+		  
+		  return Join( quoted, delimiter )
+		  
 		End Function
 	#tag EndMethod
 
@@ -3673,6 +3786,28 @@ Protected Module StringLib
 		  Loop
 		  
 		  Return URL
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function URLEncode(s as String) As String
+		  Dim TempAns As String
+		  Dim CurChr As Integer
+		  CurChr = 1
+		  Do Until CurChr - 1 = Len(s)
+		    Select Case Asc(Mid(s, CurChr, 1))
+		    Case 48 To 57, 65 To 90, 97 To 122
+		      TempAns = TempAns + Mid(s, CurChr, 1)
+		    Case 32
+		      TempAns = TempAns + "%" + Hex(32)
+		    Case Else
+		      TempAns = TempAns +"%" + Right("0" + Hex(Asc(Mid(s, CurChr, 1))), 2)
+		    End Select
+		    
+		    CurChr = CurChr + 1
+		  Loop
+		  
+		  Return TempAns
 		End Function
 	#tag EndMethod
 

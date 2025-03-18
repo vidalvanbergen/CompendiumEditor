@@ -4031,6 +4031,42 @@ Protected Module ImagePlayEffectsLibrary
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Function Noise(p As Picture, amount As Double, grayNoise As Boolean = False) As Picture
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  '
+		  '    This function adds Noise to the picture, by tiling it.  We cannot use the tile
+		  '    function since this function requires each noise tile to be randomized.
+		  '
+		  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+		  
+		  If (p Is Nil) Then Return Nil
+		  
+		  Dim copy As Picture = p.Copy
+		  Dim g As Graphics = copy.Graphics
+		  Dim x, xMax, y, yMax As Integer
+		  
+		  xMax = copy.Width - 1
+		  yMax = copy.Height - 1
+		  
+		  For y = 0 To yMax Step 128
+		    #pragma BackgroundTasks False
+		    For x = 0 To xMax Step 128
+		      g.DrawPicture(NoiseTile(amount, grayNoise), x, y)
+		    Next
+		    #pragma BackgroundTasks True
+		  Next
+		  
+		  // now copy other variables of "p"
+		  copy.HorizontalResolution = p.HorizontalResolution
+		  copy.VerticalResolution = p.VerticalResolution
+		  copy.Objects = p.Objects
+		  copy.Transparent = p.Transparent
+		  
+		  Return copy
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Sub Noise(pic as picture, NoisePercent as integer, Mode as integer = kNoiseModeBlackAndWhite)
 		  // by Tomis Erwin
 		  
@@ -4109,6 +4145,45 @@ Protected Module ImagePlayEffectsLibrary
 		  end
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Function NoiseTile(opacity As Double, isGrayNoise As Boolean = False) As Picture
+		  Static rand As New Random
+		  Static noisy As Picture
+		  Static r As RGBSurface
+		  
+		  Dim x, y, j As Integer
+		  
+		  If (noisy Is Nil) Then
+		    noisy = New Picture(128, 128, 32)
+		    r = noisy.RGBSurface
+		  End If
+		  
+		  If isGrayNoise Then
+		    For y = 0 to 127
+		      #pragma BackgroundTasks False
+		      For x = 0 To 127
+		        j = Rand.InRange(0, 255)
+		        r.Pixel(x, y) = RGB(j, j, j)
+		      Next
+		      #pragma BackgroundTasks True
+		    Next
+		  Else
+		    For y = 0 to 127
+		      #pragma BackgroundTasks False
+		      For x = 0 To 127
+		        r.Pixel(x, y) = RGB(Rand.InRange(0, 255), Rand.InRange(0, 255), Rand.InRange(0, 255))
+		      Next
+		      #pragma BackgroundTasks True
+		    Next
+		  End If
+		  
+		  noisy.Mask.Graphics.ForeColor = Gray((1.0 - opacity) * 255)
+		  noisy.Mask.Graphics.FillRect(0, 0, 128, 128)
+		  
+		  Return noisy
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h1

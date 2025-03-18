@@ -843,7 +843,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub RowExpanded(row As Integer)
-		  var t as new TimeFunction("ExpandRow")
+		  'var t as new TimeFunction("ExpandRow")
 		  
 		  if me.RowTagAt( row ) isA SourceCore then
 		    var source as SourceCore = me.RowTagAt( row )

@@ -784,6 +784,7 @@ MultiImage=template_icon_export_64;Images/Icons/template_icon_export_64.xojo_ima
 Class=DNDToolbar;Classes/DNDToolbar.xojo_code;&h0000000024CE3FFF;&h0000000072FBDFFF;false
 Window=ccTemplate;Editor/ccTemplate.xojo_window;&h000000005B652FFF;&h000000002A2847FF;false
 Sound=press;Sounds/press.mp3;&h0000000072D897FF;&h000000001EEE07FF;false
+Module=UtilsGeneral;Libraries/Vitalis Libraries/UtilsGeneral.xojo_code;&h00000000229DC293;&h000000007DD58FFF;false
 DefaultWindow=wndMain
 AppMenuBar=MainMenubar
 MajorVersion=1

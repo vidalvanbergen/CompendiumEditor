@@ -523,7 +523,7 @@ Protected Module UtilsGeneral
 		  #EndIf
 		  
 		  #If targetLinux
-		    Return f.AbsolutePath
+		    Return f.NativePath
 		  #EndIf
 		  
 		  #If targetWin32

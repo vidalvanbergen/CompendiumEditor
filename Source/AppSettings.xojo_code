@@ -187,6 +187,9 @@ Protected Module AppSettings
 	#tag EndProperty
 
 
+	#tag Constant, Name = kAppCopyright, Type = String, Dynamic = False, Default = \"\xC2\xA9 2025 Vianna van Bergen.", Scope = Protected
+	#tag EndConstant
+
 	#tag Constant, Name = kAppIdentifier, Type = String, Dynamic = False, Default = \"com.viannaeuphoria.compendiumeditor", Scope = Protected
 	#tag EndConstant
 

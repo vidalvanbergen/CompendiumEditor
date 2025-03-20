@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   2
+      Value           =   0
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -1527,7 +1527,8 @@ End
 	#tag Method, Flags = &h0
 		Sub Load(TheSource as SourceCore = Nil)
 		  if Source = Nil then
-		    Source = TheSource
+		    'Source = TheSource
+		    Source = new SourceCore( TheSource.ParentFolder )
 		  end if
 		  
 		  // Reset
@@ -3149,6 +3150,22 @@ End
 		Group="Menus"
 		InitialValue=""
 		Type="MenuBar"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ChangesMadeToFile"
+		Visible=false
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ChangesMadeToSource"
+		Visible=false
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
 		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior

@@ -1214,7 +1214,7 @@ End
 		          
 		        case "detail"
 		          if xValue <> "" then
-		            var rarity() as string = Array( "uncommon", "common", "very rare", "rare", "legendary", "artifact", "curse" )
+		            var rarity() as string = Array( "uncommon", "common", "very rare", "rare", "legendary", "artifact", "curse", "varies" )
 		            
 		            var details, category as String
 		            
@@ -1703,6 +1703,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "very rare" )
 		  me.BaseMenu.Append new MenuItem( "legendary" )
 		  me.BaseMenu.Append new MenuItem( "artifact" )
+		  me.BaseMenu.Append new MenuItem( "varies" )
 		  
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "uncommon (requires attunement)" )
@@ -1710,6 +1711,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "very rare (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "legendary (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "artifact (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "varies (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "cursed (requires attunement)" )
 		End Sub

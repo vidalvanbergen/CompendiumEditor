@@ -180,9 +180,9 @@ Protected Module Helpers
 		  if LogMessages.Ubound > 50 then
 		    LogMessages.Remove( 0 )
 		  end if
-		  if DebugBuild and TargetHasGUI then
-		    wndDebugLog.Send PreFix + Message
-		  end if
+		  'if DebugBuild and TargetHasGUI then
+		  'wndDebugLog.Send PreFix + Message
+		  'end if
 		  LogMessages.Append PreFix + Message
 		End Sub
 	#tag EndMethod

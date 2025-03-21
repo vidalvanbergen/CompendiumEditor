@@ -546,6 +546,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "very rare" )
 		  me.BaseMenu.Append new MenuItem( "legendary" )
 		  me.BaseMenu.Append new MenuItem( "artifact" )
+		  me.BaseMenu.Append new MenuItem( "varies" )
 		  
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "uncommon (requires attunement)" )
@@ -553,6 +554,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "very rare (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "legendary (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "artifact (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "varies (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "cursed (requires attunement)" )
 		End Sub

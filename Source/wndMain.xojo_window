@@ -144,6 +144,37 @@ Begin WindowPro wndMain
          Visible         =   True
          Width           =   24
       End
+      Begin CanvasButton cvsbtnExperiment
+         AllowAutoDeactivate=   True
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   True
+         Height          =   24
+         iconColor       =   &c00000000
+         Image           =   845838335
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar$0"
+         Left            =   872
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Edit Source"
+         Top             =   14
+         Transparent     =   True
+         useCustomColor  =   False
+         Visible         =   False
+         Width           =   24
+      End
    End
    Begin DNDToolbar cvsToolbar
       AllowAutoDeactivate=   True
@@ -312,37 +343,6 @@ Begin WindowPro wndMain
       Width           =   402
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
-   End
-   Begin CanvasButton cvsbtnExperiment
-      AllowAutoDeactivate=   True
-      AllowFocus      =   True
-      AllowFocusRing  =   True
-      AllowTabs       =   False
-      Backdrop        =   0
-      Enabled         =   True
-      Height          =   24
-      iconColor       =   &c00000000
-      Image           =   845838335
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   867
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
-      LockTop         =   True
-      Pressed         =   False
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Template        =   True
-      Tooltip         =   "Edit Source"
-      Top             =   -70
-      Transparent     =   True
-      useCustomColor  =   False
-      Visible         =   False
-      Width           =   24
    End
 End
 #tag EndWindow
@@ -790,6 +790,18 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events cvsbtnExperiment
+	#tag Event
+		Sub Action()
+		  wndCompendiumViewer.Show
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Opening()
+		  me.Visible = DebugBuild
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events arSources
 	#tag Event
 		Sub ActionAdd()
@@ -1100,18 +1112,6 @@ End
 		    Return True
 		  end if
 		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events cvsbtnExperiment
-	#tag Event
-		Sub Action()
-		  wndCompendiumBuilder.Show
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub Opening()
-		  me.Visible = DebugBuild
-		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

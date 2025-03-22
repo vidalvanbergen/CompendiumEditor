@@ -8,11 +8,11 @@
             "ImageScale": 1,
             "ImageURL": "",
             "MinimumRequiredVersion": "",
-            "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul class=\"update\">\n  <li class=\"new\">Initial Release.</li>\n</ul>\n\n<hr>\n  <h3>Developer notes:</h3>\n  <p><i>If the autoupdate fails, get the latest release from GitHub:</i></p>\n\n\n  <a class=\"button\" href=\"https://github.com/vidalvanbergen/CompendiumEditor/releases/\">Download the latest release from Github</a>",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.0.0.html\n\n<h1>What’s new in Compendium Editor 1.0</h1>\n\n<ul class=\"update\">\n  <li class=\"new\">Initial Release.</li>\n</ul>\n\n<hr>\n  <h3>Developer notes:</h3>\n  <p><i>If the autoupdate fails, get the latest release from GitHub:</i></p>\n\n\n  <a class=\"button\" href=\"https://github.com/vidalvanbergen/CompendiumEditor/releases/\">Download the latest release from Github</a>",
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "BhPrIsE26ds=",
+            "Security Token": "g93Fs0dkDpw=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -33,11 +33,11 @@
             "ImageScale": 1,
             "ImageURL": "",
             "MinimumRequiredVersion": "",
-            "ReleaseNotes": "https://vitalis.heliohost.org/files/latest.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.1.0.html\n\n<h1>What’s new in Compendium Editor 1.1</h1>\n\n <ul class=\"update\">\n      <li class=\"new\">Added descriptive tool tips to editor fields.</li>\n      <li class=\"new\">Added copy and paste support for source editor items. (Right Click)</li>\n      <li class=\"new\">Added copy and paste support for trait and feature lists. (Right Click)</li>\n      <li class=\"new\">Added a button to automaticallly set creature sort name.</li>\n      <li class=\"dif\">Merged spell editor into a reusable object for classes and creatures.</li>\n      <li class=\"div\">Only auto-sets class features' levels when no level has been set yet.</li>\n      <li class=\"fix\">Fixed a possible issue with \"Source:\" still showing in the description on windows.</li>\n      <li class=\"fix\">Added glyphs to menu buttons for non-mac platforms.</li>\n      <li class=\"fix\">Fixed reset button not working correctly.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n      <!--li class=\"new\"><span class=\"hot\">HOT</span>You can now select a 'completed downloads' folder for TV Shows, who's\n        video files will be moved to the matching tv show folder upon scanning for new episodes.</li>\n      <li class=\"dif\">A little speed improvement during the downloading of episode information by skipping episoe files\n        with pre-existing .nfo and thumbnail files.</li>\n      <li class=\"fix\">Fixed a stupid mistake at fetching recommendations from TMDB.</li-->\n    </ul>",
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "J+wb4+PRZXg=",
+            "Security Token": "fGlSGFUrgno=",
             "MacBinary": {
                 "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -50,6 +50,31 @@
             "LinuxBinary": {
                 "Hash": "2611BC888A278E2FDEEBCC3DF602851F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.1.0/Compendium_Editor_Linux64.zip",
+                "ExecutableName": "Compendium Editor"
+            }
+        },
+        {
+            "AppName": "Compendium Editor",
+            "ImageScale": 1,
+            "ImageURL": "",
+            "MinimumRequiredVersion": "",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.2.0.html\n\n<h1>What’s new in Compendium Editor 1.2</h1>\n\n    <ul class=\"update\">\n      <li class=\"dif\">Properly signed the macOS app with a free developer account.</li>\n      <li class=\"dif\">Added 'varies' as recognized item detail.</li>\n      <li class=\"fix\">Fixed spell sources not working correctly when the description was empty.</li>\n      <li class=\"fix\">Fixed a visual glitch when duplicating species or creatures.</li>\n      <li class=\"fix\">Other small changes and fixes.</li>\n    </ul>",
+            "RequiresPayment": false,
+            "UseTransparency": true,
+            "Version": "1.2.0",
+            "Security Token": "a6XkpLSG21E=",
+            "MacBinary": {
+                "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
+            },
+            "WindowsBinary64bit": {
+                "Hash": "519C6C85DC14625520B41455065032BE",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_Win64.zip",
+                "ExecutableName": "Compendium Editor.exe"
+            },
+            "LinuxBinary64bit": {
+                "Hash": "74C13F80C48106F0BE4A85001234740C",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_Linux64.zip",
                 "ExecutableName": "Compendium Editor"
             }
         }

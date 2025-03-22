@@ -224,7 +224,7 @@ Begin WindowPro wndMain
          TabPanelIndex   =   0
          TabStop         =   False
          Top             =   734
-         Transparent     =   False
+         Transparent     =   True
          Visible         =   True
          Width           =   48
       End
@@ -252,7 +252,7 @@ Begin WindowPro wndMain
          TickMarkStyle   =   0
          Tooltip         =   ""
          Top             =   734
-         Transparent     =   False
+         Transparent     =   True
          Value           =   56
          Visible         =   True
          Width           =   150

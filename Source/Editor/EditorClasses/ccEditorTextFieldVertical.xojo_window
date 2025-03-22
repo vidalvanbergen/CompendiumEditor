@@ -97,7 +97,7 @@ Begin ContainerControl ccEditorTextFieldVertical
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   426
+      Width           =   436
    End
    Begin DesktopBevelButton btnDropdown
       Active          =   False
@@ -721,6 +721,14 @@ End
 		Visible=false
 		Group="Behavior"
 		InitialValue=""
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="IsPrefixedNumber"
+		Visible=false
+		Group="Behavior"
+		InitialValue="False"
 		Type="Boolean"
 		EditorType=""
 	#tag EndViewProperty

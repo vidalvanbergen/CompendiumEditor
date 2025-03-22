@@ -298,7 +298,7 @@ Begin WindowPro wndCompendiumViewer
          TextColor       =   &c00000000
          Tooltip         =   ""
          Top             =   22
-         Transparent     =   False
+         Transparent     =   True
          Underline       =   False
          Visible         =   True
          Width           =   486

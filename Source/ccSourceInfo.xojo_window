@@ -95,7 +95,7 @@ Begin ContainerControl ccSourceInfo
       TextColor       =   &c00000000
       Tooltip         =   ""
       Top             =   332
-      Transparent     =   True
+      Transparent     =   False
       Underline       =   False
       UnicodeMode     =   1
       ValidationMask  =   ""

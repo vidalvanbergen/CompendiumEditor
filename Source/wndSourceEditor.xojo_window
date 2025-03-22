@@ -2046,7 +2046,9 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Open()
-		  
+		  if NOT TargetMacOS then
+		    me.BevelStyle = BevelButton.BevelStyles.Normal
+		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2218,6 +2220,13 @@ End
 		Sub Action()
 		  if Source <> Nil and Source.SourceInfo.Lookup("url","") <> "" then
 		    ShowURL Source.SourceInfo.Value("url")
+		  end if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  if NOT TargetMacOS then
+		    me.BevelStyle = BevelButton.BevelStyles.Normal
 		  end if
 		End Sub
 	#tag EndEvent

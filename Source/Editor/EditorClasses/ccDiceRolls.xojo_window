@@ -190,7 +190,9 @@ End
 		      result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
 		    end if
 		    
-		  elseif lstDiceRolls.SelectedRowIndex > -1 then
+		  end if
+		  
+		  if result = "" and lstDiceRolls.SelectedRowIndex > -1 then
 		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
 		    description = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
 		  end if

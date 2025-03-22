@@ -15,7 +15,7 @@
 					FolderItem = Li4vUmVzb3VyY2VzL0Fzc2V0cy5jYXI=
 				End
 				Begin SignProjectStep Sign
-				  DeveloperID=Apple Development: vimediamanager@gmail.com (RNPP2JDJV7)
+				  DeveloperID=Apple Development: vianna.euphoria@gmail.com (B5UX2WY4VZ)
 				End
 			End
 			Begin BuildStepList Windows

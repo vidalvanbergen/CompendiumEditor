@@ -10,7 +10,7 @@ Begin Window wndFeature
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   836
+   Height          =   970
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -438,6 +438,36 @@ Begin Window wndFeature
       Visible         =   True
       Width           =   24
    End
+   Begin ccAttackRolls cAttackRolls
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   122
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   828
+      Transparent     =   True
+      Visible         =   True
+      Width           =   560
+   End
 End
 #tag EndWindow
 
@@ -501,6 +531,9 @@ End
 		      xModifier.SetValue( lst.CellValueAt( row, 1 ) )
 		    next
 		  end if
+		  
+		  // Attack rolls
+		  cAttackRolls.AddDiceRollsTo( xNode )
 		End Sub
 	#tag EndMethod
 
@@ -613,6 +646,11 @@ End
 		          cModifiers.addrow "Bonus", xValue
 		          Break
 		        end if
+		        
+		      case "attack"
+		        cAttackRolls.AddRoll( xValue )
+		        'lstDiceRolls.AddRow xValue.NthField("|", 1), xValue.NthField("|", 2), DiceCalculatorMethods.PrettifyMath( xValue.NthField("|", 3) )
+		        'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = xValue.NthField("|", 3)
 		        
 		        
 		      End Select
@@ -762,6 +800,14 @@ End
 	#tag Event
 		Sub Action()
 		  ImportFromClipboard
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cAttackRolls
+	#tag Event
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
+		  name = cName.Value
+		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent
 #tag EndEvents

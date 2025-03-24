@@ -774,6 +774,7 @@ Begin ContainerControl ccSpell
       AllowFocusRing  =   True
       AllowTabs       =   False
       Backdrop        =   0
+      DoubleBuffer    =   False
       Enabled         =   True
       Height          =   295
       Index           =   -2147483648
@@ -935,6 +936,7 @@ Begin ContainerControl ccSpell
       AllowFocusRing  =   True
       AllowTabs       =   False
       Backdrop        =   0
+      DoubleBuffer    =   False
       Enabled         =   True
       Height          =   57
       Index           =   -2147483648
@@ -1802,7 +1804,7 @@ End
 #tag EndEvents
 #tag Events cDiceRolls
 	#tag Event
-		Sub FindTextIn(ByRef Source as String)
+		Sub FindDiceNotationsIn(ByRef Source as String)
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent

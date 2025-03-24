@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   886
+   Height          =   920
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -241,7 +241,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   606
+      Top             =   640
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -313,7 +313,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   258
+      Top             =   292
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -350,6 +350,44 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
+      Top             =   258
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccEditorTextField cDamageResistance
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
       Top             =   224
       Transparent     =   True
       UseLowercase    =   False
@@ -446,6 +484,12 @@ End
 		  if cSpellAbility.Value <> "" then
 		    xSpecies.AppendSimpleChild( "spellAbility", cSpellAbility.Value.Trim )
 		  end if
+		  
+		  // Damage Resistance
+		  if cDamageResistance.Value <> "" then
+		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Trim )
+		  end if
+		  
 		  
 		  
 		  // Traits
@@ -552,6 +596,9 @@ End
 		        case "speed"
 		          cSpeed.Value = xValue
 		          
+		        case "resist"
+		          cDamageResistance.Value = xValue
+		          
 		        case "size"
 		          cSize.Value = TitleForMenuWithTag( cSize.BaseMenu, xValue )
 		          cSize.Tag = xValue
@@ -604,6 +651,8 @@ End
 		  
 		  cModifiers.Reset
 		  cTraits.Reset
+		  
+		  cDamageResistance.Reset
 		  
 		  xNode = Nil
 		End Sub
@@ -732,6 +781,35 @@ End
 		Sub Open()
 		  me.FieldName = "Source:"
 		  me.SetMode ccEditorTextField.Mode.Textfield
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDamageResistance
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Resistances:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  me.UseLowercase = True
+		  
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning, Piercing, and Slashing damage from nonmagical attacks" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
+		  me.BaseMenu.Append new MenuItem( "Piercing" )
+		  me.BaseMenu.Append new MenuItem( "Slashing" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Acid" )
+		  me.BaseMenu.Append new MenuItem( "Cold" )
+		  me.BaseMenu.Append new MenuItem( "Fire" )
+		  me.BaseMenu.Append new MenuItem( "Force" )
+		  me.BaseMenu.Append new MenuItem( "Lightning" )
+		  me.BaseMenu.Append new MenuItem( "Necrotic" )
+		  me.BaseMenu.Append new MenuItem( "Poison" )
+		  me.BaseMenu.Append new MenuItem( "Psychic" )
+		  me.BaseMenu.Append new MenuItem( "Radiant" )
+		  me.BaseMenu.Append new MenuItem( "Thunder" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

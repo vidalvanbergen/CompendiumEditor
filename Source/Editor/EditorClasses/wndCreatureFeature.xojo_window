@@ -223,116 +223,6 @@ Begin Window wndCreatureFeature
       Visible         =   True
       Width           =   560
    End
-   Begin DesktopLabel lblName
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   22
-      Index           =   0
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   False
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   5
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Dice Rolls:"
-      TextAlignment   =   3
-      TextColor       =   &c000000
-      Tooltip         =   ""
-      Top             =   488
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   125
-   End
-   Begin Listbox lstDiceRolls
-      AllowAutoDeactivate=   True
-      AllowAutoHideScrollbars=   True
-      AllowExpandableRows=   False
-      AllowFocusRing  =   True
-      AllowResizableColumns=   False
-      AllowRowDragging=   False
-      AllowRowReordering=   True
-      Bold            =   False
-      ColumnCount     =   3
-      ColumnWidths    =   "40%, 75, *"
-      DataField       =   ""
-      DataSource      =   ""
-      DefaultRowHeight=   24
-      DropIndicatorVisible=   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      GridLinesHorizontalStyle=   0
-      GridLinesVerticalStyle=   0
-      HasBorder       =   True
-      HasHeader       =   True
-      HasHorizontalScrollbar=   False
-      HasVerticalScrollbar=   True
-      HeadingIndex    =   -1
-      Height          =   122
-      Index           =   -2147483648
-      InitialParent   =   ""
-      InitialValue    =   "Name	To Hit	Damage"
-      Italic          =   False
-      Left            =   157
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   False
-      RequiresSelection=   False
-      RowSelectionType=   0
-      Scope           =   0
-      TabIndex        =   6
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   "Attack rolls notation as name, value to hit, and roll for damage. A field can be left empty."
-      Top             =   488
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   423
-      _ScrollOffset   =   0
-      _ScrollWidth    =   -1
-   End
-   BeginSegmented AddRemoveEditButton areModifier
-      AddEnabled      =   False
-      EditEnabled     =   False
-      Enabled         =   True
-      Height          =   24
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   65
-      LockBottom      =   True
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   False
-      MacControlStyle =   0
-      RemoveEnabled   =   False
-      Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
-      SelectionType   =   2
-      TabIndex        =   7
-      TabPanelIndex   =   0
-      TabStop         =   False
-      Top             =   522
-      Transparent     =   False
-      Visible         =   True
-      Width           =   72
-   End
    Begin BevelButton bvlClipboard
       AllowAutoDeactivate=   True
       AllowFocus      =   True
@@ -377,6 +267,36 @@ Begin Window wndCreatureFeature
       Visible         =   True
       Width           =   24
    End
+   Begin ccAttackRolls cAttackRolls
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   122
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   488
+      Transparent     =   True
+      Visible         =   True
+      Width           =   560
+   End
 End
 #tag EndWindow
 
@@ -390,7 +310,7 @@ End
 		    Select case AscKey
 		      
 		    case 61 '=
-		      AddCalculation
+		      cAttackRolls.AddCalculation
 		      Return True
 		      
 		    case 105 'i
@@ -403,94 +323,6 @@ End
 		End Function
 	#tag EndEvent
 
-
-	#tag Method, Flags = &h0
-		Sub AddCalculation()
-		  
-		  var result, damageType as string
-		  
-		  'if lstDiceRolls.LastRowIndex = -1 then
-		  'result = cDescription.Value.Match("Hit: \d+ \((.*?)\)", 1)
-		  'elseif lstDiceRolls.LastRowIndex = 0 then
-		  'result = cDescription.Value.Match("plus \d+ \((.*?)\) \w+", 1 )
-		  'else
-		  'result = cDescription.Value.Match("\d+ \((.*?)\) (\w+ damage)", 1 )
-		  'end if
-		  
-		  
-		  var multiresult() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\)", 1 )
-		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\) (\w+) damage", 2 )
-		  
-		  if result = "" and multiresult.LastIndex >= lstDiceRolls.LastRowIndex+1 then
-		    result = multiresult(lstDiceRolls.LastRowIndex+1)
-		    if multidamagetypes.LastIndex >= lstDiceRolls.LastRowIndex+1 then
-		      damageType = multidamagetypes(lstDiceRolls.LastRowIndex+1).Titlecase
-		    end if
-		  end if
-		  
-		  result = SummonCalculator( result, True )
-		  
-		  
-		  if result <> "" then
-		    var name, tohit as String
-		    
-		    if lstDiceRolls.LastRowIndex = -1 then
-		      name = cName.Value
-		      if name.Contains("(") and name.Contains(")") then
-		        name = name.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
-		      end if
-		      
-		      tohit = cDescription.Value.Match( "(\+\d+) to hit", 1 )
-		      if tohit = "" then
-		        tohit = cDescription.Value.Match( "(\-\d+) to hit", 1 )
-		      end if
-		      'elseif lstDiceRolls.LastRowIndex = 0 then
-		      'name = cDescription.Value.Match("plus \d+ \(.*?\) (\w+)", 1 ).Titlecase
-		      'else
-		      'name = cDescription.Value.Match("\(.*?\) (\w+) damage", 1 ).Titlecase
-		    end if
-		    
-		    if name = "" then
-		      name = damageType
-		    end if
-		    if name = "" then
-		      name = cName.Value
-		      if name.Contains("(") and name.Contains(")") then
-		        name = name.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
-		      end if
-		    end if
-		    
-		    lstDiceRolls.AddRow name, tohit, result
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
-		    
-		    lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
-		  end if
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub AddDiceRollsTo(xNode as XMLNode)
-		  if lstDiceRolls.LastIndex > -1 then
-		    for row as Integer = 0 to lstDiceRolls.LastIndex
-		      var value, attribute as String
-		      value = lstDiceRolls.RowTagAt( row ).StringValue.Trim
-		      attribute = lstDiceRolls.CellValueAt( row, 1 ).Trim
-		      
-		      if value.Trim <> "" then
-		        var xLeaf as XMLNode = xNode.AppendNewChild( "roll" )
-		        xLeaf.SetValue( value )
-		        
-		        if attribute <> "" then
-		          xLeaf.SetAttribute( "description", attribute )
-		        end if
-		        
-		      end if
-		      
-		    next
-		  end if
-		End Sub
-	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub CompileXML()
@@ -513,41 +345,22 @@ End
 		  SetDescription( xNode, cDescription.Value, "" )
 		  
 		  // Attack rolls
-		  if lstDiceRolls.LastRowIndex > -1 then
-		    for row as Integer = 0 to lstDiceRolls.LastRowIndex
-		      var name, tohit, diceroll as string
-		      name = lstDiceRolls.CellValueAt( row, 0 )
-		      tohit = lstDiceRolls.CellValueAt( row, 1 )
-		      diceroll = lstDiceRolls.RowTagAt( row ) 'DiceCalculatorMethods.SimplifyMath( lstDiceRolls.CellValueAt( row, 2 ) )
-		      
-		      if tohit.Trim <> "" and NOT tohit.Contains("-") and NOT tohit.Contains("+") then
-		        tohit = "+" + tohit.Trim
-		      end if
-		      
-		      xNode.AppendSimpleChild( "attack", name.Trim + "|" + tohit.Trim + "|" + diceroll.Trim )
-		    next
-		  end if
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub EditCalculation()
-		  var result as string
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    result = lstDiceRolls.RowTagAt( lstDiceRolls.SelectedRowIndex ) 'CellValueAt( lstDiceRolls.SelectedRowIndex, 2 )
-		  end if
-		  result = SummonCalculator( result, True )
+		  cAttackRolls.AddDiceRollsTo( xNode )
 		  
-		  if result <> "" then
-		    if lstDiceRolls.SelectedRowIndex > -1 then
-		      lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 2 ) = result
-		      lstDiceRolls.RowTagAt( lstDiceRolls.SelectedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
-		    else
-		      lstDiceRolls.AddRow result
-		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
-		    end if
-		  end if
-		  
+		  'if lstDiceRolls.LastRowIndex > -1 then
+		  'for row as Integer = 0 to lstDiceRolls.LastRowIndex
+		  'var name, tohit, diceroll as string
+		  'name = lstDiceRolls.CellValueAt( row, 0 )
+		  'tohit = lstDiceRolls.CellValueAt( row, 1 )
+		  'diceroll = lstDiceRolls.RowTagAt( row ) 'DiceCalculatorMethods.SimplifyMath( lstDiceRolls.CellValueAt( row, 2 ) )
+		  '
+		  'if tohit.Trim <> "" and NOT tohit.Contains("-") and NOT tohit.Contains("+") then
+		  'tohit = "+" + tohit.Trim
+		  'end if
+		  '
+		  'xNode.AppendSimpleChild( "attack", name.Trim + "|" + tohit.Trim + "|" + diceroll.Trim )
+		  'next
+		  'end if
 		End Sub
 	#tag EndMethod
 
@@ -591,17 +404,20 @@ End
 		  end if
 		  
 		  
+		  
+		  
 		  for index as Integer = 0 to multiresult.LastIndex
 		    if index = 0 and toHit <> "" then
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
+		      'lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
 		    else
 		      var damageType as string = ""
 		      if multidamagetypes.LastIndex >= index then
 		        damageType = multidamagetypes(index)
 		      end if
-		      lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
+		      'lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
 		    end if
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
+		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
+		    cAttackRolls.AddRoll Title + "|" + toHit + "|" + DiceCalculatorMethods.PrettifyMath( multiresult(index) )
 		  next
 		  
 		  
@@ -696,22 +512,6 @@ End
 		    'cDescription.Value = EndOfLine + EndOfLine + "Source:" + chr(9) + Source
 		    'end if
 		    
-		  end if
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub RemoveCalculation()
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    var lindex as Integer = lstDiceRolls.SelectedRowIndex
-		    
-		    lstDiceRolls.RemoveRow lstDiceRolls.SelectedRowIndex
-		    
-		    if lindex-1 > -1 then
-		      lstDiceRolls.SelectedRowIndex = lindex-1
-		    elseif lstDiceRolls.LastRowIndex > -1 then
-		      lstDiceRolls.SelectedRowIndex = 0
-		    end if
 		  end if
 		End Sub
 	#tag EndMethod
@@ -828,111 +628,18 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events lstDiceRolls
-	#tag Event
-		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
-		  
-		  if me.SelectedRowIndex <> row then
-		    g.DrawAlternatingRows(row)
-		    Return True
-		  end if
-		End Function
-	#tag EndEvent
-	#tag Event
-		Sub Change()
-		  #if TargetMacOS then
-		    areModifier.RemoveEnabled = me.SelectedRowIndex > -1
-		    areModifier.EditEnabled = me.SelectedRowIndex > -1
-		  #endif
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub DoubleClick()
-		  EditCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub Open()
-		  me.ColumnTypeAt(0) = Listbox.CellTypes.TextField
-		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  dim AscKey as Integer = Asc( key )
-		  
-		  Select case AscKey
-		    
-		  case 8', 127 // delete
-		    RemoveCalculation
-		    Return True
-		    
-		  case 27 // Escape
-		    me.SelectedRowIndex = -1
-		    Return True
-		    
-		  End Select
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
-		  
-		  var AddMenu as new MenuItem("Add")
-		  AddMenu.Shortcut = "+"
-		  
-		  var RemoveMenu as new MenuItem("Remove")
-		  'RemoveMenu.Shortcut = Asc(8)
-		  
-		  base.AddMenu AddMenu
-		  base.AddMenu new MenuItem( "Edit" )
-		  base.AddMenu RemoveMenu
-		  
-		  Return True
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
-		  if hitItem <> Nil then
-		    
-		    Select case hitItem.Text
-		      
-		    case "Add"
-		      AddCalculation
-		    case "Edit"
-		      EditCalculation
-		    case "Remove"
-		      RemoveCalculation
-		      
-		    End Select
-		    
-		    Return True
-		  end if
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events areModifier
-	#tag Event
-		Sub ActionAdd()
-		  AddCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionEdit()
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    EditCalculation
-		  end if
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionRemove()
-		  RemoveCalculation
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events bvlClipboard
 	#tag Event
 		Sub Action()
 		  ImportFromClipboard
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cAttackRolls
+	#tag Event
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
+		  name = cName.Value
+		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent
 #tag EndEvents

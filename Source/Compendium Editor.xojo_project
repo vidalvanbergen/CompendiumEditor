@@ -735,6 +735,7 @@ Module=ViMenuItems;Libraries/Vitalis Libraries/ViMenuItems.xojo_code;&h000000000
 Window=ccEditorModifiers;Editor/EditorClasses/ccEditorModifiers.xojo_window;&h00000000280EEFFF;&h000000004A073FFF;false
 Window=ccTraits;Editor/EditorClasses/ccTraits.xojo_window;&h00000000743A7FFF;&h000000004A073FFF;false
 Window=ccDiceRolls;Editor/EditorClasses/ccDiceRolls.xojo_window;&h000000005BA9F7FF;&h000000004A073FFF;false
+Window=ccAttackRolls;Editor/EditorClasses/ccAttackRolls.xojo_window;&h0000000040471FFF;&h000000004A073FFF;false
 Class=AddRemoveEditButton;Classes/AddRemoveEditButton.xojo_code;&h000000004D419FFF;&h0000000072FBDFFF;false
 Class=cvsDiceCalcButton;Classes/Calculator/cvsDiceCalcButton.xojo_code;&h0000000075F0EFFF;&h000000004546BFFF;false
 DesktopWindow=wndDiceCalc;Classes/Calculator/wndDiceCalc.xojo_window;&h000000003B50BFFF;&h000000004546BFFF;false

@@ -1961,7 +1961,7 @@ End
 #tag EndEvents
 #tag Events cDiceRolls
 	#tag Event
-		Sub FindTextIn(ByRef Source as String)
+		Sub FindDiceNotationsIn(ByRef Source as String)
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent

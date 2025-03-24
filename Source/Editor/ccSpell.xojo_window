@@ -10,7 +10,7 @@ Begin ContainerControl ccSpell
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   993
+   Height          =   1398
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -51,20 +51,20 @@ Begin ContainerControl ccSpell
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Spell name."
-      Top             =   28
+      Top             =   54
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
       Width           =   624
    End
-   Begin CheckBox chkSubclassSpell
+   Begin CheckBox chkSubclassSpellOLD
       AllowAutoDeactivate=   True
       Bold            =   False
       Caption         =   "Subclass spell"
@@ -78,7 +78,7 @@ Begin ContainerControl ccSpell
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   157
+      Left            =   0
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -89,7 +89,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Check if the spell is a subclass spell, adding a subclass to an existing named spell."
-      Top             =   4
+      Top             =   -81
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -105,7 +105,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   543
+      Height          =   544
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -115,11 +115,11 @@ Begin ContainerControl ccSpell
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   62
+      Top             =   157
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -145,11 +145,11 @@ Begin ContainerControl ccSpell
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   8
+         TabIndex        =   9
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell description."
-         Top             =   332
+         Top             =   461
          Transparent     =   True
          Value           =   ""
          Visible         =   True
@@ -180,13 +180,13 @@ Begin ContainerControl ccSpell
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   9
+         TabIndex        =   8
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   ""
-         Top             =   583
+         Top             =   427
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -224,7 +224,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell duration."
-         Top             =   298
+         Top             =   393
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -262,7 +262,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "The material components of the spell."
-         Top             =   264
+         Top             =   359
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -300,7 +300,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell components: Vocal, Somatic and/or Material."
-         Top             =   230
+         Top             =   325
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -338,7 +338,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell range."
-         Top             =   196
+         Top             =   291
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -376,7 +376,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Casting time."
-         Top             =   162
+         Top             =   257
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -414,7 +414,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell level."
-         Top             =   62
+         Top             =   157
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -452,7 +452,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell school."
-         Top             =   96
+         Top             =   191
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -486,7 +486,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Check this box if the spell is a ritual."
-         Top             =   130
+         Top             =   225
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -510,11 +510,11 @@ Begin ContainerControl ccSpell
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   617
+      Top             =   713
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -539,7 +539,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   False
-         Top             =   779
+         Top             =   875
          Transparent     =   False
          Visible         =   True
          Width           =   72
@@ -573,7 +573,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   779
+         Top             =   875
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -623,7 +623,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Classes that can use this spell."
-         Top             =   617
+         Top             =   713
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -660,7 +660,7 @@ Begin ContainerControl ccSpell
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   617
+         Top             =   713
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -675,7 +675,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   158
+      Height          =   160
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -685,11 +685,11 @@ Begin ContainerControl ccSpell
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   815
+      Top             =   911
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -718,7 +718,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas. Add a short, optional descriptions, such as a level for spells with different rolls on higher levels."
-         Top             =   815
+         Top             =   911
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -756,17 +756,280 @@ Begin ContainerControl ccSpell
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   "Import from Clipboard"
-      Top             =   28
+      Top             =   54
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   24
+   End
+   Begin Canvas cvsPartitionClassFeatureTwo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
+      Backdrop        =   0
+      Enabled         =   True
+      Height          =   295
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   1083
+      Transparent     =   True
+      Visible         =   True
+      Width           =   700
+      Begin ccEditorModifiers cModifiers
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
+         Height          =   260
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionClassFeatureTwo"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   1117
+         Transparent     =   True
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccSpecialTraits cSpecialTraits
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionClassFeatureTwo"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
+         Top             =   1083
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+   End
+   Begin PopupMenu popSpellType
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      InitialValue    =   "Spell\nSubclass Spell\nClass Feature"
+      Italic          =   False
+      Left            =   157
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      SelectedRowIndex=   0
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   22
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   523
+   End
+   Begin Label lblSpellTypes
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Type:"
+      TextAlignment   =   3
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   125
+   End
+   Begin Canvas cvsPartitionClassFeatureOne
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
+      Backdrop        =   0
+      Enabled         =   True
+      Height          =   57
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   88
+      Transparent     =   True
+      Visible         =   True
+      Width           =   700
+      Begin ccEditorTextField cFeatureType
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionClassFeatureOne"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell name."
+         Top             =   88
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cPrerequisite
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionClassFeatureOne"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell duration."
+         Top             =   122
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
    End
 End
 #tag EndWindow
@@ -840,10 +1103,15 @@ End
 		  
 		  
 		  // Name
-		  xSpell.AppendSimpleChild( "name", cName.Value )
+		  if popSpellType.SelectedRow = "Class Feature" and cName.Value.Trim <> "" and cFeatureType.Value.Trim <> "" then
+		    xSpell.AppendSimpleChild( "name", cFeatureType.Value.Trim + ": " + cName.Value )
+		  else
+		    xSpell.AppendSimpleChild( "name", cName.Value )
+		  end if
 		  
 		  //
-		  if NOT chkSubclassSpell.Value then
+		  'if NOT chkSubclassSpell.Value then
+		  if popSpellType.SelectedRow = "Spell" or popSpellType.SelectedRow = "Class Feature" then
 		    
 		    // Spell Level
 		    if cSpellLevel.Tag <> "" then
@@ -907,16 +1175,45 @@ End
 		  end if
 		  
 		  
-		  if NOT chkSubclassSpell.Value then
+		  'if NOT chkSubclassSpell.Value then
+		  if popSpellType.SelectedRow = "Spell" or popSpellType.SelectedRow = "Class Feature" then
 		    
 		    // Description
-		    if cDescription.Value.Trim <> "" or cSource.Value.Trim <> "" then
+		    'if cDescription.Value.Trim <> "" or cSource.Value.Trim <> "" then
+		    'SetDescription( xNode, cDescription.Value, cSource.Value )
+		    'end if
+		    
+		    if popSpellType.SelectedRow = "Class Feature" and cPrerequisite.Value.Trim <> "" then
+		      var fullDescription as String = "Prerequisite: " + cPrerequisite.Value.Trim + EndOfLine + EndOfLine + cDescription.Value
+		      
+		      SetDescription( xNode, fullDescription, cSource.Value )
+		    elseif cDescription.Value.Trim <> "" or cSource.Value.Trim <> "" then
 		      SetDescription( xNode, cDescription.Value, cSource.Value )
 		    end if
 		    
 		    // Dice Rolls
 		    if cDiceRolls.lstDiceRolls.LastIndex > -1 then
 		      cDiceRolls.AddDiceRollsTo( xNode )
+		    end if
+		    
+		    // Class Features
+		    if popSpellType.SelectedRow = "Class Feature" then
+		      if cSpecialTraits.Value.Trim <> "" then
+		        xSpell.AppendSimpleChild( "special", cSpecialTraits.Value.Trim )
+		      end if
+		      
+		      // Modifiers
+		      var lst as Listbox = cModifiers.lstModifiers
+		      
+		      if lst.LastRowIndex > -1 then
+		        for row as Integer = 0 to lst.LastRowIndex
+		          var xModifier as XMLNode = xSpell.AppendNewChild( "modifier" )
+		          
+		          xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
+		          xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim )
+		        next
+		      end if
+		      
 		    end if
 		    
 		  end if
@@ -966,7 +1263,13 @@ End
 		      Select case xChild.Name
 		        
 		      case "name"
-		        cName.Value = xValue
+		        if xValue.Contains(":") then
+		          popSpellType.ListIndex = 2
+		          cFeatureType.Value = xValue.NthField(":", 1).Trim
+		          cName.Value = xValue.NthField(":", 2).Trim
+		        else
+		          cName.Value = xValue
+		        end if
 		        
 		      case "level"
 		        cSpellLevel.Value = TitleForMenuWithTag( cSpellLevel.BaseMenu, xValue )
@@ -1054,6 +1357,23 @@ End
 		        'cDescription.Value = cDescription.Value + EndOfLine + xValue
 		        'end if
 		        
+		      case "special"
+		        cSpecialTraits.Value = xValue
+		        
+		        cSpecialTraits.Values = xValue.Split(",")
+		        for i as Integer = 0 to cSpecialTraits.Values.LastIndex
+		          cSpecialTraits.Values(i) = cSpecialTraits.Values(i).Trim
+		        next
+		        cSpecialTraits.Tags = cSpecialTraits.Values
+		        
+		      case "modifier"
+		        if xChild.GetAttribute("category") <> "" then
+		          cModifiers.addrow xChild.GetAttribute("category").Titlecase, xValue
+		        else
+		          cModifiers.addrow "Bonus", xValue
+		          Break
+		        end if
+		        
 		      else
 		        Break
 		        
@@ -1067,6 +1387,15 @@ End
 		      cDescription.Value = DescriptionWithoutSource( cDescription.Value )
 		    end if
 		    
+		    
+		    if cDescription.Value.Contains("Prerequisite:") then
+		      var prerequisite as String = cDescription.Value.Match("Prerequisite:(.*?)(\n\n|\n|\Z)", 1 )
+		      cDescription.Value = cDescription.Value.ReplaceAllRegEx("Prerequisite:(.*?)(\n\n|\n|\Z)", "" )
+		      
+		      cPrerequisite.Value = prerequisite'.Replace("Prerequisite:","")
+		      popSpellType.ListIndex = 2
+		    end if
+		    
 		  end if
 		  
 		  
@@ -1075,13 +1404,15 @@ End
 		  HasValidName = NOT cName.Value.Contains("Unnamed spell")
 		  
 		  if NOT HasValidName then
-		    chkSubclassSpell.Value = False
+		    'chkSubclassSpell.Value = False
 		  elseif NOT HasLevel then
-		    chkSubclassSpell.Value = True
+		    'chkSubclassSpell.Value = True
+		    popSpellType.ListIndex = 1
 		  elseif HasValidName and HasLevel then
-		    chkSubclassSpell.Value = False
+		    'chkSubclassSpell.Value = False
 		  elseif NOT HasValidName and NOT HasLevel then
-		    chkSubclassSpell.Value = True
+		    'chkSubclassSpell.Value = True
+		    popSpellType.ListIndex = 1
 		  end if
 		  
 		  
@@ -1092,13 +1423,20 @@ End
 		  'else
 		  'chkSubclassSpell.Value = NOT cName.Value.Contains("Unnamed Spell")
 		  'end if
+		  
+		  lstClasses.Invalidate
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub Reset()
 		  // Reset
+		  popSpellType.ListIndex = 0
+		  
 		  cName.Reset
+		  cFeatureType.Reset
+		  cPrerequisite.Reset
+		  
 		  cRange.Reset
 		  cTime.Reset
 		  cDuration.Reset
@@ -1116,6 +1454,9 @@ End
 		  
 		  cDiceRolls.Reset
 		  lstClasses.DeleteAllRows
+		  
+		  cSpecialTraits.Reset
+		  cModifiers.Reset
 		  
 		  xNode = Nil
 		End Sub
@@ -1171,7 +1512,7 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events chkSubclassSpell
+#tag Events chkSubclassSpellOLD
 	#tag Event
 		Sub Action()
 		  
@@ -1547,6 +1888,11 @@ End
 		        
 		        lines.RemoveAt(index)
 		        
+		      elseif lines(index).StartsWith("Prerequisite:") then
+		        cPrerequisite.Value = lines(index).Replace("Prerequisite:","").Trim
+		        
+		        lines.RemoveAt(index)
+		        
 		      elseif index = 0 then
 		        Title = lines(index)
 		        
@@ -1630,6 +1976,69 @@ End
 		    next
 		  end if
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events popSpellType
+	#tag Event
+		Sub Change()
+		  Select case me.Text
+		    
+		  case "Spell"
+		    cvsPartitionGeneral.Visible = True
+		    cvsPartitionDiceRolls.Visible = True
+		    
+		    cvsPartitionClassFeatureOne.Visible = False
+		    cvsPartitionClassFeatureTwo.Visible = False
+		    
+		    cvsPartitionGeneral.Top = cName.Top + cName.Height + 12
+		    cvsPartitionClasses.Top = cvsPartitionGeneral.Top + cvsPartitionGeneral.Height + 12
+		    cvsPartitionDiceRolls.Top = cvsPartitionClasses.Top + cvsPartitionClasses.Height + 12
+		    
+		    
+		  case "Subclass Spell"
+		    cvsPartitionGeneral.Visible = False
+		    cvsPartitionDiceRolls.Visible = False
+		    
+		    cvsPartitionClassFeatureOne.Visible = False
+		    cvsPartitionClassFeatureTwo.Visible = False
+		    
+		    
+		    cvsPartitionGeneral.Top = cName.Top + cName.Height + 12
+		    cvsPartitionClasses.Top = cvsPartitionGeneral.Top
+		    
+		    
+		  case "Class Feature"
+		    cvsPartitionGeneral.Visible = True
+		    cvsPartitionDiceRolls.Visible = True
+		    
+		    cvsPartitionClassFeatureOne.Visible = True
+		    cvsPartitionClassFeatureTwo.Visible = True
+		    
+		    cvsPartitionGeneral.Top = cPrerequisite.Top + cPrerequisite.Height + 12
+		    cvsPartitionClasses.Top = cvsPartitionGeneral.Top + cvsPartitionGeneral.Height + 12
+		    cvsPartitionDiceRolls.Top = cvsPartitionClasses.Top + cvsPartitionClasses.Height + 12
+		    cvsPartitionClassFeatureTwo.Top = cvsPartitionDiceRolls.Top + cvsPartitionDiceRolls.Height + 12
+		    
+		  end Select
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cFeatureType
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Feature Type:"
+		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		  me.ReadOnly = False
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cPrerequisite
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Prerequisite:"
+		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		  me.ReadOnly = False
 		End Sub
 	#tag EndEvent
 #tag EndEvents

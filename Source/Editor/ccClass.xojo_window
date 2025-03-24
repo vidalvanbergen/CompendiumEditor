@@ -10,7 +10,7 @@ Begin ContainerControl ccClass
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1999
+   Height          =   1995
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -34,7 +34,7 @@ Begin ContainerControl ccClass
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   841
+      Height          =   837
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0

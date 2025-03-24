@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -2903,7 +2903,7 @@ End
 		  me.AddRowWithTagAndPicture "Background", "background", template_compendium_banner_32
 		  me.AddRowWithTagAndPicture "Equipment", "item", template_compendium_treasure_32
 		  me.AddRowWithTagAndPicture "Feat", "feat", template_compendium_feat_32
-		  me.AddRowWithTagAndPicture "Spell", "spell", template_compendium_magic_32
+		  me.AddRowWithTagAndPicture "Spell or Class Feature", "spell", template_compendium_magic_32
 		  me.AddRowWithTagAndPicture "Creature", "monster", template_compendium_creature_32
 		  'me.AddRowWithTagAndPicture "NPC", "monster", templatesmall_dragon
 		  #if DebugBuild then

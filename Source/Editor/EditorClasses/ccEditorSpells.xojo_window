@@ -103,7 +103,7 @@ Begin ContainerControl ccEditorSpells
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin TextArea txtSpells
       AllowAutoDeactivate=   True
@@ -127,7 +127,7 @@ Begin ContainerControl ccEditorSpells
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LineHeight      =   0.0
       LineSpacing     =   1.0
       LockBottom      =   True
@@ -152,7 +152,7 @@ Begin ContainerControl ccEditorSpells
       UnicodeMode     =   1
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   469
+      Width           =   452
    End
    Begin Label lblSpells
       AllowAutoDeactivate=   True
@@ -187,7 +187,7 @@ Begin ContainerControl ccEditorSpells
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
 End
 #tag EndWindow

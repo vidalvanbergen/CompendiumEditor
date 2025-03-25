@@ -59,7 +59,7 @@ Begin ContainerControl ccEditorCheckbox
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin CheckBox chkValue
       AllowAutoDeactivate=   True
@@ -75,7 +75,7 @@ Begin ContainerControl ccEditorCheckbox
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -92,7 +92,7 @@ Begin ContainerControl ccEditorCheckbox
       Value           =   False
       Visible         =   True
       VisualState     =   0
-      Width           =   323
+      Width           =   298
    End
 End
 #tag EndWindow

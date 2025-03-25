@@ -56,7 +56,7 @@ Begin ContainerControl ccEditorTextField
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin DesktopTextField txtField
       AllowAutoDeactivate=   True
@@ -75,7 +75,7 @@ Begin ContainerControl ccEditorTextField
       Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -97,7 +97,7 @@ Begin ContainerControl ccEditorTextField
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   297
+      Width           =   272
    End
    Begin DesktopBevelButton btnDropdown
       Active          =   False

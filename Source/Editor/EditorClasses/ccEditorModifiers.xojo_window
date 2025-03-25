@@ -56,7 +56,7 @@ Begin ContainerControl ccEditorModifiers
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin Listbox lstModifiers
       AllowAutoDeactivate=   True
@@ -89,7 +89,7 @@ Begin ContainerControl ccEditorModifiers
       InitialParent   =   ""
       InitialValue    =   "Category	Modifier"
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -106,7 +106,7 @@ Begin ContainerControl ccEditorModifiers
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   363
+      Width           =   338
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End

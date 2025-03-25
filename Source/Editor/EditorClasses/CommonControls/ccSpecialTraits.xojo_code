@@ -29,6 +29,14 @@ Inherits ccEditorTextField
 
 	#tag ViewBehavior
 		#tag ViewProperty
+			Name="IsPrefixedNumber"
+			Visible=false
+			Group="Behavior"
+			InitialValue="False"
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
 			Name="TagsForValue"
 			Visible=false
 			Group="Behavior"

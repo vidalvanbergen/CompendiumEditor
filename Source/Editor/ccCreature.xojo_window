@@ -530,7 +530,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   501
+      Left            =   510
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -548,7 +548,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   159
+      Width           =   151
    End
    Begin ccEditorTextFieldVertical cAbilityDexterity
       AllowAutoDeactivate=   True
@@ -566,7 +566,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   329
+      Left            =   346
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -584,7 +584,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cAbilityStrength
       AllowAutoDeactivate=   True
@@ -602,7 +602,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -620,7 +620,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cAbilityIntelligence
       AllowAutoDeactivate=   True
@@ -638,7 +638,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -656,7 +656,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cAbilityWisdom
       AllowAutoDeactivate=   True
@@ -674,7 +674,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   329
+      Left            =   346
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -692,7 +692,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cAbilityCharisma
       AllowAutoDeactivate=   True
@@ -710,7 +710,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   501
+      Left            =   510
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -728,7 +728,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   159
+      Width           =   151
    End
    Begin ccEditorTextField cSavingThrows
       AllowAutoDeactivate=   True
@@ -1012,7 +1012,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1030,7 +1030,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cPassivePerception
       AllowAutoDeactivate=   True
@@ -1048,7 +1048,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   329
+      Left            =   346
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1066,7 +1066,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   160
+      Width           =   152
    End
    Begin ccEditorTextFieldVertical cChallengeRating
       AllowAutoDeactivate=   True
@@ -1084,7 +1084,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   501
+      Left            =   510
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1102,7 +1102,7 @@ Begin ContainerControl ccCreature
       Transparent     =   True
       Value           =   ""
       Visible         =   True
-      Width           =   159
+      Width           =   151
    End
    Begin ccEditorTextField cLanguagesKnown
       AllowAutoDeactivate=   True
@@ -1353,7 +1353,7 @@ Begin ContainerControl ccCreature
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin TextField txtSpellSlots
       AllowAutoDeactivate=   True
@@ -1374,7 +1374,7 @@ Begin ContainerControl ccCreature
       Hint            =   "0, 4, 3, 3, 2"
       Index           =   -2147483648
       Italic          =   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1396,7 +1396,7 @@ Begin ContainerControl ccCreature
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   503
+      Width           =   478
    End
    Begin ccEditorTextArea cDescription
       AllowAutoDeactivate=   True

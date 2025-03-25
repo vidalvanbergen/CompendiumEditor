@@ -937,7 +937,7 @@ Begin ContainerControl ccClass
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    BeginSegmented AddRemoveButton areSubclasses
       AddEnabled      =   False
@@ -959,7 +959,7 @@ Begin ContainerControl ccClass
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
-      Top             =   56
+      Top             =   54
       Transparent     =   False
       Visible         =   True
       Width           =   48
@@ -975,7 +975,7 @@ Begin ContainerControl ccClass
       Index           =   -2147483648
       InitialValue    =   "Add or select a subclass."
       Italic          =   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -991,7 +991,7 @@ Begin ContainerControl ccClass
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   435
+      Width           =   410
    End
    Begin ccEditorTextField cSource
       AllowAutoDeactivate=   True

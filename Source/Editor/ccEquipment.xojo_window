@@ -883,7 +883,7 @@ Begin ContainerControl ccEquipment
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
-      Left            =   157
+      Left            =   182
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -899,7 +899,7 @@ Begin ContainerControl ccEquipment
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   431
+      Width           =   406
    End
    Begin PushButton btnLoadTemplate
       AllowAutoDeactivate=   True
@@ -966,7 +966,7 @@ Begin ContainerControl ccEquipment
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin BevelButton bvlClipboard
       AllowAutoDeactivate=   True
@@ -1961,7 +1961,7 @@ End
 #tag EndEvents
 #tag Events cDiceRolls
 	#tag Event
-		Sub FindDiceNotationsIn(ByRef Source as String)
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent

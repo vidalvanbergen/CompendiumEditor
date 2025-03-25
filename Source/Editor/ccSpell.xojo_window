@@ -561,7 +561,7 @@ Begin ContainerControl ccSpell
          InitialParent   =   "cvsPartitionClasses"
          InitialValue    =   ""
          Italic          =   False
-         Left            =   157
+         Left            =   182
          LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
@@ -577,7 +577,7 @@ Begin ContainerControl ccSpell
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   423
+         Width           =   398
       End
       Begin Listbox lstClasses
          AllowAutoDeactivate=   True
@@ -610,7 +610,7 @@ Begin ContainerControl ccSpell
          InitialParent   =   "cvsPartitionClasses"
          InitialValue    =   "Class names"
          Italic          =   False
-         Left            =   157
+         Left            =   182
          LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
@@ -627,7 +627,7 @@ Begin ContainerControl ccSpell
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   523
+         Width           =   498
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
       End
@@ -664,7 +664,7 @@ Begin ContainerControl ccSpell
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   125
+         Width           =   150
       End
    End
    Begin Canvas cvsPartitionDiceRolls
@@ -814,7 +814,7 @@ Begin ContainerControl ccSpell
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
-         Scope           =   2
+         Scope           =   0
          TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
@@ -1335,16 +1335,22 @@ End
 		        next
 		        
 		      case "roll"
-		        var attribute, attributeValue as String
+		        var attribute, level, attributeValue as String
 		        if xChild.AttributeCount > 0 then
 		          for i as Integer = 0 to xChild.AttributeCount-1
 		            var xAttribute as XMLAttribute = xChild.GetAttributeNode(i)
 		            attribute = xAttribute.Name
-		            attributeValue = xAttribute.Value
+		            if attribute = "description" then
+		              attributeValue = xAttribute.Value
+		            elseif attribute = "level" then
+		              level = xAttribute.Value
+		            else
+		              Break
+		            end if
 		          next
 		        end if
 		        
-		        cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), attributeValue
+		        cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), level, attributeValue
 		        cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = xValue
 		        
 		      case "duration"
@@ -1804,7 +1810,7 @@ End
 #tag EndEvents
 #tag Events cDiceRolls
 	#tag Event
-		Sub FindDiceNotationsIn(ByRef Source as String)
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent

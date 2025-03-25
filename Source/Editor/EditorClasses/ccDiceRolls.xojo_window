@@ -56,7 +56,7 @@ Begin ContainerControl ccDiceRolls
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin Listbox lstDiceRolls
       AllowAutoDeactivate=   True
@@ -67,8 +67,8 @@ Begin ContainerControl ccDiceRolls
       AllowRowDragging=   True
       AllowRowReordering=   True
       Bold            =   False
-      ColumnCount     =   2
-      ColumnWidths    =   "70%, *"
+      ColumnCount     =   3
+      ColumnWidths    =   "30%, 50, *"
       DataField       =   ""
       DataSource      =   ""
       DefaultRowHeight=   24
@@ -87,9 +87,9 @@ Begin ContainerControl ccDiceRolls
       Height          =   122
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "Roll	Description"
+      InitialValue    =   "Roll	Level	Description"
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -106,35 +106,9 @@ Begin ContainerControl ccDiceRolls
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   323
+      Width           =   298
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
-   End
-   BeginSegmented AddRemoveEditButton areModifier
-      AddEnabled      =   False
-      EditEnabled     =   False
-      Enabled         =   True
-      Height          =   24
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   45
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacControlStyle =   0
-      RemoveEnabled   =   False
-      Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
-      SelectionType   =   2
-      TabIndex        =   8
-      TabPanelIndex   =   0
-      TabStop         =   False
-      Top             =   34
-      Transparent     =   False
-      Visible         =   True
-      Width           =   72
    End
    Begin Label lblDescription
       AllowAutoDeactivate=   True
@@ -149,19 +123,19 @@ Begin ContainerControl ccDiceRolls
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   137
-      LockBottom      =   False
+      Left            =   162
+      LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
-      LockTop         =   True
+      LockTop         =   False
       Multiline       =   True
       Scope           =   0
       Selectable      =   False
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Optionally add a level or other requirement to the description, these are not used by Fight Club 5e."
+      Text            =   "Optionally add a level and short description, these are not used by Fight Club 5e."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -169,7 +143,30 @@ Begin ContainerControl ccDiceRolls
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   323
+      Width           =   298
+   End
+   BeginSegmented AddDuplicateRemoveEdit ardeModifier
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   46
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacControlStyle =   0
+      Scope           =   0
+      Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
+      SelectionType   =   2
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Top             =   34
+      Transparent     =   False
+      Visible         =   True
+      Width           =   96
    End
 End
 #tag EndWindow
@@ -177,34 +174,79 @@ End
 #tag WindowCode
 	#tag Method, Flags = &h0
 		Sub AddCalculation()
-		  var Source as String
-		  RaiseEvent FindDiceNotationsIn( Source )
+		  var nameValue, Source as String
+		  RaiseEvent FindDiceNotationsIn( nameValue, Source )
 		  
-		  var result, description as string
+		  var result, level, description as string
 		  
-		  if Source <> "" then
-		    var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?).*?(\w+|\.)", 1 )
+		  'if Source <> "" then
+		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
+		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)", 1 )
+		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( \w+ damage| \| \w+ trait| \| \w+)", 2 )
+		  
+		  'end if
+		  
+		  // Leveled rolls
+		  level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		  if lstDiceRolls.SelectedRowIndex > -1 and level <> "" and level.IsNumeric and _
+		    ( (source.Contains("cantrip upgrade") and val( level ) < 20) or (source.Contains("higher levels") and val( level ) < 9 )) then
+		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
+		    result = Str( val( result.NthField("d", 1) ) + 1 ) + "d" + result.NthField( result.NthField("d", 1) + "d", 2 )
 		    
-		    
-		    if multiResults.LastIndex >= lstDiceRolls.LastRowIndex+1 then
-		      result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
+		    if source.Contains("higher levels:") then
+		      level = Str( Val( lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 ) ) + 1 )
+		      
+		    elseif Source.Contains("cantrip upgrade:") then
+		      level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		      Select case level
+		      case "0"
+		        level = "5"
+		      case "5"
+		        level = "11"
+		      case "11"
+		        level = "17"
+		      case "17"
+		        '
+		        result = ""
+		        level = ""
+		      End Select
 		    end if
 		    
+		    if multiDescription <> Nil and multiDescription.LastIndex > -1 then
+		      description = multiDescription(0).Titlecase
+		    end if
 		  end if
 		  
-		  if result = "" and lstDiceRolls.SelectedRowIndex > -1 then
-		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
-		    description = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		  
+		  // regular results
+		  if result = "" and multiResults <> Nil and multiResults.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		    result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
+		    
+		    if multiDescription <> Nil and multiDescription.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Trim
+		    end if
+		  end if
+		  
+		  
+		  if result.StartsWith("d") then
+		    result = "1" + result
 		  end if
 		  
 		  result = SummonCalculator( result, True )
 		  
-		  if description.IsNumeric then
-		    description = Str( Val( description ) + 1 )
+		  'if description.IsNumeric then
+		  'description = Str( Val( description ) + 1 )
+		  'else
+		  if description = "" and lstDiceRolls.LastRowIndex = -1 then
+		    description = nameValue
+		  end if
+		  
+		  if description.Contains("damage") then
+		    description = description.Titlecase
 		  end if
 		  
 		  if result <> "" then
-		    lstDiceRolls.AddRow result, description
+		    lstDiceRolls.AddRow result, level, description
 		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
 		    
 		    
@@ -218,16 +260,20 @@ End
 		Sub AddDiceRollsTo(xNode as XMLNode)
 		  if lstDiceRolls.LastIndex > -1 then
 		    for row as Integer = 0 to lstDiceRolls.LastIndex
-		      var value, attribute as String
+		      var value, level, attribute as String
 		      value = lstDiceRolls.RowTagAt( row ).StringValue.Trim
-		      attribute = lstDiceRolls.CellValueAt( row, 1 ).Trim
-		      
+		      level = lstDiceRolls.CellValueAt( row, 1 ).Trim
+		      attribute = lstDiceRolls.CellValueAt( row, 2 ).Trim
 		      if value.Trim <> "" then
 		        var xLeaf as XMLNode = xNode.AppendNewChild( "roll" )
 		        xLeaf.SetValue( value )
 		        
 		        if attribute <> "" then
 		          xLeaf.SetAttribute( "description", attribute )
+		        end if
+		        
+		        if level <> "" then
+		          xLeaf.SetAttribute( "level", level )
 		        end if
 		        
 		      end if
@@ -250,6 +296,20 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub CopyCalculation()
+		  
+		  if lstDiceRolls.SelectedRowIndex > -1 then
+		    var lindex as Integer = lstDiceRolls.SelectedRowIndex
+		    
+		    lstDiceRolls.AddRow lstDiceRolls.CellValueAt( lindex, 0 ), lstDiceRolls.CellValueAt( lindex, 1 ), lstDiceRolls.CellValueAt( lindex, 2 )
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = lstDiceRolls.RowTagAt( lindex )
+		    
+		    lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub EditCalculation()
 		  var result as string
 		  if lstDiceRolls.SelectedRowIndex > -1 then
@@ -262,6 +322,7 @@ End
 		      lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 ) = result
 		      lstDiceRolls.RowTagAt( lstDiceRolls.SelectedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
 		    else
+		      Break
 		      lstDiceRolls.AddRow result
 		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
 		    end if
@@ -296,7 +357,7 @@ End
 
 
 	#tag Hook, Flags = &h0
-		Event FindDiceNotationsIn(ByRef Source as String)
+		Event FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
 	#tag EndHook
 
 
@@ -318,8 +379,9 @@ End
 	#tag Event
 		Sub Change()
 		  #if TargetMacOS then
-		    areModifier.RemoveEnabled = me.SelectedRowIndex > -1
-		    areModifier.EditEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.RemoveEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.DuplicateEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.EditEnabled = me.SelectedRowIndex > -1
 		  #endif
 		End Sub
 	#tag EndEvent
@@ -331,6 +393,7 @@ End
 	#tag Event
 		Sub Open()
 		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
+		  me.ColumnTypeAt(2) = Listbox.CellTypes.TextField
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -351,20 +414,20 @@ End
 		End Function
 	#tag EndEvent
 #tag EndEvents
-#tag Events areModifier
+#tag Events ardeModifier
 	#tag Event
 		Sub ActionAdd()
-		  'lstModifiers.AddRow popCategory.Text, cbModifierValue.Text
-		  'lstModifiers.SelectedRowIndex = lstModifiers.LastAddedRowIndex
-		  
 		  AddCalculation
 		End Sub
 	#tag EndEvent
 	#tag Event
+		Sub ActionDuplicate()
+		  copyCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
 		Sub ActionEdit()
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    EditCalculation
-		  end if
+		  EditCalculation
 		End Sub
 	#tag EndEvent
 	#tag Event

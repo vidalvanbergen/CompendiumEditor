@@ -56,7 +56,7 @@ Begin ContainerControl ccEditorTextArea
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin DesktopBevelButton btnDropdown
       Active          =   False

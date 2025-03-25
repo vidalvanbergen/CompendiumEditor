@@ -13,8 +13,10 @@ Protected Module DiceCalculatorMethods
 		  DisplayText = DisplayText.ReplaceAll("x", " × ")
 		  DisplayText = DisplayText.ReplaceAll("/", " ÷ ")
 		  
-		  DisplayText = DisplayText.ReplaceAll("o", "[Wo]") ' wo
 		  DisplayText = DisplayText.ReplaceAll("w", "[W]") ' w
+		  DisplayText = DisplayText.ReplaceAll("o", "[Wo]") ' wo
+		  DisplayText = DisplayText.ReplaceAll("PR[Wo]F", "PROF") ' Restore PROF if necessairy
+		  DisplayText = DisplayText.ReplaceAll("PR[[W]o]F", "PROF") ' Restore PROF if necessairy
 		  DisplayText = DisplayText.ReplaceAll("%10", "½LVL") ' LVL 1/2
 		  DisplayText = DisplayText.ReplaceAll("%0", "SPELL") ' Spellcasting Ability
 		  DisplayText = DisplayText.ReplaceAll("%1", "STR") ' STR MOD

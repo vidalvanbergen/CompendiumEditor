@@ -84,6 +84,7 @@ Window=ccCancelOK;Libraries/Classes/ccCancelOK.xojo_window;&h000000000CB71999;&h
 Class=LabelFor;Libraries/Classes/LabelFor.xojo_code;&h0000000010E77325;&h00000000681FE578;false
 Class=AddRemoveButton;Libraries/Classes/AddRemoveButton.xojo_code;&h000000001A73A5E1;&h00000000681FE578;false
 Class=AddDuplicateRemoveButton;Libraries/Classes/AddDuplicateRemoveButton.xojo_code;&h000000001BCA77FF;&h00000000681FE578;false
+Class=AddDuplicateRemoveEdit;Libraries/Classes/AddDuplicateRemoveEdit.xojo_code;&h000000004940DFFF;&h00000000681FE578;false
 Class=PrevNextButton;Libraries/Classes/PrevNextButton.xojo_code;&h000000002B047FFF;&h00000000681FE578;false
 Folder=ContentsChangedControls;Libraries/Classes/ContentsChangedControls;&h000000000E8B14E5;&h00000000681FE578;false
 Folder=SettingsControls;Libraries/Classes/SettingsControls;&h000000005567AF2C;&h00000000681FE578;false

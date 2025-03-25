@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   920
+   Height          =   1022
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -203,13 +203,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Spellcasting ability (e.g., Intelligence, Charisma, etc.)."
-      Top             =   190
+      Top             =   292
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -237,11 +237,11 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   640
+      Top             =   742
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -309,11 +309,11 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   7
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   292
+      Top             =   394
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -344,13 +344,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   258
+      Top             =   360
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -382,12 +382,126 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
+      Tooltip         =   "Damage resistances. (Unofficial)"
+      Top             =   326
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccEditorTextField cProficienciesTools
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Tool proficiencies. (Unofficial)"
+      Top             =   258
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccEditorTextField cProficienciesWeapons
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Weapon proficiencies. (Unofficial)"
+      Top             =   190
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccEditorTextField cProficienciesArmor
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
       Top             =   224
       Transparent     =   True
       UseLowercase    =   False
@@ -475,21 +589,35 @@ End
 		    xSpecies.AppendSimpleChild( "ability", cAbility.Value )
 		  end if
 		  
+		  // Damage Resistance
+		  if cDamageResistance.Value <> "" then
+		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Trim )
+		  end if
+		  
 		  // Proficiencies
 		  if cProficiencies.Value <> "" then
 		    xSpecies.AppendSimpleChild( "proficiency", cProficiencies.Value.Trim )
+		  end if
+		  
+		  // Armor Proficiency
+		  if cProficienciesArmor.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "armor", cProficienciesArmor.Value )
+		  end if
+		  
+		  // Weapon Proficiency
+		  if cProficienciesWeapons.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "weapons", cProficienciesWeapons.Value )
+		  end if
+		  
+		  // Tools Proficiency
+		  if cProficienciesTools.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "tools", cProficienciesTools.Value )
 		  end if
 		  
 		  // Spellcasting Ability
 		  if cSpellAbility.Value <> "" then
 		    xSpecies.AppendSimpleChild( "spellAbility", cSpellAbility.Value.Trim )
 		  end if
-		  
-		  // Damage Resistance
-		  if cDamageResistance.Value <> "" then
-		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Trim )
-		  end if
-		  
 		  
 		  
 		  // Traits
@@ -599,6 +727,15 @@ End
 		        case "resist"
 		          cDamageResistance.Value = xValue
 		          
+		        case "armor"
+		          cProficienciesArmor.SetMultiValues SplitString( xValue, "," )
+		          
+		        case "weapons"
+		          cProficienciesWeapons.SetMultiValues SplitString( xValue, "," )
+		          
+		        case "tools"
+		          cProficienciesTools.SetMultiValues SplitString( xValue, "," )
+		          
 		        case "size"
 		          cSize.Value = TitleForMenuWithTag( cSize.BaseMenu, xValue )
 		          cSize.Tag = xValue
@@ -653,6 +790,9 @@ End
 		  cTraits.Reset
 		  
 		  cDamageResistance.Reset
+		  cProficienciesArmor.Reset
+		  cProficienciesWeapons.Reset
+		  cProficienciesTools.Reset
 		  
 		  xNode = Nil
 		End Sub
@@ -810,6 +950,116 @@ End
 		  me.BaseMenu.Append new MenuItem( "Psychic" )
 		  me.BaseMenu.Append new MenuItem( "Radiant" )
 		  me.BaseMenu.Append new MenuItem( "Thunder" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cProficienciesTools
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Tool Proficiencies:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = False
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem( "Alchemist's Supplies" )
+		  me.BaseMenu.Append new MenuItem( "Brewer's Supplies" )
+		  me.BaseMenu.Append new MenuItem( "Calligrapher's Supplies" )
+		  me.BaseMenu.Append new MenuItem( "Carpenter's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Cartographer's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Cobbler's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Cook's Utensils" )
+		  me.BaseMenu.Append new MenuItem( "Glassblower's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Jeweler's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Leatherworker's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Mason's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Painter's Supplies" )
+		  me.BaseMenu.Append new MenuItem( "Potter's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Smith's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Thieves' Tools" )
+		  me.BaseMenu.Append new MenuItem( "Tinker's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Weaver's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Woodcarver's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Gaming Set")
+		  me.BaseMenu.AddMenu new MenuItem("Musical Instrument")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cProficienciesWeapons
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Weapon Proficiencies:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = False
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Simple Weapons")
+		  me.BaseMenu.AddMenu new MenuItem("Martial Weapons")
+		  // Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
+		  me.BaseMenu.Append new MenuItem( "Club" )
+		  me.BaseMenu.Append new MenuItem( "Dagger" )
+		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Flail" )
+		  me.BaseMenu.Append new MenuItem( "Glaive" )
+		  me.BaseMenu.Append new MenuItem( "Greataxe" )
+		  me.BaseMenu.Append new MenuItem( "Greatclub" )
+		  me.BaseMenu.Append new MenuItem( "Greatsword" )
+		  me.BaseMenu.Append new MenuItem( "Halbertd" )
+		  me.BaseMenu.Append new MenuItem( "Handaxe" )
+		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
+		  me.BaseMenu.Append new MenuItem( "Hoopak" )
+		  me.BaseMenu.Append new MenuItem( "Javelin" )
+		  me.BaseMenu.Append new MenuItem( "Lance" )
+		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
+		  me.BaseMenu.Append new MenuItem( "Longsword" )
+		  me.BaseMenu.Append new MenuItem( "Mace" )
+		  me.BaseMenu.Append new MenuItem( "Maul" )
+		  me.BaseMenu.Append new MenuItem( "Morningstar" )
+		  me.BaseMenu.Append new MenuItem( "Pike" )
+		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
+		  me.BaseMenu.Append new MenuItem( "Rapier" )
+		  me.BaseMenu.Append new MenuItem( "Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Shortsword" )
+		  me.BaseMenu.Append new MenuItem( "Sickle" )
+		  me.BaseMenu.Append new MenuItem( "Spear" )
+		  me.BaseMenu.Append new MenuItem( "Staff" )
+		  me.BaseMenu.Append new MenuItem( "Trident" )
+		  me.BaseMenu.Append new MenuItem( "War Pick" )
+		  me.BaseMenu.Append new MenuItem( "Warhammer" )
+		  me.BaseMenu.Append new MenuItem( "Whip" )
+		  me.BaseMenu.Append new MenuItem( "Yklwa" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Blowgun" )
+		  me.BaseMenu.Append new MenuItem( "Dart" )
+		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Longbow" )
+		  me.BaseMenu.Append new MenuItem( "Net" )
+		  me.BaseMenu.Append new MenuItem( "Shortbow" )
+		  me.BaseMenu.Append new MenuItem( "Sling" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cProficienciesArmor
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Armor Proficiencies:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Light Armor")
+		  me.BaseMenu.AddMenu new MenuItem("Medium Armor")
+		  me.BaseMenu.AddMenu new MenuItem("Heavy Armor")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Shields")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

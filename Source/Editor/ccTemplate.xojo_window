@@ -77,7 +77,7 @@ Begin ContainerControl ccTemplate
       Index           =   0
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -97,7 +97,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorTextField cDetail
       AllowAutoDeactivate=   True
@@ -150,7 +150,7 @@ Begin ContainerControl ccTemplate
       Index           =   1
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -170,7 +170,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorTextField cItemType
       AllowAutoDeactivate=   True
@@ -223,7 +223,7 @@ Begin ContainerControl ccTemplate
       Index           =   2
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -243,7 +243,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorTextField cMatch
       AllowAutoDeactivate=   True
@@ -296,7 +296,7 @@ Begin ContainerControl ccTemplate
       Index           =   3
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -316,7 +316,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorTextArea cDescription
       AllowAutoDeactivate=   True
@@ -363,7 +363,7 @@ Begin ContainerControl ccTemplate
       Index           =   4
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -383,7 +383,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorTextField cSource
       AllowAutoDeactivate=   True
@@ -436,7 +436,7 @@ Begin ContainerControl ccTemplate
       Index           =   5
       InitialParent   =   ""
       Italic          =   False
-      Left            =   160
+      Left            =   185
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -456,7 +456,7 @@ Begin ContainerControl ccTemplate
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   500
+      Width           =   475
    End
    Begin ccEditorModifiers cModifiers
       AllowAutoDeactivate=   True

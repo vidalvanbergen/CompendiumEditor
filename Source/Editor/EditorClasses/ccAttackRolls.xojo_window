@@ -56,7 +56,7 @@ Begin ContainerControl ccAttackRolls
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin Listbox lstDiceRolls
       AllowAutoDeactivate=   True
@@ -89,7 +89,7 @@ Begin ContainerControl ccAttackRolls
       InitialParent   =   ""
       InitialValue    =   "Name	To Hit	Dice Roll"
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -106,35 +106,32 @@ Begin ContainerControl ccAttackRolls
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   423
+      Width           =   410
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
-   BeginSegmented AddRemoveEditButton areModifier
-      AddEnabled      =   False
-      EditEnabled     =   False
+   BeginSegmented AddDuplicateRemoveEdit ardeModifier
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   45
+      Left            =   46
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       MacControlStyle =   0
-      RemoveEnabled   =   False
       Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
+      Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   34
       Transparent     =   False
       Visible         =   True
-      Width           =   72
+      Width           =   96
    End
 End
 #tag EndWindow
@@ -238,6 +235,20 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub CopyCalculation()
+		  
+		  if lstDiceRolls.SelectedRowIndex > -1 then
+		    var lindex as Integer = lstDiceRolls.SelectedRowIndex
+		    
+		    lstDiceRolls.AddRow lstDiceRolls.CellValueAt( lindex, 0 ), lstDiceRolls.CellValueAt( lindex, 1 ), lstDiceRolls.CellValueAt( lindex, 2 )
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = lstDiceRolls.RowTagAt( lindex )
+		    
+		    lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub EditCalculation()
 		  var result as string
 		  if lstDiceRolls.SelectedRowIndex > -1 then
@@ -302,8 +313,8 @@ End
 	#tag Event
 		Sub Change()
 		  #if TargetMacOS then
-		    areModifier.RemoveEnabled = me.SelectedRowIndex > -1
-		    areModifier.EditEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.RemoveEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.EditEnabled = me.SelectedRowIndex > -1
 		  #endif
 		End Sub
 	#tag EndEvent
@@ -371,17 +382,20 @@ End
 		End Function
 	#tag EndEvent
 #tag EndEvents
-#tag Events areModifier
+#tag Events ardeModifier
 	#tag Event
 		Sub ActionAdd()
 		  AddCalculation
 		End Sub
 	#tag EndEvent
 	#tag Event
+		Sub ActionDuplicate()
+		  copyCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
 		Sub ActionEdit()
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    EditCalculation
-		  end if
+		  EditCalculation
 		End Sub
 	#tag EndEvent
 	#tag Event

@@ -59,7 +59,7 @@ Begin ContainerControl ccTraits
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   125
+      Width           =   150
    End
    Begin Listbox lstTraits
       AllowAutoDeactivate=   True
@@ -92,7 +92,7 @@ Begin ContainerControl ccTraits
       InitialParent   =   ""
       InitialValue    =   "Name	Category"
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -109,35 +109,32 @@ Begin ContainerControl ccTraits
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   323
+      Width           =   298
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
-   BeginSegmented AddRemoveEditButton areTraits
-      AddEnabled      =   False
-      EditEnabled     =   False
+   BeginSegmented AddDuplicateRemoveEdit ardeTraits
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   45
+      Left            =   46
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       MacControlStyle =   0
-      RemoveEnabled   =   False
       Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
+      Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   32
       Transparent     =   False
       Visible         =   True
-      Width           =   72
+      Width           =   96
    End
 End
 #tag EndWindow
@@ -748,8 +745,9 @@ End
 	#tag Event
 		Sub Open()
 		  #if TargetMacOS then
-		    areTraits.RemoveEnabled = (me.SelectedRowIndex > -1)
-		    areTraits.EditEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.RemoveEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.EditEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.DuplicateEnabled = (me.SelectedRowIndex > -1)
 		  #endif
 		  
 		  for column as Integer = 0 to me.ColumnCount-1
@@ -760,8 +758,9 @@ End
 	#tag Event
 		Sub Change()
 		  #if TargetMacOS then
-		    areTraits.RemoveEnabled = (me.SelectedRowIndex > -1)
-		    areTraits.EditEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.RemoveEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.EditEnabled = (me.SelectedRowIndex > -1)
+		    ardeTraits.DuplicateEnabled = (me.SelectedRowIndex > -1)
 		  #endif
 		End Sub
 	#tag EndEvent
@@ -1000,7 +999,7 @@ End
 		End Function
 	#tag EndEvent
 #tag EndEvents
-#tag Events areTraits
+#tag Events ardeTraits
 	#tag Event
 		Sub ActionAdd()
 		  if Keyboard.AsyncAltKey then
@@ -1008,6 +1007,11 @@ End
 		  else
 		    FeatureAdd
 		  end if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionDuplicate()
+		  FeatureCopy
 		End Sub
 	#tag EndEvent
 	#tag Event

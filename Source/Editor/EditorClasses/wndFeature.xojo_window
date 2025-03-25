@@ -10,7 +10,7 @@ Begin Window wndFeature
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   970
+   Height          =   1006
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -438,7 +438,7 @@ Begin Window wndFeature
       Visible         =   True
       Width           =   24
    End
-   Begin ccAttackRolls cAttackRolls
+   Begin ccDiceRolls cDiceRolls
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -449,17 +449,17 @@ Begin Window wndFeature
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   122
+      Height          =   158
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
-      LockBottom      =   True
+      LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -533,7 +533,7 @@ End
 		  end if
 		  
 		  // Attack rolls
-		  cAttackRolls.AddDiceRollsTo( xNode )
+		  cDiceRolls.AddDiceRollsTo( xNode )
 		End Sub
 	#tag EndMethod
 
@@ -647,8 +647,24 @@ End
 		          Break
 		        end if
 		        
-		      case "attack"
-		        cAttackRolls.AddRoll( xValue )
+		      case "roll"
+		        var attribute, level, attributeValue as String
+		        if xChild.AttributeCount > 0 then
+		          for i as Integer = 0 to xChild.AttributeCount-1
+		            var xAttribute as XMLAttribute = xChild.GetAttributeNode(i)
+		            attribute = xAttribute.Name
+		            if attribute = "description" then
+		              attributeValue = xAttribute.Value
+		            elseif attribute = "level" then
+		              level = xAttribute.Value
+		            else
+		              Break
+		            end if
+		          next
+		        end if
+		        
+		        cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), level, attributeValue
+		        cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = xValue
 		        'lstDiceRolls.AddRow xValue.NthField("|", 1), xValue.NthField("|", 2), DiceCalculatorMethods.PrettifyMath( xValue.NthField("|", 3) )
 		        'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = xValue.NthField("|", 3)
 		        
@@ -803,10 +819,9 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cAttackRolls
+#tag Events cDiceRolls
 	#tag Event
 		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
-		  name = cName.Value
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent

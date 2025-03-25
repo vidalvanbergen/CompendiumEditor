@@ -120,7 +120,7 @@ Begin ContainerControl ccClass
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   125
+         Width           =   150
       End
       Begin Listbox lstCounter
          AllowAutoDeactivate=   True
@@ -153,7 +153,7 @@ Begin ContainerControl ccClass
          InitialParent   =   "cvsClassFeatures"
          InitialValue    =   "Level	Name	Value	Reset	Subclass"
          Italic          =   False
-         Left            =   157
+         Left            =   182
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -170,7 +170,7 @@ Begin ContainerControl ccClass
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   503
+         Width           =   478
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
       End
@@ -181,11 +181,11 @@ Begin ContainerControl ccClass
          Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsClassFeatures"
-         Left            =   65
+         Left            =   90
          LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
+         LockLeft        =   True
+         LockRight       =   False
          LockTop         =   True
          MacControlStyle =   0
          RemoveEnabled   =   False

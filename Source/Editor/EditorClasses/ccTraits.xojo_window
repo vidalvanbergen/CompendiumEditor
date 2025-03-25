@@ -118,7 +118,7 @@ Begin ContainerControl ccTraits
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   46
+      Left            =   47
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True

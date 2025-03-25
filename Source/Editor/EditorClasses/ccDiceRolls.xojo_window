@@ -68,7 +68,7 @@ Begin ContainerControl ccDiceRolls
       AllowRowReordering=   True
       Bold            =   False
       ColumnCount     =   3
-      ColumnWidths    =   "30%, 50, *"
+      ColumnWidths    =   "30%, 80, *"
       DataField       =   ""
       DataSource      =   ""
       DefaultRowHeight=   24
@@ -150,7 +150,7 @@ Begin ContainerControl ccDiceRolls
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   46
+      Left            =   47
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True

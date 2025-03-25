@@ -216,7 +216,7 @@ Protected Module XMLModule
 		      
 		      // Add Source to description
 		      var linespacing as String = EndOfLine
-		      if ( NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Proficiency:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Found on:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Stat Block Origin:" )  ) or descriptionLines( descriptionLines.LastIndex ).StartsWith( chr(9) ) then
+		      if ( NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Proficiency:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Found on:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Notes:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Stat Block Origin:" )  ) or descriptionLines( descriptionLines.LastIndex ).StartsWith( chr(9) ) then
 		        linespacing = EndOfLine + EndOfLine
 		      end if
 		      

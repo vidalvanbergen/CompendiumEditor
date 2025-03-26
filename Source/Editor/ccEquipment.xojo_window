@@ -1305,18 +1305,23 @@ End
 		        case "text"
 		          descriptionLines.Add xValue
 		          
-		          
 		        case "roll"
-		          var attribute, attributeValue as String
+		          var attribute, level, attributeValue as String
 		          if xChild.AttributeCount > 0 then
 		            for i as Integer = 0 to xChild.AttributeCount-1
 		              var xAttribute as XMLAttribute = xChild.GetAttributeNode(i)
 		              attribute = xAttribute.Name
-		              attributeValue = xAttribute.Value
+		              if attribute = "description" then
+		                attributeValue = xAttribute.Value
+		              elseif attribute = "level" then
+		                level = xAttribute.Value
+		              else
+		                Break
+		              end if
 		            next
 		          end if
 		          
-		          cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), attributeValue
+		          cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), level, attributeValue
 		          cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = xValue
 		          
 		          
@@ -1646,7 +1651,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "greataxe" )
 		  me.BaseMenu.Append new MenuItem( "greatclub" )
 		  me.BaseMenu.Append new MenuItem( "greatsword" )
-		  me.BaseMenu.Append new MenuItem( "halbertd" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
 		  me.BaseMenu.Append new MenuItem( "handaxe" )
 		  me.BaseMenu.Append new MenuItem( "hooked shortspear" )
 		  me.BaseMenu.Append new MenuItem( "hoopak" )

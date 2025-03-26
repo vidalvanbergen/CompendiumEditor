@@ -627,7 +627,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "Greataxe" )
 		  me.BaseMenu.Append new MenuItem( "Greatclub" )
 		  me.BaseMenu.Append new MenuItem( "Greatsword" )
-		  me.BaseMenu.Append new MenuItem( "Halbertd" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
 		  me.BaseMenu.Append new MenuItem( "Handaxe" )
 		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
 		  me.BaseMenu.Append new MenuItem( "Hoopak" )

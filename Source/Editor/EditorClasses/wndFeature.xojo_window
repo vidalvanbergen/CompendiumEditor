@@ -825,6 +825,11 @@ End
 		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.bvlUnofficialInfo.Visible = True
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty

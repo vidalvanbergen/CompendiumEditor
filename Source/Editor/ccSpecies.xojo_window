@@ -156,7 +156,7 @@ Begin ContainerControl ccSpecies
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -171,7 +171,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
-      Top             =   156
+      Top             =   190
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -209,7 +209,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Spellcasting ability (e.g., Intelligence, Charisma, etc.)."
-      Top             =   292
+      Top             =   156
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -393,7 +393,7 @@ Begin ContainerControl ccSpecies
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   660
+      Width           =   625
    End
    Begin ccEditorTextField cProficienciesTools
       AllowAutoDeactivate=   True
@@ -411,7 +411,7 @@ Begin ContainerControl ccSpecies
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -426,12 +426,12 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   258
+      Top             =   292
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   660
+      Width           =   624
    End
    Begin ccEditorTextField cProficienciesWeapons
       AllowAutoDeactivate=   True
@@ -449,7 +449,7 @@ Begin ContainerControl ccSpecies
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -464,12 +464,12 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   190
+      Top             =   224
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   660
+      Width           =   624
    End
    Begin ccEditorTextField cProficienciesArmor
       AllowAutoDeactivate=   True
@@ -487,7 +487,7 @@ Begin ContainerControl ccSpecies
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -502,12 +502,188 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   224
+      Top             =   258
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   660
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   0
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   657
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   323
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   1
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   657
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   289
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   2
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   657
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   255
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   3
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   657
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   221
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
    End
 End
 #tag EndWindow
@@ -1008,7 +1184,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "Greataxe" )
 		  me.BaseMenu.Append new MenuItem( "Greatclub" )
 		  me.BaseMenu.Append new MenuItem( "Greatsword" )
-		  me.BaseMenu.Append new MenuItem( "Halbertd" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
 		  me.BaseMenu.Append new MenuItem( "Handaxe" )
 		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
 		  me.BaseMenu.Append new MenuItem( "Hoopak" )
@@ -1060,6 +1236,13 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("Heavy Armor")
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  me.BaseMenu.AddMenu new MenuItem("Shields")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlUnofficialInfo
+	#tag Event
+		Sub Action(index as Integer)
+		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -135,7 +135,7 @@ Begin ContainerControl ccDiceRolls
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Optionally add a level and short description, these are not used by Fight Club 5e."
+      Text            =   "You can optionally add a level and a short description. Fight Club 5e doesn’t use them, but they might be useful in the future."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -146,6 +146,9 @@ Begin ContainerControl ccDiceRolls
       Width           =   298
    End
    BeginSegmented AddDuplicateRemoveEdit ardeModifier
+      AddEnabled      =   False
+      DuplicateEnabled=   False
+      EditEnabled     =   False
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
@@ -157,6 +160,7 @@ Begin ContainerControl ccDiceRolls
       LockRight       =   False
       LockTop         =   True
       MacControlStyle =   0
+      RemoveEnabled   =   False
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
@@ -167,6 +171,50 @@ Begin ContainerControl ccDiceRolls
       Transparent     =   False
       Visible         =   True
       Width           =   96
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   126
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   70
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   False
+      Width           =   24
    End
 End
 #tag EndWindow
@@ -433,6 +481,13 @@ End
 	#tag Event
 		Sub ActionRemove()
 		  RemoveCalculation
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlUnofficialInfo
+	#tag Event
+		Sub Action()
+		  MessageBox "Dice rolls here aren't officially supported by the Fight Club app, but I added it in case they might be useful in the future."
 		End Sub
 	#tag EndEvent
 #tag EndEvents

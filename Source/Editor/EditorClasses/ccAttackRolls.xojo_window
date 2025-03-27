@@ -111,6 +111,9 @@ Begin ContainerControl ccAttackRolls
       _ScrollWidth    =   -1
    End
    BeginSegmented AddDuplicateRemoveEdit ardeModifier
+      AddEnabled      =   False
+      DuplicateEnabled=   False
+      EditEnabled     =   False
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
@@ -122,6 +125,7 @@ Begin ContainerControl ccAttackRolls
       LockRight       =   False
       LockTop         =   True
       MacControlStyle =   0
+      RemoveEnabled   =   False
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
@@ -132,6 +136,29 @@ Begin ContainerControl ccAttackRolls
       Transparent     =   False
       Visible         =   True
       Width           =   96
+   End
+   BeginSegmentedButton SegmentedButton btnMagic
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   118
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically fill in all the dice rolls"
+      Top             =   70
+      Visible         =   True
+      Width           =   24
    End
 End
 #tag EndWindow
@@ -154,8 +181,9 @@ End
 		  'end if
 		  
 		  
+		  
 		  var multiresult() as String = Source.MatchAll("\((\d+d\d+.*?)\)", 1 )
-		  var multidamagetypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+) damage", 2 )
+		  var multidamagetypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 2 )
 		  
 		  if result = "" and multiresult <> Nil and multiresult.LastIndex >= lstDiceRolls.LastRowIndex+1 then
 		    result = multiresult(lstDiceRolls.LastRowIndex+1)
@@ -171,9 +199,11 @@ End
 		    var name, tohit as String
 		    
 		    if lstDiceRolls.LastRowIndex = -1 then
-		      name = NameValue
-		      if name.Contains("(") and name.Contains(")") then
-		        name = name.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
+		      if Keyboard.AsyncAltKey then
+		        name = NameValue
+		        if name.Contains("(") and name.Contains(")") then
+		          name = name.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
+		        end if
 		      end if
 		      
 		      tohit = Source.Match( "(\+\d+) to hit", 1 )
@@ -201,7 +231,6 @@ End
 		    
 		    lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
 		  end if
-		  
 		End Sub
 	#tag EndMethod
 
@@ -401,6 +430,165 @@ End
 	#tag Event
 		Sub ActionRemove()
 		  RemoveCalculation
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnMagic
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  'if Keyboard.AsyncAltKey then
+		  lstDiceRolls.DeleteAllRows
+		  'end if
+		  
+		  
+		  var NameValue, Source as String
+		  RaiseEvent FindDiceNotationsIn( NameValue, Source )
+		  
+		  var HasTwoHandedVariant as Boolean = Source.Contains("if used with two hands")
+		  
+		  // Clean name
+		  if NameValue.Contains("(") and NameValue.Contains(")") then
+		    NameValue = NameValue.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
+		  end if
+		  
+		  // Find Damage dice
+		  var DamageDice() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 1 )
+		  var DamageTypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 2 )
+		  
+		  var singletRoll as String = Source.Match("(\d+) (\w+ damage)", 1 )
+		  var singletDamage as String = Source.Match("(\d+) (\w+ damage)", 2 )
+		  
+		  if singletRoll <> "" then
+		    DamageDice.Add singletRoll
+		    DamageTypes.Add singletDamage
+		  end if
+		  
+		  // Find spellattack to hit
+		  var SpellAttack as String = Source.Match( "(\+\d+) to hit with spell attack", 1 )
+		  
+		  // Find to hit
+		  var tohit as String = Source.Match( "(\+\d+) to hit", 1 )
+		  if tohit = "" then
+		    tohit = Source.Match( "(\-\d+) to hit", 1 )
+		  end if
+		  
+		  // Damage rolls
+		  if DamageDice.LastIndex > -1 then
+		    
+		    // Damage Types
+		    for index as Integer = 0 to DamageDice.LastIndex
+		      
+		      var damageToHit as String
+		      if index = 0 then
+		        damageToHit = tohit
+		      end if
+		      
+		      var TwoHanded as String
+		      if HasTwoHandedVariant and index = 1 then
+		        TwoHanded = " (Two-Handed)"
+		        damageToHit = tohit
+		      end if
+		      
+		      lstDiceRolls.AddRow DamageTypes(index).Titlecase + TwoHanded, damageToHit, DiceCalculatorMethods.PrettifyMath( DamageDice(index) )
+		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( DamageDice(index) )
+		      
+		      Source = Source.Replace( DamageDice(index), "" )
+		    next
+		    
+		    // Combined attack
+		    if DamageDice.LastIndex > 0 then
+		      
+		      var CombinedResult, CombinedResultTwoHanded as String
+		      
+		      for index as Integer = 0 to lstDiceRolls.LastRowIndex
+		        var TwoHandedAttack as Boolean = lstDiceRolls.CellValueAt( index, 0 ).Contains("Two-Handed")
+		        
+		        if NOT TwoHandedAttack then
+		          if CombinedResult = "" then
+		            CombinedResult = "(" + lstDiceRolls.CellValueAt( index, 2 ) + ")"
+		          else
+		            CombinedResult = CombinedResult + " + (" + lstDiceRolls.CellValueAt( index, 2 ) + ")"
+		          end if
+		        end if
+		        
+		        if HasTwoHandedVariant and index > 0 then
+		          if CombinedResultTwoHanded = "" then
+		            CombinedResultTwoHanded = "(" + lstDiceRolls.CellValueAt( index, 2 ) + ")"
+		          else
+		            CombinedResultTwoHanded = CombinedResultTwoHanded + " + (" + lstDiceRolls.CellValueAt( index, 2 ) + ")"
+		          end if
+		        end if
+		        
+		      next
+		      
+		      
+		      if CombinedResult <> "" then
+		        lstDiceRolls.AddRowAt(0, CombinedResult)
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 0 ) = NameValue
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 1 ) = tohit
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 2 ) = DiceCalculatorMethods.PrettifyMath( CombinedResult )
+		        
+		        lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( CombinedResult )
+		      end if
+		      
+		      if CombinedResultTwoHanded <> "" then
+		        lstDiceRolls.AddRowAt(1, CombinedResultTwoHanded)
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 0 ) = NameValue + " (Two-Handed)"
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 1 ) = tohit
+		        lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 2 ) = DiceCalculatorMethods.PrettifyMath( CombinedResultTwoHanded )
+		        
+		        lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( CombinedResultTwoHanded )
+		      end if
+		      
+		    end if // @END damagedice.lastindex > 0
+		    
+		    // Spell attack
+		  elseif SpellAttack <> "" then
+		    lstDiceRolls.AddRow NameValue, SpellAttack, ""
+		    
+		  end if
+		  
+		  // Find other (dice) rolls
+		  var OtherDiceRolls() as String = Source.MatchAll("\((\d+d\d+.*?)\)", 1 )
+		  
+		  if Source.Match("(d\d+)", 1 ) <> "" then
+		    OtherDiceRolls.Add Source.Match("(d\d+)", 1 )
+		  end if
+		  
+		  'var singletRoll as String = Source.Match("(\d+) (\w+ damage)", 1 )
+		  'var singletDamage as String = Source.Match("(\d+) (\w+ damage)", 1 )
+		  
+		  // Find other dice rolls
+		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+) (\w+)", 1 )
+		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+) (\w+)", 2 )
+		  
+		  // Other (dice)
+		  if OtherDiceRolls.LastIndex > -1 then
+		    for index as Integer = 0 to OtherDiceRolls.LastIndex
+		      if OtherDiceRolls(index).StartsWith("d") then
+		        OtherDiceRolls(index) = "1" + OtherDiceRolls(index)
+		      end if
+		      
+		      lstDiceRolls.AddRow NameValue, tohit, DiceCalculatorMethods.PrettifyMath( OtherDiceRolls(index) )
+		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( OtherDiceRolls(index) )
+		    next
+		    
+		    // Other dice
+		  elseif AnyDiceRolls.LastIndex > -1 then
+		    for index as Integer = 0 to AnyDiceRolls.LastIndex
+		      if AnyDiceRolls(index).StartsWith("d") then
+		        AnyDiceRolls(index) = "1" + AnyDiceRolls(index)
+		      end if
+		      
+		      lstDiceRolls.AddRow AnyDiceRollsInfo(index).Titlecase, tohit, DiceCalculatorMethods.PrettifyMath( AnyDiceRolls(index) )
+		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AnyDiceRolls(index) )
+		    next
+		    
+		    'elseif singletRoll <> "" then
+		    'lstDiceRolls.AddRow AnyDiceRollsInfo(index).Titlecase, tohit, DiceCalculatorMethods.PrettifyMath( singletRoll )
+		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( singletRoll )
+		    
+		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

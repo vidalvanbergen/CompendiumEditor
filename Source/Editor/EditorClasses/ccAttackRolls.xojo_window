@@ -157,6 +157,7 @@ Begin ContainerControl ccAttackRolls
       TabStop         =   False
       Tooltip         =   "Automagically fill in all the dice rolls"
       Top             =   70
+      Transparent     =   False
       Visible         =   True
       Width           =   24
    End
@@ -452,11 +453,11 @@ End
 		  end if
 		  
 		  // Find Damage dice
-		  var DamageDice() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 1 )
-		  var DamageTypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 2 )
+		  var DamageDice() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+.*? damage)", 1 )
+		  var DamageTypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+.*? damage)", 2 )
 		  
-		  var singletRoll as String = Source.Match("(\d+) (\w+ damage)", 1 )
-		  var singletDamage as String = Source.Match("(\d+) (\w+ damage)", 2 )
+		  var singletRoll as String = Source.Match(" (\d+) (\w+ damage)", 1 )
+		  var singletDamage as String = Source.Match(" (\d+) (\w+ damage)", 2 )
 		  
 		  if singletRoll <> "" then
 		    DamageDice.Add singletRoll
@@ -496,7 +497,7 @@ End
 		    next
 		    
 		    // Combined attack
-		    if DamageDice.LastIndex > 0 then
+		    if (Source.Match("plus \d+") <> "" or Source.Contains("Two-Handed")) and DamageDice.LastIndex > 0 then
 		      
 		      var CombinedResult, CombinedResultTwoHanded as String
 		      
@@ -551,16 +552,13 @@ End
 		  // Find other (dice) rolls
 		  var OtherDiceRolls() as String = Source.MatchAll("\((\d+d\d+.*?)\)", 1 )
 		  
-		  if Source.Match("(d\d+)", 1 ) <> "" then
-		    OtherDiceRolls.Add Source.Match("(d\d+)", 1 )
-		  end if
-		  
-		  'var singletRoll as String = Source.Match("(\d+) (\w+ damage)", 1 )
-		  'var singletDamage as String = Source.Match("(\d+) (\w+ damage)", 1 )
+		  'if Source.Match("(d\d+)", 1 ) <> "" then
+		  'OtherDiceRolls.Add Source.Match("(d\d+)", 1 )
+		  'end if
 		  
 		  // Find other dice rolls
-		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+) (\w+)", 1 )
-		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+) (\w+)", 2 )
+		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+|d\d+ \|d\d+) (\w+)", 1 )
+		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+|d\d+ \|d\d+) (\w+)", 2 )
 		  
 		  // Other (dice)
 		  if OtherDiceRolls.LastIndex > -1 then

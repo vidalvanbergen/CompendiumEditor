@@ -68,7 +68,16 @@ Inherits DesktopCanvas
 		    #pragma StackOverflowChecking False
 		  #EndIf
 		  
+		  'if IsSelected then
+		  'g.ForeColor = HSL( 0, 0, 100, 20 )
+		  'g.FillRoundRectangle( 0, 0, g.Width, g.Height, 10, 10 )
+		  'end if
+		  
 		  // pressed
+		  if Pressed then
+		    g.ForeColor = HSL( 0, 0, 100, 20 )
+		    g.FillRoundRectangle( 0, 0, g.Width, g.Height, 10, 10 )
+		  end if
 		  'if Pressed then
 		  'if IsDarkMode then
 		  'g.ForeColor = &cAAAAAA
@@ -117,7 +126,7 @@ Inherits DesktopCanvas
 		    if NOT enabled then
 		      mask = mask.Lighten(0.6)
 		    elseif Pressed then
-		      mask = mask.Lighten(0.4)
+		      'mask = mask.Lighten(0.4)
 		    end if
 		    
 		    pict.Graphics.DrawingColor = g.DrawingColor
@@ -135,8 +144,8 @@ Inherits DesktopCanvas
 		  
 		  
 		  
-		  var iconSize as Integer = min( g.Width, g.Height ) 'min( g.Width*0.80, g.Height*0.80 )
-		  var iconPadding as Integer = 0 '( min( g.Width, g.Height ) - iconSize ) / 2
+		  var iconSize as Integer = min( g.Width-4, g.Height-4 ) 'min( g.Width*0.80, g.Height*0.80 )
+		  var iconPadding as Integer = 2 '0 '( min( g.Width, g.Height ) - iconSize ) / 2
 		  
 		  if Image <> Nil then
 		    'g.ScaleImage tmp, 24, 24, 4, 4
@@ -165,6 +174,10 @@ Inherits DesktopCanvas
 
 	#tag Property, Flags = &h0
 		Image As Picture
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		IsSelected As Boolean = False
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -403,6 +416,14 @@ Inherits DesktopCanvas
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="IsSelected"
+			Visible=false
+			Group="Behavior"
+			InitialValue="True"
+			Type="Boolean"
 			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior

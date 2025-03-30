@@ -286,7 +286,7 @@ Begin Window wndCreatureFeature
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
-      LockTop         =   True
+      LockTop         =   False
       Scope           =   0
       TabIndex        =   8
       TabPanelIndex   =   0

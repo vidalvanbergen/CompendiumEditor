@@ -1780,7 +1780,7 @@ End
 		  
 		  // Type
 		  if cCreatureType.Value.Trim <> "" then
-		    xCreature.AppendSimpleChild( "type", cCreatureType.Value )
+		    xCreature.AppendSimpleChild( "type", cCreatureType.Value.Lowercase )
 		  else
 		    xCreature.AppendSimpleChild( "type", Nil )
 		  end if
@@ -2373,7 +2373,7 @@ End
 		  me.FieldName = "Type:"
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
-		  'me.UseLowercase = True
+		  me.UseLowercase = True
 		  
 		  
 		  me.BaseMenu.Append new MenuItem( "Aberration" )
@@ -2390,19 +2390,22 @@ End
 		  me.BaseMenu.Append new MenuItem( "Ooze" )
 		  me.BaseMenu.Append new MenuItem( "Plant" )
 		  me.BaseMenu.Append new MenuItem( "Undead" )
-		  
 		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Aberration (Mind Flayer)" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Fiend (Demon)" )
-		  me.BaseMenu.Append new MenuItem( "Fiend (Devil)" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Aberration (Shapechanger)" )
-		  me.BaseMenu.Append new MenuItem( "Fiend (Shapechanger)" )
-		  me.BaseMenu.Append new MenuItem( "Humanoid (Human, Shapechanger)" )
-		  me.BaseMenu.Append new MenuItem( "Undead (Shapechanger)" )
+		  me.BaseMenu.Append new MenuItem( "Aberrations" )
+		  me.BaseMenu.Append new MenuItem( "Beasts" )
+		  me.BaseMenu.Append new MenuItem( "Celestials" )
+		  me.BaseMenu.Append new MenuItem( "Constructs" )
+		  me.BaseMenu.Append new MenuItem( "Dragons" )
+		  me.BaseMenu.Append new MenuItem( "Elementals" )
+		  me.BaseMenu.Append new MenuItem( "Fiends" )
+		  me.BaseMenu.Append new MenuItem( "Giants" )
+		  me.BaseMenu.Append new MenuItem( "Humanoids" )
+		  me.BaseMenu.Append new MenuItem( "Monstrosities" )
+		  me.BaseMenu.Append new MenuItem( "Oozes" )
+		  me.BaseMenu.Append new MenuItem( "Plants" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid ()" )
+		  me.BaseMenu.Append new MenuItem( "Humanoid (Any Race)" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Any Species)" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Dragonborn)" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Dwarf)" )
@@ -2416,6 +2419,18 @@ End
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Kobold)" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Orc)" )
 		  me.BaseMenu.Append new MenuItem( "Humanoid (Tiefling)" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Aberration (Mind Flayer)" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Fiend (Demon)" )
+		  me.BaseMenu.Append new MenuItem( "Fiend (Devil)" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Aberration (Shapechanger)" )
+		  me.BaseMenu.Append new MenuItem( "Fiend (Shapechanger)" )
+		  me.BaseMenu.Append new MenuItem( "Humanoid (Human, Shapechanger)" )
+		  me.BaseMenu.Append new MenuItem( "Undead (Shapechanger)" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Swarm of Tiny Beasts" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -3154,7 +3169,7 @@ End
 #tag EndEvents
 #tag Events bvlUnofficialInfo
 	#tag Event
-		Sub Action()
+		Sub Action(index as Integer)
 		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
 		End Sub
 	#tag EndEvent

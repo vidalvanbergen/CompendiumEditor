@@ -51,37 +51,6 @@ Begin WindowPro wndCompendiumViewer
       Transparent     =   True
       Visible         =   True
       Width           =   806
-      Begin CanvasButton cvsBtnBackground
-         AllowAutoDeactivate=   False
-         AllowFocus      =   True
-         AllowFocusRing  =   True
-         AllowTabs       =   False
-         Backdrop        =   0
-         Enabled         =   True
-         Height          =   24
-         iconColor       =   &cFFFFFF00
-         Image           =   1767202815
-         Index           =   -2147483648
-         InitialParent   =   "cvsToolbar"
-         Left            =   618
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
-         LockTop         =   True
-         Pressed         =   False
-         Scope           =   0
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Template        =   True
-         Tooltip         =   "Backgrounds"
-         Top             =   14
-         Transparent     =   True
-         useCustomColor  =   True
-         Visible         =   True
-         Width           =   24
-      End
       Begin CanvasButton cvsBtnSpecies
          AllowAutoDeactivate=   False
          AllowFocus      =   True
@@ -89,12 +58,13 @@ Begin WindowPro wndCompendiumViewer
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1880932351
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
-         Left            =   546
+         IsSelected      =   True
+         Left            =   490
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -107,11 +77,11 @@ Begin WindowPro wndCompendiumViewer
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Species"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
       Begin CanvasButton cvsBtnClasses
          AllowAutoDeactivate=   False
@@ -120,12 +90,13 @@ Begin WindowPro wndCompendiumViewer
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1436805119
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
-         Left            =   582
+         IsSelected      =   True
+         Left            =   534
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -138,25 +109,26 @@ Begin WindowPro wndCompendiumViewer
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Classes"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
-      Begin CanvasButton cvsBtnCreatures
+      Begin CanvasButton cvsBtnBackground
          AllowAutoDeactivate=   False
          AllowFocus      =   True
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
-         Image           =   623790079
+         Image           =   1767202815
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
-         Left            =   762
+         IsSelected      =   True
+         Left            =   578
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -164,78 +136,16 @@ Begin WindowPro wndCompendiumViewer
          LockTop         =   True
          Pressed         =   False
          Scope           =   0
-         TabIndex        =   6
+         TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
          Template        =   True
-         Tooltip         =   "Export Compiled Compendium"
-         Top             =   14
+         Tooltip         =   "Backgrounds"
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
-      End
-      Begin CanvasButton cvsBtnFeats
-         AllowAutoDeactivate=   False
-         AllowFocus      =   True
-         AllowFocusRing  =   True
-         AllowTabs       =   False
-         Backdrop        =   0
-         Enabled         =   True
-         Height          =   24
-         iconColor       =   &cFFFFFF00
-         Image           =   1719934975
-         Index           =   -2147483648
-         InitialParent   =   "cvsToolbar"
-         Left            =   690
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
-         LockTop         =   True
-         Pressed         =   False
-         Scope           =   0
-         TabIndex        =   4
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Template        =   True
-         Tooltip         =   "Feats"
-         Top             =   14
-         Transparent     =   True
-         useCustomColor  =   True
-         Visible         =   True
-         Width           =   24
-      End
-      Begin CanvasButton cvsBtnSpells
-         AllowAutoDeactivate=   False
-         AllowFocus      =   True
-         AllowFocusRing  =   True
-         AllowTabs       =   False
-         Backdrop        =   0
-         Enabled         =   True
-         Height          =   24
-         iconColor       =   &cFFFFFF00
-         Image           =   726933503
-         Index           =   -2147483648
-         InitialParent   =   "cvsToolbar"
-         Left            =   726
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
-         LockTop         =   True
-         Pressed         =   False
-         Scope           =   0
-         TabIndex        =   5
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Template        =   True
-         Tooltip         =   "Spells"
-         Top             =   14
-         Transparent     =   True
-         useCustomColor  =   True
-         Visible         =   True
-         Width           =   24
+         Width           =   32
       End
       Begin CanvasButton cvsBtnEquipment
          AllowAutoDeactivate=   False
@@ -244,12 +154,13 @@ Begin WindowPro wndCompendiumViewer
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1704243199
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
-         Left            =   654
+         IsSelected      =   True
+         Left            =   622
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -262,11 +173,129 @@ Begin WindowPro wndCompendiumViewer
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Equipment"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
+      End
+      Begin CanvasButton cvsBtnFeats
+         AllowAutoDeactivate=   False
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   True
+         Height          =   32
+         iconColor       =   &cFFFFFF00
+         Image           =   1719934975
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar"
+         IsSelected      =   True
+         Left            =   666
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Feats"
+         Top             =   10
+         Transparent     =   True
+         useCustomColor  =   True
+         Visible         =   True
+         Width           =   32
+      End
+      Begin CanvasButton cvsBtnSpells
+         AllowAutoDeactivate=   False
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   True
+         Height          =   32
+         iconColor       =   &cFFFFFF00
+         Image           =   726933503
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar"
+         IsSelected      =   True
+         Left            =   710
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Spells"
+         Top             =   10
+         Transparent     =   True
+         useCustomColor  =   True
+         Visible         =   True
+         Width           =   32
+      End
+      Begin CanvasButton cvsBtnCreatures
+         AllowAutoDeactivate=   False
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   True
+         Height          =   32
+         iconColor       =   &cFFFFFF00
+         Image           =   623790079
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar"
+         IsSelected      =   True
+         Left            =   754
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Export Compiled Compendium"
+         Top             =   10
+         Transparent     =   True
+         useCustomColor  =   True
+         Visible         =   True
+         Width           =   32
+      End
+      Begin ProgressWheel pgWheel
+         AllowAutoDeactivate=   True
+         Enabled         =   True
+         Height          =   16
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   2
+         TabIndex        =   7
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   23
+         Transparent     =   True
+         Visible         =   True
+         Width           =   16
       End
       Begin Label lblMessage
          AllowAutoDeactivate=   True
@@ -297,33 +326,11 @@ Begin WindowPro wndCompendiumViewer
          TextAlignment   =   0
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   22
+         Top             =   20
          Transparent     =   True
          Underline       =   False
          Visible         =   True
-         Width           =   486
-      End
-      Begin ProgressWheel pgWheel
-         AllowAutoDeactivate=   True
-         Enabled         =   True
-         Height          =   16
-         Index           =   -2147483648
-         InitialParent   =   "cvsToolbar"
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   2
-         TabIndex        =   9
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   25
-         Transparent     =   True
-         Visible         =   True
-         Width           =   16
+         Width           =   430
       End
    End
    Begin SearchField SearchField1
@@ -728,13 +735,6 @@ End
 
 #tag EndWindowCode
 
-#tag Events cvsBtnBackground
-	#tag Event
-		Sub Action()
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events cvsBtnSpecies
 	#tag Event
 		Sub Action()
@@ -749,7 +749,14 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cvsBtnCreatures
+#tag Events cvsBtnBackground
+	#tag Event
+		Sub Action()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cvsBtnEquipment
 	#tag Event
 		Sub Action()
 		  
@@ -770,7 +777,7 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cvsBtnEquipment
+#tag Events cvsBtnCreatures
 	#tag Event
 		Sub Action()
 		  

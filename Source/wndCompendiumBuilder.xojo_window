@@ -58,12 +58,13 @@ Begin WindowPro wndCompendiumBuilder
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   650745855
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
-         Left            =   456
+         IsSelected      =   True
+         Left            =   448
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -76,11 +77,11 @@ Begin WindowPro wndCompendiumBuilder
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Export Compiled Compendium"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
    End
    Begin ListboxPro lstSources

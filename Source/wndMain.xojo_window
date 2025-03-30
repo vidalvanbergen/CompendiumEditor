@@ -58,12 +58,13 @@ Begin WindowPro wndMain
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   False
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   526178303
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
-         Left            =   908
+         IsSelected      =   True
+         Left            =   884
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -76,11 +77,11 @@ Begin WindowPro wndMain
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Edit Source"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
       Begin CanvasButton cvsbtnCompileCompendium
          AllowAutoDeactivate=   True
@@ -89,12 +90,13 @@ Begin WindowPro wndMain
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   2044971007
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
-         Left            =   944
+         IsSelected      =   True
+         Left            =   928
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -107,11 +109,11 @@ Begin WindowPro wndMain
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Compendium Builder"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
       Begin CanvasButton cvsbtnSettings
          AllowAutoDeactivate=   True
@@ -120,12 +122,13 @@ Begin WindowPro wndMain
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   853008383
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
-         Left            =   980
+         IsSelected      =   True
+         Left            =   972
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -138,11 +141,11 @@ Begin WindowPro wndMain
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Preferences"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   True
          Visible         =   True
-         Width           =   24
+         Width           =   32
       End
       Begin CanvasButton cvsbtnExperiment
          AllowAutoDeactivate=   True
@@ -151,12 +154,13 @@ Begin WindowPro wndMain
          AllowTabs       =   False
          Backdrop        =   0
          Enabled         =   True
-         Height          =   24
+         Height          =   32
          iconColor       =   &c00000000
          Image           =   845838335
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
-         Left            =   872
+         IsSelected      =   True
+         Left            =   840
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -164,16 +168,16 @@ Begin WindowPro wndMain
          LockTop         =   True
          Pressed         =   False
          Scope           =   0
-         TabIndex        =   4
+         TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
          Template        =   True
          Tooltip         =   "Edit Source"
-         Top             =   14
+         Top             =   10
          Transparent     =   True
          useCustomColor  =   False
          Visible         =   False
-         Width           =   24
+         Width           =   32
       End
    End
    Begin DNDToolbar cvsToolbar

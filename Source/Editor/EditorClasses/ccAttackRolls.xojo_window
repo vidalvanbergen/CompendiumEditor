@@ -449,7 +449,7 @@ End
 		  
 		  // Clean name
 		  if NameValue.Contains("(") and NameValue.Contains(")") then
-		    NameValue = NameValue.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
+		    NameValue = NameValue.ReplaceAllRegEx( "\((.*?)\)", "" ).Replace("Variant:", "").Trim
 		  end if
 		  
 		  // Find Damage dice
@@ -557,8 +557,8 @@ End
 		  'end if
 		  
 		  // Find other dice rolls
-		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+|d\d+ \|d\d+) (\w+)", 1 )
-		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|d\d+|d\d+ \|d\d+) (\w+)", 2 )
+		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+) (\w+)", 1 )
+		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+) (\w+)", 2 )
 		  
 		  // Other (dice)
 		  if OtherDiceRolls.LastIndex > -1 then
@@ -577,6 +577,16 @@ End
 		      if AnyDiceRolls(index).StartsWith("d") then
 		        AnyDiceRolls(index) = "1" + AnyDiceRolls(index)
 		      end if
+		      if AnyDiceRolls(index).EndsWith("|") then
+		        AnyDiceRolls(index) = AnyDiceRolls(index).Replace("|", "").Trim
+		      end if
+		      
+		      Select case AnyDiceRollsInfo(index)
+		        
+		      case "At", "To"
+		        AnyDiceRollsInfo(index) = NameValue
+		        
+		      End Select
 		      
 		      lstDiceRolls.AddRow AnyDiceRollsInfo(index).Titlecase, tohit, DiceCalculatorMethods.PrettifyMath( AnyDiceRolls(index) )
 		      lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AnyDiceRolls(index) )

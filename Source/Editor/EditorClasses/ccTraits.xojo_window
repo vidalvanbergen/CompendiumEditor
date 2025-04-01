@@ -114,6 +114,9 @@ Begin ContainerControl ccTraits
       _ScrollWidth    =   -1
    End
    BeginSegmented AddDuplicateRemoveEdit ardeTraits
+      AddEnabled      =   False
+      DuplicateEnabled=   False
+      EditEnabled     =   False
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
@@ -125,6 +128,7 @@ Begin ContainerControl ccTraits
       LockRight       =   False
       LockTop         =   True
       MacControlStyle =   0
+      RemoveEnabled   =   False
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
       SelectionType   =   2
@@ -438,6 +442,9 @@ End
 		    var Name as string = xNode.ValueOfNodeWithName("name")
 		    if Name.Trim = "" then
 		      Name = "[Description]"
+		    end if
+		    if Name.Contains("(Bonus Action)") then
+		      name = name.Replace("(Bonus Action)", "").Trim
 		    end if
 		    
 		    // Get updated xAttribute

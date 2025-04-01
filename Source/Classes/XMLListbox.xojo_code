@@ -30,9 +30,81 @@ Inherits ListboxPro
 
 	#tag Event
 		Function PaintCellText(g as Graphics, row as Integer, column as Integer, x as Integer, y as Integer) As Boolean
-		  if row > -1 and row <= LastRowIndex and CellTextAt(row, 1) = "#comment" then
-		    g.DrawingColor = color.DisabledTextColor
+		  if row > -1 and row <= LastRowIndex then
+		    
+		    
+		    if CellTextAt(row, 1) = "#comment" then
+		      g.DrawingColor = color.DisabledTextColor
+		    end if
+		    
+		    if column = 1 then
+		      
+		      var icon as Picture
+		      
+		      Select case CellTextAt(row, 1)
+		        
+		      case "Background"
+		        icon = template_compendium_banner_32
+		        
+		      case "Feat"
+		        icon = template_compendium_feat_32
+		        
+		      case "Creature"
+		        icon = template_compendium_creature_32
+		        
+		      case "Class"
+		        icon = template_compendium_classes_32
+		        
+		      case "Species"
+		        icon = template_compendium_species_32
+		        
+		      case "Spell"
+		        icon = template_compendium_magic_32
+		        
+		      case "item"
+		        icon = template_compendium_treasure_32
+		        
+		      case "#comment"
+		        icon = template_icon_code_64
+		        
+		      else
+		        icon = template_compendium_32
+		        
+		      End Select
+		      
+		      
+		      if icon <> NIl then
+		        dim pict, mask as Picture
+		        pict = new Picture( icon.width, icon.Height, 32 )
+		        mask = new Picture( icon.width, icon.Height, 32 )
+		        
+		        mask.Graphics.DrawPicture   icon, 0, 0
+		        
+		        if CellTextAt(row, 1) = "#comment" then
+		          mask = mask.Lighten(0.6)
+		        end if
+		        
+		        pict.Graphics.DrawingColor = g.DrawingColor
+		        pict.Graphics.FillRectangle   0, 0, pict.Width, pict.Height
+		        pict.ApplyMask( mask )
+		        
+		        
+		        var iconSize as Integer = min( g.Width-4, g.Height-4 )
+		        var iconPadding as Integer = 2
+		        
+		        if pict <> Nil then
+		          g.DrawPicture pict, (g.Width/2) - (iconSize/2), iconPadding, iconSize, iconSize, 0, 0, pict.Width, pict.Height
+		        end if
+		        
+		        Return True
+		      else
+		        Break
+		      end if // @END icon <> Nil
+		      
+		    end if
+		    
 		  end if
+		  
 		End Function
 	#tag EndEvent
 
@@ -57,7 +129,7 @@ Inherits ListboxPro
 		Sub AddXMLNodeRow(xNode as XMLNode)
 		  
 		  if xNode <> Nil then
-		    var name as string
+		    var name, sortName as string
 		    var type as string
 		    
 		    if xNode.FirstChild <> Nil then
@@ -69,20 +141,20 @@ Inherits ListboxPro
 		    end if
 		    type = xNode.Name
 		    
-		    
-		    if false and type = "class" then
-		      me.AddExpandableRow name
-		      me.CellTextAt( me.LastAddedRowIndex, 1 ) = type
-		    else
-		      if type = "race" then
-		        type = "species"
-		      elseif type = "monster" then
-		        type = "creature"
-		      end if
-		      
-		      me.AddRow name, type
+		    //
+		    sortName = name
+		    if xNode.ValueOfNodeWithName("sortname").Trim <> "" then
+		      sortName = xNode.ValueOfNodeWithName("sortname").Trim
 		    end if
 		    
+		    //
+		    if type = "race" then
+		      type = "species"
+		    elseif type = "monster" then
+		      type = "creature"
+		    end if
+		    
+		    me.AddRow name, type, sortName
 		    me.RowTagAt( me.LastAddedRowIndex ) = xNode
 		  end if
 		End Sub
@@ -125,11 +197,11 @@ Inherits ListboxPro
 		  
 		  
 		  // Expand rows
-		  for row as Integer = me.LastRowIndex DownTo 0
-		    if me.RowExpandableAt( row ) then
-		      me.RowExpandedAt( row ) = True
-		    end if
-		  next
+		  'for row as Integer = me.LastRowIndex DownTo 0
+		  'if me.RowExpandableAt( row ) then
+		  'me.RowExpandedAt( row ) = True
+		  'end if
+		  'next
 		  
 		  // Restore selection
 		  'if Lindex <= me.LastRowIndex then

@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -921,8 +921,8 @@ Begin WindowPro wndSourceEditor
          AllowRowDragging=   True
          AllowRowReordering=   True
          Bold            =   False
-         ColumnCount     =   2
-         ColumnWidths    =   "75%,*"
+         ColumnCount     =   3
+         ColumnWidths    =   "*,40,0"
          DefaultRowHeight=   24
          DropIndicatorVisible=   False
          Enabled         =   True
@@ -2736,6 +2736,19 @@ End
 		  
 		  base.AddMenu MovetoXMLFileMenu
 		  
+		  //
+		  
+		  base.AddMenu new MenuItem("-")
+		  
+		  var SortByMenu as new DesktopMenuItem("Sort By")
+		  
+		  SortByMenu.AddMenu new DesktopMenuItem( "Name", "SortByName" )
+		  SortByMenu.AddMenu new DesktopMenuItem( "Sort Name", "SortBySortName" )
+		  SortByMenu.AddMenu new DesktopMenuItem( "Type", "SortByType" )
+		  
+		  base.AddMenu SortByMenu
+		  
+		  
 		  'base.AddMenu new MenuItem( "Sort by Name", "SortByName" )
 		  
 		  Return True
@@ -2796,6 +2809,31 @@ End
 		      
 		      AppendToDocument(type)
 		      
+		    elseif selectedItem.Tag <> Nil and selectedItem.Tag.StringValue.StartsWith("SortBy") then
+		      
+		      var ColumnToBeSorted as Integer = 0
+		      Select case selectedItem.Tag.StringValue
+		        
+		      case "SortByName"
+		        ColumnToBeSorted = 0
+		        
+		      case "SortBySortName"
+		        ColumnToBeSorted = 2
+		        
+		      case "SortByType"
+		        ColumnToBeSorted = 1
+		        
+		      end Select
+		      
+		      
+		      me.SortingColumn = ColumnToBeSorted
+		      if me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Ascending then
+		        me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Descending
+		      else
+		        me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Ascending
+		      end if
+		      me.Sort
+		      
 		      // Other
 		    else
 		      
@@ -2823,9 +2861,9 @@ End
 		        end if
 		        
 		        
-		      elseif selectedItem.Text = "Sort by Name" then
-		        me.xDoc = SortXMLDocumentByName( me.xDoc )
-		        me.BuildList( me.xDoc )
+		        'elseif selectedItem.Text = "Sort by Name" then
+		        'me.xDoc = SortXMLDocumentByName( me.xDoc )
+		        'me.BuildList( me.xDoc )
 		        
 		        
 		        

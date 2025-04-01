@@ -394,31 +394,8 @@ End
 		  cDescription.Value = Description
 		  
 		  
-		  // Hit the dice
-		  var multiresult() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\)", 1 )
-		  var multidamagetypes() as String = cDescription.Value.MatchAll("\((\d+d\d+.*?)\) (\w+) damage", 2 )
-		  
-		  var toHit as string = Description.Match( "Attack: (.*?\d+) to hit", 1 )
-		  if toHit <> "" and NOT toHit.Contains("-") and NOT toHit.Contains("+") then
-		    toHit = "+" + toHit
-		  end if
-		  
-		  
-		  
-		  
-		  for index as Integer = 0 to multiresult.LastIndex
-		    if index = 0 and toHit <> "" then
-		      'lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
-		    else
-		      var damageType as string = ""
-		      if multidamagetypes.LastIndex >= index then
-		        damageType = multidamagetypes(index)
-		      end if
-		      'lstDiceRolls.AddRow Title, toHit, DiceCalculatorMethods.PrettifyMath( multiresult(index) )
-		    end if
-		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( multiresult(index) )
-		    cAttackRolls.AddRoll Title + "|" + toHit + "|" + DiceCalculatorMethods.PrettifyMath( multiresult(index) )
-		  next
+		  // Process the dice rolls
+		  cAttackRolls.ProcessDicerolls
 		  
 		  
 		  // Recharge
@@ -488,7 +465,7 @@ End
 		      Select case xChild.Name
 		        
 		      case "name"
-		        cName.Value = xValue
+		        cName.Value = xValue.Replace("(Bonus Action)", "").Trim
 		        
 		      case "text", "description"
 		        Description.Add xValue

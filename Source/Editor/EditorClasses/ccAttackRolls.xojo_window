@@ -300,143 +300,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub RemoveCalculation()
-		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    var lindex as Integer = lstDiceRolls.SelectedRowIndex
-		    
-		    lstDiceRolls.RemoveRow lstDiceRolls.SelectedRowIndex
-		    
-		    if lindex-1 > -1 then
-		      lstDiceRolls.SelectedRowIndex = lindex-1
-		    elseif lstDiceRolls.LastRowIndex > -1 then
-		      lstDiceRolls.SelectedRowIndex = 0
-		    end if
-		  end if
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub Reset()
-		  lstDiceRolls.DeleteAllRows
-		  lstDiceRolls.Invalidate
-		End Sub
-	#tag EndMethod
-
-
-	#tag Hook, Flags = &h0
-		Event FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
-	#tag EndHook
-
-
-#tag EndWindowCode
-
-#tag Events lstDiceRolls
-	#tag Event
-		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
-		  
-		  if me.SelectedRowIndex <> row then
-		    g.DrawAlternatingRows(row)
-		    Return True
-		  end if
-		End Function
-	#tag EndEvent
-	#tag Event
-		Sub Change()
-		  #if TargetMacOS then
-		    ardeModifier.RemoveEnabled = me.SelectedRowIndex > -1
-		    ardeModifier.EditEnabled = me.SelectedRowIndex > -1
-		  #endif
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub DoubleClick()
-		  EditCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub Open()
-		  me.ColumnTypeAt(0) = Listbox.CellTypes.TextField
-		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Function KeyDown(Key As String) As Boolean
-		  dim AscKey as Integer = Asc( key )
-		  
-		  Select case AscKey
-		    
-		  case 8', 127 // delete
-		    RemoveCalculation
-		    Return True
-		    
-		  case 27 // Escape
-		    me.SelectedRowIndex = -1
-		    Return True
-		    
-		  End Select
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
-		  
-		  var AddMenu as new MenuItem("Add")
-		  AddMenu.Shortcut = "+"
-		  
-		  var RemoveMenu as new MenuItem("Remove")
-		  'RemoveMenu.Shortcut = Asc(8)
-		  
-		  base.AddMenu AddMenu
-		  base.AddMenu new MenuItem( "Edit" )
-		  base.AddMenu RemoveMenu
-		  
-		  Return True
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
-		  if hitItem <> Nil then
-		    
-		    Select case hitItem.Text
-		      
-		    case "Add"
-		      AddCalculation
-		    case "Edit"
-		      EditCalculation
-		    case "Remove"
-		      RemoveCalculation
-		      
-		    End Select
-		    
-		    Return True
-		  end if
-		End Function
-	#tag EndEvent
-#tag EndEvents
-#tag Events ardeModifier
-	#tag Event
-		Sub ActionAdd()
-		  AddCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionDuplicate()
-		  copyCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionEdit()
-		  EditCalculation
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub ActionRemove()
-		  RemoveCalculation
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events btnMagic
-	#tag Event
-		Sub Pressed(segmentIndex As Integer)
+		Sub ProcessDicerolls()
 		  'if Keyboard.AsyncAltKey then
 		  lstDiceRolls.DeleteAllRows
 		  'end if
@@ -445,7 +309,7 @@ End
 		  var NameValue, Source as String
 		  RaiseEvent FindDiceNotationsIn( NameValue, Source )
 		  
-		  var HasTwoHandedVariant as Boolean = Source.Contains("if used with two hands")
+		  var HasTwoHandedVariant as Boolean = Source.Contains("used with two hands")
 		  
 		  // Clean name
 		  if NameValue.Contains("(") and NameValue.Contains(")") then
@@ -606,6 +470,148 @@ End
 		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AnyDiceRolls(index) )
 		  end if
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RemoveCalculation()
+		  if lstDiceRolls.SelectedRowIndex > -1 then
+		    var lindex as Integer = lstDiceRolls.SelectedRowIndex
+		    
+		    lstDiceRolls.RemoveRow lstDiceRolls.SelectedRowIndex
+		    
+		    if lindex-1 > -1 then
+		      lstDiceRolls.SelectedRowIndex = lindex-1
+		    elseif lstDiceRolls.LastRowIndex > -1 then
+		      lstDiceRolls.SelectedRowIndex = 0
+		    end if
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Reset()
+		  lstDiceRolls.DeleteAllRows
+		  lstDiceRolls.Invalidate
+		End Sub
+	#tag EndMethod
+
+
+	#tag Hook, Flags = &h0
+		Event FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
+	#tag EndHook
+
+
+#tag EndWindowCode
+
+#tag Events lstDiceRolls
+	#tag Event
+		Function CellBackgroundPaint(g As Graphics, row As Integer, column As Integer) As Boolean
+		  
+		  if me.SelectedRowIndex <> row then
+		    g.DrawAlternatingRows(row)
+		    Return True
+		  end if
+		End Function
+	#tag EndEvent
+	#tag Event
+		Sub Change()
+		  #if TargetMacOS then
+		    ardeModifier.RemoveEnabled = me.SelectedRowIndex > -1
+		    ardeModifier.EditEnabled = me.SelectedRowIndex > -1
+		  #endif
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub DoubleClick()
+		  EditCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.ColumnTypeAt(0) = Listbox.CellTypes.TextField
+		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  dim AscKey as Integer = Asc( key )
+		  
+		  Select case AscKey
+		    
+		  case 8', 127 // delete
+		    RemoveCalculation
+		    Return True
+		    
+		  case 27 // Escape
+		    me.SelectedRowIndex = -1
+		    Return True
+		    
+		  End Select
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ConstructContextualMenu(base as MenuItem, x as Integer, y as Integer) As Boolean
+		  
+		  var AddMenu as new MenuItem("Add")
+		  AddMenu.Shortcut = "+"
+		  
+		  var RemoveMenu as new MenuItem("Remove")
+		  'RemoveMenu.Shortcut = Asc(8)
+		  
+		  base.AddMenu AddMenu
+		  base.AddMenu new MenuItem( "Edit" )
+		  base.AddMenu RemoveMenu
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function ContextualMenuAction(hitItem as MenuItem) As Boolean
+		  if hitItem <> Nil then
+		    
+		    Select case hitItem.Text
+		      
+		    case "Add"
+		      AddCalculation
+		    case "Edit"
+		      EditCalculation
+		    case "Remove"
+		      RemoveCalculation
+		      
+		    End Select
+		    
+		    Return True
+		  end if
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events ardeModifier
+	#tag Event
+		Sub ActionAdd()
+		  AddCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionDuplicate()
+		  copyCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionEdit()
+		  EditCalculation
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionRemove()
+		  RemoveCalculation
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnMagic
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  ProcessDicerolls
 		End Sub
 	#tag EndEvent
 #tag EndEvents

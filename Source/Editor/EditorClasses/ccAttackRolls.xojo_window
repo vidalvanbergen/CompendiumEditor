@@ -449,8 +449,9 @@ End
 		  
 		  // Clean name
 		  if NameValue.Contains("(") and NameValue.Contains(")") then
-		    NameValue = NameValue.ReplaceAllRegEx( "\((.*?)\)", "" ).Replace("Variant:", "").Trim
+		    NameValue = NameValue.ReplaceAllRegEx( "\((.*?)\)", "" ).Trim
 		  end if
+		  NameValue = NameValue.Replace("Variant:", "").Trim
 		  
 		  // Find Damage dice
 		  var DamageDice() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+.*? damage)", 1 )
@@ -460,8 +461,8 @@ End
 		  var singletDamage as String = Source.Match(" (\d+) (\w+ damage)", 2 )
 		  
 		  if singletRoll <> "" then
-		    DamageDice.Add singletRoll
-		    DamageTypes.Add singletDamage
+		    DamageDice.AddAt 0, singletRoll
+		    DamageTypes.AddAt 0, singletDamage
 		  end if
 		  
 		  // Find spellattack to hit
@@ -474,7 +475,7 @@ End
 		  end if
 		  
 		  // Damage rolls
-		  if DamageDice.LastIndex > -1 then
+		  if DamageDice <> Nil and DamageDice.LastIndex > -1 then
 		    
 		    // Damage Types
 		    for index as Integer = 0 to DamageDice.LastIndex
@@ -557,8 +558,8 @@ End
 		  'end if
 		  
 		  // Find other dice rolls
-		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+) (\w+)", 1 )
-		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+) (\w+)", 2 )
+		  var AnyDiceRolls() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+\.|d\d+) (\w+)", 1 )
+		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+\.|d\d+) (\w+)", 2 )
 		  
 		  // Other (dice)
 		  if OtherDiceRolls.LastIndex > -1 then
@@ -597,6 +598,14 @@ End
 		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( singletRoll )
 		    
 		  end if
+		  
+		  // Empty to hit
+		  if lstDiceRolls.LastIndex = -1 and tohit <> "" then
+		    
+		    lstDiceRolls.AddRow NameValue, tohit, ""  ', DiceCalculatorMethods.PrettifyMath( AnyDiceRolls(index) )
+		    'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( AnyDiceRolls(index) )
+		  end if
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

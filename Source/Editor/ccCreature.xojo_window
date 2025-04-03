@@ -3156,13 +3156,30 @@ End
 	#tag Event
 		Sub Action()
 		  var nameParts() as String = cName.Value.Split( " " )
-		  if nameParts.LastIndex > 0 then
+		  
+		  if Keyboard.AsyncAltKey then
+		    
 		    var first as string = nameParts(0)
 		    nameParts.RemoveAt(0)
-		    cNameSort.Value = StringFromArray( nameParts, " " ) + ", " + first
-		  end if
-		  if cBaseCreature.Value.Trim = "" then
-		    cBaseCreature.Value = StringFromArray( nameParts, " " )
+		    
+		    if nameParts.LastIndex > -1 then
+		      cNameSort.Value = first + ", " + StringFromArray( nameParts, " " )
+		    end if
+		    if cBaseCreature.Value.Trim = "" then
+		      cBaseCreature.Value = first
+		    end if
+		    
+		  else
+		    
+		    if nameParts.LastIndex > 0 then
+		      var first as string = nameParts(0)
+		      nameParts.RemoveAt(0)
+		      cNameSort.Value = StringFromArray( nameParts, " " ) + ", " + first
+		    end if
+		    if cBaseCreature.Value.Trim = "" then
+		      cBaseCreature.Value = StringFromArray( nameParts, " " )
+		    end if
+		    
 		  end if
 		End Sub
 	#tag EndEvent

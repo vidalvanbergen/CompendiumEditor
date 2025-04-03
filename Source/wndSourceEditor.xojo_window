@@ -1742,6 +1742,13 @@ End
 		  
 		  if newNode <> Nil then
 		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 0 ) = newNode.ValueOfNodeWithName("name")
+		    
+		    // Sort name
+		    if newNode.ValueOfNodeWithName("sortname") <> "" then
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = newNode.ValueOfNodeWithName("sortname")
+		    else
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = newNode.ValueOfNodeWithName("name")
+		    end if
 		  end if
 		  
 		  lstXML.SoftRebuildList
@@ -2827,7 +2834,7 @@ End
 		      
 		      
 		      me.SortingColumn = ColumnToBeSorted
-		      if me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Ascending then
+		      if me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Ascending or me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.None then
 		        me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Descending
 		      else
 		        me.ColumnSortDirectionAt(ColumnToBeSorted) = DesktopListBox.SortDirections.Ascending

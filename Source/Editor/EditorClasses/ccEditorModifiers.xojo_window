@@ -402,6 +402,8 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Open()
+		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
+		  
 		  #if TargetMacOS then
 		    areModifier.RemoveEnabled = me.SelectedRowIndex > -1
 		    areModifier.EditEnabled = me.SelectedRowIndex > -1
@@ -483,6 +485,36 @@ End
 		    cbModifierValue.addrow "Wisdom Save +1"
 		    cbModifierValue.addrow "Charisma Save +1"
 		    
+		  case "Advantage"
+		    
+		    cbModifierValue.addrow "Strength Save"
+		    cbModifierValue.addrow "Dexterity Save"
+		    cbModifierValue.addrow "Constitution Save"
+		    cbModifierValue.addrow "Inteligence Save"
+		    cbModifierValue.addrow "Wisdom Save"
+		    cbModifierValue.addrow "Charisma Save"
+		    
+		    cbModifierValue.addrow "-"
+		    
+		    cbModifierValue.addrow "Acrobatics"
+		    cbModifierValue.addrow "Animal Handling"
+		    cbModifierValue.addrow "Arcana"
+		    cbModifierValue.addrow "Athletics"
+		    cbModifierValue.addrow "Deception"
+		    cbModifierValue.addrow "History"
+		    cbModifierValue.addrow "Insight"
+		    cbModifierValue.addrow "Intimidation"
+		    cbModifierValue.addrow "Investigation"
+		    cbModifierValue.addrow "Medicine"
+		    cbModifierValue.addrow "Nature"
+		    cbModifierValue.addrow "Perception"
+		    cbModifierValue.addrow "Performance"
+		    cbModifierValue.addrow "Persuasion"
+		    cbModifierValue.addrow "Religion"
+		    cbModifierValue.addrow "Sleight of Hand"
+		    cbModifierValue.addrow "Stealth"
+		    cbModifierValue.addrow "Survival"
+		    
 		  End Select
 		End Sub
 	#tag EndEvent
@@ -505,6 +537,7 @@ End
 		  if lstModifiers.SelectedRowIndex > -1 then
 		    lstModifiers.CellValueAt( lstModifiers.SelectedRowIndex, 0 ) = popCategory.Text
 		    lstModifiers.CellValueAt( lstModifiers.SelectedRowIndex, 1 ) = cbModifierValue.Text
+		    cbModifierValue.Text = ""
 		  end if
 		End Sub
 	#tag EndEvent

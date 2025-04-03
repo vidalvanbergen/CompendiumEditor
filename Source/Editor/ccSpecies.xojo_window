@@ -767,7 +767,7 @@ End
 		  
 		  // Damage Resistance
 		  if cDamageResistance.Value <> "" then
-		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Trim )
+		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Lowercase.Trim )
 		  end if
 		  
 		  // Proficiencies
@@ -901,7 +901,7 @@ End
 		          cSpeed.Value = xValue
 		          
 		        case "resist"
-		          cDamageResistance.Value = xValue
+		          cDamageResistance.Value = xValue.Lowercase
 		          
 		        case "armor"
 		          cProficienciesArmor.SetMultiValues SplitString( xValue, "," )

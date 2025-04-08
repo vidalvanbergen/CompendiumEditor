@@ -1715,6 +1715,12 @@ End
 		    newNode = cBackground.GetXMLNode
 		    
 		  case 2 // Class
+		    lstXML.SelectedRowIndex = lstXML.SelectedRowIndex
+		    for index as Integer = 0 to cClass.popSubclasses.LastRowIndex
+		      cClass.popSubclasses.SelectedRowIndex = index
+		    next
+		    lstXML.SelectedRowIndex = lstXML.SelectedRowIndex
+		    
 		    newNode = cClass.GetXMLNode
 		    
 		  case 3 // Creature
@@ -2720,7 +2726,7 @@ End
 		  end if
 		  
 		  var c as new Clipboard
-		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") then
+		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") and NOT c.Text.StartsWith("<!--") then
 		    var xNode as XMLNode = c.Text.ToXML
 		    
 		    Select case xNode.Name
@@ -2738,7 +2744,9 @@ End
 		  
 		  var MovetoXMLFileMenu as new DesktopMenuItem( "Move To" )
 		  for each file as FolderItem in Source.XMLFiles
-		    MovetoXMLFileMenu.AddMenu new DesktopMenuItem( file.Name, file )
+		    if file <> Nil and file.Exists then
+		      MovetoXMLFileMenu.AddMenu new DesktopMenuItem( file.Name, file )
+		    end if
 		  next
 		  
 		  base.AddMenu MovetoXMLFileMenu
@@ -2816,7 +2824,7 @@ End
 		      
 		      AppendToDocument(type)
 		      
-		    elseif selectedItem.Tag <> Nil and selectedItem.Tag.StringValue.StartsWith("SortBy") then
+		    elseif selectedItem.Tag <> Nil and selectedItem.Tag.Type = Variant.TypeString and selectedItem.Tag.StringValue.StartsWith("SortBy") then
 		      
 		      var ColumnToBeSorted as Integer = 0
 		      Select case selectedItem.Tag.StringValue

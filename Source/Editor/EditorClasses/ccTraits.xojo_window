@@ -478,7 +478,9 @@ End
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Name
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = xAttribute
 		    end if
-		    lstTraits.RowTagAt( lstTraits.SelectedRowIndex ) = xNode
+		    if lstTraits.SelectedRowIndex > -1 and lstTraits.SelectedRowIndex <= lstTraits.LastRowIndexthen
+		      lstTraits.RowTagAt( lstTraits.SelectedRowIndex ) = xNode
+		    end if
 		  end if
 		  
 		  lstTraits.Invalidate
@@ -494,10 +496,10 @@ End
 		    mxFeaturesRoot.RemoveChild( xNode )
 		    lstTraits.RemoveRowAt( lindex )
 		    
-		    if lindex-1 > -1 then
-		      lstTraits.SelectedRowIndex = lindex-1
-		    elseif lstTraits.LastRowIndex > -1 then
-		      lstTraits.SelectedRowIndex = 0
+		    if lindex > -1 and lindex <= lstTraits.LastRowIndex then
+		      lstTraits.SelectedRowIndex = lindex
+		    elseif lindex > lstTraits.LastRowIndex then
+		      lstTraits.SelectedRowIndex = lstTraits.LastRowIndex
 		    end if
 		    
 		  end if

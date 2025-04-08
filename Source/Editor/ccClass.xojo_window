@@ -1270,40 +1270,6 @@ End
 		        if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
 		          var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
 		          
-		          // Add page source to first trait
-		          'if NOT xFeature.ToString.Contains("Source:") and cSource.Value <> "" then
-		          'var TheSource as String = cSource.Value
-		          'if TheSource.Contains(" p. ") then
-		          'TheSource = cSource.Value.NthField(" p. ", 1 )
-		          'end if
-		          'if TheSource.Contains(",") then
-		          'TheSource = TheSource.NthField(",", 1)
-		          'end if
-		          'if TheSource.Contains( "(" ) then
-		          'TheSource = TheSource.NthField("(", 1)
-		          'end if
-		          'TheSource = TheSource.Trim
-		          '
-		          'var PageNr as String = cClassFeatures.lstTraits.CellValueAt( row, 2 )
-		          ''var PostFix as String = cSource.Value.Match("( \(.*?\))", 1 )
-		          ''TheSource = TheSource.ReplaceAllRegEx( "( \(.*?\))", "" )
-		          ''if IsHomebrew then
-		          ''PostFix = " (Homebrew)"
-		          ''end if
-		          '
-		          'if PageNr <> "" then
-		          'TheSource = TheSource + " p. " + PageNr' + PostFix
-		          'end if
-		          '
-		          'if PostFix <> "" then
-		          'TheSource = TheSource + PostFix
-		          'end if
-		          'TheSource = TheSource.Trim
-		          '
-		          'AddSourceTo( xFeature, TheSource )
-		          'end if
-		          
-		          
 		          xAutoLevel.AppendChildCopy( xFeature )
 		        end if
 		        
@@ -1343,29 +1309,29 @@ End
 		        end if
 		        
 		        
-		        var MoveToClass as XMLNode
-		        if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
-		          // move counter to main class
-		          MoveToClass = xClass
-		          
-		        elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
-		          // Move counter to subclass
-		          if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
-		            MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
-		          end if
-		          
-		        end if
-		        
-		        if MoveToClass <> Nil then
-		          for index as Integer = MoveToClass.ChildCount-1 DownTo 0
-		            var xChild as XMLNode = MoveToClass.Child(index)
-		            
-		            if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
-		              xChild.AppendChildCopy( xCounter )
-		              xCounter.Parent.RemoveChild( xCounter )
-		            end if
-		          next
-		        end if
+		        'var MoveToClass as XMLNode
+		        'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
+		        '// move counter to main class
+		        'MoveToClass = xClass
+		        '
+		        'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
+		        '// Move counter to subclass
+		        'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
+		        'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
+		        'end if
+		        '
+		        'end if
+		        '
+		        'if MoveToClass <> Nil then
+		        'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
+		        'var xChild as XMLNode = MoveToClass.Child(index)
+		        '
+		        'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
+		        'xChild.AppendChildCopy( xCounter )
+		        'xCounter.Parent.RemoveChild( xCounter )
+		        'end if
+		        'next
+		        'end if
 		        
 		        
 		      end if
@@ -2354,6 +2320,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "Jeweler's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Leatherworker's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Mason's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Navigator's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Painter's Supplies" )
 		  me.BaseMenu.Append new MenuItem( "Potter's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Smith's Tools" )
@@ -2364,6 +2331,10 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  me.BaseMenu.AddMenu new MenuItem("Gaming Set")
 		  me.BaseMenu.AddMenu new MenuItem("Musical Instrument")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Air)")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Land)")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Water)")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

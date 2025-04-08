@@ -528,7 +528,7 @@ End
 		      var xModifier as XMLNode = xNode.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase )
-		      xModifier.SetValue( lst.CellValueAt( row, 1 ) )
+		      xModifier.SetValue lst.CellValueAt( row, 1 )'.Replace( " + Proficiency Bonus", "+%0" ).Replace( "+Proficiency Bonus", "+%0" )
 		    next
 		  end if
 		  
@@ -640,6 +640,11 @@ End
 		        cSpecial.Tags = cSpecial.Values
 		        
 		      case "modifier"
+		        if xValue.Contains("%0") then
+		          xValue = xValue.Replace(" +%0", " + Proficiency Bonus")
+		          xValue = xValue.Replace("+%0", " + Proficiency Bonus")
+		        End if
+		        
 		        if xChild.GetAttribute("category") <> "" then
 		          cModifiers.addrow xChild.GetAttribute("category").Titlecase, xValue
 		        else

@@ -371,7 +371,7 @@ End
 		      var xModifier as XMLNode = xFeat.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase )
-		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( "+ Proficiency Bonus", "+%0" ) )
+		      xModifier.SetValue lst.CellValueAt( row, 1 )'.Replace( " + Proficiency Bonus", "+%0" ).Replace( "+Proficiency Bonus", "+%0" ) )
 		    next
 		  end if
 		  
@@ -456,10 +456,15 @@ End
 		        cSpecialTraits.Tags = cSpecialTraits.Values
 		        
 		      case "modifier"
+		        if TheValue.Contains("%0") then
+		          TheValue = TheValue.Replace(" +%0", " + Proficiency Bonus")
+		          TheValue = TheValue.Replace("+%0", " + Proficiency Bonus")
+		        End if
+		        
 		        if xProperty.GetAttribute("category") <> "" then
-		          cModifiers.addrow xProperty.GetAttribute("category").Titlecase, TheValue.Replace( "+%0", "+ Proficiency Bonus" )
+		          cModifiers.addrow xProperty.GetAttribute("category").Titlecase, TheValue
 		        else
-		          cModifiers.addrow "Bonus", TheValue.Replace( "+%0", "+Proficiency Bonus" )
+		          cModifiers.addrow "Bonus", TheValue
 		          Break
 		        end if
 		        

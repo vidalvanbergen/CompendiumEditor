@@ -123,7 +123,7 @@ Begin ContainerControl ccEquipment
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   125
+         Width           =   150
       End
       Begin CheckBox chkStealthDisadvantage
          AllowAutoDeactivate=   True
@@ -139,7 +139,7 @@ Begin ContainerControl ccEquipment
          Index           =   -2147483648
          InitialParent   =   "cvsArmor"
          Italic          =   False
-         Left            =   157
+         Left            =   182
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -156,7 +156,7 @@ Begin ContainerControl ccEquipment
          Value           =   False
          Visible         =   True
          VisualState     =   0
-         Width           =   523
+         Width           =   498
       End
       Begin ccEditorTextField cArmorClass
          AllowAutoDeactivate=   True

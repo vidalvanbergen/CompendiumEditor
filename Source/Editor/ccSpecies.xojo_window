@@ -924,7 +924,11 @@ End
 		          cProficiencies.Values = xValue.SplitString(",")
 		          cProficiencies.Tags = cProficiencies.Values
 		          
-		        case "trait"
+		        case "trait", "feature"
+		          if xChild.Name = "feature" then
+		            xChild.Name = "trait"
+		          end if
+		          
 		          cTraits.FeatureAdd( xChild )
 		          
 		          var description as String = xChild.ToString
@@ -1149,6 +1153,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "Jeweler's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Leatherworker's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Mason's Tools" )
+		  me.BaseMenu.Append new MenuItem( "Navigator's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Painter's Supplies" )
 		  me.BaseMenu.Append new MenuItem( "Potter's Tools" )
 		  me.BaseMenu.Append new MenuItem( "Smith's Tools" )
@@ -1159,6 +1164,10 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  me.BaseMenu.AddMenu new MenuItem("Gaming Set")
 		  me.BaseMenu.AddMenu new MenuItem("Musical Instrument")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Air)")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Land)")
+		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Water)")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

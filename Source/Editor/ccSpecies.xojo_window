@@ -925,9 +925,9 @@ End
 		          cProficiencies.Tags = cProficiencies.Values
 		          
 		        case "trait", "feature"
-		          if xChild.Name = "feature" then
-		            xChild.Name = "trait"
-		          end if
+		          'if xChild.Name = "feature" then
+		          'xChild.Name = "trait"
+		          'end if
 		          
 		          cTraits.FeatureAdd( xChild )
 		          
@@ -1031,6 +1031,8 @@ End
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = True
 		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  for each Size as String in DnDArrays.Sizes
 		    me.BaseMenu.Append new MenuItem( Size, Size.Left(1) )
 		  next

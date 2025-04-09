@@ -478,7 +478,7 @@ End
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Name
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = xAttribute
 		    end if
-		    if lstTraits.SelectedRowIndex > -1 and lstTraits.SelectedRowIndex <= lstTraits.LastRowIndexthen
+		    if lstTraits.SelectedRowIndex > -1 and lstTraits.SelectedRowIndex <= lstTraits.LastRowIndex then
 		      lstTraits.RowTagAt( lstTraits.SelectedRowIndex ) = xNode
 		    end if
 		  end if
@@ -925,7 +925,11 @@ End
 		            var xNode as XMLNode = c.Text.ToXML
 		            
 		            if xNode <> Nil and xNode.Name = self.FeatureType then
-		              FeatureAdd( xNode )
+		              if IsAutoLevelFeature then
+		                FeatureAdd( "1", xNode, True )
+		              else
+		                FeatureAdd( xNode )
+		              end if
 		            else
 		              Break
 		            end if

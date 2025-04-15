@@ -1745,10 +1745,10 @@ End
 		    
 		    lstClasses.RemoveRowAt( lstClasses.SelectedRowIndex )
 		    
-		    if lindex-1 > -1 then
-		      lstClasses.SelectedRowIndex = lindex-1
-		    elseif lstClasses.LastRowIndex > -1 then
-		      lstClasses.SelectedRowIndex = 0
+		    if lindex > -1 and lindex <= lstClasses.LastRowIndex then
+		      lstClasses.SelectedRowIndex = lindex
+		    elseif lindex > -1 and lindex > lstClasses.LastRowIndex then
+		      lstClasses.SelectedRowIndex = lstClasses.LastRowIndex
 		    end if
 		  end if
 		End Sub

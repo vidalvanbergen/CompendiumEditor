@@ -1690,10 +1690,10 @@ End
 		    end if
 		    
 		    // Restore selection
-		    if lindex-1 > -1 then
-		      lstXML.SelectedRowIndex = lindex-1
-		    elseif lstXML.LastRowIndex > -1 then
-		      lstXML.SelectedRowIndex = 0
+		    if lindex > -1 and lindex <= lstXML.LastRowIndex then
+		      lstXML.SelectedRowIndex = lindex
+		    elseif lindex > -1 and lindex > lstXML.LastRowIndex then
+		      lstXML.SelectedRowIndex = lstXML.LastRowIndex
 		    end if
 		    
 		  end if
@@ -2727,29 +2727,39 @@ End
 		  
 		  var c as new Clipboard
 		  if c.Text.StartsWith("<") and c.Text.EndsWith(">") and NOT c.Text.StartsWith("<!--") then
-		    var xNode as XMLNode = c.Text.ToXML
+		    var xNode as XMLNode = c.Text.ToXML(TRUE)
 		    
-		    Select case xNode.Name
-		      
-		    case "race", "class", "background", "item", "feat", "spell", "monster"
-		      if xNode <> Nil then
-		        base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
-		      end if
-		      
-		    End Select
+		    if xNode <> Nil then
+		      Select case xNode.Name
+		        
+		      case "race", "class", "background", "item", "feat", "spell", "monster"
+		        if xNode <> Nil then
+		          base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
+		        end if
+		        
+		      End Select
+		    end if
 		  end if
 		  
 		  
 		  base.AddMenu new MenuItem("-")
 		  
-		  var MovetoXMLFileMenu as new DesktopMenuItem( "Move To" )
+		  'var MovetoXMLFileMenu as new DesktopMenuItem( "Move To" )
+		  'for each file as FolderItem in Source.XMLFiles
+		  'if file <> Nil and file.Exists then
+		  'MovetoXMLFileMenu.AddMenu new DesktopMenuItem( file.Name, file )
+		  'end if
+		  'next
+		  
+		  
+		  var CopytoXMLFileMenu as new DesktopMenuItem( "Copy To" )
 		  for each file as FolderItem in Source.XMLFiles
 		    if file <> Nil and file.Exists then
-		      MovetoXMLFileMenu.AddMenu new DesktopMenuItem( file.Name, file )
+		      CopytoXMLFileMenu.AddMenu new DesktopMenuItem( file.Name, file )
 		    end if
 		  next
 		  
-		  base.AddMenu MovetoXMLFileMenu
+		  base.AddMenu CopytoXMLFileMenu
 		  
 		  //
 		  
@@ -2774,7 +2784,7 @@ End
 		  
 		  if selectedItem <> Nil then
 		    
-		    // Move between files
+		    // Copy between files
 		    if selectedItem.Tag IsA FolderItem and me.SelectedRowIndex > -1 and me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
 		      
 		      var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
@@ -2801,21 +2811,21 @@ End
 		        
 		        
 		      end if
-		      xNode.Parent.RemoveChild( xNode )
+		      'xNode.Parent.RemoveChild( xNode )
 		      
-		      var lindex as Integer = me.SelectedRowIndex
+		      'var lindex as Integer = me.SelectedRowIndex
 		      
-		      me.RemoveRowAt( me.SelectedRowIndex )
+		      'me.RemoveRowAt( me.SelectedRowIndex )
 		      
-		      if lindex <= me.LastRowIndex then
-		        me.SelectedRowIndex = lindex
-		      elseif lindex-1 > -1 then
-		        me.SelectedRowIndex = lindex-1
-		      end if
+		      'if lindex <= me.LastRowIndex then
+		      'me.SelectedRowIndex = lindex
+		      'elseif lindex-1 > -1 then
+		      'me.SelectedRowIndex = lindex-1
+		      'end if
 		      
-		      SaveData
+		      'SaveData
 		      
-		      MessageBox "Moved " + xNode.ValueOfNodeWithName("name") + " to " + TheXMLDestination.Name + "."
+		      MessageBox "Copied " + xNode.ValueOfNodeWithName("name") + " to " + TheXMLDestination.Name + "."
 		      
 		      
 		      // Templates

@@ -1048,7 +1048,7 @@ End
 		    SubclassNames.SortWith( xSubclasses )
 		    
 		    for index as Integer = 0 to SubclassNames.LastIndex
-		      popSubclasses.AddRow new DesktopMenuItem( SubclassNames(index), xSubclasses(index) )
+		      popSubclasses.AddRow new DesktopMenuItem( SubclassNames(index).ReplaceAll("&", "&&"), xSubclasses(index) )
 		      'popSubclasses.RowTagAt xSubclasses(index)
 		    next
 		  end if
@@ -1587,6 +1587,9 @@ End
 		              
 		              
 		            end if
+		            
+		          elseif xFeature.Name = "#comment" then
+		            log "#comment :: " + xFeature.Value
 		            
 		          else
 		            var aaaName as string = xFeature.Name

@@ -3645,13 +3645,18 @@ Protected Module StringLib
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ToXML(extends stringNode as String) As XMLNode
+		Function ToXML(extends stringNode as String, silentError as Boolean = False) As XMLNode
 		  var xDoc as new XMLDocument
 		  
 		  try
 		    xDoc.LoadXML(stringNode.Trim)
 		  catch XMLError as XMLException
-		    MessageBox "XML Error: " + XMLError.Message
+		    if NOT silentError then
+		      MessageBox "XML Error: " + XMLError.Message
+		    else
+		      Break
+		    end if
+		    Return Nil
 		  end try
 		  
 		  
@@ -3660,6 +3665,10 @@ Protected Module StringLib
 		  else
 		    Return Nil
 		  end if
+		  
+		  Exception err as XMLException
+		    MessageBox "XML Error: " + err.Message
+		    Return Nil
 		End Function
 	#tag EndMethod
 

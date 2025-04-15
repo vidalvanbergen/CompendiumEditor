@@ -906,7 +906,7 @@ Begin ContainerControl ccEquipment
       Bold            =   False
       Cancel          =   False
       Caption         =   "Load"
-      Default         =   True
+      Default         =   False
       Enabled         =   True
       FontName        =   "System"
       FontSize        =   0.0

@@ -1214,7 +1214,7 @@ End
 		          
 		        case "detail"
 		          if xValue <> "" then
-		            var rarity() as string = Array( "uncommon", "common", "very rare", "rare", "legendary", "artifact", "curse", "varies" )
+		            var rarity() as string = Array( "uncommon", "common", "very rare", "rare", "legendary", "artifact", "curse", "rarity varies", "varies" )
 		            
 		            var details, category as String
 		            

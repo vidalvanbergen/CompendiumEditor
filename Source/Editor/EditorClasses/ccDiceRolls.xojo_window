@@ -229,8 +229,8 @@ End
 		  
 		  'if Source <> "" then
 		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
-		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)", 1 )
-		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( \w+ damage| \| \w+ trait| \| \w+)", 2 )
+		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( hit points| temporary hit points| \w+ damage| \| \w+ trait| \| \w+|)", 1 )
+		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( hit points| temporary hit points| \w+ damage| \| \w+ trait| \| \w+|)", 2 )
 		  
 		  'end if
 		  
@@ -271,7 +271,7 @@ End
 		    result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
 		    
 		    if multiDescription <> Nil and multiDescription.LastIndex >= lstDiceRolls.LastRowIndex+1 then
-		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Trim
+		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Trim.Titlecase
 		    end if
 		  end if
 		  
@@ -287,6 +287,9 @@ End
 		  'else
 		  if description = "" and lstDiceRolls.LastRowIndex = -1 then
 		    description = nameValue
+		  end if
+		  if description = "Hit Points" then
+		    description = "Heal"
 		  end if
 		  
 		  if description.Contains("damage") then

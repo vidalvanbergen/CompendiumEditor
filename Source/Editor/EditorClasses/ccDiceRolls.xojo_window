@@ -229,8 +229,8 @@ End
 		  
 		  'if Source <> "" then
 		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
-		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( hit points| temporary hit points| \w+ damage| \| \w+ trait| \| \w+|)", 1 )
-		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( hit points| temporary hit points| \w+ damage| \| \w+ trait| \| \w+|)", 2 )
+		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| \w+ damage| damage| \| \w+ trait| \| \w+|)", 1 )
+		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| \w+ damage| damage| \| \w+ trait| \| \w+|)", 2 )
 		  
 		  'end if
 		  

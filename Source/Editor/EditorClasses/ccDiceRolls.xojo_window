@@ -209,11 +209,35 @@ Begin ContainerControl ccDiceRolls
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   70
+      Top             =   123
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   False
+      Width           =   24
+   End
+   BeginSegmentedButton SegmentedButton btnMagic
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   122
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically fill in all the dice rolls"
+      Top             =   70
+      Transparent     =   False
+      Visible         =   True
       Width           =   24
    End
 End
@@ -229,8 +253,8 @@ End
 		  
 		  'if Source <> "" then
 		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
-		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| \w+ damage| damage| \| \w+ trait| \| \w+|)", 1 )
-		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| \w+ damage| damage| \| \w+ trait| \| \w+|)", 2 )
+		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 1 )
+		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 2 )
 		  
 		  'end if
 		  
@@ -290,6 +314,8 @@ End
 		  end if
 		  if description = "Hit Points" then
 		    description = "Heal"
+		  elseif description = "Expended Charges" then
+		    description = "Recharge"
 		  end if
 		  
 		  if description.Contains("damage") then
@@ -379,6 +405,99 @@ End
 		    end if
 		  end if
 		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ProcessDicerolls()
+		  var nameValue, Source as String
+		  RaiseEvent FindDiceNotationsIn( nameValue, Source )
+		  
+		  var result, level, description as string
+		  
+		  'if Source <> "" then
+		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
+		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 1 )
+		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 2 )
+		  
+		  'end if
+		  if multiResults <> Nil then
+		    for index as Integer = 0 to multiResults.LastIndex
+		      
+		      // Leveled rolls
+		      level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		      if lstDiceRolls.SelectedRowIndex > -1 and level <> "" and level.IsNumeric and _
+		        ( (source.Contains("cantrip upgrade") and val( level ) < 20) or (source.Contains("higher levels") and val( level ) < 9 )) then
+		        result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
+		        result = Str( val( result.NthField("d", 1) ) + 1 ) + "d" + result.NthField( result.NthField("d", 1) + "d", 2 )
+		        
+		        if source.Contains("higher levels:") then
+		          level = Str( Val( lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 ) ) + 1 )
+		          
+		        elseif Source.Contains("cantrip upgrade:") then
+		          level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		          Select case level
+		          case "0"
+		            level = "5"
+		          case "5"
+		            level = "11"
+		          case "11"
+		            level = "17"
+		          case "17"
+		            '
+		            result = ""
+		            level = ""
+		          End Select
+		        end if
+		        
+		        if multiDescription <> Nil and multiDescription.LastIndex > -1 then
+		          description = multiDescription(0).Titlecase
+		        end if
+		      end if
+		      
+		      
+		      // regular results
+		      if result = "" and multiResults <> Nil and multiResults.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		        result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
+		        
+		        if multiDescription <> Nil and multiDescription.LastIndex >= lstDiceRolls.LastRowIndex+1 then
+		          description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Trim.Titlecase
+		        end if
+		      end if
+		      
+		      
+		      if result.StartsWith("d") then
+		        result = "1" + result
+		      end if
+		      
+		      result = SummonCalculator( result, True )
+		      
+		      'if description.IsNumeric then
+		      'description = Str( Val( description ) + 1 )
+		      'else
+		      if description = "" and lstDiceRolls.LastRowIndex = -1 then
+		        description = nameValue
+		      end if
+		      if description = "Hit Points" then
+		        description = "Heal"
+		      elseif description = "Expended Charges" then
+		        description = "Recharge"
+		      end if
+		      
+		      if description.Contains("damage") then
+		        description = description.Titlecase
+		      end if
+		      
+		      if result <> "" then
+		        lstDiceRolls.AddRow result, level, description
+		        lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
+		        
+		        
+		        lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
+		      end if
+		      
+		    next
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -491,6 +610,13 @@ End
 	#tag Event
 		Sub Action()
 		  MessageBox "Dice rolls here aren't officially supported by the Fight Club app, but I added it in case they might be useful in the future."
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnMagic
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  ProcessDicerolls
 		End Sub
 	#tag EndEvent
 #tag EndEvents

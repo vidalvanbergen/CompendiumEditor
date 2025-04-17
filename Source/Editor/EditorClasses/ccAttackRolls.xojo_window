@@ -183,8 +183,8 @@ End
 		  
 		  
 		  
-		  var multiresult() as String = Source.MatchAll("\((\d+d\d+.*?)\)", 1 )
-		  var multidamagetypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+ damage)", 2 )
+		  var multiresult() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+.*? damage)", 1 )
+		  var multidamagetypes() as String = Source.MatchAll("\((\d+d\d+.*?)\) (\w+.*? damage)", 2 )
 		  
 		  if result = "" and multiresult <> Nil and multiresult.LastIndex >= lstDiceRolls.LastRowIndex+1 then
 		    result = multiresult(lstDiceRolls.LastRowIndex+1)

@@ -634,7 +634,7 @@ Begin ContainerControl ccClass
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   125
+         Width           =   150
       End
       Begin CheckBox chkSpellsOptional
          AllowAutoDeactivate=   True
@@ -650,7 +650,7 @@ Begin ContainerControl ccClass
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          Italic          =   False
-         Left            =   157
+         Left            =   184
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True

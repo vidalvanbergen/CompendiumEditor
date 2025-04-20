@@ -245,7 +245,7 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
-		Sub AddCalculation()
+		Function AddCalculation(SummonCalc as Boolean = True) As String
 		  var nameValue, Source as String
 		  RaiseEvent FindDiceNotationsIn( nameValue, Source )
 		  
@@ -253,13 +253,24 @@ End
 		  
 		  'if Source <> "" then
 		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
-		  var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 1 )
-		  var multiDescription() as string = source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| hit points| temporary hit points| expended charges| \w+ damage| damage| \| \w+ trait| \| \w+|)", 2 )
+		  var MatchingString as String = "(\d+d\d+ \+ \d+|\d+d\d+\+\d+|\d+d\d+ \- \d+|\d+d\d+\-\d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| Rounds| hit points| temporary hit points| expended charges|\) \w+ damage| \w+ damage| damage| \w+ \w+ damage| \| \w+ trait| \| \w+| \w+|)"
+		  
+		  var multiResults() as String = Source.MatchAll( MatchingString, 1 )
+		  var multiDescription() as string = source.MatchAll( MatchingString, 2 )
 		  
 		  'end if
 		  
 		  // Leveled rolls
 		  level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
+		  if Source.Contains("cantrip upgrade") and lstDiceRolls.LastRowIndex = -1 then
+		    level = "0"
+		  elseif Source.Contains("higher levels:") and lstDiceRolls.LastRowIndex = -1 then
+		    var damageIn as String = Source.Match("increases by (\d+d\d+)", 1)
+		    if damageIn <> "" then
+		      level = Source.Match("level above (\d+)", 1)
+		    end if
+		  end if
+		  
 		  if lstDiceRolls.SelectedRowIndex > -1 and level <> "" and level.IsNumeric and _
 		    ( (source.Contains("cantrip upgrade") and val( level ) < 20) or (source.Contains("higher levels") and val( level ) < 9 )) then
 		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
@@ -271,7 +282,8 @@ End
 		    elseif Source.Contains("cantrip upgrade:") then
 		      level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
 		      Select case level
-		      case "0"
+		        
+		      case "0", ""
 		        level = "5"
 		      case "5"
 		        level = "11"
@@ -295,7 +307,7 @@ End
 		    result = multiResults( lstDiceRolls.LastRowIndex+1 ).Replace(")", "").replace(".","").trim
 		    
 		    if multiDescription <> Nil and multiDescription.LastIndex >= lstDiceRolls.LastRowIndex+1 then
-		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Trim.Titlecase
+		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Replace(")", "").Trim.Titlecase
 		    end if
 		  end if
 		  
@@ -304,7 +316,9 @@ End
 		    result = "1" + result
 		  end if
 		  
-		  result = SummonCalculator( result, True )
+		  if SummonCalc then
+		    result = SummonCalculator( result, True )
+		  end if
 		  
 		  'if description.IsNumeric then
 		  'description = Str( Val( description ) + 1 )
@@ -314,7 +328,7 @@ End
 		  end if
 		  if description = "Hit Points" then
 		    description = "Heal"
-		  elseif description = "Expended Charges" then
+		  elseif description = "Expended Charges" or description = "Charges" then
 		    description = "Recharge"
 		  end if
 		  
@@ -330,7 +344,8 @@ End
 		    lstDiceRolls.SelectedRowIndex = lstDiceRolls.LastAddedRowIndex
 		  end if
 		  
-		End Sub
+		  Return result
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
@@ -587,7 +602,7 @@ End
 #tag Events ardeModifier
 	#tag Event
 		Sub ActionAdd()
-		  AddCalculation
+		  var result as String =  AddCalculation
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -616,7 +631,13 @@ End
 #tag Events btnMagic
 	#tag Event
 		Sub Pressed(segmentIndex As Integer)
-		  ProcessDicerolls
+		  'ProcessDicerolls
+		  lstDiceRolls.RemoveAllRows
+		  var result as String = "1"
+		  
+		  while result <> ""
+		    result = AddCalculation(False)
+		  wend
 		End Sub
 	#tag EndEvent
 #tag EndEvents

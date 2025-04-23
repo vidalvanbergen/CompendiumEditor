@@ -1528,7 +1528,8 @@ End
 		  me.BaseMenu.Append new MenuItem( "Force", "FC" )
 		  me.BaseMenu.Append new MenuItem( "Lightning", "L" )
 		  me.BaseMenu.Append new MenuItem( "Necrotic", "N" )
-		  me.BaseMenu.Append new MenuItem( "Poison", "P" )
+		  me.BaseMenu.Append new MenuItem( "Poison", "PS" )
+		  me.BaseMenu.Append new MenuItem( "Psychic", "PY" )
 		  me.BaseMenu.Append new MenuItem( "Radiant", "R" )
 		  me.BaseMenu.Append new MenuItem( "Thunder", "T" )
 		End Sub

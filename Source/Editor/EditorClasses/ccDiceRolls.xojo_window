@@ -264,7 +264,7 @@ End
 		  level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
 		  if Source.Contains("cantrip upgrade") and lstDiceRolls.LastRowIndex = -1 then
 		    level = "0"
-		  elseif Source.Contains("higher levels:") and lstDiceRolls.LastRowIndex = -1 then
+		  elseif ( Source.Contains("higher levels:") or Source.Contains("Higher-Level") ) and lstDiceRolls.LastRowIndex = -1 then
 		    var damageIn as String = Source.Match("increases by (\d+d\d+)", 1)
 		    if damageIn <> "" then
 		      level = Source.Match("level above (\d+)", 1)
@@ -272,11 +272,11 @@ End
 		  end if
 		  
 		  if lstDiceRolls.SelectedRowIndex > -1 and level <> "" and level.IsNumeric and _
-		    ( (source.Contains("cantrip upgrade") and val( level ) < 20) or (source.Contains("higher levels") and val( level ) < 9 )) then
+		    ( (source.Contains("cantrip upgrade") and val( level ) < 20) or ( ( source.Contains("higher levels") or Source.Contains("Higher-Level") ) and val( level ) < 9 )) then
 		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
 		    result = Str( val( result.NthField("d", 1) ) + 1 ) + "d" + result.NthField( result.NthField("d", 1) + "d", 2 )
 		    
-		    if source.Contains("higher levels:") then
+		    if source.Contains("higher levels:") or Source.Contains("Higher-Level") then
 		      level = Str( Val( lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 ) ) + 1 )
 		      
 		    elseif Source.Contains("cantrip upgrade:") then
@@ -442,11 +442,11 @@ End
 		      // Leveled rolls
 		      level = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 )
 		      if lstDiceRolls.SelectedRowIndex > -1 and level <> "" and level.IsNumeric and _
-		        ( (source.Contains("cantrip upgrade") and val( level ) < 20) or (source.Contains("higher levels") and val( level ) < 9 )) then
+		        ( (source.Contains("cantrip upgrade") and val( level ) < 20) or ( ( source.Contains("higher levels") or Source.Contains("Higher-Level") ) and val( level ) < 9 )) then
 		        result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
 		        result = Str( val( result.NthField("d", 1) ) + 1 ) + "d" + result.NthField( result.NthField("d", 1) + "d", 2 )
 		        
-		        if source.Contains("higher levels:") then
+		        if source.Contains("higher levels:") or Source.Contains("Higher-Level") then
 		          level = Str( Val( lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 1 ) ) + 1 )
 		          
 		        elseif Source.Contains("cantrip upgrade:") then

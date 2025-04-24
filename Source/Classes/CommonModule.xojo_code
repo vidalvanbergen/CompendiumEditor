@@ -635,7 +635,7 @@ Protected Module CommonModule
 	#tag Constant, Name = kStatusIncapacitated, Type = String, Dynamic = False, Default = \"Incapacitated:\n\t\xE2\x80\xA2 An incapacitated creature can\'t take actions or reactions.", Scope = Public
 	#tag EndConstant
 
-	#tag Constant, Name = kStatusInvisible, Type = String, Dynamic = False, Default = \"Invisible:\n\t\xE2\x80\xA2 An invisible creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding\x2C the creature is heavily obscured. The creature\'s location can be detected by any noise it makes or any tracks igt leaves.\n\t\xE2\x80\xA2 Attack rolls against the creature have disadvantage\x2C and the creature\'s attack rolls have advantage.", Scope = Public
+	#tag Constant, Name = kStatusInvisible, Type = String, Dynamic = False, Default = \"Invisible:\n\t\xE2\x80\xA2 An invisible creature is impossible to see without the aid of magic or a special sense. For the purpose of hiding\x2C the creature is heavily obscured. The creature\'s location can be detected by any noise it makes or any tracks it leaves.\n\t\xE2\x80\xA2 Attack rolls against the creature have disadvantage\x2C and the creature\'s attack rolls have advantage.", Scope = Public
 	#tag EndConstant
 
 	#tag Constant, Name = kStatusPanicked, Type = String, Dynamic = False, Default = \"Panicked:\n\t\xE2\x80\xA2 The target is frightened of you. On each of its turns\x2C the frightened creature must take the Dash action and move away from you by the safest and shortest available route\x2C unless there is nowhere to move. If the target moves to a place at least 60 feet away from you where it can no longer see you\x2C this effect ends.", Scope = Public

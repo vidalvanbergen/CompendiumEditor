@@ -755,6 +755,50 @@ Begin ContainerControl ccClass
          UseMode         =   ""
          Visible         =   True
          Width           =   640
+         Begin BevelButton bvlUnofficialInfo
+            AllowAutoDeactivate=   True
+            AllowFocus      =   True
+            BackgroundColor =   &c00000000
+            BevelStyle      =   5
+            Bold            =   False
+            ButtonStyle     =   0
+            Caption         =   "𝒾"
+            CaptionAlignment=   3
+            CaptionDelta    =   0
+            CaptionPosition =   1
+            Enabled         =   True
+            FontName        =   "System"
+            FontSize        =   0.0
+            FontUnit        =   0
+            HasBackgroundColor=   False
+            Height          =   24
+            Icon            =   0
+            IconAlignment   =   0
+            IconDeltaX      =   0
+            IconDeltaY      =   0
+            Index           =   0
+            InitialParent   =   "cClassTraits"
+            Italic          =   False
+            Left            =   142
+            LockBottom      =   False
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   False
+            LockTop         =   True
+            MenuStyle       =   0
+            Scope           =   0
+            TabIndex        =   0
+            TabPanelIndex   =   0
+            TabStop         =   True
+            TextColor       =   &c00000000
+            Tooltip         =   ""
+            Top             =   1010
+            Transparent     =   False
+            Underline       =   False
+            Value           =   False
+            Visible         =   True
+            Width           =   24
+         End
       End
       Begin DesktopLabel lblSpellsDescription
          AllowAutoDeactivate=   True
@@ -2022,14 +2066,40 @@ End
 		  // Features Templates
 		  var TemplateMenu as new MenuItem("Templates")
 		  
-		  var archetype as String = ArchetypeFor( cName.Value )
+		  'var archetype as String = ArchetypeFor( cName.Value )
 		  
-		  TemplateMenu.AddMenu new MenuItem( archetype + ": " + popSubclasses.SelectedRowValue )
-		  TemplateMenu.AddMenu new MenuItem( popSubclasses.SelectedRowValue + ": FeatureName" )
-		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + popSubclasses.SelectedRowValue + ")" )
+		  var c as new Compendium
+		  var archetype as String = c.GetClassArchetype( xClass )
+		  
+		  if archetype = "" then
+		    for index as Integer = 0 to xSubclasses.LastIndex
+		      archetype = c.GetClassArchetype( xSubclasses(index) )
+		      if archetype <> "" then
+		        Exit
+		      end if
+		    next
+		  end if
+		  
+		  if archetype = "" then
+		    archetype = ArchetypeFor( cName.Value )
+		  end if
+		  
+		  var subclassName as string = popSubclasses.SelectedRowValue
+		  if subclassName = "Main Class Features" then
+		    subclassName = "ClassName"
+		  end if
+		  
+		  TemplateMenu.AddMenu new MenuItem( archetype + ": " + subclassName )
+		  TemplateMenu.AddMenu new MenuItem( subclassName + ": FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + subclassName + ")" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
-		  TemplateMenu.AddMenu new MenuItem( popSubclasses.SelectedRowValue + ": Channel Divinity: FeatureName" )
-		  TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName (" + popSubclasses.SelectedRowValue + ")" )
+		  TemplateMenu.AddMenu new MenuItem( subclassName + " Feature" )
+		  TemplateMenu.AddMenu new MenuItem( "-" )
+		  TemplateMenu.AddMenu new MenuItem( subclassName + ": Channel Divinity: FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName (" + subclassName + ")" )
+		  TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( "-" )
+		  TemplateMenu.AddMenu new MenuItem( "Ability Score Improvement" )
 		  
 		  me.TemplateMenu = TemplateMenu
 		  'cClassFeatures.TemplateMenu = TemplateMenu
@@ -2417,6 +2487,13 @@ End
 		Sub Open()
 		  me.FieldName = "Class Introduction:"
 		  me.UseMode = ccTraits.Mode.SimpleTrait
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlUnofficialInfo
+	#tag Event
+		Sub Action(index as Integer)
+		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
 		End Sub
 	#tag EndEvent
 #tag EndEvents

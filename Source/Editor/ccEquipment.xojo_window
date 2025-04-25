@@ -1603,7 +1603,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "poison (contact)" )
 		  me.BaseMenu.Append new MenuItem( "poison (ingested)" )
 		  me.BaseMenu.Append new MenuItem( "poison (inhaled)" )
-		  me.BaseMenu.Append new MenuItem( "poison (injured)" )
+		  me.BaseMenu.Append new MenuItem( "poison (injury)" )
 		  
 		  
 		  me.BaseMenu.Append new MenuItem( "-" )

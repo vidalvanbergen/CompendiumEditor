@@ -1083,7 +1083,7 @@ End
 		    end if
 		    
 		    if chkStealthDisadvantage.Value then
-		      xItem.AppendSimpleChild( "stealth", "1" )
+		      xItem.AppendSimpleChild( "stealth", "YES" )
 		    end if
 		    
 		    if cStrength.Value <> "" then

@@ -1108,13 +1108,16 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
-		Protected Function GetCompiledXMLNode(TheNode as XMLNode = Nil, isMainClass as Boolean) As XMLNode
+		Protected Function GetCompiledXMLNode(TheNode as XMLNode = Nil, isMainClass as Boolean, TheSubclassName as String = "") As XMLNode
 		  
 		  var xmlClass as XMLNode
 		  
 		  'var isMainClass as Boolean = False
 		  
 		  if TheNode <> Nil then
+		    if isMainClass then 'TheSubclassName = "Main Class" then
+		      TheSubclassName = ""
+		    end if
 		    xmlClass = TheNode
 		    
 		    'isMainClass = ( TheNode.ValueOfNodeWithName("hd") <> "" )
@@ -1313,6 +1316,11 @@ End
 		        
 		        if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
 		          var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
+		          
+		          // Add subclass name to feature tags.
+		          'if TheSubclassName <> "" then
+		          'xFeature.SetAttribute( "TheSubclass", TheSubclassName )
+		          'end if
 		          
 		          xAutoLevel.AppendChildCopy( xFeature )
 		        end if
@@ -1976,8 +1984,8 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
-		Protected Sub SubclassEdit(xSubclass as XMLNode, isMainClass as Boolean)
-		  var xClass as XMLNode = GetCompiledXMLNode( xSubclass, isMainClass )
+		Protected Sub SubclassEdit(xSubclass as XMLNode, isMainClass as Boolean, TheSubclassName as String = "")
+		  var xClass as XMLNode = GetCompiledXMLNode( xSubclass, isMainClass, TheSubclassName )
 		End Sub
 	#tag EndMethod
 
@@ -1994,8 +2002,8 @@ End
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Sub Untitled(xFeature as XMLNode)
+	#tag Method, Flags = &h21
+		Private Sub UntitledBCK(xFeature as XMLNode)
 		  var descriptionLines() as String
 		  var xChildren() as XMLNode = xFeature.Children
 		  xFeature.RemoveAllChildren
@@ -2069,7 +2077,7 @@ End
 		  'var archetype as String = ArchetypeFor( cName.Value )
 		  
 		  var c as new Compendium
-		  var archetype as String = c.GetClassArchetype( xClass )
+		  var archetype as String = c.GetClassArchetype( xNode )
 		  
 		  if archetype = "" then
 		    for index as Integer = 0 to xSubclasses.LastIndex
@@ -2568,7 +2576,7 @@ End
 		  // Save changes
 		  if OldItem <> Nil and OldItem.Tag IsA XMLNode then
 		    var xOldSubclass as XMLNode = OldItem.Tag
-		    SubclassEdit( xOldSubclass, xOldSubclass = xClass )
+		    SubclassEdit( xOldSubclass, xOldSubclass = xClass, OldItem.Text )
 		  end if
 		  
 		  // Load new

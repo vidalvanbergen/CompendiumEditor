@@ -6,15 +6,24 @@ Protected Class Compendium
 		  if xClass <> Nil and xSubclass <> Nil then
 		    var xDoc as XMLDocument = xClass.OwnerDocument
 		    
+		    var Archetype as string
+		    var SubclassNames() as string
+		    
 		    // if xSubclass has class features
 		    if xSubclass.ChildCount > 1 then
 		      
-		      var Archetype as string = GetClassArchetype( xSubclass )
-		      var SubclassNames() as string = GetSubclassNames( xSubclass )
+		      Archetype = GetClassArchetype( xSubclass )
+		      if SubclassName <> "" then
+		        SubclassNames.Append SubclassName
+		      else
+		        SubclassNames = GetSubclassNames( xSubclass )
+		      end if
 		      
 		      if SubclassNames.LastIndex > -1 then
 		        var xcomment as XMLComment = xDoc.CreateComment( " " + Archetype + ": " + SubclassNames(0) + " " )
 		        xClass.AppendChild( xcomment )
+		        
+		        SubclassName = SubclassNames(0)
 		      end if
 		      
 		      'if SubclassName <> "" then
@@ -28,6 +37,13 @@ Protected Class Compendium
 		    
 		    for each xNode as XMLNode in xSubclass.Children
 		      if xNode <> Nil and xNode.Name = "autolevel" then
+		        
+		        // Add subclass name to feature tag.
+		        'for each xChild as XMLNode in xNode.Children
+		        'if SubclassName <> "" and xChild.GetAttribute("subclass") = "" then
+		        'xChild.SetAttribute("subclass", SubclassName )
+		        'end if
+		        'next
 		        
 		        xClass.AppendChildCopy( xNode )
 		      end if

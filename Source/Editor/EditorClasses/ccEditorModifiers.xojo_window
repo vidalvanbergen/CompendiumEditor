@@ -431,6 +431,7 @@ End
 		    cbModifierValue.addrow "Spell Attack +1"
 		    cbModifierValue.addrow "Spell DC +1"
 		    cbModifierValue.addrow "Hit Points +1"
+		    cbModifierValue.addrow "hp +1"
 		    cbModifierValue.addrow "ac +1"
 		    cbModifierValue.addrow "Saving Throws +1"
 		    cbModifierValue.addrow "Initiative +1"
@@ -459,12 +460,12 @@ End
 		    
 		  case "Ability Score"
 		    
-		    cbModifierValue.addrow "Strength Score +1"
-		    cbModifierValue.addrow "Dexterity Score +1"
-		    cbModifierValue.addrow "Constitution Score +1"
-		    cbModifierValue.addrow "Inteligence Score +1"
-		    cbModifierValue.addrow "Wisdom Score +1"
-		    cbModifierValue.addrow "Charisma Score +1"
+		    cbModifierValue.addrow "Strength +1"
+		    cbModifierValue.addrow "Dexterity +1"
+		    cbModifierValue.addrow "Constitution +1"
+		    cbModifierValue.addrow "Inteligence +1"
+		    cbModifierValue.addrow "Wisdom +1"
+		    cbModifierValue.addrow "Charisma +1"
 		    
 		    
 		  case "Ability Modifier"

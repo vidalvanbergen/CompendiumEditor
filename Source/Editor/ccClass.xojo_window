@@ -2404,6 +2404,7 @@ End
 		  me.BaseMenu.AddMenu new MenuItem( "Mason's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Navigator's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Painter's Supplies" )
+		  me.BaseMenu.AddMenu new MenuItem( "Poisoner's Kit" )
 		  me.BaseMenu.AddMenu new MenuItem( "Potter's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Smith's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Thieves' Tools" )

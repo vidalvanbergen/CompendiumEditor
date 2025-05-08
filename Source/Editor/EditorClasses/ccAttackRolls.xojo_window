@@ -309,7 +309,7 @@ End
 		  var NameValue, Source as String
 		  RaiseEvent FindDiceNotationsIn( NameValue, Source )
 		  
-		  var HasTwoHandedVariant as Boolean = Source.Contains("used with two hands")
+		  var HasTwoHandedVariant as Boolean = Source.Contains("used with two hands") OR Source.Contains("used in two hands")
 		  
 		  // Clean name
 		  if NameValue.Contains("(") and NameValue.Contains(")") then

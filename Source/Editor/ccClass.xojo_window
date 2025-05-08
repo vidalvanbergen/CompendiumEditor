@@ -1079,6 +1079,117 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Method, Flags = &h21
+		Private Sub AddToAutolevel(level as String, xmlClass as XMLNode, xSubclassNames() as String)
+		  var xAutoLevel as XMLNode
+		  var currentSubclassName as string
+		  
+		  
+		  // Features
+		  for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex 
+		    
+		    if cClassFeatures.lstTraits.CellValueAt( row, 0 ) = Str( level ) then
+		      
+		      if xAutoLevel = Nil then
+		        xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
+		        if level <> "" then
+		          xAutoLevel.SetAttribute("level", Str( level ) )
+		        end if
+		      end if
+		      
+		      if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
+		        var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
+		        
+		        // Add subclass name to feature tags.
+		        'if TheSubclassName <> "" then
+		        'xFeature.SetAttribute( "TheSubclass", TheSubclassName )
+		        'end if
+		        
+		        xAutoLevel.AppendChildCopy( xFeature )
+		      end if
+		      
+		      
+		    end if
+		    
+		    
+		  next // @NEXT cClassFeatures.Row
+		  
+		  
+		  xSubclassNames = Compendium.GetSubclassNames( xmlClass )
+		  if xSubclassNames.LastIndex > -1 then
+		    currentSubclassName = xSubclassNames(0)
+		  end if
+		  
+		  
+		  // Counters
+		  for row as Integer = 0 to lstCounter.LastRowIndex
+		    
+		    if lstCounter.CellValueAt( row, 0 ) = Str( level ) then
+		      
+		      if xAutoLevel = Nil then
+		        xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
+		        xAutoLevel.SetAttribute("level", Str( level ) )
+		      end if
+		      
+		      var xCounter as XMLNode = xAutoLevel.AppendNewChild( "counter" )
+		      if lstCounter.CellValueAt( row, 1 ).Trim <> "" and lstCounter.CellValueAt( row, 2 ).Trim <> "" then
+		        xCounter.AppendSimpleChild( "name", lstCounter.CellValueAt( row, 1 ).Trim )
+		        xCounter.AppendSimpleChild( "value", lstCounter.CellValueAt( row, 2 ).Trim )
+		        xCounter.AppendSimpleChild( "reset", lstCounter.CellValueAt( row, 3 ).Trim.Left(1).Uppercase )
+		        
+		        if lstCounter.CellValueAt( row, 4 ).Trim <> "" then
+		          xCounter.AppendSimpleChild( "subclass", lstCounter.CellValueAt( row, 4 ).Trim )
+		        end if
+		      end if
+		      
+		      
+		      'var MoveToClass as XMLNode
+		      'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
+		      '// move counter to main class
+		      'MoveToClass = xClass
+		      '
+		      'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
+		      '// Move counter to subclass
+		      'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
+		      'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
+		      'end if
+		      '
+		      'end if
+		      '
+		      'if MoveToClass <> Nil then
+		      'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
+		      'var xChild as XMLNode = MoveToClass.Child(index)
+		      '
+		      'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
+		      'xChild.AppendChildCopy( xCounter )
+		      'xCounter.Parent.RemoveChild( xCounter )
+		      'end if
+		      'next
+		      'end if
+		      
+		      
+		    end if
+		    
+		  next
+		  
+		  
+		  if cAbilityScoreImprovementLevels.Values.Contains( Str( level ) ) then
+		    
+		    if xAutoLevel = Nil then
+		      xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
+		      xAutoLevel.SetAttribute("level", Str( level ) )
+		    end if
+		    
+		    xAutoLevel.SetAttribute("scoreImprovement", "YES")
+		  end if
+		  
+		  // Remove empty xautolevels
+		  if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
+		    xAutoLevel.Parent.RemoveChild( xAutoLevel )
+		  end if
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Sub BuildPopSubclasses()
 		  popSubclasses.RemoveAllRows
@@ -1300,111 +1411,133 @@ End
 		  var currentSubclassName as string
 		  
 		  
+		  // Levelless features
+		  'for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex
+		  'if cClassFeatures.lstTraits.CellValueAt( row, 0 ).Trim = "" then
+		  'var xAutoLevel as XMLNode = xmlClass.AppendNewChild( "autolevel" )
+		  'end if
+		  '
+		  'if cClassFeatures.lstTraits.RowTagAt(row) IsA XMLNode then
+		  'var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
+		  'xAutoLevel.AppendChildCopy( xFeature )
+		  'end if
+		  'next
+		  AddToAutolevel( "", xmlClass, xSubclassNames )
+		  
 		  for level as Integer = 1 to 20
-		    var xAutoLevel as XMLNode
+		    AddToAutolevel( Str( level ), xmlClass, xSubclassNames )
 		    
 		    
-		    // Features
-		    for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex 
+		    #if False then
+		      var xAutoLevel as XMLNode
 		      
-		      if cClassFeatures.lstTraits.CellValueAt( row, 0 ) = Str( level ) then
+		      
+		      // Features
+		      for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex 
 		        
-		        if xAutoLevel = Nil then
-		          xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
-		          xAutoLevel.SetAttribute("level", Str( level ) )
+		        if cClassFeatures.lstTraits.CellValueAt( row, 0 ) = Str( level ) then
+		          
+		          if xAutoLevel = Nil then
+		            xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
+		            xAutoLevel.SetAttribute("level", Str( level ) )
+		          end if
+		          
+		          if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
+		            var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
+		            
+		            // Add subclass name to feature tags.
+		            'if TheSubclassName <> "" then
+		            'xFeature.SetAttribute( "TheSubclass", TheSubclassName )
+		            'end if
+		            
+		            xAutoLevel.AppendChildCopy( xFeature )
+		          end if
+		          
+		          'Break
+		        else
+		          Break
 		        end if
 		        
-		        if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
-		          var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
+		        
+		      next // @NEXT cClassFeatures.Row
+		      
+		      
+		      xSubclassNames = Compendium.GetSubclassNames( xmlClass )
+		      if xSubclassNames.LastIndex > -1 then
+		        currentSubclassName = xSubclassNames(0)
+		      end if
+		      
+		      
+		      // Counters
+		      for row as Integer = 0 to lstCounter.LastRowIndex
+		        
+		        if lstCounter.CellValueAt( row, 0 ) = Str( level ) then
 		          
-		          // Add subclass name to feature tags.
-		          'if TheSubclassName <> "" then
-		          'xFeature.SetAttribute( "TheSubclass", TheSubclassName )
+		          if xAutoLevel = Nil then
+		            xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
+		            xAutoLevel.SetAttribute("level", Str( level ) )
+		          end if
+		          
+		          var xCounter as XMLNode = xAutoLevel.AppendNewChild( "counter" )
+		          if lstCounter.CellValueAt( row, 1 ).Trim <> "" and lstCounter.CellValueAt( row, 2 ).Trim <> "" then
+		            xCounter.AppendSimpleChild( "name", lstCounter.CellValueAt( row, 1 ).Trim )
+		            xCounter.AppendSimpleChild( "value", lstCounter.CellValueAt( row, 2 ).Trim )
+		            xCounter.AppendSimpleChild( "reset", lstCounter.CellValueAt( row, 3 ).Trim.Left(1).Uppercase )
+		            
+		            if lstCounter.CellValueAt( row, 4 ).Trim <> "" then
+		              xCounter.AppendSimpleChild( "subclass", lstCounter.CellValueAt( row, 4 ).Trim )
+		            end if
+		          end if
+		          
+		          
+		          'var MoveToClass as XMLNode
+		          'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
+		          '// move counter to main class
+		          'MoveToClass = xClass
+		          '
+		          'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
+		          '// Move counter to subclass
+		          'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
+		          'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
+		          'end if
+		          '
+		          'end if
+		          '
+		          'if MoveToClass <> Nil then
+		          'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
+		          'var xChild as XMLNode = MoveToClass.Child(index)
+		          '
+		          'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
+		          'xChild.AppendChildCopy( xCounter )
+		          'xCounter.Parent.RemoveChild( xCounter )
+		          'end if
+		          'next
 		          'end if
 		          
-		          xAutoLevel.AppendChildCopy( xFeature )
+		          
 		        end if
 		        
-		        'Break
-		        
-		      end if
+		      next
 		      
 		      
-		    next // @NEXT cClassFeatures.Row
-		    
-		    
-		    xSubclassNames = Compendium.GetSubclassNames( xmlClass )
-		    if xSubclassNames.LastIndex > -1 then
-		      currentSubclassName = xSubclassNames(0)
-		    end if
-		    
-		    
-		    // Counters
-		    for row as Integer = 0 to lstCounter.LastRowIndex
-		      
-		      if lstCounter.CellValueAt( row, 0 ) = Str( level ) then
+		      if cAbilityScoreImprovementLevels.Values.Contains( Str( level ) ) then
 		        
 		        if xAutoLevel = Nil then
 		          xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
 		          xAutoLevel.SetAttribute("level", Str( level ) )
 		        end if
 		        
-		        var xCounter as XMLNode = xAutoLevel.AppendNewChild( "counter" )
-		        if lstCounter.CellValueAt( row, 1 ).Trim <> "" and lstCounter.CellValueAt( row, 2 ).Trim <> "" then
-		          xCounter.AppendSimpleChild( "name", lstCounter.CellValueAt( row, 1 ).Trim )
-		          xCounter.AppendSimpleChild( "value", lstCounter.CellValueAt( row, 2 ).Trim )
-		          xCounter.AppendSimpleChild( "reset", lstCounter.CellValueAt( row, 3 ).Trim.Left(1).Uppercase )
-		          
-		          if lstCounter.CellValueAt( row, 4 ).Trim <> "" then
-		            xCounter.AppendSimpleChild( "subclass", lstCounter.CellValueAt( row, 4 ).Trim )
-		          end if
-		        end if
-		        
-		        
-		        'var MoveToClass as XMLNode
-		        'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
-		        '// move counter to main class
-		        'MoveToClass = xClass
-		        '
-		        'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
-		        '// Move counter to subclass
-		        'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
-		        'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
-		        'end if
-		        '
-		        'end if
-		        '
-		        'if MoveToClass <> Nil then
-		        'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
-		        'var xChild as XMLNode = MoveToClass.Child(index)
-		        '
-		        'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
-		        'xChild.AppendChildCopy( xCounter )
-		        'xCounter.Parent.RemoveChild( xCounter )
-		        'end if
-		        'next
-		        'end if
-		        
-		        
+		        xAutoLevel.SetAttribute("scoreImprovement", "YES")
 		      end if
 		      
-		    next
-		    
-		    
-		    if cAbilityScoreImprovementLevels.Values.Contains( Str( level ) ) then
-		      
-		      if xAutoLevel = Nil then
-		        xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
-		        xAutoLevel.SetAttribute("level", Str( level ) )
+		      // Remove empty xautolevels
+		      if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
+		        xAutoLevel.Parent.RemoveChild( xAutoLevel )
 		      end if
 		      
-		      xAutoLevel.SetAttribute("scoreImprovement", "YES")
-		    end if
+		    #endif
 		    
-		    // Remove empty xautolevels
-		    if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
-		      xAutoLevel.Parent.RemoveChild( xAutoLevel )
-		    end if
+		    
 		  next // @NEXT Level
 		  
 		  
@@ -1530,6 +1663,9 @@ End
 		        
 		      case "autolevel"
 		        var level as String = xChild.GetAttribute("level")'.Val
+		        'if level = "" then
+		        'level = "1"
+		        'end if
 		        var AutoLevel as String = xChild.GetAttribute("scoreImprovement")
 		        
 		        if AutoLevel = "YES" then

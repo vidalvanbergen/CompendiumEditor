@@ -679,7 +679,7 @@ Begin ContainerControl ccClass
          AllowRowReordering=   False
          Bold            =   False
          ColumnCount     =   12
-         ColumnWidths    =   "55,*,*, 40, 40, 40, 40, 40, 40, 40, 40, 40"
+         ColumnWidths    =   "55,95,95, 40, 40, 40, 40, 40, 40, 40, 40, 40, *"
          DataField       =   ""
          DataSource      =   ""
          DefaultRowHeight=   24
@@ -700,7 +700,7 @@ Begin ContainerControl ccClass
          InitialParent   =   "cvsMainClass"
          InitialValue    =   "Level	Cantrips Known	Spells Known	1st	2nd	3rd	4th	5th	6th	7th	8th	9th\n1st	0	0	0	0	0	0	0	0	0	0	0\n2nd	0	0	0	0	0	0	0	0	0	0	0\n3rd	0	0	0	0	0	0	0	0	0	0	0\n4th	0	0	0	0	0	0	0	0	0	0	0\n5th	0	0	0	0	0	0	0	0	0	0	0\n6th	0	0	0	0	0	0	0	0	0	0	0\n7th	0	0	0	0	0	0	0	0	0	0	0\n8th	0	0	0	0	0	0	0	0	0	0	0\n9th	0	0	0	0	0	0	0	0	0	0	0\n10th	0	0	0	0	0	0	0	0	0	0	0\n11th	0	0	0	0	0	0	0	0	0	0	0\n12th	0	0	0	0	0	0	0	0	0	0	0\n13th	0	0	0	0	0	0	0	0	0	0	0\n14th	0	0	0	0	0	0	0	0	0	0	0\n15th	0	0	0	0	0	0	0	0	0	0	0\n16th	0	0	0	0	0	0	0	0	0	0	0\n17th	0	0	0	0	0	0	0	0	0	0	0\n18th	0	0	0	0	0	0	0	0	0	0	0\n19th	0	0	0	0	0	0	0	0	0	0	0\n20th	0	0	0	0	0	0	0	0	0	0	0"
          Italic          =   False
-         Left            =   20
+         Left            =   54
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -717,7 +717,7 @@ Begin ContainerControl ccClass
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   640
+         Width           =   606
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
       End
@@ -811,7 +811,7 @@ Begin ContainerControl ccClass
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          Italic          =   False
-         Left            =   296
+         Left            =   300
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -831,7 +831,7 @@ Begin ContainerControl ccClass
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   364
+         Width           =   360
       End
       Begin ccEditorTextField cSpellAbility
          AllowAutoDeactivate=   True
@@ -1313,6 +1313,11 @@ End
 		      while slots.LastIndex > -1 and (Slots( slots.LastIndex ) = "0" or Slots( slots.LastIndex ) = "")
 		        slots.RemoveAt( slots.LastIndex )
 		      wend
+		      
+		      
+		      if Slots.LastIndex > 0 and Slots(0) = "" then
+		        Slots(0) = "0"
+		      end if
 		      
 		      
 		      if slots.LastIndex > -1 then

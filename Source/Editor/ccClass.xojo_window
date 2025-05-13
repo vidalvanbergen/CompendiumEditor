@@ -1080,10 +1080,8 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h21
-		Private Sub AddToAutolevel(level as String, xmlClass as XMLNode, xSubclassNames() as String)
+		Private Sub AddToAutolevel(level as String, xmlClass as XMLNode)
 		  var xAutoLevel as XMLNode
-		  var currentSubclassName as string
-		  
 		  
 		  // Features
 		  for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex 
@@ -1115,10 +1113,7 @@ End
 		  next // @NEXT cClassFeatures.Row
 		  
 		  
-		  xSubclassNames = Compendium.GetSubclassNames( xmlClass )
-		  if xSubclassNames.LastIndex > -1 then
-		    currentSubclassName = xSubclassNames(0)
-		  end if
+		  
 		  
 		  
 		  // Counters
@@ -1141,32 +1136,6 @@ End
 		          xCounter.AppendSimpleChild( "subclass", lstCounter.CellValueAt( row, 4 ).Trim )
 		        end if
 		      end if
-		      
-		      
-		      'var MoveToClass as XMLNode
-		      'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
-		      '// move counter to main class
-		      'MoveToClass = xClass
-		      '
-		      'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
-		      '// Move counter to subclass
-		      'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
-		      'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
-		      'end if
-		      '
-		      'end if
-		      '
-		      'if MoveToClass <> Nil then
-		      'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
-		      'var xChild as XMLNode = MoveToClass.Child(index)
-		      '
-		      'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
-		      'xChild.AppendChildCopy( xCounter )
-		      'xCounter.Parent.RemoveChild( xCounter )
-		      'end if
-		      'next
-		      'end if
-		      
 		      
 		    end if
 		    
@@ -1224,6 +1193,7 @@ End
 		  var xmlClass as XMLNode
 		  
 		  'var isMainClass as Boolean = False
+		  var spellslist() as String = cSpells.Value.SplitString(",")
 		  
 		  if TheNode <> Nil then
 		    if isMainClass then 'TheSubclassName = "Main Class" then
@@ -1422,127 +1392,19 @@ End
 		  'xAutoLevel.AppendChildCopy( xFeature )
 		  'end if
 		  'next
-		  AddToAutolevel( "", xmlClass, xSubclassNames )
+		  AddToAutolevel( "", xmlClass )
 		  
 		  for level as Integer = 1 to 20
-		    AddToAutolevel( Str( level ), xmlClass, xSubclassNames )
-		    
-		    
-		    #if False then
-		      var xAutoLevel as XMLNode
-		      
-		      
-		      // Features
-		      for row as Integer = 0 to cClassFeatures.lstTraits.LastRowIndex 
-		        
-		        if cClassFeatures.lstTraits.CellValueAt( row, 0 ) = Str( level ) then
-		          
-		          if xAutoLevel = Nil then
-		            xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
-		            xAutoLevel.SetAttribute("level", Str( level ) )
-		          end if
-		          
-		          if cClassFeatures.lstTraits.RowTagAt( row ) IsA XMLNode then
-		            var xFeature as XMLNode = cClassFeatures.lstTraits.RowTagAt( row )
-		            
-		            // Add subclass name to feature tags.
-		            'if TheSubclassName <> "" then
-		            'xFeature.SetAttribute( "TheSubclass", TheSubclassName )
-		            'end if
-		            
-		            xAutoLevel.AppendChildCopy( xFeature )
-		          end if
-		          
-		          'Break
-		        else
-		          Break
-		        end if
-		        
-		        
-		      next // @NEXT cClassFeatures.Row
-		      
-		      
-		      xSubclassNames = Compendium.GetSubclassNames( xmlClass )
-		      if xSubclassNames.LastIndex > -1 then
-		        currentSubclassName = xSubclassNames(0)
-		      end if
-		      
-		      
-		      // Counters
-		      for row as Integer = 0 to lstCounter.LastRowIndex
-		        
-		        if lstCounter.CellValueAt( row, 0 ) = Str( level ) then
-		          
-		          if xAutoLevel = Nil then
-		            xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
-		            xAutoLevel.SetAttribute("level", Str( level ) )
-		          end if
-		          
-		          var xCounter as XMLNode = xAutoLevel.AppendNewChild( "counter" )
-		          if lstCounter.CellValueAt( row, 1 ).Trim <> "" and lstCounter.CellValueAt( row, 2 ).Trim <> "" then
-		            xCounter.AppendSimpleChild( "name", lstCounter.CellValueAt( row, 1 ).Trim )
-		            xCounter.AppendSimpleChild( "value", lstCounter.CellValueAt( row, 2 ).Trim )
-		            xCounter.AppendSimpleChild( "reset", lstCounter.CellValueAt( row, 3 ).Trim.Left(1).Uppercase )
-		            
-		            if lstCounter.CellValueAt( row, 4 ).Trim <> "" then
-		              xCounter.AppendSimpleChild( "subclass", lstCounter.CellValueAt( row, 4 ).Trim )
-		            end if
-		          end if
-		          
-		          
-		          'var MoveToClass as XMLNode
-		          'if xCounter.ValueOfNodeWithName("subclass") = "" and NOT isMainClass then 'popSubclasses.SelectedRowIndex > 0 then
-		          '// move counter to main class
-		          'MoveToClass = xClass
-		          '
-		          'elseif xCounter.ValueOfNodeWithName("subclass") <> "" and xCounter.ValueOfNodeWithName("subclass") <> currentSubclassName  then
-		          '// Move counter to subclass
-		          'if SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) > -1 then
-		          'MoveToClass = xSubclasses( SubclassNames.IndexOf( xCounter.ValueOfNodeWithName( "subclass" ) ) )
-		          'end if
-		          '
-		          'end if
-		          '
-		          'if MoveToClass <> Nil then
-		          'for index as Integer = MoveToClass.ChildCount-1 DownTo 0
-		          'var xChild as XMLNode = MoveToClass.Child(index)
-		          '
-		          'if xChild.Name = "autolevel" and xChild.GetAttribute("level") = Str(level) then
-		          'xChild.AppendChildCopy( xCounter )
-		          'xCounter.Parent.RemoveChild( xCounter )
-		          'end if
-		          'next
-		          'end if
-		          
-		          
-		        end if
-		        
-		      next
-		      
-		      
-		      if cAbilityScoreImprovementLevels.Values.Contains( Str( level ) ) then
-		        
-		        if xAutoLevel = Nil then
-		          xAutoLevel = xmlClass.AppendNewChild( "autolevel" )
-		          xAutoLevel.SetAttribute("level", Str( level ) )
-		        end if
-		        
-		        xAutoLevel.SetAttribute("scoreImprovement", "YES")
-		      end if
-		      
-		      // Remove empty xautolevels
-		      if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
-		        xAutoLevel.Parent.RemoveChild( xAutoLevel )
-		      end if
-		      
-		    #endif
+		    AddToAutolevel( Str( level ), xmlClass )
 		    
 		    
 		  next // @NEXT Level
 		  
 		  
-		  if xSubclassNames.LastIndex > -1 then 'and txtSpells.Text.trim <> "" then
-		    SaveSubclassSpells( cName.Value + " (" + xSubclassNames(0) + ")", cSpells.Value.SplitString(",") )
+		  if TheSubclassName <> "" then 'xSubclassNames.LastIndex > -1 then 'and txtSpells.Text.trim <> "" then
+		    var AAAspellslist as String = cSpells.Value
+		    SaveSubclassSpells( cName.Value + " (" + TheSubclassName + ")", cSpells.Value.SplitString(",") )
+		    'SaveSubclassSpells( cName.Value + " (" + xSubclassNames(0) + ")", cSpells.Value.SplitString(",") )
 		  elseif isMainClass then
 		    SaveSubclassSpells( cName.Value, cSpells.Value.SplitString(",") )
 		  end if
@@ -1914,63 +1776,69 @@ End
 		  var AddedSpells() as XMLNode
 		  var AddedSpellNames() as String
 		  
-		  if xRoot <> Nil then
-		    for each xChild as XMLNode in xRoot.Children
-		      
-		      if xChild.Name = "spell" then
+		  if SpellNames.LastIndex > -1 then
+		    
+		    if xRoot <> Nil then
+		      for each xChild as XMLNode in xRoot.Children
 		        
-		        var xSpellName as String = xChild.ValueOfNodeWithName("name")
-		        var xSpellclasses as String = xChild.ValueOfNodeWithName("classes")
-		        var xClasses() as String = xSpellclasses.SplitString(",")
-		        
-		        // Add class to existing spell that is in the spell list
-		        if SpellNames.Contains( xSpellName ) and NOT xClasses.Contains( SubclassName ) then
-		          xClasses.Add SubclassName
+		        if xChild.Name = "spell" then
 		          
-		          AddedSpells.Add xChild
-		          AddedSpellNames.Add xSpellName
+		          var xSpellName as String = xChild.ValueOfNodeWithName("name")
+		          var xSpellclasses as String = xChild.ValueOfNodeWithName("classes")
+		          var xClasses() as String = xSpellclasses.SplitString(",")
 		          
-		          xChild.SetValueOfNodeWithName("classes", StringFromArray( xClasses, ", " ) )
-		          
-		          // Remove class from spell that is not in the spell list
-		        elseif NOT SpellNames.Contains( xSpellName ) and xClasses.Contains( SubclassName ) then
-		          xClasses.RemoveAt( xClasses.IndexOf( SubclassName ) )
-		          
-		          if xClasses.LastIndex = -1 then
-		            xRoot.RemoveChild( xChild )
+		          // Add class to existing spell that is in the spell list
+		          if SpellNames.Contains( xSpellName ) and NOT xClasses.Contains( SubclassName ) then
+		            xClasses.Add SubclassName
+		            
+		            AddedSpells.Add xChild
+		            AddedSpellNames.Add xSpellName
+		            
+		            xChild.SetValueOfNodeWithName("classes", StringFromArray( xClasses, ", " ) )
+		            
+		            // Remove class from spell that is not in the spell list
+		          elseif NOT SpellNames.Contains( xSpellName ) and xClasses.Contains( SubclassName ) then
+		            xClasses.RemoveAt( xClasses.IndexOf( SubclassName ) )
+		            
+		            if xClasses.LastIndex = -1 then
+		              xRoot.RemoveChild( xChild )
+		            end if
+		            
+		            // Already added
+		          elseif SpellNames.Contains( xSpellName ) and xClasses.Contains( SubclassName ) then
+		            AddedSpells.Add xChild
+		            AddedSpellNames.Add xSpellName
+		            
+		          else
+		            Continue
 		          end if
 		          
-		          // Already added
-		        elseif SpellNames.Contains( xSpellName ) and xClasses.Contains( SubclassName ) then
-		          AddedSpells.Add xChild
-		          AddedSpellNames.Add xSpellName
 		          
-		        else
-		          Continue
 		        end if
 		        
+		      next
+		      
+		      'SpellNames.Sort
+		      
+		      for index as Integer = 0 to SpellNames.LastIndex
 		        
-		      end if
-		      
-		    next
-		    
-		    'SpellNames.Sort
-		    
-		    for index as Integer = 0 to SpellNames.LastIndex
-		      
-		      if AddedSpellNames.Contains( SpellNames(index) ) then
-		        // skip
-		      else
-		        var xSpell as XMLNode = xRoot.AppendNewChild( "spell" )
-		        xSpell.AppendSimpleChild( "name", SpellNames(index) )
-		        xSpell.AppendSimpleChild( "classes", SubclassName )
+		        if AddedSpellNames.Contains( SpellNames(index) ) then
+		          // skip
+		        else
+		          var xSpell as XMLNode = xRoot.AppendNewChild( "spell" )
+		          xSpell.AppendSimpleChild( "name", SpellNames(index) )
+		          xSpell.AppendSimpleChild( "classes", SubclassName )
+		          
+		          AddedSpells.Add xSpell
+		          AddedSpellNames.Add SpellNames(index)
+		        end if
 		        
-		        AddedSpells.Add xSpell
-		        AddedSpellNames.Add SpellNames(index)
-		      end if
-		      
-		    next
-		  end if
+		      next
+		    end if
+		    
+		  else
+		    var s as String
+		  end if // @END spellnames.lastindex > -1
 		  
 		  'RaiseEvent AddedSpells( AddedSpells )
 		End Sub

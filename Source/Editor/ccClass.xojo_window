@@ -174,32 +174,6 @@ Begin ContainerControl ccClass
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
       End
-      BeginSegmented AddRemoveEditButton areCounters
-         AddEnabled      =   False
-         EditEnabled     =   False
-         Enabled         =   True
-         Height          =   24
-         Index           =   -2147483648
-         InitialParent   =   "cvsClassFeatures"
-         Left            =   90
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MacControlStyle =   0
-         RemoveEnabled   =   False
-         Scope           =   0
-         Segments        =   "+\n\nFalse\r-\n\nFalse\r✏️\n\nFalse"
-         SelectionType   =   2
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         TabStop         =   False
-         Top             =   1694
-         Transparent     =   False
-         Visible         =   True
-         Width           =   72
-      End
       Begin ccEditorSpells cSpells
          AllowAutoDeactivate=   True
          AllowFocus      =   False
@@ -231,6 +205,29 @@ Begin ContainerControl ccClass
          Value           =   ""
          Visible         =   True
          Width           =   640
+      End
+      BeginSegmented AddDuplicateRemoveEdit ardeCounters
+         Enabled         =   True
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsClassFeatures"
+         Left            =   66
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacControlStyle =   0
+         Scope           =   0
+         Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
+         SelectionType   =   2
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   False
+         Top             =   1694
+         Transparent     =   False
+         Visible         =   True
+         Width           =   96
       End
    End
    Begin ccEditorTextField cName
@@ -2166,8 +2163,12 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Change()
-		  areCounters.RemoveEnabled = me.SelectedIndex > -1
-		  areCounters.EditEnabled = me.SelectedIndex > -1
+		  'areCounters.RemoveEnabled = me.SelectedIndex > -1
+		  'areCounters.EditEnabled = me.SelectedIndex > -1
+		  
+		  ardeCounters.RemoveEnabled = me.SelectedIndex > -1
+		  ardeCounters.EditEnabled = me.SelectedIndex > -1
+		  ardeCounters.DuplicateEnabled = me.SelectedIndex > -1
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2215,7 +2216,14 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events areCounters
+#tag Events cSpells
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Spells:"
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ardeCounters
 	#tag Event
 		Sub ActionAdd()
 		  
@@ -2234,6 +2242,24 @@ End
 		  end if
 		  
 		  lstCounter.AddRow featureLevel, featureName, "1", "Long Rest", subclassName
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ActionDuplicate()
+		  
+		  if lstCounter.SelectedRowIndex > -1 then
+		    var row as Integer = lstCounter.SelectedRowIndex
+		    
+		    var lvl, name, value, reset, subclass as String
+		    lvl = lstCounter.CellValueAt( row, 0 )
+		    name = lstCounter.CellValueAt( row, 1 )
+		    value = lstCounter.CellValueAt( row, 2 )
+		    reset = lstCounter.CellValueAt( row, 3 )
+		    subclass = lstCounter.CellValueAt( row, 4 )
+		    
+		    lstCounter.AddRow lvl, name, value, reset, subclass
+		    lstCounter.SelectedRowIndex = lstCounter.LastAddedRowIndex
+		  end if
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2261,13 +2287,6 @@ End
 		    end if
 		    
 		  end if
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSpells
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Spells:"
 		End Sub
 	#tag EndEvent
 #tag EndEvents

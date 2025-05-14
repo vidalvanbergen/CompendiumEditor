@@ -207,6 +207,9 @@ Begin ContainerControl ccClass
          Width           =   640
       End
       BeginSegmented AddDuplicateRemoveEdit ardeCounters
+         AddEnabled      =   False
+         DuplicateEnabled=   False
+         EditEnabled     =   False
          Enabled         =   True
          Height          =   24
          Index           =   -2147483648
@@ -218,6 +221,7 @@ Begin ContainerControl ccClass
          LockRight       =   False
          LockTop         =   True
          MacControlStyle =   0
+         RemoveEnabled   =   False
          Scope           =   0
          Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
          SelectionType   =   2
@@ -1306,15 +1310,15 @@ End
 		        
 		      next // @NEXT column
 		      
-		      
+		      // Remove trailing zeros.
 		      while slots.LastIndex > -1 and (Slots( slots.LastIndex ) = "0" or Slots( slots.LastIndex ) = "")
 		        slots.RemoveAt( slots.LastIndex )
 		      wend
 		      
-		      
-		      if Slots.LastIndex > 0 and Slots(0) = "" then
-		        Slots(0) = "0"
-		      end if
+		      // Fill leading zeros.
+		      for index as Integer = 0 to slots.LastIndex
+		        if Slots(index) = "" then Slots(index) = "0"
+		      next
 		      
 		      
 		      if slots.LastIndex > -1 then

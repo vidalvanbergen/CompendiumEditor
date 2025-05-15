@@ -1579,6 +1579,8 @@ End
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
 		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
 		  me.BaseMenu.Append new MenuItem("Instantaneous")
 		  me.BaseMenu.Append new MenuItem("-")
 		  me.BaseMenu.Append new MenuItem("1 round")
@@ -1627,6 +1629,8 @@ End
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
 		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
 		  me.BaseMenu.Append new MenuItem("Self")
 		  me.BaseMenu.Append new MenuItem("Touch")
 		  me.BaseMenu.Append new MenuItem("-")
@@ -1651,6 +1655,8 @@ End
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
 		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
 		  me.BaseMenu.Append new MenuItem("1 Action")
 		  me.BaseMenu.Append new MenuItem("1 Reaction")
 		  me.BaseMenu.Append new MenuItem("1 Bonus Action")

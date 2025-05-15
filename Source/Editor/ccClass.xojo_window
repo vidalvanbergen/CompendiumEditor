@@ -129,7 +129,7 @@ Begin ContainerControl ccClass
          AllowFocusRing  =   True
          AllowResizableColumns=   False
          AllowRowDragging=   False
-         AllowRowReordering=   False
+         AllowRowReordering=   True
          Bold            =   False
          ColumnCount     =   5
          ColumnWidths    =   "50,*,50,100,*"
@@ -1755,10 +1755,12 @@ End
 		  cSpellAbility.Reset
 		  cSlotsReset.Reset
 		  
+		  
 		  cClassTraits.Reset
 		  
 		  cClassFeatures.Reset
 		  
+		  chkSpellsOptional.Value = False
 		  for column as Integer = 1 to lstSpellsTable.LastColumnIndex
 		    for row as Integer = 0 to lstSpellsTable.LastRowIndex
 		      lstSpellsTable.CellValueAt( row, column ) = ""

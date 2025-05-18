@@ -691,6 +691,14 @@ Begin Menu MainMenubar
       AutoEnabled = True
       AutoEnable = True
       Visible = True
+      Begin MenuItem HelpOnlineGuide
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Online Guide"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
       Begin MenuItemAbout ApplicationAbout
          SpecialMenu = 0
          Index = -2147483648

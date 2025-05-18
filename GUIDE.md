@@ -72,6 +72,8 @@ A couple of useful tidbits:
    * Format paragraphs with indent, this will quickly format the text, as above, but instead separate different paragraphs by indenting the next line. I like to first format the text with spacing, to make sure it detected the different paragraphs correctly, and make any necessairy edits. Then use the format with indent option.
    * You can use the keyboard shortcuts cmd/ctrl + K for quickly formatting paragraphs with spacing, and cmd/ctrl + L for formatting with indent.
 
+8. You can right-click and copy items from several lists onto the clipboard as XML text data, and paste them into the same lists for other items. For example, you can copy a creature's actions, and paste them into another creature's actions. Or copy the entire creature and paste it in another file. As a shortcut, you can also choose 'Copy to' to select a file from the same source to copy the selected item to.
+
 ----
 
 ### Adding spells, subclass spells, and optional class feature spells

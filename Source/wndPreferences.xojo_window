@@ -477,7 +477,7 @@ Begin WindowPro wndPreferences
             Top             =   445
             Transparent     =   False
             Underline       =   False
-            Value           =   True
+            Value           =   False
             Visible         =   True
             Width           =   210
          End
@@ -507,7 +507,7 @@ Begin WindowPro wndPreferences
             Top             =   477
             Transparent     =   False
             Underline       =   False
-            Value           =   False
+            Value           =   True
             Visible         =   True
             Width           =   210
          End

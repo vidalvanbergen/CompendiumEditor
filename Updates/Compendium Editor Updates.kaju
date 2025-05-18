@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "eHHCMcWJ3hM=",
+            "Security Token": "W2yAUJkmLGk=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -37,7 +37,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "fjyiQSaV3oM=",
+            "Security Token": "wUfWpILPtZw=",
             "MacBinary": {
                 "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -62,7 +62,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.2.0",
-            "Security Token": "0gEa9BogmUs=",
+            "Security Token": "4fIOGBCeQ/c=",
             "MacBinary": {
                 "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
@@ -87,7 +87,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.3.0",
-            "Security Token": "fBslCDsOAVc=",
+            "Security Token": "GHZq/YdgVk0=",
             "MacBinary": {
                 "Hash": "92BB2587EF0EDB1B524E7768962064E3",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_MacOS.dmg"
@@ -100,6 +100,31 @@
             "LinuxBinary64bit": {
                 "Hash": "EB9FDDAE1CF47BAC830C329243B4402D",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_Linux64.zip",
+                "ExecutableName": "Compendium Editor"
+            }
+        },
+        {
+            "AppName": "Compendium Editor",
+            "ImageScale": 1,
+            "ImageURL": "",
+            "MinimumRequiredVersion": "",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.4.0.html\n\n<h1>What’s new in Compendium Editor 1.4</h1>\n\n    <ul class=\"update\">\n      <li class=\"new\">Added a magic diceroll button to other dice roll features.</li>\n      <li class=\"dif\">Added duplicate button to class counters.</li>\n      <li class=\"dif\">Format feature and trait titles for proper capitals.</li>\n      <li class=\"fix\">Fixed equipment Poison damage abbreviation, added Psychic damage abbreviation.</li>\n      <li class=\"fix\">Fixed autolevel features not being saved if spell level was missing.</li>\n      <li class=\"fix\">Fixed equipment needing stealth, now set to boolean \"YES\".</li>\n      <li class=\"fix\">Fixed classes not adding subclass spells when saving.</li>\n      <li class=\"fix\">Other bugfixes.</li>\n    </ul>",
+            "RequiresPayment": false,
+            "UseTransparency": true,
+            "Version": "1.4.0",
+            "Security Token": "XS+iMb4Vwao=",
+            "MacBinary": {
+                "Hash": "55F927C914C12E58587E59AE2178D02F",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_MacOS.dmg"
+            },
+            "WindowsBinary64bit": {
+                "Hash": "30D78900EC38459B723D96F94D841EF8",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_Win64.zip",
+                "ExecutableName": "Compendium Editor.exe"
+            },
+            "LinuxBinary64bit": {
+                "Hash": "0BCD5F8D3BF883DEFD8884C891E3896B",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_Linux64.zip",
                 "ExecutableName": "Compendium Editor"
             }
         }

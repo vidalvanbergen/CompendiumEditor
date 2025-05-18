@@ -1,4 +1,4 @@
-KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DBABC90DE2D537D6E98F0E5EC5E27066E50D1F12B3CC5145C9D536079769DF6627EAFA843ECA92382507217FEFBA4A4A26C0DD00886EEF65650834E06E6D802776171C5639D9CC77F1451CB1CA744DF05F0E339FBDFD694019A1707C73BEEAF0892E77939114E329E71D96E4C9119DBE7FC188E8525E7A7118DB4FFF23268ABC53177F6644CAD80C532242067DA7B42E69577D94C5FCB15BB665CD163D7EA46C4FC923D8393DDE1D9B0E143EB9D99C6CB913E3D9A690EABFF082C16CFF384BFE962A2C2BF23E00BA38B71D3F570BDA802F47213B1D773FC0AADB166
+KAJU 72F64358213D87EDCFB2616C42CB7D46DB480987DDE8D717CFB7D2DDEB0042FAAC39EE0B32AD39FAD11E5681A2998AC7EA0176C172E216C45727F8B61CE973142E2801BB3AA84C6D719797C13BDD87F2F4A2394EC993E7819EB67ADA985CF3594288BE618582D75AB7190B24C3E1589376C50738CF3B865570C226C16CBE577E182FEA0148F3AEE60D59C0EAF184F31E0F7D1E49D88D9702543A5429658D41A3D8CD2F94C5162B68B8A2118EE50975658A42226AFB9B90751D5CE2B5510D2942724F0119FF69FD96401EFB5D99269EE58C2A5688BD9E9EC99E41D78673D4D9B8D80A2A0D1FF3827B37BFB41CA10E55BE92F616B601E452C7106DF411DFEEB8E9
 [
     {
         "AppName": "Compendium Editor",
@@ -9,7 +9,7 @@ KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DB
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.0.0",
-        "Security Token": "VyQ5P5CbfYk=",
+        "Security Token": "fX1iV6kALSI=",
         "MacBinary": {
             "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -34,7 +34,7 @@ KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DB
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.1.0",
-        "Security Token": "+A4dUT959qY=",
+        "Security Token": "YqsfnoQLi3M=",
         "MacBinary": {
             "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -59,7 +59,7 @@ KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DB
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.2.0",
-        "Security Token": "SI4OGCtYgR8=",
+        "Security Token": "325Bca22MO8=",
         "MacBinary": {
             "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
@@ -84,7 +84,7 @@ KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DB
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.3.0",
-        "Security Token": "a+Uvee4Y9eI=",
+        "Security Token": "tHleK8bjOsA=",
         "MacBinary": {
             "Hash": "92BB2587EF0EDB1B524E7768962064E3",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_MacOS.dmg"
@@ -97,6 +97,31 @@ KAJU 28F5FD77D3699627AD2B62E36E9C0CC9EDDF4E4824AB80FF08952EA714A6B7E6832D9FE12DB
         "LinuxBinary64bit": {
             "Hash": "EB9FDDAE1CF47BAC830C329243B4402D",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_Linux64.zip",
+            "ExecutableName": "Compendium Editor"
+        }
+    },
+    {
+        "AppName": "Compendium Editor",
+        "ImageScale": 1,
+        "ImageURL": "",
+        "MinimumRequiredVersion": "",
+        "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.4.0.html\n\n<h1>What’s new in Compendium Editor 1.4</h1>\n\n    <ul class=\"update\">\n      <li class=\"new\">Added a magic diceroll button to other dice roll features.</li>\n      <li class=\"dif\">Added duplicate button to class counters.</li>\n      <li class=\"dif\">Format feature and trait titles for proper capitals.</li>\n      <li class=\"fix\">Fixed equipment Poison damage abbreviation, added Psychic damage abbreviation.</li>\n      <li class=\"fix\">Fixed autolevel features not being saved if spell level was missing.</li>\n      <li class=\"fix\">Fixed equipment needing stealth, now set to boolean \"YES\".</li>\n      <li class=\"fix\">Fixed classes not adding subclass spells when saving.</li>\n      <li class=\"fix\">Other bugfixes.</li>\n    </ul>",
+        "RequiresPayment": false,
+        "UseTransparency": true,
+        "Version": "1.4.0",
+        "Security Token": "q5S6wSHImM4=",
+        "MacBinary": {
+            "Hash": "55F927C914C12E58587E59AE2178D02F",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_MacOS.dmg"
+        },
+        "WindowsBinary64bit": {
+            "Hash": "30D78900EC38459B723D96F94D841EF8",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_Win64.zip",
+            "ExecutableName": "Compendium Editor.exe"
+        },
+        "LinuxBinary64bit": {
+            "Hash": "0BCD5F8D3BF883DEFD8884C891E3896B",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_Linux64.zip",
             "ExecutableName": "Compendium Editor"
         }
     }

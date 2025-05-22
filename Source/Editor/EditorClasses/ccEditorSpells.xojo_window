@@ -232,6 +232,7 @@ End
 		  
 		  var miFormatSpells as new MenuItem("Format Spells")
 		  miFormatSpells.Shortcut = "L"
+		  
 		  basemenu.AddMenu miFormatSpells
 		  basemenu.AddMenu new MenuItem("Add '[2024]' Tag")
 		  basemenu.AddMenu new MenuItem("-")

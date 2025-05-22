@@ -648,7 +648,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   1
+         Value           =   6
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds

@@ -579,8 +579,8 @@ End
 		        lines.RemoveAt(0)
 		      end if
 		      
-		      if lines(0).StartsWith("Prerequisite:") then
-		        prerequisite = lines(0).Replace("PRerequisite:","").Trim
+		      if lines(0).StartsWith("Prerequisite:") or lines(0).StartsWith("Prerequisites:") then
+		        prerequisite = lines(0).Replace("Prerequisite:","").Replace("Prerequisites:","").Trim
 		        lines.RemoveAt(0)
 		      end if
 		      
@@ -591,12 +591,18 @@ End
 		  cDescription.FormatParagraphs( Description, False )
 		  cDescription.FormatLists( Description, false )
 		  
-		  
+		  var isHomebrew as Boolean = cName.Value.Contains( "(HB)" )
 		  if cName.Value.Contains( "Unnamed Feat" ) then
 		    cName.Value = cName.Value.Replace("Unnamed Feat", Title)
+		  elseif cName.Value.Contains( "featname" ) then
+		    cName.Value = cName.Value.Replace("featname", Title)
 		  else
 		    cName.Value = Title
 		  end if
+		  if isHomebrew and NOT cName.Value.Contains("(HB)")then
+		    cName.Value = cName.Value + " (HB)"
+		  end if
+		  
 		  cPrerequisite.Value = prerequisite
 		  cDescription.Value = Description
 		End Sub

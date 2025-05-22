@@ -2119,6 +2119,9 @@ End
 		  TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName (" + subclassName + ")" )
 		  TemplateMenu.AddMenu new MenuItem( "Channel Divinity: FeatureName" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
+		  TemplateMenu.AddMenu new MenuItem( "Pact Boon: FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( "Pact Boon: FeatureName (HB)" )
+		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( "Ability Score Improvement" )
 		  
 		  me.TemplateMenu = TemplateMenu

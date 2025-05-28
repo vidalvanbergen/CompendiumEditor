@@ -1558,6 +1558,10 @@ End
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  me.ReadOnly = True
 		  
+		  me.BaseMenu.AddMenu new MenuItem( "None", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "Martial", "M" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
 		  me.BaseMenu.AddMenu new MenuItem( "Ammunition", "A" )
 		  me.BaseMenu.AddMenu new MenuItem( "Finesse", "F" )
 		  me.BaseMenu.AddMenu new MenuItem( "Heavy", "H" )
@@ -1568,7 +1572,6 @@ End
 		  me.BaseMenu.AddMenu new MenuItem( "Thrown", "T" )
 		  me.BaseMenu.AddMenu new MenuItem( "Two-Handed", "2H" )
 		  me.BaseMenu.AddMenu new MenuItem( "Versatile", "V" )
-		  me.BaseMenu.AddMenu new MenuItem( "Martial", "M" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1579,6 +1582,9 @@ End
 		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
 		  
+		  me.BaseMenu.Append new MenuItem( "None", "")
+		  
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  
 		  me.BaseMenu.Append new MenuItem( "spellcasting focus" )
 		  me.BaseMenu.Append new MenuItem( "druidic focus" )
@@ -1702,7 +1708,8 @@ End
 		  me.SetMode ccEditorTextField.Mode.Dropdown
 		  me.ReadOnly = False
 		  
-		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-", "" )
 		  me.BaseMenu.Append new MenuItem( "common" )
 		  me.BaseMenu.Append new MenuItem( "uncommon" )
 		  me.BaseMenu.Append new MenuItem( "rare" )
@@ -2075,7 +2082,49 @@ End
 		          end if
 		          
 		        else
-		          'var baseitem as String = type
+		          
+		          if type <> "" then
+		            
+		            Select case type
+		              
+		            case "Wondrous Item"
+		              cItemType.Tag = "W"
+		            case "Adventuring Gear"
+		              cItemType.Tag = "G"
+		            case "Light Armor"
+		              cItemType.Tag = "LA"
+		            case "Medium Armor"
+		              cItemType.Tag = "MA"
+		            case "Heavy Armor"
+		              cItemType.Tag = "HA"
+		            case "Shield"
+		              cItemType.Tag = "S"
+		            case "Melee Weapon"
+		              cItemType.Tag = "M"
+		            case "Ranged Weapon"
+		              cItemType.Tag = "R"
+		            case "Ammunition"
+		              cItemType.Tag = "A"
+		            case "Rod"
+		              cItemType.Tag = "RD"
+		            case "Staff"
+		              cItemType.Tag = "ST"
+		            case "Wand"
+		              cItemType.Tag = "WD"
+		            case "Ring"
+		              cItemType.Tag = "RG"
+		            case "Potion"
+		              cItemType.Tag = "P"
+		            case "Scroll"
+		              cItemType.Tag = "SC"
+		            case "Wealth"
+		              cItemType.Tag = "$"
+		              
+		            End Select
+		            
+		            
+		            cItemType.Value = type.Titlecase
+		          end if
 		          
 		          var rowIndex as Integer = -1
 		          for index as Integer = 0 to popBaseItems.LastRowIndex
@@ -2111,15 +2160,17 @@ End
 		  'if cName.Value.Contains( "Unnamed" ) then
 		  'cName.Value = cName.Value.Replace("Unnamed", Title)
 		  'else
+		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll( " With ", " with " )
+		  
 		  cName.Value = Title
 		  cDetail.Value = rarity
 		  'end if
 		  
-		  if cDescription.Value.Trim <> "" then
-		    cDescription.Value = Description + EndOfLine + EndOfLine + cDescription.Value
-		  else
-		    cDescription.Value = Description
-		  end if
+		  'if cDescription.Value.Trim <> "" then
+		  'cDescription.Value = Description + EndOfLine + EndOfLine + cDescription.Value
+		  'else
+		  cDescription.Value = Description
+		  'end if
 		  
 		  
 		  

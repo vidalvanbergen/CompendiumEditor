@@ -410,6 +410,60 @@ End
 		  #endif
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  dim AscKey as Integer = Asc( key )
+		  
+		  if Keyboard.AsyncCommandKey then
+		    
+		    Select case AscKey
+		      
+		    case 8', 127 // delete
+		      if me.SelectedRowIndex > -1 then
+		        var lindex as Integer = me.SelectedRowIndex
+		        me.RemoveRowAt( me.SelectedRowIndex )
+		        
+		        if lindex > me.LastRowIndex then
+		          me.SelectedRowIndex = me.LastRowIndex
+		        else
+		          me.SelectedRowIndex = lindex
+		        end if
+		        Return True
+		      end if
+		      
+		    case 13 // Return
+		      if me.SelectedRowIndex > -1 then
+		        me.EditCellAt( me.SelectedRowIndex, 1 )
+		        'FeatureEdit
+		      else
+		        'FeatureAdd
+		      end if
+		      Return True
+		      
+		    case 110 // n
+		      'FeatureAdd
+		      Return True
+		      
+		    End Select
+		    
+		  else
+		    
+		    Select case AscKey
+		      
+		    case 13 // Return
+		      if me.SelectedRowIndex > -1 then
+		        me.EditCellAt( me.SelectedRowIndex, 1 )
+		        'FeatureEdit
+		      else
+		        'FeatureAdd
+		      end if
+		      Return True
+		      
+		    End Select
+		    
+		  end if
+		End Function
+	#tag EndEvent
 #tag EndEvents
 #tag Events popCategory
 	#tag Event

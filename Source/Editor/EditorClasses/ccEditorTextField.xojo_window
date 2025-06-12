@@ -436,7 +436,7 @@ End
 		        
 		      elseif hititem.Text = "New dice roll" then
 		        var calculation as string = SummonCalculator( "", True )
-		        txtField.Text = calculation
+		        txtField.Text = calculation.ReplaceAll(" ", "")
 		        self.Tag = DiceCalculatorMethods.SimplifyMath( calculation )
 		        
 		      elseif hititem.Text = "Edit dice roll" then

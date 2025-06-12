@@ -528,7 +528,7 @@ End
 		      var xModifier as XMLNode = xNode.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase )
-		      xModifier.SetValue lst.CellValueAt( row, 1 )'.Replace( " + Proficiency Bonus", "+%0" ).Replace( "+Proficiency Bonus", "+%0" )
+		      xModifier.SetValue lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" )
 		    next
 		  end if
 		  
@@ -646,7 +646,12 @@ End
 		        End if
 		        
 		        if xChild.GetAttribute("category") <> "" then
-		          cModifiers.addrow xChild.GetAttribute("category").Titlecase, xValue
+		          var category as String = xChild.GetAttribute("category").Titlecase
+		          if category = "Skills" then
+		            category = "Skill"
+		          end if
+		          
+		          cModifiers.addrow category, xValue
 		        else
 		          cModifiers.addrow "Bonus", xValue
 		          Break

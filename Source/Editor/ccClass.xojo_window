@@ -1292,7 +1292,7 @@ End
 		    if cSlotsReset.Tag.Trim <> "" then
 		      xmlClass.AppendSimpleChild( "slotsReset", cSlotsReset.Tag )
 		    else
-		      xmlClass.AppendSimpleChild( "slotsReset", Nil )
+		      'xmlClass.AppendSimpleChild( "slotsReset", Nil )
 		    end if
 		    
 		    

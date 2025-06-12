@@ -1930,7 +1930,7 @@ End
 		    next
 		  end if
 		  
-		  
+		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ")
 		  if cName.Value.Contains( "Unnamed Spell" ) then
 		    cName.Value = cName.Value.Replace("Unnamed Spell", Title)
 		  else

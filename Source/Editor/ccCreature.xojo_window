@@ -1775,21 +1775,21 @@ End
 		  if cSize.Value <> "" then
 		    xCreature.AppendSimpleChild( "size", cSize.Tag.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "size", Nil )
+		    'xCreature.AppendSimpleChild( "size", Nil )
 		  end if
 		  
 		  // Type
 		  if cCreatureType.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "type", cCreatureType.Value.Lowercase )
 		  else
-		    xCreature.AppendSimpleChild( "type", Nil )
+		    'xCreature.AppendSimpleChild( "type", Nil )
 		  end if
 		  
 		  // Alignment
 		  if cAlignment.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "alignment", cAlignment.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "alignment", Nil )
+		    'xCreature.AppendSimpleChild( "alignment", Nil )
 		  end if
 		  
 		  // Armor Class
@@ -1797,7 +1797,7 @@ End
 		    if cArmorType.Value.Trim <> "" then
 		      xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim + " (" + cArmorType.Value.Trim + ")" )
 		    else
-		      xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim )
+		      'xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim )
 		    end if
 		  else
 		    xCreature.AppendSimpleChild( "ac", Nil )
@@ -1808,7 +1808,7 @@ End
 		    if cMaxHPRoll.Value.Trim <> "" then
 		      xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim + " (" + cMaxHPRoll.Tag.Trim + ")" )
 		    else
-		      xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim )
+		      'xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim )
 		    end if
 		  else
 		    xCreature.AppendSimpleChild( "hp", Nil )
@@ -1818,7 +1818,7 @@ End
 		  if cSpeed.Value <> "" then
 		    xCreature.AppendSimpleChild( "speed", cSpeed.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "speed", Nil )
+		    'xCreature.AppendSimpleChild( "speed", Nil )
 		  end if
 		  
 		  // Initiative
@@ -1831,37 +1831,37 @@ End
 		  if cAbilityStrength.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "str", cAbilityStrength.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "str", Nil )
+		    'xCreature.AppendSimpleChild( "str", Nil )
 		  end if
 		  // Ablity Dexterity
 		  if cAbilityDexterity.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "dex", cAbilityDexterity.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "dex", Nil )
+		    'xCreature.AppendSimpleChild( "dex", Nil )
 		  end if
 		  // Ablity Constitution
 		  if cAbilityConstitution.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "con", cAbilityConstitution.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "con", Nil )
+		    'xCreature.AppendSimpleChild( "con", Nil )
 		  end if
 		  // Ablity Intelligence
 		  if cAbilityIntelligence.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "int", cAbilityIntelligence.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "int", Nil )
+		    'xCreature.AppendSimpleChild( "int", Nil )
 		  end if
 		  // Ablity Wisdom
 		  if cAbilityWisdom.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "wis", cAbilityWisdom.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "wis", Nil )
+		    'xCreature.AppendSimpleChild( "wis", Nil )
 		  end if
 		  // Ablity Charisma
 		  if cAbilityCharisma.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "cha", cAbilityCharisma.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "cha", Nil )
+		    'xCreature.AppendSimpleChild( "cha", Nil )
 		  end if
 		  
 		  
@@ -1869,14 +1869,14 @@ End
 		  if cSavingThrows.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "save", cSavingThrows.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "save", Nil )
+		    'xCreature.AppendSimpleChild( "save", Nil )
 		  end if
 		  
 		  // Skills
 		  if cSkills.Value.Trim <> "" then
 		    xCreature.AppendSimpleChild( "skill", cSkills.Value.Trim )
 		  else
-		    xCreature.AppendSimpleChild( "skill", Nil )
+		    'xCreature.AppendSimpleChild( "skill", Nil )
 		  end if
 		  
 		  // Passive Perception

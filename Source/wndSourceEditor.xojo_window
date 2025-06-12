@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   2
+      Value           =   0
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -648,7 +648,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   6
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1776,7 +1776,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub SaveSourceNFO()
+		Sub SaveSourceNFO(ConfirmSave as boolean = True)
 		  var sourceDestination as FolderItem
 		  if Source.SourceInfoFile <> Nil and Source.SourceInfoFile.Exists then
 		    sourceDestination = Source.SourceInfoFile
@@ -1787,11 +1787,13 @@ End
 		    end if
 		    sourceDestination = Source.ParentFolder.Child( "source" + postfix + ".xml" )
 		  end if
-		  SourceInfoEditorPanel.SaveXML( sourceDestination )
+		  SourceInfoEditorPanel.SaveXML( sourceDestination, Source.XMLFiles )
 		  
 		  Source.SetSource( sourceDestination )
 		  
-		  MessageBox "Saved source information."
+		  if ConfirmSave then
+		    MessageBox "Saved source information."
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -2156,6 +2158,7 @@ End
 		    'xDoc.IndentDocument(0)
 		    
 		    xDoc.SaveXMLFormatted( destination, AppPrefs.IndentCharacters )
+		    Source.XMLFiles.Add( destination )
 		    
 		    
 		    var smallIcon as Picture
@@ -2181,6 +2184,8 @@ End
 		    popSources.AddRowWithTagAndPicture( Filename, destination, smallIcon )
 		    popSources.SelectedRowIndex = popSources.LastAddedRowIndex
 		  end if
+		  
+		  SaveSourceNFO(false)
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2204,6 +2209,10 @@ End
 		      Select Case b                                ' determine which button was pressed.
 		      Case d.ActionButton
 		        
+		        if Source.XMLFiles.IndexOf( TheFile ) > -1 then
+		          Source.XMLFiles.RemoveAt( Source.XMLFiles.IndexOf( TheFile ) )
+		        end if
+		        
 		        #if TargetMacOS then
 		          TheFile.MoveToTrash
 		        #else
@@ -2215,6 +2224,7 @@ End
 		          popSources.SelectedRowIndex = 0
 		        end if
 		        
+		        
 		        ' user pressed Save
 		        'Case d.AlternateActionButton
 		        ' user pressed Don't Save
@@ -2225,6 +2235,8 @@ End
 		    end if
 		    
 		  end if
+		  
+		  SaveSourceNFO( false )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

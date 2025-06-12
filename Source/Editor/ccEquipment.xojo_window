@@ -1051,7 +1051,7 @@ End
 		  end if
 		  
 		  // Type
-		  xItem.AppendSimpleChild( "type", cItemType.Tag )
+		  xItem.AppendSimpleChild( "type", cItemType.Tag.Uppercase )
 		  
 		  // Magic Item
 		  if cMagicItem.FieldValue then
@@ -1135,7 +1135,7 @@ End
 		      var xModifier as XMLNode = xItem.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
-		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim )
+		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim.Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ) )
 		    next
 		  end if
 		  
@@ -1327,7 +1327,13 @@ End
 		          
 		        case "modifier"
 		          if xChild.GetAttribute("category") <> "" then
-		            cModifiers.addrow xChild.GetAttribute("category").Titlecase, xValue
+		            
+		            var category as String = xChild.GetAttribute("category").Titlecase
+		            if category = "Skills" then
+		              category = "Skill"
+		            End if
+		            
+		            cModifiers.addrow category, xValue
 		          else
 		            cModifiers.addrow "Bonus", xValue
 		            Break

@@ -484,7 +484,6 @@ End
 		    cbModifierValue.addrow "Ranged Damage +1"
 		    cbModifierValue.addrow "Spell Attack +1"
 		    cbModifierValue.addrow "Spell DC +1"
-		    cbModifierValue.addrow "Hit Points +1"
 		    cbModifierValue.addrow "hp +1"
 		    cbModifierValue.addrow "ac +1"
 		    cbModifierValue.addrow "Saving Throws +1"
@@ -492,7 +491,7 @@ End
 		    cbModifierValue.addrow "Speed +10"
 		    cbModifierValue.addrow "Passive Wisdom +1"
 		    
-		  case "Skill"
+		  case "Skill", "Skills"
 		    cbModifierValue.addrow "Acrobatics +1"
 		    cbModifierValue.addrow "Animal Handling +1"
 		    cbModifierValue.addrow "Arcana +1"

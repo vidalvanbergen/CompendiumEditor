@@ -523,7 +523,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub SaveXML(ByRef Destination as FolderItem)
+		Sub SaveXML(ByRef Destination as FolderItem, XMLFiles() as FolderItem)
 		  
 		  if Destination <> Nil then
 		    
@@ -586,6 +586,25 @@ End
 		    // Description
 		    if ccSourceDescription.Value.Trim <> "" then
 		      xRoot.AppendSimpleChild( "description", ccSourceDescription.Value.Trim )
+		    end if
+		    
+		    // XML Collection
+		    if XMLFiles <> Nil and XMLFiles.LastIndex > -1 then
+		      var xCollection as XMLNode = xRoot.AppendNewChild( "collection" )
+		      for index as Integer = 0 to XMLFiles.LastIndex
+		        if NOT XMLFiles(index).Name.Contains("#") then
+		          var xDocuments as XMLNode = xCollection.AppendNewChild("doc")
+		          xDocuments.SetAttribute( "href", XMLFiles(index).Name )
+		        end if
+		      next
+		      if xCollection.ChildCount = 0 then
+		        xRoot.RemoveChild( xCollection )
+		      end if
+		    end if
+		    
+		    
+		    if NOT Destination.Name.Contains( ccSourceAbbreviation.Value.Trim ) then
+		      Destination = Destination.Parent.Child( Destination.NameNoExtension + "-" + ccSourceAbbreviation.Value.Trim + "." + Destination.Extension )
 		    end if
 		    
 		    xDoc.SaveXMLFormatted( Destination, AppPrefs.IndentCharacters )

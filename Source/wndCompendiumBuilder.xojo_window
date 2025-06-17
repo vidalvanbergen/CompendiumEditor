@@ -284,18 +284,19 @@ End
 	#tag Method, Flags = &h0
 		Sub FindXMLFiles(Parent as FolderItem, ByRef XMLFiles() as Folderitem)
 		  
-		  
-		  for each item as FolderItem in Parent.Children
-		    
-		    if item <> Nil and item.Visible and item.IsReadable then
-		      if item.IsFolder then
-		        FindXMLFiles( item, XMLFiles )
-		      elseif item.Name.EndsWith(".xml") and NOT item.Name.Contains("source") and NOT item.name.Contains("template") and not item.NativePath.Contains("#") then
-		        XMLFiles.Add item
+		  if Parent <> Nil and Parent.Exists then
+		    for each item as FolderItem in Parent.Children
+		      
+		      if item <> Nil and item.Visible and item.IsReadable then
+		        if item.IsFolder then
+		          FindXMLFiles( item, XMLFiles )
+		        elseif item.Name.EndsWith(".xml") and NOT item.Name.Contains("source") and NOT item.name.Contains("template") and not item.NativePath.Contains("#") then
+		          XMLFiles.Add item
+		        end if
 		      end if
-		    end if
-		    
-		  next
+		      
+		    next
+		  end if
 		End Sub
 	#tag EndMethod
 

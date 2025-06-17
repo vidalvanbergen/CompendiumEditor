@@ -35,7 +35,7 @@ Protected Class SourceCore
 		  var xNames() as string
 		  
 		  // Get folderitems
-		  if parent <> Nil then
+		  if parent <> Nil and parent.Exists and parent.Directory then
 		    
 		    for each child as FolderItem in parent.Children
 		      

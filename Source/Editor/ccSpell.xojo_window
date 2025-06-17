@@ -1921,14 +1921,17 @@ End
 		  cDescription.FormatParagraphs( Description, False )
 		  cDescription.FormatLists( Description, false )
 		  
-		  Rolls = Description.MatchAll( "(\d+d\d+.*?)(\w+)", 1 )
-		  
-		  if rolls <> Nil and rolls.LastIndex > -1 then
-		    for each roll as string in Rolls
-		      cDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( roll.Trim )
-		      cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = roll.Trim
-		    next
-		  end if
+		  'ProcessDicerolls
+		  //
+		  'Rolls = Description.MatchAll( "(\d+d\d+.*?)(\w+)", 1 )
+		  '
+		  'if rolls <> Nil and rolls.LastIndex > -1 then
+		  'for each roll as string in Rolls
+		  'cDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( roll.Trim )
+		  'cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = roll.Trim
+		  'next
+		  'end if
+		  //
 		  
 		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ")
 		  if cName.Value.Contains( "Unnamed Spell" ) then
@@ -1952,6 +1955,14 @@ End
 		  
 		  
 		  cDescription.Value = Description
+		  
+		  // Process Dicerolls
+		  cDiceRolls.lstDiceRolls.RemoveAllRows
+		  var result as String = "1"
+		  
+		  while result <> ""
+		    result = cDiceRolls.AddCalculation(False)
+		  wend
 		  
 		  cComponents.SetMultiTags( Components )
 		  cMaterials.Value = Materials

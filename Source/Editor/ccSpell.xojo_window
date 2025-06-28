@@ -1887,7 +1887,7 @@ End
 		            School = lines(index).NthField("cantrip", 1)
 		          end if
 		        else
-		          level = lines(index).Match( "(\d+)(st|nd|rd|th)-level", 1)
+		          level = lines(index).Match( "(\d+)(st|nd|rd|th|I|l)-level", 1).Replace("I", "1").Replace("l", "1")
 		          School = lines(index).NthField("level", 2).Trim.Titlecase
 		        end if
 		        
@@ -1952,6 +1952,9 @@ End
 		  'if Description.Contains( "At Higher Levels:" ) then
 		  'Description = Description.Replace( "At Higher Levels: ", "At Higher Levels:" + EndOfLine )
 		  'end if
+		  if Description.Contains("AT HIGHER LEVELS") and not Description.Contains("Cantrip Upgrade") then // for correcting capitalization
+		    Description = Description.ReplaceAll( "AT HIGHER LEVELS", "At Higher Levels")
+		  end if
 		  
 		  
 		  cDescription.Value = Description

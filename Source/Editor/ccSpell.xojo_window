@@ -1086,6 +1086,19 @@ End
 		  
 		  TheClasses.Sort
 		  
+		  TheClasses.Append "-"
+		  TheClasses.Append "School: Abjuration"
+		  TheClasses.Append "School: Conjuration"
+		  TheClasses.Append "School: Divination"
+		  TheClasses.Append "School: Enchantment"
+		  TheClasses.Append "School: Evocation"
+		  TheClasses.Append "School: Illusion"
+		  TheClasses.Append "School: Necromancy"
+		  TheClasses.Append "School: Transmutation"
+		  TheClasses.Append "-"
+		  TheClasses.Append "Ritual Caster"
+		  TheClasses.Append "Touch Spells"
+		  
 		  cbClass.RemoveAllRows
 		  for index as Integer = 0 to TheClasses.LastIndex
 		    cbClass.AddRow TheClasses(index)

@@ -20,7 +20,7 @@ Begin DesktopWindow wndDiceCalc
    MinimumHeight   =   400
    MinimumWidth    =   256
    Resizeable      =   False
-   Title           =   "Untitled"
+   Title           =   "Calculator"
    Type            =   8
    Visible         =   True
    Width           =   256

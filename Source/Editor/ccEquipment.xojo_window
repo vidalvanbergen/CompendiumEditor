@@ -2053,106 +2053,107 @@ End
 		      '
 		      'lines = Description.Split( EndOfLine )
 		      '//
-		      
-		      var detailline as String = lines(0)
-		      if detailline.Contains( "rare" ) or detailline.Contains("common") or detailline.Contains("legendary") or detailline.Contains("artifact") then
-		        type = detailline.NthField(",", 1).Trim
-		        rarity = detailline.NthField(",", 2).Trim
-		        if rarity.Contains("(") and NOT rarity.Contains(")") then
-		          rarity = rarity + " " + lines(1)
-		          lines.RemoveAt(1)
+		      if lines.LastIndex > -1 then
+		        var detailline as String = lines(0)
+		        if detailline.Contains( "rare" ) or detailline.Contains("common") or detailline.Contains("legendary") or detailline.Contains("artifact") then
+		          type = detailline.NthField(",", 1).Trim
+		          rarity = detailline.NthField(",", 2).Trim
+		          if rarity.Contains("(") and NOT rarity.Contains(")") then
+		            rarity = rarity + " " + lines(1)
+		            lines.RemoveAt(1)
+		          end if
+		          
+		          if type.Contains("Wondrous Item") then
+		            cItemType.Value = "Wondrous Item"
+		            cItemType.Tag = "W"
+		            
+		            cMagicItem.FieldValue = True
+		            
+		          elseif type.Contains("armor") or type.Contains("weapon") then
+		            var baseItem as String = type.Match("\((.*?)\)", 1 ).Trim
+		            
+		            var rowIndex as Integer = -1
+		            for index as Integer = 0 to popBaseItems.LastRowIndex
+		              if popBaseItems.RowValueAt( index ) = Title then
+		                rowIndex = index
+		                Exit
+		              end if
+		            next
+		            
+		            if rowIndex > -1 then
+		              popBaseItems.SelectRowWithValue( baseItem )
+		              if baseItem <> "" and popBaseItems.SelectedRowIndex > 0 then
+		                LoadTemplate
+		              end if
+		            end if
+		            
+		          else
+		            
+		            if type <> "" then
+		              
+		              Select case type
+		                
+		              case "Wondrous Item"
+		                cItemType.Tag = "W"
+		              case "Adventuring Gear"
+		                cItemType.Tag = "G"
+		              case "Light Armor"
+		                cItemType.Tag = "LA"
+		              case "Medium Armor"
+		                cItemType.Tag = "MA"
+		              case "Heavy Armor"
+		                cItemType.Tag = "HA"
+		              case "Shield"
+		                cItemType.Tag = "S"
+		              case "Melee Weapon"
+		                cItemType.Tag = "M"
+		              case "Ranged Weapon"
+		                cItemType.Tag = "R"
+		              case "Ammunition"
+		                cItemType.Tag = "A"
+		              case "Rod"
+		                cItemType.Tag = "RD"
+		              case "Staff"
+		                cItemType.Tag = "ST"
+		              case "Wand"
+		                cItemType.Tag = "WD"
+		              case "Ring"
+		                cItemType.Tag = "RG"
+		              case "Potion"
+		                cItemType.Tag = "P"
+		              case "Scroll"
+		                cItemType.Tag = "SC"
+		              case "Wealth"
+		                cItemType.Tag = "$"
+		                
+		              End Select
+		              
+		              
+		              cItemType.Value = type.Titlecase
+		            end if
+		            
+		            var rowIndex as Integer = -1
+		            for index as Integer = 0 to popBaseItems.LastRowIndex
+		              if popBaseItems.RowValueAt( index ) = Title then
+		                rowIndex = index
+		                Exit
+		              end if
+		            next
+		            
+		            
+		            if rowIndex > -1 then
+		              popBaseItems.SelectRowWithValue( type )
+		              if popBaseItems.SelectedRowIndex > 0 then
+		                LoadTemplate
+		              end if
+		              
+		            end if
+		            
+		          end if
 		        end if
 		        
-		        if type.Contains("Wondrous Item") then
-		          cItemType.Value = "Wondrous Item"
-		          cItemType.Tag = "W"
-		          
-		          cMagicItem.FieldValue = True
-		          
-		        elseif type.Contains("armor") or type.Contains("weapon") then
-		          var baseItem as String = type.Match("\((.*?)\)", 1 ).Trim
-		          
-		          var rowIndex as Integer = -1
-		          for index as Integer = 0 to popBaseItems.LastRowIndex
-		            if popBaseItems.RowValueAt( index ) = Title then
-		              rowIndex = index
-		              Exit
-		            end if
-		          next
-		          
-		          if rowIndex > -1 then
-		            popBaseItems.SelectRowWithValue( baseItem )
-		            if baseItem <> "" and popBaseItems.SelectedRowIndex > 0 then
-		              LoadTemplate
-		            end if
-		          end if
-		          
-		        else
-		          
-		          if type <> "" then
-		            
-		            Select case type
-		              
-		            case "Wondrous Item"
-		              cItemType.Tag = "W"
-		            case "Adventuring Gear"
-		              cItemType.Tag = "G"
-		            case "Light Armor"
-		              cItemType.Tag = "LA"
-		            case "Medium Armor"
-		              cItemType.Tag = "MA"
-		            case "Heavy Armor"
-		              cItemType.Tag = "HA"
-		            case "Shield"
-		              cItemType.Tag = "S"
-		            case "Melee Weapon"
-		              cItemType.Tag = "M"
-		            case "Ranged Weapon"
-		              cItemType.Tag = "R"
-		            case "Ammunition"
-		              cItemType.Tag = "A"
-		            case "Rod"
-		              cItemType.Tag = "RD"
-		            case "Staff"
-		              cItemType.Tag = "ST"
-		            case "Wand"
-		              cItemType.Tag = "WD"
-		            case "Ring"
-		              cItemType.Tag = "RG"
-		            case "Potion"
-		              cItemType.Tag = "P"
-		            case "Scroll"
-		              cItemType.Tag = "SC"
-		            case "Wealth"
-		              cItemType.Tag = "$"
-		              
-		            End Select
-		            
-		            
-		            cItemType.Value = type.Titlecase
-		          end if
-		          
-		          var rowIndex as Integer = -1
-		          for index as Integer = 0 to popBaseItems.LastRowIndex
-		            if popBaseItems.RowValueAt( index ) = Title then
-		              rowIndex = index
-		              Exit
-		            end if
-		          next
-		          
-		          
-		          if rowIndex > -1 then
-		            popBaseItems.SelectRowWithValue( type )
-		            if popBaseItems.SelectedRowIndex > 0 then
-		              LoadTemplate
-		            end if
-		            
-		          end if
-		          
-		        end if
+		        lines.RemoveAt(0)
 		      end if
-		      
-		      lines.RemoveAt(0)
 		    end if
 		    
 		    Description = string.FromArray( lines, EndOfLine )

@@ -545,7 +545,7 @@ End
 		  var Description as String
 		  if c.Text <> "" then
 		    
-		    var lines() as string = NormalizeLineEndings( c.Text ).Split( EndOfLine )
+		    var lines() as string = NormalizeLineEndings( c.Text.Trim ).Split( EndOfLine )
 		    
 		    
 		    if lines.LastIndex > -1 then
@@ -555,7 +555,13 @@ End
 		        lines.RemoveAt(0)
 		      end if
 		      
-		      Description = string.FromArray( lines, EndOfLine )
+		      for index as Integer = 0 to lines.LastIndex
+		        if lines(index).Contains("level") and lines(index).Contains("feature") then
+		          lines.RemoveAt(index)
+		        end if
+		      next
+		      
+		      Description = string.FromArray( lines, EndOfLine ).Trim
 		      
 		      if Title = "" then
 		        Title = Description.Match( "(.*?)(\.|:)", 1 )

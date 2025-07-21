@@ -1797,7 +1797,7 @@ End
 		    if cArmorType.Value.Trim <> "" then
 		      xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim + " (" + cArmorType.Value.Trim + ")" )
 		    else
-		      'xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim )
+		      xCreature.AppendSimpleChild( "ac", cArmorClass.Value.Trim )
 		    end if
 		  else
 		    xCreature.AppendSimpleChild( "ac", Nil )
@@ -1808,7 +1808,7 @@ End
 		    if cMaxHPRoll.Value.Trim <> "" then
 		      xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim + " (" + cMaxHPRoll.Tag.Trim + ")" )
 		    else
-		      'xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim )
+		      xCreature.AppendSimpleChild( "hp", cMaxHP.Value.Trim )
 		    end if
 		  else
 		    xCreature.AppendSimpleChild( "hp", Nil )

@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1022
+   Height          =   1140
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -241,7 +241,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   742
+      Top             =   606
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -313,7 +313,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   394
+      Top             =   258
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -350,7 +350,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   360
+      Top             =   224
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -373,7 +373,7 @@ Begin ContainerControl ccSpecies
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   20
+      Left            =   21
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -388,12 +388,12 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances. (Unofficial)"
-      Top             =   326
+      Top             =   1020
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   625
+      Width           =   624
    End
    Begin ccEditorTextField cProficienciesTools
       AllowAutoDeactivate=   True
@@ -426,7 +426,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   292
+      Top             =   949
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -464,7 +464,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   224
+      Top             =   881
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -502,7 +502,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   258
+      Top             =   915
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -533,7 +533,7 @@ Begin ContainerControl ccSpecies
       Index           =   0
       InitialParent   =   ""
       Italic          =   False
-      Left            =   657
+      Left            =   658
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -546,7 +546,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   323
+      Top             =   1017
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -590,7 +590,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   289
+      Top             =   946
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -634,7 +634,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   255
+      Top             =   912
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -678,7 +678,253 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   221
+      Top             =   878
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccEditorTextField cDamageVulnerabilities
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Damage vulnerabilities."
+      Top             =   983
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin ccEditorTextField cConditionImmunities
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   1088
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin ccEditorTextField cDamageImmunities
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Damage immunities."
+      Top             =   1054
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   4
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   980
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   5
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1051
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   6
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   22
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1085
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -766,9 +1012,24 @@ End
 		    xSpecies.AppendSimpleChild( "ability", cAbility.Value )
 		  end if
 		  
+		  // Damage Vulnerable
+		  if cDamageVulnerabilities.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "vulnerable", cDamageVulnerabilities.Value.Trim )
+		  end if
+		  
 		  // Damage Resistance
 		  if cDamageResistance.Value <> "" then
 		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Lowercase.Trim )
+		  end if
+		  
+		  // Damage Immunity
+		  if cDamageImmunities.Value <> "" then
+		    xSpecies.AppendSimpleChild( "immune", cDamageImmunities.Value.Lowercase.Trim )
+		  end if
+		  
+		  // Condition Immune
+		  if cConditionImmunities.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "conditionImmune", cConditionImmunities.Value.Trim )
 		  end if
 		  
 		  // Proficiencies
@@ -1257,6 +1518,92 @@ End
 	#tag Event
 		Sub Action(index as Integer)
 		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDamageVulnerabilities
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Vulnerabilities:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  me.UseLowercase = True
+		  
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
+		  me.BaseMenu.Append new MenuItem( "Piercing" )
+		  me.BaseMenu.Append new MenuItem( "Slashing" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Acid" )
+		  me.BaseMenu.Append new MenuItem( "Cold" )
+		  me.BaseMenu.Append new MenuItem( "Fire" )
+		  me.BaseMenu.Append new MenuItem( "Force" )
+		  me.BaseMenu.Append new MenuItem( "Lightning" )
+		  me.BaseMenu.Append new MenuItem( "Necrotic" )
+		  me.BaseMenu.Append new MenuItem( "Poison" )
+		  me.BaseMenu.Append new MenuItem( "Psychic" )
+		  me.BaseMenu.Append new MenuItem( "Radiant" )
+		  me.BaseMenu.Append new MenuItem( "Thunder" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cConditionImmunities
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Condition Immune:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  me.UseLowercase = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Blinded")
+		  me.BaseMenu.AddMenu new MenuItem("Charmed")
+		  me.BaseMenu.AddMenu new MenuItem("Deafened")
+		  me.BaseMenu.AddMenu new MenuItem("Exhaustion")
+		  me.BaseMenu.AddMenu new MenuItem("Frightened")
+		  me.BaseMenu.AddMenu new MenuItem("Grappled")
+		  me.BaseMenu.AddMenu new MenuItem("Incapacitated")
+		  me.BaseMenu.AddMenu new MenuItem("Invisible")
+		  me.BaseMenu.AddMenu new MenuItem("Paralyzed")
+		  me.BaseMenu.AddMenu new MenuItem("Petrified")
+		  me.BaseMenu.AddMenu new MenuItem("Poisoned")
+		  me.BaseMenu.AddMenu new MenuItem("Prone")
+		  me.BaseMenu.AddMenu new MenuItem("Protecting")
+		  me.BaseMenu.AddMenu new MenuItem("Restrained")
+		  me.BaseMenu.AddMenu new MenuItem("Stunned")
+		  me.BaseMenu.AddMenu new MenuItem("Unconscious")
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDamageImmunities
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Damage Immune:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  me.UseLowercase = True
+		  
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
+		  me.BaseMenu.Append new MenuItem( "Piercing" )
+		  me.BaseMenu.Append new MenuItem( "Slashing" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Acid" )
+		  me.BaseMenu.Append new MenuItem( "Cold" )
+		  me.BaseMenu.Append new MenuItem( "Fire" )
+		  me.BaseMenu.Append new MenuItem( "Force" )
+		  me.BaseMenu.Append new MenuItem( "Lightning" )
+		  me.BaseMenu.Append new MenuItem( "Necrotic" )
+		  me.BaseMenu.Append new MenuItem( "Poison" )
+		  me.BaseMenu.Append new MenuItem( "Psychic" )
+		  me.BaseMenu.Append new MenuItem( "Radiant" )
+		  me.BaseMenu.Append new MenuItem( "Thunder" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

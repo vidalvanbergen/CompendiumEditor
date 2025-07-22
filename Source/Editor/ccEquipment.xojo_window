@@ -2167,7 +2167,7 @@ End
 		  'if cName.Value.Contains( "Unnamed" ) then
 		  'cName.Value = cName.Value.Replace("Unnamed", Title)
 		  'else
-		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll( " With ", " with " ).ReplaceAll(" And ", " and ")
+		  Title = Title.FormatTitle
 		  
 		  cName.Value = Title
 		  cDetail.Value = rarity

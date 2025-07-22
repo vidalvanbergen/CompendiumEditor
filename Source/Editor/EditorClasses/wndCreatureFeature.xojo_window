@@ -383,7 +383,7 @@ End
 		    Description = Description.Trim
 		  end if
 		  
-		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll( " With ", " with " )
+		  Title = Title.FormatTitle
 		  cName.Value = Title
 		  
 		  if Description.Contains( "• " ) or Description.Contains("slots):") or Description.Contains("(at will)") or Description.Contains( "/day" ) then

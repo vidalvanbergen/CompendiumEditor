@@ -394,6 +394,12 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function FormatTitle(Extends title as String) As String
+		  Return title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ").ReplaceAll( " With ", " with " ).ReplaceAll( " Or ", " or " )
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function GetSourceFolderPaths() As String()
 		  
 		  var sourceFolders() as String

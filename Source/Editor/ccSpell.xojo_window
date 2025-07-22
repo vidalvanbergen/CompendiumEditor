@@ -1907,7 +1907,7 @@ End
 		        lines.RemoveAt( index )
 		        
 		      elseif lines(index).StartsWith("Classes:") then
-		        Classes = lines(index).Replace("Casting Time:","").SplitString(",")
+		        Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Trim.FormatTitle.SplitString(",")
 		        
 		        lines.RemoveAt(index)
 		        
@@ -1946,7 +1946,7 @@ End
 		  'end if
 		  //
 		  
-		  Title = Title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ")
+		  Title = Title.FormatTitle
 		  if cName.Value.Contains( "Unnamed Spell" ) then
 		    cName.Value = cName.Value.Replace("Unnamed Spell", Title)
 		  else

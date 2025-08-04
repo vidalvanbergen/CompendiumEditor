@@ -2758,6 +2758,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "None", "" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning, Piercing, and Slashing damage from nonmagical attacks" )
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
 		  me.BaseMenu.Append new MenuItem( "Piercing" )
 		  me.BaseMenu.Append new MenuItem( "Slashing" )
@@ -2785,6 +2786,8 @@ End
 		  
 		  
 		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning, Piercing, and Slashing damage from nonmagical attacks" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
 		  me.BaseMenu.Append new MenuItem( "Piercing" )

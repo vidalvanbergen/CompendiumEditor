@@ -2434,6 +2434,7 @@ End
 		  me.BaseMenu.AddMenu new MenuItem( "Cartographer's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Cobbler's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Cook's Utensils" )
+		  me.BaseMenu.AddMenu new MenuItem( "Disguise Kit" )
 		  me.BaseMenu.AddMenu new MenuItem( "Glassblower's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Herbalism Kit" )
 		  me.BaseMenu.AddMenu new MenuItem( "Jeweler's Tools" )

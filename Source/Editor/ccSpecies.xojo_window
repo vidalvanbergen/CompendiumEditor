@@ -1380,6 +1380,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "None", "" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning, Piercing, and Slashing damage from nonmagical attacks" )
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
 		  me.BaseMenu.Append new MenuItem( "Piercing" )
 		  me.BaseMenu.Append new MenuItem( "Slashing" )
@@ -1413,6 +1414,7 @@ End
 		  me.BaseMenu.AddMenu new MenuItem( "Cartographer's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Cobbler's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Cook's Utensils" )
+		  me.BaseMenu.AddMenu new MenuItem( "Disguise Kit" )
 		  me.BaseMenu.AddMenu new MenuItem( "Glassblower's Tools" )
 		  me.BaseMenu.AddMenu new MenuItem( "Herbalism Kit" )
 		  me.BaseMenu.AddMenu new MenuItem( "Jeweler's Tools" )
@@ -1589,6 +1591,8 @@ End
 		  
 		  
 		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Bludgeoning, Piercing, and Slashing damage from nonmagical attacks" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Bludgeoning" )
 		  me.BaseMenu.Append new MenuItem( "Piercing" )

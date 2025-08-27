@@ -10,20 +10,20 @@ Begin WindowPro wndCompendiumViewer
    HasFullScreenButton=   False
    HasMaximizeButton=   True
    HasMinimizeButton=   True
-   Height          =   580
+   Height          =   760
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
    MaximumWidth    =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinimumHeight   =   64
-   MinimumWidth    =   64
+   MinimumHeight   =   600
+   MinimumWidth    =   800
    Resizeable      =   True
    Title           =   "Compendium Viewer"
    Type            =   0
    Visible         =   True
-   Width           =   806
+   Width           =   1024
    Begin DNDToolbar cvsToolbar
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -50,21 +50,21 @@ Begin WindowPro wndCompendiumViewer
       Top             =   0
       Transparent     =   True
       Visible         =   True
-      Width           =   806
+      Width           =   1024
       Begin CanvasButton cvsBtnSpecies
          AllowAutoDeactivate=   False
          AllowFocus      =   True
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1880932351
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   490
+         Left            =   708
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -89,14 +89,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1436805119
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   534
+         Left            =   752
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -121,14 +121,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1767202815
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   578
+         Left            =   796
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -153,14 +153,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1704243199
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   622
+         Left            =   840
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -185,14 +185,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   1719934975
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   666
+         Left            =   884
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -217,14 +217,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   726933503
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   710
+         Left            =   928
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -249,14 +249,14 @@ Begin WindowPro wndCompendiumViewer
          AllowFocusRing  =   True
          AllowTabs       =   False
          Backdrop        =   0
-         Enabled         =   True
+         Enabled         =   False
          Height          =   32
          iconColor       =   &cFFFFFF00
          Image           =   623790079
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          IsSelected      =   True
-         Left            =   754
+         Left            =   972
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -275,43 +275,21 @@ Begin WindowPro wndCompendiumViewer
          Visible         =   True
          Width           =   32
       End
-      Begin ProgressWheel pgWheel
+      Begin Label lblTitle
          AllowAutoDeactivate=   True
-         Enabled         =   True
-         Height          =   16
-         Index           =   -2147483648
-         InitialParent   =   "cvsToolbar"
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   2
-         TabIndex        =   7
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   23
-         Transparent     =   True
-         Visible         =   True
-         Width           =   16
-      End
-      Begin Label lblMessage
-         AllowAutoDeactivate=   True
-         Bold            =   False
+         Bold            =   True
          DataField       =   ""
          DataSource      =   ""
          Enabled         =   True
          FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   24
+         FontSize        =   32.0
+         FontUnit        =   1
+         Height          =   32
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar"
          Italic          =   False
-         Left            =   48
-         LockBottom      =   False
+         Left            =   80
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
@@ -319,18 +297,50 @@ Begin WindowPro wndCompendiumViewer
          Multiline       =   False
          Scope           =   2
          Selectable      =   False
-         TabIndex        =   8
+         TabIndex        =   7
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   ""
+         Text            =   "Compendium Viewer"
          TextAlignment   =   0
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   20
-         Transparent     =   True
+         Top             =   10
+         Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   430
+         Width           =   519
+      End
+      Begin CanvasButton cvsBtnReload
+         AllowAutoDeactivate=   False
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   False
+         Height          =   32
+         iconColor       =   &cFFFFFF00
+         Image           =   1376546815
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar"
+         IsSelected      =   True
+         Left            =   664
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Species"
+         Top             =   10
+         Transparent     =   True
+         useCustomColor  =   True
+         Visible         =   False
+         Width           =   32
       End
    End
    Begin SearchField SearchField1
@@ -365,7 +375,7 @@ Begin WindowPro wndCompendiumViewer
    Begin PagePanel ppViewer
       AllowAutoDeactivate=   True
       Enabled         =   True
-      Height          =   528
+      Height          =   708
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -374,7 +384,7 @@ Begin WindowPro wndCompendiumViewer
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      PanelCount      =   2
+      PanelCount      =   8
       Panels          =   ""
       Scope           =   0
       TabIndex        =   2
@@ -385,8 +395,8 @@ Begin WindowPro wndCompendiumViewer
       Transparent     =   False
       Value           =   0
       Visible         =   True
-      Width           =   806
-      Begin DesktopListBox lstSpecies
+      Width           =   1024
+      Begin DesktopListBox lstObjects
          AllowAutoDeactivate=   True
          AllowAutoHideScrollbars=   True
          AllowExpandableRows=   False
@@ -395,9 +405,9 @@ Begin WindowPro wndCompendiumViewer
          AllowRowDragging=   False
          AllowRowReordering=   False
          Bold            =   False
-         ColumnCount     =   1
-         ColumnWidths    =   ""
-         DefaultRowHeight=   24
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
          DropIndicatorVisible=   False
          Enabled         =   True
          FontName        =   "System"
@@ -405,16 +415,16 @@ Begin WindowPro wndCompendiumViewer
          FontUnit        =   0
          GridLineStyle   =   0
          HasBorder       =   True
-         HasHeader       =   True
+         HasHeader       =   False
          HasHorizontalScrollbar=   False
          HasVerticalScrollbar=   True
          HeadingIndex    =   -1
-         Height          =   488
-         Index           =   -2147483648
+         Height          =   652
+         Index           =   0
          InitialParent   =   "ppViewer"
          InitialValue    =   ""
          Italic          =   False
-         Left            =   20
+         Left            =   0
          LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
@@ -424,16 +434,451 @@ Begin WindowPro wndCompendiumViewer
          RowSelectionType=   0
          Scope           =   2
          TabIndex        =   0
-         TabPanelIndex   =   1
+         TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   72
+         Top             =   52
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   300
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
+      End
+      Begin Canvas cvsSplash
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         DoubleBuffer    =   False
+         Enabled         =   True
+         Height          =   708
+         Index           =   -2147483648
+         InitialParent   =   "ppViewer"
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   2
+         TabPanelIndex   =   1
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   True
+         Visible         =   True
+         Width           =   1024
+         Begin ProgressBar pgBar
+            AllowAutoDeactivate=   True
+            Enabled         =   True
+            Height          =   20
+            Indeterminate   =   False
+            Index           =   -2147483648
+            InitialParent   =   "cvsSplash"
+            Left            =   20
+            LockBottom      =   False
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   True
+            LockTop         =   True
+            MaximumValue    =   0
+            Scope           =   0
+            TabIndex        =   0
+            TabPanelIndex   =   1
+            TabStop         =   False
+            Tooltip         =   ""
+            Top             =   740
+            Transparent     =   False
+            Value           =   0.0
+            Visible         =   True
+            Width           =   984
+         End
+      End
+      Begin ProgressWheel pgWheel
+         AllowAutoDeactivate=   True
+         Enabled         =   True
+         Height          =   16
+         Index           =   -2147483648
+         InitialParent   =   "ppViewer"
+         Left            =   20
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   False
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   1
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   695
+         Transparent     =   True
+         Visible         =   True
+         Width           =   16
+      End
+      Begin Label lblMessage
+         AllowAutoDeactivate=   True
+         Bold            =   True
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "ppViewer"
+         Italic          =   False
+         Left            =   48
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   False
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   False
+         TabIndex        =   1
+         TabPanelIndex   =   1
+         TabStop         =   True
+         Text            =   ""
+         TextAlignment   =   0
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   692
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   648
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   1
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   3
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   2
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   4
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   3
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   5
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   4
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   6
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   5
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   7
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin DesktopListBox lstObjects
+         AllowAutoDeactivate=   True
+         AllowAutoHideScrollbars=   True
+         AllowExpandableRows=   False
+         AllowFocusRing  =   True
+         AllowResizableColumns=   False
+         AllowRowDragging=   False
+         AllowRowReordering=   False
+         Bold            =   False
+         ColumnCount     =   2
+         ColumnWidths    =   "*, 0"
+         DefaultRowHeight=   56
+         DropIndicatorVisible=   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         GridLineStyle   =   0
+         HasBorder       =   True
+         HasHeader       =   False
+         HasHorizontalScrollbar=   False
+         HasVerticalScrollbar=   True
+         HeadingIndex    =   -1
+         Height          =   708
+         Index           =   6
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         RequiresSelection=   False
+         RowSelectionType=   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   8
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   52
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   300
+         _ScrollOffset   =   0
+         _ScrollWidth    =   -1
+      End
+      Begin PopupMenu popSources
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "ppViewer"
+         InitialValue    =   ""
+         Italic          =   False
+         Left            =   312
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   False
+         Scope           =   0
+         SelectedRowIndex=   0
+         TabIndex        =   1
+         TabPanelIndex   =   2
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   72
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   280
       End
    End
    Begin Thread Thread1
@@ -451,6 +896,12 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Sub Close()
+		  Thread1.Stop
+		End Sub
+	#tag EndEvent
+
 	#tag Event
 		Sub Open()
 		  'LoadCompendium
@@ -477,6 +928,45 @@ End
 		End Sub
 	#tag EndEvent
 
+
+	#tag Method, Flags = &h21
+		Private Sub BuildList(xNodes() as XMLNode, Index as Integer)
+		  lstObjects(Index).RemoveAllRows
+		  if Index = 0 then popSources.RemoveAllRows
+		  
+		  
+		  for each xNode as XMLNode in xNodes
+		    var name as String
+		    name = xNode.ValueOfNodeWithName("name")
+		    
+		    var multisources() as String = SourceFromXMLNode( xNode )
+		    
+		    for each source as string in multisources
+		      if NOT ContentSources.Contains( source) then
+		        ContentSources.Append source
+		      end if
+		      
+		      if index = 0 and popSources.IndexOfItemWithTitle( source.Replace("&", "&&") ) = -1 then
+		        popSources.AddRow source.Replace("&", "&&")
+		      end if
+		    next
+		    
+		    var firstSource as String
+		    if multisources.LastIndex > -1 then firstSource = multisources(0)
+		    lstObjects(Index).AddRow name, StringFromArray( multisources, "|" )
+		    lstObjects(Index).Sort
+		  next
+		  
+		  'if Index = 0 then
+		  'ContentSources.Sort
+		  '
+		  'popSources.RemoveAllRows
+		  'for i as Integer = 0 to ContentSources.LastIndex
+		  'popSources.AddRow ContentSources(i).Replace("&", "&&")
+		  'next
+		  'end if
+		End Sub
+	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Function CoresForCategory(currentCategory as String, SourcePath as String) As SourceCore()
@@ -514,6 +1004,8 @@ End
 		  // Get Sources
 		  var sourceFolders() as String = CommonModule.GetSourceFolderPaths
 		  
+		  var Count as Integer = 0
+		  thread1.AddUserInterfaceUpdate( new Pair( "ProgressMax", sourceFolders.LastIndex+1 ) )
 		  
 		  
 		  
@@ -526,6 +1018,7 @@ End
 		    'var sourcePath as string = source.NativePath + "/"
 		    
 		    thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + source.Name ) )
+		    thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
 		    
 		    var parentFolders() as FolderItem, parentfolderPaths() as String
 		    
@@ -542,6 +1035,9 @@ End
 		    
 		    // parent Folders
 		    for each file as FolderItem in xmlFiles
+		      if file.Name.Contains("#Deprecated") or file.Parent.Name.StartsWith("#") or file.Parent.Name.Contains("#Deprecated") or file.NativePath.Contains("Legacy_2014") then
+		        Continue
+		      end if
 		      if NOT parentfolderPaths.Contains( file.Parent.NativePath ) then
 		        parentfolderPaths.Add file.Parent.NativePath
 		        parentfolders.Add file.Parent
@@ -550,6 +1046,8 @@ End
 		      end if
 		    next
 		    
+		    thread1.AddUserInterfaceUpdate( new Pair( "ProgressMax", parentFolders.LastIndex+1 ) )
+		    
 		    
 		    
 		    // Add information
@@ -557,6 +1055,10 @@ End
 		    var CoreRulebooks(), Supplements(), UnearthedArcana(), Homebrew(), OtherCategories(), Uncategorized() as String
 		    
 		    for each folderparent as FolderItem in parentfolders
+		      thread1.AddUserInterfaceUpdate( new Pair( "Message", "Searching: " + folderparent.Name ) )
+		      'Count = Count +1
+		      'thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		      
 		      var core as new SourceCore( folderparent )
 		      cores.Add core
 		      
@@ -606,6 +1108,7 @@ End
 		      'lstSources.RowTagAt( lstSources.LastAddedRowIndex ) = core
 		    next
 		    
+		    thread1.AddUserInterfaceUpdate( new Pair( "Message", "Sorting information..." ) )
 		    
 		    // sort by publishers
 		    var publishers() as String
@@ -624,6 +1127,7 @@ End
 		    // Save sorted cores
 		    'CollectedCores = cores
 		    for each core as SourceCore in cores
+		      thread1.AddUserInterfaceUpdate( new Pair( "Message", "Adding cores: " + core.ParentFolder.Name ) )
 		      CollectedCores.Add core
 		    next
 		    
@@ -642,11 +1146,18 @@ End
 		    UnearthedArcana.Sort
 		    Uncategorized.Sort
 		    
+		    'var Count as Integer = CoreRulebooks.LastIndex+1 + Supplements.LastIndex+1 + OtherCategories.LastIndex+1 + Homebrew.LastIndex+1 + UnearthedArcana.LastIndex+1 + Uncategorized.LastIndex+1
+		    
+		    'thread1.AddUserInterfaceUpdate( new Pair( "ProgressMax", Count ) )
+		    
 		    for each category as String in CoreRulebooks
 		      unifiedCategories.Add category
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -659,6 +1170,9 @@ End
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -671,6 +1185,9 @@ End
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -683,6 +1200,9 @@ End
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -695,6 +1215,9 @@ End
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -709,6 +1232,9 @@ End
 		      
 		      var categoryCores() as SourceCore = CoresForCategory( category, sourcePath )
 		      for each core as SourceCore in categoryCores
+		        thread1.AddUserInterfaceUpdate( new Pair( "Message", "Loading: " + core.ParentFolder.Name ) )
+		        thread1.AddUserInterfaceUpdate( new Pair( "ProgressUpdate", 1 ) )
+		        
 		        for each xFile as FolderItem in core.XMLFiles
 		          cCompendium.LoadXMLFile xFile
 		        next
@@ -717,6 +1243,7 @@ End
 		    next
 		    
 		    
+		    thread1.AddUserInterfaceUpdate( new Pair( "Message", "Finished compiling the compendium!" ) )
 		    CompiledCompendium = cCompendium
 		    
 		  next
@@ -732,54 +1259,179 @@ End
 		Private CompiledCompendium As Compendium
 	#tag EndProperty
 
+	#tag Property, Flags = &h21
+		Private ContentSources() As String
+	#tag EndProperty
+
 
 #tag EndWindowCode
 
 #tag Events cvsBtnSpecies
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 1
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnClasses
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 2
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnBackground
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 3
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnEquipment
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 4
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnFeats
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 5
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnSpells
 	#tag Event
 		Sub Action()
-		  
+		  ppViewer.SelectedPanelIndex = 6
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsBtnCreatures
 	#tag Event
 		Sub Action()
+		  ppViewer.SelectedPanelIndex = 7
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events lblTitle
+	#tag Event
+		Sub Open()
+		  me.Visible = TargetMacOS
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cvsBtnReload
+	#tag Event
+		Sub Action()
+		  
+		  if Thread1.ThreadState = Thread.ThreadStates.NotRunning then
+		    ppViewer.SelectedPanelIndex = 0
+		    
+		    Redim CollectedCores( -1 )
+		    CompiledCompendium = new Compendium
+		    Redim ContentSources( -1 )
+		    
+		    cvsBtnReload.Enabled = False
+		    cvsBtnBackground.Enabled = False
+		    cvsBtnClasses.Enabled = False
+		    cvsBtnCreatures.Enabled = False
+		    cvsBtnEquipment.Enabled = False
+		    cvsBtnFeats.Enabled = False
+		    cvsBtnSpecies.Enabled = False
+		    cvsBtnSpells.Enabled = False
+		    
+		    Thread1.Start
+		  end if
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ppViewer
+	#tag Event
+		Sub Close()
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events lstObjects
+	#tag Event
+		Function PaintCellBackground(index as Integer, g As Graphics, row As Integer, column As Integer) As Boolean
+		  
+		  if me.SelectedRowIndex <> row then
+		    g.DrawAlternatingRows(row)
+		    Return True
+		  else
+		    g.DrawingColor = CommonModule.SelectionColor
+		    g.FillRect 0, 0, g.Width, g.Height
+		    Return True
+		  end if
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function PaintCellText(index as Integer, g as Graphics, row as Integer, column as Integer, x as Integer, y as Integer) As Boolean
+		  
+		  g.Bold = True
+		  g.DrawText me.CellTextAt( row, 0 ), 4, g.TextAscent + (g.Height/2) - (g.TextHeight/2) - (g.TextHeight/2) - 2
+		  g.DrawingColor = Color.DisabledTextColor
+		  'g.TextSize = 10
+		  g.Bold = False
+		  g.DrawText me.CellTextAt( row, 1 ).NthField("|", 1), 4, g.TextAscent + (g.Height/2) - (g.TextHeight/2) + (g.TextHeight/2) + 2
+		  
+		  Return True
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events cvsSplash
+	#tag Event
+		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		  'g.ScaleImage( TheArchive, me.Width, me.Height, 0, 0 )
+		  
+		  
+		  'if Source <> Nil and Source.CoverImageFile <> Nil then
+		  var CoverImage as Picture =  compendiumviewerbg 'TheArchive 'Source.CoverImageLarge
+		  var Factor as Double = Max( g.Width/CoverImage.Width, g.Height/CoverImage.Height )
+		  
+		  var NewWidth as Double = CoverImage.Width * Factor
+		  var NewHeight as Double = CoverImage.Height * Factor
+		  
+		  'var backgroundImage as new Picture(NewWidth, NewHeight)
+		  
+		  'CoverImage = ImagePlayEffectsLibrary.Blur( CoverImage, 3, ImagePlayEffectsLibrary.kBlurModeFast )
+		  'backgroundImage.Graphics.DrawPicture CoverImage, 0, 0, backgroundImage.Width, backgroundImage.Height,   0, CoverImage.Height, CoverImage.Width, CoverImage.Height
+		  
+		  'g.DrawPicture backgroundImage, 0, 0
+		  g.DrawPicture CoverImage, (g.Width/2) - (NewWidth/2), (g.Height/2) - (NewHeight/2), NewWidth, NewHeight,   0, 0, CoverImage.Width, CoverImage.Height
+		  'else
+		  'g.DrawingColor = CommonModule.HeaderStartColor
+		  'g.FillRectangle 0, 0, g.Width, g.Height
+		  'end if
+		  
+		  // Overlay Gradient
+		  'var Lightness as Integer = 0
+		  'if NOT IsDarkMode then
+		  'Lightness = 100
+		  'end if
+		  'g.DrawGradient( HSL( 0, 0, Lightness, 60 ), HSL( 0, 0, Lightness, 90 ),  0, 0, g.Width, g.Height )
+		  
+		  // Bottom Line
+		  'if IsDarkMode then
+		  'g.DrawingColor = &CFFFFFFAA
+		  'else
+		  'g.DrawingColor = &C000000AA
+		  'end if
+		  'g.DrawLine 0, me.Height-1, g.Width, me.Height-1
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events popSources
+	#tag Event
+		Sub Change()
 		  
 		End Sub
 	#tag EndEvent
@@ -801,14 +1453,35 @@ End
 		      lblMessage.Visible = False
 		      
 		      
-		      var species() as XMLNode = CompiledCompendium.Species
+		      BuildList( CompiledCompendium.Species, 0)
+		      BuildList( CompiledCompendium.Classes, 1)
+		      BuildList( CompiledCompendium.Backgrounds, 2)
+		      BuildList( CompiledCompendium.Items, 3)
+		      BuildList( CompiledCompendium.Feats, 4)
+		      BuildList( CompiledCompendium.Spells, 5)
+		      BuildList( CompiledCompendium.Creatures, 6)
 		      
-		      for each specie as XMLNode in species
-		        lstSpecies.AddRow specie.ValueOfNodeWithName("name")
-		      next
 		      
+		      cvsBtnReload.Enabled = True
+		      cvsBtnBackground.Enabled = True
+		      cvsBtnClasses.Enabled = True
+		      cvsBtnCreatures.Enabled = True
+		      cvsBtnEquipment.Enabled = True
+		      cvsBtnFeats.Enabled = True
+		      cvsBtnSpecies.Enabled = True
+		      cvsBtnSpells.Enabled = True
+		      
+		      ppViewer.SelectedPanelIndex = 1
 		    elseif data(index).Key(0).StringValue = "Message" then
 		      lblMessage.Text = data(0).Value( data(0).Key(0) )
+		      
+		    elseif data(index).Key(0).StringValue = "ProgressMax" then
+		      pgBar.MaximumValue = data(0).Value( data(0).Key(0) ).IntegerValue
+		      pgBar.Value = 0
+		      
+		    elseif data(index).Key(0).StringValue = "ProgressUpdate" then
+		      pgBar.Value = pgBar.Value +1
+		      
 		    else
 		      Break
 		    end if

@@ -1740,7 +1740,18 @@ End
 #tag Events areClasses
 	#tag Event
 		Sub ActionAdd()
-		  lstClasses.AddRow cbClass.Text
+		  
+		  
+		  if cbClass.Text.Contains(",") then
+		    var AddingClasses() as String = cbClass.Text.FormatTitle.SplitString(",")
+		    for each AddClass as String in AddingClasses
+		      lstClasses.AddRow AddClass
+		    next
+		  else
+		    lstClasses.AddRow cbClass.Text
+		  end if
+		  
+		  
 		  lstClasses.SelectedRowIndex = lstClasses.LastAddedRowIndex
 		  if NOT Keyboard.AsyncAltKey then
 		    cbClass.Text = ""
@@ -1834,6 +1845,7 @@ End
 	#tag Event
 		Sub Action()
 		  var c as new Clipboard
+		  lstClasses.DeleteAllRows
 		  
 		  var Title as string
 		  var Description as String
@@ -1890,19 +1902,38 @@ End
 		        
 		      elseif index < 5 and (lines(index).Match( "(\d+)(st|nd|rd|th).level", 1) <> "" or lines(index).Contains("cantrip")) then
 		        
-		        cRitual.FieldValue = lines(index).Contains("ritual")
-		        lines(index) = lines(index).Replace("(ritual)", "")
+		        var SchoolLevelLine as String = lines(index)
 		        
-		        if lines(index).Contains("cantrip") then
+		        // Is ritual?
+		        cRitual.FieldValue = SchoolLevelLine.Contains("ritual")
+		        SchoolLevelLine = SchoolLevelLine.Replace("(ritual)", "").Trim
+		        
+		        // Get the spell's level
+		        if SchoolLevelLine.Contains("cantrip") then
 		          level = "0"
-		          School = lines(index).NthField("cantrip", 2)
-		          if School = "" then
-		            School = lines(index).NthField("cantrip", 1)
-		          end if
+		          SchoolLevelLine = SchoolLevelLine.Replace("cantrip","").Trim
+		          'School = lines(index).NthField("cantrip", 2)
+		          'if School = "" then
+		          'School = lines(index).NthField("cantrip", 1)
+		          'end if
 		        else
-		          level = lines(index).Match( "(\d+)(st|nd|rd|th|I|l)-level", 1).Replace("I", "1").Replace("l", "1")
-		          School = lines(index).NthField("level", 2).Trim.Titlecase
+		          level = SchoolLevelLine.Match( "(\d+)(st|nd|rd|th|I|l)-level", 1).Replace("I", "1").Replace("l", "1")
+		          'lines(index).NthField("level", 2).Trim.Titlecase
+		          SchoolLevelLine = SchoolLevelLine.ReplaceAllRegEx( "(\d+)(st|nd|rd|th|I|l)-level", "").Trim
 		        end if
+		        
+		        // Match spell school.
+		        if School = "" then
+		          School = SchoolLevelLine.Match("(Abjuration|Conjuration|Divination|Enchantment|Evocation|Illusion|Necromancy|Transmutation)", 1).Titlecase
+		          SchoolLevelLine = SchoolLevelLine.Replace( School, "" ).Trim
+		        end if
+		        
+		        // Get optional classes if they are in this line.
+		        var optionClasses as String = SchoolLevelLine.Match("\((.*?)\)", 1)
+		        if optionClasses <> "" then
+		          Classes = optionClasses.FormatTitle.SplitString(",")
+		        end if
+		        
 		        
 		        lines.RemoveAt( index )
 		        
@@ -1962,6 +1993,16 @@ End
 		  Description = Description.ReplaceAllRegEx( "\n\n(\w+ \w+ \w+)\. (\w+)", "\n\n$1\: $2" )
 		  Description = Description.ReplaceAllRegEx( "\n\n(\w+ \w+ \w+ \w+)\. (\w+)", "\n\n$1\: $2" )
 		  
+		  // Add spell upgrade text
+		  var SpellIncrease as String = Description.Match("(This spell's .*? increases)", 1)
+		  if SpellIncrease <> "" and NOT Description.Contains("At Higher Levels") and NOT Description.Contains("Cantrip Upgrade") then
+		    if Level.Val > 0 then
+		      Description = Description.Replace( SpellIncrease, "At Higher Levels: " + SpellIncrease )
+		    elseif level.Val = 0 then
+		      Description = Description.Replace( SpellIncrease, "Cantrip Upgrade: " + SpellIncrease )
+		    end if
+		  end if
+		  
 		  'if Description.Contains( "At Higher Levels:" ) then
 		  'Description = Description.Replace( "At Higher Levels: ", "At Higher Levels:" + EndOfLine )
 		  'end if
@@ -1980,6 +2021,7 @@ End
 		    result = cDiceRolls.AddCalculation(False)
 		  wend
 		  
+		  cComponents.Reset
 		  cComponents.SetMultiTags( Components )
 		  cMaterials.Value = Materials
 		  
@@ -1993,6 +2035,10 @@ End
 		  
 		  
 		  cSpellSchool.Value = School 'TitleForMenuWithTag( cSpellSchool.BaseMenu, xValue )
+		  if School <> "" then
+		    lstClasses.AddRow "School: " + School
+		  end if
+		  
 		  if DnDArrays.SpellSchools.Contains( School ) then
 		    if School.StartsWith("E") then
 		      School = School.Left(2).Uppercase
@@ -2000,7 +2046,7 @@ End
 		      School = School.Left(1).Uppercase
 		    end if
 		    cSpellSchool.Tag = School
-		  else
+		  elseif School <> "" then
 		    cDescription.Value = "Type: " + School + EndOfLine + EndOfLine + Description
 		  end if
 		  
@@ -2008,6 +2054,17 @@ End
 		  'cSpellSchool.Value = School
 		  
 		  if Classes.LastIndex > -1 then
+		    
+		    // Convenience Lists
+		    if Range.Contains("Touch") then
+		      lstClasses.AddRow "Touch Spells"
+		    end if
+		    
+		    if cRitual.FieldValue = True then
+		      lstClasses.AddRow "Ritual Caster"
+		    end if
+		    
+		    // Spellcaster Lists
 		    for each currentClass as string in Classes
 		      lstClasses.AddRow currentClass
 		    next

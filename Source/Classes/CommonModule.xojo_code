@@ -47,6 +47,18 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function CalculateModifier(TheValue as String) As String
+		  var ModifierBonus as Double = ModifierBonus = Round( ( Val( TheValue ) - 10.1 ) / 2 )
+		  
+		  if ModifierBonus >= 0 then
+		    Return "+" + Str( ModifierBonus )
+		  else
+		    Return Str( ModifierBonus )
+		  end if
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function ComposeSource(xNode as XMLNode, SourceBook as String, PageNr as String, Category as String = "") As String
 		  var SourceString as String
 		  
@@ -252,13 +264,7 @@ Protected Module CommonModule
 		    end if
 		    
 		    spellname = spellname.ReplaceAll("*", "")
-		    
-		    spellname = spellname.Replace( " From ", " from " )
-		    spellname = spellname.Replace( " For ", " from " )
-		    spellname = spellname.Replace( " Of ", " of " )
-		    spellname = spellname.Replace( " Or ", " or " )
-		    spellname = spellname.Replace( " The ", " the " )
-		    spellname = spellname.Replace( " And ", " and " )
+		    spellname = FormatSpellname( spellname )
 		    
 		    individiualSpells(index) = spellname
 		  next
@@ -274,33 +280,23 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub FormatSpellname(ByRef SpellName as String)
-		  
-		  SpellName = spellName.Titlecase.Trim
-		  
-		  SpellName = SpellName.ReplaceAll(" From ", " from ")
-		  SpellName = SpellName.ReplaceAll(" For ", " for ")
-		  SpellName = SpellName.ReplaceAll(" Of ", " of ")
-		  SpellName = SpellName.ReplaceAll(" Or ", " or ")
-		  SpellName = SpellName.ReplaceAll(" The ", " the ")
-		  SpellName = SpellName.ReplaceAll(" And ", " and ")
-		  SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
-		  
-		  'return spellName
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Function FormatSpellname(SpellName as String) As String
 		  
 		  SpellName = spellName.Titlecase.Trim
 		  
-		  SpellName = SpellName.ReplaceAll(" From ", " from ")
-		  SpellName = SpellName.ReplaceAll(" For ", " for ")
+		  
+		  SpellName = SpellName.ReplaceAll(" A ", " a ")
+		  SpellName = SpellName.ReplaceAll(" An ", " an ")
 		  SpellName = SpellName.ReplaceAll(" Of ", " of ")
 		  SpellName = SpellName.ReplaceAll(" Or ", " or ")
-		  SpellName = SpellName.ReplaceAll(" The ", " the ")
+		  SpellName = SpellName.ReplaceAll(" To ", " to ")
 		  SpellName = SpellName.ReplaceAll(" And ", " and ")
+		  SpellName = SpellName.ReplaceAll(" For ", " for ")
+		  SpellName = SpellName.ReplaceAll(" The ", " the ")
+		  SpellName = SpellName.ReplaceAll(" From ", " from ")
+		  SpellName = SpellName.ReplaceAll(" With ", " with ")
+		  
+		  SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
 		  
 		  return SpellName
 		End Function
@@ -395,7 +391,9 @@ Protected Module CommonModule
 
 	#tag Method, Flags = &h0
 		Function FormatTitle(Extends title as String) As String
-		  Return title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ").ReplaceAll( " With ", " with " ).ReplaceAll( " Or ", " or " )
+		  Return FormatSpellname( title )
+		  
+		  'Return title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ").ReplaceAll( " With ", " with " ).ReplaceAll( " Or ", " or " )
 		End Function
 	#tag EndMethod
 
@@ -477,6 +475,56 @@ Protected Module CommonModule
 		    
 		    Return sourceString
 		  end if
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SourceFromXMLNode(xNode as XMLNode) As String()
+		  var xNodeText as String = xNode.ToString 'DescriptionFromNode( xNode )
+		  var MultiSources() as String
+		  
+		  if xNode <> Nil and xNodeText.Contains("Source:") then
+		    
+		    'var s as String = 
+		    
+		    var sourceString as String = xNodeText.Match("Source:\s(.*?)(<|\Z)", 1)
+		    
+		    
+		    // Simplify
+		    if sourceString.Contains(EndOfLine) then
+		      sourceString = sourceString.ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(13), " " ).ReplaceAll( chr(9), "" )
+		    end if
+		    
+		    // Split
+		    MultiSources() = sourceString.SplitString(",")
+		    
+		    if MultiSources.LastIndex > -1 then
+		      For index as Integer = 0 to MultiSources.LastIndex
+		        if MultiSources(index).Contains( " p. ") then
+		          MultiSources(index) = MultiSources(index).ReplaceAllRegEx( "( p. \d+)", "" ).ReplaceAll("&amp;", "&")
+		        end if
+		      Next
+		    end if
+		    
+		    
+		    // Remove pageNr
+		    'if sourceString.Contains( " p. " ) then
+		    'sourceString = sourceString.ReplaceAllRegEx( "( p. \d+)", "" )
+		    'end if
+		    
+		    'sourceString = sourceString.ReplaceAll("&amp;", "&")
+		    
+		    'var NrComma as Integer = val( sourceString.Middle( sourceString.IndexOf(",")-1, sourceString.IndexOf(",")-1 ) )
+		    'if OneSourceOnly and sourceString.Contains(",") and NrComma > -1 then
+		    'Return sourceString.NthField(",", sourceString.CountFields(",") ).Trim
+		    'else
+		    'Return sourceString.Trim
+		    'end if
+		    
+		  end if
+		  
+		  
+		  Return MultiSources
 		End Function
 	#tag EndMethod
 

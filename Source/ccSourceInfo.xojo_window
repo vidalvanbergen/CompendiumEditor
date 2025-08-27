@@ -237,7 +237,7 @@ End
 		  
 		  if TheSource <> Nil and TheSource.CoverImageFile <> Nil then ' coverImage <> Nil then
 		    var coverImage as Picture = TheSource.CoverImageMedium
-		    Dim Factor as Double = Min( g.Width/coverImage.Width, g.Height/coverImage.Height )
+		    Dim Factor as Double = Max( g.Width/coverImage.Width, g.Height/coverImage.Height )
 		    
 		    Dim NewWidth as Double = coverImage.Width * Factor
 		    Dim NewHeight as Double = coverImage.Height * Factor

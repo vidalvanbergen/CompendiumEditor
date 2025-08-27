@@ -362,7 +362,7 @@ End
 		    next
 		    
 		    // Combined attack
-		    if (Source.Match("plus \d+") <> "" or Source.Contains("Two-Handed")) and DamageDice.LastIndex > 0 then
+		    if (Source.Match("plus \d+") <> "" or Source.Match("damage and \d+") <> "" or Source.Contains("Two-Handed")) and DamageDice.LastIndex > 0 then
 		      
 		      var CombinedResult, CombinedResultTwoHanded as String
 		      

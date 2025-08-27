@@ -1467,6 +1467,8 @@ End
 		      className = className.Match( "class-(.*?)-", 1 )
 		      
 		      sample = "<" + type + "><name>" + className.Titlecase + "</name></" + type + ">"
+		    elseif type = "race" then
+		      sample = "<" + type + "><name>Unnamed species" + homebrew + "</name></" + type + ">"
 		    else
 		      sample = "<" + type + "><name>Unnamed " + type + homebrew + "</name></" + type + ">"
 		    end if

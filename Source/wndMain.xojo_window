@@ -156,7 +156,7 @@ Begin WindowPro wndMain
          Enabled         =   True
          Height          =   32
          iconColor       =   &c00000000
-         Image           =   845838335
+         Image           =   1744912383
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
          IsSelected      =   True
@@ -169,6 +169,73 @@ Begin WindowPro wndMain
          Pressed         =   False
          Scope           =   0
          TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Template        =   True
+         Tooltip         =   "Edit Source"
+         Top             =   10
+         Transparent     =   True
+         useCustomColor  =   False
+         Visible         =   False
+         Width           =   32
+      End
+      Begin Label lblTitle
+         AllowAutoDeactivate=   True
+         Bold            =   True
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   32.0
+         FontUnit        =   1
+         Height          =   32
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar$0"
+         Italic          =   False
+         Left            =   75
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   False
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Compendium Editor"
+         TextAlignment   =   0
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   10
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   680
+      End
+      Begin CanvasButton cvsbtnExperiment1
+         AllowAutoDeactivate=   True
+         AllowFocus      =   True
+         AllowFocusRing  =   True
+         AllowTabs       =   False
+         Backdrop        =   0
+         Enabled         =   True
+         Height          =   32
+         iconColor       =   &c00000000
+         Image           =   845838335
+         Index           =   -2147483648
+         InitialParent   =   "cvsToolbar$0"
+         IsSelected      =   True
+         Left            =   796
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Pressed         =   False
+         Scope           =   0
+         TabIndex        =   5
          TabPanelIndex   =   0
          TabStop         =   True
          Template        =   True
@@ -795,6 +862,25 @@ End
 	#tag EndEvent
 #tag EndEvents
 #tag Events cvsbtnExperiment
+	#tag Event
+		Sub Action()
+		  wndCompendiumViewer.Show
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Opening()
+		  me.Visible = DebugBuild
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events lblTitle
+	#tag Event
+		Sub Open()
+		  me.Visible = TargetMacOS
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cvsbtnExperiment1
 	#tag Event
 		Sub Action()
 		  wndCompendiumViewer.Show

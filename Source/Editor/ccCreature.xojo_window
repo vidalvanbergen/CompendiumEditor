@@ -549,6 +549,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   150
+      Begin Label lblModCON
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityConstitution"
+         Italic          =   False
+         Left            =   616
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   428
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextFieldVertical cAbilityDexterity
       AllowAutoDeactivate=   True
@@ -585,6 +620,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   152
+      Begin Label lblModDEX
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityDexterity"
+         Italic          =   False
+         Left            =   454
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   428
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextFieldVertical cAbilityStrength
       AllowAutoDeactivate=   True
@@ -621,6 +691,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   152
+      Begin Label lblModSTR
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityStrength"
+         Italic          =   False
+         Left            =   290
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   428
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextFieldVertical cAbilityIntelligence
       AllowAutoDeactivate=   True
@@ -657,6 +762,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   152
+      Begin Label lblModINT
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityIntelligence"
+         Italic          =   False
+         Left            =   290
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   484
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextFieldVertical cAbilityWisdom
       AllowAutoDeactivate=   True
@@ -693,6 +833,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   152
+      Begin Label lblModWIS
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityWisdom"
+         Italic          =   False
+         Left            =   454
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   484
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextFieldVertical cAbilityCharisma
       AllowAutoDeactivate=   True
@@ -729,6 +904,41 @@ Begin ContainerControl ccCreature
       Value           =   ""
       Visible         =   True
       Width           =   150
+      Begin Label lblModCHA
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cAbilityCharisma"
+         Italic          =   False
+         Left            =   616
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   2
+         Selectable      =   True
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "+0"
+         TextAlignment   =   3
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   484
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   24
+      End
    End
    Begin ccEditorTextField cSavingThrows
       AllowAutoDeactivate=   True
@@ -2478,15 +2688,15 @@ End
 		  me.BaseMenu.Append new MenuItem( "Any Chaotic Alignment" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Lawful Good" )
-		  me.BaseMenu.Append new MenuItem( "Chaotic Good" )
-		  me.BaseMenu.Append new MenuItem( "Neutral Good" )
-		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Lawful Neutral" )
-		  me.BaseMenu.Append new MenuItem( "Chaotic Neutral" )
-		  me.BaseMenu.Append new MenuItem( "Neutral" )
-		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Lawful Evil" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Chaotic Good" )
+		  me.BaseMenu.Append new MenuItem( "Chaotic Neutral" )
 		  me.BaseMenu.Append new MenuItem( "Chaotic Evil" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Neutral Good" )
+		  me.BaseMenu.Append new MenuItem( "Neutral" )
 		  me.BaseMenu.Append new MenuItem( "Neutral Evil" )
 		End Sub
 	#tag EndEvent
@@ -2613,6 +2823,11 @@ End
 		  next
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModCON.Text = CalculateModifier( TheValue )
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cAbilityDexterity
 	#tag Event
@@ -2624,6 +2839,11 @@ End
 		  for index as Integer = 0 to 99
 		    me.BaseMenu.Append new MenuItem( str(index) )
 		  next
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModDEX.Text = CalculateModifier( TheValue )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2639,6 +2859,11 @@ End
 		  next
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModSTR.Text = CalculateModifier( TheValue )
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cAbilityIntelligence
 	#tag Event
@@ -2650,6 +2875,11 @@ End
 		  for index as Integer = 0 to 99
 		    me.BaseMenu.Append new MenuItem( str(index) )
 		  next
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModINT.Text = CalculateModifier( TheValue )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2665,6 +2895,11 @@ End
 		  next
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModWIS.Text = CalculateModifier( TheValue )
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cAbilityCharisma
 	#tag Event
@@ -2676,6 +2911,11 @@ End
 		  for index as Integer = 0 to 99
 		    me.BaseMenu.Append new MenuItem( str(index) )
 		  next
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  lblModCHA.Text = CalculateModifier( TheValue )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2721,7 +2961,7 @@ End
 #tag Events cDamageVulnerabilities
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Vulnerabilities:"
+		  me.FieldName = "Damage Vulnerabilities:"
 		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
 		  me.UseLowercase = True
@@ -2749,7 +2989,7 @@ End
 #tag Events cDamageResistance
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Resistances:"
+		  me.FieldName = "Damage Resistances:"
 		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
 		  me.UseLowercase = True

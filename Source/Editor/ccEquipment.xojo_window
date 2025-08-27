@@ -1112,7 +1112,7 @@ End
 		    end if
 		    
 		    // Range
-		    if cRangeShort.Value <> "" and cRangeLong.Value <> "" then
+		    if cRangeShort.Value <> "" then 'or cRangeLong.Value <> "" then
 		      var range as String = cRangeShort.Value + "/" + cRangeLong.Value
 		      xItem.AppendSimpleChild( "range", range )
 		    end if

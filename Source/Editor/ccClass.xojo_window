@@ -2091,6 +2091,8 @@ End
 		  var c as new Compendium
 		  var archetype as String = c.GetClassArchetype( xNode )
 		  
+		  var className as String = xNode.ValueOfNodeWithName("name")
+		  
 		  if archetype = "" then
 		    for index as Integer = 0 to xSubclasses.LastIndex
 		      archetype = c.GetClassArchetype( xSubclasses(index) )
@@ -2111,6 +2113,7 @@ End
 		  
 		  TemplateMenu.AddMenu new MenuItem( archetype + ": " + subclassName )
 		  TemplateMenu.AddMenu new MenuItem( subclassName + ": FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( className + " subclass: FeatureName" )
 		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + subclassName + ")" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( subclassName + " Feature" )

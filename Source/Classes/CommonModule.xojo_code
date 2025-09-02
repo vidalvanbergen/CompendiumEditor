@@ -48,7 +48,7 @@ Protected Module CommonModule
 
 	#tag Method, Flags = &h0
 		Function CalculateModifier(TheValue as String) As String
-		  var ModifierBonus as Double = ModifierBonus = Round( ( Val( TheValue ) - 10.1 ) / 2 )
+		  var ModifierBonus as Double = Round( ( Val( TheValue ) - 10.1 ) / 2 )
 		  
 		  if ModifierBonus >= 0 then
 		    Return "+" + Str( ModifierBonus )

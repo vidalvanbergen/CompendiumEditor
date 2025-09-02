@@ -562,7 +562,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityConstitution"
          Italic          =   False
-         Left            =   616
+         Left            =   628
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -582,7 +582,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextFieldVertical cAbilityDexterity
@@ -633,7 +633,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityDexterity"
          Italic          =   False
-         Left            =   454
+         Left            =   466
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -653,7 +653,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextFieldVertical cAbilityStrength
@@ -704,7 +704,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityStrength"
          Italic          =   False
-         Left            =   290
+         Left            =   302
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -724,7 +724,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextFieldVertical cAbilityIntelligence
@@ -775,7 +775,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityIntelligence"
          Italic          =   False
-         Left            =   290
+         Left            =   302
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -795,7 +795,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextFieldVertical cAbilityWisdom
@@ -846,7 +846,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityWisdom"
          Italic          =   False
-         Left            =   454
+         Left            =   466
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -866,7 +866,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextFieldVertical cAbilityCharisma
@@ -917,7 +917,7 @@ Begin ContainerControl ccCreature
          Index           =   -2147483648
          InitialParent   =   "cAbilityCharisma"
          Italic          =   False
-         Left            =   616
+         Left            =   628
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -937,7 +937,7 @@ Begin ContainerControl ccCreature
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   24
+         Width           =   28
       End
    End
    Begin ccEditorTextField cSavingThrows
@@ -2825,7 +2825,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModCON.Text = CalculateModifier( TheValue )
+		  lblModCON.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2843,7 +2843,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModDEX.Text = CalculateModifier( TheValue )
+		  lblModDEX.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2861,7 +2861,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModSTR.Text = CalculateModifier( TheValue )
+		  lblModSTR.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2879,7 +2879,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModINT.Text = CalculateModifier( TheValue )
+		  lblModINT.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2897,7 +2897,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModWIS.Text = CalculateModifier( TheValue )
+		  lblModWIS.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2915,7 +2915,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
-		  lblModCHA.Text = CalculateModifier( TheValue )
+		  lblModCHA.Text = "(" + CalculateModifier( TheValue ) + ")"
 		End Sub
 	#tag EndEvent
 #tag EndEvents

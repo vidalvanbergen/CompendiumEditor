@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "W2yAUJkmLGk=",
+            "Security Token": "3VtEOpLnuIY=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -37,7 +37,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "wUfWpILPtZw=",
+            "Security Token": "4eSHOWaaqq0=",
             "MacBinary": {
                 "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -62,7 +62,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.2.0",
-            "Security Token": "4fIOGBCeQ/c=",
+            "Security Token": "eifh8FBTukg=",
             "MacBinary": {
                 "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
@@ -87,7 +87,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.3.0",
-            "Security Token": "GHZq/YdgVk0=",
+            "Security Token": "XgVC8yJQB5M=",
             "MacBinary": {
                 "Hash": "92BB2587EF0EDB1B524E7768962064E3",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_MacOS.dmg"
@@ -112,7 +112,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.4.0",
-            "Security Token": "XS+iMb4Vwao=",
+            "Security Token": "355Jb4GjoHY=",
             "MacBinary": {
                 "Hash": "55F927C914C12E58587E59AE2178D02F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_MacOS.dmg"
@@ -125,6 +125,31 @@
             "LinuxBinary64bit": {
                 "Hash": "0BCD5F8D3BF883DEFD8884C891E3896B",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_Linux64.zip",
+                "ExecutableName": "Compendium Editor"
+            }
+        },
+        {
+            "AppName": "Compendium Editor",
+            "ImageScale": 1,
+            "ImageURL": "",
+            "MinimumRequiredVersion": "",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.5.0.html\n\n<h1>What’s new in Compendium Editor 1.5</h1>\n\n    <ul class=\"update\">\n      <li class=\"new\">Added modifier calculation for creature stats.</li>\n      <li class=\"new\">Added additional template/default options to several fields.</li>\n      <li class=\"dif\">Improved diceroll detection</li>\n      <li class=\"dif\">Improved clipboard import.</li>\n      <li class=\"dif\">Improved imported title and spell names formatting.</li>\n      <li class=\"fix\">Other changes and fixes.</li>\n    </ul>",
+            "RequiresPayment": false,
+            "UseTransparency": true,
+            "Version": "1.5.0",
+            "Security Token": "76IWINx3UZ4=",
+            "MacBinary": {
+                "Hash": "A7BB866FE01A292A06E19C64116F0D63",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_MacOS.dmg"
+            },
+            "WindowsBinary64bit": {
+                "Hash": "DEE10122D4BA4262C86B85FF76F0F881",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_Win64.zip",
+                "ExecutableName": "Compendium Editor.exe"
+            },
+            "LinuxBinary64bit": {
+                "Hash": "CB6B978BF1436612F082D2422929281E",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_Linux64.zip",
                 "ExecutableName": "Compendium Editor"
             }
         }

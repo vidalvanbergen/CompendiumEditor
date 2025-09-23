@@ -1236,7 +1236,7 @@ End
 		          var xModifier as XMLNode = xSpell.AppendNewChild( "modifier" )
 		          
 		          xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
-		          xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim )
+		          xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ).Lowercase.Trim )
 		        next
 		      end if
 		      

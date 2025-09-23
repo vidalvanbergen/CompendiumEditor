@@ -1135,7 +1135,7 @@ End
 		      var xModifier as XMLNode = xItem.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
-		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim.Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ) )
+		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ).Lowercase.Trim )
 		    next
 		  end if
 		  
@@ -1631,7 +1631,6 @@ End
 		  me.BaseMenu.Append new MenuItem( "modern" )
 		  me.BaseMenu.Append new MenuItem( "futuristic" )
 		  
-		  me.BaseMenu.Append new MenuItem( "-" )
 		  // Light Armor
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "leather armor" )

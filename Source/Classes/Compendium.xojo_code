@@ -640,6 +640,87 @@ Protected Class Compendium
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Shared Function GetSources(xNodes() as XMLNode = Nil) As String()
+		  
+		  // If no nodes provided, use all available nodes.
+		  if xNodes = Nil then
+		    
+		    'if me.Backgrounds <> Nil and me.Backgrounds.Count > 0 then
+		    'for each xNode as XMLNode in Backgrounds
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Classes <> Nil and Classes.Count > 0 then
+		    'for each xNode as XMLNode in Classes
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Creatures <> Nil and Creatures.Count > 0 then
+		    'for each xNode as XMLNode in Creatures
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Feats <> Nil and Feats.Count > 0 then
+		    'for each xNode as XMLNode in Feats
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Items <> Nil and Items.Count > 0 then
+		    'for each xNode as XMLNode in Items
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Species <> Nil and Species.Count > 0 then
+		    'for each xNode as XMLNode in Species
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		    '
+		    'if Spells <> Nil and Spells.Count > 0 then
+		    'for each xNode as XMLNode in Spells
+		    'xNodes.Add xNode
+		    'next
+		    'end if
+		  end if
+		  
+		  
+		  
+		  var collectedSources() as String
+		  
+		  for each xNode as XMLNode in xNodes
+		    
+		    var multisources() as String
+		    
+		    Select case xNode.Name
+		      
+		    case "background", "monster", "feat", "item", "race", "spell"
+		      multisources = SourceFromXMLNode( xNode )
+		      
+		    case "class"
+		      // #TODO
+		      
+		    End Select
+		    
+		    
+		    for each source as String in multisources
+		      if NOT collectedSources.Contains( source ) then
+		        collectedSources.Add source
+		      end if
+		    next
+		    
+		  next
+		  
+		  'collectedSources.Sort
+		  Return collectedSources
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function GetSpellsClassFeatures() As XMLNode()
 		  
 		  var fullSpells() as XMLNode

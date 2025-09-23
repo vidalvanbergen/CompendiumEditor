@@ -221,6 +221,65 @@ Protected Module RegExExtensions
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function MatchEverything(extends Source as String, Pattern as String) As String()
+		  #pragma DisableBackgroundTasks
+		  #If NOT DebugBuild Then
+		    #pragma DisableBoundsChecking
+		    #pragma NilObjectChecking False
+		    #pragma StackOverflowChecking False
+		  #EndIf
+		  
+		  dim rg as New RegEx
+		  dim MyMatch as RegExMatch
+		  
+		  if pattern = "" or source = "" then
+		    Return Nil
+		  end if
+		  
+		  rg.Options.TreatTargetAsOneLine = True
+		  rg.Options.DotMatchAll = True
+		  
+		  rg.SearchPattern = Pattern
+		  rg.ReplacementPattern = ""
+		  
+		  Dim Results() as String
+		  
+		  // Pop up all matches one by one
+		  'Try
+		  MyMatch = rg.Search( Source )
+		  'Catch Error as RegExException
+		  '#If DebugBuild Then Log( Error.message )
+		  'Return array("")
+		  'End Try
+		  
+		  While MyMatch <> Nil
+		    '#If DebugBuild Then
+		    'Dim Debug() as String
+		    '
+		    For n as Integer = 0 to MyMatch.SubExpressionCount -1
+		      Results.Append Trim( MyMatch.SubExpressionString(n) )
+		    Next
+		    '
+		    'Break
+		    '#EndIf
+		    
+		    'if MyMatch.SubExpressionCount-1 >= SubString then
+		    'Results.Append Trim( MyMatch.SubExpressionString( SubString ) )
+		    'else
+		    'Results.Append Trim( MyMatch.SubExpressionString( 0 ) )
+		    'end if
+		    
+		    Source = rg.Replace( Source )
+		    MyMatch = rg.Search()
+		  Wend
+		  
+		  rg = Nil
+		  
+		  Return Results
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function RemoveLinks(Extends source as String) As String
 		  Return source.ReplaceAllRegEx( "<a.*?>|<\/a>" )
 		End Function

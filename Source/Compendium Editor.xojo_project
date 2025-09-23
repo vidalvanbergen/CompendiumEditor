@@ -798,6 +798,7 @@ MultiImage=cv_background;Images/CompendiumViewer/cv_background.xojo_image;&h0000
 MultiImage=cv_banner;Images/CompendiumViewer/cv_banner.xojo_image;&h000000001FD51FFF;&h0000000001D767FF;false
 MultiImage=cv_title;Images/CompendiumViewer/cv_title.xojo_image;&h0000000037E8FFFF;&h0000000001D767FF;false
 Window=ccSourceContent;Editor/EditorClasses/ccSourceContent.xojo_window;&h0000000079045FFF;&h000000004A073FFF;false
+Module=ViComboBox;Libraries/Vitalis Libraries/ViComboBox.xojo_code;&h000000001EFF9FFF;&h000000007DD58FFF;false
 DefaultWindow=wndMain
 AppMenuBar=MainMenubar
 MajorVersion=1

@@ -10,7 +10,7 @@ Begin ContainerControl ccEquipment
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1423
+   Height          =   1551
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -720,7 +720,7 @@ Begin ContainerControl ccEquipment
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   877
+      Height          =   1005
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -795,7 +795,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas."
-         Top             =   972
+         Top             =   1100
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -825,12 +825,12 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-         Top             =   1142
+         Top             =   1270
          Transparent     =   True
          Visible         =   True
          Width           =   660
       End
-      Begin ccEditorTextField cSource
+      Begin ccSourceContent ccSourceBox
          AllowAutoDeactivate=   True
          AllowFocus      =   False
          AllowFocusRing  =   False
@@ -840,31 +840,23 @@ Begin ContainerControl ccEquipment
          DoubleBuffer    =   False
          Enabled         =   True
          EraseBackground =   True
-         FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   150
          Index           =   -2147483648
          InitialParent   =   "cvsPlacard"
-         IsPrefixedNumber=   False
          Left            =   20
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   1
+         TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "The name of the source material and a page number this item came from. (e.g. Player's Handbook p. 128)"
+         Tooltip         =   ""
          Top             =   938
          Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
          Visible         =   True
          Width           =   660
       End
@@ -1012,6 +1004,44 @@ Begin ContainerControl ccEquipment
       Visible         =   True
       Width           =   24
    End
+   Begin ccEditorTextField cSourceOLD
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   741
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "The name of the source material and a page number this item came from. (e.g. Player's Handbook p. 128)"
+      Top             =   894
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
 End
 #tag EndWindow
 
@@ -1121,11 +1151,8 @@ End
 		  
 		  
 		  // Description
-		  'if cDescription.Value <> "" then
-		  SetDescription( xItem, cDescription.Value, cSource.Value )
-		  'elseif cSource.Value <> "" then
-		  'xItem.AppendSimpleChild( "text", "Source:" + chr(9) + cSource.Value )
-		  'end if
+		  SetDescription( xItem, cDescription.Value, ccSourceBox.GetSources ) 'cSource.Value )
+		  
 		  
 		  // Modifiers
 		  var lst as Listbox = cModifiers.lstModifiers
@@ -1355,15 +1382,22 @@ End
 		      var sourceString as String = SourceFromDescription( cDescription.Value ).ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(9), "" ).Trim
 		      
 		      if NOT TemplateNode then
-		        cSource.Value = sourceString
+		        'cSource.Value = sourceString
+		        ccSourceBox.SetSources( sourceString )
 		      elseif TemplateNode then
 		        
-		        if cSource.Value = "" then
-		          cSource.Value = sourceString
+		        if ccSourceBox.GetSources.LastIndex = -1 then
+		          ccSourceBox.SetSources( sourceString )
 		        else
-		          var aaaoriginalvalue as String = cSource.Value
-		          cSource.Value = cSource.Value + ", " + sourceString
+		          ccSourceBox.AddSources( sourceString )
 		        end if
+		        
+		        'if cSource.Value = "" then
+		        'cSource.Value = sourceString
+		        'else
+		        'var aaaoriginalvalue as String = cSource.Value
+		        'cSource.Value = cSource.Value + ", " + sourceString
+		        'end if
 		      end if
 		      
 		      cDescription.Value = DescriptionWithoutSource( cDescription.Value )
@@ -1401,7 +1435,8 @@ End
 		  
 		  cDescription.Reset
 		  if not IsTemplate then
-		    cSource.Reset
+		    'cSource.Reset
+		    ccSourceBox.Reset
 		  end if
 		  
 		  cModifiers.Reset
@@ -1425,16 +1460,21 @@ End
 		  
 		  LoadXML( TheNode )
 		  
-		  if cSource.Value = "" then
-		    cSource.Value = Source
+		  if ccSourceBox.GetSources.LastIndex = -1 then
+		    ccSourceBox.SetSources( source )
 		  end if
-		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function SourcePageNr() As String
-		  Return cSource.Value.Match(" p. (\d+)", 1)
+		  
+		  var sources() as String = ccSourceBox.GetSources
+		  if sources.LastIndex > -1 then
+		    Return sources(0).Match(" p. (\d+)", 1)
+		  end if
+		  
+		  Return ""
 		End Function
 	#tag EndMethod
 
@@ -1984,14 +2024,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode ccEditorTextField.Mode.Textfield
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events popBaseItems
 	#tag Event
 		Sub Open()
@@ -2202,6 +2234,14 @@ End
 		  'me.BaseMenu.Append new MenuItem("Potion", "P")
 		  'me.BaseMenu.Append new MenuItem("Scroll", "SC")
 		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSourceOLD
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Source:"
+		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

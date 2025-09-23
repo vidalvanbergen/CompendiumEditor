@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1140
+   Height          =   1258
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -241,7 +241,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   606
+      Top             =   734
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -313,47 +313,9 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   258
+      Top             =   386
       Transparent     =   True
       UseMode         =   ""
-      Visible         =   True
-      Width           =   660
-   End
-   Begin ccEditorTextField cSource
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   ""
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      IsPrefixedNumber=   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   8
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   ""
-      Top             =   224
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
       Visible         =   True
       Width           =   660
    End
@@ -388,7 +350,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances. (Unofficial)"
-      Top             =   1020
+      Top             =   1148
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -426,7 +388,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   949
+      Top             =   1077
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -464,7 +426,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   881
+      Top             =   1009
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -502,7 +464,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   915
+      Top             =   1043
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -546,7 +508,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1017
+      Top             =   1145
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -590,7 +552,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   946
+      Top             =   1074
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -634,7 +596,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   912
+      Top             =   1040
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -678,7 +640,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   878
+      Top             =   1006
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -716,7 +678,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage vulnerabilities."
-      Top             =   983
+      Top             =   1111
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -754,7 +716,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1088
+      Top             =   1216
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -792,7 +754,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage immunities."
-      Top             =   1054
+      Top             =   1182
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -836,7 +798,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   980
+      Top             =   1108
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -880,7 +842,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1051
+      Top             =   1179
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -924,12 +886,42 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1085
+      Top             =   1213
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   24
+   End
+   Begin ccSourceContent ccSourceBox
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   150
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   23
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   224
+      Transparent     =   True
+      Visible         =   True
+      Width           =   660
    End
 End
 #tag EndWindow
@@ -942,7 +934,7 @@ End
 		  baseMenu.Text = "Templates"
 		  
 		  //
-		  baseMenu.AddMenu new MenuItem( "Description", "template:" + "Source:" + chr(9) + cSource.Value )
+		  baseMenu.AddMenu new MenuItem( "Description", "template:" + "Source:" + chr(9) + ccSourceBox.GetSourcesMerged )
 		  
 		  // Ability Score Increases
 		  var AbilityScoreIncreases as String = "Increase one ability score by 2 and increase a different score by 1, or increase three different scores by 1."
@@ -1076,8 +1068,8 @@ End
 		      var xChild as XMLNode = cTraits.lstTraits.RowTagAt( row )
 		      
 		      // Add page source to first trait
-		      if row = 0 and cSource.Value <> "" then 'NOT xChild.ToString.Contains("Source:") and cSource.Value <> "" then
-		        AddSourceTo( xChild, cSource.Value )
+		      if row = 0 and ccSourceBox.GetSources.LastIndex > -1 then 'NOT xChild.ToString.Contains("Source:") and cSource.Value <> "" then
+		        AddSourceTo( xChild, ccSourceBox.GetSources )
 		      end if
 		      
 		      xSpecies.AppendChildCopy( xChild )
@@ -1195,7 +1187,7 @@ End
 		          
 		          var description as String = xChild.ToString
 		          if description.Contains("source:") then
-		            cSource.Value = SourceFrom( xChild )
+		            ccSourceBox.SetSources( SourceFrom( xChild ) )
 		          end if
 		          
 		        case "modifier"
@@ -1227,6 +1219,7 @@ End
 		  cSize.Reset
 		  cSpeed.Reset
 		  cAbility.Reset
+		  ccSourceBox.Reset
 		  
 		  cModifiers.Reset
 		  cTraits.Reset
@@ -1251,13 +1244,11 @@ End
 		  
 		  LoadXML( TheNode )
 		  
-		  if cSource.Value = "" then
-		    cSource.Value = Source
+		  if ccSourceBox.GetSources.LastIndex = -1 then
+		    ccSourceBox.SetSources( source )
 		  end if
 		  
 		  
-		  
-		  'var categorieOptions() as String = 
 		  cTraits.SetCategories( Array( "", "Description", "Species", "Subspecies" ) )
 		  'cTraits.SetCommonNames( Array("Description", "Ability Score Increases", "Age", "Alignment", "Size", "Creature Type", "-", "Darkvision", "Superior Darkvision", "Light Sensitivity", "-", "Languages" ) )
 		  cTraits.TemplateMenu = BuildTemplateMenu
@@ -1266,7 +1257,13 @@ End
 
 	#tag Method, Flags = &h0
 		Function SourcePageNr() As String
-		  Return cSource.Value.Match(" p. (\d+)", 1)
+		  
+		  var sources() as String = ccSourceBox.GetSources
+		  if sources.LastIndex > -1 then
+		    Return sources(0).Match(" p. (\d+)", 1)
+		  end if
+		  
+		  Return ""
 		End Function
 	#tag EndMethod
 
@@ -1357,14 +1354,6 @@ End
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Traits:"
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

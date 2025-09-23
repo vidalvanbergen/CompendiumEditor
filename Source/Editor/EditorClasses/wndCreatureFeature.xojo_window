@@ -342,7 +342,8 @@ End
 		  end if
 		  
 		  // Description
-		  SetDescription( xNode, cDescription.Value, "" )
+		  var NoSources() as String
+		  SetDescription( xNode, cDescription.Value, NoSources )
 		  
 		  // Attack rolls
 		  cAttackRolls.AddDiceRollsTo( xNode )

@@ -1,7 +1,7 @@
 #tag Module
 Protected Module XMLModule
 	#tag Method, Flags = &h0
-		Sub AddSourceTo(xParent as XMLNode, Source as String)
+		Sub AddSourceTo(xParent as XMLNode, Sources() as String)
 		  var descriptionLines() as String
 		  
 		  var xChildren() as XMLNode = xParent.Children
@@ -35,7 +35,7 @@ Protected Module XMLModule
 		    if xChildren(index).Name <> "text" then
 		      xParent.AppendChildCopy( xChildren(index) )
 		    elseif NOT containsDescription then
-		      SetDescription( xParent, Description, Source )
+		      SetDescription( xParent, Description, Sources )
 		      
 		      containsDescription = True
 		    end if
@@ -188,7 +188,72 @@ Protected Module XMLModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub SetDescription(ByRef xNode as XMLNode, Description as String, Source as String, type as string = "text")
+		Sub SetDescription(ByRef xNode as XMLNode, Description as String, Sources() as String, type as string = "text")
+		  
+		  
+		  
+		  // MultiText Tags
+		  var MultiTextTags as Boolean = AppSettings.Prefs.Value("DescriptionMultiTextTags", False)
+		  var descriptionLines() as String = Description.Split( EndOfLine )
+		  
+		  // Multiline Source
+		  var Source as String
+		  if Sources <> Nil and Sources.LastIndex > -1 then
+		    
+		    // Multiline Source
+		    var MultilineSource as Boolean = AppPrefs.SourceMultiline 'AppSettings.Prefs.Value("SourceMultiline", True)
+		    if MultilineSource then
+		      Source = StringFromArray( Sources, EndOfLine + chr(9) + chr(9) )
+		      'if Source.Contains(" p. " then
+		      'Source = Source.ReplaceAllRegEx("p\. (.*?), (\w+)", "p. $1,\n\t\t$2")
+		      'else
+		      'Source = Source.ReplaceAllRegEx( "(\w+), (\w+)", "$1,\n\t\t$2" )
+		      'end if
+		    Else
+		      // Single Line Source
+		      Source = StringFromArray( Sources, ", " )
+		      'Source = source.ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(13), " " ).ReplaceAll( chr(9), "" )
+		    end if
+		    
+		    if descriptionLines.LastIndex > -1 then
+		      
+		      // Add Source to description
+		      var linespacing as String = EndOfLine
+		      if ( NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Proficiency:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Found on:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Notes:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Stat Block Origin:" )  ) or descriptionLines( descriptionLines.LastIndex ).StartsWith( chr(9) ) then
+		        linespacing = EndOfLine + EndOfLine
+		      end if
+		      
+		      Description = Description + linespacing + "Source:" + chr(9) + Source
+		    else
+		      
+		      Description = Description + "Source:" + chr(9) + Source
+		    end if
+		  end if
+		  
+		  
+		  // Add to xNode
+		  if MultiTextTags then 'and type = "text" then
+		    descriptionLines = Description.Split( EndOfLine )
+		    
+		    for each DescriptionText as string in descriptionLines
+		      
+		      if DescriptionText = "" then
+		        var xLeaf as XMLNode = xNode.AppendNewChild( type ) // <text/> or <description/>
+		      else
+		        xNode.AppendSimpleChild( type, DescriptionText )
+		      end if
+		      
+		    next
+		    
+		  else
+		    xNode.AppendSimpleChild( type, Description )
+		    
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub SetDescriptionOLD(ByRef xNode as XMLNode, Description as String, Source as String, type as string = "text")
 		  
 		  
 		  

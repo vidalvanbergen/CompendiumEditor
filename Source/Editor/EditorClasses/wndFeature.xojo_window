@@ -10,7 +10,7 @@ Begin Window wndFeature
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   1006
+   Height          =   1134
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -125,7 +125,7 @@ Begin Window wndFeature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
-      Top             =   488
+      Top             =   616
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -163,7 +163,7 @@ Begin Window wndFeature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-      Top             =   522
+      Top             =   650
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -195,7 +195,7 @@ Begin Window wndFeature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   556
+      Top             =   684
       Transparent     =   True
       Visible         =   True
       Width           =   560
@@ -356,44 +356,6 @@ Begin Window wndFeature
          Width           =   200
       End
    End
-   Begin ccEditorTextField cSource
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   "Name:"
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      IsPrefixedNumber=   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   "The name of the source material and a page number this background came from. (e.g. Player's Handbook p. 128)"
-      Top             =   454
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
-      Visible         =   True
-      Width           =   560
-   End
    Begin BevelButton bvlClipboard
       AllowAutoDeactivate=   True
       AllowFocus      =   True
@@ -463,7 +425,37 @@ Begin Window wndFeature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   828
+      Top             =   956
+      Transparent     =   True
+      Visible         =   True
+      Width           =   560
+   End
+   Begin ccSourceContent ccSourceBox
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   150
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   454
       Transparent     =   True
       Visible         =   True
       Width           =   560
@@ -508,7 +500,7 @@ End
 		  // Name
 		  xNode.AppendSimpleChild( "name", cName.Value )
 		  
-		  SetDescription( xNode, cDescription.Value, cSource.Value )
+		  SetDescription( xNode, cDescription.Value, ccSourceBox.GetSources )
 		  
 		  // Proficiency
 		  if cProficiency.Value <> "" then
@@ -692,7 +684,7 @@ End
 		    var descriptionText as String = String.FromArray( Description, EndOfLine )
 		    
 		    if descriptionText <> "" then
-		      cSource.Value = SourceFromDescription( descriptionText )
+		      ccSourceBox.SetSources( SourceFromDescription( descriptionText ) )
 		      descriptionText = DescriptionWithoutSource( descriptionText )
 		    end if
 		    
@@ -817,14 +809,6 @@ End
 	#tag Event
 		Sub Action()
 		  self.Close
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

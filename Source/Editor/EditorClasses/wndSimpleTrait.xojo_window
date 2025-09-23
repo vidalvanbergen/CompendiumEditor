@@ -261,7 +261,7 @@ End
 		  xNode.AppendSimpleChild( "name", cName.Value )
 		  
 		  // Description 
-		  SetDescription( xNode, cDescription.Value, "" )
+		  SetDescription( xNode, cDescription.Value, Nil )
 		End Sub
 	#tag EndMethod
 

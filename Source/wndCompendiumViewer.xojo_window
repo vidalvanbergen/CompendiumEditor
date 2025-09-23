@@ -364,7 +364,7 @@ Begin WindowPro wndCompendiumViewer
       Tooltip         =   ""
       Top             =   52
       Transparent     =   False
-      Value           =   7
+      Value           =   4
       Visible         =   True
       Width           =   1024
       Begin DesktopListBox lstObjects
@@ -4307,6 +4307,7 @@ End
 		    
 		    popTags(index).AddRowWithTagAndPicture cleanedNameBrew, tag
 		  next
+		  
 		  
 		End Sub
 	#tag EndMethod

@@ -10,7 +10,7 @@ Begin ContainerControl ccSpell
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1398
+   Height          =   1526
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -72,7 +72,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   544
+      Height          =   672
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -116,46 +116,8 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell description."
-         Top             =   461
+         Top             =   589
          Transparent     =   True
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cSource
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   8
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   ""
-         Top             =   427
-         Transparent     =   True
-         UseLowercase    =   False
          Value           =   ""
          Visible         =   True
          Width           =   660
@@ -458,6 +420,36 @@ Begin ContainerControl ccSpell
          Visible         =   True
          Width           =   660
       End
+      Begin ccSourceContent ccSourceBox
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
+         Height          =   150
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   10
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   427
+         Transparent     =   True
+         Visible         =   True
+         Width           =   660
+      End
    End
    Begin Canvas cvsPartitionClasses
       AllowAutoDeactivate=   True
@@ -481,7 +473,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   713
+      Top             =   841
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -506,7 +498,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   False
-         Top             =   875
+         Top             =   1003
          Transparent     =   False
          Visible         =   True
          Width           =   72
@@ -540,7 +532,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   875
+         Top             =   1003
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -590,7 +582,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Classes that can use this spell."
-         Top             =   713
+         Top             =   841
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -627,7 +619,7 @@ Begin ContainerControl ccSpell
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   713
+         Top             =   841
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -656,7 +648,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   911
+      Top             =   1039
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -685,7 +677,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas. Add a short, optional descriptions, such as a level for spells with different rolls on higher levels."
-         Top             =   911
+         Top             =   1039
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -757,7 +749,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1083
+      Top             =   1211
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -786,7 +778,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   1117
+         Top             =   1245
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -822,7 +814,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-         Top             =   1083
+         Top             =   1211
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -866,7 +858,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1080
+         Top             =   1208
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -1212,9 +1204,9 @@ End
 		    if popSpellType.SelectedRow = "Class Feature" and cPrerequisite.Value.Trim <> "" then
 		      var fullDescription as String = "Prerequisite: " + cPrerequisite.Value.Trim + EndOfLine + EndOfLine + cDescription.Value
 		      
-		      SetDescription( xNode, fullDescription, cSource.Value )
-		    elseif cDescription.Value.Trim <> "" or cSource.Value.Trim <> "" then
-		      SetDescription( xNode, cDescription.Value, cSource.Value )
+		      SetDescription( xNode, fullDescription, ccSourceBox.GetSources )
+		    elseif cDescription.Value.Trim <> "" or ccSourceBox.GetSources.LastIndex > -1 then
+		      SetDescription( xNode, cDescription.Value, ccSourceBox.GetSources )
 		    end if
 		    
 		    // Dice Rolls
@@ -1415,7 +1407,8 @@ End
 		    
 		    cDescription.Value = String.FromArray( descriptionLines, EndOfLine )
 		    if cDescription.Value.Contains("Source:") then
-		      cSource.Value = SourceFromDescription( cDescription.Value ).ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(9), "" ).Trim
+		      'cSource.Value = SourceFromDescription( cDescription.Value ).ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(9), "" ).Trim
+		      ccSourceBox.SetSources( SourceFromDescription( cDescription.Value ) )
 		      cDescription.Value = DescriptionWithoutSource( cDescription.Value )
 		    end if
 		    
@@ -1482,7 +1475,7 @@ End
 		  cMaterials.Reset
 		  
 		  cDescription.Reset
-		  cSource.Reset
+		  ccSourceBox.Reset
 		  
 		  cDiceRolls.Reset
 		  lstClasses.DeleteAllRows
@@ -1505,16 +1498,21 @@ End
 		  
 		  LoadXML( TheNode )
 		  
-		  if cSource.Value = "" then
-		    cSource.Value = Source
+		  if ccSourceBox.GetSources.LastIndex = -1 then
+		    ccSourceBox.SetSources( source )
 		  end if
-		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function SourcePageNr() As String
-		  Return cSource.Value.Match(" p. (\d+)", 1)
+		  
+		  var sources() as String = ccSourceBox.GetSources
+		  if sources.LastIndex > -1 then
+		    Return sources(0).Match(" p. (\d+)", 1)
+		  end if
+		  
+		  Return ""
 		End Function
 	#tag EndMethod
 
@@ -1574,14 +1572,6 @@ End
 		  templatesMenu.AddMenu new MenuItem( "Unconscious", "template:" + kStatusUnconscious )
 		  
 		  me.TemplateMenu = templatesMenu
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode( ccEditorTextField.Mode.Textfield )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

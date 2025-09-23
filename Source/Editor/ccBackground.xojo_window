@@ -10,7 +10,7 @@ Begin ContainerControl ccBackground
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   698
+   Height          =   826
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -41,6 +41,7 @@ Begin ContainerControl ccBackground
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -78,6 +79,7 @@ Begin ContainerControl ccBackground
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -129,7 +131,7 @@ Begin ContainerControl ccBackground
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Background traits. Multiple traits are allowed."
-      Top             =   156
+      Top             =   284
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -160,45 +162,8 @@ Begin ContainerControl ccBackground
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   418
+      Top             =   546
       Transparent     =   True
-      Visible         =   True
-      Width           =   660
-   End
-   Begin ccEditorTextField cSource
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   ""
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   3
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   "The name of the source material and a page number this background came from. (e.g. Player's Handbook p. 128)"
-      Top             =   122
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
       Visible         =   True
       Width           =   660
    End
@@ -217,6 +182,7 @@ Begin ContainerControl ccBackground
       Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
+      IsPrefixedNumber=   False
       Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
@@ -236,6 +202,36 @@ Begin ContainerControl ccBackground
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccSourceContent ccSourceBox
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   150
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   122
+      Transparent     =   True
       Visible         =   True
       Width           =   660
    End
@@ -277,8 +273,8 @@ End
 		      var xChild as XMLNode = cFeatures.lstTraits.RowTagAt( row )
 		      
 		      // Add page source to the first feature
-		      if row = 0 and cSource.Value <> ""  then 'and NOT xChild.ToString.Contains("Source:")then
-		        AddSourceTo( xChild, cSource.Value )
+		      if row = 0 and ccSourceBox.GetSources.LastIndex > -1  then 'and NOT xChild.ToString.Contains("Source:")then
+		        AddSourceTo( xChild, ccSourceBox.GetSources )
 		      end if
 		      
 		      xSpecies.AppendChildCopy( xChild )
@@ -294,7 +290,7 @@ End
 		      var xModifier as XMLNode = xSpecies.AppendNewChild( "modifier" )
 		      
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
-		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Trim )
+		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ).Lowercase.Trim )
 		    next
 		  end if
 		  
@@ -362,7 +358,7 @@ End
 		          
 		          var description as String = xChild.ToString
 		          if description.Contains("source:") then
-		            cSource.Value = SourceFrom( xChild )
+		            ccSourceBox.SetSources( SourceFrom( xChild ) )
 		          end if
 		          
 		        case "modifier"
@@ -393,7 +389,7 @@ End
 		  cProficiencies.Reset
 		  cFeatures.Reset
 		  cModifiers.Reset
-		  cSource.Reset
+		  ccSourceBox.Reset
 		  xNode = Nil
 		End Sub
 	#tag EndMethod
@@ -409,8 +405,9 @@ End
 		  
 		  LoadXML( TheNode )
 		  
-		  if cSource.Value = "" then
-		    cSource.Value = Source
+		  // set source for newly added item
+		  if ccSourceBox.GetSources.LastIndex = -1 then
+		    ccSourceBox.SetSources( Source )
 		  end if
 		  
 		  
@@ -430,7 +427,13 @@ End
 
 	#tag Method, Flags = &h0
 		Function SourcePageNr() As String
-		  Return cSource.Value.Match(" p. (\d+)", 1)
+		  
+		  var sources() as String = ccSourceBox.GetSources
+		  if sources.LastIndex > -1 then
+		    Return sources(0).Match(" p. (\d+)", 1)
+		  end if
+		  
+		  Return ""
 		End Function
 	#tag EndMethod
 
@@ -454,14 +457,6 @@ End
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Features:"
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -59,6 +59,52 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function CollectedTraits(xNode as XMLNode, Simple as Boolean = True) As JSONItem
+		  var jItem as new JSONItem
+		  
+		  if xNode <> Nil and xNode.ChildCount > 0 then
+		    
+		    for each xLeaf as XMLNode in xNode.Children
+		      var name, description as String
+		      
+		      if xLeaf <> Nil and xLeaf.ChildCount > 0 then
+		        for each xChild as XMLNode in xLeaf.Children
+		          var xValue as String
+		          if xChild <> Nil and xChild.FirstChild <> Nil then
+		            xValue = xChild.FirstChild.Value
+		          end if
+		          
+		          Select case xChild.Name
+		            
+		          case "name"
+		            name = xValue
+		            
+		          case "text"
+		            description = xValue
+		            
+		          case "description"
+		            description = xValue
+		            
+		          End Select
+		          
+		        next // @NEXT xChild
+		      end if
+		      
+		      if Simple then
+		        jItem.Value( name ) = description
+		      else
+		        jItem.Value( name ) = xLeaf
+		      end if
+		      
+		    next // @NEXT xLeaf
+		    
+		  end if
+		  
+		  Return jItem
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function ComposeSource(xNode as XMLNode, SourceBook as String, PageNr as String, Category as String = "") As String
 		  var SourceString as String
 		  

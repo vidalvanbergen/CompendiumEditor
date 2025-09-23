@@ -542,6 +542,205 @@ Protected Module DnDArrays
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Function BasicArmor() As string()
+		  var basicItems() as string
+		  
+		  // Light Armor
+		  basicItems.Add( "leather armor" )
+		  basicItems.Add( "padded armor" )
+		  basicItems.Add( "studded leather armor" )
+		  
+		  // Medium Armor
+		  basicItems.Add( "breastplate" )
+		  basicItems.Add( "chain shirt" )
+		  basicItems.Add( "hide armor" )
+		  basicItems.Add( "scale mail" )
+		  
+		  // Heavy armor
+		  basicItems.Add( "chain mail" )
+		  basicItems.Add( "half plate armor" )
+		  basicItems.Add( "plate armor" )
+		  basicItems.Add( "ring mail" )
+		  basicItems.Add( "splint armor" )
+		  
+		  // Shield
+		  basicItems.Add( "shield" )
+		  
+		  Return basicItems
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function BasicItems() As string()
+		  var basicItems() as string
+		  
+		  basicItems.Add( "spellcasting focus" )
+		  basicItems.Add( "druidic focus" )
+		  basicItems.Add( "holy symbol" )
+		  
+		  basicItems.Add( "container" )
+		  basicItems.Add( "clothes" )
+		  basicItems.Add( "food and drink" )
+		  basicItems.Add( "flora" )
+		  basicItems.Add( "trade good" )
+		  basicItems.Add( "livestock" )
+		  basicItems.Add( "services" )
+		  basicItems.Add( "instrument" )
+		  basicItems.Add( "gaming set" )
+		  basicItems.Add( "artisan tools" )
+		  basicItems.Add( "tool" )
+		  basicItems.Add( "generic variant" )
+		  
+		  basicItems.Add( "poison (contact)" )
+		  basicItems.Add( "poison (ingested)" )
+		  basicItems.Add( "poison (inhaled)" )
+		  basicItems.Add( "poison (injury)" )
+		  
+		  basicItems.Add( "mount" )
+		  basicItems.Add( "vehicle (air)" )
+		  basicItems.Add( "vehicle (land)" )
+		  basicItems.Add( "vehicle (land/water)" )
+		  basicItems.Add( "vehicle (water)" )
+		  
+		  basicItems.Add( "firearm" )
+		  basicItems.Add( "renaissance" )
+		  basicItems.Add( "modern" )
+		  basicItems.Add( "futuristic" )
+		  
+		  // Light Armor
+		  basicItems.Add( "leather armor" )
+		  basicItems.Add( "padded armor" )
+		  basicItems.Add( "studded leather armor" )
+		  
+		  // Medium Armor
+		  basicItems.Add( "breastplate" )
+		  basicItems.Add( "chain shirt" )
+		  basicItems.Add( "hide armor" )
+		  basicItems.Add( "scale mail" )
+		  
+		  // Heavy armor
+		  basicItems.Add( "chain mail" )
+		  basicItems.Add( "half plate armor" )
+		  basicItems.Add( "plate armor" )
+		  basicItems.Add( "ring mail" )
+		  basicItems.Add( "splint armor" )
+		  
+		  // Shield
+		  basicItems.Add( "shield" )
+		  
+		  // Melee Weapons
+		  basicItems.Add( "battleaxe" )
+		  basicItems.Add( "club" )
+		  basicItems.Add( "dagger" )
+		  basicItems.Add( "double-bladed scimitar" )
+		  basicItems.Add( "flail" )
+		  basicItems.Add( "glaive" )
+		  basicItems.Add( "greataxe" )
+		  basicItems.Add( "greatclub" )
+		  basicItems.Add( "greatsword" )
+		  basicItems.Add( "Halberd" )
+		  basicItems.Add( "handaxe" )
+		  basicItems.Add( "hooked shortspear" )
+		  basicItems.Add( "hoopak" )
+		  basicItems.Add( "javelin" )
+		  basicItems.Add( "lance" )
+		  basicItems.Add( "light hammer" )
+		  basicItems.Add( "longsword" )
+		  basicItems.Add( "mace" )
+		  basicItems.Add( "maul" )
+		  basicItems.Add( "morningstar" )
+		  basicItems.Add( "pike" )
+		  basicItems.Add( "quarterstaff" )
+		  basicItems.Add( "rapier" )
+		  basicItems.Add( "scimitar" )
+		  basicItems.Add( "shortsword" )
+		  basicItems.Add( "sickle" )
+		  basicItems.Add( "spear" )
+		  basicItems.Add( "trident" )
+		  basicItems.Add( "war pick" )
+		  basicItems.Add( "warhammer" )
+		  basicItems.Add( "whip" )
+		  basicItems.Add( "yklwa" )
+		  basicItems.Add( "-" )
+		  basicItems.Add( "rod" )
+		  basicItems.Add( "staff" )
+		  basicItems.Add( "wand" )
+		  
+		  // Ranged Weapons
+		  basicItems.Add( "blowgun" )
+		  basicItems.Add( "dart" )
+		  basicItems.Add( "hand crossbow" )
+		  basicItems.Add( "heavy crossbow" )
+		  basicItems.Add( "light crossbow" )
+		  basicItems.Add( "light repeating crossbow" )
+		  basicItems.Add( "longbow" )
+		  basicItems.Add( "net" )
+		  basicItems.Add( "shortbow" )
+		  basicItems.Add( "sling" )
+		  
+		  Return basicItems
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function BasicWeapons() As string()
+		  var basicItems() as string
+		  
+		  // Melee Weapons
+		  basicItems.Add( "battleaxe" )
+		  basicItems.Add( "club" )
+		  basicItems.Add( "dagger" )
+		  basicItems.Add( "double-bladed scimitar" )
+		  basicItems.Add( "flail" )
+		  basicItems.Add( "glaive" )
+		  basicItems.Add( "greataxe" )
+		  basicItems.Add( "greatclub" )
+		  basicItems.Add( "greatsword" )
+		  basicItems.Add( "Halberd" )
+		  basicItems.Add( "handaxe" )
+		  basicItems.Add( "hooked shortspear" )
+		  basicItems.Add( "hoopak" )
+		  basicItems.Add( "javelin" )
+		  basicItems.Add( "lance" )
+		  basicItems.Add( "light hammer" )
+		  basicItems.Add( "longsword" )
+		  basicItems.Add( "mace" )
+		  basicItems.Add( "maul" )
+		  basicItems.Add( "morningstar" )
+		  basicItems.Add( "pike" )
+		  basicItems.Add( "quarterstaff" )
+		  basicItems.Add( "rapier" )
+		  basicItems.Add( "scimitar" )
+		  basicItems.Add( "shortsword" )
+		  basicItems.Add( "sickle" )
+		  basicItems.Add( "spear" )
+		  basicItems.Add( "trident" )
+		  basicItems.Add( "war pick" )
+		  basicItems.Add( "warhammer" )
+		  basicItems.Add( "whip" )
+		  basicItems.Add( "yklwa" )
+		  basicItems.Add( "-" )
+		  basicItems.Add( "rod" )
+		  basicItems.Add( "staff" )
+		  basicItems.Add( "wand" )
+		  
+		  // Ranged Weapons
+		  basicItems.Add( "blowgun" )
+		  basicItems.Add( "dart" )
+		  basicItems.Add( "hand crossbow" )
+		  basicItems.Add( "heavy crossbow" )
+		  basicItems.Add( "light crossbow" )
+		  basicItems.Add( "light repeating crossbow" )
+		  basicItems.Add( "longbow" )
+		  basicItems.Add( "net" )
+		  basicItems.Add( "shortbow" )
+		  basicItems.Add( "sling" )
+		  
+		  Return basicItems
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Function Classes() As String()
 		  Return Array( "Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Illrigger", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" )

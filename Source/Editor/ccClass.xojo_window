@@ -2015,37 +2015,6 @@ End
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h21
-		Private Sub UntitledBCK(xFeature as XMLNode)
-		  var descriptionLines() as String
-		  var xChildren() as XMLNode = xFeature.Children
-		  xFeature.RemoveAllChildren
-		  
-		  for each xChild as XMLNode in xChildren
-		    if xChild.Name = "text" then
-		      if xChild.FirstChild = Nil then
-		        descriptionLines.Add ""
-		      else
-		        descriptionLines.Add xChild.FirstChild.Value
-		      end if
-		    end if
-		  next
-		  
-		  var addedDescription as Boolean = False
-		  for each xChild as XMLNode in xChildren
-		    
-		    if xChild.Name <> "text" then
-		      xFeature.AppendChildCopy( xChild )
-		    elseif NOT addedDescription then
-		      'xFeature.AppendSimpleChild( "text", String.FromArray( descriptionLines, EndOfLine ) )
-		      SetDescription( xFeature, String.FromArray( descriptionLines ), Nil )
-		      addedDescription = True
-		    end if
-		    
-		  next
-		End Sub
-	#tag EndMethod
-
 
 	#tag Property, Flags = &h0
 		PostFix As String

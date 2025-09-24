@@ -203,7 +203,7 @@ Protected Module XMLModule
 		    // Multiline Source
 		    var MultilineSource as Boolean = AppPrefs.SourceMultiline 'AppSettings.Prefs.Value("SourceMultiline", True)
 		    if MultilineSource then
-		      Source = StringFromArray( Sources, EndOfLine + chr(9) + chr(9) )
+		      Source = StringFromArray( Sources, "," + EndOfLine + chr(9) + chr(9) )
 		      'if Source.Contains(" p. " then
 		      'Source = Source.ReplaceAllRegEx("p\. (.*?), (\w+)", "p. $1,\n\t\t$2")
 		      'else

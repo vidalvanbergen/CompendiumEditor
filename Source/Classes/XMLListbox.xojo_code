@@ -33,7 +33,7 @@ Inherits ListboxPro
 		  if row > -1 and row <= LastRowIndex then
 		    
 		    
-		    if CellTextAt(row, 1) = "#comment" then
+		    if CellTextAt(row, 1) = "#comment" then 'and IsDarkMode then
 		      g.DrawingColor = color.DisabledTextColor
 		    end if
 		    

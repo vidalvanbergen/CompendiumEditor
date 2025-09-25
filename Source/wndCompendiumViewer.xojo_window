@@ -364,7 +364,7 @@ Begin WindowPro wndCompendiumViewer
       Tooltip         =   ""
       Top             =   52
       Transparent     =   False
-      Value           =   4
+      Value           =   3
       Visible         =   True
       Width           =   1024
       Begin DesktopListBox lstObjects
@@ -4707,14 +4707,32 @@ End
 	#tag Event
 		Function PaintCellBackground(index as Integer, g As Graphics, row As Integer, column As Integer) As Boolean
 		  
-		  if me.SelectedRowIndex <> row then
-		    g.DrawAlternatingRows(row)
-		    Return True
+		  
+		  if NOT me.RowSelectedAt( row ) then
+		    
+		    if row mod 2 = 0 then
+		      if IsDarkMode then
+		        g.ForeColor = RowAlternatingDarkModeColorLight '&c0C1024
+		      else
+		        g.ForeColor = RowAlternatingLightModeColorLight '&cE6E0C6
+		      end if
+		    else
+		      if IsDarkMode then
+		        g.ForeColor = RowAlternatingDarkModeColorDark '&c090A1A
+		      else
+		        g.ForeColor = RowAlternatingLightModeColorDark '&cF1ECD9
+		      end if
+		    end if
+		    
+		    'g.DrawAlternatingRows( row )
+		    
 		  else
-		    g.DrawingColor = CommonModule.SelectionColor
-		    g.FillRect 0, 0, g.Width, g.Height
-		    Return True
+		    
+		    g.ForeColor = SelectionColor '&c7F1C14
 		  end if
+		  
+		  g.FillRectangle 0, 0, g.Width, g.Height
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
@@ -4725,7 +4743,9 @@ End
 		  
 		  g.Bold = False
 		  g.TextSize = 12
-		  g.DrawingColor = Color.DisabledTextColor
+		  if not me.SelectedRowIndex = row then
+		    g.DrawingColor = Color.DisabledTextColor
+		  end if
 		  g.DrawText me.CellTextAt( row, 1 ).NthField("|", 1), 4, g.TextAscent + (g.Height/2) - (g.TextHeight/2) + (g.TextHeight/2) + 2
 		  
 		  Return True

@@ -147,7 +147,7 @@ Begin WindowPro wndMain
          Visible         =   True
          Width           =   32
       End
-      Begin CanvasButton cvsbtnExperiment
+      Begin CanvasButton cvsbtnCompendiumViewer
          AllowAutoDeactivate=   True
          AllowFocus      =   True
          AllowFocusRing  =   True
@@ -155,7 +155,7 @@ Begin WindowPro wndMain
          Backdrop        =   0
          Enabled         =   True
          Height          =   32
-         iconColor       =   &c00000000
+         iconColor       =   &cFFFFFF00
          Image           =   1744912383
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
@@ -175,7 +175,7 @@ Begin WindowPro wndMain
          Tooltip         =   "Edit Source"
          Top             =   10
          Transparent     =   True
-         useCustomColor  =   False
+         useCustomColor  =   True
          Visible         =   False
          Width           =   32
       End
@@ -222,7 +222,7 @@ Begin WindowPro wndMain
          Backdrop        =   0
          Enabled         =   True
          Height          =   32
-         iconColor       =   &c00000000
+         iconColor       =   &cFFFFFF00
          Image           =   845838335
          Index           =   -2147483648
          InitialParent   =   "cvsToolbar$0"
@@ -242,7 +242,7 @@ Begin WindowPro wndMain
          Tooltip         =   "Edit Source"
          Top             =   10
          Transparent     =   True
-         useCustomColor  =   False
+         useCustomColor  =   True
          Visible         =   False
          Width           =   32
       End
@@ -861,7 +861,7 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cvsbtnExperiment
+#tag Events cvsbtnCompendiumViewer
 	#tag Event
 		Sub Action()
 		  wndCompendiumViewer.Show

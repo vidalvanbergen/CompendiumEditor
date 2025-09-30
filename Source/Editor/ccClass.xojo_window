@@ -280,7 +280,7 @@ Begin ContainerControl ccClass
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   1004
+      Height          =   1164
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -294,7 +294,7 @@ Begin ContainerControl ccClass
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   250
+      Top             =   90
       Transparent     =   True
       Visible         =   True
       Width           =   680
@@ -329,7 +329,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Hit Die. Input the die number. (e.g., 8 for a d8)"
-         Top             =   250
+         Top             =   251
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -367,7 +367,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Number of class skills to be chosen from when creating a character."
-         Top             =   454
+         Top             =   455
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -405,7 +405,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Armor and shield proficiencies."
-         Top             =   284
+         Top             =   285
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -443,7 +443,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Weapon proficiencies."
-         Top             =   318
+         Top             =   319
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -481,7 +481,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Tool proficiencies."
-         Top             =   352
+         Top             =   353
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -519,7 +519,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Starting wealth. Enter a formula that determines a 1st-level character's starting gold."
-         Top             =   250
+         Top             =   251
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -557,7 +557,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Saving throw proficiencies that players can choose from. Enter names of abilities separated by commas."
-         Top             =   386
+         Top             =   387
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -595,7 +595,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Class skill proficiencies that players can choose from. Enter names of skills separated by commas"
-         Top             =   420
+         Top             =   421
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -631,7 +631,7 @@ Begin ContainerControl ccClass
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   522
+         Top             =   523
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -662,7 +662,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Check if the class's spell slots are optional."
-         Top             =   522
+         Top             =   523
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -714,7 +714,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell slots per class and spell level. Optional 'Spells Known' counter."
-         Top             =   546
+         Top             =   547
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -751,7 +751,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Optional class description traits."
-         Top             =   1069
+         Top             =   1070
          Transparent     =   True
          UseMode         =   ""
          Visible         =   True
@@ -793,7 +793,7 @@ Begin ContainerControl ccClass
             TabStop         =   True
             TextColor       =   &c00000000
             Tooltip         =   ""
-            Top             =   1138
+            Top             =   1139
             Transparent     =   False
             Underline       =   False
             Value           =   False
@@ -828,7 +828,7 @@ Begin ContainerControl ccClass
          TextAlignment   =   2
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   522
+         Top             =   523
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -865,7 +865,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spellcasting ability. (e.g., Intelligence, Charisma, etc.)"
-         Top             =   488
+         Top             =   489
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -903,7 +903,7 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Spell slots reset on short or long rests."
-         Top             =   488
+         Top             =   489
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -941,10 +941,40 @@ Begin ContainerControl ccClass
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "A comma separated list of levels on which an Ability Score Improvement occurs."
-         Top             =   1231
+         Top             =   1232
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
+         Visible         =   True
+         Width           =   640
+      End
+      Begin ccSourceContent ccSourceBox
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
+         Height          =   150
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   16
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   90
+         Transparent     =   True
          Visible         =   True
          Width           =   640
       End
@@ -1037,36 +1067,6 @@ Begin ContainerControl ccClass
       Underline       =   False
       Visible         =   True
       Width           =   410
-   End
-   Begin ccSourceContent ccSourceBox
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      HasBackgroundColor=   False
-      Height          =   150
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      Scope           =   0
-      TabIndex        =   7
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   88
-      Transparent     =   True
-      Visible         =   True
-      Width           =   640
    End
 End
 #tag EndWindow

@@ -1004,44 +1004,6 @@ Begin ContainerControl ccEquipment
       Visible         =   True
       Width           =   24
    End
-   Begin ccEditorTextField cSourceOLD
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   ""
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      IsPrefixedNumber=   False
-      Left            =   741
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   14
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   "The name of the source material and a page number this item came from. (e.g. Player's Handbook p. 128)"
-      Top             =   894
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
-      Visible         =   True
-      Width           =   660
-   End
 End
 #tag EndWindow
 
@@ -2234,14 +2196,6 @@ End
 		  'me.BaseMenu.Append new MenuItem("Potion", "P")
 		  'me.BaseMenu.Append new MenuItem("Scroll", "SC")
 		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSourceOLD
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Source:"
-		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

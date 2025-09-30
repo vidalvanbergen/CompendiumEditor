@@ -67,8 +67,8 @@ Begin ContainerControl ccSourceContent
       AllowRowDragging=   True
       AllowRowReordering=   True
       Bold            =   False
-      ColumnCount     =   2
-      ColumnWidths    =   "*, 75"
+      ColumnCount     =   3
+      ColumnWidths    =   "*, 75, 100"
       DataField       =   ""
       DataSource      =   ""
       DefaultRowHeight=   24
@@ -87,7 +87,7 @@ Begin ContainerControl ccSourceContent
       Height          =   94
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "Source name	Page nr."
+      InitialValue    =   "Source name	Page nr.	Tag"
       Italic          =   False
       Left            =   162
       LockBottom      =   True
@@ -107,6 +107,7 @@ Begin ContainerControl ccSourceContent
       Underline       =   False
       Visible         =   True
       Width           =   478
+      _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
    BeginSegmented AddRemoveEditButton areSources
@@ -194,7 +195,7 @@ Begin ContainerControl ccSourceContent
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Formatting: [Content Name] p. [page number], avoid using commas (,) in content name"
+      Text            =   "Formatting: [Content Name] p. [page number] ([Tag]), avoid using commas in content name."
       TextAlignment   =   3
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -217,15 +218,23 @@ End
 		  
 		  for each source as string in multisources
 		    if source.Contains(" p. " ) then
-		      var sourceName as string = source.NthField( " p. ", 1 )
+		      var sourceName as string = source.NthField( " p. ", 1 ).Trim
+		      var pageNr as String = source.Match( " p. (\d+)", 1 )
+		      var tag as String = source.NthField( " p. " + pageNr, 2 ).Trim
 		      
-		      lstSources.AddRow sourceName, source.NthField( " p. ", 2 )
+		      lstSources.AddRow sourceName, pageNr, tag
 		      
 		      if cbSourcebox.IndexOfRowWithValue( sourceName ) = -1 then
 		        cbSourcebox.AddRow sourceName
 		      end if
 		    else
-		      lstSources.AddRow source
+		      var sourceName as String = source
+		      var tag as String
+		      if source.Contains("(") and source.Contains(")") then
+		        sourceName = source.NthField( " (", 1 )
+		        tag = source.Match( "(\(.*?\))", 0 )
+		      end if
+		      lstSources.AddRow sourceName, "", tag
 		      
 		      if cbSourcebox.IndexOfRowWithValue( Source ) = -1 then
 		        cbSourcebox.AddRow source
@@ -241,12 +250,17 @@ End
 		  
 		  if lstSources.LastRowIndex > -1 then
 		    for row as Integer = 0 to lstSources.LastRowIndex
+		      var FullName as string = lstSources.CellValueAt( row, 0 ).Trim
+		      
+		      
 		      if lstSources.CellValueAt( row, 1 ).Trim <> "" then
-		        Sources.Add lstSources.CellValueAt( row, 0 ).Trim + " p. " + lstSources.CellValueAt( row, 1 ).Trim
-		      else
-		        Sources.Add lstSources.CellValueAt( row, 0 ).Trim
+		        FullName = FullName + " p. " + lstSources.CellValueAt( row, 1 ).Trim
+		      end if
+		      if lstSources.CellValueAt( row, 2 ).Trim <> "" then
+		        FullName = FullName + " " + lstSources.CellValueAt( row, 2 ).Trim
 		      end if
 		      
+		      Sources.Add FullName
 		    next
 		  end if
 		  
@@ -300,6 +314,7 @@ End
 		  
 		  me.ColumnTypeAt(0) = Listbox.CellTypes.TextField
 		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
+		  me.ColumnTypeAt(2) = Listbox.CellTypes.TextField
 		  
 		  #if TargetMacOS then
 		    areSources.RemoveEnabled = me.SelectedRowIndex > -1
@@ -331,7 +346,7 @@ End
 		Sub DoubleClick()
 		  if lstSources.SelectedRowIndex > -1 then
 		    if lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 ) <> "" then
-		      cbSourcebox.Text = lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 ) + " p. " + lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 )
+		      cbSourcebox.Text = Str( lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 ).Trim + " p. " + lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 ).Trim + " " + lstSources.CellValueAt( lstSources.SelectedRowIndex, 2 ).Trim ).Trim
 		    else
 		      cbSourcebox.Text = lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 )
 		    end if
@@ -408,11 +423,7 @@ End
 #tag Events areSources
 	#tag Event
 		Sub ActionAdd()
-		  if cbSourcebox.Text.Contains( " p. " ) then
-		    lstSources.AddRow cbSourcebox.Text.NthField(" p. ", 1).RemoveAll(","), cbSourcebox.Text.NthField(" p. ", 2).RemoveAll(",")
-		  else
-		    lstSources.AddRow cbSourcebox.Text.RemoveAll(",")
-		  end if
+		  AddSources cbSourcebox.Text
 		  cbSourcebox.Text = ""
 		  lstSources.SelectedRowIndex = lstSources.LastAddedRowIndex
 		  

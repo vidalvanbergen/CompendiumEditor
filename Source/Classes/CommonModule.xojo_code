@@ -316,7 +316,7 @@ Protected Module CommonModule
 		  next
 		  spellText = StringFromArray( individiualSpells, ", " )
 		  
-		  spellText = spellText.ReplaceAllRegEx( " \((.*?)\)", "" )
+		  'spellText = spellText.ReplaceAllRegEx( " \((.*?)\)", "" )
 		  
 		  
 		  'txtSpells.Text = spellText.StupifyQuotes

@@ -256,7 +256,12 @@ End
 		    name = "[Description]"
 		  end if
 		  
-		  lstTraits.AddRow level, name, xAttribute
+		  var xPageNr as String
+		  if copiedxNode.ToString.Contains("Source:") then
+		    xPageNr = copiedxNode.ToString.Match( " p\. (\d+)", 1 )
+		  end if
+		  
+		  lstTraits.AddRow level, name, xAttribute, xPageNr
 		  lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = copiedxNode
 		  if selectLastResult then
 		    lstTraits.SelectedRowIndex = lstTraits.LastAddedRowIndex
@@ -471,9 +476,16 @@ End
 		          lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Level
 		        end if
 		      end if
+		      
+		      var xPageNr as String
+		      if xNode.ToString.Contains("Source:") then
+		        xPageNr = xNode.ToString.Match( " p\. (\d+)", 1 )
+		      end if
+		      
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = Name
 		      'lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 2 ) = PageNr
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 2 ) = xAttribute
+		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 3 ) = xPageNr
 		    else
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = Name
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = xAttribute
@@ -564,12 +576,15 @@ End
 		Sub SetAutoLevelCategories()
 		  IsAutoLevelFeature = True
 		  
-		  lstTraits.ColumnCount = 3
-		  lstTraits.ColumnWidths = "50,*,75"
-		  lstTraits.InitialValue = "Level" + chr(9) + "Feature" + chr(9) + "Optional"
+		  lstTraits.ColumnCount = 4
+		  lstTraits.ColumnWidths = "50,*,75,50"
+		  lstTraits.InitialValue = "Level" + chr(9) + "Feature" + chr(9) + "Optional" + chr(9) + "Page nr"
 		  
 		  lstTraits.ColumnAlignmentAt( 0 ) = Listbox.Alignments.Right
 		  lstTraits.ColumnTypeAt( 0 ) = Listbox.CellTypes.TextField
+		  
+		  lstTraits.ColumnAlignmentAt( 3 ) = Listbox.Alignments.Right
+		  'lstTraits.ColumnTypeAt( 3 ) = Listbox.CellTypes.TextField
 		  
 		  'lstTraits.ColumnAlignmentAt( 2 ) = Listbox.Alignments.Right
 		  'lstTraits.ColumnTypeAt( 2 ) = Listbox.CellTypes.TextField

@@ -364,7 +364,7 @@ Begin WindowPro wndCompendiumViewer
       Tooltip         =   ""
       Top             =   52
       Transparent     =   False
-      Value           =   3
+      Value           =   0
       Visible         =   True
       Width           =   1024
       Begin DesktopListBox lstObjects

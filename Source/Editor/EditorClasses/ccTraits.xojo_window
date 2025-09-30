@@ -295,7 +295,7 @@ End
 		  end if
 		  
 		  
-		  lstTraits.AddRow name, xAttribute'.Titlecase
+		  lstTraits.AddRow name.ReplaceAll(" (Bonus Action)", ""), xAttribute'.Titlecase
 		  lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = copiedxNode
 		  if selectLastResult then
 		    lstTraits.SelectedRowIndex = lstTraits.LastAddedRowIndex

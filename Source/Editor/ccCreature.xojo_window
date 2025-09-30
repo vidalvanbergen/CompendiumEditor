@@ -2404,7 +2404,7 @@ End
 		        var xName as String = xChild.ValueOfNodeWithName("name")
 		        
 		        if xName.Contains("(Bonus Action)") then
-		          xChild.SetValueOfNodeWithName("name", xChild.ValueOfNodeWithName("name").ReplaceAll("(Bonus Action)", "").Trim )
+		          'xChild.SetValueOfNodeWithName("name", xChild.ValueOfNodeWithName("name").ReplaceAll("(Bonus Action)", "").Trim )
 		          cFeatureActionsBonus.FeatureAdd( xChild )
 		        else
 		          cFeatureActions.FeatureAdd( xChild )

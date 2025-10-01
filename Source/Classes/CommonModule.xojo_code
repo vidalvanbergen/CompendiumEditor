@@ -598,14 +598,30 @@ Protected Module CommonModule
 		    var descriptionlines(), description as string
 		    for each xLeaf as XMLNode in xNode.Children
 		      
-		      if xLeaf <> Nil and xLeaf.FirstChild <> Nil and ( xLeaf.Name = "text" or xLeaf.Name = "description" ) then
-		        descriptionlines.Add xLeaf.FirstChild.Value
+		      if xLeaf <> Nil and xLeaf.FirstChild <> Nil then
+		        if xLeaf.Name = "text" or xLeaf.Name = "description" then
+		          descriptionlines.Add xLeaf.FirstChild.Value
+		        elseif xLeaf.Name = "trait" then
+		          for each xItem as XMLNode in xLeaf.Children
+		            
+		            if xItem <> Nil and xItem.FirstChild <> Nil and xItem.Name = "text" then
+		              descriptionlines.Add xItem.FirstChild.Value
+		            end if
+		            
+		          next
+		        end if
 		      end if
 		      
 		    next
 		    description = StringFromArray( descriptionlines, EndOfLine )
 		    
-		    Return description.Match(" p\. (\d+)", 1)
+		    var PageNr as String = description.Match(" p\. (\d+)", 1)
+		    
+		    if PageNr = "" and xNode.ToString.Contains("Source:") then
+		      PageNr = xNode.ToString.Match( " p\. (\d+)", 1 )
+		    end if
+		    
+		    Return PageNr
 		  else
 		    Return ""
 		  end if

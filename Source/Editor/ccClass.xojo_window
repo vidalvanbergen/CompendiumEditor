@@ -1897,6 +1897,7 @@ End
 		    'cSource.Value = cSource.Value + postFix
 		    'elseif cSource.Value = "" and TheSource <> "" then
 		    'cSource.Value = TheSource
+		    cClassFeatures.Source = TheSource
 		  end if
 		  
 		  

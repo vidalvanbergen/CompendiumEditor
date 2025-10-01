@@ -316,6 +316,10 @@ Protected Module CommonModule
 		  next
 		  spellText = StringFromArray( individiualSpells, ", " )
 		  
+		  
+		  if Keyboard.AsyncAltKey then
+		    spellText = spellText.Lowercase.ReplaceAll( "(hb)", "(HB)" )
+		  end if
 		  'spellText = spellText.ReplaceAllRegEx( " \((.*?)\)", "" )
 		  
 		  
@@ -531,9 +535,19 @@ Protected Module CommonModule
 		  
 		  if xNode <> Nil and xNodeText.Contains("Source:") then
 		    
+		    var descriptionlines(), description as string
+		    for each xLeaf as XMLNode in xNode.Children
+		      
+		      if xLeaf <> Nil and xLeaf.FirstChild <> Nil and ( xLeaf.Name = "text" or xLeaf.Name = "description" ) then
+		        descriptionlines.Add xLeaf.FirstChild.Value
+		      end if
+		      
+		    next
+		    description = StringFromArray( descriptionlines, EndOfLine )
+		    
 		    'var s as String = 
 		    
-		    var sourceString as String = xNodeText.Match("Source:\s(.*?)(<|\Z)", 1)
+		    var sourceString as String = description.Match("Source:\s(.*?)(<|\Z)", 1)
 		    
 		    
 		    // Simplify
@@ -571,6 +585,30 @@ Protected Module CommonModule
 		  
 		  
 		  Return MultiSources
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SourcePageNrFromXMLNode(xNode as XMLNode) As String
+		  'var xNodeText as String = xNode.ToString 'DescriptionFromNode( xNode )
+		  
+		  
+		  if xNode <> Nil and xNode.ToString.Contains("Source:") then
+		    
+		    var descriptionlines(), description as string
+		    for each xLeaf as XMLNode in xNode.Children
+		      
+		      if xLeaf <> Nil and xLeaf.FirstChild <> Nil and ( xLeaf.Name = "text" or xLeaf.Name = "description" ) then
+		        descriptionlines.Add xLeaf.FirstChild.Value
+		      end if
+		      
+		    next
+		    description = StringFromArray( descriptionlines, EndOfLine )
+		    
+		    Return description.Match(" p\. (\d+)", 1)
+		  else
+		    Return ""
+		  end if
 		End Function
 	#tag EndMethod
 

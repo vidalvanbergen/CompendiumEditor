@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -922,7 +922,7 @@ Begin WindowPro wndSourceEditor
          AllowRowReordering=   True
          Bold            =   False
          ColumnCount     =   4
-         ColumnWidths    =   "*,40,50,0"
+         ColumnWidths    =   "36,*,45,0"
          DefaultRowHeight=   24
          DropIndicatorVisible=   False
          Enabled         =   True
@@ -939,7 +939,7 @@ Begin WindowPro wndSourceEditor
          IgnoreChange    =   False
          Index           =   -2147483648
          InitialParent   =   "ppSourceEditor"
-         InitialValue    =   "Name	Type	Page	Sort Name"
+         InitialValue    =   "Type	Name	Page	Sort Name"
          IsFocused       =   False
          Italic          =   False
          Left            =   0
@@ -1485,7 +1485,7 @@ End
 		        itemtype = "creature"
 		      end if
 		      
-		      lstXML.AddRow xNode.ValueOfNodeWithName("name"), itemtype 'xNode.Name
+		      lstXML.AddRow itemtype, xNode.ValueOfNodeWithName("name"), SourcePageNrFromXMLNode( xNode ) 'xNode.Name
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xNode
 		      
 		      lstXML.SelectedRowIndex = lstXML.LastAddedRowIndex
@@ -1512,7 +1512,9 @@ End
 		        itemtype = "creature"
 		      end if
 		      
-		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = itemtype
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 0 ) = itemtype
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = xnode.ValueOfNodeWithName("name")
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 2 ) = SourcePageNrFromXMLNode( xnode )
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xnode
 		      
 		      lstXML.SortByRow
@@ -1749,7 +1751,7 @@ End
 		  End Select
 		  
 		  if newNode <> Nil then
-		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 0 ) = newNode.ValueOfNodeWithName("name")
+		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 1 ) = newNode.ValueOfNodeWithName("name")
 		    
 		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = SourcePageNrFromXMLNode( newNode )
 		    
@@ -2623,7 +2625,7 @@ End
 		          sortName = name
 		        end if
 		        
-		        me.CellTextAt( row, 0 ) = newNode.ValueOfNodeWithName("name")
+		        me.CellTextAt( row, 1 ) = newNode.ValueOfNodeWithName("name")
 		        me.CellTextAt( row, 2 ) = pageNr
 		        me.CellTextAt( row, 3 ) = sortName
 		        me.RowTagAt( row ) = newNode
@@ -2975,11 +2977,6 @@ End
 		  Else //some other column for which we let the listbox handle comparison
 		    Return False
 		  End Select
-		End Function
-	#tag EndEvent
-	#tag Event
-		Function HeaderPressed(column as Integer) As Boolean
-		  
 		End Function
 	#tag EndEvent
 #tag EndEvents

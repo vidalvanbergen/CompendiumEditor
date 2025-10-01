@@ -33,15 +33,15 @@ Inherits ListboxPro
 		  if row > -1 and row <= LastRowIndex then
 		    
 		    
-		    if CellTextAt(row, 1) = "#comment" then 'and IsDarkMode then
+		    if CellTextAt(row, 2) = "#comment" then 'and IsDarkMode then
 		      g.DrawingColor = color.DisabledTextColor
 		    end if
 		    
-		    if column = 1 then
+		    if column = 0 then
 		      
 		      var icon as Picture
 		      
-		      Select case CellTextAt(row, 1)
+		      Select case CellTextAt(row, 0)
 		        
 		      case "Background"
 		        icon = template_compendium_banner_32
@@ -156,7 +156,7 @@ Inherits ListboxPro
 		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
 		    
-		    me.AddRow name, type, pagenr, sortName
+		    me.AddRow type, name, pagenr, sortName
 		    me.RowTagAt( me.LastAddedRowIndex ) = xNode
 		  end if
 		End Sub

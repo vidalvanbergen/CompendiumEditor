@@ -921,8 +921,8 @@ Begin WindowPro wndSourceEditor
          AllowRowDragging=   True
          AllowRowReordering=   True
          Bold            =   False
-         ColumnCount     =   3
-         ColumnWidths    =   "*,40,0"
+         ColumnCount     =   4
+         ColumnWidths    =   "*,40,50,0"
          DefaultRowHeight=   24
          DropIndicatorVisible=   False
          Enabled         =   True
@@ -939,7 +939,7 @@ Begin WindowPro wndSourceEditor
          IgnoreChange    =   False
          Index           =   -2147483648
          InitialParent   =   "ppSourceEditor"
-         InitialValue    =   "Name	Type"
+         InitialValue    =   "Name	Type	Page	Sort Name"
          IsFocused       =   False
          Italic          =   False
          Left            =   0
@@ -1751,11 +1751,13 @@ End
 		  if newNode <> Nil then
 		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 0 ) = newNode.ValueOfNodeWithName("name")
 		    
+		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = SourcePageNrFromXMLNode( newNode )
+		    
 		    // Sort name
 		    if newNode.ValueOfNodeWithName("sortname") <> "" then
-		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = newNode.ValueOfNodeWithName("sortname")
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 3 ) = newNode.ValueOfNodeWithName("sortname")
 		    else
-		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 2 ) = newNode.ValueOfNodeWithName("name")
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 3 ) = newNode.ValueOfNodeWithName("name")
 		    end if
 		  end if
 		  
@@ -2612,7 +2614,18 @@ End
 		  if oldNode <> Nil and newNode <> Nil then 'and newNode <> Nil and oldNode.ToString = newNode.ToString then
 		    for row as Integer = me.LastRowIndex DownTo 0
 		      if me.RowTagAt( row ) Isa XMLNode and me.RowTagAt( row ) = oldNode then
+		        var name, sortName, pageNr as String
+		        name = newNode.ValueOfNodeWithName("name")
+		        sortName = newNode.ValueOfNodeWithName("sortname")
+		        pageNr = SourcePageNrFromXMLNode( newNode )
+		        
+		        if sortName = "" then
+		          sortName = name
+		        end if
+		        
 		        me.CellTextAt( row, 0 ) = newNode.ValueOfNodeWithName("name")
+		        me.CellTextAt( row, 2 ) = pageNr
+		        me.CellTextAt( row, 3 ) = sortName
 		        me.RowTagAt( row ) = newNode
 		      end if
 		    next
@@ -2946,8 +2959,28 @@ End
 		Sub Openening()
 		  'me.ColumnSortTypeAt(0) = DesktopListBox.SortTypes.NotSortable
 		  'me.ColumnSortTypeAt(1) = DesktopListBox.SortTypes.NotSortable
-		  
+		  me.ColumnAlignmentAt(2) = DesktopListBox.Alignments.Decimal
 		End Sub
+	#tag EndEvent
+	#tag Event
+		Function RowComparison(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
+		  Select Case column
+		  Case 0 // This is a string column. Let the listbox manage it by returning false
+		    Return False
+		    
+		  Case 2 // This is our numerical value column. Let's do the work ourselves
+		    result = Sign(Me.CellTextAt(row1, column).Val - Me.CellTextAt( row2, column).Val)
+		    Return True
+		    
+		  Else //some other column for which we let the listbox handle comparison
+		    Return False
+		  End Select
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function HeaderPressed(column as Integer) As Boolean
+		  
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events arSourceType

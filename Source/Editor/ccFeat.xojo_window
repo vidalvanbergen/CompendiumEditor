@@ -513,7 +513,7 @@ End
 		  
 		  var sources() as String = ccSourceBox.GetSources
 		  if sources.LastIndex > -1 then
-		    Return sources(0).Match(" p. (\d+)", 1)
+		    Return sources(0).Match(" p\. (\d+)", 1)
 		  end if
 		  
 		  Return ""

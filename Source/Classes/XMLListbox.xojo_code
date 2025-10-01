@@ -154,7 +154,9 @@ Inherits ListboxPro
 		      type = "creature"
 		    end if
 		    
-		    me.AddRow name, type, sortName
+		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
+		    
+		    me.AddRow name, type, pagenr, sortName
 		    me.RowTagAt( me.LastAddedRowIndex ) = xNode
 		  end if
 		End Sub

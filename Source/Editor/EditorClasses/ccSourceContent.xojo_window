@@ -219,7 +219,7 @@ End
 		  for each source as string in multisources
 		    if source.Contains(" p. " ) then
 		      var sourceName as string = source.NthField( " p. ", 1 ).Trim
-		      var pageNr as String = source.Match( " p. (\d+)", 1 )
+		      var pageNr as String = source.Match( " p\. (\d+)", 1 )
 		      var tag as String = source.NthField( " p. " + pageNr, 2 ).Trim
 		      
 		      lstSources.AddRow sourceName, pageNr, tag

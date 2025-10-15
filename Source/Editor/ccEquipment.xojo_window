@@ -2056,7 +2056,7 @@ End
 		            lines.RemoveAt(1)
 		          end if
 		          
-		          if type.Contains("Wondrous Item") then
+		          if type.Contains("Wondrous") then
 		            cItemType.Value = "Wondrous Item"
 		            cItemType.Tag = "W"
 		            

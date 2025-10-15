@@ -2334,10 +2334,10 @@ End
 		        cAbilityCharisma.Value = xValue
 		        
 		      case "save"
-		        cSavingThrows.Value = xValue.Titlecase
+		        cSavingThrows.Value = xValue'.Titlecase
 		        
 		      case "skill"
-		        cSkills.Value = xValue.Titlecase
+		        cSkills.Value = xValue'.Titlecase
 		        
 		      case "vulnerable"
 		        cDamageVulnerabilities.Value = xValue'.Lowercase

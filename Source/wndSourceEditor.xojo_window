@@ -2746,7 +2746,7 @@ End
 		  if lstXML.SelectedRowIndex > -1 then
 		    base.AddMenu new MenuItem("-")
 		    
-		    var name as string = lstXML.CellTextAt( lstXML.SelectedRowIndex, 0 )
+		    var name as string = lstXML.CellTextAt( lstXML.SelectedRowIndex, 1 )
 		    
 		    base.AddMenu new MenuItem("Duplicate """ + name + """")
 		    base.AddMenu new MenuItem("Remove """ + name + """")
@@ -2933,13 +2933,37 @@ End
 		Function KeyDown(Key as String) As Boolean
 		  dim AscKey as Integer = Asc( key )
 		  
-		  if Keyboard.AsyncCommandKey then
+		  if (TargetMacOS AND Keyboard.AsyncCommandKey) OR ((TargetWindows OR TargetLinux) AND Keyboard.AsyncControlKey ) then
 		    
 		    Select case AscKey
 		      
 		    case 8', 127 // delete
 		      RemoveFromDocument
 		      Return True
+		      
+		    case 99 // c, copy
+		      if me.SelectedRowIndex > -1 then
+		        if me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
+		          var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
+		          
+		          var c as new Clipboard
+		          c.Text = xNode.ToString
+		        end if
+		      end if
+		      
+		    case 118 // v, paste
+		      var c as new Clipboard
+		      if c.Text.StartsWith("<") and c.Text.EndsWith(">") and NOT c.Text.StartsWith("<!--") then
+		        var xNode as XMLNode = c.Text.ToXML(TRUE)
+		        
+		        if xNode <> Nil and xNode.FirstChild <> Nil then
+		          me.xDoc.FirstChild.AppendChildCopy( xNode )
+		          me.BuildList( me.xDoc )
+		          me.SelectedRowIndex = me.LastRowIndex
+		        else
+		          Break
+		        end if
+		      end if
 		      
 		    case 13, 110 // Return, nxw
 		      if me.SelectedRowIndex > -1 then

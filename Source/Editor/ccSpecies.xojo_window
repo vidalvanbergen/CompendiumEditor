@@ -1179,16 +1179,13 @@ End
 		          cProficiencies.Tags = cProficiencies.Values
 		          
 		        case "trait", "feature"
-		          'if xChild.Name = "feature" then
-		          'xChild.Name = "trait"
-		          'end if
-		          
 		          cTraits.FeatureAdd( xChild )
 		          
-		          var description as String = xChild.ToString
-		          if description.Contains("source:") then
-		            ccSourceBox.SetSources( SourceFrom( xChild ) )
-		          end if
+		          // Get source(s) from description
+		          'var description as String = xChild.ToString
+		          'if description.Contains("source:") then
+		          'ccSourceBox.SetSources( SourceFrom( xChild ) )
+		          'end if
 		          
 		        case "modifier"
 		          if xChild.GetAttribute("category") <> "" then

@@ -2442,7 +2442,7 @@ End
 		    cDescription.Value = String.FromArray( descriptionLines, EndOfLine )
 		    if cDescription.Value.Contains("Source:") then
 		      ccSourceBox.SetSources( SourceFromDescription( cDescription.Value ) )
-		      cDescription.Value = DescriptionWithoutSource( cDescription.Value )
+		      cDescription.Value = DescriptionWithoutSource( cDescription.Value ).Trim
 		    end if
 		    
 		  end if

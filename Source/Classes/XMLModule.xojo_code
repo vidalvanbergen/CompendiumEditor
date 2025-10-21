@@ -194,6 +194,7 @@ Protected Module XMLModule
 		  
 		  // MultiText Tags
 		  var MultiTextTags as Boolean = AppSettings.Prefs.Value("DescriptionMultiTextTags", False)
+		  Description = NormalizeLineEndings( Description )
 		  var descriptionLines() as String = Description.Split( EndOfLine )
 		  
 		  // Multiline Source
@@ -219,11 +220,22 @@ Protected Module XMLModule
 		      
 		      // Add Source to description
 		      var linespacing as String = EndOfLine
-		      if ( NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Proficiency:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Found on:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Notes:" ) and NOT descriptionLines( descriptionLines.LastIndex ).Contains( "Stat Block Origin:" )  ) or descriptionLines( descriptionLines.LastIndex ).StartsWith( chr(9) ) then
+		      var LastLine as String = descriptionLines( descriptionLines.LastIndex )
+		      
+		      if LastLine.StartsWith("Proficiency:") OR _
+		        LastLine.StartsWith("Found on:") OR _
+		        LastLine.StartsWith("Notes:") OR _
+		        LastLine.StartsWith("Stat Block Origin:") then
+		        '
+		      else
 		        linespacing = EndOfLine + EndOfLine
 		      end if
 		      
-		      Description = Description + linespacing + "Source:" + chr(9) + Source
+		      'if ( NOT LastLine.Contains( "Proficiency:" ) and NOT LastLine.Contains( "Found on:" ) and NOT LastLine.Contains( "Notes:" ) and NOT LastLine.Contains( "Stat Block Origin:" )  ) then
+		      'linespacing = EndOfLine + EndOfLine
+		      'end if
+		      
+		      Description = Description.Trim + linespacing + "Source:" + chr(9) + Source
 		    else
 		      
 		      Description = Description + "Source:" + chr(9) + Source

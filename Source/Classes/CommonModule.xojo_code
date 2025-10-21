@@ -191,7 +191,7 @@ Protected Module CommonModule
 		    
 		  end if
 		  
-		  Return Description
+		  Return Description.Trim
 		End Function
 	#tag EndMethod
 
@@ -337,6 +337,7 @@ Protected Module CommonModule
 		  
 		  SpellName = SpellName.ReplaceAll(" A ", " a ")
 		  SpellName = SpellName.ReplaceAll(" An ", " an ")
+		  SpellName = SpellName.ReplaceAll(" In ", " in ")
 		  SpellName = SpellName.ReplaceAll(" Of ", " of ")
 		  SpellName = SpellName.ReplaceAll(" Or ", " or ")
 		  SpellName = SpellName.ReplaceAll(" To ", " to ")
@@ -442,8 +443,6 @@ Protected Module CommonModule
 	#tag Method, Flags = &h0
 		Function FormatTitle(Extends title as String) As String
 		  Return FormatSpellname( title )
-		  
-		  'Return title.Titlecase.ReplaceAll(" Of ", " of ").ReplaceAll(" The ", " the ").ReplaceAll( " A ", " a " ).ReplaceAll(" And ", " and ").ReplaceAll(" An ", " an ").ReplaceAll( " With ", " with " ).ReplaceAll( " Or ", " or " )
 		End Function
 	#tag EndMethod
 

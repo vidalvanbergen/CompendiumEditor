@@ -123,8 +123,14 @@ Protected Module CommonModule
 		      SourceString = SourceString + " p. " + PageNr
 		    end if
 		    
-		    if Category <> "" and ( Category.Contains("Homebrew") or Category.Contains("Third Party") ) then
-		      SourceString = SourceString + " (" + Category + ")"
+		    if Category <> "" then
+		      if Category.Contains("Homebrew") or Category.Contains("Third Party") then
+		        SourceString = SourceString + " (" + Category + ")"
+		      elseif Category.Contains("Indie") then
+		        SourceString = SourceString + " (Homebrew)"
+		      elseif Category.Contains("Partnered Content") then
+		        SourceString = SourceString + " (Third Party)"
+		      end if
 		    end if
 		    
 		  end if

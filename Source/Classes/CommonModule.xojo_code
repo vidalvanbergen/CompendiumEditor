@@ -514,6 +514,12 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub msgUnofficialFeature()
+		  MessageBox "This field isn't officially supported by the Fight Club or Game Master apps, they have been added here with developers for future apps in mind."
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function NormalizeLineEndings(TheText as string) As String
 		  TheText = TheText.ReplaceAll( chr(10), EndOfLine )
 		  TheText = TheText.ReplaceAll( chr(13), EndOfLine )
@@ -737,6 +743,43 @@ Protected Module CommonModule
 		  next
 		  
 		  Return ""
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function XCommentToXMLNode(xComment as XMLNode) As XMLNode
+		  if xComment <> Nil and xComment.Value.Trim <> "" then
+		    var xDoc as XMLDocument = xComment.OwnerDocument
+		    
+		    var commentText as String = xComment.Value.Trim
+		    
+		    var xNode as XMLNode = commentText.ToXML
+		    xNode = xDoc.ImportNode( xNode, True )
+		    
+		    
+		    if xComment.Parent <> Nil then
+		      xComment.Parent.ReplaceChild( xNode, xComment )
+		    end if
+		    
+		    Return xNode
+		  end if
+		  Return xComment
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function XMLNodeToComment(xNode as XMLNode) As XMLNode
+		  if xNode <> Nil and xNode.ToString <> "" then
+		    var xDoc as XMLDocument = xNode.OwnerDocument
+		    
+		    var commentNode as XMLNode = xDoc.CreateComment( xNode.ToString )
+		    if xNode.Parent <> Nil then
+		      xNode.Parent.ReplaceChild( commentNode, xNode )
+		    end if
+		    
+		    Return commentNode
+		  end if
+		  Return xNode
 		End Function
 	#tag EndMethod
 

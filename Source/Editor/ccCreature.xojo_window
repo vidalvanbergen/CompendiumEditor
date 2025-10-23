@@ -3419,7 +3419,7 @@ End
 #tag Events bvlUnofficialInfo
 	#tag Event
 		Sub Action(index as Integer)
-		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
+		  msgUnofficialFeature
 		End Sub
 	#tag EndEvent
 #tag EndEvents

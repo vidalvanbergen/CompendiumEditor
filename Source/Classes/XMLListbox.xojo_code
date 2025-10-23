@@ -33,7 +33,7 @@ Inherits ListboxPro
 		  if row > -1 and row <= LastRowIndex then
 		    
 		    
-		    if CellTextAt(row, 2) = "#comment" then 'and IsDarkMode then
+		    if CellTextAt(row, 0) = "#comment" then 'and IsDarkMode then
 		      g.DrawingColor = color.DisabledTextColor
 		    end if
 		    
@@ -135,8 +135,10 @@ Inherits ListboxPro
 		    if xNode.FirstChild <> Nil then
 		      name = xNode.ValueOfNodeWithName("name")
 		    elseif xNode.Value <> "" then
-		      if xNode.Value.Length < 100 then
+		      name = xNode.Value.Match("<name>(.*?)<\/name>", 1)
+		      if name = "" and xNode.Value.Length < 100 then
 		        name = xNode.Value
+		        
 		      end if
 		    end if
 		    type = xNode.Name
@@ -325,6 +327,61 @@ Inherits ListboxPro
 		    
 		    'Return True
 		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub UpdateSelectedRow(xNode as XMLNode)
+		  if xNode <> Nil then
+		    
+		    
+		    
+		  else
+		    Break
+		  end if
+		  
+		  
+		  if xNode <> Nil then
+		    var name, sortName as string
+		    var type as string
+		    
+		    if xNode.FirstChild <> Nil then
+		      name = xNode.ValueOfNodeWithName("name")
+		    elseif xNode.Value <> "" then
+		      name = xNode.Value.Match("<name>(.*?)<\/name>", 1)
+		      if name = "" and xNode.Value.Length < 100 then
+		        name = xNode.Value
+		        
+		      end if
+		    end if
+		    type = xNode.Name
+		    
+		    //
+		    sortName = name
+		    if xNode.ValueOfNodeWithName("sortname").Trim <> "" then
+		      sortName = xNode.ValueOfNodeWithName("sortname").Trim
+		    end if
+		    
+		    //
+		    if type = "race" then
+		      type = "species"
+		    elseif type = "monster" then
+		      type = "creature"
+		    end if
+		    
+		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
+		    
+		    var lindex as Integer = me.SelectedRowIndex
+		    if lindex > -1 then
+		      me.CellTextAt( lindex, 0 ) = type
+		      me.CellTextAt( lindex, 1 ) = name
+		      me.CellTextAt( lindex, 2 ) = pagenr
+		      me.CellTextAt( lindex, 3 ) = sortName
+		      'me.AddRow type, name, pagenr, sortName
+		      me.RowTagAt( lindex ) = xNode
+		    end if
+		  end if
+		  
 		End Sub
 	#tag EndMethod
 

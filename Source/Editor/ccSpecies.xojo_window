@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1258
+   Height          =   1328
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -56,7 +56,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
-      Tooltip         =   "Name of the species."
+      Tooltip         =   "Sorting name of the creature. (e.g. 'Elf, High')"
       Top             =   20
       Transparent     =   True
       UseLowercase    =   False
@@ -95,7 +95,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Creature size."
-      Top             =   88
+      Top             =   158
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -133,7 +133,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Speed in feet."
-      Top             =   122
+      Top             =   192
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -171,7 +171,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
-      Top             =   190
+      Top             =   260
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -209,7 +209,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Spellcasting ability (e.g., Intelligence, Charisma, etc.)."
-      Top             =   156
+      Top             =   226
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -241,7 +241,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   734
+      Top             =   804
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -277,7 +277,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Ability score increases. List abilities with increase amounts, separated by commas."
-      Top             =   54
+      Top             =   124
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -313,7 +313,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   386
+      Top             =   456
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -350,7 +350,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances. (Unofficial)"
-      Top             =   1148
+      Top             =   1218
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -388,7 +388,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   1077
+      Top             =   1147
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -426,7 +426,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   1009
+      Top             =   1079
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -464,7 +464,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   1043
+      Top             =   1113
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -508,7 +508,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1145
+      Top             =   1215
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -552,7 +552,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1074
+      Top             =   1144
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -596,7 +596,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1040
+      Top             =   1110
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -640,7 +640,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1006
+      Top             =   1076
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -678,7 +678,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage vulnerabilities."
-      Top             =   1111
+      Top             =   1181
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -716,7 +716,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1216
+      Top             =   1286
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -754,7 +754,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage immunities."
-      Top             =   1182
+      Top             =   1252
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -798,7 +798,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1108
+      Top             =   1178
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -842,7 +842,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1179
+      Top             =   1249
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -886,7 +886,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1213
+      Top             =   1283
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -918,10 +918,206 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   224
+      Top             =   294
       Transparent     =   True
       Visible         =   True
       Width           =   660
+   End
+   Begin PushButton btnSortName
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Set"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   584
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      TabIndex        =   24
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   "Set display name and base species' name."
+      Top             =   57
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   60
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   7
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   25
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   54
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   8
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   26
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   88
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccEditorTextField cSpeciesAncestry
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   27
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Base species name. (e.g. 'Elf')"
+      Top             =   91
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin ccEditorTextField cNameDisplay
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Display name of the creature. (e.g. 'High Elf')"
+      Top             =   57
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   552
    End
 End
 #tag EndWindow
@@ -988,6 +1184,14 @@ End
 		  
 		  // Name
 		  xSpecies.AppendSimpleChild( "name", cName.Value.Trim )
+		  
+		  // Display Name
+		  if cNameDisplay.Value <> "" then
+		    xSpecies.AppendSimpleChild( "displayname", cNameDisplay.Value.Trim )
+		  end if
+		  if cSpeciesAncestry.Value <> "" then
+		    xSpecies.AppendSimpleChild( "ancestry", cSpeciesAncestry.Value.Trim )
+		  end if
 		  
 		  // Size
 		  if cSize.Value <> "" then
@@ -1137,6 +1341,11 @@ End
 		        case "name"
 		          cName.Value = xValue
 		          
+		        case "displayname"
+		          cNameDisplay.Value = xValue
+		        case "ancestry"
+		          cSpeciesAncestry.Value = xValue
+		          
 		        case "ability"
 		          var abilities() as String = xValue.SplitString(",")
 		          for i as Integer = 0 to abilities.LastIndex
@@ -1156,6 +1365,15 @@ End
 		          
 		        case "resist"
 		          cDamageResistance.Value = xValue.Lowercase
+		          
+		        case "vulnerable"
+		          cDamageVulnerabilities.Value = xValue.Lowercase
+		          
+		        case "conditionImmune"
+		          cConditionImmunities.Value = xValue.Lowercase
+		          
+		        case "immune"
+		          cDamageImmunities.Value = xValue.Lowercase
 		          
 		        case "armor"
 		          cProficienciesArmor.SetMultiValues SplitString( xValue, "," )
@@ -1222,9 +1440,15 @@ End
 		  cTraits.Reset
 		  
 		  cDamageResistance.Reset
+		  cDamageImmunities.Reset
+		  cDamageVulnerabilities.Reset
 		  cProficienciesArmor.Reset
 		  cProficienciesWeapons.Reset
 		  cProficienciesTools.Reset
+		  cConditionImmunities.Reset
+		  
+		  cNameDisplay.Reset
+		  cSpeciesAncestry.Reset
 		  
 		  xNode = Nil
 		End Sub
@@ -1505,7 +1729,7 @@ End
 #tag Events bvlUnofficialInfo
 	#tag Event
 		Sub Action(index as Integer)
-		  MessageBox "This field isn't officially supported by the Fight Club app, but I added it in case it might be useful in the future."
+		  msgUnofficialFeature
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1594,6 +1818,53 @@ End
 		  me.BaseMenu.Append new MenuItem( "Psychic" )
 		  me.BaseMenu.Append new MenuItem( "Radiant" )
 		  me.BaseMenu.Append new MenuItem( "Thunder" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnSortName
+	#tag Event
+		Sub Action()
+		  var displayName as string
+		  var originSpecies as string
+		  
+		  if cName.Value.Trim = "" and cNameDisplay.Value.Trim <> "" then
+		    originSpecies = cNameDisplay.Value.NthField(" ", cNameDisplay.Value.CountFields(" ")-1)
+		    cName.Value = cNameDisplay.Value.Replace( originSpecies, "" ).Trim + ", " + originSpecies
+		  end if
+		  
+		  var tag as string = cName.Value.Match( "\((.*?)\)|\[(.*?)\]", 0 )
+		  var sortname as string = cName.Value
+		  if tag <> "" then
+		    sortname = sortname.RemoveAll( tag ).Trim
+		  end if
+		  
+		  
+		  if sortname.Contains(",") then
+		    originSpecies = sortname.NthField(",", 1).Trim
+		    displayName = sortname.NthField(",", 2).Trim + " " + originSpecies
+		  else
+		    originSpecies = sortname
+		    displayName = sortname
+		  end if
+		  
+		  cNameDisplay.Value = displayName
+		  cSpeciesAncestry.Value = originSpecies
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSpeciesAncestry
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Origin Species:"
+		  me.SetMode ccEditorTextField.Mode.Textfield
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cNameDisplay
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Display Name:"
+		  me.SetMode ccEditorTextField.Mode.Textfield
 		End Sub
 	#tag EndEvent
 #tag EndEvents

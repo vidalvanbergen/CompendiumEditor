@@ -349,7 +349,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -2744,14 +2744,36 @@ End
 		  
 		  
 		  if lstXML.SelectedRowIndex > -1 then
-		    base.AddMenu new MenuItem("-")
-		    
 		    var name as string = lstXML.CellTextAt( lstXML.SelectedRowIndex, 1 )
 		    
-		    base.AddMenu new MenuItem("Duplicate """ + name + """")
-		    base.AddMenu new MenuItem("Remove """ + name + """")
+		    
 		    base.AddMenu new MenuItem("-")
-		    base.AddMenu new MenuItem("Copy """ + name + """")
+		    var type as string = lstXML.CellTextAt( lstXML.SelectedRowIndex, 0 )
+		    
+		    var miEmableDisable as new MenuItem
+		    if type = "#comment" then
+		      miEmableDisable = new MenuItem( "Enable """ + name + """" )
+		    else
+		      miEmableDisable = new MenuItem( "Disable """ + name + """" )
+		    end if
+		    miEmableDisable.Shortcut = "T"
+		    base.AddMenu miEmableDisable
+		    
+		    
+		    base.AddMenu new MenuItem("-")
+		    
+		    var miDuplicate as new MenuItem("Duplicate """ + name + """")
+		    miDuplicate.Shortcut = "D"
+		    base.AddMenu miDuplicate
+		    
+		    var miRemove as new MenuItem("Remove """ + name + """")
+		    miRemove.Shortcut = chr(8)
+		    base.AddMenu miRemove
+		    
+		    base.AddMenu new MenuItem("-")
+		    var miCopy as new MenuItem("Copy """ + name + """")
+		    miCopy.Shortcut = "C"
+		    base.AddMenu miCopy ' new MenuItem("Copy """ + name + """")
 		  end if
 		  
 		  var c as new Clipboard
@@ -2763,7 +2785,9 @@ End
 		        
 		      case "race", "class", "background", "item", "feat", "spell", "monster"
 		        if xNode <> Nil then
-		          base.AddMenu new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
+		          var miPaste as new MenuItem("Paste """ + xNode.ValueOfNodeWithName("name") + """", xNode)
+		          miPaste.Shortcut = "V"
+		          base.AddMenu miPaste
 		        end if
 		        
 		      End Select
@@ -2801,6 +2825,8 @@ End
 		  SortByMenu.AddMenu new DesktopMenuItem( "Type", "SortByType" )
 		  
 		  base.AddMenu SortByMenu
+		  
+		  
 		  
 		  
 		  'base.AddMenu new MenuItem( "Sort by Name", "SortByName" )
@@ -2919,7 +2945,20 @@ End
 		        'me.xDoc = SortXMLDocumentByName( me.xDoc )
 		        'me.BuildList( me.xDoc )
 		        
-		        
+		      ElseIf selectedItem.Text.StartsWith("Disable") or selectedItem.Text.StartsWith("Enable") then
+		        if me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
+		          var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
+		          
+		          if xNode <> Nil then
+		            if xNode.Name = "#comment" then
+		              xNode = XCommentToXMLNode( xNode )
+		            else
+		              xNode = XMLNodeToComment( xNode )
+		            end if
+		            me.UpdateSelectedRow( xNode )
+		            me.SelectedRowIndex = me.SelectedRowIndex
+		          end if
+		        end if
 		        
 		      end if
 		    end if
@@ -2972,9 +3011,27 @@ End
 		      end if
 		      Return True
 		      
-		    case 100 // cmnd + d = Duplicate
+		    case 100 // d, Duplicate
 		      DuplicateItem
 		      Return True
+		      
+		    case 116 // t, Enable/Disable
+		      if me.SelectedRowIndex > -1 and me.RowTagAt( me.SelectedRowIndex ) IsA XMLNode then
+		        var xNode as XMLNode = me.RowTagAt( me.SelectedRowIndex )
+		        
+		        if xNode <> Nil then
+		          if xNode.Name = "#comment" then
+		            xNode = XCommentToXMLNode( xNode )
+		          else
+		            xNode = XMLNodeToComment( xNode )
+		          end if
+		          me.UpdateSelectedRow( xNode )
+		          me.SelectedRowIndex = me.SelectedRowIndex
+		        end if
+		        
+		        Return True
+		      end if
+		      
 		      
 		    End Select
 		    

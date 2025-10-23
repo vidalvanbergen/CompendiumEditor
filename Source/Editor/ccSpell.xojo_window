@@ -781,7 +781,7 @@ Begin ContainerControl ccSpell
          Top             =   1245
          Transparent     =   True
          Visible         =   True
-         Width           =   660
+         Width           =   628
       End
       Begin ccSpecialTraits cSpecialTraits
          AllowAutoDeactivate=   True
@@ -842,7 +842,7 @@ Begin ContainerControl ccSpell
          IconAlignment   =   0
          IconDeltaX      =   0
          IconDeltaY      =   0
-         Index           =   -2147483648
+         Index           =   0
          InitialParent   =   "cvsPartitionClassFeatureTwo"
          Italic          =   False
          Left            =   656
@@ -859,6 +859,50 @@ Begin ContainerControl ccSpell
          TextColor       =   &c00000000
          Tooltip         =   ""
          Top             =   1208
+         Transparent     =   False
+         Underline       =   False
+         Value           =   False
+         Visible         =   True
+         Width           =   24
+      End
+      Begin BevelButton bvlUnofficialTraits
+         AllowAutoDeactivate=   True
+         AllowFocus      =   True
+         BackgroundColor =   &c00000000
+         BevelStyle      =   5
+         Bold            =   False
+         ButtonStyle     =   0
+         Caption         =   "𝒾"
+         CaptionAlignment=   3
+         CaptionDelta    =   0
+         CaptionPosition =   1
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         HasBackgroundColor=   False
+         Height          =   24
+         Icon            =   0
+         IconAlignment   =   0
+         IconDeltaX      =   0
+         IconDeltaY      =   0
+         Index           =   1
+         InitialParent   =   "cvsPartitionClassFeatureTwo"
+         Italic          =   False
+         Left            =   656
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         MenuStyle       =   0
+         Scope           =   0
+         TabIndex        =   3
+         TabPanelIndex   =   0
+         TabStop         =   True
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   1245
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -989,7 +1033,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   "Spell name."
+         Tooltip         =   "Feature Type."
          Top             =   88
          Transparent     =   True
          UseLowercase    =   False
@@ -1027,7 +1071,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   "Spell duration."
+         Tooltip         =   "Feature Prerequisites."
          Top             =   122
          Transparent     =   True
          UseLowercase    =   False
@@ -2065,8 +2109,8 @@ End
 #tag EndEvents
 #tag Events bvlUnofficialTraits
 	#tag Event
-		Sub Action()
-		  MessageBox "Adding special traits and modifiers to a spell isn't officially supported by the Fight Club app, but I added them in case they might be useful in the future."
+		Sub Action(index as Integer)
+		  msgUnofficialFeature
 		End Sub
 	#tag EndEvent
 #tag EndEvents

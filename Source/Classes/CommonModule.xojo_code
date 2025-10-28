@@ -344,6 +344,7 @@ Protected Module CommonModule
 		  SpellName = SpellName.ReplaceAll(" A ", " a ")
 		  SpellName = SpellName.ReplaceAll(" An ", " an ")
 		  SpellName = SpellName.ReplaceAll(" In ", " in ")
+		  SpellName = SpellName.ReplaceAll(" On ", " on ")
 		  SpellName = SpellName.ReplaceAll(" Of ", " of ")
 		  SpellName = SpellName.ReplaceAll(" Or ", " or ")
 		  SpellName = SpellName.ReplaceAll(" To ", " to ")

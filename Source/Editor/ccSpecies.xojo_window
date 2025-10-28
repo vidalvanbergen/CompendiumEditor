@@ -89,7 +89,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -127,7 +127,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -165,7 +165,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -203,7 +203,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -237,7 +237,7 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -271,7 +271,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -309,7 +309,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   9
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
@@ -344,7 +344,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -382,7 +382,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -420,7 +420,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -458,7 +458,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   12
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -503,7 +503,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -547,7 +547,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -591,7 +591,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -635,7 +635,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -672,7 +672,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -710,7 +710,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   18
+      TabIndex        =   26
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -748,7 +748,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   19
+      TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -793,7 +793,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   20
+      TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -837,7 +837,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   21
+      TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -881,7 +881,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   22
+      TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -914,7 +914,7 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   23
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -945,7 +945,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   24
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Set display name and base species' name."
@@ -987,7 +987,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   25
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1031,7 +1031,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   26
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1068,7 +1068,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   27
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1106,7 +1106,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   28
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""

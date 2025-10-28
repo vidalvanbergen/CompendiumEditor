@@ -536,16 +536,30 @@ End
 		  var Title as string
 		  var Description as String
 		  if c.Text <> "" then
+		    Description = NormalizeLineEndings( c.Text.Trim )
 		    
-		    var lines() as string = NormalizeLineEndings( c.Text.Trim ).Split( EndOfLine )
+		    Title = Description.Match( "(.*?)(\.|:|\n)", 1 )
+		    if Title <> "" then
+		      if Description.StartsWith( Title + "." ) then
+		        Description = Description.Replace( Title + ".", "" )
+		      elseif Description.StartsWith( Title + ":" ) then
+		        Description = Description.Replace( Title + ":", "" )
+		      elseif Description.StartsWith( Title + EndOfLine ) then
+		        Description = Description.Replace( Title + EndOfLine, "" )
+		      end if
+		      Description = Description.Trim
+		    end if
+		    
+		    
+		    var lines() as string = Description.Split( EndOfLine )
 		    
 		    
 		    if lines.LastIndex > -1 then
 		      
-		      if lines(0).Length <= 50 then
-		        Title = lines(0)
-		        lines.RemoveAt(0)
-		      end if
+		      'if lines(0).Length <= 50 then
+		      'Title = lines(0)
+		      'lines.RemoveAt(0)
+		      'end if
 		      
 		      for index as Integer = 0 to lines.LastIndex
 		        if lines(index).Contains("level") and lines(index).Contains("feature") then
@@ -555,8 +569,8 @@ End
 		      
 		      Description = string.FromArray( lines, EndOfLine ).Trim
 		      
-		      if Title = "" then
-		        Title = Description.Match( "(.*?)(\.|:)", 1 )
+		      if Title = "" then 'or Title.Contains(".") or Title.Contains(":") then
+		        Title = Description.Match( "(.*?)(\.|:)", 0 )
 		        if Title <> "" then
 		          Description = Description.Replace( Title + ". ", "" ).Replace( Title + ": ", "" )
 		        end if

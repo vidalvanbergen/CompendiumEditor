@@ -2083,9 +2083,10 @@ End
 		  end if
 		  
 		  TemplateMenu.AddMenu new MenuItem( archetype + ": " + subclassName )
+		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + subclassName + ")" )
+		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( subclassName + ": FeatureName" )
 		  TemplateMenu.AddMenu new MenuItem( className + " subclass: FeatureName" )
-		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + subclassName + ")" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( subclassName + " Feature" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
@@ -2095,6 +2096,9 @@ End
 		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( "Pact Boon: FeatureName" )
 		  TemplateMenu.AddMenu new MenuItem( "Pact Boon: FeatureName (HB)" )
+		  TemplateMenu.AddMenu new MenuItem( "-" )
+		  TemplateMenu.AddMenu new MenuItem( "Fighting Style: FeatureName" )
+		  TemplateMenu.AddMenu new MenuItem( "Fighting Style: FeatureName (HB)" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( "Ability Score Improvement" )
 		  

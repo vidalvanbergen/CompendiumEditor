@@ -569,6 +569,13 @@ End
 		      
 		      Description = string.FromArray( lines, EndOfLine ).Trim
 		      
+		      // fix common typos
+		      Description = Description.ReplaceAll(" ioth ", " 10th ")
+		      Description = Description.ReplaceAll("i minute", "1 minute")
+		      Description = Description.ReplaceAll("for i ", "for 1 ")
+		      Description = Description.ReplaceAll("minimum of i", "minimum of 1")
+		      Description = Description.ReplaceAllRegEx(" (id)(\d+)", " 1d$2")
+		      
 		      if Title = "" then 'or Title.Contains(".") or Title.Contains(":") then
 		        Title = Description.Match( "(.*?)(\.|:)", 0 )
 		        if Title <> "" then

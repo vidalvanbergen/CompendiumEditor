@@ -210,6 +210,153 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub ShowDropdown()
+		  
+		  if BaseMenu <> Nil then
+		    
+		    var newValues(), newTags() as String
+		    
+		    for index as Integer = 0 to BaseMenu.Count-1
+		      var mi as MenuItem = BaseMenu.MenuAt(index)
+		      
+		      if ReadOnly and MultipleOption then
+		        mi.HasCheckMark = Values.IndexOf( mi.Text ) > -1
+		      else
+		        mi.HasCheckMark = ( mi.Text <> "None" and ( value = mi.Text or ( Value.Length >= 5 and Value.Contains( mi.Text ) ) ) )
+		      end if
+		      
+		    next
+		    
+		    
+		    var hititem as MenuItem = BaseMenu.PopUp'( self.Window.Left + btnDropdown.Left, self.Window.Top + btnDropdown.Top )
+		    
+		    if hititem <> Nil then
+		      
+		      // Specific options
+		      if hititem.Text = "None" and hititem.Tag = "" then
+		        txtField.Text = ""
+		        Tag = ""
+		        Redim Tags(-1)
+		        Redim Values(-1)
+		        
+		      elseif hititem.Text = "Format spell name" then
+		        txtField.Text = FormatSpellname( txtField.Text )
+		        
+		      elseif hititem.Text = "New dice roll" then
+		        var calculation as string = SummonCalculator( "", True )
+		        txtField.Text = calculation.ReplaceAll(" ", "")
+		        self.Tag = DiceCalculatorMethods.SimplifyMath( calculation )
+		        
+		      elseif hititem.Text = "Edit dice roll" then
+		        var calculation as string = SummonCalculator( self.Tag, True )
+		        txtField.Text = calculation
+		        self.Tag = DiceCalculatorMethods.SimplifyMath( calculation )
+		        
+		        
+		        // MultipleOption
+		      elseif MultipleOption and Not self.ReadOnly then
+		        
+		        var AddingValue as String = hititem.Text
+		        if TagsForValue then
+		          AddingValue = hititem.Tag
+		        end if
+		        
+		        if txtField.Text = "" then // Set to field
+		          txtField.Text = AddingValue
+		        elseif txtField.Text.Contains( hititem.Text ) then // Remove existing
+		          txtField.Text = txtField.Text.Replace( AddingValue, "" ).ReplaceAll(", ,", ",").ReplaceAll(",,", ",").Trim
+		          
+		          if txtField.Text.EndsWith(",") then
+		            txtField.Text = txtField.Text.Left( txtField.Text.Length-1 ).Trim
+		          end if
+		          if txtField.Text.StartsWith(",") then
+		            txtField.Text = txtField.Text.Right( txtField.Text.Length-1 ).Trim
+		          end if
+		          
+		        else // Add to field
+		          txtField.Text = txtField.Text + ", " + AddingValue
+		        end if
+		        
+		        Values = txtField.Text.SplitString(",")
+		        
+		        
+		      elseif MultipleOption then
+		        
+		        // Remove selected item
+		        if Values.IndexOf( hititem.Text ) > -1 then
+		          
+		          if hititem.Text = "None" then
+		            tags = newTags
+		            values = newValues
+		            
+		            value = ""
+		          else
+		            Values.RemoveAt( values.IndexOf( hititem.Text ) )
+		            value = Join( Values, ", " )
+		            
+		            if tags.IndexOf( hititem.Tag ) > -1 then
+		              tags.RemoveAt( Tags.IndexOf( hititem.Tag ) )
+		            end if
+		          end if
+		          
+		          // Add selected item
+		        else
+		          
+		          if hititem.Text = "None" then
+		            
+		            values = newValues
+		            Tags = newTags
+		            Value = ""
+		            
+		          else
+		            
+		            for index as Integer = 0 to BaseMenu.Count-1
+		              var mi as MenuItem = BaseMenu.MenuAt(index)
+		              
+		              if values.IndexOf( mi.Text ) > -1 or mi.Text = hititem.Text then
+		                newValues.Add mi.Text
+		                newTags.Add mi.Tag
+		              end if
+		              
+		            next
+		            
+		            values = newValues
+		            tags = newTags
+		            
+		            value = Join( newValues, ", " )
+		          end if
+		          
+		        end if
+		        
+		        // SingleOption
+		      else
+		        
+		        if hititem.Text = "None" then
+		          txtField.Text = ""
+		          values = newValues
+		          tag = ""
+		        else
+		          txtField.Text = hititem.Text
+		          Values = Array( hititem.Text )
+		          tag = hititem.Tag
+		        end if
+		        
+		      end if
+		      
+		    end if
+		    
+		    
+		  end if
+		  
+		  
+		  if UseLowercase then
+		    txtField.Text = txtField.Text.Lowercase
+		    Tag = Tag.Lowercase
+		  end if
+		End Sub
+	#tag EndMethod
+
 
 	#tag Hook, Flags = &h0
 		Event ValueChanged(TheValue as String)
@@ -383,6 +530,9 @@ End
 		      
 		      Return True
 		    end if
+		    
+		  elseif btnDropdown.Visible and ( AscKey = 31 or AscKey = 30 ) then
+		    ShowDropdown
 		  end if
 		End Function
 	#tag EndEvent
@@ -390,161 +540,7 @@ End
 #tag Events btnDropdown
 	#tag Event
 		Sub Pressed()
-		  
-		  if BaseMenu <> Nil then
-		    
-		    var newValues(), newTags() as String
-		    
-		    'if NOT self.ReadOnly then
-		    'Values = txtField.Text.Split( "," )
-		    'for index as Integer = 0 to Values.LastIndex
-		    'Values(index) = Trim( Values(index) )
-		    'next
-		    'end if
-		    
-		    
-		    for index as Integer = 0 to BaseMenu.Count-1
-		      var mi as MenuItem = BaseMenu.MenuAt(index)
-		      'if MultipleOption then ' and NOT ReadOnly then
-		      'mi.HasCheckMark txtField.Text.Contains( mi.Text )
-		      'else
-		      if ReadOnly and MultipleOption then
-		        mi.HasCheckMark = Values.IndexOf( mi.Text ) > -1
-		      else
-		        mi.HasCheckMark = ( mi.Text <> "None" and ( value = mi.Text or ( Value.Length >= 5 and Value.Contains( mi.Text ) ) ) )
-		      end if
-		      '( Values.IndexOf( mi.Text ) > -1 ) or 
-		      
-		      'end if
-		    next
-		    
-		    
-		    var hititem as MenuItem = BaseMenu.PopUp
-		    
-		    if hititem <> Nil then
-		      
-		      
-		      // Specific options
-		      if hititem.Text = "None" and hititem.Tag = "" then
-		        txtField.Text = ""
-		        Tag = ""
-		        Redim Tags(-1)
-		        Redim Values(-1)
-		        
-		      elseif hititem.Text = "Format spell name" then
-		        txtField.Text = FormatSpellname( txtField.Text )
-		        
-		      elseif hititem.Text = "New dice roll" then
-		        var calculation as string = SummonCalculator( "", True )
-		        txtField.Text = calculation.ReplaceAll(" ", "")
-		        self.Tag = DiceCalculatorMethods.SimplifyMath( calculation )
-		        
-		      elseif hititem.Text = "Edit dice roll" then
-		        var calculation as string = SummonCalculator( self.Tag, True )
-		        txtField.Text = calculation
-		        self.Tag = DiceCalculatorMethods.SimplifyMath( calculation )
-		        
-		        
-		        // MultipleOption
-		      elseif MultipleOption and Not self.ReadOnly then
-		        
-		        var AddingValue as String = hititem.Text
-		        if TagsForValue then
-		          AddingValue = hititem.Tag
-		        end if
-		        
-		        if txtField.Text = "" then // Set to field
-		          txtField.Text = AddingValue
-		        elseif txtField.Text.Contains( hititem.Text ) then // Remove existing
-		          txtField.Text = txtField.Text.Replace( AddingValue, "" ).ReplaceAll(", ,", ",").ReplaceAll(",,", ",").Trim
-		          
-		          if txtField.Text.EndsWith(",") then
-		            txtField.Text = txtField.Text.Left( txtField.Text.Length-1 ).Trim
-		          end if
-		          if txtField.Text.StartsWith(",") then
-		            txtField.Text = txtField.Text.Right( txtField.Text.Length-1 ).Trim
-		          end if
-		          
-		        else // Add to field
-		          txtField.Text = txtField.Text + ", " + AddingValue
-		        end if
-		        
-		        Values = txtField.Text.SplitString(",")
-		        
-		        
-		      elseif MultipleOption then
-		        
-		        // Remove selected item
-		        if Values.IndexOf( hititem.Text ) > -1 then
-		          
-		          if hititem.Text = "None" then
-		            tags = newTags
-		            values = newValues
-		            
-		            value = ""
-		          else
-		            Values.RemoveAt( values.IndexOf( hititem.Text ) )
-		            value = Join( Values, ", " )
-		            
-		            if tags.IndexOf( hititem.Tag ) > -1 then
-		              tags.RemoveAt( Tags.IndexOf( hititem.Tag ) )
-		            end if
-		          end if
-		          
-		          // Add selected item
-		        else
-		          
-		          if hititem.Text = "None" then
-		            
-		            values = newValues
-		            Tags = newTags
-		            Value = ""
-		            
-		          else
-		            
-		            for index as Integer = 0 to BaseMenu.Count-1
-		              var mi as MenuItem = BaseMenu.MenuAt(index)
-		              
-		              if values.IndexOf( mi.Text ) > -1 or mi.Text = hititem.Text then
-		                newValues.Add mi.Text
-		                newTags.Add mi.Tag
-		              end if
-		              
-		            next
-		            
-		            values = newValues
-		            tags = newTags
-		            
-		            value = Join( newValues, ", " )
-		          end if
-		          
-		        end if
-		        
-		        // SingleOption
-		      else
-		        
-		        if hititem.Text = "None" then
-		          txtField.Text = ""
-		          values = newValues
-		          tag = ""
-		        else
-		          txtField.Text = hititem.Text
-		          Values = Array( hititem.Text )
-		          tag = hititem.Tag
-		        end if
-		        
-		      end if
-		      
-		    end if
-		    
-		    
-		  end if
-		  
-		  
-		  if UseLowercase then
-		    txtField.Text = txtField.Text.Lowercase
-		    Tag = Tag.Lowercase
-		  end if
+		  ShowDropdown
 		End Sub
 	#tag EndEvent
 #tag EndEvents

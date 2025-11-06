@@ -588,6 +588,26 @@ Begin Menu MainMenubar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem UntitledSeparator2
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "-"
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
+      Begin MenuItem CompendiumImportFromClipboard
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Import From Clipboard"
+         ShortcutKey = "V"
+         Shortcut = "Cmd+Shift+V"
+         MenuModifier = True
+         AltMenuModifier = True
+         AutoEnabled = False
+         AutoEnable = False
+         Visible = True
+      End
    End
    Begin MenuItemViewMenu ViewMenu
       SpecialMenu = 0

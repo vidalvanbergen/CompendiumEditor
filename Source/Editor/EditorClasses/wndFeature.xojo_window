@@ -465,6 +465,12 @@ End
 
 #tag WindowCode
 	#tag Event
+		Sub EnableMenuItems()
+		  CompendiumImportFromClipboard.Enabled = True
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Function KeyDown(Key As String) As Boolean
 		  dim AscKey as Integer = Asc( key )
 		  
@@ -481,6 +487,15 @@ End
 		  end if
 		End Function
 	#tag EndEvent
+
+
+	#tag MenuHandler
+		Function CompendiumImportFromClipboard(index as Integer) As Boolean Handles CompendiumImportFromClipboard.Action
+		  ImportFromClipboard
+		  Return True
+		  
+		End Function
+	#tag EndMenuHandler
 
 
 	#tag Method, Flags = &h0
@@ -581,10 +596,21 @@ End
 		      
 		      Description = Description.ReplaceAll("spend i ", "spend 1 ").ReplaceAll("spend l ", "spend 1 ")
 		      
-		      Description = Description.ReplaceAll(" isth level ", " 15th level ")
+		      Description = Description.ReplaceAll(" o hit points", " 0 hit points")
+		      
+		      Description = Description.ReplaceAll(" isth level", " 15th level")
+		      Description = Description.ReplaceAll(" 1sth level", " 15th level")
+		      Description = Description.ReplaceAll(" rith level", " 11th level")
+		      Description = Description.ReplaceAll( "oth level", "0th level" )
+		      
+		      
 		      Description = Description.ReplaceAll("i minute", "1 minute")
+		      Description = Description.ReplaceAll("I minute", "1 minute")
 		      Description = Description.ReplaceAll("for i ", "for 1 ")
+		      
 		      Description = Description.ReplaceAll("minimum of i", "minimum of 1")
+		      Description = Description.ReplaceAll("minimum of +i", "minimum of +1")
+		      
 		      Description = Description.ReplaceAll(" IdIo ", " 1d10 ")
 		      Description = Description.ReplaceAllRegEx(" (id)(\d+)", " 1d$2")
 		      

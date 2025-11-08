@@ -527,8 +527,14 @@ End
 		  'formatwithindent.KeyboardShortcut = "Cmd-Alt"
 		  formatwithindent.Shortcut = "L"
 		  
+		  
 		  basemenu.Append formatwithspacing
 		  basemenu.append formatwithindent
+		  
+		  basemenu.Append new MenuItem("-")
+		  
+		  var fixcommontypos as new MenuItem("Fix Common OCR Typos")
+		  basemenu.Append fixcommontypos
 		  
 		  if txtField.SelectedText <> "" then
 		    basemenu.Append new MenuItem("-")
@@ -595,6 +601,10 @@ End
 		        IncreaseIndentFromSelectedLines( txtField )
 		      case "Decrease indentation of selected lines"
 		        DecreaseIndentFromSelectedLines( txtField )
+		        
+		      case "Fix Common OCR Typos"
+		        selectedText = FixTypos( selectedText )
+		        
 		      End Select
 		      
 		      if UseSelection and txtField.SelectedText <> "" then

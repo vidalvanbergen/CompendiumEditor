@@ -262,6 +262,43 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function FixTypos(Description as String) As String
+		  // fix common OCR typos
+		  Description = Description.ReplaceAll(" ioth ", " 10th ").ReplaceAll(" 1oth ", " 10th ")
+		  Description = Description.ReplaceAll(" Ioth ", " 10th ").ReplaceAll(" roth ", " 10th ")
+		  
+		  Description = Description.ReplaceAll(" s feet", " 5 feet")
+		  Description = Description.ReplaceAll(" io feet", " 10 feet")
+		  Description = Description.ReplaceAll(" 1o feet", " 10 feet")
+		  Description = Description.ReplaceAll(" IS feet", " 15 feet")
+		  Description = Description.ReplaceAll(" 1S feet", " 15 feet")
+		  Description = Description.ReplaceAll(" 6o feet", " 60 feet")
+		  
+		  Description = Description.ReplaceAll("spend i ", "spend 1 ").ReplaceAll("spend l ", "spend 1 ")
+		  
+		  Description = Description.ReplaceAll(" o hit points", " 0 hit points")
+		  
+		  Description = Description.ReplaceAll(" isth level", " 15th level")
+		  Description = Description.ReplaceAll(" 1sth level", " 15th level")
+		  Description = Description.ReplaceAll(" rith level", " 11th level")
+		  Description = Description.ReplaceAll( "oth level", "0th level" )
+		  
+		  
+		  Description = Description.ReplaceAll("i minute", "1 minute")
+		  Description = Description.ReplaceAll("I minute", "1 minute")
+		  Description = Description.ReplaceAll("for i ", "for 1 ")
+		  
+		  Description = Description.ReplaceAll("minimum of i", "minimum of 1")
+		  Description = Description.ReplaceAll("minimum of +i", "minimum of +1")
+		  
+		  Description = Description.ReplaceAll(" IdIo ", " 1d10 ")
+		  Description = Description.ReplaceAllRegEx(" (id)(\d+)", " 1d$2")
+		  
+		  Return Description
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function FormatSpelllist(TheValue as String) As String
 		  '3rd | identify, chaos bolt
 		  '5th | enthral, enlarge/reduce

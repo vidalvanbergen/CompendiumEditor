@@ -390,6 +390,7 @@ Protected Module CommonModule
 		  SpellName = SpellName.ReplaceAll(" The ", " the ")
 		  SpellName = SpellName.ReplaceAll(" From ", " from ")
 		  SpellName = SpellName.ReplaceAll(" With ", " with ")
+		  SpellName = SpellName.ReplaceAll(" Without ", " without ")
 		  
 		  SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
 		  

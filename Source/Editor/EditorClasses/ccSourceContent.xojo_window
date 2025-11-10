@@ -432,13 +432,21 @@ End
 	#tag Event
 		Sub ActionEdit()
 		  if lstSources.SelectedRowIndex > -1 then
+		    var name, pgnr, tag as string
+		    
+		    
 		    if cbSourcebox.Text.Contains(" p. ") then
-		      lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 ) = cbSourcebox.Text.NthField( " p. ", 1 ).RemoveAll(",")
-		      lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 ) = cbSourcebox.Text.NthField( " p. ", 2 ).RemoveAll(",")
+		      name = cbSourcebox.Text.NthField( " p. ", 1 ).RemoveAll(",")
+		      pgnr = cbSourcebox.Text.NthField( " p. ", 2 ).RemoveAll(",")
+		      tag = pgnr.Match( "\((.*?)\)", 0 )
+		      pgnr = pgnr.RemoveAll( tag ).Trim
 		    else
-		      lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 ) = cbSourcebox.Text.RemoveAll(",")
-		      lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 ) = ""
+		      name = cbSourcebox.Text.RemoveAll(",")
 		    end if
+		    lstSources.CellValueAt( lstSources.SelectedRowIndex, 0 ) = name
+		    lstSources.CellValueAt( lstSources.SelectedRowIndex, 1 ) = pgnr
+		    lstSources.CellValueAt( lstSources.SelectedRowIndex, 2 ) = tag
+		    
 		    cbSourcebox.Text = ""
 		  end if
 		End Sub

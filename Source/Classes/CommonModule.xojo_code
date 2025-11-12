@@ -278,6 +278,7 @@ Protected Module CommonModule
 		  
 		  Description = Description.ReplaceAll(" o hit points", " 0 hit points")
 		  
+		  Description = Description.ReplaceAll(" Ist level", " 1st level")
 		  Description = Description.ReplaceAll(" isth level", " 15th level")
 		  Description = Description.ReplaceAll(" 1sth level", " 15th level")
 		  Description = Description.ReplaceAll(" rith level", " 11th level")

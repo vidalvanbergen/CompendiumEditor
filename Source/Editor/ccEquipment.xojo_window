@@ -10,7 +10,7 @@ Begin ContainerControl ccEquipment
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1551
+   Height          =   1586
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -720,7 +720,7 @@ Begin ContainerControl ccEquipment
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   1005
+      Height          =   1040
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -791,11 +791,11 @@ Begin ContainerControl ccEquipment
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   2
+         TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas."
-         Top             =   1100
+         Top             =   1134
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -821,11 +821,11 @@ Begin ContainerControl ccEquipment
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   3
+         TabIndex        =   5
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-         Top             =   1270
+         Top             =   1304
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -851,14 +851,76 @@ Begin ContainerControl ccEquipment
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   4
+         TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   938
+         Top             =   972
          Transparent     =   True
          Visible         =   True
          Width           =   660
+      End
+      Begin ccEditorTextField cProficiency
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "cvsPlacard"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Gold value of the item."
+         Top             =   938
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   624
+      End
+      BeginSegmentedButton SegmentedButton btnMagicProficiencies
+         Enabled         =   True
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPlacard"
+         Left            =   656
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         Segments        =   "🪄\n\nFalse"
+         SelectionStyle  =   2
+         TabIndex        =   2
+         TabPanelIndex   =   0
+         TabStop         =   False
+         Tooltip         =   "Automagically fill in all the relevant proficiencies."
+         Top             =   938
+         Transparent     =   False
+         Visible         =   True
+         Width           =   24
       End
    End
    Begin PopupMenu popBaseItems
@@ -1113,7 +1175,12 @@ End
 		  
 		  
 		  // Description
-		  SetDescription( xItem, cDescription.Value, ccSourceBox.GetSources ) 'cSource.Value )
+		  var description as String = cDescription.Value
+		  if cProficiency.Value.Trim <> "" then
+		    description = description + EndOfLine + EndOfLine + "Proficiency: " + cProficiency.Value.Lowercase
+		  end if
+		  
+		  SetDescription( xItem, description, ccSourceBox.GetSources ) 'cSource.Value )
 		  
 		  
 		  // Modifiers
@@ -1340,6 +1407,7 @@ End
 		    
 		    cDescription.Value = String.FromArray( descriptionLines, EndOfLine )
 		    
+		    // Source
 		    if cDescription.Value.Contains("Source:") then
 		      var sourceString as String = SourceFromDescription( cDescription.Value ).ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(9), "" ).Trim
 		      
@@ -1363,6 +1431,17 @@ End
 		      end if
 		      
 		      cDescription.Value = DescriptionWithoutSource( cDescription.Value )
+		    end if
+		    
+		    
+		    // Proficiencies
+		    if cDescription.Value.Contains( "Proficiency:") then
+		      
+		      var proficiencies as String = cDescription.Value.Match( "Proficiency:(.*?)(\n|\z)", 1 )
+		      if proficiencies <> "" then
+		        cDescription.Value = cDescription.Value.Replace( "Proficiency: " + proficiencies, "" ).Trim
+		        cProficiency.Value = proficiencies.Replace("Proficiency:", "").Trim
+		      end if
 		    end if
 		    
 		  end if
@@ -1390,7 +1469,6 @@ End
 		  cRangeShort.Reset
 		  cRangeLong.Reset
 		  
-		  
 		  cArmorClass.Reset
 		  cStrength.Reset
 		  chkStealthDisadvantage.Value = False
@@ -1400,6 +1478,7 @@ End
 		    'cSource.Reset
 		    ccSourceBox.Reset
 		  end if
+		  cProficiency.Reset
 		  
 		  cModifiers.Reset
 		  cModifiers.Refresh
@@ -1983,6 +2062,44 @@ End
 	#tag Event
 		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
 		  Source = cDescription.Value
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cProficiency
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Proficiency:"
+		  me.SetMode ccEditorTextField.Mode.Textfield
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnMagicProficiencies
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  var Proficiencies as String
+		  
+		  if cProperties.Value <> "" then
+		    if cProperties.Value.Contains("Martial") then
+		      Proficiencies = "martial, "
+		    else
+		      Proficiencies = "simple, "
+		    end if
+		  end if
+		  
+		  if cCategories.Value <> "" then
+		    var categories as String = cCategories.Value
+		    if categories.Contains(",") then
+		      categories = categories.NthField(",", 1)
+		    end if
+		    
+		    Proficiencies = Proficiencies + categories
+		  elseif cName.Value <> "" then
+		    Proficiencies = Proficiencies + cName.Value.Lowercase
+		  end if
+		  
+		  Proficiencies = Proficiencies.ReplaceAllRegEx( "(\(.*?\)|\[.*?\])", "" )
+		  
+		  cProficiency.Value = Proficiencies.Trim
 		End Sub
 	#tag EndEvent
 #tag EndEvents

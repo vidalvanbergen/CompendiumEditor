@@ -161,7 +161,7 @@ Begin Window InputDialog
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   352
+      Width           =   316
    End
    Begin PushButton btnOkay
       AllowAutoDeactivate=   True
@@ -227,6 +227,30 @@ Begin Window InputDialog
       Visible         =   True
       Width           =   80
    End
+   BeginSegmentedButton SegmentedButton btnMagic
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   456
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically fill in all the dice rolls"
+      Top             =   86
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -276,6 +300,18 @@ End
 	#tag Event
 		Sub Action()
 		  Self.Close
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnMagic
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  var c as new Clipboard
+		  if txtInput.Text = "" and c.Text <> "" and c.Text.Length < 150 then
+		    txtInput.Text = c.Text
+		  end if
+		  
+		  txtInput.Text = FormatSpellname( txtInput.Text )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

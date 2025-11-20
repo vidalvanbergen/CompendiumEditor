@@ -2607,9 +2607,11 @@ End
 		  
 		  // Show only related features
 		  if me.SelectedRowIndex > 0 then
+		    cName.txtField.Enabled = False
 		    cvsMainClass.Visible = False
 		    cvsClassFeatures.Top = cvsMainClass.Top
 		  else
+		    cName.txtField.Enabled = True
 		    cvsMainClass.Visible = True
 		    cvsClassFeatures.Top = cvsMainClass.Top + cvsMainClass.Height + 12
 		  end if

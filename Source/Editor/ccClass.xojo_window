@@ -2083,6 +2083,7 @@ End
 		  end if
 		  
 		  TemplateMenu.AddMenu new MenuItem( archetype + ": " + subclassName )
+		  TemplateMenu.AddMenu new MenuItem( className + " Subclass: " + subclassName )
 		  TemplateMenu.AddMenu new MenuItem( "FeatureName (" + subclassName + ")" )
 		  TemplateMenu.AddMenu new MenuItem( "-" )
 		  TemplateMenu.AddMenu new MenuItem( subclassName + ": FeatureName" )

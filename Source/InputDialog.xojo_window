@@ -245,7 +245,7 @@ Begin Window InputDialog
       TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   False
-      Tooltip         =   "Automagically fill in all the dice rolls"
+      Tooltip         =   "Automagically capitalize name."
       Top             =   86
       Transparent     =   False
       Visible         =   True
@@ -312,6 +312,8 @@ End
 		  end if
 		  
 		  txtInput.Text = FormatSpellname( txtInput.Text )
+		  
+		  txtInput.Text = txtInput.Text.ReplaceAll( "(hb)", "(HB)" ).ReplaceAll( "(ua)", "(UA)" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

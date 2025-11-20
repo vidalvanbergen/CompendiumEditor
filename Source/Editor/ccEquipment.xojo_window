@@ -1445,6 +1445,11 @@ End
 		    end if
 		    
 		  end if
+		  
+		  if cItemType.Value = "" then
+		    cItemType.Value = "Wondrous Item"
+		    cItemType.Tag = "W"
+		  end if
 		End Sub
 	#tag EndMethod
 
@@ -1851,6 +1856,9 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub ValueChanged(TheValue as String)
+		  if TheValue = "" then
+		    TheValue = "Wondrous Item"
+		  end if
 		  
 		  
 		  Select case TheValue
@@ -1932,6 +1940,7 @@ End
 		  'ec = EmbedControl( me.Parent )
 		  'ec.AdjustScroller
 		  'end if
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2078,27 +2087,42 @@ End
 		Sub Pressed(segmentIndex As Integer)
 		  var Proficiencies as String
 		  
-		  if cProperties.Value <> "" then
+		  if cItemType.Value.Contains("weapon") then
+		    
 		    if cProperties.Value.Contains("Martial") then
 		      Proficiencies = "martial, "
 		    else
 		      Proficiencies = "simple, "
 		    end if
-		  end if
-		  
-		  if cCategories.Value <> "" then
-		    var categories as String = cCategories.Value
-		    if categories.Contains(",") then
-		      categories = categories.NthField(",", 1)
+		    
+		    if cCategories.Value <> "" then
+		      var categories as String = cCategories.Value
+		      
+		      if categories.Contains(",") then
+		        categories = categories.NthField(",", 1)
+		      end if
+		      
+		      Proficiencies = Proficiencies + categories
+		    elseif cName.Value <> "" then
+		      Proficiencies = Proficiencies + cName.Value.Lowercase
 		    end if
 		    
-		    Proficiencies = Proficiencies + categories
-		  elseif cName.Value <> "" then
-		    Proficiencies = Proficiencies + cName.Value.Lowercase
+		  elseif cItemType.Value.Contains("armor") then
+		    Proficiencies = cItemType.Value.Lowercase
+		    
+		  elseif cItemType.Value = "shield" then
+		    Proficiencies = "shield"
+		    
+		  elseif cItemType.Value = "staff" then
+		    Proficiencies = "simple, staff, quarterstaff"
+		  elseif cItemType.Value = "wand" then
+		    Proficiencies = "simple, wand"
+		  elseif cItemType.Value = "rod" then
+		    Proficiencies = "simple, rod"
 		  end if
 		  
-		  Proficiencies = Proficiencies.ReplaceAllRegEx( "(\(.*?\)|\[.*?\])", "" )
 		  
+		  Proficiencies = Proficiencies.ReplaceAllRegEx( "(\(.*?\)|\[.*?\])", "" )
 		  cProficiency.Value = Proficiencies.Trim
 		End Sub
 	#tag EndEvent

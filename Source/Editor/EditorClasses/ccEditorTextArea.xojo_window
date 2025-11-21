@@ -155,6 +155,30 @@ Begin ContainerControl ccEditorTextArea
       Visible         =   True
       Width           =   300
    End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   242
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   0
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -294,6 +318,7 @@ End
 		  
 		  selectedText = selectedText.ReplaceAllRegEx( "(\w+)\-\n(\w+)", "$1$2" ) // Join hypenated new line words.
 		  selectedText = selectedText.ReplaceAllRegEx( "(\w+)\n\((\w+)", "$1 ($2" ) // Join lines with '(' on new line words.
+		  selectedText = selectedText.ReplaceAllRegEx( "(\w+)\)\n(\w+)", "$1) $2" ) // Join lines with '(' on first line words.
 		  
 		  // Dumb down quotes
 		  selectedText = selectedText.ReplaceAll("‘", "'")
@@ -675,6 +700,20 @@ End
 	#tag Event
 		Sub KeyUp(key As String)
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  var selectedText as String = txtField.Text
+		  
+		  FormatParagraphs( selectedText, Keyboard.AsyncAltKey )
+		  selectedText = FixTypos( selectedText )
+		  
+		  FormatLists( selectedText )
+		  
+		  txtField.Text = selectedText
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -189,6 +189,30 @@ Begin ContainerControl ccEditorSpells
       Visible         =   True
       Width           =   150
    End
+   BeginSegmentedButton SegmentedButton btnSpellformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   126
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format spells and spell tables into a comma separated list. (Hold Alt for [2024] tags)"
+      Top             =   65
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -303,6 +327,26 @@ End
 		  
 		  Return False
 		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnSpellformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  
+		  
+		  
+		  txtSpells.Text = FormatSpelllist( txtSpells.Text )
+		  
+		  if Keyboard.AsyncAltKey then
+		    var names() as String = SplitString( txtSpells.Text, "," )
+		    for index as Integer = 0 to names.LastIndex
+		      if NOT names(index).Contains("[2024]") then
+		        names(index) = names(index) + " [2024]"
+		      end if
+		    next
+		    txtSpells.Text = String.FromArray( names, ", " )
+		  end if
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

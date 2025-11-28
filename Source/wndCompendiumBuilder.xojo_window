@@ -282,6 +282,25 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub FindSourceFiles(Parent as FolderItem, ByRef XMLFiles() as Folderitem)
+		  
+		  if Parent <> Nil and Parent.Exists then
+		    for each item as FolderItem in Parent.Children
+		      
+		      if item <> Nil and item.Visible and item.IsReadable then
+		        if item.IsFolder then
+		          FindSourceFiles( item, XMLFiles )
+		        elseif item.Name.EndsWith(".xml") and item.Name.Contains("source") and NOT item.name.Contains("template") and not item.NativePath.Contains("#") then
+		          XMLFiles.Add item
+		        end if
+		      end if
+		      
+		    next
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub FindXMLFiles(Parent as FolderItem, ByRef XMLFiles() as Folderitem)
 		  
 		  if Parent <> Nil and Parent.Exists then
@@ -332,7 +351,10 @@ End
 		    
 		    // XML Files
 		    var xmlFiles() as FolderItem
-		    FindXMLFiles( source, xmlFiles )
+		    'FindXMLFiles( source, xmlFiles )
+		    
+		    // Sort out sources
+		    FindSourceFiles( source, xmlFiles )
 		    
 		    // parent Folders
 		    for each file as FolderItem in xmlFiles

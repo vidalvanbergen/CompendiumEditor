@@ -197,8 +197,8 @@ Begin ContainerControl ccEditorSpells
       Left            =   126
       LockBottom      =   False
       LockedInPosition=   False
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0

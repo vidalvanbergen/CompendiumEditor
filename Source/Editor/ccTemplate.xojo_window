@@ -10,7 +10,7 @@ Begin ContainerControl ccTemplate
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1186
+   Height          =   1280
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -26,6 +26,344 @@ Begin ContainerControl ccTemplate
    Transparent     =   True
    Visible         =   True
    Width           =   680
+   Begin GroupBox grpMatch
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Caption         =   "Choose one of the following fields:"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   195
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   126
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   680
+      Begin ccEditorTextField cMatchItemTypes
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "grpMatch"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   ""
+         Top             =   162
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   640
+      End
+      Begin Label lblDescription
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   11.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   2
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   185
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   2
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Match items with these type(s)."
+         TextAlignment   =   0
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   183
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   475
+      End
+      Begin Label lblDescription
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   11.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   8
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   185
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Match items with these properties."
+         TextAlignment   =   0
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   289
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   475
+      End
+      Begin ccEditorTextField cMatchProperties
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   False
+         EraseBackground =   True
+         FieldName       =   "Detail:"
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "grpMatch"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   7
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   ""
+         Top             =   268
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   640
+      End
+      Begin Label lblDescription
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   11.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   3
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   185
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Match items which name contain one of these words. (Comma separated)"
+         TextAlignment   =   0
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   236
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   475
+      End
+      Begin ccEditorTextField cMatchNames
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   False
+         EraseBackground =   True
+         FieldName       =   "Detail:"
+         HasBackgroundColor=   False
+         Height          =   22
+         Index           =   -2147483648
+         InitialParent   =   "grpMatch"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   ""
+         Top             =   215
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   640
+      End
+      Begin RadioButton rdoMatch
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Caption         =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   2
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   12
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   268
+         Transparent     =   False
+         Underline       =   False
+         Value           =   False
+         Visible         =   True
+         Width           =   32
+      End
+      Begin RadioButton rdoMatch
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Caption         =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   0
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   12
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   162
+         Transparent     =   False
+         Underline       =   False
+         Value           =   True
+         Visible         =   True
+         Width           =   32
+      End
+      Begin RadioButton rdoMatch
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Caption         =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   1
+         InitialParent   =   "grpMatch"
+         Italic          =   False
+         Left            =   12
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   3
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   215
+         Transparent     =   False
+         Underline       =   False
+         Value           =   False
+         Visible         =   True
+         Width           =   32
+      End
+   End
    Begin ccEditorTextField cName
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -172,152 +510,6 @@ Begin ContainerControl ccTemplate
       Visible         =   True
       Width           =   475
    End
-   Begin ccEditorTextField cItemType
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   ""
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      IsPrefixedNumber=   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   ""
-      Top             =   126
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
-      Visible         =   True
-      Width           =   640
-   End
-   Begin Label lblDescription
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   11.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   2
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   185
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   5
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Match items with these type(s). (Leave 'Match' empty if using this field.)"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   147
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   475
-   End
-   Begin ccEditorTextField cMatch
-      AllowAutoDeactivate=   True
-      AllowFocus      =   False
-      AllowFocusRing  =   False
-      AllowTabs       =   True
-      Backdrop        =   0
-      BackgroundColor =   &cFFFFFF00
-      DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
-      FieldName       =   "Detail:"
-      HasBackgroundColor=   False
-      Height          =   22
-      Index           =   -2147483648
-      InitialParent   =   ""
-      IsPrefixedNumber=   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      MultipleOption  =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   6
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tag             =   ""
-      TagsForValue    =   False
-      Tooltip         =   ""
-      Top             =   179
-      Transparent     =   True
-      UseLowercase    =   False
-      Value           =   ""
-      Visible         =   True
-      Width           =   640
-   End
-   Begin Label lblDescription
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   11.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   3
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   185
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      Multiline       =   False
-      Scope           =   0
-      Selectable      =   False
-      TabIndex        =   7
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "Match items with these names. (Leave 'Type' empty if using this field.)"
-      TextAlignment   =   0
-      TextColor       =   &c00000000
-      Tooltip         =   ""
-      Top             =   200
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   475
-   End
    Begin ccEditorTextArea cDescription
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -340,11 +532,11 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   338
+      Top             =   446
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -372,14 +564,14 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   9
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Magic item description, added before base non-magic item's description."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   637
+      Top             =   745
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -410,13 +602,13 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   669
+      Top             =   777
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -445,14 +637,14 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   11
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Added first to the list of sources on the base item."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   690
+      Top             =   798
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -479,11 +671,11 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   12
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   722
+      Top             =   830
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -509,11 +701,11 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   994
+      Top             =   1102
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -539,11 +731,11 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   285
+      Top             =   393
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -570,14 +762,14 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   15
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Uncheck if item is not magical."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   306
+      Top             =   414
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -608,13 +800,13 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   232
+      Top             =   340
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -643,14 +835,14 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   17
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Exclude items with these names."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   253
+      Top             =   361
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -684,12 +876,13 @@ End
 		  end if
 		  
 		  // Types or Names
-		  if cItemType.Tags.LastIndex > -1 then
-		    var tags() as String = cItemType.Tags
-		    xItem.AppendSimpleChild( "type", StringFromArray( cItemType.Tags, "," ) )
-		  elseif cMatch.Value <> "" then
-		    var matchNames() as string = SplitString( cMatch.Value, "," )
+		  if rdoMatch(0).Value AND cMatchItemTypes.Tags.LastIndex > -1 then
+		    xItem.AppendSimpleChild( "type", StringFromArray( cMatchItemTypes.Tags, "," ) )
+		  elseif rdoMatch(1).Value AND cMatchNames.Value <> "" then
+		    var matchNames() as string = SplitString( cMatchNames.Value, "," )
 		    xItem.AppendSimpleChild( "match", StringFromArray( matchNames, "," ) )
+		  elseif rdoMatch(2).Value AND cMatchProperties.tags.LastIndex > -1 then
+		    xItem.AppendSimpleChild( "property", StringFromArray( cMatchProperties.Tags, "," ) )
 		  end if
 		  
 		  // Exclude
@@ -803,19 +996,13 @@ End
 		        end if
 		        
 		      case "type"
-		        var types() as String = SplitString( xValue, "," )
-		        var typeTags(), typeNames() as String
-		        for each type as string in types
-		          typeTags.Add type
-		          'typeNames.Add TitleForMenuWithTag( cItemType.BaseMenu, xValue )
-		        next
-		        cItemType.SetMultiTags typeTags
-		        'cItemType.SetMultiValues typeNames
-		        'cItemType.Value = TitleForMenuWithTag( cItemType.BaseMenu, xValue )
-		        'cItemType.Tag = xValue
+		        cMatchItemTypes.SetMultiTags SplitString( xValue, "," )
 		        
 		      case "match"
-		        cMatch.Value = xValue.ReplaceAll(",", ", ").ReplaceAll("  "," ")
+		        cMatchNames.Value = xValue.ReplaceAll(",", ", ").ReplaceAll("  "," ")
+		        
+		      case "property"
+		        cMatchProperties.SetMultiTags SplitString( xValue, "," )
 		        
 		      case "exclude"
 		        cExclude.Value = xValue.ReplaceAll(",", ", ").ReplaceAll("  "," ")
@@ -881,8 +1068,9 @@ End
 		  cDescription.Reset
 		  cModifiers.Reset
 		  cDiceRolls.Reset
-		  cItemType.Reset
-		  cMatch.Reset
+		  cMatchItemTypes.Reset
+		  cMatchNames.Reset
+		  cMatchProperties.Reset
 		  cExclude.Reset
 		  cModifiers.Reset
 		  cSource.Reset
@@ -928,43 +1116,7 @@ End
 
 #tag EndWindowCode
 
-#tag Events cName
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Name:"
-		  me.SetMode( ccEditorTextField.Mode.Textfield )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cDetail
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Detail:"
-		  me.SetMode ccEditorTextField.Mode.Dropdown
-		  me.ReadOnly = False
-		  
-		  
-		  me.BaseMenu.Append new MenuItem( "common" )
-		  me.BaseMenu.Append new MenuItem( "uncommon" )
-		  me.BaseMenu.Append new MenuItem( "rare" )
-		  me.BaseMenu.Append new MenuItem( "very rare" )
-		  me.BaseMenu.Append new MenuItem( "legendary" )
-		  me.BaseMenu.Append new MenuItem( "artifact" )
-		  me.BaseMenu.Append new MenuItem( "varies" )
-		  
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "uncommon (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "rare (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "very rare (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "legendary (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "artifact (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "varies (requires attunement)" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "cursed (requires attunement)" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cItemType
+#tag Events cMatchItemTypes
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Type:"
@@ -996,17 +1148,32 @@ End
 		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
 		End Sub
 	#tag EndEvent
+#tag EndEvents
+#tag Events cMatchProperties
 	#tag Event
-		Sub ValueChanged(TheValue as String)
-		  if TheValue <> "" then
-		    cMatch.Enabled = False
-		  else
-		    cMatch.Enabled = True
-		  end if
+		Sub Open()
+		  me.FieldName = "Properties:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem( "None", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "Martial", "M" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "Ammunition", "A" )
+		  me.BaseMenu.AddMenu new MenuItem( "Finesse", "F" )
+		  me.BaseMenu.AddMenu new MenuItem( "Heavy", "H" )
+		  me.BaseMenu.AddMenu new MenuItem( "Light", "L" )
+		  me.BaseMenu.AddMenu new MenuItem( "Loading", "LD" )
+		  me.BaseMenu.AddMenu new MenuItem( "Reach", "R" )
+		  me.BaseMenu.AddMenu new MenuItem( "Special", "S" )
+		  me.BaseMenu.AddMenu new MenuItem( "Thrown", "T" )
+		  me.BaseMenu.AddMenu new MenuItem( "Two-Handed", "2H" )
+		  me.BaseMenu.AddMenu new MenuItem( "Versatile", "V" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cMatch
+#tag Events cMatchNames
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Item Names:"
@@ -1090,13 +1257,49 @@ End
 		  
 		End Sub
 	#tag EndEvent
+#tag EndEvents
+#tag Events rdoMatch
 	#tag Event
-		Sub ValueChanged(TheValue as String)
-		  if TheValue <> "" then
-		    cItemType.Enabled = False
-		  else
-		    cItemType.Enabled = True
-		  end if
+		Sub Action(index as Integer)
+		  cMatchItemTypes.Enabled = (index = 0)
+		  cMatchNames.Enabled = (index = 1)
+		  cMatchProperties.Enabled = (index = 2) 
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cName
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Name:"
+		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDetail
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Detail:"
+		  me.SetMode ccEditorTextField.Mode.Dropdown
+		  me.ReadOnly = False
+		  
+		  
+		  me.BaseMenu.Append new MenuItem( "common" )
+		  me.BaseMenu.Append new MenuItem( "uncommon" )
+		  me.BaseMenu.Append new MenuItem( "rare" )
+		  me.BaseMenu.Append new MenuItem( "very rare" )
+		  me.BaseMenu.Append new MenuItem( "legendary" )
+		  me.BaseMenu.Append new MenuItem( "artifact" )
+		  me.BaseMenu.Append new MenuItem( "varies" )
+		  
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "uncommon (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "rare (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "very rare (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "legendary (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "artifact (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "varies (requires attunement)" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "cursed (requires attunement)" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

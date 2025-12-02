@@ -49,6 +49,8 @@ Protected Class SourceCore
 		            SourceInfoFile = child
 		          elseif child.Name.Contains("template") then
 		            // Skip
+		            xFiles.Add child
+		            xNames.Add child.Name
 		          else
 		            // XML Files
 		            xFiles.Add child

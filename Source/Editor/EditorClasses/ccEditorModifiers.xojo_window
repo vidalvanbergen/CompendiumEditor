@@ -253,7 +253,7 @@ Begin ContainerControl ccEditorModifiers
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -273,7 +273,7 @@ Begin ContainerControl ccEditorModifiers
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   363
+      Width           =   338
    End
    Begin Label lblTypeValueDescription1
       AllowAutoDeactivate=   True
@@ -288,7 +288,7 @@ Begin ContainerControl ccEditorModifiers
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   137
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -308,7 +308,7 @@ Begin ContainerControl ccEditorModifiers
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   363
+      Width           =   338
    End
    BeginSegmented AddRemoveEditButton areModifier
       AddEnabled      =   False

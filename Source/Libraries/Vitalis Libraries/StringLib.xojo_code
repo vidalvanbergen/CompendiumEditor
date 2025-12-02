@@ -3649,7 +3649,26 @@ Protected Module StringLib
 		  var xDoc as new XMLDocument
 		  
 		  try
-		    xDoc.LoadXML(stringNode.Trim)
+		    
+		    if stringNode.StartsWith("<!--") then
+		      // Create a Comment and assign it a value
+		      Var xc As XmlComment
+		      xc = xDoc.CreateComment("newComment")
+		      xc.Value = stringNode.ReplaceAll("<!--", "").ReplaceAll("-->","")
+		      
+		      if xc <> Nil then
+		        Return xc
+		      end if
+		      // Exit
+		    else
+		      xDoc.LoadXML(stringNode.Trim)
+		      if xDoc.FirstChild <> Nil then
+		        Return xDoc.FirstChild
+		      end if
+		      // Exit
+		    end if
+		    
+		    
 		  catch XMLError as XMLException
 		    if NOT silentError then
 		      MessageBox "XML Error: " + XMLError.Message
@@ -3660,11 +3679,9 @@ Protected Module StringLib
 		  end try
 		  
 		  
-		  if xDoc.FirstChild <> Nil then
-		    Return xDoc.FirstChild
-		  else
-		    Return Nil
-		  end if
+		  Break
+		  Return Nil
+		  
 		  
 		  Exception err as XMLException
 		    MessageBox "XML Error: " + err.Message

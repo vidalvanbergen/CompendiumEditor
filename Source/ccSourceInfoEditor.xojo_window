@@ -592,7 +592,7 @@ End
 		    if XMLFiles <> Nil and XMLFiles.LastIndex > -1 then
 		      var xCollection as XMLNode = xRoot.AppendNewChild( "collection" )
 		      for index as Integer = 0 to XMLFiles.LastIndex
-		        if NOT XMLFiles(index).Name.Contains("#") then
+		        if NOT XMLFiles(index).Name.Contains("#") and NOT XMLFiles(index).Name.Contains("template") then
 		          var xDocuments as XMLNode = xCollection.AppendNewChild("doc")
 		          xDocuments.SetAttribute( "href", XMLFiles(index).Name )
 		        end if

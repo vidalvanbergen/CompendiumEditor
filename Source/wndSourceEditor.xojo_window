@@ -648,7 +648,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   8
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -910,6 +910,36 @@ Begin WindowPro wndSourceEditor
             ValidationMask  =   ""
             Visible         =   True
             Width           =   654
+         End
+         Begin EmbedControl EmbedTemplates
+            AllowAutoDeactivate=   True
+            AllowFocus      =   False
+            AllowFocusRing  =   False
+            AllowTabs       =   True
+            Backdrop        =   0
+            BackgroundColor =   &cFFFFFF00
+            DoubleBuffer    =   False
+            Enabled         =   True
+            EraseBackground =   True
+            HasBackgroundColor=   False
+            Height          =   595
+            Index           =   -2147483648
+            InitialParent   =   "ppEditorPanels"
+            Left            =   330
+            LockBottom      =   True
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   True
+            LockTop         =   True
+            Scope           =   0
+            TabIndex        =   0
+            TabPanelIndex   =   10
+            TabStop         =   True
+            Tooltip         =   ""
+            Top             =   161
+            Transparent     =   True
+            Visible         =   True
+            Width           =   694
          End
       End
       Begin XMLListbox lstXML
@@ -1469,6 +1499,12 @@ End
 		      sample = "<" + type + "><name>" + className.Titlecase + "</name></" + type + ">"
 		    elseif type = "race" then
 		      sample = "<" + type + "><name>Unnamed species" + homebrew + "</name></" + type + ">"
+		    elseif type = "<!-- -->" then
+		      var commentText as string = InputDialog.ShowPrompt( "Comment text", "Enter your comment text:" )
+		      
+		      if commentText.Trim <> "" then
+		        sample = "<!-- " + commentText + " -->"
+		      end if
 		    else
 		      sample = "<" + type + "><name>Unnamed " + type + homebrew + "</name></" + type + ">"
 		    end if
@@ -1485,7 +1521,12 @@ End
 		        itemtype = "creature"
 		      end if
 		      
-		      lstXML.AddRow itemtype, xNode.ValueOfNodeWithName("name"), SourcePageNrFromXMLNode( xNode ) 'xNode.Name
+		      var NodeName as String = xNode.ValueOfNodeWithName("name")
+		      if NodeName = "" and xNode IsA XMLComment then
+		        NodeName = xNode.Value.Trim
+		      end if
+		      
+		      lstXML.AddRow itemtype, NodeName, SourcePageNrFromXMLNode( xNode ) 'xNode.Name
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xNode
 		      
 		      lstXML.SelectedRowIndex = lstXML.LastAddedRowIndex
@@ -1580,6 +1621,11 @@ End
 		  EmbedSpells.Embed( cSpell )
 		  EmbedSpells.AdjustScroller
 		  
+		  'var c as new ccTemplate
+		  cTemplate = new ccTemplate
+		  EmbedTemplates.Embed( cTemplate )
+		  EmbedTemplates.AdjustScroller
+		  
 		  
 		  // Set Source Info
 		  if Source.ParentFolder <> Nil then
@@ -1616,7 +1662,10 @@ End
 		    for each XMLFile as FolderItem in Source.XMLFiles
 		      var smallIcon as Picture
 		      
-		      if XMLFile.Name.Contains("bestiary") then
+		      
+		      if XMLFile.Name.Contains("template") then
+		        smallIcon = template_icon_experiment_64
+		      elseif XMLFile.Name.Contains("bestiary") then
 		        smallIcon = template_compendium_creature_32
 		      elseif XMLFile.Name.Contains("item") then
 		        smallIcon = template_compendium_treasure_32
@@ -1744,6 +1793,9 @@ End
 		    
 		  case 8 // #TEXT
 		    ' soldNode.Value = " " + txtXML.Text + " "
+		    
+		  case 9 // Template
+		    newNode = cTemplate.GetXMLNode
 		    
 		  else
 		    Break
@@ -1927,11 +1979,19 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
+		CommentText As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
 		cSpecies As ccSpecies
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
 		cSpell As ccSpell
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		cTemplate As ccTemplate
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -2116,7 +2176,7 @@ End
 		  options.Add "bestiary" + postfix + ".xml"
 		  options.Add "class-classname" + postfix + ".xml"
 		  options.Add "feats" + postfix + ".xml"
-		  'options.Add "items-base" + postfix + ".xml"
+		  options.Add "items-base" + postfix + ".xml"
 		  options.Add "items" + postfix + ".xml"
 		  options.Add "optionalfeatures" + postfix + ".xml"
 		  options.Add "races" + postfix + ".xml"
@@ -2125,6 +2185,7 @@ End
 		  if postfix <> "" then
 		    options.Add "spells" + postfix + "+phb.xml"
 		  end if
+		  options.Add "template-items" + postfix + ".xml"
 		  
 		  
 		  var Filename as string
@@ -2169,7 +2230,10 @@ End
 		    
 		    var smallIcon as Picture
 		    
-		    if Filename.Contains("background") then
+		    
+		    if Filename.Contains("template") then
+		      smallIcon = template_icon_experiment_64
+		    elseif Filename.Contains("background") then
 		      smallIcon = template_compendium_banner_32
 		    elseif Filename.Contains("bestiary") or Filename.Contains("monster") then
 		      smallIcon = template_compendium_creature_32
@@ -2532,6 +2596,13 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events EmbedTemplates
+	#tag Event
+		Sub Open()
+		  me.Height = me.Parent.Height
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events lstXML
 	#tag Event
 		Sub SelectionChanged()
@@ -2539,7 +2610,7 @@ End
 		  arSourceType.RemoveEnabled = me.SelectedRowIndex > -1
 		  arSourceType.DuplicateEnabled = me.SelectedRowIndex > -1
 		  
-		  txtXML.Text = ""
+		  'txtXML.Text = ""
 		  
 		  var TheSourceBook as String = Source.SourceInfo.Lookup("name", "")
 		  var IsHomebrew as Boolean = Source.SourceInfo.Lookup("category","").StringValue.Contains("Homebrew")
@@ -2607,6 +2678,14 @@ End
 		    
 		  case 8 // #TEXT
 		    ' soldNode.Value = " " + txtXML.Text + " "
+		    oldNode = Str( "<!-- " + CommentText + " -->" ).ToXML
+		    newNode = Str( "<!--" + txtXML.Text.Trim + " -->" ).ToXML
+		    
+		  case 9 // Template
+		    oldNode = cTemplate.xNode
+		    newNode = cTemplate.GetXMLNode
+		    
+		    lastPageNr = cTemplate.SourcePageNr
 		    
 		  else
 		    Break
@@ -2640,6 +2719,7 @@ End
 		  cFeat.Reset
 		  cSpell.Reset
 		  cSpecies.Reset
+		  CommentText = ""
 		  
 		  if NOT Keyboard.AsyncAltKey then
 		    EmbedBackgrounds.ScrollToTop
@@ -2689,19 +2769,18 @@ End
 		      ppEditorPanels.Value = 7
 		      cSpell.SetData( currentNode, TheSourceBook )
 		      
-		    case "itemtemplate"
-		      //
-		      
 		    case "#comment"
 		      ppEditorPanels.Value = 8
 		      txtXML.Text = currentNode.Value.Trim
+		      CommentText = txtXML.Text
 		      
 		      if txtXML.Text.Contains( ">" ) and NOT txtXML.Text.StartsWith("<") then
 		        txtXML.Text = "<" + txtXML.Text + ">"
 		      end if
 		      
 		    case "itemtemplate"
-		      //
+		      ppEditorPanels.Value = 9
+		      cTemplate.SetData( currentNode, TheSourceBook )
 		      
 		    else
 		      Break
@@ -3094,10 +3173,11 @@ End
 		  me.AddRowWithTagAndPicture "Spell or Class Feature", "spell", template_compendium_magic_32
 		  me.AddRowWithTagAndPicture "Creature", "monster", template_compendium_creature_32
 		  'me.AddRowWithTagAndPicture "NPC", "monster", templatesmall_dragon
-		  #if DebugBuild then
-		    me.AddRow "-"
-		    me.AddRowWithTagAndPicture "Template", "itemtemplate", template_compendium_32
-		  #endif
+		  '#if DebugBuild then
+		  me.AddRow "-"
+		  me.AddRowWithTagAndPicture "Template", "itemtemplate", template_icon_experiment_64
+		  me.AddRowWithTagAndPicture "Comment", "<!-- -->", template_icon_code_64
+		  '#endif
 		  
 		  me.SelectedRowIndex = 0
 		End Sub

@@ -10,7 +10,7 @@ Begin ContainerControl ccTemplate
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1066
+   Height          =   1186
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -235,7 +235,7 @@ Begin ContainerControl ccTemplate
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Match items with these type(s). (Leave 'Match' empty.)"
+      Text            =   "Match items with these type(s). (Leave 'Match' empty if using this field.)"
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -308,7 +308,7 @@ Begin ContainerControl ccTemplate
       TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Match items with these names. (Leave 'Type' empty.)"
+      Text            =   "Match items with these names. (Leave 'Type' empty if using this field.)"
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -344,7 +344,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   232
+      Top             =   338
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -375,11 +375,11 @@ Begin ContainerControl ccTemplate
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Magic item description, added before basic item's description."
+      Text            =   "Magic item description, added before base non-magic item's description."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   531
+      Top             =   637
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -416,7 +416,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   563
+      Top             =   669
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -452,7 +452,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   584
+      Top             =   690
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -483,7 +483,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   616
+      Top             =   722
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -513,15 +513,419 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   888
+      Top             =   994
       Transparent     =   True
       Visible         =   True
       Width           =   640
+   End
+   Begin ccEditorCheckbox cMagicItem
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   285
+      Transparent     =   True
+      Visible         =   True
+      Width           =   640
+   End
+   Begin Label lblDescription
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   11.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   6
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Uncheck if item is not magical."
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   306
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   475
+   End
+   Begin ccEditorTextField cExclude
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   "Detail:"
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   ""
+      Top             =   232
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   640
+   End
+   Begin Label lblDescription
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   11.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   7
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Exclude items with these names."
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   253
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   475
    End
 End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Method, Flags = &h0
+		Function GetXMLNode() As XMLNode
+		  
+		  
+		  
+		  var xItem as XMLNode = xNode
+		  
+		  if xItem = Nil then
+		    Return Nil
+		  end if
+		  
+		  // Clear old children
+		  xItem.RemoveAllChildren
+		  
+		  
+		  // Name
+		  xItem.AppendSimpleChild( "name", cName.Value )
+		  
+		  // Detail
+		  if cDetail.Value <> "" Then
+		    xItem.AppendSimpleChild( "detail", cDetail.Value.Lowercase )
+		  end if
+		  
+		  // Types or Names
+		  if cItemType.Tags.LastIndex > -1 then
+		    var tags() as String = cItemType.Tags
+		    xItem.AppendSimpleChild( "type", StringFromArray( cItemType.Tags, "," ) )
+		  elseif cMatch.Value <> "" then
+		    var matchNames() as string = SplitString( cMatch.Value, "," )
+		    xItem.AppendSimpleChild( "match", StringFromArray( matchNames, "," ) )
+		  end if
+		  
+		  // Exclude
+		  if cExclude.Value <> "" then
+		    var excludeNames() as String = SplitString( cExclude.Value, "," )
+		    xItem.AppendSimpleChild( "exclude", StringFromArray( excludeNames, "," ) )
+		  end if
+		  
+		  
+		  // Magic Item
+		  if cMagicItem.FieldValue = False then
+		    xItem.AppendSimpleChild( "magic", "NO" )
+		  else
+		    'xItem.AppendSimpleChild( "magic", Nil )
+		  end if
+		  
+		  
+		  // Description
+		  var description as String = cDescription.Value
+		  var emptyArray() as String
+		  SetDescription( xItem, description, emptyArray ) 'ccSourceBox.GetSources ) 'cSource.Value )
+		  
+		  // Source
+		  if cSource.Value <> "" then
+		    xItem.AppendSimpleChild("source", cSource.Value)
+		  end if
+		  
+		  // Modifiers
+		  var lst as Listbox = cModifiers.lstModifiers
+		  
+		  if lst.LastRowIndex > -1 then
+		    for row as Integer = 0 to lst.LastRowIndex
+		      var xModifier as XMLNode = xItem.AppendNewChild( "modifier" )
+		      
+		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
+		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ).Lowercase.Trim )
+		    next
+		  end if
+		  
+		  // Dice Rolls
+		  if cDiceRolls.lstDiceRolls.LastIndex > -1 then
+		    cDiceRolls.AddDiceRollsTo( xItem )
+		  end if
+		  
+		  
+		  
+		  Return xItem
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LoadXML(s as String, xParent as XMLNode)
+		  var xDoc as XMLDocument = xParent.OwnerDocument
+		  var xRoot as XMLNode = xDoc.FirstChild
+		  
+		  var xNode as XMLNode = s.ToXML
+		  
+		  if xRoot <> Nil and xNode <> Nil then
+		    xNode = xRoot.AppendChildCopy( xNode )
+		  end if
+		  
+		  LoadXML( xNode, True )
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LoadXML(TheNode as XMLNode, TemplateNode as Boolean = False)
+		  me.Reset
+		  
+		  if NOT TemplateNode then
+		    xNode = TheNode
+		  end if
+		  
+		  
+		  if TheNode <> Nil then
+		    
+		    var descriptionLines() as String
+		    
+		    
+		    for index as Integer = 0 to TheNode.ChildCount-1
+		      var xChild as XMLNode = TheNode.Child(index)
+		      
+		      
+		      var xValue as String
+		      if xChild.FirstChild <> Nil then
+		        xValue = xChild.FirstChild.Value.StupifyQuotes
+		      end if
+		      
+		      
+		      
+		      Select case xChild.Name
+		        
+		      case "name"
+		        cName.Value = xValue
+		        
+		      case "description", "text"
+		        descriptionLines.Add xValue
+		        
+		      case "source"
+		        cSource.Value = xValue
+		        
+		      case "detail"
+		        cDetail.Value = xValue
+		        
+		      case "magic"
+		        if xValue = "0" or xValue = "NO" then
+		          cMagicItem.FieldValue = False
+		        else
+		          cMagicItem.FieldValue = True
+		        end if
+		        
+		      case "type"
+		        var types() as String = SplitString( xValue, "," )
+		        var typeTags(), typeNames() as String
+		        for each type as string in types
+		          typeTags.Add type
+		          'typeNames.Add TitleForMenuWithTag( cItemType.BaseMenu, xValue )
+		        next
+		        cItemType.SetMultiTags typeTags
+		        'cItemType.SetMultiValues typeNames
+		        'cItemType.Value = TitleForMenuWithTag( cItemType.BaseMenu, xValue )
+		        'cItemType.Tag = xValue
+		        
+		      case "match"
+		        cMatch.Value = xValue.ReplaceAll(",", ", ").ReplaceAll("  "," ")
+		        
+		      case "exclude"
+		        cExclude.Value = xValue.ReplaceAll(",", ", ").ReplaceAll("  "," ")
+		        
+		      case "roll"
+		        var attribute, level, attributeValue as String
+		        if xChild.AttributeCount > 0 then
+		          for i as Integer = 0 to xChild.AttributeCount-1
+		            var xAttribute as XMLAttribute = xChild.GetAttributeNode(i)
+		            attribute = xAttribute.Name
+		            if attribute = "description" then
+		              attributeValue = xAttribute.Value
+		            elseif attribute = "level" then
+		              level = xAttribute.Value
+		            else
+		              Break
+		            end if
+		          next
+		        end if
+		        
+		        cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( xValue ), level, attributeValue
+		        cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = xValue
+		        
+		        
+		      case "modifier"
+		        if xChild.GetAttribute("category") <> "" then
+		          
+		          var category as String = xChild.GetAttribute("category").Titlecase
+		          if category = "Skills" then
+		            category = "Skill"
+		          End if
+		          
+		          cModifiers.addrow category, xValue
+		        else
+		          cModifiers.addrow "Bonus", xValue
+		          Break
+		        end if
+		        
+		      else
+		        Break
+		        
+		      End Select
+		      
+		    next
+		    
+		    if descriptionLines <> Nil and descriptionLines.LastIndex > -1 then
+		      
+		      cDescription.Value = StringFromArray( descriptionLines, EndOfLine )
+		      
+		    end if
+		    
+		  end if
+		  
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Reset()
+		  cName.Reset
+		  cDetail.Reset
+		  cDescription.Reset
+		  cModifiers.Reset
+		  cDiceRolls.Reset
+		  cItemType.Reset
+		  cMatch.Reset
+		  cExclude.Reset
+		  cModifiers.Reset
+		  cSource.Reset
+		  cMagicItem.FieldValue = TRUE
+		  
+		  xNode = Nil
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub SetData(TheNode as XMLNode, TheSource as String, PageNr as String = "")
+		  var source as string
+		  if PageNr <> "" then
+		    source = TheSource.Trim + " p. " + PageNr
+		  else
+		    source = TheSource.Trim
+		  end if
+		  
+		  LoadXML( TheNode )
+		  
+		  if cSource.Value = "" then
+		    cSource.Value = source
+		  end if
+		  'if ccSourceBox.GetSources.LastIndex = -1 then
+		  'ccSourceBox.SetSources( source )
+		  'end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SourcePageNr() As String
+		  Return cSource.Value.Match(" p\. (\d+)", 1)
+		  
+		  Return ""
+		End Function
+	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		xNode As XMLNode
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag Events cName
@@ -567,6 +971,8 @@ End
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  me.ReadOnly = True
 		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  'me.BaseMenu.Append new MenuItem("Wondrous Item", "W")
 		  'me.BaseMenu.Append new MenuItem("Adventuring Gear", "G")
 		  'me.BaseMenu.Append new MenuItem("-")
@@ -579,10 +985,10 @@ End
 		  me.BaseMenu.Append new MenuItem("Melee Weapon", "M") 'Melee
 		  me.BaseMenu.Append new MenuItem("Ranged Weapon", "R") 'Ranged
 		  me.BaseMenu.Append new MenuItem("Ammunition", "A")
-		  'me.BaseMenu.Append new MenuItem("-")
-		  'me.BaseMenu.Append new MenuItem("Rod", "RD") 'Melee?
-		  'me.BaseMenu.Append new MenuItem("Staff", "ST") 'Melee
-		  'me.BaseMenu.Append new MenuItem("Wand", "WD") 'Melee?
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Rod", "RD") 'Melee?
+		  me.BaseMenu.Append new MenuItem("Staff", "ST") 'Melee
+		  me.BaseMenu.Append new MenuItem("Wand", "WD") 'Melee?
 		  'me.BaseMenu.Append new MenuItem("-")
 		  'me.BaseMenu.Append new MenuItem("Ring", "RG")
 		  'me.BaseMenu.Append new MenuItem("Potion", "P")
@@ -590,13 +996,134 @@ End
 		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  if TheValue <> "" then
+		    cMatch.Enabled = False
+		  else
+		    cMatch.Enabled = True
+		  end if
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cMatch
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Match:"
+		  me.FieldName = "Item Names:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Leather Armor" )
+		  me.BaseMenu.Append new MenuItem( "Padded Armor" )
+		  me.BaseMenu.Append new MenuItem( "Studded Leather Armor" )
+		  // Medium Armor
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Breastplate" )
+		  me.BaseMenu.Append new MenuItem( "Chain Shirt" )
+		  me.BaseMenu.Append new MenuItem( "Hide Armor" )
+		  me.BaseMenu.Append new MenuItem( "Scale Mail" )
+		  // Heavy armor
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Chain Mail" )
+		  me.BaseMenu.Append new MenuItem( "Half Plate Armor" )
+		  me.BaseMenu.Append new MenuItem( "Plate Armor" )
+		  me.BaseMenu.Append new MenuItem( "Ring Mail" )
+		  me.BaseMenu.Append new MenuItem( "Splint Armor" )
+		  // Shield
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Shield" )
+		  // Melee Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Axe" )
+		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
+		  me.BaseMenu.Append new MenuItem( "Club" )
+		  me.BaseMenu.Append new MenuItem( "Dagger" )
+		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Flail" )
+		  me.BaseMenu.Append new MenuItem( "Glaive" )
+		  me.BaseMenu.Append new MenuItem( "Greataxe" )
+		  me.BaseMenu.Append new MenuItem( "Greatclub" )
+		  me.BaseMenu.Append new MenuItem( "Greatsword" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
+		  me.BaseMenu.Append new MenuItem( "Handaxe" )
+		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
+		  me.BaseMenu.Append new MenuItem( "Hoopak" )
+		  me.BaseMenu.Append new MenuItem( "Javelin" )
+		  me.BaseMenu.Append new MenuItem( "Lance" )
+		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
+		  me.BaseMenu.Append new MenuItem( "Longsword" )
+		  me.BaseMenu.Append new MenuItem( "Mace" )
+		  me.BaseMenu.Append new MenuItem( "Maul" )
+		  me.BaseMenu.Append new MenuItem( "Morningstar" )
+		  me.BaseMenu.Append new MenuItem( "Pike" )
+		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
+		  me.BaseMenu.Append new MenuItem( "Rapier" )
+		  me.BaseMenu.Append new MenuItem( "Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Shortsword" )
+		  me.BaseMenu.Append new MenuItem( "Sickle" )
+		  me.BaseMenu.Append new MenuItem( "Spear" )
+		  me.BaseMenu.Append new MenuItem( "Sword" )
+		  me.BaseMenu.Append new MenuItem( "Trident" )
+		  me.BaseMenu.Append new MenuItem( "War Pick" )
+		  me.BaseMenu.Append new MenuItem( "Warhammer" )
+		  me.BaseMenu.Append new MenuItem( "Whip" )
+		  me.BaseMenu.Append new MenuItem( "Yklwa" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Rod" )
+		  me.BaseMenu.Append new MenuItem( "Staff" )
+		  me.BaseMenu.Append new MenuItem( "Wand" )
+		  // Ranged Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Blowgun" )
+		  me.BaseMenu.Append new MenuItem( "Bow" )
+		  me.BaseMenu.Append new MenuItem( "Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Dart" )
+		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Longbow" )
+		  me.BaseMenu.Append new MenuItem( "Net" )
+		  me.BaseMenu.Append new MenuItem( "Shortbow" )
+		  me.BaseMenu.Append new MenuItem( "Sling" )
+		  
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ValueChanged(TheValue as String)
+		  if TheValue <> "" then
+		    cItemType.Enabled = False
+		  else
+		    cItemType.Enabled = True
+		  end if
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSource
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Source:"
+		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cMagicItem
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Magic:"
+		  me.FieldValue = True
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cExclude
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Exclude:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Leather Armor" )
 		  me.BaseMenu.Append new MenuItem( "Padded Armor" )
 		  me.BaseMenu.Append new MenuItem( "Studded Leather Armor" )
@@ -643,6 +1170,7 @@ End
 		  me.BaseMenu.Append new MenuItem( "Rapier" )
 		  me.BaseMenu.Append new MenuItem( "Scimitar" )
 		  me.BaseMenu.Append new MenuItem( "Shortsword" )
+		  me.BaseMenu.Append new MenuItem( "Sword" )
 		  me.BaseMenu.Append new MenuItem( "Sickle" )
 		  me.BaseMenu.Append new MenuItem( "Spear" )
 		  me.BaseMenu.Append new MenuItem( "Trident" )
@@ -657,24 +1185,18 @@ End
 		  // Ranged Weapons
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "Blowgun" )
+		  me.BaseMenu.Append new MenuItem( "Bow" )
 		  me.BaseMenu.Append new MenuItem( "Dart" )
 		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
 		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
 		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
 		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Crossbow" )
 		  me.BaseMenu.Append new MenuItem( "Longbow" )
 		  me.BaseMenu.Append new MenuItem( "Net" )
 		  me.BaseMenu.Append new MenuItem( "Shortbow" )
 		  me.BaseMenu.Append new MenuItem( "Sling" )
 		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSource
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Name:"
-		  me.SetMode( ccEditorTextField.Mode.Textfield )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

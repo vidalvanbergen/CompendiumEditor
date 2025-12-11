@@ -337,6 +337,12 @@ End
 		  if tohit = "" then
 		    tohit = Source.Match( "(\-\d+) to hit", 1 )
 		  end if
+		  if tohit = "" then
+		    tohit = Source.Match("Roll: (\+\d+)")
+		  end if
+		  if tohit = "" then
+		    tohit = Source.Match("Roll: (\-\d+)")
+		  end if
 		  
 		  // Damage rolls
 		  if DamageDice <> Nil and DamageDice.LastIndex > -1 then

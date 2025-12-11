@@ -10,7 +10,7 @@ Begin ContainerControl ccTemplate
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1280
+   Height          =   1217
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -26,344 +26,6 @@ Begin ContainerControl ccTemplate
    Transparent     =   True
    Visible         =   True
    Width           =   680
-   Begin GroupBox grpMatch
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Caption         =   "Choose one of the following fields:"
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   195
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   0
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Scope           =   0
-      TabIndex        =   4
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   126
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   680
-      Begin ccEditorTextField cMatchItemTypes
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "grpMatch"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   ""
-         Top             =   162
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   640
-      End
-      Begin Label lblDescription
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   11.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   2
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   185
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Match items with these type(s)."
-         TextAlignment   =   0
-         TextColor       =   &c00000000
-         Tooltip         =   ""
-         Top             =   183
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   475
-      End
-      Begin Label lblDescription
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   11.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   8
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   185
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   8
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Match items with these properties."
-         TextAlignment   =   0
-         TextColor       =   &c00000000
-         Tooltip         =   ""
-         Top             =   289
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   475
-      End
-      Begin ccEditorTextField cMatchProperties
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   False
-         EraseBackground =   True
-         FieldName       =   "Detail:"
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "grpMatch"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   7
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   ""
-         Top             =   268
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   640
-      End
-      Begin Label lblDescription
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   11.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   3
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   185
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   5
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Match items which name contain one of these words. (Comma separated)"
-         TextAlignment   =   0
-         TextColor       =   &c00000000
-         Tooltip         =   ""
-         Top             =   236
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   475
-      End
-      Begin ccEditorTextField cMatchNames
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   False
-         EraseBackground =   True
-         FieldName       =   "Detail:"
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "grpMatch"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   4
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   ""
-         Top             =   215
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   640
-      End
-      Begin RadioButton rdoMatch
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Caption         =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   2
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   12
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   6
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   268
-         Transparent     =   False
-         Underline       =   False
-         Value           =   False
-         Visible         =   True
-         Width           =   32
-      End
-      Begin RadioButton rdoMatch
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Caption         =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   0
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   12
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   0
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   162
-         Transparent     =   False
-         Underline       =   False
-         Value           =   True
-         Visible         =   True
-         Width           =   32
-      End
-      Begin RadioButton rdoMatch
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Caption         =   ""
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   1
-         InitialParent   =   "grpMatch"
-         Italic          =   False
-         Left            =   12
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   215
-         Transparent     =   False
-         Underline       =   False
-         Value           =   False
-         Visible         =   True
-         Width           =   32
-      End
-   End
    Begin ccEditorTextField cName
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -536,7 +198,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   446
+      Top             =   383
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -571,7 +233,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   745
+      Top             =   682
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -608,7 +270,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   777
+      Top             =   714
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -644,7 +306,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   798
+      Top             =   735
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -675,7 +337,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   830
+      Top             =   937
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -705,7 +367,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1102
+      Top             =   767
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -735,7 +397,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   393
+      Top             =   338
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -769,7 +431,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   414
+      Top             =   359
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -806,7 +468,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   340
+      Top             =   285
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -842,11 +504,230 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   361
+      Top             =   306
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   475
+   End
+   Begin ccEditorTextField cMatchNames
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   "Detail:"
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   ""
+      Top             =   179
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   640
+   End
+   Begin Label lblDescription
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   11.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   3
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Match items which name contain one of these words. (Comma separated)"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   200
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   475
+   End
+   Begin ccEditorTextField cMatchProperties
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   "Detail:"
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   ""
+      Top             =   232
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   640
+   End
+   Begin Label lblDescription
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   11.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   8
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Match items with these properties."
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   253
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   475
+   End
+   Begin Label lblDescription
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   11.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   2
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   185
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Match items with these type(s)."
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   147
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   475
+   End
+   Begin ccEditorTextField cMatchItemTypes
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   22
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   ""
+      Top             =   126
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   640
    End
 End
 #tag EndWindow
@@ -875,13 +756,19 @@ End
 		    xItem.AppendSimpleChild( "detail", cDetail.Value.Lowercase )
 		  end if
 		  
-		  // Types or Names
-		  if rdoMatch(0).Value AND cMatchItemTypes.Tags.LastIndex > -1 then
+		  // Match Types
+		  if cMatchItemTypes.Tags.LastIndex > -1 then
 		    xItem.AppendSimpleChild( "type", StringFromArray( cMatchItemTypes.Tags, "," ) )
-		  elseif rdoMatch(1).Value AND cMatchNames.Value <> "" then
+		  End if
+		  
+		  // Match Names
+		  if cMatchNames.Value <> "" then
 		    var matchNames() as string = SplitString( cMatchNames.Value, "," )
 		    xItem.AppendSimpleChild( "match", StringFromArray( matchNames, "," ) )
-		  elseif rdoMatch(2).Value AND cMatchProperties.tags.LastIndex > -1 then
+		  end if
+		  
+		  // Match Properties
+		  if cMatchProperties.tags.LastIndex > -1 then
 		    xItem.AppendSimpleChild( "property", StringFromArray( cMatchProperties.Tags, "," ) )
 		  end if
 		  
@@ -1116,157 +1003,6 @@ End
 
 #tag EndWindowCode
 
-#tag Events cMatchItemTypes
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Type:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.Append new MenuItem( "None", "" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  'me.BaseMenu.Append new MenuItem("Wondrous Item", "W")
-		  'me.BaseMenu.Append new MenuItem("Adventuring Gear", "G")
-		  'me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Light Armor", "LA") 'Armor
-		  me.BaseMenu.Append new MenuItem("Medium Armor", "MA") 'Armor
-		  me.BaseMenu.Append new MenuItem("Heavy Armor", "HA") 'Armor
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Shield", "S")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Melee Weapon", "M") 'Melee
-		  me.BaseMenu.Append new MenuItem("Ranged Weapon", "R") 'Ranged
-		  me.BaseMenu.Append new MenuItem("Ammunition", "A")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Rod", "RD") 'Melee?
-		  me.BaseMenu.Append new MenuItem("Staff", "ST") 'Melee
-		  me.BaseMenu.Append new MenuItem("Wand", "WD") 'Melee?
-		  'me.BaseMenu.Append new MenuItem("-")
-		  'me.BaseMenu.Append new MenuItem("Ring", "RG")
-		  'me.BaseMenu.Append new MenuItem("Potion", "P")
-		  'me.BaseMenu.Append new MenuItem("Scroll", "SC")
-		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cMatchProperties
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Properties:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem( "None", "" )
-		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
-		  me.BaseMenu.AddMenu new MenuItem( "Martial", "M" )
-		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
-		  me.BaseMenu.AddMenu new MenuItem( "Ammunition", "A" )
-		  me.BaseMenu.AddMenu new MenuItem( "Finesse", "F" )
-		  me.BaseMenu.AddMenu new MenuItem( "Heavy", "H" )
-		  me.BaseMenu.AddMenu new MenuItem( "Light", "L" )
-		  me.BaseMenu.AddMenu new MenuItem( "Loading", "LD" )
-		  me.BaseMenu.AddMenu new MenuItem( "Reach", "R" )
-		  me.BaseMenu.AddMenu new MenuItem( "Special", "S" )
-		  me.BaseMenu.AddMenu new MenuItem( "Thrown", "T" )
-		  me.BaseMenu.AddMenu new MenuItem( "Two-Handed", "2H" )
-		  me.BaseMenu.AddMenu new MenuItem( "Versatile", "V" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cMatchNames
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Item Names:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  
-		  me.BaseMenu.Append new MenuItem( "None", "" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Leather Armor" )
-		  me.BaseMenu.Append new MenuItem( "Padded Armor" )
-		  me.BaseMenu.Append new MenuItem( "Studded Leather Armor" )
-		  // Medium Armor
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Breastplate" )
-		  me.BaseMenu.Append new MenuItem( "Chain Shirt" )
-		  me.BaseMenu.Append new MenuItem( "Hide Armor" )
-		  me.BaseMenu.Append new MenuItem( "Scale Mail" )
-		  // Heavy armor
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Chain Mail" )
-		  me.BaseMenu.Append new MenuItem( "Half Plate Armor" )
-		  me.BaseMenu.Append new MenuItem( "Plate Armor" )
-		  me.BaseMenu.Append new MenuItem( "Ring Mail" )
-		  me.BaseMenu.Append new MenuItem( "Splint Armor" )
-		  // Shield
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Shield" )
-		  // Melee Weapons
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Axe" )
-		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
-		  me.BaseMenu.Append new MenuItem( "Club" )
-		  me.BaseMenu.Append new MenuItem( "Dagger" )
-		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
-		  me.BaseMenu.Append new MenuItem( "Flail" )
-		  me.BaseMenu.Append new MenuItem( "Glaive" )
-		  me.BaseMenu.Append new MenuItem( "Greataxe" )
-		  me.BaseMenu.Append new MenuItem( "Greatclub" )
-		  me.BaseMenu.Append new MenuItem( "Greatsword" )
-		  me.BaseMenu.Append new MenuItem( "Halberd" )
-		  me.BaseMenu.Append new MenuItem( "Handaxe" )
-		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
-		  me.BaseMenu.Append new MenuItem( "Hoopak" )
-		  me.BaseMenu.Append new MenuItem( "Javelin" )
-		  me.BaseMenu.Append new MenuItem( "Lance" )
-		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
-		  me.BaseMenu.Append new MenuItem( "Longsword" )
-		  me.BaseMenu.Append new MenuItem( "Mace" )
-		  me.BaseMenu.Append new MenuItem( "Maul" )
-		  me.BaseMenu.Append new MenuItem( "Morningstar" )
-		  me.BaseMenu.Append new MenuItem( "Pike" )
-		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
-		  me.BaseMenu.Append new MenuItem( "Rapier" )
-		  me.BaseMenu.Append new MenuItem( "Scimitar" )
-		  me.BaseMenu.Append new MenuItem( "Shortsword" )
-		  me.BaseMenu.Append new MenuItem( "Sickle" )
-		  me.BaseMenu.Append new MenuItem( "Spear" )
-		  me.BaseMenu.Append new MenuItem( "Sword" )
-		  me.BaseMenu.Append new MenuItem( "Trident" )
-		  me.BaseMenu.Append new MenuItem( "War Pick" )
-		  me.BaseMenu.Append new MenuItem( "Warhammer" )
-		  me.BaseMenu.Append new MenuItem( "Whip" )
-		  me.BaseMenu.Append new MenuItem( "Yklwa" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Rod" )
-		  me.BaseMenu.Append new MenuItem( "Staff" )
-		  me.BaseMenu.Append new MenuItem( "Wand" )
-		  // Ranged Weapons
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Blowgun" )
-		  me.BaseMenu.Append new MenuItem( "Bow" )
-		  me.BaseMenu.Append new MenuItem( "Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Dart" )
-		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Longbow" )
-		  me.BaseMenu.Append new MenuItem( "Net" )
-		  me.BaseMenu.Append new MenuItem( "Shortbow" )
-		  me.BaseMenu.Append new MenuItem( "Sling" )
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events rdoMatch
-	#tag Event
-		Sub Action(index as Integer)
-		  cMatchItemTypes.Enabled = (index = 0)
-		  cMatchNames.Enabled = (index = 1)
-		  cMatchProperties.Enabled = (index = 2) 
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events cName
 	#tag Event
 		Sub Open()
@@ -1308,6 +1044,13 @@ End
 		Sub Open()
 		  me.FieldName = "Source:"
 		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDiceRolls
+	#tag Event
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
+		  Source = cDescription.Value
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1400,6 +1143,148 @@ End
 		  me.BaseMenu.Append new MenuItem( "Shortbow" )
 		  me.BaseMenu.Append new MenuItem( "Sling" )
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cMatchNames
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Item Names:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Leather Armor" )
+		  me.BaseMenu.Append new MenuItem( "Padded Armor" )
+		  me.BaseMenu.Append new MenuItem( "Studded Leather Armor" )
+		  // Medium Armor
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Breastplate" )
+		  me.BaseMenu.Append new MenuItem( "Chain Shirt" )
+		  me.BaseMenu.Append new MenuItem( "Hide Armor" )
+		  me.BaseMenu.Append new MenuItem( "Scale Mail" )
+		  // Heavy armor
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Chain Mail" )
+		  me.BaseMenu.Append new MenuItem( "Half Plate Armor" )
+		  me.BaseMenu.Append new MenuItem( "Plate Armor" )
+		  me.BaseMenu.Append new MenuItem( "Ring Mail" )
+		  me.BaseMenu.Append new MenuItem( "Splint Armor" )
+		  // Shield
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Shield" )
+		  // Melee Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Axe" )
+		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
+		  me.BaseMenu.Append new MenuItem( "Club" )
+		  me.BaseMenu.Append new MenuItem( "Dagger" )
+		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Flail" )
+		  me.BaseMenu.Append new MenuItem( "Glaive" )
+		  me.BaseMenu.Append new MenuItem( "Greataxe" )
+		  me.BaseMenu.Append new MenuItem( "Greatclub" )
+		  me.BaseMenu.Append new MenuItem( "Greatsword" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
+		  me.BaseMenu.Append new MenuItem( "Handaxe" )
+		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
+		  me.BaseMenu.Append new MenuItem( "Hoopak" )
+		  me.BaseMenu.Append new MenuItem( "Javelin" )
+		  me.BaseMenu.Append new MenuItem( "Lance" )
+		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
+		  me.BaseMenu.Append new MenuItem( "Longsword" )
+		  me.BaseMenu.Append new MenuItem( "Mace" )
+		  me.BaseMenu.Append new MenuItem( "Maul" )
+		  me.BaseMenu.Append new MenuItem( "Morningstar" )
+		  me.BaseMenu.Append new MenuItem( "Pike" )
+		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
+		  me.BaseMenu.Append new MenuItem( "Rapier" )
+		  me.BaseMenu.Append new MenuItem( "Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Shortsword" )
+		  me.BaseMenu.Append new MenuItem( "Sickle" )
+		  me.BaseMenu.Append new MenuItem( "Spear" )
+		  me.BaseMenu.Append new MenuItem( "Sword" )
+		  me.BaseMenu.Append new MenuItem( "Trident" )
+		  me.BaseMenu.Append new MenuItem( "War Pick" )
+		  me.BaseMenu.Append new MenuItem( "Warhammer" )
+		  me.BaseMenu.Append new MenuItem( "Whip" )
+		  me.BaseMenu.Append new MenuItem( "Yklwa" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Rod" )
+		  me.BaseMenu.Append new MenuItem( "Staff" )
+		  me.BaseMenu.Append new MenuItem( "Wand" )
+		  // Ranged Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Blowgun" )
+		  me.BaseMenu.Append new MenuItem( "Bow" )
+		  me.BaseMenu.Append new MenuItem( "Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Dart" )
+		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Longbow" )
+		  me.BaseMenu.Append new MenuItem( "Net" )
+		  me.BaseMenu.Append new MenuItem( "Shortbow" )
+		  me.BaseMenu.Append new MenuItem( "Sling" )
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cMatchProperties
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Properties:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem( "None", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "Martial", "M" )
+		  me.BaseMenu.AddMenu new MenuItem( "-", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "Ammunition", "A" )
+		  me.BaseMenu.AddMenu new MenuItem( "Finesse", "F" )
+		  me.BaseMenu.AddMenu new MenuItem( "Heavy", "H" )
+		  me.BaseMenu.AddMenu new MenuItem( "Light", "L" )
+		  me.BaseMenu.AddMenu new MenuItem( "Loading", "LD" )
+		  me.BaseMenu.AddMenu new MenuItem( "Reach", "R" )
+		  me.BaseMenu.AddMenu new MenuItem( "Special", "S" )
+		  me.BaseMenu.AddMenu new MenuItem( "Thrown", "T" )
+		  me.BaseMenu.AddMenu new MenuItem( "Two-Handed", "2H" )
+		  me.BaseMenu.AddMenu new MenuItem( "Versatile", "V" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cMatchItemTypes
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Type:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.Append new MenuItem( "None", "" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  'me.BaseMenu.Append new MenuItem("Wondrous Item", "W")
+		  'me.BaseMenu.Append new MenuItem("Adventuring Gear", "G")
+		  'me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Light Armor", "LA") 'Armor
+		  me.BaseMenu.Append new MenuItem("Medium Armor", "MA") 'Armor
+		  me.BaseMenu.Append new MenuItem("Heavy Armor", "HA") 'Armor
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Shield", "S")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Melee Weapon", "M") 'Melee
+		  me.BaseMenu.Append new MenuItem("Ranged Weapon", "R") 'Ranged
+		  me.BaseMenu.Append new MenuItem("Ammunition", "A")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Rod", "RD") 'Melee?
+		  me.BaseMenu.Append new MenuItem("Staff", "ST") 'Melee
+		  me.BaseMenu.Append new MenuItem("Wand", "WD") 'Melee?
+		  'me.BaseMenu.Append new MenuItem("-")
+		  'me.BaseMenu.Append new MenuItem("Ring", "RG")
+		  'me.BaseMenu.Append new MenuItem("Potion", "P")
+		  'me.BaseMenu.Append new MenuItem("Scroll", "SC")
+		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

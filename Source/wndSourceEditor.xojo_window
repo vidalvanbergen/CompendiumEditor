@@ -563,6 +563,38 @@ Begin WindowPro wndSourceEditor
             Visible         =   True
             Width           =   75
          End
+         Begin PushButton btnMerge
+            AllowAutoDeactivate=   True
+            Bold            =   False
+            Cancel          =   False
+            Caption         =   "Merge With Base Items"
+            Default         =   False
+            Enabled         =   True
+            FontName        =   "System"
+            FontSize        =   0.0
+            FontUnit        =   0
+            Height          =   20
+            Index           =   -2147483648
+            InitialParent   =   "cvsToolbar$2"
+            Italic          =   False
+            Left            =   20
+            LockBottom      =   False
+            LockedInPosition=   False
+            LockLeft        =   True
+            LockRight       =   False
+            LockTop         =   True
+            MacButtonStyle  =   0
+            Scope           =   0
+            TabIndex        =   2
+            TabPanelIndex   =   3
+            TabStop         =   True
+            Tooltip         =   ""
+            Top             =   132
+            Transparent     =   False
+            Underline       =   False
+            Visible         =   False
+            Width           =   289
+         End
       End
       Begin EmbedControl ecSourceEditor
          AllowAutoDeactivate=   True
@@ -1526,8 +1558,23 @@ End
 		        NodeName = xNode.Value.Trim
 		      end if
 		      
-		      lstXML.AddRow itemtype, NodeName, SourcePageNrFromXMLNode( xNode ) 'xNode.Name
+		      var insertIndex as Integer = lstXML.LastAddedRowIndex+1
+		      if lstXML.SelectedRowIndex > -1 then
+		        insertIndex = lstXML.SelectedRowIndex+1
+		      end if
+		      
+		      lstXML.AddRowAt( insertIndex, itemtype )
+		      
+		      'lstXML.CellTextAt( lstXML.LastAddedRowIndex, 0 ) = itemtype
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = NodeName
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 2 ) = SourcePageNrFromXMLNode( xNode )
+		      
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xNode
+		      
+		      
+		      'lstXML.AddRow itemtype, NodeName, SourcePageNrFromXMLNode( xNode ) 'xNode.Name
+		      'lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xNode
+		      
 		      
 		      lstXML.SelectedRowIndex = lstXML.LastAddedRowIndex
 		    end if
@@ -2151,6 +2198,7 @@ End
 		  else
 		    ppSourceEditor.Value = 2
 		    arSources.RemoveEnabled =  True
+		    btnMerge.Visible = me.SelectedRow.Contains( "template" )
 		    
 		    if me.RowTagAt( me.SelectedRowIndex ) IsA FolderItem then
 		      var xmlFile as FolderItem = me.RowTagAt( me.SelectedRowIndex )
@@ -2158,6 +2206,7 @@ End
 		      
 		      lstXML.SelectedRowIndex = 0
 		    end if
+		    
 		    
 		  End Select
 		End Sub

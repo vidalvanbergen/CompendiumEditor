@@ -1541,7 +1541,10 @@ End
 		      sample = "<" + type + "><name>Unnamed " + type + homebrew + "</name></" + type + ">"
 		    end if
 		    
-		    var xNode as XMLNode = sample.ToXML
+		    var xNode as XMLNode
+		    if sample.Trim <> "" then
+		      xNode = sample.ToXML
+		    end if
 		    
 		    if xNode <> Nil then
 		      xNode =  lstXML.xDoc.FirstChild.AppendChildCopy( xNode )
@@ -1600,8 +1603,13 @@ End
 		        itemtype = "creature"
 		      end if
 		      
+		      var itemname as String = xnode.ValueOfNodeWithName("name")
+		      if itemname.Trim = "" and xnode.Value.Trim <> "" then
+		        itemname = xnode.Value.Trim
+		      end if
+		      
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 0 ) = itemtype
-		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = xnode.ValueOfNodeWithName("name")
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = itemname
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 2 ) = SourcePageNrFromXMLNode( xnode )
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xnode
 		      
@@ -2198,7 +2206,7 @@ End
 		  else
 		    ppSourceEditor.Value = 2
 		    arSources.RemoveEnabled =  True
-		    btnMerge.Visible = me.SelectedRow.Contains( "template" )
+		    btnMerge.Visible = DebugBuild and me.SelectedRow.Contains( "template" )
 		    
 		    if me.RowTagAt( me.SelectedRowIndex ) IsA FolderItem then
 		      var xmlFile as FolderItem = me.RowTagAt( me.SelectedRowIndex )

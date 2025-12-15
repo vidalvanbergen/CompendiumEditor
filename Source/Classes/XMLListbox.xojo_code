@@ -137,7 +137,7 @@ Inherits ListboxPro
 		    elseif xNode.Value <> "" then
 		      name = xNode.Value.Match("<name>(.*?)<\/name>", 1)
 		      if name = "" and xNode.Value.Length < 100 then
-		        name = xNode.Value
+		        name = xNode.Value.Trim
 		        
 		      end if
 		    end if

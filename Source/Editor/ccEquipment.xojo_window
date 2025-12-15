@@ -2058,6 +2058,7 @@ End
 		  
 		  templatesMenu.AddMenu miPoisonTypes
 		  
+		  templatesMenu.AddMenu new MenuItem( "Poison", "template:" + kPoison )
 		  templatesMenu.AddMenu new MenuItem( "Contact", "template:" + kPoisonContact )
 		  templatesMenu.AddMenu new MenuItem( "Ingested", "template:" + kPoisonIngested )
 		  templatesMenu.AddMenu new MenuItem( "Injury", "template:" + kPoisonInjury )

@@ -3194,6 +3194,8 @@ End
 		  
 		  basemenu.AddMenu new MenuItem( "Armor Class" )
 		  basemenu.AddMenu new MenuItem( "Hit Points" )
+		  basemenu.AddMenu new MenuItem( "Saving Throws" )
+		  basemenu.AddMenu new MenuItem( "Skills" )
 		  basemenu.AddMenu new MenuItem( "-" )
 		  basemenu.AddMenu new MenuItem("Pack Tactics", "template:The [creature] has advantage on attack rolls against a creature if at least one of the [creature]'s allies is within 5 feet of the creature and the ally doesn't have the incapacitated condition." )
 		  basemenu.AddMenu new MenuItem("Spellcasting")

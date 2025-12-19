@@ -1698,7 +1698,7 @@ End
 #tag Events cTime
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Time:"
+		  me.FieldName = "Casting Time:"
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
 		  

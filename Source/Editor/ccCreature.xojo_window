@@ -2767,10 +2767,10 @@ End
 		Sub Open()
 		  me.FieldName = "Initiative Bonus:"
 		  me.SetMode ccEditorTextField.Mode.Dropdown
-		  me.txtField.ValidationMask = "####"
+		  me.IsPrefixedNumber = True
 		  
 		  for index as Integer = 0 to 99
-		    me.BaseMenu.Append new MenuItem( str(index) )
+		    me.BaseMenu.Append new MenuItem( "+" + str(index) )
 		  next
 		End Sub
 	#tag EndEvent

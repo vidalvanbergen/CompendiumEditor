@@ -1888,13 +1888,19 @@ End
 		  
 		  if c.Text <> "" then
 		    
+		    var cliptext as String = c.Text
+		    cliptext = FixTypos( cliptext )
+		    cliptext = cliptext.ReplaceAll( "ist-level", "1st-level" )
+		    cliptext = cliptext.ReplaceAll( "i action", "1 action" ).ReplaceAll("i bonus", "1 bonus").ReplaceAll("I reaction", "1 reaction")
+		    cliptext = cliptext.ReplaceAll( "i round", "1 round" )
+		    
 		    var lines() as string
-		    if c.Text.Contains( EndOfLine ) then
-		      lines = c.Text.Split( EndOfLine )
-		    elseif c.Text.Contains( chr(13) ) then
-		      lines = c.Text.Split( chr(13) )
-		    elseif c.Text.Contains( chr(10) ) then
-		      lines = c.Text.Split( chr(10) )
+		    if cliptext.Contains( EndOfLine ) then
+		      lines = cliptext.Split( EndOfLine )
+		    elseif cliptext.Contains( chr(13) ) then
+		      lines = cliptext.Split( chr(13) )
+		    elseif cliptext.Contains( chr(10) ) then
+		      lines = cliptext.Split( chr(10) )
 		    end if
 		    
 		    for index as Integer = lines.LastIndex DownTo 0
@@ -2073,6 +2079,14 @@ End
 		    lstClasses.AddRow "School: " + School
 		  end if
 		  
+		  if cRange.Value = "Touch" then
+		    lstClasses.AddRow "Touch Spells"
+		  end if
+		  
+		  if cRitual.FieldValue = True then
+		    lstClasses.AddRow "Ritual Caster"
+		  end if
+		  
 		  if DnDArrays.SpellSchools.Contains( School ) then
 		    if School.StartsWith("E") then
 		      School = School.Left(2).Uppercase
@@ -2089,21 +2103,18 @@ End
 		  
 		  if Classes.LastIndex > -1 then
 		    
-		    // Convenience Lists
-		    if Range.Contains("Touch") then
-		      lstClasses.AddRow "Touch Spells"
-		    end if
-		    
-		    if cRitual.FieldValue = True then
-		      lstClasses.AddRow "Ritual Caster"
-		    end if
-		    
 		    // Spellcaster Lists
 		    for each currentClass as string in Classes
 		      lstClasses.AddRow currentClass
 		    next
 		  end if
 		  
+		  // Set as homebrew
+		  if ccSourceBox.lstSources.LastRowIndex > -1 then
+		    if ccSourceBox.lstSources.CellValueAt( 0, 2 ).Contains("Homebrew") then
+		      cName.Value = cName.Value + " (HB)"
+		    end if
+		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

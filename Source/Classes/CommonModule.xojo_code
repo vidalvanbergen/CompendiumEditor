@@ -267,9 +267,14 @@ Protected Module CommonModule
 		  Description = Description.ReplaceAll(" ioth ", " 10th ").ReplaceAll(" 1oth ", " 10th ")
 		  Description = Description.ReplaceAll(" Ioth ", " 10th ").ReplaceAll(" roth ", " 10th ")
 		  
+		  Description = Description.ReplaceAll("sdıo", "5d10")
+		  
 		  Description = Description.ReplaceAll(" s feet", " 5 feet")
-		  Description = Description.ReplaceAll(" io feet", " 10 feet")
-		  Description = Description.ReplaceAll(" 1o feet", " 10 feet")
+		  'Description = Description.ReplaceAll(" io feet", " 10 feet")
+		  'Description = Description.ReplaceAll(" I0 feet", " 10 feet")
+		  'Description = Description.ReplaceAll(" 1o feet", " 10 feet")
+		  'Description = Description.ReplaceAll(" Io-foot", " 10-foot")
+		  Description = Description.ReplaceAllRegEx( "\s(?:io|I0|1o)(\sfeet|-foot)", " 10$1" )
 		  Description = Description.ReplaceAll(" IS feet", " 15 feet")
 		  Description = Description.ReplaceAll(" 1S feet", " 15 feet")
 		  Description = Description.ReplaceAll(" 6o feet", " 60 feet")
@@ -279,11 +284,15 @@ Protected Module CommonModule
 		  Description = Description.ReplaceAll(" o hit points", " 0 hit points")
 		  
 		  Description = Description.ReplaceAll(" Ist level", " 1st level")
+		  Description = Description.ReplaceAll(" znd level", " 2nd level")
+		  Description = Description.ReplaceAll("sth level", "5th level")
 		  Description = Description.ReplaceAll(" isth level", " 15th level")
 		  Description = Description.ReplaceAll(" 1sth level", " 15th level")
 		  Description = Description.ReplaceAll(" rith level", " 11th level")
-		  Description = Description.ReplaceAll( "oth level", "0th level" )
+		  Description = Description.ReplaceAll("oth level", "0th level")
 		  
+		  Description = Description.ReplaceAll(" above ist", " above 1st")
+		  Description = Description.ReplaceAll("i hour", "1 hour")
 		  
 		  Description = Description.ReplaceAll("i minute", "1 minute")
 		  Description = Description.ReplaceAll("I minute", "1 minute")
@@ -294,6 +303,7 @@ Protected Module CommonModule
 		  
 		  Description = Description.ReplaceAll(" IdIo ", " 1d10 ")
 		  Description = Description.ReplaceAllRegEx(" (id)(\d+)", " 1d$2")
+		  Description = Description.ReplaceAllRegEx("id(\d+)", "1d$1")
 		  
 		  Return Description
 		End Function

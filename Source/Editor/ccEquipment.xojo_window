@@ -2165,6 +2165,7 @@ End
 		    
 		    var lines() as string
 		    Description = NormalizeLineEndings( c.Text )
+		    Description = FixTypos( Description )
 		    
 		    lines = Description.Split( EndOfLine )
 		    

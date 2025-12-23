@@ -338,10 +338,10 @@ End
 		    tohit = Source.Match( "(\-\d+) to hit", 1 )
 		  end if
 		  if tohit = "" then
-		    tohit = Source.Match("Roll: (\+\d+)")
+		    tohit = Source.Match("Roll: (\+\d+)", 1)
 		  end if
 		  if tohit = "" then
-		    tohit = Source.Match("Roll: (\-\d+)")
+		    tohit = Source.Match("Roll: (\-\d+)", 1)
 		  end if
 		  
 		  // Damage rolls

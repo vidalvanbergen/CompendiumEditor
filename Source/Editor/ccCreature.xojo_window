@@ -2076,7 +2076,7 @@ End
 		  
 		  // Skills
 		  if cSkills.Value.Trim <> "" then
-		    xCreature.AppendSimpleChild( "skill", cSkills.Value.Trim )
+		    xCreature.AppendSimpleChild( "skill", cSkills.Value.Trim.ReplaceAll( " Of ", " of ") )
 		  else
 		    'xCreature.AppendSimpleChild( "skill", Nil )
 		  end if

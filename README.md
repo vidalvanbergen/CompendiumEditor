@@ -1,6 +1,8 @@
-<center>
-  <img src="Source/Resources/AppIcon-White/Template - Icon - App - 256.png" alt="Compendium Editor app icon">
-</center>
+<p align="center">
+  <a href="https://github.com/vidalvanbergen/CompendiumEditor/releases/latest">
+    <img src="Source/Resources/AppIcon-White/Template - Icon - App - 256.png" alt="Compendium Editor app icon">
+  </a>
+</p>
 
 <h1 align="center">Compendium Editor</h1>
 

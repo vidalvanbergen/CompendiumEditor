@@ -12,7 +12,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.0.0",
-            "Security Token": "3VtEOpLnuIY=",
+            "Security Token": "/4FbaaE3dSQ=",
             "MacBinary": {
                 "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -37,7 +37,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.1.0",
-            "Security Token": "4eSHOWaaqq0=",
+            "Security Token": "nseH6RyJc/M=",
             "MacBinary": {
                 "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
                 "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -62,7 +62,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.2.0",
-            "Security Token": "eifh8FBTukg=",
+            "Security Token": "uDJFE95TxbI=",
             "MacBinary": {
                 "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
@@ -87,7 +87,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.3.0",
-            "Security Token": "XgVC8yJQB5M=",
+            "Security Token": "zpp7UHNA3Mc=",
             "MacBinary": {
                 "Hash": "92BB2587EF0EDB1B524E7768962064E3",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_MacOS.dmg"
@@ -112,7 +112,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.4.0",
-            "Security Token": "355Jb4GjoHY=",
+            "Security Token": "OoK9wHdJr3o=",
             "MacBinary": {
                 "Hash": "55F927C914C12E58587E59AE2178D02F",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_MacOS.dmg"
@@ -137,7 +137,7 @@
             "RequiresPayment": false,
             "UseTransparency": true,
             "Version": "1.5.0",
-            "Security Token": "76IWINx3UZ4=",
+            "Security Token": "rizxV/6JKK4=",
             "MacBinary": {
                 "Hash": "A7BB866FE01A292A06E19C64116F0D63",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_MacOS.dmg"
@@ -150,6 +150,31 @@
             "LinuxBinary64bit": {
                 "Hash": "CB6B978BF1436612F082D2422929281E",
                 "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_Linux64.zip",
+                "ExecutableName": "Compendium Editor"
+            }
+        },
+        {
+            "AppName": "Compendium Editor",
+            "ImageScale": 1,
+            "ImageURL": "",
+            "MinimumRequiredVersion": "",
+            "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.6.0.html\n\n<h1>What’s new in Compendium Editor 1.6</h1>\n\n    <ul class=\"update\">\n      <li class=\"new\">Added a list so you can manage multiple sources more easily, and with more visual guidance to formatting.</li>\n      <li class=\"new\">Added basic OCR fixing magic button to text field.</li>\n      <li class=\"new\">Added the ability to add comments to the editor.</li>\n      <li class=\"new\">Added item template creation to the editor.</li>\n      <li class=\"new\">Added page numbers to the editor list.</li>\n      <li class=\"new\">Added a 'proficiency' field to items with a magic button to fill it.</li>\n      <li class=\"new\">Added magic button when creating subclasses for auto capitalization of the name.</li>\n      <li class=\"new\">Added copy/paste shortcut support to the editor's main list.</li>\n      <li class=\"dif\">Updated source categories.</li>\n      <li class=\"dif\">Updated class feature template menu.</li>\n      <li class=\"dif\">Improvements on magic and formatting buttons.</li>\n      <li class=\"dif\">Updated app icon.</li>\n      <li class=\"fix\">Other bug fixes and improvements.</li>\n    </ul>",
+            "RequiresPayment": false,
+            "UseTransparency": true,
+            "Version": "1.6.0",
+            "Security Token": "auwO8MvSUx4=",
+            "MacBinary": {
+                "Hash": "7E1CB13E60C234C9005B7B1769793AB0",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.6.0/Compendium_Editor_macOS.dmg"
+            },
+            "WindowsBinary64bit": {
+                "Hash": "13767CECBA2B4AB5A31BB5E4689EE000",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.6.0/Compendium_Editor_Windows.zip",
+                "ExecutableName": "Compendium Editor.exe"
+            },
+            "LinuxBinary64bit": {
+                "Hash": "7072C2635A9D08C326758127C9CF7D66",
+                "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.6.0/Compendium_Editor_Linux.zip",
                 "ExecutableName": "Compendium Editor"
             }
         }

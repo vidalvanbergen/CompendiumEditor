@@ -1,4 +1,18 @@
-# Compendium Editor
+<center>
+  <img src="Source/Resources/AppIcon-White/Template - Icon - App - 256.png" alt="Compendium Editor app icon">
+</center>
+
+<h1 align="center">Compendium Editor</h1>
+
+<p align="center">
+  <a href="https://github.com/vidalvanbergen/CompendiumEditor/releases/latest">
+    <img src="https://img.shields.io/github/v/release/vidalvanbergen/CompendiumEditor?label=Latest%20Release&style=for-the-badge&color=%230063E0" alt="Latest Version">
+  </a>
+  <br/>
+  <a href="https://github.com/vidalvanbergen/CompendiumEditor/releases/latest">
+    <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/vidalvanbergen/CompendiumEditor/total?style=for-the-badge&color=%230063E0">
+  </a>
+</p>
 
 The Compendium Editor is a helpful tool for anyone using **Fight Club 5e** or **Game Master 5th Edition**, making it easy to add and edit content without having to learn how to use XML.
 

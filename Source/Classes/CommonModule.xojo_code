@@ -280,6 +280,7 @@ Protected Module CommonModule
 		  Description = Description.ReplaceAll(" 6o feet", " 60 feet")
 		  
 		  Description = Description.ReplaceAll("spend i ", "spend 1 ").ReplaceAll("spend l ", "spend 1 ")
+		  Description = Description.ReplaceAll( "by I.", "by 1.").ReplaceAll( "by l.", "by 1.")
 		  
 		  Description = Description.ReplaceAll(" o hit points", " 0 hit points")
 		  

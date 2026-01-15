@@ -268,8 +268,12 @@ Protected Module CommonModule
 		  Description = Description.ReplaceAll(" Ioth ", " 10th ").ReplaceAll(" roth ", " 10th ")
 		  
 		  Description = Description.ReplaceAll("sdıo", "5d10")
+		  Description = Description.ReplaceAll(" idzo", " 1d20")
+		  Description = Description.ReplaceAll(" dzo", " d20")
+		  Description = Description.ReplaceAll("Idız", "1d12")
 		  
 		  Description = Description.ReplaceAll(" s feet", " 5 feet")
+		  Description = Description.ReplaceAll(" s-foot", " 5-foot")
 		  'Description = Description.ReplaceAll(" io feet", " 10 feet")
 		  'Description = Description.ReplaceAll(" I0 feet", " 10 feet")
 		  'Description = Description.ReplaceAll(" 1o feet", " 10 feet")
@@ -287,6 +291,7 @@ Protected Module CommonModule
 		  Description = Description.ReplaceAll(" Ist level", " 1st level")
 		  Description = Description.ReplaceAll(" znd level", " 2nd level")
 		  Description = Description.ReplaceAll("sth level", "5th level")
+		  Description = Description.ReplaceAll("sth-level", "5th level")
 		  Description = Description.ReplaceAll(" isth level", " 15th level")
 		  Description = Description.ReplaceAll(" 1sth level", " 15th level")
 		  Description = Description.ReplaceAll(" rith level", " 11th level")
@@ -356,16 +361,18 @@ Protected Module CommonModule
 		  spellText = spellText.ReplaceAll( EndOfLine, ", " )
 		  
 		  var individiualSpells() as string = spellText.SplitString(",")
+		  individiualSpells = individiualSpells.RemoveDuplicates
 		  for index as Integer = 0 to individiualSpells.LastIndex
 		    var spellname as String = individiualSpells(index)
 		    
-		    spellname = spellname.Titlecase
-		    if spellname.Contains("/") then
-		      spellname = spellname.NthField("/",1).Titlecase + "/" + spellname.NthField("/",2).Titlecase
-		    end if
+		    'spellname = spellname.Titlecase
 		    
 		    spellname = spellname.ReplaceAll("*", "")
 		    spellname = FormatSpellname( spellname )
+		    
+		    if spellname.Contains("/") then
+		      spellname = spellname.NthField("/",1).Titlecase + "/" + spellname.NthField("/",2).Titlecase
+		    end if
 		    
 		    individiualSpells(index) = spellname
 		  next
@@ -405,6 +412,7 @@ Protected Module CommonModule
 		  SpellName = SpellName.ReplaceAll(" Without ", " without ")
 		  
 		  SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
+		  SpellName = SpellName.ReplaceAll( "(ua)", "(UA)")
 		  
 		  return SpellName
 		End Function

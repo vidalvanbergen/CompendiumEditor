@@ -2111,8 +2111,11 @@ End
 		  
 		  // Set as homebrew
 		  if ccSourceBox.lstSources.LastRowIndex > -1 then
-		    if ccSourceBox.lstSources.CellValueAt( 0, 2 ).Contains("Homebrew") then
+		    var brewtype as String = ccSourceBox.lstSources.CellValueAt( 0, 2 )
+		    if brewtype.Contains("Homebrew") then
 		      cName.Value = cName.Value + " (HB)"
+		    elseif brewtype.Contains("Third Party") then
+		      cName.Value = cName.Value + " (Third Party)"
 		    end if
 		  end if
 		End Sub

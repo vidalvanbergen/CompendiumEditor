@@ -62,7 +62,7 @@ Begin ContainerControl ccCreature
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   640
+      Width           =   604
    End
    Begin ccEditorCheckbox cNPC
       AllowAutoDeactivate=   True
@@ -1936,6 +1936,50 @@ Begin ContainerControl ccCreature
       Visible         =   True
       Width           =   640
    End
+   Begin BevelButton bvlClipboard
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   0
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "📋"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   22
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   636
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   51
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   "Import from Clipboard"
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -3422,6 +3466,475 @@ End
 	#tag Event
 		Sub Action(index as Integer)
 		  msgUnofficialFeature
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlClipboard
+	#tag Event
+		Sub Action()
+		  var c as new Clipboard
+		  'lstClasses.DeleteAllRows
+		  
+		  var name, size, type, alignment, ac, acdescription, hp, hproll, speed, str, dex, con, int, wis, cha, savingthrows, skills, senses, passiveperception, languages, challenge, profbonus as String
+		  var damagevulnerabilities, damageresistances, damageimmunities, conditionimmunities, conditionresistances as String
+		  
+		  if c.Text <> "" then
+		    var cliptext as String = c.Text
+		    cliptext = FixTypos( cliptext )
+		    
+		    
+		    var lines() as string
+		    if cliptext.Contains( EndOfLine ) then
+		      lines = cliptext.Split( EndOfLine )
+		    elseif cliptext.Contains( chr(13) ) then
+		      lines = cliptext.Split( chr(13) )
+		    elseif cliptext.Contains( chr(10) ) then
+		      lines = cliptext.Split( chr(10) )
+		    end if
+		    
+		    for index as Integer = lines.LastIndex DownTo 0
+		      var currentLine as String = lines(index)
+		      
+		      if index = 0 then
+		        name = currentLine
+		        lines.RemoveAt(index)
+		        
+		      elseif index = 1 then
+		        size = currentLine.NthField(" ", 1)
+		        currentLine = currentLine.Replace( size, "" ).Trim
+		        
+		        type = currentLine.NthField(",", 1)
+		        currentLine = currentLine.Replace( type, "" ).Trim
+		        
+		        alignment = currentLine.Replace(",", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("Armor Class") then
+		        acdescription = currentLine.Match("\((.*?)\)", 1)
+		        currentLine = currentLine.ReplaceAll( "(" + acdescription + ")", "").Trim
+		        
+		        ac = currentLine.ReplaceAllRegEx( "Armor Class.", "").Trim
+		        
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("HIT POINTS") then
+		        // HIT POINTS 136 (21d8 + 42)
+		        hp = currentLine.NthField("(", 1).match( "(\d+)", 1 )
+		        hproll = currentLine.Match( "\((.*?)\)", 1 )
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("speed") then
+		        speed = currentLine.ReplaceAllRegEx("speed.", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("Saving Throws") then
+		        currentLine = currentLine.ReplaceAllRegEx( " \+ (\d+)", " +$1" )
+		        savingthrows = currentLine.ReplaceAllRegEx("Saving Throws.","")
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("Skills") then
+		        while index+1 <= lines.LastIndex
+		          if NOT lines(index+1).StartsWith("DAMAGE") and NOT lines(index+1).StartsWith("CONDITION") AND NOT lines(index+1).StartsWith("SENSES") AND NOT lines(index+1).StartsWith("LANGUAGE") then
+		            currentLine = currentLine + " " + lines(index+1)
+		            lines.RemoveAt(index+1)
+		          else
+		            Exit
+		          end if
+		        wend
+		        
+		        currentLine = currentLine.ReplaceAllRegEx( " \+ (\d+)", " +$1" )
+		        skills = currentLine.ReplaceAllRegEx("Skills.","")
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("DAMAGE VULNERABILITIES") then
+		        damagevulnerabilities = currentLine.ReplaceAllRegEx("DAMAGE VULNERABILITIES.", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("DAMAGE RESISTANCES") then
+		        while index+1 <= lines.LastIndex
+		          if NOT lines(index+1).StartsWith("DAMAGE") and NOT lines(index+1).StartsWith("CONDITION") AND NOT lines(index+1).StartsWith("SENSES") AND NOT lines(index+1).StartsWith("LANGUAGE") then
+		            currentLine = currentLine + " " + lines(index+1)
+		            lines.RemoveAt(index+1)
+		          else
+		            Exit
+		          end if
+		        wend
+		        
+		        damageresistances = currentLine.ReplaceAllRegEx("DAMAGE RESISTANCES.", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("DAMAGE IMMUNITIES") then
+		        damageimmunities = currentLine.ReplaceAllRegEx("DAMAGE IMMUNITIES.", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("CONDITION IMMUNITIES") then
+		        conditionimmunities = currentLine.ReplaceAllRegEx("CONDITION IMMUNITIES.", "").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		        'elseif currentLine.StartsWith("CONDITION RESISTANCES") then
+		        'conditionresistances = currentLine.ReplaceAllRegEx("CONDITION RESISTANCES.", "").Trim
+		        '
+		        'lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("SENSES") then
+		        while index+1 <= lines.LastIndex
+		          if NOT lines(index+1).StartsWith("DAMAGE") and NOT lines(index+1).StartsWith("CONDITION") AND NOT lines(index+1).StartsWith("SENSES") AND NOT lines(index+1).StartsWith("LANGUAGE") then
+		            currentLine = currentLine + " " + lines(index+1)
+		            lines.RemoveAt(index+1)
+		          else
+		            Exit
+		          end if
+		        wend
+		        
+		        
+		        passiveperception = currentLine.Match("Passive Perception (\d+)", 1)
+		        currentLine = currentLine.NthField("passive Perception", 1 ).Trim
+		        if currentLine.EndsWith(",") then
+		          currentLine = currentLine.Left( currentLine.Length-1 )
+		        end if
+		        
+		        senses = currentLine.ReplaceAll("SENSES","").ReplaceAll(":","").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("languages") then
+		        while index+1 <= lines.LastIndex
+		          if NOT lines(index+1).StartsWith("DAMAGE") and NOT lines(index+1).StartsWith("CONDITION") AND NOT lines(index+1).StartsWith("SENSES") AND NOT lines(index+1).StartsWith("LANGUAGE") then
+		            currentLine = currentLine + " " + lines(index+1)
+		            lines.RemoveAt(index+1)
+		          else
+		            Exit
+		          end if
+		        wend
+		        
+		        
+		        languages = currentLine.ReplaceAllRegEx("languages.","").Trim
+		        if languages = "-" or languages = "—" then
+		          languages = ""
+		        end if
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("CHALLENGE") then
+		        challenge = currentLine.NthField("PROFICIENCY",1).ReplaceAllRegEx("CHALLENGE.","").ReplaceAllRegEx("\((.*?)\)").Trim
+		        
+		        if currentLine.Contains("PROFICIENCY BONUS") then
+		          profbonus = currentLine.NthField("PROFICIENCY BONUS",2).Trim
+		        end if
+		        
+		        lines.RemoveAt(index)
+		        
+		      elseif currentLine.StartsWith("PROFICIENCY BONUS") then
+		        profbonus = currentLine.ReplaceAllRegEx("PROFICIENCY BONUS.","").Trim
+		        
+		        lines.RemoveAt(index)
+		        
+		      end if
+		      
+		    next // NEXT Index
+		    
+		    var remerged as string = StringFromArray( lines, EndOfLine )
+		    var stats() as string = remerged.MatchAll( "(\d+).*?\((\+|\-)\d+\)", 1 )
+		    
+		    if remerged.StartsWith("STR") and stats.LastIndex >= 5 then
+		      str = stats(0)
+		      dex = stats(1)
+		      con = stats(2)
+		      int = stats(3)
+		      wis = stats(4)
+		      cha = stats(5)
+		    end if
+		    
+		    cName.Value = name.FormatTitle
+		    
+		    cArmorClass.Value = ac
+		    cArmorType.Value = acdescription
+		    cMaxHP.Value = hp
+		    cMaxHPRoll.Value = hproll.ReplaceAll(" ","")
+		    cMaxHPRoll.Tag = hproll.ReplaceAll(" ","")
+		    
+		    cSize.Value = size
+		    cSize.Tag = size.Left(1).Uppercase
+		    cSpeed.Value = speed
+		    cCreatureType.Value = type.Lowercase
+		    cAlignment.Value = alignment
+		    
+		    cSavingThrows.Value = savingthrows
+		    cSkills.Value = skills
+		    cDamageResistance.Value = damageresistances
+		    cDamageVulnerabilities.Value = damagevulnerabilities
+		    cDamageImmunities.Value = damageimmunities
+		    cConditionImmunities.Value = conditionimmunities
+		    'cConditionResistance.Value
+		    cSenses.Value = senses
+		    cLanguagesKnown.Value = languages
+		    cPassivePerception.Value = passiveperception
+		    cProficiencyBonus.Value = profbonus
+		    cChallengeRating.Value = challenge
+		    
+		    cAbilityStrength.Value = str
+		    cAbilityDexterity.Value = dex
+		    cAbilityConstitution.Value = con
+		    cAbilityIntelligence.Value = int
+		    cAbilityWisdom.Value = wis
+		    cAbilityCharisma.Value = cha
+		    
+		    
+		    
+		  end if // @END clipboard.text <> ""
+		  
+		  
+		  
+		  #if False then
+		    
+		    var Title as string
+		    var Description as String
+		    
+		    var Classes(), Level, School, castingTime, Range, Components(), Materials, Duration, Rolls() as string
+		    
+		    if c.Text <> "" then
+		      
+		      var cliptext as String = c.Text
+		      cliptext = FixTypos( cliptext )
+		      cliptext = cliptext.ReplaceAll( "ist-level", "1st-level" )
+		      cliptext = cliptext.ReplaceAll( "i action", "1 action" ).ReplaceAll("i bonus", "1 bonus").ReplaceAll("I reaction", "1 reaction")
+		      cliptext = cliptext.ReplaceAll( "i round", "1 round" )
+		      
+		      var lines() as string
+		      if cliptext.Contains( EndOfLine ) then
+		        lines = cliptext.Split( EndOfLine )
+		      elseif cliptext.Contains( chr(13) ) then
+		        lines = cliptext.Split( chr(13) )
+		      elseif cliptext.Contains( chr(10) ) then
+		        lines = cliptext.Split( chr(10) )
+		      end if
+		      
+		      for index as Integer = lines.LastIndex DownTo 0
+		        
+		        if lines(index).StartsWith("Duration:") then
+		          Duration = lines(index).Replace("Duration:","").Trim
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif lines(index).StartsWith("Components:") then
+		          'Materials = lines(index).Match( "\((.*?)\)", 1 )
+		          
+		          var ComponentsString as String = lines(index).NthField( "(", 1 )
+		          ComponentsString = ComponentsString.Replace("Components:", "").Trim
+		          
+		          Components = ComponentsString.SplitString(",")
+		          
+		          if Components.Contains("M") then
+		            
+		            if lines(index).Contains( "M (" ) and lines(index).Trim.EndsWith(")") then
+		              Materials = lines(index).Match( "\((.*?)\)", 1 )
+		            else
+		              Materials = c.Text.ReplaceAll( chr(13), " " ).Match( "M \((.*?)\)", 1 )
+		              lines.RemoveAt(index+1)
+		            end if
+		          end if
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif lines(index).StartsWith("Range:") then
+		          Range = lines(index).Replace("Range:","").Trim
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif lines(index).StartsWith("Casting Time:") then
+		          castingTime = lines(index).Replace("Casting Time:","").Trim
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif index < 5 and (lines(index).Match( "(\d+)(st|nd|rd|th).level", 1) <> "" or lines(index).Contains("cantrip")) then
+		          
+		          var SchoolLevelLine as String = lines(index)
+		          
+		          // Is ritual?
+		          cRitual.FieldValue = SchoolLevelLine.Contains("ritual")
+		          SchoolLevelLine = SchoolLevelLine.Replace("(ritual)", "").Trim
+		          
+		          // Get the spell's level
+		          if SchoolLevelLine.Contains("cantrip") then
+		            level = "0"
+		            SchoolLevelLine = SchoolLevelLine.Replace("cantrip","").Trim
+		            'School = lines(index).NthField("cantrip", 2)
+		            'if School = "" then
+		            'School = lines(index).NthField("cantrip", 1)
+		            'end if
+		          else
+		            level = SchoolLevelLine.Match( "(\d+)(st|nd|rd|th|I|l)-level", 1).Replace("I", "1").Replace("l", "1")
+		            'lines(index).NthField("level", 2).Trim.Titlecase
+		            SchoolLevelLine = SchoolLevelLine.ReplaceAllRegEx( "(\d+)(st|nd|rd|th|I|l)-level", "").Trim
+		          end if
+		          
+		          // Match spell school.
+		          if School = "" then
+		            School = SchoolLevelLine.Match("(Abjuration|Conjuration|Divination|Enchantment|Evocation|Illusion|Necromancy|Transmutation)", 1).Titlecase
+		            SchoolLevelLine = SchoolLevelLine.Replace( School, "" ).Trim
+		          end if
+		          
+		          // Get optional classes if they are in this line.
+		          var optionClasses as String = SchoolLevelLine.Match("\((.*?)\)", 1)
+		          if optionClasses <> "" then
+		            Classes = optionClasses.FormatTitle.SplitString(",")
+		          end if
+		          
+		          
+		          lines.RemoveAt( index )
+		          
+		        elseif lines(index).StartsWith("Classes:") then
+		          Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Trim.FormatTitle.SplitString(",")
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif lines(index).StartsWith("Prerequisite:") then
+		          cPrerequisite.Value = lines(index).Replace("Prerequisite:","").Trim
+		          
+		          lines.RemoveAt(index)
+		          
+		        elseif index = 0 then
+		          Title = lines(index)
+		          
+		          lines.RemoveAt(index)
+		          
+		        end if
+		        
+		      next
+		      
+		      
+		      if lines.LastIndex > -1 then
+		        Description = string.FromArray( lines, EndOfLine )
+		      end if
+		    end if
+		    
+		    cDescription.FormatParagraphs( Description, False )
+		    cDescription.FormatLists( Description, false )
+		    
+		    'ProcessDicerolls
+		    //
+		    'Rolls = Description.MatchAll( "(\d+d\d+.*?)(\w+)", 1 )
+		    '
+		    'if rolls <> Nil and rolls.LastIndex > -1 then
+		    'for each roll as string in Rolls
+		    'cDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( roll.Trim )
+		    'cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = roll.Trim
+		    'next
+		    'end if
+		    //
+		    
+		    Title = Title.FormatTitle
+		    if cName.Value.Contains( "Unnamed Spell" ) then
+		      cName.Value = cName.Value.Replace("Unnamed Spell", Title)
+		    else
+		      cName.Value = Title
+		    end if
+		    
+		    'if Description.Match( "\n(\w+)\. (\w+)", 1 ) <> "" then
+		    'Description = Description.ReplaceAllRegEx( "\n(\w+)\. (\w+)", "\n$1\: $2" )
+		    'end if
+		    
+		    Description = Description.ReplaceAllRegEx( "\n\n(\w+)\. (\w+)", "\n\n$1\: $2" )
+		    Description = Description.ReplaceAllRegEx( "\n\n(\w+ \w+)\. (\w+)", "\n\n$1\: $2" )
+		    Description = Description.ReplaceAllRegEx( "\n\n(\w+ \w+ \w+)\. (\w+)", "\n\n$1\: $2" )
+		    Description = Description.ReplaceAllRegEx( "\n\n(\w+ \w+ \w+ \w+)\. (\w+)", "\n\n$1\: $2" )
+		    
+		    // Add spell upgrade text
+		    var SpellIncrease as String = Description.Match("(This spell's .*? increases)", 1)
+		    if SpellIncrease <> "" and NOT Description.Contains("At Higher Levels") and NOT Description.Contains("Cantrip Upgrade") then
+		      if Level.Val > 0 then
+		        Description = Description.Replace( SpellIncrease, "At Higher Levels: " + SpellIncrease )
+		      elseif level.Val = 0 then
+		        Description = Description.Replace( SpellIncrease, "Cantrip Upgrade: " + SpellIncrease )
+		      end if
+		    end if
+		    
+		    'if Description.Contains( "At Higher Levels:" ) then
+		    'Description = Description.Replace( "At Higher Levels: ", "At Higher Levels:" + EndOfLine )
+		    'end if
+		    if Description.Contains("AT HIGHER LEVELS") and not Description.Contains("Cantrip Upgrade") then // for correcting capitalization
+		      Description = Description.ReplaceAll( "AT HIGHER LEVELS", "At Higher Levels")
+		    end if
+		    
+		    
+		    cDescription.Value = Description
+		    
+		    // Process Dicerolls
+		    cDiceRolls.lstDiceRolls.RemoveAllRows
+		    var result as String = "1"
+		    
+		    while result <> ""
+		      result = cDiceRolls.AddCalculation(False)
+		    wend
+		    
+		    cComponents.Reset
+		    cComponents.SetMultiTags( Components )
+		    cMaterials.Value = Materials
+		    
+		    cRange.Value = Range
+		    cTime.Value = castingTime
+		    cDuration.Value = Duration
+		    
+		    'cSpellLevel.Value = Level
+		    cSpellLevel.Value = TitleForMenuWithTag( cSpellLevel.BaseMenu, Level )
+		    cSpellLevel.Tag = Level
+		    
+		    
+		    cSpellSchool.Value = School 'TitleForMenuWithTag( cSpellSchool.BaseMenu, xValue )
+		    if School <> "" then
+		      lstClasses.AddRow "School: " + School
+		    end if
+		    
+		    if cRange.Value = "Touch" then
+		      lstClasses.AddRow "Touch Spells"
+		    end if
+		    
+		    if cRitual.FieldValue = True then
+		      lstClasses.AddRow "Ritual Caster"
+		    end if
+		    
+		    if DnDArrays.SpellSchools.Contains( School ) then
+		      if School.StartsWith("E") then
+		        School = School.Left(2).Uppercase
+		      else
+		        School = School.Left(1).Uppercase
+		      end if
+		      cSpellSchool.Tag = School
+		    elseif School <> "" then
+		      cDescription.Value = "Type: " + School + EndOfLine + EndOfLine + Description
+		    end if
+		    
+		    
+		    'cSpellSchool.Value = School
+		    
+		    if Classes.LastIndex > -1 then
+		      
+		      // Spellcaster Lists
+		      for each currentClass as string in Classes
+		        lstClasses.AddRow currentClass
+		      next
+		    end if
+		    
+		    // Set as homebrew
+		    if ccSourceBox.lstSources.LastRowIndex > -1 then
+		      var brewtype as String = ccSourceBox.lstSources.CellValueAt( 0, 2 )
+		      if brewtype.Contains("Homebrew") then
+		        cName.Value = cName.Value + " (HB)"
+		      elseif brewtype.Contains("Third Party") then
+		        cName.Value = cName.Value + " (Third Party)"
+		      end if
+		    end if
+		  #endif
 		End Sub
 	#tag EndEvent
 #tag EndEvents

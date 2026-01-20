@@ -311,7 +311,7 @@ End
 		    txtInput.Text = c.Text
 		  end if
 		  
-		  txtInput.Text = FormatSpellname( txtInput.Text )
+		  txtInput.Text = txtInput.Text.SmartTitleCase
 		  
 		  txtInput.Text = txtInput.Text.ReplaceAll( "(hb)", "(HB)" ).ReplaceAll( "(ua)", "(UA)" )
 		End Sub

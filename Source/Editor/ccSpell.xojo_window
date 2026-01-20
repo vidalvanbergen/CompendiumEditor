@@ -1777,12 +1777,13 @@ End
 		  
 		  
 		  if cbClass.Text.Contains(",") then
-		    var AddingClasses() as String = cbClass.Text.FormatTitle.SplitString(",")
+		    var AddingClasses() as String = cbClass.Text.SplitString(",")
 		    for each AddClass as String in AddingClasses
+		      AddClass = AddClass.SmartTitleCase
 		      lstClasses.AddRow AddClass
 		    next
 		  else
-		    lstClasses.AddRow cbClass.Text
+		    lstClasses.AddRow cbClass.Text.SmartTitleCase
 		  end if
 		  
 		  
@@ -1971,14 +1972,14 @@ End
 		        // Get optional classes if they are in this line.
 		        var optionClasses as String = SchoolLevelLine.Match("\((.*?)\)", 1)
 		        if optionClasses <> "" then
-		          Classes = optionClasses.FormatTitle.SplitString(",")
+		          Classes = optionClasses.SmartTitleCase.SplitString(",")
 		        end if
 		        
 		        
 		        lines.RemoveAt( index )
 		        
 		      elseif lines(index).StartsWith("Classes:") then
-		        Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Trim.FormatTitle.SplitString(",")
+		        Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Trim.SmartTitleCase.SplitString(",")
 		        
 		        lines.RemoveAt(index)
 		        
@@ -2017,7 +2018,7 @@ End
 		  'end if
 		  //
 		  
-		  Title = Title.FormatTitle
+		  Title = Title.SmartTitleCase
 		  if cName.Value.Contains( "Unnamed Spell" ) then
 		    cName.Value = cName.Value.Replace("Unnamed Spell", Title)
 		  else

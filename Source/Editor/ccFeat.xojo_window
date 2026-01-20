@@ -578,7 +578,7 @@ End
 		  cDescription.FormatParagraphs( Description, False )
 		  cDescription.FormatLists( Description, false )
 		  
-		  Title = Title.FormatTitle
+		  Title = Title.SmartTitleCase
 		  var isHomebrew as Boolean = cName.Value.Contains( "(HB)" )
 		  if cName.Value.Contains( "Unnamed Feat" ) then
 		    cName.Value = cName.Value.Replace("Unnamed Feat", Title)

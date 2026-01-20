@@ -289,7 +289,7 @@ End
 		  cDescription.FormatParagraphs( Description, False )
 		  cDescription.FormatLists( Description, false )
 		  
-		  Title = Title.FormatTitle
+		  Title = Title.SmartTitleCase
 		  if cName.Value.Contains( "FeatureName" ) then
 		    cName.Value = cName.Value.Replace("FeatureName", Title)
 		  else

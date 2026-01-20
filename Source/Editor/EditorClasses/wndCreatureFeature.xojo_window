@@ -384,7 +384,7 @@ End
 		    Description = Description.Trim
 		  end if
 		  
-		  Title = Title.FormatTitle
+		  Title = Title.SmartTitleCase
 		  cName.Value = Title
 		  
 		  if Description.Contains( "• " ) or Description.Contains("slots):") or Description.Contains("(at will)") or Description.Contains( "/day" ) then

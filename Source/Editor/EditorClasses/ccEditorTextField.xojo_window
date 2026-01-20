@@ -241,7 +241,7 @@ End
 		        Redim Values(-1)
 		        
 		      elseif hititem.Text = "Format spell name" then
-		        txtField.Text = FormatSpellname( txtField.Text )
+		        txtField.Text = txtField.Text.SmartTitleCase
 		        
 		      elseif hititem.Text = "New dice roll" then
 		        var calculation as string = SummonCalculator( "", True )

@@ -1151,8 +1151,8 @@ Protected Module StringLib
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function IsEmpty(Extends pString As string) As Boolean
+	#tag Method, Flags = &h21
+		Private Function IsEmpty(Extends pString As string) As Boolean
 		  If pString = "" Then
 		    Return True
 		  Else
@@ -1161,8 +1161,8 @@ Protected Module StringLib
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function IsEmpty(pString As string) As Boolean
+	#tag Method, Flags = &h21
+		Private Function IsEmpty(pString As string) As Boolean
 		  return pString.IsEmpty
 		End Function
 	#tag EndMethod

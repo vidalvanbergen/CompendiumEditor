@@ -3655,7 +3655,7 @@ End
 		      cha = stats(5)
 		    end if
 		    
-		    cName.Value = name.FormatTitle
+		    cName.Value = name.SmartTitleCase
 		    
 		    cArmorClass.Value = ac
 		    cArmorType.Value = acdescription

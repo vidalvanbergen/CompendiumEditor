@@ -368,7 +368,7 @@ Protected Module CommonModule
 		    'spellname = spellname.Titlecase
 		    
 		    spellname = spellname.ReplaceAll("*", "")
-		    spellname = FormatSpellname( spellname )
+		    spellname = spellname.SmartTitleCase
 		    
 		    if spellname.Contains("/") then
 		      spellname = spellname.NthField("/",1).Titlecase + "/" + spellname.NthField("/",2).Titlecase
@@ -391,28 +391,29 @@ Protected Module CommonModule
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function FormatSpellname(SpellName as String) As String
+	#tag Method, Flags = &h21
+		Private Function FormatSpellnameOLD(SpellName as String) As String
 		  
-		  SpellName = spellName.Titlecase.Trim
-		  
-		  
-		  SpellName = SpellName.ReplaceAll(" A ", " a ")
-		  SpellName = SpellName.ReplaceAll(" An ", " an ")
-		  SpellName = SpellName.ReplaceAll(" In ", " in ")
-		  SpellName = SpellName.ReplaceAll(" On ", " on ")
-		  SpellName = SpellName.ReplaceAll(" Of ", " of ")
-		  SpellName = SpellName.ReplaceAll(" Or ", " or ")
-		  SpellName = SpellName.ReplaceAll(" To ", " to ")
-		  SpellName = SpellName.ReplaceAll(" And ", " and ")
-		  SpellName = SpellName.ReplaceAll(" For ", " for ")
-		  SpellName = SpellName.ReplaceAll(" The ", " the ")
-		  SpellName = SpellName.ReplaceAll(" From ", " from ")
-		  SpellName = SpellName.ReplaceAll(" With ", " with ")
-		  SpellName = SpellName.ReplaceAll(" Without ", " without ")
-		  
-		  SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
-		  SpellName = SpellName.ReplaceAll( "(ua)", "(UA)")
+		  SpellName = SpellName.SmartTitleCase
+		  'SpellName = spellName.Titlecase.Trim
+		  'SpellName = SpellName.NthField("(",1) + "(" + SpellName.NthField("(",2).Titlecase.Trim
+		  '
+		  'SpellName = SpellName.ReplaceAll(" A ", " a ")
+		  'SpellName = SpellName.ReplaceAll(" An ", " an ")
+		  'SpellName = SpellName.ReplaceAll(" In ", " in ")
+		  'SpellName = SpellName.ReplaceAll(" On ", " on ")
+		  'SpellName = SpellName.ReplaceAll(" Of ", " of ")
+		  'SpellName = SpellName.ReplaceAll(" Or ", " or ")
+		  'SpellName = SpellName.ReplaceAll(" To ", " to ")
+		  'SpellName = SpellName.ReplaceAll(" And ", " and ")
+		  'SpellName = SpellName.ReplaceAll(" For ", " for ")
+		  'SpellName = SpellName.ReplaceAll(" The ", " the ")
+		  'SpellName = SpellName.ReplaceAll(" From ", " from ")
+		  'SpellName = SpellName.ReplaceAll(" With ", " with ")
+		  'SpellName = SpellName.ReplaceAll(" Without ", " without ")
+		  '
+		  'SpellName = SpellName.ReplaceAll( "(hb)", "(HB)")
+		  'SpellName = SpellName.ReplaceAll( "(ua)", "(UA)")
 		  
 		  return SpellName
 		End Function
@@ -422,65 +423,54 @@ Protected Module CommonModule
 		Function FormatText(TheText as String) As String
 		  
 		  // Clean text issues
-		  'TheText = TheText.ReplaceAll("- ", "")
-		  TheText = NormalizeLineEndings( TheText )
+		  TheText = TheText.ReplaceAll( chr(10), EndOfLine )
+		  TheText = TheText.ReplaceAll( chr(13), EndOfLine )
 		  
-		  TheText = TheText.ReplaceAll("‘", "'")
-		  TheText = TheText.ReplaceAll("’", "'")
-		  TheText = TheText.ReplaceAll("’", "'")
-		  TheText = TheText.ReplaceAll("“", """")
-		  TheText = TheText.ReplaceAll("”", """")
-		  TheText = TheText.ReplaceAll(" .", "." )
-		  'TheText = TheText.ReplaceAll(" " + chr(13), " " )
+		  // Fix punctuation
+		  Var replacements As Dictionary = New Dictionary( _
+		  "‘" : "'", _
+		  "’" : "'", _
+		  "“" : """", _
+		  "”" : """", _
+		  " ." : "." _
+		  )
+		  
+		  For Each key As String In replacements.Keys
+		    TheText = TheText.ReplaceAll(key, replacements.Value(key))
+		  Next
+		  
+		  
 		  TheText = TheText.ReplaceAll(" " + EndOfLine, " " )
 		  TheText = TheText.ReplaceAll( EndOfLine + " •", EndOfLine + Chr(9) + "•" )
 		  
 		  // Fix list items
-		  'TheText = TheText.ReplaceAll( chr(13) + chr(13) + "•", "\n\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( EndOfLine + EndOfLine + "•", "\n\n" + Chr(9) + "•" )
 		  
-		  'TheText = TheText.ReplaceAll( chr(13) + "•", "\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( EndOfLine + "•", "\n" + Chr(9) + "•" )
 		  
-		  'TheText = TheText.ReplaceAll( ":" + chr(13) + "•", ":\n" + Chr(9) + "•" )
-		  'TheText = TheText.ReplaceAll( ":" + chr(13) + " •", ":\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( ":" + EndOfLine + "•", ":\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( ":" + EndOfLine + " •", ":\n" + Chr(9) + "•" )
 		  
-		  TheText = TheText.ReplaceAll( chr(13) + "*", "\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( EndOfLine + "*", "\n" + Chr(9) + "•" )
 		  
-		  TheText = TheText.ReplaceAll( chr(13) + chr(13) + "*", "\n\n" + Chr(9) + "•" )
 		  TheText = TheText.ReplaceAll( EndOfLine + EndOfLine + "*", "\n\n" + Chr(9) + "•" )
 		  
 		  // 
 		  TheText = TheText.ReplaceAll( "  ", "\n\n" )
-		  'TheText = TheText.ReplaceAll( ": ", ":\n" )
 		  TheText = TheText.ReplaceAll( " •", "\n\n" + chr(9) + "•")
 		  TheText = TheText.ReplaceAll( EndOfLine + ". ", "\n\n" + chr(9) + "• " )
-		  'TheText = TheText.ReplaceAll( chr(13) + "*", "\n\n*" )
-		  'TheText = TheText.ReplaceAll( EndOfLine + "*", "\n\n*" )
 		  
-		  'TheText = TheText.ReplaceAll( ":" + chr(13), ":\n" )
 		  TheText = TheText.ReplaceAll( ":" + EndOfLine, ":\n" )
 		  
-		  if TRUE then
-		    TheText = TheText.ReplaceAll( "Source: ", "Source:" + Chr(9) )
-		  else
-		    TheText = TheText.ReplaceAll( "Source:" + Chr(9), "Source: " )
-		  end if
+		  
+		  //
+		  TheText = TheText.ReplaceAll( "Source: ", "Source:" + Chr(9) )
+		  
 		  
 		  TheText = TheText.ReplaceAll( EndOfLine, " " )
-		  'TheText = TheText.ReplaceAll( chr(13), " " )
-		  '#if TargetMacOS then
-		  TheText = TheText.ReplaceAll("  ", EndOfLine + chr(9) ) 'EndOfLine)
+		  TheText = TheText.ReplaceAll("  ", EndOfLine + chr(9) )
 		  TheText = TheText.ReplaceAll("\n", EndOfLine)
-		  'TheText = TheText.ReplaceAll(EndOfLine, EndOfLine + EndOfLine)
-		  '#else
-		  'TheText = TheText.ReplaceAll("  ", chr(13) + chr(9) ) 'chr(13))
-		  'TheText = TheText.ReplaceAll("\n", chr(13))
-		  ''TheText = TheText.ReplaceAll(chr(13), chr(13) + chr(13) )
-		  '#endif
+		  
 		  
 		  TheText = TheText.ReplaceAll(chr(2), "")
 		  
@@ -493,21 +483,21 @@ Protected Module CommonModule
 		  
 		  'DamageDice = description.Match("\{\@damage (.*?)\}", 1)
 		  
-		  TheText = TheText.ReplaceAll("{@hit ", "+").ReplaceAll("{@h}", "Hit: ")
+		  'TheText = TheText.ReplaceAll("{@hit ", "+").ReplaceAll("{@h}", "Hit: ")
 		  'description = description.Trim.ReplaceAll("{@condition ", "").ReplaceAll("{@hit ", "+").ReplaceAll("{@h}", "Hit: ").ReplaceAll("{@skill ", "").ReplaceAll("{@dice ", "").ReplaceAll("{@spell ", "").ReplaceAll("{@adventure ","")
-		  TheText = TheText.ReplaceAll("{@atk mw}", "Melee Weapon Attack:").ReplaceAll("{@damage ", "").ReplaceAll("{@dc", "DC")
-		  TheText = TheText.ReplaceAll("{@atk rw}", "Ranged Weapon Attack:").ReplaceAll("{@atk mw,rw}", "Melee or Ranged Weapon Attack:").ReplaceAll("{@atk rs}", "Ranged Spell Attack:").ReplaceAll("{@atk ms", "Melee Spell Attack:")
+		  'TheText = TheText.ReplaceAll("{@atk mw}", "Melee Weapon Attack:").ReplaceAll("{@damage ", "").ReplaceAll("{@dc", "DC")
+		  'TheText = TheText.ReplaceAll("{@atk rw}", "Ranged Weapon Attack:").ReplaceAll("{@atk mw,rw}", "Melee or Ranged Weapon Attack:").ReplaceAll("{@atk rs}", "Ranged Spell Attack:").ReplaceAll("{@atk ms", "Melee Spell Attack:")
 		  
-		  TheText = TheText.ReplaceAllRegEx("\|.*?\}","").ReplaceAllRegEx("\{\@\W+ ", "").ReplaceAll("}","").Trim
+		  'TheText = TheText.ReplaceAllRegEx("\|.*?\}","").ReplaceAllRegEx("\{\@\W+ ", "").ReplaceAll("}","").Trim
 		  
 		  
 		  Return TheText.Trim
 		End Function
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function FormatTitle(Extends title as String) As String
-		  Return FormatSpellname( title )
+	#tag Method, Flags = &h21
+		Private Function FormatTitleOLD(Extends title as String) As String
+		  'Return FormatSpellname( title )
 		End Function
 	#tag EndMethod
 
@@ -584,6 +574,93 @@ Protected Module CommonModule
 		  TheText = TheText.ReplaceAll( chr(13), EndOfLine )
 		  
 		  Return TheText
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SmartTitleCase(extends input as String) As String
+		  If input.IsEmpty Then Return input
+		  
+		  // Minor words that usually stay lowercase unless first
+		  Var minorWords() As String = Array( _
+		  "and", "or", "of", "the", "a", "an", _
+		  "to", "in", "on", "for", "from", "with", "without", "at", "by" _
+		  )
+		  
+		  // Custom acronyms
+		  input = input.ReplaceAll("(hb)", "(HB)")
+		  input = input.ReplaceAll("(ua)", "(UA)")
+		  
+		  // Normalize spacing
+		  Var s As String = input.Trim
+		  while s.Contains("  ")
+		    s = s.ReplaceAll("  ", " ")
+		  wend
+		  
+		  // Split by spaces (keeps punctuation attached)
+		  Var words() As String = s.Split(" ")
+		  
+		  For i As Integer = 0 To words.LastIndex
+		    Var word As String = words(i)
+		    
+		    If word.IsEmpty Then Continue
+		    
+		    // Preserve acronyms / ALL CAPS
+		    If word.Compare( word.Uppercase, ComparisonOptions.CaseSensitive ) = 0 and word.Length > 1 then Continue 'word = word.Uppercase And word.Length > 1 Then Continue
+		    
+		    // Handle leading punctuation
+		    Var leading As String = ""
+		    While word.Length > 0 And Not word.Left(1).IsAlphaNumericString
+		      leading = leading + word.Left(1)
+		      word = word.Middle(1)
+		    Wend
+		    
+		    // Handle trailing punctuation
+		    Var trailing As String = ""
+		    While word.Length > 0 And Not word.Right(1).IsAlphaNumericString
+		      trailing = word.Right(1) + trailing
+		      word = word.Left(word.Length - 1)
+		    Wend
+		    
+		    If word.IsEmpty Then
+		      words(i) = leading + trailing
+		      Continue
+		    End If
+		    
+		    // Handle hyphenated words
+		    Var parts() As String = word.Split("-")
+		    For j As Integer = 0 To parts.LastIndex
+		      Var p As String = parts(j)
+		      
+		      If p.IsEmpty Then Continue
+		      
+		      If i > 0 And minorWords.IndexOf(p.Lowercase) <> -1 Then
+		        parts(j) = p.Lowercase
+		      Else
+		        parts(j) = p.Left(1).Uppercase + p.Middle(1).Lowercase
+		      End If
+		    Next
+		    
+		    word = String.FromArray(parts, "-")
+		    
+		    // First word is always capitalized
+		    If i = 0 Then
+		      word = word.Left(1).Uppercase + word.Middle(1)
+		    End If
+		    
+		    words(i) = leading + word + trailing
+		  Next
+		  
+		  // Rejoin
+		  s = String.FromArray(words, " ")
+		  
+		  Return s
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function SmartTitleCase(input as String) As String
+		  Return input.SmartTitleCase
 		End Function
 	#tag EndMethod
 

@@ -2303,7 +2303,7 @@ End
 		  'if cName.Value.Contains( "Unnamed" ) then
 		  'cName.Value = cName.Value.Replace("Unnamed", Title)
 		  'else
-		  Title = Title.FormatTitle
+		  Title = Title.SmartTitleCase
 		  
 		  cName.Value = Title
 		  cDetail.Value = rarity

@@ -222,7 +222,7 @@ Inherits DesktopListBox
 
 	#tag Event
 		Sub Opening()
-		  Openening()
+		  Opening()
 		  LastWidth = me.Width
 		  if PrefName <> "" and Resizable then
 		    dim w as Integer = AppSettings.Prefs.Value( PrefName, me.Width )
@@ -420,7 +420,7 @@ Inherits DesktopListBox
 	#tag EndHook
 
 	#tag Hook, Flags = &h0
-		Event Openening()
+		Event Opening()
 	#tag EndHook
 
 	#tag Hook, Flags = &h0

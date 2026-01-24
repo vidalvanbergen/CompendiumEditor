@@ -275,9 +275,17 @@ Protected Class TTsSmartPreferences
 	#tag Method, Flags = &h0
 		Sub Value(key as String, assigns v as Variant)
 		  if mUseAppSupportFolder then
-		    if not mPrefsDict.HasKey (key) or mPrefsDict.Value (key) <> v then
-		      mPrefsDict.Value (key) = v
-		      mIsDirty = true
+		    if v.IsArray then
+		      var s() as String = v
+		      if not mPrefsDict.HasKey(key) or mPrefsDict.Value(key) <> s then
+		        mPrefsDict.Value(key) = s
+		        mIsDirty = True
+		      end if
+		    else
+		      if not mPrefsDict.HasKey (key) or mPrefsDict.Value (key) <> v then
+		        mPrefsDict.Value (key) = v
+		        mIsDirty = true
+		      end if
 		    end if
 		  else
 		    #if TargetMacOS

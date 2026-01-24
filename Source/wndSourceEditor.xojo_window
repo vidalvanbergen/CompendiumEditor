@@ -307,7 +307,7 @@ Begin WindowPro wndSourceEditor
          Index           =   -2147483648
          InitialParent   =   "cvsHeader"
          Italic          =   False
-         Left            =   912
+         Left            =   860
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   False
@@ -325,6 +325,50 @@ Begin WindowPro wndSourceEditor
          Underline       =   False
          Value           =   False
          Visible         =   False
+         Width           =   40
+      End
+      Begin BevelButton bvlMerge
+         AllowAutoDeactivate=   True
+         AllowFocus      =   True
+         BackgroundColor =   &c00000000
+         BevelStyle      =   3
+         Bold            =   False
+         ButtonStyle     =   0
+         Caption         =   ""
+         CaptionAlignment=   3
+         CaptionDelta    =   0
+         CaptionPosition =   1
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         HasBackgroundColor=   False
+         Height          =   40
+         Icon            =   390346751
+         IconAlignment   =   1
+         IconDeltaX      =   0
+         IconDeltaY      =   0
+         Index           =   -2147483648
+         InitialParent   =   "cvsHeader"
+         Italic          =   False
+         Left            =   912
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         MenuStyle       =   0
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         TextColor       =   &c00000000
+         Tooltip         =   ""
+         Top             =   28
+         Transparent     =   True
+         Underline       =   False
+         Value           =   False
+         Visible         =   True
          Width           =   40
       End
    End
@@ -349,7 +393,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   2
+      Value           =   0
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -680,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   8
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -983,8 +1027,8 @@ Begin WindowPro wndSourceEditor
          AllowRowDragging=   True
          AllowRowReordering=   True
          Bold            =   False
-         ColumnCount     =   4
-         ColumnWidths    =   "36,*,45,0"
+         ColumnCount     =   5
+         ColumnWidths    =   "36,*,45,0,45"
          DefaultRowHeight=   24
          DropIndicatorVisible=   False
          Enabled         =   True
@@ -1001,7 +1045,7 @@ Begin WindowPro wndSourceEditor
          IgnoreChange    =   False
          Index           =   -2147483648
          InitialParent   =   "ppSourceEditor"
-         InitialValue    =   "Type	Name	Page	Sort Name"
+         InitialValue    =   "Type	Name	Page	Sort Name,	Extra"
          IsFocused       =   False
          Italic          =   False
          Left            =   0
@@ -2383,6 +2427,24 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events bvlMerge
+	#tag Event
+		Sub Action()
+		  'var w as new wndTemplateMerger
+		  wndTemplateMerger.Show
+		  
+		  wndTemplateMerger.LoadFolder( Source.ParentFolder, False )
+		  wndTemplateMerger.LoadFolder( Source.ParentFolder, True )
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  if NOT TargetMacOS then
+		    me.BevelStyle = BevelButton.BevelStyles.Normal
+		  end if
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events btnSourceInfoSave
 	#tag Event
 		Sub Action()
@@ -3175,20 +3237,43 @@ End
 		End Function
 	#tag EndEvent
 	#tag Event
-		Sub Openening()
+		Sub Opening()
+		  #if DebugBuild AND False then
+		    me.ColumnWidths = "36,*,45,0,45"
+		  #else
+		    me.ColumnWidths = "36,*,45,0,0"
+		  #endif
+		  
 		  'me.ColumnSortTypeAt(0) = DesktopListBox.SortTypes.NotSortable
 		  'me.ColumnSortTypeAt(1) = DesktopListBox.SortTypes.NotSortable
 		  me.ColumnAlignmentAt(2) = DesktopListBox.Alignments.Decimal
+		  me.ColumnAlignmentAt(4) = DesktopListBox.Alignments.Decimal
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Function RowComparison(row1 as Integer, row2 as Integer, column as Integer, ByRef result as Integer) As Boolean
 		  Select Case column
-		  Case 0 // This is a string column. Let the listbox manage it by returning false
+		  Case 0, 1 // This is a string column. Let the listbox manage it by returning false
 		    Return False
 		    
 		  Case 2 // This is our numerical value column. Let's do the work ourselves
 		    result = Sign(Me.CellTextAt(row1, column).Val - Me.CellTextAt( row2, column).Val)
+		    
+		    // Also sort by name if value of current column is the same
+		    if result = 0 then
+		      result = me.CellTextAt( row1, 1 ).Compare( me.CellTextAt( row2, 1 ), ComparisonOptions.CaseInsensitive )
+		    end if
+		    
+		    Return True
+		    
+		  case 4 //
+		    result = Sign(Me.CellTextAt(row1, column).Val - Me.CellTextAt( row2, column).Val)
+		    
+		    // Also sort by name if value of current column is the same
+		    if result = 0 then
+		      result = me.CellTextAt( row1, 1 ).Compare( me.CellTextAt( row2, 1 ), ComparisonOptions.CaseInsensitive )
+		    end if
+		    
 		    Return True
 		    
 		  Else //some other column for which we let the listbox handle comparison
@@ -3501,5 +3586,13 @@ End
 		InitialValue="False"
 		Type="Boolean"
 		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="CommentText"
+		Visible=false
+		Group="Behavior"
+		InitialValue=""
+		Type="String"
+		EditorType="MultiLineEditor"
 	#tag EndViewProperty
 #tag EndViewBehavior

@@ -552,7 +552,7 @@ End
 #tag EndEvents
 #tag Events lstSources
 	#tag Event
-		Sub Openening()
+		Sub Opening()
 		  me.ColumnTypeAt(0) = DesktopListBox.CellTypes.CheckBox
 		  
 		  LoadList

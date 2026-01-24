@@ -467,6 +467,19 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events cbSourcebox
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if key = chr(13) or key = chr(10) then
+		    AddSources me.Text
+		    lstSources.SelectedRowIndex = lstSources.LastAddedRowIndex
+		    me.Text = ""
+		    
+		    Return True
+		  end if
+		End Function
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="Name"

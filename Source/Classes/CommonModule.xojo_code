@@ -1,6 +1,16 @@
 #tag Module
 Protected Module CommonModule
 	#tag Method, Flags = &h0
+		Sub AddIfHasValue(extends xNode as XMLNode, key as String, value as String, AddEmpty as Boolean = False)
+		  if value <> "" then
+		    xNode.AppendSimpleChild( key, value.Trim )
+		  elseif AddEmpty then
+		    xNode.AppendSimpleChild( key, "" )
+		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function baseCharacteristics() As String
 		  var PersonalityTrait as String = "d8 | Personality Trait"
 		  var Ideal as String = "d6 | Personality Trait"
@@ -263,55 +273,72 @@ Protected Module CommonModule
 
 	#tag Method, Flags = &h0
 		Function FixTypos(Description as String) As String
-		  // fix common OCR typos
-		  Description = Description.ReplaceAll(" ioth ", " 10th ").ReplaceAll(" 1oth ", " 10th ")
-		  Description = Description.ReplaceAll(" Ioth ", " 10th ").ReplaceAll(" roth ", " 10th ")
 		  
-		  Description = Description.ReplaceAll("sdıo", "5d10")
-		  Description = Description.ReplaceAll(" idzo", " 1d20")
-		  Description = Description.ReplaceAll(" dzo", " d20")
-		  Description = Description.ReplaceAll("Idız", "1d12")
+		  // --- Simple literal replacements ---
+		  Var replacements As New Dictionary
 		  
-		  Description = Description.ReplaceAll(" s feet", " 5 feet")
-		  Description = Description.ReplaceAll(" s-foot", " 5-foot")
-		  'Description = Description.ReplaceAll(" io feet", " 10 feet")
-		  'Description = Description.ReplaceAll(" I0 feet", " 10 feet")
-		  'Description = Description.ReplaceAll(" 1o feet", " 10 feet")
-		  'Description = Description.ReplaceAll(" Io-foot", " 10-foot")
-		  Description = Description.ReplaceAllRegEx( "\s(?:io|I0|1o)(\sfeet|-foot)", " 10$1" )
-		  Description = Description.ReplaceAll(" IS feet", " 15 feet")
-		  Description = Description.ReplaceAll(" 1S feet", " 15 feet")
-		  Description = Description.ReplaceAll(" 6o feet", " 60 feet")
+		  // Ordinals / numbers
+		  replacements.Value(" ioth ") = " 10th "
+		  replacements.Value(" 1oth ") = " 10th "
+		  replacements.Value(" Ioth ") = " 10th "
+		  replacements.Value(" roth ") = " 10th "
 		  
-		  Description = Description.ReplaceAll("spend i ", "spend 1 ").ReplaceAll("spend l ", "spend 1 ")
-		  Description = Description.ReplaceAll( "by I.", "by 1.").ReplaceAll( "by l.", "by 1.")
+		  // Dice notation
+		  replacements.Value("sdıo") = "5d10"
+		  replacements.Value(" idzo") = " 1d20"
+		  replacements.Value(" dzo") = " d20"
+		  replacements.Value("Idız") = "1d12"
+		  replacements.Value(" IdIo ") = " 1d10 "
 		  
-		  Description = Description.ReplaceAll(" o hit points", " 0 hit points")
+		  // Distances
+		  replacements.Value(" s feet") = " 5 feet"
+		  replacements.Value(" s-foot") = " 5-foot"
+		  replacements.Value(" IS feet") = " 15 feet"
+		  replacements.Value(" 1S feet") = " 15 feet"
+		  replacements.Value(" 6o feet") = " 60 feet"
 		  
-		  Description = Description.ReplaceAll(" Ist level", " 1st level")
-		  Description = Description.ReplaceAll(" znd level", " 2nd level")
-		  Description = Description.ReplaceAll("sth level", "5th level")
-		  Description = Description.ReplaceAll("sth-level", "5th level")
-		  Description = Description.ReplaceAll(" isth level", " 15th level")
-		  Description = Description.ReplaceAll(" 1sth level", " 15th level")
-		  Description = Description.ReplaceAll(" rith level", " 11th level")
-		  Description = Description.ReplaceAll("oth level", "0th level")
+		  // Grammar / numeric OCR
+		  replacements.Value("spend i ") = "spend 1 "
+		  replacements.Value("spend l ") = "spend 1 "
+		  replacements.Value("by I.") = "by 1."
+		  replacements.Value("by l.") = "by 1."
+		  replacements.Value(" o hit points") = " 0 hit points"
 		  
-		  Description = Description.ReplaceAll(" above ist", " above 1st")
-		  Description = Description.ReplaceAll("i hour", "1 hour")
+		  // Levels
+		  replacements.Value(" Ist level") = " 1st level"
+		  replacements.Value(" znd level") = " 2nd level"
+		  replacements.Value("sth level") = "5th level"
+		  replacements.Value("sth-level") = "5th level"
+		  replacements.Value(" isth level") = " 15th level"
+		  replacements.Value(" 1sth level") = " 15th level"
+		  replacements.Value(" rith level") = " 11th level"
+		  replacements.Value("oth level") = "0th level"
 		  
-		  Description = Description.ReplaceAll("i minute", "1 minute")
-		  Description = Description.ReplaceAll("I minute", "1 minute")
-		  Description = Description.ReplaceAll("for i ", "for 1 ")
+		  // Time / quantity
+		  replacements.Value(" above ist") = " above 1st"
+		  replacements.Value("i hour") = "1 hour"
+		  replacements.Value("i minute") = "1 minute"
+		  replacements.Value("I minute") = "1 minute"
+		  replacements.Value("for i ") = "for 1 "
+		  replacements.Value("minimum of i") = "minimum of 1"
+		  replacements.Value("minimum of +i") = "minimum of +1"
 		  
-		  Description = Description.ReplaceAll("minimum of i", "minimum of 1")
-		  Description = Description.ReplaceAll("minimum of +i", "minimum of +1")
+		  // Apply literal replacements
+		  For Each key As Variant In replacements.Keys
+		    description = description.ReplaceAll(key.StringValue, replacements.Value(key).StringValue)
+		  Next
 		  
-		  Description = Description.ReplaceAll(" IdIo ", " 1d10 ")
-		  Description = Description.ReplaceAllRegEx(" (id)(\d+)", " 1d$2")
-		  Description = Description.ReplaceAllRegEx("id(\d+)", "1d$1")
+		  // --- Regex-based fixes ---
 		  
-		  Return Description
+		  // Fix "io / I0 / 1o feet" → "10 feet"
+		  description = description.ReplaceAllRegEx("\s(?:io|I0|1o)(\sfeet|-foot)", " 10$1")
+		  
+		  // Fix dice OCR: "id6", "id8", etc.
+		  description = description.ReplaceAllRegEx(" (?i:id)(\d+)", " 1d$1")
+		  description = description.ReplaceAllRegEx("(?i:id)(\d+)", "1d$1")
+		  
+		  Return description
+		  
 		End Function
 	#tag EndMethod
 
@@ -563,6 +590,19 @@ Protected Module CommonModule
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function IsTrue(value As String) As Boolean
+		  Select Case value.Trim.Lowercase
+		    
+		  Case "1", "yes", "true"
+		    Return True
+		    
+		  End Select
+		  
+		  Return False
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub msgUnofficialFeature()
 		  MessageBox "This field isn't officially supported by the Fight Club or Game Master apps, they have been added here with developers for future apps in mind."
 		End Sub
@@ -587,10 +627,6 @@ Protected Module CommonModule
 		  "to", "in", "on", "for", "from", "with", "without", "at", "by" _
 		  )
 		  
-		  // Custom acronyms
-		  input = input.ReplaceAll("(hb)", "(HB)")
-		  input = input.ReplaceAll("(ua)", "(UA)")
-		  
 		  // Normalize spacing
 		  Var s As String = input.Trim
 		  while s.Contains("  ")
@@ -606,7 +642,7 @@ Protected Module CommonModule
 		    If word.IsEmpty Then Continue
 		    
 		    // Preserve acronyms / ALL CAPS
-		    If word.Compare( word.Uppercase, ComparisonOptions.CaseSensitive ) = 0 and word.Length > 1 then Continue 'word = word.Uppercase And word.Length > 1 Then Continue
+		    'If word.Compare( word.Uppercase, ComparisonOptions.CaseSensitive ) = 0 and word.Length > 1 and word.Length <= 4 then Continue 'word = word.Uppercase And word.Length > 1 Then Continue
 		    
 		    // Handle leading punctuation
 		    Var leading As String = ""
@@ -653,6 +689,10 @@ Protected Module CommonModule
 		  
 		  // Rejoin
 		  s = String.FromArray(words, " ")
+		  
+		  // Custom acronyms
+		  s = s.ReplaceAll("(hb)", "(HB)")
+		  s = s.ReplaceAll("(ua)", "(UA)")
 		  
 		  Return s
 		End Function
@@ -879,6 +919,24 @@ Protected Module CommonModule
 		  next
 		  
 		  Return ""
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function ToSimpleDict(Extends xNode as XMLNode) As Dictionary
+		  var dict as new Dictionary
+		  
+		  if xNode = Nil then Return dict
+		  
+		  for index as Integer = 0 to xNode.ChildCount-1
+		    var xLeaf as XMLNode = xNode.Child(index)
+		    
+		    if xLeaf <> Nil and xLeaf.FirstChild <> Nil and xLeaf.FirstChild.Value <> "" then
+		      dict.Value( xLeaf.Name ) = xLeaf.FirstChild.Value
+		    end if
+		  next
+		  
+		  Return dict
 		End Function
 	#tag EndMethod
 

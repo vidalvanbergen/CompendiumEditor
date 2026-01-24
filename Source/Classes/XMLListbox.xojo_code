@@ -130,7 +130,7 @@ Inherits ListboxPro
 		  
 		  if xNode <> Nil then
 		    var name, sortName as string
-		    var type as string
+		    var type, other as string
 		    
 		    if xNode.FirstChild <> Nil then
 		      name = xNode.ValueOfNodeWithName("name")
@@ -156,9 +156,13 @@ Inherits ListboxPro
 		      type = "creature"
 		    end if
 		    
+		    if type = "spell" then
+		      other = xNode.ValueOfNodeWithName("level").Trim
+		    end if
+		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
 		    
-		    me.AddRow type, name, pagenr, sortName
+		    me.AddRow type, name, pagenr, sortName, other
 		    me.RowTagAt( me.LastAddedRowIndex ) = xNode
 		  end if
 		End Sub
@@ -343,7 +347,7 @@ Inherits ListboxPro
 		  
 		  if xNode <> Nil then
 		    var name, sortName as string
-		    var type as string
+		    var type, other as string
 		    
 		    if xNode.FirstChild <> Nil then
 		      name = xNode.ValueOfNodeWithName("name")
@@ -369,6 +373,10 @@ Inherits ListboxPro
 		      type = "creature"
 		    end if
 		    
+		    if type = "spell" then
+		      other = xNode.ValueOfNodeWithName("level").Trim
+		    end if
+		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
 		    
 		    var lindex as Integer = me.SelectedRowIndex
@@ -377,6 +385,7 @@ Inherits ListboxPro
 		      me.CellTextAt( lindex, 1 ) = name
 		      me.CellTextAt( lindex, 2 ) = pagenr
 		      me.CellTextAt( lindex, 3 ) = sortName
+		      me.CellTextAt( lindex, 4 ) = other // (Spell level)
 		      'me.AddRow type, name, pagenr, sortName
 		      me.RowTagAt( lindex ) = xNode
 		    end if

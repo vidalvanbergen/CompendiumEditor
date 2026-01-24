@@ -206,7 +206,7 @@ Begin WindowPro wndMain
          TabStop         =   True
          Text            =   "Compendium Editor"
          TextAlignment   =   0
-         TextColor       =   &c00000000
+         TextColor       =   &cFCFCFC00
          Tooltip         =   ""
          Top             =   10
          Transparent     =   False
@@ -883,7 +883,8 @@ End
 #tag Events cvsbtnExperiment1
 	#tag Event
 		Sub Action()
-		  wndCompendiumViewer.Show
+		  'wndCompendiumViewer.Show
+		  wndTemplateMerger.Show
 		End Sub
 	#tag EndEvent
 	#tag Event

@@ -516,7 +516,7 @@ End
 		    cbModifierValue.addrow "strength +1"
 		    cbModifierValue.addrow "dexterity +1"
 		    cbModifierValue.addrow "constitution +1"
-		    cbModifierValue.addrow "inteligence +1"
+		    cbModifierValue.addrow "intelligence +1"
 		    cbModifierValue.addrow "wisdom +1"
 		    cbModifierValue.addrow "charisma +1"
 		    
@@ -526,7 +526,7 @@ End
 		    cbModifierValue.addrow "strength modifier +1"
 		    cbModifierValue.addrow "dexterity modifier +1"
 		    cbModifierValue.addrow "constitution modifier +1"
-		    cbModifierValue.addrow "inteligence modifier +1"
+		    cbModifierValue.addrow "intelligence modifier +1"
 		    cbModifierValue.addrow "wisdom modifier +1"
 		    cbModifierValue.addrow "charisma modifier +1"
 		    
@@ -535,7 +535,7 @@ End
 		    cbModifierValue.addrow "strength save +1"
 		    cbModifierValue.addrow "dexterity save +1"
 		    cbModifierValue.addrow "constitution save +1"
-		    cbModifierValue.addrow "inteligence save +1"
+		    cbModifierValue.addrow "intelligence save +1"
 		    cbModifierValue.addrow "wisdom save +1"
 		    cbModifierValue.addrow "charisma save +1"
 		    
@@ -544,7 +544,7 @@ End
 		    cbModifierValue.addrow "strength save"
 		    cbModifierValue.addrow "dexterity save"
 		    cbModifierValue.addrow "constitution save"
-		    cbModifierValue.addrow "inteligence save"
+		    cbModifierValue.addrow "intelligence save"
 		    cbModifierValue.addrow "wisdom save"
 		    cbModifierValue.addrow "charisma save"
 		    
@@ -576,6 +576,19 @@ End
 		Sub Open()
 		  me.SelectedRowIndex = 0
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cbModifierValue
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if key = chr(13) or key = chr(10) then
+		    lstModifiers.AddRow popCategory.Text, me.Text
+		    lstModifiers.SelectedRowIndex = lstModifiers.LastAddedRowIndex
+		    me.Text = ""
+		    
+		    Return True
+		  end if
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events areModifier

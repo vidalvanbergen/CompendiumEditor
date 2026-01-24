@@ -223,7 +223,7 @@ End
 		      if ReadOnly and MultipleOption then
 		        mi.HasCheckMark = Values.IndexOf( mi.Text ) > -1
 		      else
-		        mi.HasCheckMark = ( mi.Text <> "None" and ( value = mi.Text or ( Value.Length >= 5 and Value.Contains( mi.Text ) ) ) )
+		        mi.HasCheckMark = ( mi.Text <> "None" and ( value = mi.Text  ) ) 'or ( Value.Length >= 5 and Value.Contains( mi.Text ) ) ) )
 		      end if
 		      
 		    next

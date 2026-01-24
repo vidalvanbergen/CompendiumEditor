@@ -2205,23 +2205,24 @@ End
 		            
 		            cMagicItem.FieldValue = True
 		            
-		          elseif type.Contains("armor") or type.Contains("weapon") then
-		            var baseItem as String = type.Match("\((.*?)\)", 1 ).Trim
+		            'elseif type.Contains("armor") or type.Contains("weapon") then
+		            'var baseItem as String = type.Match("\((.*?)\)", 1 ).Trim
+		            '
+		            'var rowIndex as Integer = -1
+		            'for index as Integer = 0 to popBaseItems.LastRowIndex
+		            'if popBaseItems.RowValueAt( index ) = Title then
+		            'rowIndex = index
+		            'Exit
+		            'end if
+		            'next
+		            '
+		            'if rowIndex > -1 then
+		            'popBaseItems.SelectRowWithValue( baseItem )
+		            'if baseItem <> "" and popBaseItems.SelectedRowIndex > 0 then
+		            'LoadTemplate
+		            'end if
+		            'end if
 		            
-		            var rowIndex as Integer = -1
-		            for index as Integer = 0 to popBaseItems.LastRowIndex
-		              if popBaseItems.RowValueAt( index ) = Title then
-		                rowIndex = index
-		                Exit
-		              end if
-		            next
-		            
-		            if rowIndex > -1 then
-		              popBaseItems.SelectRowWithValue( baseItem )
-		              if baseItem <> "" and popBaseItems.SelectedRowIndex > 0 then
-		                LoadTemplate
-		              end if
-		            end if
 		            
 		          else
 		            
@@ -2233,11 +2234,14 @@ End
 		                cItemType.Tag = "W"
 		              case "Adventuring Gear"
 		                cItemType.Tag = "G"
-		              case "Light Armor"
+		              case "Light Armor", "Armor (Light)"
+		                type = "Light Armor"
 		                cItemType.Tag = "LA"
-		              case "Medium Armor"
+		              case "Medium Armor", "Armor (Medium)"
+		                type = "Medium Armor"
 		                cItemType.Tag = "MA"
-		              case "Heavy Armor"
+		              case "Heavy Armor", "Armor (Heavy)"
+		                type = "Heavy Armor"
 		                cItemType.Tag = "HA"
 		              case "Shield"
 		                cItemType.Tag = "S"
@@ -2266,6 +2270,10 @@ End
 		              
 		              
 		              cItemType.Value = type.Titlecase
+		            end if
+		            
+		            if rarity.Contains("attunement") then
+		              cMagicItem.FieldValue = True
 		            end if
 		            
 		            var rowIndex as Integer = -1

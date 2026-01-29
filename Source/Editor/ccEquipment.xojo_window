@@ -62,7 +62,7 @@ Begin ContainerControl ccEquipment
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   624
+      Width           =   588
    End
    Begin Canvas cvsArmor
       AllowAutoDeactivate=   True
@@ -82,7 +82,7 @@ Begin ContainerControl ccEquipment
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   12
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -253,7 +253,7 @@ Begin ContainerControl ccEquipment
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -515,7 +515,7 @@ Begin ContainerControl ccEquipment
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -553,7 +553,7 @@ Begin ContainerControl ccEquipment
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -591,7 +591,7 @@ Begin ContainerControl ccEquipment
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -629,7 +629,7 @@ Begin ContainerControl ccEquipment
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -667,7 +667,7 @@ Begin ContainerControl ccEquipment
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -703,7 +703,7 @@ Begin ContainerControl ccEquipment
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Check this box if the item is magical."
@@ -730,7 +730,7 @@ Begin ContainerControl ccEquipment
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -1054,7 +1054,7 @@ Begin ContainerControl ccEquipment
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1063,6 +1063,30 @@ Begin ContainerControl ccEquipment
       Transparent     =   False
       Underline       =   False
       Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   620
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   54
+      Transparent     =   False
       Visible         =   True
       Width           =   24
    End
@@ -2347,6 +2371,13 @@ End
 		  'me.BaseMenu.Append new MenuItem("Potion", "P")
 		  'me.BaseMenu.Append new MenuItem("Scroll", "SC")
 		  'me.BaseMenu.Append new MenuItem("Wealth", "$")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  cName.Value = SmartTitleCase( cName.Value )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

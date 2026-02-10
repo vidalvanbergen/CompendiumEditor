@@ -2005,8 +2005,6 @@ End
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Description:"
-		  
-		  
 		End Sub
 	#tag EndEvent
 	#tag Event

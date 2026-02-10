@@ -466,7 +466,7 @@ End
 		    
 		    if IsAutoLevelFeature then
 		      if lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 0 ) = "" then
-		        var level as string = xNode.ToString.Match( "(\d+)(st|nd|rd|th) level", 1 )
+		        var level as string = xNode.ToString.Match( "(\d+)(st|nd|rd|th)( |-)level", 1 )
 		        
 		        if level = "" and lstTraits.SelectedRowIndex > 0 then
 		          level = lstTraits.CellValueAt( lstTraits.SelectedRowIndex-1, 0 )
@@ -479,7 +479,7 @@ End
 		      
 		      var xPageNr as String
 		      if xNode.ToString.Contains("Source:") then
-		        xPageNr = xNode.ToString.Match( " p\. (\d+)", 1 )
+		        xPageNr = xNode.ToString.Match( " p\..(\d+)", 1 )
 		      end if
 		      
 		      lstTraits.CellValueAt( lstTraits.SelectedRowIndex, 1 ) = Name

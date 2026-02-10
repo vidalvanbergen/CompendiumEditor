@@ -382,6 +382,8 @@ Begin ContainerControl ccTemplate
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
+      FieldName       =   ""
+      FieldValue      =   False
       HasBackgroundColor=   False
       Height          =   22
       Index           =   -2147483648
@@ -1036,6 +1038,13 @@ End
 		  me.BaseMenu.Append new MenuItem( "varies (requires attunement)" )
 		  me.BaseMenu.Append new MenuItem( "-" )
 		  me.BaseMenu.Append new MenuItem( "cursed (requires attunement)" )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDescription
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Description:"
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -218,7 +218,7 @@ Begin WindowPro wndSourceEditor
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
-         Tooltip         =   ""
+         Tooltip         =   "Open the source folder on disk."
          Top             =   28
          Transparent     =   True
          Underline       =   False
@@ -319,7 +319,7 @@ Begin WindowPro wndSourceEditor
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
-         Tooltip         =   ""
+         Tooltip         =   "Open webpage to sourcebook."
          Top             =   28
          Transparent     =   True
          Underline       =   False
@@ -363,7 +363,7 @@ Begin WindowPro wndSourceEditor
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
-         Tooltip         =   ""
+         Tooltip         =   "Open the template merging tool."
          Top             =   28
          Transparent     =   True
          Underline       =   False

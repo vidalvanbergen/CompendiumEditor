@@ -432,7 +432,7 @@ End
 		  var AnyDiceRollsInfo() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+ \× \d+|\d+d\d+ x \d+|\d+d\d+ - \d+|\d+d\d+.*?|\d+d\d+ \||d\d+ \||d\d+\.|d\d+) (\w+)", 2 )
 		  
 		  // Other (dice)
-		  if OtherDiceRolls.LastIndex > -1 then
+		  if OtherDiceRolls <> Nil and OtherDiceRolls.LastIndex > -1 then
 		    for index as Integer = 0 to OtherDiceRolls.LastIndex
 		      if OtherDiceRolls(index).StartsWith("d") then
 		        OtherDiceRolls(index) = "1" + OtherDiceRolls(index)

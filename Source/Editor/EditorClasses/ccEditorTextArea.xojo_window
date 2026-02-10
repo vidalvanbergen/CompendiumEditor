@@ -284,7 +284,7 @@ End
 		  
 		  selectedText = NormalizeLineEndings( selectedText )
 		  
-		  var listitemmarks() as string = Array( "*", "•", "0", "-" )
+		  var listitemmarks() as string = Array( "*", "•", "0", "-", ">" )
 		  for each liMark as string in listitemmarks
 		    selectedText = selectedText.ReplaceAll( EndOfLine + liMark + " ", EndOfLine + chr(9) + "• " )
 		    selectedText = selectedText.ReplaceAll( EndOfLine + chr(9) + liMark + " ", EndOfLine + chr(9) + "• " )

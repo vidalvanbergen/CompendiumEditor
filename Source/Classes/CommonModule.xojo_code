@@ -479,6 +479,7 @@ Protected Module CommonModule
 		  TheText = TheText.ReplaceAll( ":" + EndOfLine + " •", ":\n" + Chr(9) + "•" )
 		  
 		  TheText = TheText.ReplaceAll( EndOfLine + "*", "\n" + Chr(9) + "•" )
+		  TheText = TheText.ReplaceAll( EndOfLine + ">", "\n" + Chr(9) + "•" )
 		  
 		  TheText = TheText.ReplaceAll( EndOfLine + EndOfLine + "*", "\n\n" + Chr(9) + "•" )
 		  

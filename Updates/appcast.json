@@ -1,4 +1,4 @@
-KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACDA6C2CB298CFB422BE315BC905E2D25A17D06989B32ADCB39AA0F16B8BD1A6A6D853CEDE1CEFBCDBB798EFA83D9947929C14C91AF43C69B5B57060264640CA349C329F3AF267BE43929D985C253D24853B80570D565CF0385485D9F5EEA8C7B8673A0CB6A00597B312100B02CB7488FD7E53F3C34A6BCE34799D37705C68E26C3B8F8AE322892A52AEA5DF097EEC9312D8A25ABF9D3395634FEC374F7117B205C2C9792111C61DD19FC51B4D6AB3BE731BDAB7DD56722A912FC1E12F1C035F3B267C237940800F6E7C43D7C5681BA5FB7D96B44528C0F9D65F5167
+KAJU 8545222819E7D4A084736E63376061E98DDB453E6E70301563C1721F645F978A549AE113FB397F12B8A6D25BEC6E20EA6A37B6E77BC7BBD54C1A61EA1D703DC032D366354C65AD8188EA4D31794D65DBBCB0F2C25FEDC53925667402F3122BBEEB0656E780BE9B7E79022835BDCDE2D240A7706884FC0C0B18B7B69AE86C8E71E2511B91FBC254E32DC8C34CD2F922C7826906C63EFD3E9D21793BE6977419AFFAE5C6AF73C939FB4193A32620C1F85775DF034C64EEB51A87867C16EFA55FC3FD3804FB5B88A814EAD9CCFC876C30DE907D95B13ACFAD2BB540F935E03B1AE4B82B5DB248F4108CD6561FF1AF1D738B4159B16924AAFE31D5B07675E77A36CA
 [
     {
         "AppName": "Compendium Editor",
@@ -9,7 +9,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.0.0",
-        "Security Token": "8Mm695jVNbg=",
+        "Security Token": "E0HKGi9yhYU=",
         "MacBinary": {
             "Hash": "7A141E70117D5FBE636FDCC7AA29079A",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -34,7 +34,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.1.0",
-        "Security Token": "fQqDGE6yLWg=",
+        "Security Token": "kiLFIMLwY0A=",
         "MacBinary": {
             "Hash": "785AC3DF4C31DABC2F8BED025F1BBFED",
             "URL": "https://vitalis.heliohost.org/files/Compendium_Editor_MacOS.zip"
@@ -59,7 +59,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.2.0",
-        "Security Token": "wOdtBXjgccs=",
+        "Security Token": "cXCOVIkQSJw=",
         "MacBinary": {
             "Hash": "933832DE01C3EBD9E8EADA32E9AD0C4F",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.2.0/Compendium_Editor_MacOS.dmg"
@@ -84,7 +84,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.3.0",
-        "Security Token": "zUBmJNy18NA=",
+        "Security Token": "7rSZ3zXTiLU=",
         "MacBinary": {
             "Hash": "92BB2587EF0EDB1B524E7768962064E3",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.3.0/Compendium_Editor_MacOS.dmg"
@@ -109,7 +109,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.4.0",
-        "Security Token": "h3lTr1zLyzs=",
+        "Security Token": "B0CiUtXXn3g=",
         "MacBinary": {
             "Hash": "55F927C914C12E58587E59AE2178D02F",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.4.0/Compendium_Editor_MacOS.dmg"
@@ -134,7 +134,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.5.0",
-        "Security Token": "Fg3mTe9IVTo=",
+        "Security Token": "q4QpYToCbYE=",
         "MacBinary": {
             "Hash": "A7BB866FE01A292A06E19C64116F0D63",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.5.0/Compendium_Editor_MacOS.dmg"
@@ -159,7 +159,7 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "RequiresPayment": false,
         "UseTransparency": true,
         "Version": "1.6.0",
-        "Security Token": "7TzS9M/mWt0=",
+        "Security Token": "Az60YiiFdkk=",
         "MacBinary": {
             "Hash": "7E1CB13E60C234C9005B7B1769793AB0",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.6.0/Compendium_Editor_macOS.dmg"
@@ -172,6 +172,31 @@ KAJU 17B25889D2D302BC46BA856A780817E0EF100F01AC6CD289D56856324540265CC8B32A66ACD
         "LinuxBinary64bit": {
             "Hash": "7072C2635A9D08C326758127C9CF7D66",
             "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.6.0/Compendium_Editor_Linux.zip",
+            "ExecutableName": "Compendium Editor"
+        }
+    },
+    {
+        "AppName": "Compendium Editor",
+        "ImageScale": 1,
+        "ImageURL": "",
+        "MinimumRequiredVersion": "",
+        "ReleaseNotes": "https://vidalvanbergen.github.io/CompendiumEditor/Updates/v1.7.0.html\n\n<h1>What’s new in Compendium Editor 1.7</h1>\n\n    <ul class=\"update\">\n      <li class=\"new\">Added a tool to merge base items with templates to mass create magic items.</li>\n      <li class=\"new\">Added an import from clipboard button for creatures.</li>\n      <li class=\"dif\">Added support for (Third Party) tags.</li>\n      <li class=\"dif\">Improved auto-formatting.</li>\n      <li class=\"fix\">Other bug fixes and improvements.</li>\n    </ul>",
+        "RequiresPayment": false,
+        "UseTransparency": true,
+        "Version": "1.7.0",
+        "Security Token": "+kOo3wrG/I0=",
+        "MacBinary": {
+            "Hash": "423B30989D7B80DE9F73FD731F9FCD6A",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.7.0/Compendium_Editor_macOS.dmg"
+        },
+        "WindowsBinary64bit": {
+            "Hash": "455C60EC27DF36614D8C770015B457AB",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.7.0/Compendium_Editor_Windows.zip",
+            "ExecutableName": "Compendium Editor.exe"
+        },
+        "LinuxBinary64bit": {
+            "Hash": "DA31948D925793BC9A3F05651BDBA072",
+            "URL": "https://github.com/vidalvanbergen/CompendiumEditor/releases/download/1.7.0/Compendium_Editor_Linux.zip",
             "ExecutableName": "Compendium Editor"
         }
     }

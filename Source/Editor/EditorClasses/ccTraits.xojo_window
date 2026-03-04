@@ -169,6 +169,13 @@ End
 		  var xNode as XMLNode = xFeaturesRoot.AppendNewChild( FeatureType )
 		  xNode.AppendSimpleChild( "name", "Unnamed" )
 		  
+		  var rowIndex as Integer
+		  if lstTraits.SelectedRowIndex > -1 then
+		    rowIndex = lstTraits.SelectedRowIndex+1
+		  else
+		    rowIndex = lstTraits.LastRowIndex+1
+		  end if
+		  
 		  if IsAutoLevelFeature then
 		    'var LastLevel as String = "1"
 		    
@@ -203,9 +210,14 @@ End
 		    'PageNr = lstTraits.CellValueAt( lstTraits.LastRowIndex, 2 )
 		    
 		    
-		    lstTraits.AddRow "", "Unnamed"
+		    lstTraits.AddRowAt( rowIndex, "" )
+		    lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 1 ) = "Unnamed"
+		    'lstTraits.AddRow "", "Unnamed"
 		  else
-		    lstTraits.AddRow "Unnamed", xNode.GetAttribute("category")'.Titlecase
+		    lstTraits.AddRowAt( rowIndex, "Unnamed" )
+		    lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 1 ) = xNode.GetAttribute("category")
+		    
+		    'lstTraits.AddRow "Unnamed", xNode.GetAttribute("category")'.Titlecase
 		  end if
 		  
 		  lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = xNode
@@ -261,7 +273,20 @@ End
 		    xPageNr = copiedxNode.ToString.Match( " p\. (\d+)", 1 )
 		  end if
 		  
-		  lstTraits.AddRow level, name, xAttribute, xPageNr
+		  
+		  var rowIndex as Integer
+		  if lstTraits.SelectedRowIndex > -1 then
+		    rowIndex = lstTraits.SelectedRowIndex+1
+		  else
+		    rowIndex = lstTraits.LastRowIndex+1
+		  end if
+		  
+		  
+		  lstTraits.AddRowAt rowIndex, Level
+		  lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 1 ) = name
+		  lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 2 ) = xAttribute
+		  lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 3 ) = xPageNr
+		  'lstTraits.AddRow level, name, xAttribute, xPageNr
 		  lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = copiedxNode
 		  if selectLastResult then
 		    lstTraits.SelectedRowIndex = lstTraits.LastAddedRowIndex
@@ -295,7 +320,16 @@ End
 		  end if
 		  
 		  
-		  lstTraits.AddRow name.ReplaceAll(" (Bonus Action)", ""), xAttribute'.Titlecase
+		  var rowIndex as Integer
+		  if lstTraits.SelectedRowIndex > -1 then
+		    rowIndex = lstTraits.SelectedRowIndex+1
+		  else
+		    rowIndex = lstTraits.LastRowIndex+1
+		  end if
+		  
+		  lstTraits.AddRowAt rowIndex, name.ReplaceAll(" (Bonus Action)", "")
+		  lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, 1 ) = xAttribute
+		  'lstTraits.AddRow name.ReplaceAll(" (Bonus Action)", ""), xAttribute'.Titlecase
 		  lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = copiedxNode
 		  if selectLastResult then
 		    lstTraits.SelectedRowIndex = lstTraits.LastAddedRowIndex
@@ -327,6 +361,14 @@ End
 	#tag Method, Flags = &h0
 		Sub FeatureCopy()
 		  
+		  var rowIndex as Integer
+		  if lstTraits.SelectedRowIndex > -1 then
+		    rowIndex = lstTraits.SelectedRowIndex+1
+		  else
+		    rowIndex = lstTraits.LastRowIndex+1
+		  end if
+		  
+		  
 		  if lstTraits.SelectedRowIndex > -1 then
 		    var xNode as XMLNode
 		    if lstTraits.RowTagAt( lstTraits.SelectedRowIndex ) IsA XMLNode then
@@ -340,7 +382,7 @@ End
 		    
 		    
 		    if xNodeCopy <> Nil then
-		      lstTraits.AddRow ""
+		      lstTraits.AddRowAt( rowIndex, "" )
 		      for column as Integer = 0 to lstTraits.LastColumnIndex
 		        lstTraits.CellValueAt( lstTraits.LastAddedRowIndex, column ) = lstTraits.CellValueAt( lstTraits.SelectedRowIndex, column )
 		        lstTraits.RowTagAt( lstTraits.LastAddedRowIndex ) = xNodeCopy
@@ -943,7 +985,7 @@ End
 		              if IsAutoLevelFeature then
 		                FeatureAdd( "1", xNode, True )
 		              else
-		                FeatureAdd( xNode )
+		                FeatureAdd( xNode, True )
 		              end if
 		            else
 		              Break

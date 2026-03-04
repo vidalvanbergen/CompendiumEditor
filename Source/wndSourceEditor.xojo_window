@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   10
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1942,7 +1942,7 @@ End
 		    if source.SourceInfoFile <> Nil and Source.SourceInfo.Lookup("abbreviation", "") <> "" then
 		      postfix = "-" + Source.SourceInfo.Lookup("abbreviation", "").StringValue.Lowercase
 		    end if
-		    sourceDestination = Source.ParentFolder.Child( "source" + postfix + ".xml" )
+		    sourceDestination = Source.ParentFolder.Child( "source" + postfix.Lowercase + ".xml" )
 		  end if
 		  SourceInfoEditorPanel.SaveXML( sourceDestination, Source.XMLFiles )
 		  
@@ -2902,7 +2902,8 @@ End
 		      cTemplate.SetData( currentNode, TheSourceBook )
 		      
 		    else
-		      Break
+		      'Break
+		      var aaa as string = currentNode.Name
 		      
 		      
 		    end Select
@@ -3238,7 +3239,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Opening()
-		  #if DebugBuild AND False then
+		  #if DebugBuild AND True then
 		    me.ColumnWidths = "36,*,45,0,45"
 		  #else
 		    me.ColumnWidths = "36,*,45,0,0"

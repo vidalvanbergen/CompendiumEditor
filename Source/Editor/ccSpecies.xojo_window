@@ -62,7 +62,7 @@ Begin ContainerControl ccSpecies
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   660
+      Width           =   624
    End
    Begin ccEditorTextField cSize
       AllowAutoDeactivate=   True
@@ -318,6 +318,38 @@ Begin ContainerControl ccSpecies
       UseMode         =   ""
       Visible         =   True
       Width           =   660
+      Begin PushButton btnFix
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Fix"
+         Default         =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cTraits"
+         Italic          =   False
+         Left            =   88
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   529
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   False
+         Width           =   80
+      End
    End
    Begin ccEditorTextField cDamageResistance
       AllowAutoDeactivate=   True
@@ -1119,6 +1151,30 @@ Begin ContainerControl ccSpecies
       Visible         =   True
       Width           =   552
    End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   657
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -1358,7 +1414,7 @@ End
 		            end if
 		          next
 		          
-		          cAbility.Value = StringFromArray( abilities, ", " )
+		          cAbility.Value = StringFromArray( abilities, ", " ).Titlecase
 		          
 		        case "speed"
 		          cSpeed.Value = xValue
@@ -1575,6 +1631,138 @@ End
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Traits:"
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnFix
+	#tag Event
+		Sub Action()
+		  var Speed as String = cSpeed.Value
+		  var Size as string = cSize.Value
+		  var ability as string = cAbility.Value
+		  
+		  Speed = "Your base walking speed is " + Str( Val( Speed ) ) + " feet."
+		  Size = "Your size is " + Size + "."
+		  var AbilityValue as String
+		  
+		  if ability <> "" then
+		    var abilities() as String = ability.SplitString(",")
+		    
+		    for index as Integer = 0 to abilities.LastIndex
+		      abilities(index) = abilities(index).ReplaceAll( "STR ", "Strength " )
+		      abilities(index) = abilities(index).ReplaceAll( "CON ", "Constitution " )
+		      abilities(index) = abilities(index).ReplaceAll( "DEX ", "Dexterity " )
+		      abilities(index) = abilities(index).ReplaceAll( "INT ", "Intelligence " )
+		      abilities(index) = abilities(index).ReplaceAll( "WIS ", "Wisdom " )
+		      abilities(index) = abilities(index).ReplaceAll( "CHA ", "Charisma " )
+		      
+		      var score, value as String
+		      score = abilities(index).NthField(" ", 1).Trim
+		      value = abilities(index).NthField(" ", 2).Trim.ReplaceAll("-","").ReplaceAll("+","")
+		      
+		      
+		      var prefix as String = "Your "
+		      if index > 0 and index < abilities.LastIndex then
+		        prefix = ", your "
+		      elseif index = abilities.LastIndex then
+		        prefix = ", and your "
+		      end if
+		      
+		      var postfix as string = " score increases by "
+		      if abilities(index).Contains("-") then
+		        postfix = " score decreases by "
+		      end if
+		      
+		      
+		      AbilityValue = AbilityValue + prefix + score + postfix + value
+		      if index = abilities.LastIndex then
+		        AbilityValue = AbilityValue + "."
+		      end if
+		    next
+		  else
+		    AbilityValue = "Increase one ability score by 2 and increase a different score by 1, or increase three different scores by 1."
+		  end if
+		  
+		  speed = "<trait><name>Speed</name><text>" + Speed + "</text></trait>"
+		  size = "<trait><name>Size</name><text>" + Size + "</text></trait>"
+		  ability = "<trait><name>Ability Score Increase</name><text>" + AbilityValue + "</text></trait>"
+		  
+		  var speedNode as XMLNode = Speed.ToXML
+		  var sizeNode as XMLNode = Size.ToXML
+		  var abilityNode as XMLNode = ability.ToXML
+		  
+		  'var s as string
+		  'var xNode as XMLNode = s.ToXML
+		  
+		  var ContainsSpeed, ContainsAbility, ContainsSize as Boolean = False
+		  for row as Integer = 0 to cTraits.lstTraits.LastRowIndex
+		    var title as String = cTraits.lstTraits.CellValueAt(row, 0)
+		    if title = "Speed" then
+		      ContainsSpeed = True
+		    elseif title.Contains( "Ability Score" ) then
+		      ContainsAbility = True
+		    elseif title = "Size" then
+		      ContainsSize = True
+		    end if
+		  next
+		  
+		  if NOT ContainsAbility then
+		    var insertAbilityIndex as Integer = 1
+		    
+		    for row as Integer = 0 to cTraits.lstTraits.LastRowIndex
+		      if cTraits.lstTraits.CellValueAt(row,0) = "Age" then
+		        insertAbilityIndex = row
+		        Exit
+		      elseif cTraits.lstTraits.CellValueAt(row,1) = "" then
+		        insertAbilityIndex = row
+		        Exit
+		      end if
+		    next
+		    
+		    cTraits.lstTraits.AddRowAt(insertAbilityIndex, "Ability Score Increase")
+		    cTraits.lstTraits.RowTagAt( cTraits.lstTraits.LastAddedRowIndex ) = abilityNode
+		  end if
+		  
+		  
+		  if Size <> "" and NOT ContainsSize then
+		    var insertSpeedIndex as Integer
+		    
+		    for row as Integer = 0 to cTraits.lstTraits.LastRowIndex
+		      if cTraits.lstTraits.CellValueAt(row,0) = "Age" then
+		        insertSpeedIndex = row+1
+		        Exit
+		      elseif cTraits.lstTraits.CellValueAt(row,1) = "species" then
+		        insertSpeedIndex = row
+		        Exit
+		      end if
+		    next
+		    
+		    cTraits.lstTraits.AddRowAt(insertSpeedIndex, "Size")
+		    cTraits.lstTraits.RowTagAt( cTraits.lstTraits.LastAddedRowIndex ) = sizeNode
+		  end if
+		  
+		  
+		  if speed <> "" and NOT ContainsSpeed then
+		    var insertSpeedIndex as Integer
+		    
+		    for row as Integer = 0 to cTraits.lstTraits.LastRowIndex
+		      if cTraits.lstTraits.CellValueAt(row,0) = "Size" then
+		        insertSpeedIndex = row+1
+		        Exit
+		      elseif cTraits.lstTraits.CellValueAt(row,1) = "species" then
+		        insertSpeedIndex = row
+		        Exit
+		      end if
+		    next
+		    
+		    cTraits.lstTraits.AddRowAt(insertSpeedIndex, "Speed")
+		    cTraits.lstTraits.RowTagAt( cTraits.lstTraits.LastAddedRowIndex ) = speedNode
+		  end if
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.Visible = DebugBuild
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1865,6 +2053,13 @@ End
 		Sub Open()
 		  me.FieldName = "Display Name:"
 		  me.SetMode ccEditorTextField.Mode.Textfield
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  cName.Value = SmartTitleCase( cName.Value )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

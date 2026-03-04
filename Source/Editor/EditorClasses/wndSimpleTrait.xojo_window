@@ -60,7 +60,7 @@ Begin Window wndSimpleTrait
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   524
+      Width           =   488
    End
    Begin ccEditorTextArea cDescription
       AllowAutoDeactivate=   True
@@ -226,6 +226,30 @@ Begin Window wndSimpleTrait
       Transparent     =   False
       Underline       =   False
       Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   520
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   4
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   58
+      Transparent     =   False
       Visible         =   True
       Width           =   24
    End
@@ -443,6 +467,13 @@ End
 	#tag Event
 		Sub Action()
 		  ImportFromClipboard
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  cName.Value = SmartTitleCase( cName.Value )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

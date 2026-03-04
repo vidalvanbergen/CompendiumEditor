@@ -62,7 +62,7 @@ Begin ContainerControl ccFeat
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   624
+      Width           =   588
    End
    Begin ccEditorTextField cPrerequisite
       AllowAutoDeactivate=   True
@@ -313,6 +313,30 @@ Begin ContainerControl ccFeat
       Transparent     =   True
       Visible         =   True
       Width           =   660
+   End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   620
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   20
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
    End
 End
 #tag EndWindow
@@ -593,6 +617,13 @@ End
 		  
 		  cPrerequisite.Value = prerequisite
 		  cDescription.Value = Description
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  cName.Value = SmartTitleCase( cName.Value )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

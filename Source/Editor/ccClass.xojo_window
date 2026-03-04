@@ -1576,7 +1576,7 @@ End
 		              'end if
 		            next
 		            
-		          elseif xFeature.Name = "counter" then
+		          elseif xFeature.Name = "counter" and xFeature.ChildCount > 0 then
 		            
 		            if xFeature.ValueOfNodeWithName("name") = "Spells Known" then
 		              

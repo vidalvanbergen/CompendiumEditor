@@ -62,7 +62,7 @@ Begin ContainerControl ccSpell
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
-      Width           =   624
+      Width           =   588
    End
    Begin Canvas cvsPartitionGeneral
       AllowAutoDeactivate=   True
@@ -1080,6 +1080,30 @@ Begin ContainerControl ccSpell
          Width           =   660
       End
    End
+   BeginSegmentedButton SegmentedButton btnTextformatting
+      Enabled         =   True
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   620
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   0
+      Segments        =   "🪄\n\nFalse"
+      SelectionStyle  =   2
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   False
+      Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
+      Top             =   54
+      Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
 End
 #tag EndWindow
 
@@ -1978,8 +2002,8 @@ End
 		        
 		        lines.RemoveAt( index )
 		        
-		      elseif lines(index).StartsWith("Classes:") then
-		        Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Trim.SmartTitleCase.SplitString(",")
+		      elseif lines(index).StartsWith("Classes:") or lines(index).StartsWith("Spell Lists:") then
+		        Classes = lines(index).Replace("Casting Time:","").Replace("Classes:","").Replace("Spell Lists:","").Trim.SmartTitleCase.SplitString(",")
 		        
 		        lines.RemoveAt(index)
 		        
@@ -2113,9 +2137,9 @@ End
 		  // Set as homebrew
 		  if ccSourceBox.lstSources.LastRowIndex > -1 then
 		    var brewtype as String = ccSourceBox.lstSources.CellValueAt( 0, 2 )
-		    if brewtype.Contains("Homebrew") then
+		    if brewtype.Contains("Homebrew") and NOT cName.Value.Contains("(HB)")then
 		      cName.Value = cName.Value + " (HB)"
-		    elseif brewtype.Contains("Third Party") then
+		    elseif brewtype.Contains("Third Party") and NOT cName.Value.Contains("(Third Party)") then
 		      cName.Value = cName.Value + " (Third Party)"
 		    end if
 		  end if
@@ -2189,6 +2213,13 @@ End
 		  me.FieldName = "Prerequisite:"
 		  me.SetMode( ccEditorTextField.Mode.Textfield )
 		  me.ReadOnly = False
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events btnTextformatting
+	#tag Event
+		Sub Pressed(segmentIndex As Integer)
+		  cName.Value = SmartTitleCase( cName.Value )
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -1107,7 +1107,7 @@ End
 		          detailItemName = currentItemName.Lowercase + ", "
 		        end if
 		        
-		        currentItemName = Trim( templateItemName.Replace( "%name%", currentItemName ) + " " + nameTags )
+		        currentItemName = Trim( templateItemName.Replace( "%name%", currentItemName ) + " " + nameTags.Trim )
 		        
 		        xItem.AppendSimpleChild( "name", currentItemName )
 		        

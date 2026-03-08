@@ -674,14 +674,14 @@ End
 		  me.BaseMenu.Append new MenuItem("Homebrew", "")
 		  me.BaseMenu.Append new MenuItem("Indie", "")
 		  me.BaseMenu.Append new MenuItem("-", "")
-		  me.BaseMenu.Append new MenuItem("Core Rulebooks [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Rulebooks Supplements [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Unearthed Arcana [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Partnered Content [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Third Party [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Adventures [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Homebrew [2024]", "")
-		  me.BaseMenu.Append new MenuItem("Indie [2024]", "")
+		  me.BaseMenu.Append new MenuItem("Core Rulebooks [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Rulebooks Supplements [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Unearthed Arcana [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Partnered Content [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Third Party [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Adventures [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Homebrew [5.5e]", "")
+		  me.BaseMenu.Append new MenuItem("Indie [5.5e]", "")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

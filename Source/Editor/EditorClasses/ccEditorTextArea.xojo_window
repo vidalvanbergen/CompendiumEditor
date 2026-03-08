@@ -372,6 +372,9 @@ End
 		  wend
 		  selectedText = Trim( selectedText )
 		  
+		  // Indent definition paragraphs.
+		  selectedText = selectedText.ReplaceAllRegEx("\n\n([\w'-]+(?:\s+[\w'-]+){0,3})\. ([\w'-]+)", EndOfLine + EndOfLine + Chr(9) + "$1. $2")
+		  
 		  // Sort out |tables| and headers:
 		  var lines() as String = selectedText.Split( EndOfLine )
 		  for index as Integer = lines.LastIndex DownTo 0
@@ -403,7 +406,10 @@ End
 		    'lines.AddAt(index+1, "")
 		    'end if
 		  next
+		  
 		  selectedText = String.FromArray( lines, EndOfLine )
+		  
+		  selectedText = selectedText.ReplaceAll( EndOfLine + EndOfLine + EndOfLine, EndOfLine + EndOfLine )
 		End Sub
 	#tag EndMethod
 

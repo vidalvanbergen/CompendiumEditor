@@ -843,9 +843,13 @@ End
 		      
 		      var source as string = xRoot.Child(index).ToString.StringBetween("Source:", "</text>").NthField(",",1).NthField(" p. ", 1).Trim
 		      
-		      if NOT IsTrue( IsMagicItem ) and value <> "" and type <> "G" and type <> "$" and type <> "W" then
+		      if name.Contains("Tool") then
+		        'Break
+		      end if
+		      
+		      if NOT IsTrue( IsMagicItem ) and value <> "" and type <> "$" and type <> "W" then 'and type <> "G" then
 		        
-		        if rarity = "" OR rarity.Contains("common") OR rarity.Contains("uncommon") then
+		        if rarity = "" OR rarity.Contains("common") OR rarity.Contains("uncommon") OR type = "G" then
 		          lstItems(0).AddRow name, type, source
 		          lstItems(0).RowTagAt( lstItems(0).LastAddedRowIndex ) = xRoot.Child(index)
 		        end if
@@ -1096,7 +1100,7 @@ End
 		          nameTags = currentItemName.Match( "(\(.*?\))" ).Trim
 		        end if
 		        
-		        if currentItemName.Contains("[") then // -- [2024]
+		        if currentItemName.Contains("[") then // -- [5.5e]
 		          nameTags = nameTags + " " + currentItemName.Match("(\[.*?\])" ).Trim
 		        end if
 		        currentItemName = currentItemName.ReplaceAll( nameTags, "" ).Trim

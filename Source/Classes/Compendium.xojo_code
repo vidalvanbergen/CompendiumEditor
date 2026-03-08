@@ -58,9 +58,9 @@ Protected Class Compendium
 		  if xNode <> Nil then
 		    
 		    if Remove2024Tags then
-		      xNode.SetValueOfNodeWithName( "name", xNode.ValueOfNodeWithName("name").Replace(" [2024]", "").Trim )
-		      xNode.SetValueOfNodeWithName( "classes", xNode.ValueOfNodeWithName("classes").ReplaceAll(" [2024]", "").Trim )
-		      xNode.SetValueOfNodeWithName( "spells", xNode.ValueOfNodeWithName("spells").ReplaceAll(" [2024]", "").Trim )
+		      xNode.SetValueOfNodeWithName( "name", xNode.ValueOfNodeWithName("name").Replace(" [5.5e]", "").Trim )
+		      xNode.SetValueOfNodeWithName( "classes", xNode.ValueOfNodeWithName("classes").ReplaceAll(" [5.5e]", "").Trim )
+		      xNode.SetValueOfNodeWithName( "spells", xNode.ValueOfNodeWithName("spells").ReplaceAll(" [5.5e]", "").Trim )
 		    end if
 		    
 		    

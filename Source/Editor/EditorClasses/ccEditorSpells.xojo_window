@@ -207,7 +207,7 @@ Begin ContainerControl ccEditorSpells
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   False
-      Tooltip         =   "Automagically format spells and spell tables into a comma separated list. (Hold Alt for [2024] tags)"
+      Tooltip         =   "Automagically format spells and spell tables into a comma separated list. (Hold Alt for [5.5e] tags)"
       Top             =   65
       Transparent     =   False
       Visible         =   True
@@ -258,7 +258,7 @@ End
 		  miFormatSpells.Shortcut = "L"
 		  
 		  basemenu.AddMenu miFormatSpells
-		  basemenu.AddMenu new MenuItem("Add '[2024]' Tag")
+		  basemenu.AddMenu new MenuItem("Add '[5.5e]' Tag")
 		  basemenu.AddMenu new MenuItem("-")
 		  basemenu.AddMenu new MenuItem("Sort by name")
 		  
@@ -276,11 +276,11 @@ End
 		    case "Format spells"
 		      txtSpells.Text = FormatSpelllist( txtSpells.Text )
 		      
-		    case "Add '[2024]' Tag"
+		    case "Add '[5.5e]' Tag"
 		      var names() as String = SplitString( txtSpells.Text, "," )
 		      for index as Integer = 0 to names.LastIndex
-		        if NOT names(index).Contains("[2024]") then
-		          names(index) = names(index) + " [2024]"
+		        if NOT names(index).Contains("[5.5e]") then
+		          names(index) = names(index) + " [5.5e]"
 		        end if
 		      next
 		      txtSpells.Text = String.FromArray( names, ", " )
@@ -340,8 +340,8 @@ End
 		  if Keyboard.AsyncAltKey then
 		    var names() as String = SplitString( txtSpells.Text, "," )
 		    for index as Integer = 0 to names.LastIndex
-		      if NOT names(index).Contains("[2024]") then
-		        names(index) = names(index) + " [2024]"
+		      if NOT names(index).Contains("[5.5e]") then
+		        names(index) = names(index) + " [5.5e]"
 		      end if
 		    next
 		    txtSpells.Text = String.FromArray( names, ", " )

@@ -158,6 +158,11 @@ Inherits ListboxPro
 		    
 		    if type = "spell" then
 		      other = xNode.ValueOfNodeWithName("level").Trim
+		    elseif type = "item" then
+		      other = xNode.ValueOfNodeWithName("magic").Trim
+		      if other = "" then
+		        other = "NO"
+		      end if
 		    end if
 		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
@@ -375,6 +380,11 @@ Inherits ListboxPro
 		    
 		    if type = "spell" then
 		      other = xNode.ValueOfNodeWithName("level").Trim
+		    elseif type = "item" then
+		      other = xNode.ValueOfNodeWithName("magic").Trim
+		      if other = "" then
+		        other = "NO"
+		      end if
 		    end if
 		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )
@@ -385,7 +395,7 @@ Inherits ListboxPro
 		      me.CellTextAt( lindex, 1 ) = name
 		      me.CellTextAt( lindex, 2 ) = pagenr
 		      me.CellTextAt( lindex, 3 ) = sortName
-		      me.CellTextAt( lindex, 4 ) = other // (Spell level)
+		      me.CellTextAt( lindex, 4 ) = other // (Spell level/Item magic)
 		      'me.AddRow type, name, pagenr, sortName
 		      me.RowTagAt( lindex ) = xNode
 		    end if

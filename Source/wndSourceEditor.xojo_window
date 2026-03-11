@@ -3188,6 +3188,7 @@ End
 		          c.Text = xNode.ToString
 		        end if
 		      end if
+		      Return True
 		      
 		    case 118 // v, paste
 		      var c as new Clipboard
@@ -3202,6 +3203,7 @@ End
 		          Break
 		        end if
 		      end if
+		      Return True
 		      
 		    case 13, 110 // Return, nxw
 		      if me.SelectedRowIndex > -1 then

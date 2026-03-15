@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   9
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1731,25 +1731,7 @@ End
 		    lblSourceName.Text = Source.ParentFolder.Name
 		  end if
 		  
-		  if Source <> Nil and Source.SourceInfoFile <> Nil then
-		    lblSourceName.Text = Source.SourceInfo.Lookup("name", Source.ParentFolder.Name)
-		    lblSourcePublisher.Text = Source.SourceInfo.Lookup("publisher", "")
-		    
-		    var pubDateString as String = Source.SourceInfo.Lookup("pubdate", "")
-		    
-		    if pubDateString <> "" then
-		      var pubDate as new DatePro
-		      pubDate.SQLDate = pubDateString
-		      
-		      lblSourcePubDate.Text = pubDate.ShortMonth + " " + Str( pubDate.Day ) + ", " + Str( pubDate.Year )
-		    end if
-		    
-		    bvlURL.Visible = ( Source.SourceInfo.Lookup("url", "" ) <> "" )
-		    
-		    SourceInfoEditorPanel.LoadXML( Source.SourceInfoFile )
-		  end if
-		  
-		  self.Title = lblSourceName.Text
+		  SetWindowInfo()
 		  
 		  // Sources
 		  popSources.RemoveAllRows
@@ -1948,9 +1930,35 @@ End
 		  
 		  Source.SetSource( sourceDestination )
 		  
+		  SetWindowInfo()
+		  
 		  if ConfirmSave then
 		    MessageBox "Saved source information."
 		  end if
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub SetWindowInfo()
+		  if Source <> Nil and Source.SourceInfoFile <> Nil then
+		    lblSourceName.Text = Source.SourceInfo.Lookup("name", Source.ParentFolder.Name)
+		    lblSourcePublisher.Text = Source.SourceInfo.Lookup("publisher", "")
+		    
+		    var pubDateString as String = Source.SourceInfo.Lookup("pubdate", "")
+		    
+		    if pubDateString <> "" then
+		      var pubDate as new DatePro
+		      pubDate.SQLDate = pubDateString
+		      
+		      lblSourcePubDate.Text = pubDate.ShortMonth + " " + Str( pubDate.Day ) + ", " + Str( pubDate.Year )
+		    end if
+		    
+		    bvlURL.Visible = ( Source.SourceInfo.Lookup("url", "" ) <> "" )
+		    
+		    SourceInfoEditorPanel.LoadXML( Source.SourceInfoFile )
+		  end if
+		  
+		  self.Title = lblSourceName.Text
 		End Sub
 	#tag EndMethod
 

@@ -50,7 +50,8 @@ Inherits SegmentedControl
 		    self.LabelForSegment(2) = "⿻"
 		    
 		    'self.ImageForSegment(3).Template = True
-		    self.LabelForSegment(3) = "✏️"
+		    self.LabelForSegment(3) = "✎"
+		    'self.LabelForSegment(3) = "✏️"
 		    
 		    self.RemoveEnabled = False
 		  #else

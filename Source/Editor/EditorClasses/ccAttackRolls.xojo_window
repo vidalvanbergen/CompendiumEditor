@@ -127,7 +127,7 @@ Begin ContainerControl ccAttackRolls
       MacControlStyle =   0
       RemoveEnabled   =   False
       Scope           =   0
-      Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
+      Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✎\n\nFalse"
       SelectionType   =   2
       TabIndex        =   3
       TabPanelIndex   =   0

@@ -2020,11 +2020,17 @@ End
 		    cName.Value = cNameDisplay.Value.Replace( originSpecies, "" ).Trim + ", " + originSpecies
 		  end if
 		  
-		  var tag as string = cName.Value.Match( "\((.*?)\)|\[(.*?)\]", 0 )
+		  var tags() as string = cName.Value.MatchAll( "\((.*?)\)|\[(.*?)\]", 0 )
 		  var sortname as string = cName.Value
-		  if tag <> "" then
-		    sortname = sortname.RemoveAll( tag ).Trim
+		  if tags <> Nil and tags.LastIndex > -1 then
+		    for index as Integer = 0 to tags.LastIndex
+		      sortname = sortname.RemoveAll( tags(index) ).Trim
+		    next
 		  end if
+		  
+		  'if tag <> "" then
+		  'sortname = sortname.RemoveAll( tag ).Trim
+		  'end if
 		  
 		  
 		  if sortname.Contains(",") then

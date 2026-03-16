@@ -1,7 +1,7 @@
-name: ✨ Requests
-description: Give your suggestion for new additions
-title: '[Request]: '
-labels: ['request', 'triage']
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: '[Feature]: '
+labels: ['enhancement', 'triage']
 body:
   - type: markdown
     attributes:
@@ -9,20 +9,20 @@ body:
         Thanks for taking the time to suggest a feature! Please fill out the form below.
 
   - type: checkboxes
-    id: existing-request
+    id: existing-issue
     attributes:
       label: Is there an existing request for this?
-      description: Please search existing requests before creating a new one
+      description: Please search existing issues before creating a new one
       options:
-        - label: I have searched the existing requests and this is a new one
+        - label: I have searched the existing issues and this is a new feature request
           required: true
 
   - type: textarea
     id: request
     attributes:
-      label: The Request
-      description: Is your feature request related to an issue? Describe it.
-      placeholder: "I can't seem to find..."
+      label: Feature request
+      description: Describe the requested feature in detail
+      placeholder: "It would be awesome if it could..."
     validations:
       required: true
 
@@ -33,6 +33,12 @@ body:
       options:
         - Nice to have
         - Important
-        - Critical
+        - Critical - blocking my use
     validations:
       required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups or Examples
+      description: If applicable, add mockups, screenshots, or links to similar implementations

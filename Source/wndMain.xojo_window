@@ -211,7 +211,7 @@ Begin WindowPro wndMain
          Top             =   10
          Transparent     =   False
          Underline       =   False
-         Visible         =   True
+         Visible         =   False
          Width           =   680
       End
       Begin CanvasButton cvsbtnExperiment1
@@ -432,11 +432,12 @@ End
 		  Toolbar.AllowsUserCustomization = True
 		  Toolbar.AutosavesConfiguration = True
 		  Toolbar.DisplayMode = NSToolbar.NSToolbarDisplayMode.NSToolbarDisplayModeIconOnly
+		  Toolbar.ShowsBaselineSeparator = False
 		  
 		  
 		  // This is an array of items identifiers to specify the default items (and order) in toolbar
 		  // this template is used the first time the app is launched and for defining the default set in toolbar customization
-		  Toolbar.DefaultItems = Array( arSources.Name, NSToolbarFlexibleSpaceItemIdentifier, "mainEdit", "mainCompile", "mainExperimental", "mainSettings" )
+		  Toolbar.DefaultItems = Array( "mainExperimental", "mainCompendium", "mainEdit", "mainCompile", "mainSettings" )
 		  
 		  
 		  // This is an array of items identifiers to specify all the allowed items in toolbar
@@ -446,7 +447,7 @@ End
 		  NSToolbarSpaceItemIdentifier, _
 		  NSToolbarFlexibleSpaceItemIdentifier, _
 		  NSToolbarCustomizeToolbarItemIdentifier, _
-		  NSToolbarSeparatorItemIdentifier, arSources.Name, "mainOpen", "mainCompile", "mainExperimental", "mainSettings" ) ', _
+		  NSToolbarSeparatorItemIdentifier, "mainCompendium", "mainCompile", "mainExperimental", "mainSettings" ) ', _
 		  '_ // Your toolbar items
 		  'PushButton1.Name )
 		  
@@ -455,14 +456,15 @@ End
 		  'Toolbar.AddControl( PushButton1, "Pushbutton" ) // Simplified method to add customtoolbar items with controls
 		  'Toolbar.AddButton( "mainAdvanced", NSImage.Advanced, "Advanced", "", "", False )
 		  
-		  Toolbar.AddControl arSources, "Add/Remove Source", "Add/Remove Selected Source"
+		  'Toolbar.AddControl arSources, "Add/Remove Source", "Add/Remove Selected Source"
+		  #If DebugBuild or False then
+		    Toolbar.AddButton "mainExperimental", template_icon_experiment_64, "Experiments", "Experiments", "Debug options", True
+		    Toolbar.AddButton "mainCompendium", template_book_64, "Compendium", "Compendium Viewer", "Compendium Viewer", True
+		  #Endif
 		  Toolbar.AddButton "mainEdit", template_icon_edit_64, "Edit", "Edit Source", "Edit Selected Source", True
 		  Toolbar.AddButton "mainCompile", template_icon_code_64, "Compile", "Compile Compendium", "Compile Compendium", True
 		  'Toolbar.AddButton "mainOpen", template_compendium_bookshelf, "Open", "Open Sources Folder", "Open Sources Folder", True
 		  Toolbar.AddButton "mainSettings", template_icon_settings_64, "Settings", "Settings", "Settings", True
-		  #If DebugBuild or False then
-		    Toolbar.AddButton "mainExperimental", template_icon_experiment_64, "Experiments", "Experiments", "Debug options", True
-		  #Endif
 		  
 		  Return True
 		End Function
@@ -531,12 +533,12 @@ End
 		  
 		  #if TargetMacOS then
 		    me.TitlebarAppearsTransparent = True
-		    me.TitleVisible = False
+		    'me.TitleVisible = False
 		    me.FullSizeContentView = True
 		  #endif
 		  
 		  self.PrefFrameName = "wndMain" // Allow window position to be saved.
-		  #if false and TargetMacOS then
+		  #if TargetMacOS then
 		    self.PrefToolbarName = "NSToolbarMain" // Activate toolbar support.
 		    'me.ToolbarStyle = NSWindowToolbarStyle.Automatic 'Expanded
 		    
@@ -560,6 +562,9 @@ End
 		Sub ToolbarActions(Identifier as String, hitItem as NSMenuItem)
 		  
 		  Select case Identifier
+		    
+		  case "mainCompendium"
+		    wndCompendiumViewer.Show
 		    
 		  case "mainEdit"
 		    OpenSourceEditorWindow
@@ -846,6 +851,11 @@ End
 		  OpenSourceEditorWindow
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub Opening()
+		  me.Visible = TargetWindows
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cvsbtnCompileCompendium
 	#tag Event
@@ -853,11 +863,21 @@ End
 		  wndCompendiumBuilder.ShowWithin( self, 3 )
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub Opening()
+		  me.Visible = TargetWindows
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events cvsbtnSettings
 	#tag Event
 		Sub Action()
 		  wndPreferences.Show
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Opening()
+		  me.Visible = TargetWindows
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -869,14 +889,14 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Opening()
-		  me.Visible = DebugBuild
+		  'me.Visible = DebugBuild
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lblTitle
 	#tag Event
 		Sub Open()
-		  me.Visible = TargetMacOS
+		  'me.Visible = TargetMacOS
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -889,7 +909,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Opening()
-		  me.Visible = DebugBuild
+		  'me.Visible = DebugBuild
 		End Sub
 	#tag EndEvent
 #tag EndEvents

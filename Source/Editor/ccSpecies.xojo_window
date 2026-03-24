@@ -1516,13 +1516,13 @@ End
 		  if PageNr <> "" then
 		    Source = TheSource.Trim + " p. " + PageNr
 		  else
-		    Source = TheSource.Trim
+		    Source = TheSource.Trim.ReplaceAll("&amp;", "&")
 		  end if
 		  
 		  LoadXML( TheNode )
 		  
 		  if ccSourceBox.GetSources.LastIndex = -1 then
-		    ccSourceBox.SetSources( source )
+		    ccSourceBox.SetSources( source.ReplaceAll("&amp;", "&") )
 		  end if
 		  
 		  

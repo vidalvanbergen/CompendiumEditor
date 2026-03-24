@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1328
+   Height          =   1329
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -76,7 +76,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -95,7 +95,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Creature size."
-      Top             =   158
+      Top             =   161
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -114,7 +114,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -133,7 +133,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Speed in feet."
-      Top             =   192
+      Top             =   197
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -152,11 +152,11 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   21
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -171,7 +171,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and class skill proficiencies. Enter ability or skill names separated by commas."
-      Top             =   260
+      Top             =   269
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -190,7 +190,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -209,7 +209,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Spellcasting ability (e.g., Intelligence, Charisma, etc.)."
-      Top             =   226
+      Top             =   233
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -227,7 +227,7 @@ Begin ContainerControl ccSpecies
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   260
+      Height          =   242
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -241,7 +241,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   804
+      Top             =   815
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -258,7 +258,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -277,7 +277,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Ability score increases. List abilities with increase amounts, separated by commas."
-      Top             =   124
+      Top             =   125
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -313,7 +313,7 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
-      Top             =   456
+      Top             =   467
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -344,7 +344,7 @@ Begin ContainerControl ccSpecies
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   529
+         Top             =   540
          Transparent     =   False
          Underline       =   False
          Visible         =   False
@@ -363,11 +363,11 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   21
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -382,7 +382,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances. (Unofficial)"
-      Top             =   1218
+      Top             =   1213
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -401,11 +401,11 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   21
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -420,7 +420,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   1147
+      Top             =   1141
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -439,11 +439,11 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   21
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -458,7 +458,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   1079
+      Top             =   1069
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -477,11 +477,11 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
-      Left            =   21
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -496,7 +496,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   1113
+      Top             =   1105
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -527,7 +527,7 @@ Begin ContainerControl ccSpecies
       Index           =   0
       InitialParent   =   ""
       Italic          =   False
-      Left            =   658
+      Left            =   657
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -540,7 +540,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1215
+      Top             =   1213
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -571,7 +571,7 @@ Begin ContainerControl ccSpecies
       Index           =   1
       InitialParent   =   ""
       Italic          =   False
-      Left            =   657
+      Left            =   656
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -584,7 +584,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1144
+      Top             =   1141
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -615,7 +615,7 @@ Begin ContainerControl ccSpecies
       Index           =   2
       InitialParent   =   ""
       Italic          =   False
-      Left            =   657
+      Left            =   656
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -628,7 +628,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1110
+      Top             =   1105
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -659,7 +659,7 @@ Begin ContainerControl ccSpecies
       Index           =   3
       InitialParent   =   ""
       Italic          =   False
-      Left            =   657
+      Left            =   656
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -672,7 +672,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1076
+      Top             =   1069
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -691,7 +691,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -710,7 +710,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage vulnerabilities."
-      Top             =   1181
+      Top             =   1177
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -729,7 +729,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -748,7 +748,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1286
+      Top             =   1285
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -767,7 +767,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -786,7 +786,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage immunities."
-      Top             =   1252
+      Top             =   1249
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -830,7 +830,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1178
+      Top             =   1177
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -918,7 +918,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1283
+      Top             =   1285
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -950,10 +950,10 @@ Begin ContainerControl ccSpecies
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   294
+      Top             =   305
       Transparent     =   True
       Visible         =   True
-      Width           =   660
+      Width           =   680
    End
    Begin PushButton btnSortName
       AllowAutoDeactivate=   True
@@ -1024,7 +1024,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   54
+      Top             =   56
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1068,7 +1068,7 @@ Begin ContainerControl ccSpecies
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   88
+      Top             =   89
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1087,7 +1087,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1106,7 +1106,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Base species name. (e.g. 'Elf')"
-      Top             =   91
+      Top             =   89
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1125,7 +1125,7 @@ Begin ContainerControl ccSpecies
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1144,7 +1144,7 @@ Begin ContainerControl ccSpecies
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Display name of the creature. (e.g. 'High Elf')"
-      Top             =   57
+      Top             =   56
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""

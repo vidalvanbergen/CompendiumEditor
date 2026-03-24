@@ -38,7 +38,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -76,7 +76,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -95,7 +95,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   54
+      Top             =   56
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -114,7 +114,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -133,7 +133,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   88
+      Top             =   92
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -152,7 +152,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -171,7 +171,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   122
+      Top             =   128
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -190,7 +190,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -209,7 +209,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   156
+      Top             =   164
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -228,7 +228,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -247,7 +247,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   190
+      Top             =   200
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -266,7 +266,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -285,7 +285,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   224
+      Top             =   236
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -304,7 +304,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -323,7 +323,7 @@ Begin ContainerControl ccSourceInfoEditor
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   258
+      Top             =   272
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -359,7 +359,7 @@ Begin ContainerControl ccSourceInfoEditor
       TextAlignment   =   3
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   292
+      Top             =   308
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -388,7 +388,7 @@ Begin ContainerControl ccSourceInfoEditor
       TabStop         =   True
       TodayButtonCaption=   ""
       Tooltip         =   ""
-      Top             =   292
+      Top             =   308
       Transparent     =   False
       Visible         =   True
       Width           =   180
@@ -405,7 +405,7 @@ Begin ContainerControl ccSourceInfoEditor
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   254
+      Height          =   238
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -419,7 +419,7 @@ Begin ContainerControl ccSourceInfoEditor
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   326
+      Top             =   342
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -439,7 +439,7 @@ Begin ContainerControl ccSourceInfoEditor
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   366
+      Left            =   960
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -450,7 +450,7 @@ Begin ContainerControl ccSourceInfoEditor
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   292
+      Top             =   403
       Transparent     =   False
       Underline       =   False
       Value           =   False

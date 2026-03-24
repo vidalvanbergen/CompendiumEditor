@@ -10,7 +10,7 @@ Begin ContainerControl ccEditorTextArea
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   179
+   Height          =   180
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -25,7 +25,7 @@ Begin ContainerControl ccEditorTextArea
    Top             =   0
    Transparent     =   True
    Visible         =   True
-   Width           =   300
+   Width           =   450
    Begin DesktopLabel lblName
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -84,7 +84,7 @@ Begin ContainerControl ccEditorTextArea
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   278
+      Left            =   428
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -124,7 +124,7 @@ Begin ContainerControl ccEditorTextArea
       HasBorder       =   True
       HasHorizontalScrollbar=   False
       HasVerticalScrollbar=   True
-      Height          =   157
+      Height          =   146
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
@@ -147,20 +147,20 @@ Begin ContainerControl ccEditorTextArea
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   22
+      Top             =   34
       Transparent     =   False
       Underline       =   False
       UnicodeMode     =   1
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   300
+      Width           =   450
    End
    BeginSegmentedButton SegmentedButton btnTextformatting
       Enabled         =   True
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   242
+      Left            =   390
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False

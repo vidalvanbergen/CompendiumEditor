@@ -97,7 +97,7 @@ Begin ContainerControl ccEditorTextFieldVertical
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   436
+      Width           =   435
    End
    Begin DesktopBevelButton btnDropdown
       Active          =   False
@@ -170,7 +170,7 @@ End
 		  Select case Fieldmode
 		    
 		  case Mode.Textfield
-		    txtField.Width = me.Width - txtField.Left
+		    txtField.Width = me.Width - txtField.Left - 1
 		    btnDropdown.Visible = False
 		    
 		  case Mode.Dropdown, Mode.MultipleChoice

@@ -10,7 +10,7 @@ Begin ContainerControl ccBackground
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   826
+   Height          =   832
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccBackground
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -76,7 +76,7 @@ Begin ContainerControl ccBackground
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -95,7 +95,7 @@ Begin ContainerControl ccBackground
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
-      Top             =   88
+      Top             =   92
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -131,7 +131,7 @@ Begin ContainerControl ccBackground
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Background traits. Multiple traits are allowed."
-      Top             =   284
+      Top             =   290
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -162,7 +162,7 @@ Begin ContainerControl ccBackground
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   546
+      Top             =   552
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -179,7 +179,7 @@ Begin ContainerControl ccBackground
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -198,7 +198,7 @@ Begin ContainerControl ccBackground
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "The name of the background this one is based on."
-      Top             =   54
+      Top             =   56
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -230,10 +230,10 @@ Begin ContainerControl ccBackground
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   122
+      Top             =   128
       Transparent     =   True
       Visible         =   True
-      Width           =   660
+      Width           =   680
    End
    BeginSegmentedButton SegmentedButton btnTextformatting
       Enabled         =   True

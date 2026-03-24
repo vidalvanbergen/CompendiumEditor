@@ -10,7 +10,7 @@ Begin ContainerControl ccEditorCheckbox
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   22
+   Height          =   24
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -35,7 +35,7 @@ Begin ContainerControl ccEditorCheckbox
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   22
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -86,7 +86,7 @@ Begin ContainerControl ccEditorCheckbox
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1
+      Top             =   2
       Transparent     =   False
       Underline       =   False
       Value           =   False

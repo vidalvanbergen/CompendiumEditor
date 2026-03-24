@@ -10,7 +10,7 @@ Begin ContainerControl ccTemplate
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1217
+   Height          =   1221
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -89,11 +89,11 @@ Begin ContainerControl ccTemplate
       TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Insert %name% where the item's name will be replaced with the baseitem's name."
+      Text            =   "Insert %name% where the item's name will be replaced with the base item's name."
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   41
+      Top             =   43
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -111,7 +111,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -130,7 +130,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   73
+      Top             =   75
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -166,7 +166,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   94
+      Top             =   98
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -198,7 +198,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   383
+      Top             =   405
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -233,7 +233,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   682
+      Top             =   704
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -251,7 +251,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -270,7 +270,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   714
+      Top             =   736
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -306,7 +306,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   735
+      Top             =   759
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -323,7 +323,7 @@ Begin ContainerControl ccTemplate
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   260
+      Height          =   240
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -337,7 +337,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   937
+      Top             =   961
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -367,7 +367,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   767
+      Top             =   791
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -385,7 +385,7 @@ Begin ContainerControl ccTemplate
       FieldName       =   ""
       FieldValue      =   False
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -399,7 +399,7 @@ Begin ContainerControl ccTemplate
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   338
+      Top             =   350
       Transparent     =   True
       Visible         =   True
       Width           =   640
@@ -433,7 +433,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   359
+      Top             =   373
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -451,7 +451,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   "Detail:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -470,7 +470,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   285
+      Top             =   295
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -506,7 +506,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   306
+      Top             =   318
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -524,7 +524,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   "Detail:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -543,7 +543,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   179
+      Top             =   185
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -579,7 +579,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   200
+      Top             =   208
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -597,7 +597,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   "Detail:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -616,7 +616,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   232
+      Top             =   240
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -652,7 +652,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   253
+      Top             =   263
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -687,7 +687,7 @@ Begin ContainerControl ccTemplate
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   147
+      Top             =   153
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -705,7 +705,7 @@ Begin ContainerControl ccTemplate
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -724,7 +724,7 @@ Begin ContainerControl ccTemplate
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   ""
-      Top             =   126
+      Top             =   130
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""

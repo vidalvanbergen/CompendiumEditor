@@ -10,7 +10,7 @@ Begin ContainerControl ccFeatures
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1098
+   Height          =   1087
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -227,7 +227,7 @@ Begin ContainerControl ccFeatures
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   260
+      Height          =   249
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -271,7 +271,7 @@ Begin ContainerControl ccFeatures
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   920
+      Top             =   909
       Transparent     =   True
       Visible         =   True
       Width           =   560

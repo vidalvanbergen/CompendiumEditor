@@ -10,7 +10,7 @@ Begin ContainerControl ccCreature
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   3061
+   Height          =   3098
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -77,7 +77,7 @@ Begin ContainerControl ccCreature
       FieldName       =   ""
       FieldValue      =   False
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -91,7 +91,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Check this box if the creature is a named NPC."
-      Top             =   287
+      Top             =   290
       Transparent     =   True
       Visible         =   True
       Width           =   604
@@ -108,7 +108,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -127,7 +127,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Creature size."
-      Top             =   321
+      Top             =   326
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -146,7 +146,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -165,7 +165,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Creature type. (e.g., dragon, undead)"
-      Top             =   355
+      Top             =   362
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -184,7 +184,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -203,7 +203,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Sorting name of the creature. (e.g. 'Blue Dragon, Ancient')"
-      Top             =   54
+      Top             =   56
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -222,7 +222,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -241,7 +241,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Base creature, or name from the statblock serving as the creature's origin. (e.g. 'Blue Dragon')"
-      Top             =   88
+      Top             =   92
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -260,7 +260,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -279,7 +279,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Alignment. (e.g., ""chaotic evil"")"
-      Top             =   389
+      Top             =   398
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -298,7 +298,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -317,7 +317,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor class value. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   423
+      Top             =   434
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -336,7 +336,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -344,7 +344,7 @@ Begin ContainerControl ccCreature
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       MultipleOption  =   False
       ReadOnly        =   False
@@ -355,7 +355,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor type or name."
-      Top             =   423
+      Top             =   434
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -374,7 +374,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -393,7 +393,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Hit points value. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   457
+      Top             =   470
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -412,7 +412,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -420,7 +420,7 @@ Begin ContainerControl ccCreature
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       MultipleOption  =   False
       ReadOnly        =   False
@@ -431,7 +431,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Hit points dice formula."
-      Top             =   457
+      Top             =   470
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -450,7 +450,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -469,7 +469,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Initiative bonus. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   525
+      Top             =   542
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -488,7 +488,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -507,7 +507,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Movement speeds. Defaults to walking speed, adding optional fly, burrow, swim and other speeds."
-      Top             =   491
+      Top             =   506
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -544,7 +544,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Constitution score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   559
+      Top             =   578
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -578,7 +578,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   559
+         Top             =   578
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -615,7 +615,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Dexterity score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   559
+      Top             =   578
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -649,7 +649,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   559
+         Top             =   578
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -686,7 +686,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Strength score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   559
+      Top             =   578
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -720,7 +720,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   559
+         Top             =   578
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -757,7 +757,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Intelligence score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   615
+      Top             =   634
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -791,7 +791,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   615
+         Top             =   634
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -828,7 +828,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Wisdom score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   615
+      Top             =   634
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -862,7 +862,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   615
+         Top             =   634
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -899,7 +899,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Charisma score. Press up or down on the arrow keys to increase or decrease the score."
-      Top             =   615
+      Top             =   634
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -933,7 +933,7 @@ Begin ContainerControl ccCreature
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   615
+         Top             =   634
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -952,7 +952,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -971,7 +971,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throws with modifiers."
-      Top             =   671
+      Top             =   690
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -990,7 +990,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1009,7 +1009,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Skills with modifiers."
-      Top             =   705
+      Top             =   726
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1028,7 +1028,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1047,7 +1047,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage vulnerabilities."
-      Top             =   739
+      Top             =   762
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1066,7 +1066,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1085,7 +1085,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances."
-      Top             =   773
+      Top             =   798
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1104,7 +1104,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1123,7 +1123,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage immunities."
-      Top             =   807
+      Top             =   834
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1142,7 +1142,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1161,7 +1161,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   841
+      Top             =   870
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1180,7 +1180,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1199,7 +1199,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Special senses (e.g., darkvision 60 ft.)."
-      Top             =   875
+      Top             =   906
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1236,7 +1236,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Proficiency Bonus score."
-      Top             =   943
+      Top             =   978
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -1272,7 +1272,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Passive Perception score."
-      Top             =   943
+      Top             =   978
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -1308,7 +1308,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       Tag             =   ""
       Tooltip         =   "Challenge rating. (1–30, or fractions: 1/2, 1/4, 1/8, 0, 00)."
-      Top             =   943
+      Top             =   978
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -1326,7 +1326,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1345,7 +1345,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Languages known by the creature."
-      Top             =   909
+      Top             =   942
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1381,7 +1381,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Passive abilities. (e.g., Legendary Resistance)"
-      Top             =   1033
+      Top             =   1070
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1416,7 +1416,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Actions the creature can take."
-      Top             =   1245
+      Top             =   1282
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1451,7 +1451,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Reactions it can perform."
-      Top             =   1669
+      Top             =   1706
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1486,7 +1486,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Legendary actions (used outside its turn)."
-      Top             =   1881
+      Top             =   1918
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1504,7 +1504,7 @@ Begin ContainerControl ccCreature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -1523,7 +1523,7 @@ Begin ContainerControl ccCreature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Environments where the creature is found."
-      Top             =   999
+      Top             =   1034
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1559,7 +1559,7 @@ Begin ContainerControl ccCreature
       TextAlignment   =   3
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   2419
+      Top             =   2456
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1601,7 +1601,7 @@ Begin ContainerControl ccCreature
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   "Available spell slots, starting with 0 for cantrips."
-      Top             =   2417
+      Top             =   2454
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -1624,7 +1624,7 @@ Begin ContainerControl ccCreature
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
-      LockBottom      =   True
+      LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
@@ -1634,7 +1634,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Creature's description."
-      Top             =   2451
+      Top             =   2488
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -1669,7 +1669,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Bonus actions the creature can take."
-      Top             =   1457
+      Top             =   1494
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1704,7 +1704,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Lair actions and descriptions."
-      Top             =   2093
+      Top             =   2130
       Transparent     =   True
       UseMode         =   ""
       Visible         =   True
@@ -1736,7 +1736,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   2305
+      Top             =   2342
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -1768,7 +1768,7 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   54
+      Top             =   58
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1811,7 +1811,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   51
+      Top             =   56
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1855,7 +1855,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   85
+      Top             =   92
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1899,7 +1899,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   284
+      Top             =   290
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1931,10 +1931,10 @@ Begin ContainerControl ccCreature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   122
+      Top             =   128
       Transparent     =   True
       Visible         =   True
-      Width           =   640
+      Width           =   660
    End
    Begin BevelButton bvlClipboard
       AllowAutoDeactivate=   True
@@ -1973,7 +1973,7 @@ Begin ContainerControl ccCreature
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   "Import from Clipboard"
-      Top             =   20
+      Top             =   22
       Transparent     =   False
       Underline       =   False
       Value           =   False

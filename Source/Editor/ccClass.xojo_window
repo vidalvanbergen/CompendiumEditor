@@ -10,7 +10,7 @@ Begin ContainerControl ccClass
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   2319
+   Height          =   2179
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -48,7 +48,7 @@ Begin ContainerControl ccClass
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1266
+      Top             =   1322
       Transparent     =   True
       Visible         =   True
       Width           =   680
@@ -81,7 +81,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Class features gained at the indicated level. If a feature is optional, set ""optional"" to 'YES'. If the level isn't automatically added, set or correct it by clicking on the level and entering the desired level."
-         Top             =   1266
+         Top             =   1322
          Transparent     =   True
          UseMode         =   ""
          Visible         =   True
@@ -116,7 +116,7 @@ Begin ContainerControl ccClass
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1790
+         Top             =   1846
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -166,7 +166,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Tracker for usage of class or subclass features. (e.g., Rage or Ki Points)"
-         Top             =   1790
+         Top             =   1846
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -200,7 +200,7 @@ Begin ContainerControl ccClass
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   2002
+         Top             =   2058
          Transparent     =   True
          Value           =   ""
          Visible         =   True
@@ -228,7 +228,7 @@ Begin ContainerControl ccClass
          TabIndex        =   5
          TabPanelIndex   =   0
          TabStop         =   False
-         Top             =   1822
+         Top             =   1878
          Transparent     =   False
          Visible         =   True
          Width           =   96
@@ -246,7 +246,7 @@ Begin ContainerControl ccClass
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -280,7 +280,7 @@ Begin ContainerControl ccClass
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   1164
+      Height          =   1220
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -298,6 +298,36 @@ Begin ContainerControl ccClass
       Transparent     =   True
       Visible         =   True
       Width           =   680
+      Begin ccSourceContent ccSourceBox
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
+         Height          =   150
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   16
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   90
+         Transparent     =   True
+         Visible         =   True
+         Width           =   660
+      End
       Begin ccEditorTextField cHitDice
          AllowAutoDeactivate=   True
          AllowFocus      =   False
@@ -310,7 +340,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -323,20 +353,20 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   0
+         TabIndex        =   17
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Hit Die. Input the die number. (e.g., 8 for a d8)"
-         Top             =   251
+         Top             =   252
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
          Visible         =   True
-         Width           =   250
+         Width           =   260
       End
-      Begin ccEditorTextField cNumSkills
+      Begin ccEditorTextField cWealth
          AllowAutoDeactivate=   True
          AllowFocus      =   False
          AllowFocusRing  =   False
@@ -348,7 +378,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -361,18 +391,18 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   7
+         TabIndex        =   18
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
-         Tooltip         =   "Number of class skills to be chosen from when creating a character."
-         Top             =   455
+         Tooltip         =   "Starting wealth. Enter a formula that determines a 1st-level character's starting gold."
+         Top             =   288
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
          Visible         =   True
-         Width           =   250
+         Width           =   260
       End
       Begin ccEditorTextField cProficienciesArmor
          AllowAutoDeactivate=   True
@@ -386,7 +416,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -399,13 +429,13 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   2
+         TabIndex        =   19
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Armor and shield proficiencies."
-         Top             =   285
+         Top             =   324
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -424,7 +454,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -437,13 +467,13 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   3
+         TabIndex        =   20
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Weapon proficiencies."
-         Top             =   319
+         Top             =   360
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -462,7 +492,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -475,56 +505,18 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   4
+         TabIndex        =   21
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Tool proficiencies."
-         Top             =   353
+         Top             =   396
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
          Visible         =   True
          Width           =   640
-      End
-      Begin ccEditorTextField cWealth
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsMainClass"
-         IsPrefixedNumber=   False
-         Left            =   296
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Starting wealth. Enter a formula that determines a 1st-level character's starting gold."
-         Top             =   251
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   250
       End
       Begin ccEditorTextField cProficienciesSavingThrows
          AllowAutoDeactivate=   True
@@ -538,7 +530,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -551,13 +543,13 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   5
+         TabIndex        =   22
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Saving throw proficiencies that players can choose from. Enter names of abilities separated by commas."
-         Top             =   387
+         Top             =   432
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -576,7 +568,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -589,18 +581,132 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   6
+         TabIndex        =   23
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Class skill proficiencies that players can choose from. Enter names of skills separated by commas"
-         Top             =   421
+         Top             =   468
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
          Visible         =   True
          Width           =   640
+      End
+      Begin ccEditorTextField cNumSkills
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   24
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Number of class skills to be chosen from when creating a character."
+         Top             =   504
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   260
+      End
+      Begin ccEditorTextField cSpellAbility
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   25
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spellcasting ability. (e.g., Intelligence, Charisma, etc.)"
+         Top             =   540
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   328
+      End
+      Begin ccEditorTextField cSlotsReset
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         IsPrefixedNumber=   False
+         Left            =   360
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   False
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   26
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell slots reset on short or long rests."
+         Top             =   540
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   300
       End
       Begin Label lblSpellsOptional
          AllowAutoDeactivate=   True
@@ -624,14 +730,14 @@ Begin ContainerControl ccClass
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
-         TabIndex        =   10
+         TabIndex        =   27
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Spells Optional:"
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   523
+         Top             =   576
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -658,11 +764,11 @@ Begin ContainerControl ccClass
          LockRight       =   False
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   11
+         TabIndex        =   28
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Check if the class's spell slots are optional."
-         Top             =   523
+         Top             =   576
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -710,17 +816,50 @@ Begin ContainerControl ccClass
          RequiresSelection=   False
          RowSelectionType=   0
          Scope           =   0
-         TabIndex        =   13
+         TabIndex        =   29
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell slots per class and spell level. Optional 'Spells Known' counter."
-         Top             =   547
+         Top             =   600
          Transparent     =   False
          Underline       =   False
          Visible         =   True
          Width           =   606
          _ScrollOffset   =   0
          _ScrollWidth    =   -1
+      End
+      Begin DesktopLabel lblSpellsDescription
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "cvsMainClass"
+         Italic          =   False
+         Left            =   300
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   30
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "Spell Slots per Spell Level"
+         TextAlignment   =   2
+         TextColor       =   &c000000
+         Tooltip         =   ""
+         Top             =   576
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   360
       End
       Begin ccTraits cClassTraits
          AllowAutoDeactivate=   True
@@ -747,11 +886,11 @@ Begin ContainerControl ccClass
          LockTop         =   True
          Scope           =   0
          Source          =   ""
-         TabIndex        =   14
+         TabIndex        =   31
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Optional class description traits."
-         Top             =   1070
+         Top             =   1123
          Transparent     =   True
          UseMode         =   ""
          Visible         =   True
@@ -793,122 +932,13 @@ Begin ContainerControl ccClass
             TabStop         =   True
             TextColor       =   &c00000000
             Tooltip         =   ""
-            Top             =   1139
+            Top             =   1192
             Transparent     =   False
             Underline       =   False
             Value           =   False
             Visible         =   True
             Width           =   24
          End
-      End
-      Begin DesktopLabel lblSpellsDescription
-         AllowAutoDeactivate=   True
-         Bold            =   False
-         Enabled         =   True
-         FontName        =   "System"
-         FontSize        =   0.0
-         FontUnit        =   0
-         Height          =   20
-         Index           =   -2147483648
-         InitialParent   =   "cvsMainClass"
-         Italic          =   False
-         Left            =   300
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   12
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Text            =   "Spell Slots per Spell Level"
-         TextAlignment   =   2
-         TextColor       =   &c000000
-         Tooltip         =   ""
-         Top             =   523
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   360
-      End
-      Begin ccEditorTextField cSpellAbility
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsMainClass"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   8
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spellcasting ability. (e.g., Intelligence, Charisma, etc.)"
-         Top             =   489
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   328
-      End
-      Begin ccEditorTextField cSlotsReset
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsMainClass"
-         IsPrefixedNumber=   False
-         Left            =   360
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   9
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell slots reset on short or long rests."
-         Top             =   489
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   300
       End
       Begin ccEditorTextField cAbilityScoreImprovementLevels
          AllowAutoDeactivate=   True
@@ -922,7 +952,7 @@ Begin ContainerControl ccClass
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsMainClass"
          IsPrefixedNumber=   False
@@ -935,46 +965,16 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   15
+         TabIndex        =   32
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "A comma separated list of levels on which an Ability Score Improvement occurs."
-         Top             =   1232
+         Top             =   1285
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
-         Visible         =   True
-         Width           =   640
-      End
-      Begin ccSourceContent ccSourceBox
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         HasBackgroundColor=   False
-         Height          =   150
-         Index           =   -2147483648
-         InitialParent   =   "cvsMainClass"
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   16
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   90
-         Transparent     =   True
          Visible         =   True
          Width           =   640
       End
@@ -988,7 +988,7 @@ Begin ContainerControl ccClass
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -1020,7 +1020,7 @@ Begin ContainerControl ccClass
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   604
+      Left            =   606
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -1034,7 +1034,7 @@ Begin ContainerControl ccClass
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
-      Top             =   54
+      Top             =   56
       Transparent     =   False
       Visible         =   True
       Width           =   48
@@ -1046,7 +1046,7 @@ Begin ContainerControl ccClass
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   24
       Index           =   -2147483648
       InitialValue    =   "Add or select a subclass."
       Italic          =   False
@@ -1066,7 +1066,7 @@ Begin ContainerControl ccClass
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   410
+      Width           =   412
    End
 End
 #tag EndWindow
@@ -2304,19 +2304,17 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cNumSkills
+#tag Events cWealth
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Number of Skills:"
+		  me.FieldName = "Wealth:"
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = True
 		  
 		  me.BaseMenu.AddMenu new MenuItem("None", "")
 		  me.BaseMenu.AddMenu new MenuItem("-")
-		  
-		  for index as Integer = 0 to 20
-		    me.BaseMenu.AddMenu new MenuItem( Str( index ) )
-		  next
+		  me.BaseMenu.Append new MenuItem( "New dice roll" )
+		  me.BaseMenu.Append new MenuItem( "Edit dice roll" )
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2438,20 +2436,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cWealth
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Wealth:"
-		  me.SetMode( ccEditorTextField.Mode.Dropdown )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem( "New dice roll" )
-		  me.BaseMenu.Append new MenuItem( "Edit dice roll" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events cProficienciesSavingThrows
 	#tag Event
 		Sub Open()
@@ -2479,6 +2463,52 @@ End
 		  for each skill as string in DnDArrays.Skills
 		    me.BaseMenu.Append new MenuItem( skill, skill )
 		  next
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cNumSkills
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Number of Skills:"
+		  me.SetMode( ccEditorTextField.Mode.Dropdown )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  
+		  for index as Integer = 0 to 20
+		    me.BaseMenu.AddMenu new MenuItem( Str( index ) )
+		  next
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSpellAbility
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Spell Ability:"
+		  me.SetMode ccEditorTextField.Mode.Dropdown
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  var AbilityNames() as String = DnDArrays.AbilityNames
+		  for index as Integer = 0 to AbilityNames.LastIndex
+		    me.BaseMenu.AddMenu new MenuItem( AbilityNames(index) )
+		  next
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSlotsReset
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Spell Slots Reset On:"
+		  me.SetMode ccEditorTextField.Mode.Dropdown
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Short Rests", "S")
+		  me.BaseMenu.AddMenu new MenuItem("Long Rests", "L")
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -2520,36 +2550,6 @@ End
 	#tag Event
 		Sub Action(index as Integer)
 		  msgUnofficialFeature
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSpellAbility
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Spell Ability:"
-		  me.SetMode ccEditorTextField.Mode.Dropdown
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  var AbilityNames() as String = DnDArrays.AbilityNames
-		  for index as Integer = 0 to AbilityNames.LastIndex
-		    me.BaseMenu.AddMenu new MenuItem( AbilityNames(index) )
-		  next
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cSlotsReset
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Spell Slots Reset On:"
-		  me.SetMode ccEditorTextField.Mode.Dropdown
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Short Rests", "S")
-		  me.BaseMenu.AddMenu new MenuItem("Long Rests", "L")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

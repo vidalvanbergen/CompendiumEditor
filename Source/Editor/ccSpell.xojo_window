@@ -10,7 +10,7 @@ Begin ContainerControl ccSpell
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1526
+   Height          =   1527
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccSpell
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -72,7 +72,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   672
+      Height          =   690
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -86,10 +86,338 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   157
+      Top             =   161
       Transparent     =   True
       Visible         =   True
       Width           =   700
+      Begin ccEditorTextField cSpellLevel
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell level."
+         Top             =   161
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cSpellSchool
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell school."
+         Top             =   197
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorCheckbox cRitual
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         FieldValue      =   False
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   2
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   "Check this box if the spell is a ritual."
+         Top             =   233
+         Transparent     =   True
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cTime
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   3
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Casting time."
+         Top             =   269
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cRange
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell range."
+         Top             =   305
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cComponents
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   5
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell components: Vocal, Somatic and/or Material."
+         Top             =   341
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cMaterials
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "The material components of the spell."
+         Top             =   377
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccEditorTextField cDuration
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         FieldName       =   ""
+         HasBackgroundColor=   False
+         Height          =   24
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         IsPrefixedNumber=   False
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         MultipleOption  =   False
+         ReadOnly        =   False
+         Scope           =   0
+         TabIndex        =   7
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tag             =   ""
+         TagsForValue    =   False
+         Tooltip         =   "Spell duration."
+         Top             =   413
+         Transparent     =   True
+         UseLowercase    =   False
+         Value           =   ""
+         Visible         =   True
+         Width           =   660
+      End
+      Begin ccSourceContent ccSourceBox
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowFocusRing  =   False
+         AllowTabs       =   True
+         Backdrop        =   0
+         BackgroundColor =   &cFFFFFF00
+         DoubleBuffer    =   False
+         Enabled         =   True
+         EraseBackground =   True
+         HasBackgroundColor=   False
+         Height          =   150
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionGeneral"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   449
+         Transparent     =   True
+         Visible         =   True
+         Width           =   660
+      End
       Begin ccEditorTextArea cDescription
          AllowAutoDeactivate=   True
          AllowFocus      =   False
@@ -116,337 +444,9 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell description."
-         Top             =   589
+         Top             =   611
          Transparent     =   True
          Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cDuration
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   7
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell duration."
-         Top             =   393
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cMaterials
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   6
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "The material components of the spell."
-         Top             =   359
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cComponents
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   5
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell components: Vocal, Somatic and/or Material."
-         Top             =   325
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cRange
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   4
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell range."
-         Top             =   291
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cTime
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   3
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Casting time."
-         Top             =   257
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cSpellLevel
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   0
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell level."
-         Top             =   157
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorTextField cSpellSchool
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         IsPrefixedNumber=   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         MultipleOption  =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   1
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tag             =   ""
-         TagsForValue    =   False
-         Tooltip         =   "Spell school."
-         Top             =   191
-         Transparent     =   True
-         UseLowercase    =   False
-         Value           =   ""
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccEditorCheckbox cRitual
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         FieldName       =   ""
-         FieldValue      =   False
-         HasBackgroundColor=   False
-         Height          =   22
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   2
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   "Check this box if the spell is a ritual."
-         Top             =   225
-         Transparent     =   True
-         Visible         =   True
-         Width           =   660
-      End
-      Begin ccSourceContent ccSourceBox
-         AllowAutoDeactivate=   True
-         AllowFocus      =   False
-         AllowFocusRing  =   False
-         AllowTabs       =   True
-         Backdrop        =   0
-         BackgroundColor =   &cFFFFFF00
-         DoubleBuffer    =   False
-         Enabled         =   True
-         EraseBackground =   True
-         HasBackgroundColor=   False
-         Height          =   150
-         Index           =   -2147483648
-         InitialParent   =   "cvsPartitionGeneral"
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   10
-         TabPanelIndex   =   0
-         TabStop         =   True
-         Tooltip         =   ""
-         Top             =   427
-         Transparent     =   True
          Visible         =   True
          Width           =   660
       End
@@ -473,7 +473,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   841
+      Top             =   863
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -484,7 +484,7 @@ Begin ContainerControl ccSpell
          Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsPartitionClasses"
-         Left            =   592
+         Left            =   601
          LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   False
@@ -498,7 +498,7 @@ Begin ContainerControl ccSpell
          TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   False
-         Top             =   1003
+         Top             =   1025
          Transparent     =   False
          Visible         =   True
          Width           =   72
@@ -532,11 +532,11 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   1003
+         Top             =   1025
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   398
+         Width           =   407
       End
       Begin Listbox lstClasses
          AllowAutoDeactivate=   True
@@ -582,7 +582,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Classes that can use this spell."
-         Top             =   841
+         Top             =   863
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -619,7 +619,7 @@ Begin ContainerControl ccSpell
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   841
+         Top             =   863
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -648,7 +648,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1039
+      Top             =   1061
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -677,7 +677,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas. Add a short, optional descriptions, such as a level for spells with different rolls on higher levels."
-         Top             =   1039
+         Top             =   1061
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -735,7 +735,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   295
+      Height          =   274
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -749,7 +749,7 @@ Begin ContainerControl ccSpell
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1211
+      Top             =   1233
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -764,7 +764,7 @@ Begin ContainerControl ccSpell
          Enabled         =   True
          EraseBackground =   True
          HasBackgroundColor=   False
-         Height          =   260
+         Height          =   238
          Index           =   -2147483648
          InitialParent   =   "cvsPartitionClassFeatureTwo"
          Left            =   20
@@ -778,7 +778,7 @@ Begin ContainerControl ccSpell
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   1245
+         Top             =   1267
          Transparent     =   True
          Visible         =   True
          Width           =   628
@@ -795,7 +795,7 @@ Begin ContainerControl ccSpell
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsPartitionClassFeatureTwo"
          IsPrefixedNumber=   False
@@ -814,7 +814,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-         Top             =   1211
+         Top             =   1233
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -858,7 +858,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1208
+         Top             =   1230
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -902,7 +902,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1245
+         Top             =   1267
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -985,7 +985,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   57
+      Height          =   61
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -1015,7 +1015,7 @@ Begin ContainerControl ccSpell
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsPartitionClassFeatureOne"
          IsPrefixedNumber=   False
@@ -1053,7 +1053,7 @@ Begin ContainerControl ccSpell
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsPartitionClassFeatureOne"
          IsPrefixedNumber=   False
@@ -1072,7 +1072,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Feature Prerequisites."
-         Top             =   122
+         Top             =   124
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -1612,136 +1612,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cDescription
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Description:"
-		  
-		  var templatesMenu as new MenuItem("Templates")
-		  
-		  var miStatusConditions as new MenuItem( "Status Descriptions" )
-		  miStatusConditions.Enabled = False
-		  
-		  templatesMenu.AddMenu miStatusConditions
-		  
-		  templatesMenu.AddMenu new MenuItem( "Asleep", "template:" + kStatusAsleep )
-		  templatesMenu.AddMenu new MenuItem( "Blinded", "template:" + kStatusBlinded )
-		  templatesMenu.AddMenu new MenuItem( "Charmed", "template:" + kStatusCharmed )
-		  templatesMenu.AddMenu new MenuItem( "Deafened", "template:" + kStatusDeafened )
-		  templatesMenu.AddMenu new MenuItem( "Frightened", "template:" + kStatusFrightened )
-		  templatesMenu.AddMenu new MenuItem( "Incapacitated", "template:" + kStatusIncapacitated )
-		  templatesMenu.AddMenu new MenuItem( "Invisible", "template:" + kStatusInvisible )
-		  templatesMenu.AddMenu new MenuItem( "Panicked", "template:" + kStatusPanicked )
-		  templatesMenu.AddMenu new MenuItem( "Paralyzed", "template:" + kStatusParalyzed )
-		  templatesMenu.AddMenu new MenuItem( "Petrified", "template:" + kStatusPetrified )
-		  templatesMenu.AddMenu new MenuItem( "Poisoned", "template:" + kStatusPoisoned )
-		  templatesMenu.AddMenu new MenuItem( "Prone", "template:" + kStatusProne )
-		  templatesMenu.AddMenu new MenuItem( "Restrained", "template:" + kStatusRestrained )
-		  templatesMenu.AddMenu new MenuItem( "Sickened", "template:" + kStatusSickened )
-		  templatesMenu.AddMenu new MenuItem( "Stunned", "template:" + kStatusStunned )
-		  templatesMenu.AddMenu new MenuItem( "Unconscious", "template:" + kStatusUnconscious )
-		  
-		  me.TemplateMenu = templatesMenu
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cDuration
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Duration"
-		  me.SetMode( ccEditorTextField.Mode.Dropdown )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Instantaneous")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 round")
-		  me.BaseMenu.Append new MenuItem("2 round")
-		  me.BaseMenu.Append new MenuItem("1 minute")
-		  me.BaseMenu.Append new MenuItem("10 minutes")
-		  me.BaseMenu.Append new MenuItem("1 hour")
-		  me.BaseMenu.Append new MenuItem("24 hours")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 minute")
-		  me.BaseMenu.Append new MenuItem("Concentration, up to 10 minute")
-		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 hour")
-		  me.BaseMenu.Append new MenuItem("Concentration, up to 24 hours")
-		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 day")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cMaterials
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Materials:"
-		  me.SetMode( ccEditorTextField.Mode.Textfield )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cComponents
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Components:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-", "")
-		  me.BaseMenu.Append new MenuItem("Verbal", "V")
-		  me.BaseMenu.Append new MenuItem("Somatic", "S")
-		  me.BaseMenu.Append new MenuItem("Material", "M")
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cRange
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Range:"
-		  me.SetMode( ccEditorTextField.Mode.Dropdown )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("Self")
-		  me.BaseMenu.Append new MenuItem("Touch")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("15 feet")
-		  me.BaseMenu.Append new MenuItem("30 feet")
-		  me.BaseMenu.Append new MenuItem("60 feet")
-		  me.BaseMenu.Append new MenuItem("90 feet")
-		  me.BaseMenu.Append new MenuItem("120 feet")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("self (15-foot cone)")
-		  me.BaseMenu.Append new MenuItem("self (30-foot cone)")
-		  me.BaseMenu.Append new MenuItem("self (30-foot cube)")
-		  me.BaseMenu.Append new MenuItem("self (30-foot line)")
-		  me.BaseMenu.Append new MenuItem("self (30-foot-radius sphere)")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cTime
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Casting Time:"
-		  me.SetMode( ccEditorTextField.Mode.Dropdown )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Action")
-		  me.BaseMenu.Append new MenuItem("1 Reaction")
-		  me.BaseMenu.Append new MenuItem("1 Bonus Action")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Minute")
-		  me.BaseMenu.Append new MenuItem("10 Minutes")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Hour")
-		  me.BaseMenu.Append new MenuItem("24 Hours")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events cSpellLevel
 	#tag Event
 		Sub Open()
@@ -1794,6 +1664,136 @@ End
 	#tag Event
 		Sub Open()
 		  me.FieldName = "Ritual:"
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cTime
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Casting Time:"
+		  me.SetMode( ccEditorTextField.Mode.Dropdown )
+		  me.ReadOnly = False
+		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("1 Action")
+		  me.BaseMenu.Append new MenuItem("1 Reaction")
+		  me.BaseMenu.Append new MenuItem("1 Bonus Action")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("1 Minute")
+		  me.BaseMenu.Append new MenuItem("10 Minutes")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("1 Hour")
+		  me.BaseMenu.Append new MenuItem("24 Hours")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cRange
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Range:"
+		  me.SetMode( ccEditorTextField.Mode.Dropdown )
+		  me.ReadOnly = False
+		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Self")
+		  me.BaseMenu.Append new MenuItem("Touch")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("15 feet")
+		  me.BaseMenu.Append new MenuItem("30 feet")
+		  me.BaseMenu.Append new MenuItem("60 feet")
+		  me.BaseMenu.Append new MenuItem("90 feet")
+		  me.BaseMenu.Append new MenuItem("120 feet")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("self (15-foot cone)")
+		  me.BaseMenu.Append new MenuItem("self (30-foot cone)")
+		  me.BaseMenu.Append new MenuItem("self (30-foot cube)")
+		  me.BaseMenu.Append new MenuItem("self (30-foot line)")
+		  me.BaseMenu.Append new MenuItem("self (30-foot-radius sphere)")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cComponents
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Components:"
+		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.ReadOnly = True
+		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-", "")
+		  me.BaseMenu.Append new MenuItem("Verbal", "V")
+		  me.BaseMenu.Append new MenuItem("Somatic", "S")
+		  me.BaseMenu.Append new MenuItem("Material", "M")
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cMaterials
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Materials:"
+		  me.SetMode( ccEditorTextField.Mode.Textfield )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDuration
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Duration"
+		  me.SetMode( ccEditorTextField.Mode.Dropdown )
+		  me.ReadOnly = False
+		  
+		  me.BaseMenu.Append new MenuItem("None", "")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Instantaneous")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("1 round")
+		  me.BaseMenu.Append new MenuItem("2 round")
+		  me.BaseMenu.Append new MenuItem("1 minute")
+		  me.BaseMenu.Append new MenuItem("10 minutes")
+		  me.BaseMenu.Append new MenuItem("1 hour")
+		  me.BaseMenu.Append new MenuItem("24 hours")
+		  me.BaseMenu.Append new MenuItem("-")
+		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 minute")
+		  me.BaseMenu.Append new MenuItem("Concentration, up to 10 minute")
+		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 hour")
+		  me.BaseMenu.Append new MenuItem("Concentration, up to 24 hours")
+		  me.BaseMenu.Append new MenuItem("Concentration, up to 1 day")
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDescription
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Description:"
+		  
+		  var templatesMenu as new MenuItem("Templates")
+		  
+		  var miStatusConditions as new MenuItem( "Status Descriptions" )
+		  miStatusConditions.Enabled = False
+		  
+		  templatesMenu.AddMenu miStatusConditions
+		  
+		  templatesMenu.AddMenu new MenuItem( "Asleep", "template:" + kStatusAsleep )
+		  templatesMenu.AddMenu new MenuItem( "Blinded", "template:" + kStatusBlinded )
+		  templatesMenu.AddMenu new MenuItem( "Charmed", "template:" + kStatusCharmed )
+		  templatesMenu.AddMenu new MenuItem( "Deafened", "template:" + kStatusDeafened )
+		  templatesMenu.AddMenu new MenuItem( "Frightened", "template:" + kStatusFrightened )
+		  templatesMenu.AddMenu new MenuItem( "Incapacitated", "template:" + kStatusIncapacitated )
+		  templatesMenu.AddMenu new MenuItem( "Invisible", "template:" + kStatusInvisible )
+		  templatesMenu.AddMenu new MenuItem( "Panicked", "template:" + kStatusPanicked )
+		  templatesMenu.AddMenu new MenuItem( "Paralyzed", "template:" + kStatusParalyzed )
+		  templatesMenu.AddMenu new MenuItem( "Petrified", "template:" + kStatusPetrified )
+		  templatesMenu.AddMenu new MenuItem( "Poisoned", "template:" + kStatusPoisoned )
+		  templatesMenu.AddMenu new MenuItem( "Prone", "template:" + kStatusProne )
+		  templatesMenu.AddMenu new MenuItem( "Restrained", "template:" + kStatusRestrained )
+		  templatesMenu.AddMenu new MenuItem( "Sickened", "template:" + kStatusSickened )
+		  templatesMenu.AddMenu new MenuItem( "Stunned", "template:" + kStatusStunned )
+		  templatesMenu.AddMenu new MenuItem( "Unconscious", "template:" + kStatusUnconscious )
+		  
+		  me.TemplateMenu = templatesMenu
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1861,6 +1861,30 @@ End
 		  next
 		  
 		  AddClassOptions currentClassnames
+		End Function
+	#tag EndEvent
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  if key = chr(13) or key = chr(10) then
+		    
+		    if cbClass.Text.Contains(",") then
+		      var AddingClasses() as String = cbClass.Text.SplitString(",")
+		      for each AddClass as String in AddingClasses
+		        AddClass = AddClass.SmartTitleCase
+		        lstClasses.AddRow AddClass
+		      next
+		    else
+		      lstClasses.AddRow cbClass.Text.SmartTitleCase
+		    end if
+		    
+		    
+		    lstClasses.SelectedRowIndex = lstClasses.LastAddedRowIndex
+		    if NOT Keyboard.AsyncAltKey then
+		      cbClass.Text = ""
+		    end if
+		    
+		    Return True
+		  end if
 		End Function
 	#tag EndEvent
 #tag EndEvents

@@ -10,7 +10,7 @@ Begin ContainerControl ccEquipment
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1586
+   Height          =   1623
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   "Name:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   26
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -72,7 +72,7 @@ Begin ContainerControl ccEquipment
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   88
+      Height          =   96
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -86,7 +86,7 @@ Begin ContainerControl ccEquipment
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   426
+      Top             =   453
       Transparent     =   True
       Visible         =   False
       Width           =   700
@@ -119,7 +119,7 @@ Begin ContainerControl ccEquipment
          TextAlignment   =   3
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   494
+         Top             =   525
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -150,7 +150,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Check this box if the armor causes the wearer to have disadvantage on Dexterithy (stealth) checks."
-         Top             =   494
+         Top             =   525
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -170,7 +170,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsArmor"
          IsPrefixedNumber=   False
@@ -189,7 +189,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Armor class."
-         Top             =   426
+         Top             =   453
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -208,7 +208,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsArmor"
          IsPrefixedNumber=   False
@@ -227,7 +227,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Strength score required to wear armor, the armor reduces the wearer’s speed by 10 feet unless the wearer has a Strength score equal to or higher than the listed score."
-         Top             =   460
+         Top             =   489
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -243,7 +243,7 @@ Begin ContainerControl ccEquipment
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   124
+      Height          =   133
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -257,7 +257,7 @@ Begin ContainerControl ccEquipment
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   290
+      Top             =   308
       Transparent     =   True
       Visible         =   False
       Width           =   700
@@ -273,7 +273,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -292,7 +292,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "One-handed weapon damage."
-         Top             =   323
+         Top             =   344
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -311,7 +311,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -330,7 +330,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Two-handed weapon damage."
-         Top             =   324
+         Top             =   345
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -349,7 +349,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -368,7 +368,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Damage type or element."
-         Top             =   357
+         Top             =   380
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -387,7 +387,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -406,7 +406,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "The weapon's normal range in feet. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
-         Top             =   391
+         Top             =   416
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -425,7 +425,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -444,7 +444,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "The weapon's long range in feet. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
-         Top             =   391
+         Top             =   416
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -463,7 +463,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsWeapon"
          IsPrefixedNumber=   False
@@ -482,7 +482,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Weapon properties. (multiple values allowed)"
-         Top             =   290
+         Top             =   308
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -502,7 +502,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   "Detail:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -521,7 +521,7 @@ Begin ContainerControl ccEquipment
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Name of the base item in case of a named treasure, or the category it falls under."
-      Top             =   88
+      Top             =   92
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -540,7 +540,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   "Detail:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -559,7 +559,7 @@ Begin ContainerControl ccEquipment
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Item rarity and attunement requirements. (only visible on iOS and macOS)"
-      Top             =   122
+      Top             =   128
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -578,7 +578,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -597,7 +597,7 @@ Begin ContainerControl ccEquipment
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "The type of item."
-      Top             =   156
+      Top             =   164
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -616,7 +616,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -635,7 +635,7 @@ Begin ContainerControl ccEquipment
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Item weight."
-      Top             =   222
+      Top             =   236
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -654,7 +654,7 @@ Begin ContainerControl ccEquipment
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -673,7 +673,7 @@ Begin ContainerControl ccEquipment
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Gold value of the item."
-      Top             =   256
+      Top             =   272
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -693,7 +693,7 @@ Begin ContainerControl ccEquipment
       FieldName       =   ""
       FieldValue      =   False
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -707,7 +707,7 @@ Begin ContainerControl ccEquipment
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Check this box if the item is magical."
-      Top             =   190
+      Top             =   200
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -720,7 +720,7 @@ Begin ContainerControl ccEquipment
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   1040
+      Height          =   1042
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -734,7 +734,7 @@ Begin ContainerControl ccEquipment
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   526
+      Top             =   561
       Transparent     =   True
       Visible         =   True
       Width           =   700
@@ -764,7 +764,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Item description."
-         Top             =   526
+         Top             =   561
          Transparent     =   True
          Value           =   ""
          Visible         =   True
@@ -795,7 +795,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Dice roll formulas."
-         Top             =   1134
+         Top             =   1171
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -825,7 +825,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-         Top             =   1304
+         Top             =   1341
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -855,7 +855,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   972
+         Top             =   1009
          Transparent     =   True
          Visible         =   True
          Width           =   660
@@ -872,7 +872,7 @@ Begin ContainerControl ccEquipment
          EraseBackground =   True
          FieldName       =   ""
          HasBackgroundColor=   False
-         Height          =   22
+         Height          =   24
          Index           =   -2147483648
          InitialParent   =   "cvsPlacard"
          IsPrefixedNumber=   False
@@ -891,7 +891,7 @@ Begin ContainerControl ccEquipment
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Gold value of the item."
-         Top             =   938
+         Top             =   973
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -917,7 +917,7 @@ Begin ContainerControl ccEquipment
          TabPanelIndex   =   0
          TabStop         =   False
          Tooltip         =   "Automagically fill in all the relevant proficiencies."
-         Top             =   938
+         Top             =   973
          Transparent     =   False
          Visible         =   True
          Width           =   24

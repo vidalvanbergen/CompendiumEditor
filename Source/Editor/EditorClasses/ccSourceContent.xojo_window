@@ -106,7 +106,7 @@ Begin ContainerControl ccSourceContent
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   478
+      Width           =   458
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
@@ -117,7 +117,7 @@ Begin ContainerControl ccSourceContent
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   548
+      Left            =   542
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   False
@@ -168,7 +168,7 @@ Begin ContainerControl ccSourceContent
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   374
+      Width           =   368
    End
    Begin Label lblDescription
       AllowAutoDeactivate=   True
@@ -203,7 +203,7 @@ Begin ContainerControl ccSourceContent
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   620
+      Width           =   600
    End
 End
 #tag EndWindow

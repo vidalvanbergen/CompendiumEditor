@@ -10,7 +10,7 @@ Begin ContainerControl ccFeat
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   860
+   Height          =   848
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -38,7 +38,7 @@ Begin ContainerControl ccFeat
       EraseBackground =   True
       FieldName       =   "Name:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -76,7 +76,7 @@ Begin ContainerControl ccFeat
       EraseBackground =   True
       FieldName       =   "Prerequisite:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -95,7 +95,7 @@ Begin ContainerControl ccFeat
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Any prerequisites for the feat."
-      Top             =   54
+      Top             =   56
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -114,7 +114,7 @@ Begin ContainerControl ccFeat
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -133,7 +133,7 @@ Begin ContainerControl ccFeat
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Saving throw and skill proficiencies. Enter names of abilities or skills separated by commas."
-      Top             =   512
+      Top             =   516
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -166,7 +166,7 @@ Begin ContainerControl ccFeat
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Feat description."
-      Top             =   88
+      Top             =   92
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -184,7 +184,7 @@ Begin ContainerControl ccFeat
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -203,7 +203,7 @@ Begin ContainerControl ccFeat
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-      Top             =   546
+      Top             =   552
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -235,7 +235,7 @@ Begin ContainerControl ccFeat
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   580
+      Top             =   588
       Transparent     =   True
       Visible         =   True
       Width           =   660
@@ -277,7 +277,7 @@ Begin ContainerControl ccFeat
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   "Import from Clipboard"
-      Top             =   20
+      Top             =   21
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -309,7 +309,7 @@ Begin ContainerControl ccFeat
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   350
+      Top             =   354
       Transparent     =   True
       Visible         =   True
       Width           =   660

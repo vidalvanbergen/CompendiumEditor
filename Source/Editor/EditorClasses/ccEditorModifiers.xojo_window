@@ -10,7 +10,7 @@ Begin ContainerControl ccEditorModifiers
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   260
+   Height          =   250
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -33,7 +33,7 @@ Begin ContainerControl ccEditorModifiers
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   22
+      Height          =   24
       Index           =   0
       Italic          =   False
       Left            =   0
@@ -117,10 +117,10 @@ Begin ContainerControl ccEditorModifiers
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   20
+      Height          =   24
       Index           =   1
       Italic          =   False
-      Left            =   137
+      Left            =   0
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -132,15 +132,15 @@ Begin ContainerControl ccEditorModifiers
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Category:"
+      Text            =   "Modifier Category:"
       TextAlignment   =   3
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   132
+      Top             =   126
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   150
    End
    Begin PopupMenu popCategory
       AllowAutoDeactivate=   True
@@ -156,7 +156,7 @@ Begin ContainerControl ccEditorModifiers
       InitialParent   =   ""
       InitialValue    =   "Bonus\nAbility Score\nAbility Modifier\nSaving Throw\nSkill"
       Italic          =   False
-      Left            =   249
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -168,11 +168,11 @@ Begin ContainerControl ccEditorModifiers
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   134
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   151
+      Width           =   248
    End
    Begin DesktopLabel lblName
       AllowAutoDeactivate=   True
@@ -181,10 +181,10 @@ Begin ContainerControl ccEditorModifiers
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   22
+      Height          =   24
       Index           =   2
       Italic          =   False
-      Left            =   137
+      Left            =   0
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -196,15 +196,15 @@ Begin ContainerControl ccEditorModifiers
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Type / Value:"
+      Text            =   "Modifier Type / Value:"
       TextAlignment   =   3
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   164
+      Top             =   154
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   100
+      Width           =   150
    End
    Begin ComboBox cbModifierValue
       AllowAutoComplete=   False
@@ -222,7 +222,7 @@ Begin ContainerControl ccEditorModifiers
       Index           =   -2147483648
       InitialValue    =   ""
       Italic          =   False
-      Left            =   249
+      Left            =   162
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -234,11 +234,11 @@ Begin ContainerControl ccEditorModifiers
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   164
+      Top             =   154
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   151
+      Width           =   248
    End
    Begin Label lblTypeValueDescription
       AllowAutoDeactivate=   True
@@ -269,7 +269,7 @@ Begin ContainerControl ccEditorModifiers
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   192
+      Top             =   182
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -304,7 +304,7 @@ Begin ContainerControl ccEditorModifiers
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   215
+      Top             =   205
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -317,7 +317,7 @@ Begin ContainerControl ccEditorModifiers
       Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   412
+      Left            =   422
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -331,7 +331,7 @@ Begin ContainerControl ccEditorModifiers
       TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   False
-      Top             =   164
+      Top             =   154
       Transparent     =   False
       Visible         =   True
       Width           =   72

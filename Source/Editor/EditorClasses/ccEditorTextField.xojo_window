@@ -10,7 +10,7 @@ Begin ContainerControl ccEditorTextField
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   22
+   Height          =   24
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -52,7 +52,7 @@ Begin ContainerControl ccEditorTextField
       TextAlignment   =   3
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   0
+      Top             =   1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -92,7 +92,7 @@ Begin ContainerControl ccEditorTextField
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   0
+      Top             =   1
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -138,7 +138,7 @@ Begin ContainerControl ccEditorTextField
       TabPanelIndex   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   0
+      Top             =   1
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -170,12 +170,12 @@ End
 		  Select case Fieldmode
 		    
 		  case Mode.Textfield
-		    txtField.Width = me.Width - txtField.Left
+		    txtField.Width = me.Width - txtField.Left - 1
 		    btnDropdown.Visible = False
 		    
 		  case Mode.Dropdown, Mode.MultipleChoice
 		    //
-		    txtField.Width = me.Width - txtField.Left - 24
+		    txtField.Width = me.Width - txtField.Left - 24 - 1
 		    btnDropdown.Visible = True
 		    
 		  End Select

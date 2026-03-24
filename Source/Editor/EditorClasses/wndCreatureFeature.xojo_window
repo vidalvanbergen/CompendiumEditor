@@ -10,7 +10,7 @@ Begin Window wndCreatureFeature
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   630
+   Height          =   646
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -36,7 +36,7 @@ Begin Window wndCreatureFeature
       EraseBackground =   True
       FieldName       =   "Name:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -74,7 +74,7 @@ Begin Window wndCreatureFeature
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   350
+      Height          =   362
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -88,7 +88,7 @@ Begin Window wndCreatureFeature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait or attack."
-      Top             =   92
+      Top             =   94
       Transparent     =   True
       Value           =   ""
       Visible         =   True
@@ -197,7 +197,7 @@ Begin Window wndCreatureFeature
       EraseBackground =   True
       FieldName       =   "Name:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -216,7 +216,7 @@ Begin Window wndCreatureFeature
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Number needed to roll on d6 to recharge ability."
-      Top             =   454
+      Top             =   468
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -292,7 +292,7 @@ Begin Window wndCreatureFeature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   488
+      Top             =   504
       Transparent     =   True
       Visible         =   True
       Width           =   560

@@ -36,7 +36,7 @@ Begin Window wndSimpleTrait
       EraseBackground =   True
       FieldName       =   "Name:"
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -74,7 +74,7 @@ Begin Window wndSimpleTrait
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   450
+      Height          =   448
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -88,7 +88,7 @@ Begin Window wndSimpleTrait
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait."
-      Top             =   92
+      Top             =   94
       Transparent     =   True
       Value           =   ""
       Visible         =   True

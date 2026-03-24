@@ -3433,7 +3433,18 @@ End
 #tag Events btnSortName
 	#tag Event
 		Sub Action()
-		  var nameParts() as String = cName.Value.Split( " " )
+		  
+		  
+		  
+		  var sortname as string = cName.Value
+		  var tags() as string = sortname.MatchAll( "\((.*?)\)|\[(.*?)\]", 0 )
+		  if tags <> Nil and tags.LastIndex > -1 then
+		    for index as Integer = 0 to tags.LastIndex
+		      sortname = sortname.RemoveAll( tags(index) ).Trim
+		    next
+		  end if
+		  
+		  var nameParts() as String = sortname.Split( " " )
 		  
 		  if Keyboard.AsyncAltKey then
 		    

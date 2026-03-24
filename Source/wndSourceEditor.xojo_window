@@ -393,7 +393,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   2
+      Value           =   0
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   9
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1647,6 +1647,14 @@ End
 		        itemtype = "creature"
 		      end if
 		      
+		      var extra as String
+		      if xnode.Name = "spell" then
+		        extra = xnode.ValueOfNodeWithName("level")
+		      elseif xnode.Name = "item" then
+		        extra = xnode.ValueOfNodeWithName("magic")
+		        if extra = "" then extra = "NO"
+		      end if
+		      
 		      var itemname as String = xnode.ValueOfNodeWithName("name")
 		      if itemname.Trim = "" and xnode.Value.Trim <> "" then
 		        itemname = xnode.Value.Trim
@@ -1655,6 +1663,7 @@ End
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 0 ) = itemtype
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = itemname
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 2 ) = SourcePageNrFromXMLNode( xnode )
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 4 ) = extra
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xnode
 		      
 		      lstXML.SortByRow
@@ -1894,6 +1903,17 @@ End
 		    else
 		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 3 ) = newNode.ValueOfNodeWithName("name")
 		    end if
+		    
+		    // Extra info
+		    if newNode.Name = "spell" then
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 4 ) = newNode.ValueOfNodeWithName("level")
+		    elseif newNode.Name = "item" then
+		      var extra as String = newNode.ValueOfNodeWithName("magic")
+		      if extra = "" then extra = "NO"
+		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 4 ) = extra
+		    end if
+		    
+		    
 		  end if
 		  
 		  lstXML.SoftRebuildList
@@ -2745,6 +2765,7 @@ End
 		  'if IsHomebrew then
 		  'Postfix = " (Homebrew)"
 		  'end if
+		  TheSourceBook = TheSourceBook.Remove( " [5.5e]" )
 		  
 		  if IsHomebrew and Source.SourceInfo.Lookup("author", "").StringValue <> "" and Source.SourceInfo.Lookup("publisher", "").StringValue = "" then
 		    TheSourceBook = TheSourceBook + " by " + Source.SourceInfo.Lookup("author", "").StringValue
@@ -3235,6 +3256,7 @@ End
 		            xNode = XMLNodeToComment( xNode )
 		          end if
 		          me.UpdateSelectedRow( xNode )
+		          me.SelectedRowIndex = -1
 		          me.SelectedRowIndex = me.SelectedRowIndex
 		        end if
 		        

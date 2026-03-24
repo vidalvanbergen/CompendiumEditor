@@ -460,7 +460,7 @@ End
 		    
 		    
 		  else
-		    var c as new wndFeature
+		    var c as new wndFeatureNew
 		    if TemplateMenu <> Nil then
 		      c.SetTemplateMenu( TemplateMenu )
 		    end if

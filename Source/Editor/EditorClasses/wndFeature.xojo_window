@@ -191,7 +191,7 @@ Begin Window wndFeature
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   600
+      Height          =   598
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -205,7 +205,7 @@ Begin Window wndFeature
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   36
+      Top             =   38
       Transparent     =   True
       Visible         =   True
       Width           =   600

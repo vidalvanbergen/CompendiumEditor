@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1329
+   Height          =   1551
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -89,7 +89,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -127,7 +127,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -165,7 +165,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -203,7 +203,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -237,7 +237,7 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -271,7 +271,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -309,7 +309,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   12
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Species traits. Multiple traits are allowed. Optionally set categories to mark a trait as belonging to 'description', 'species', or 'subspecies'."
@@ -376,7 +376,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   22
+      TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -414,7 +414,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   18
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -452,13 +452,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   1069
+      Top             =   1105
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -490,13 +490,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   1105
+      Top             =   1069
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -535,12 +535,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   23
+      TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1213
+      Top             =   1211
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -579,12 +579,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   19
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1141
+      Top             =   1139
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -623,12 +623,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1105
+      Top             =   1067
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -667,12 +667,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1069
+      Top             =   1103
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -704,7 +704,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   20
+      TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -717,7 +717,7 @@ Begin ContainerControl ccSpecies
       Visible         =   True
       Width           =   624
    End
-   Begin ccEditorTextField cConditionImmunities
+   Begin ccEditorTextField cConditionResistance
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -742,7 +742,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   26
+      TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -780,7 +780,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   24
+      TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -825,12 +825,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   21
+      TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1177
+      Top             =   1175
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -869,12 +869,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   25
+      TabIndex        =   26
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1249
+      Top             =   1247
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -913,12 +913,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   27
+      TabIndex        =   28
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1285
+      Top             =   1283
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -946,7 +946,7 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -977,7 +977,7 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Set display name and base species' name."
@@ -1019,12 +1019,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   56
+      Top             =   54
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1063,12 +1063,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   89
+      Top             =   87
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1100,7 +1100,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1138,7 +1138,7 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1166,12 +1166,332 @@ Begin ContainerControl ccSpecies
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   28
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
       Top             =   20
       Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccEditorSpells cSpells
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   100
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   35
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   1431
+      Transparent     =   True
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccEditorTextField cConditionImmunities
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   29
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   1321
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   9
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   30
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1319
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccEditorTextField cLanguagesKnown
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   33
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   1395
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   11
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   34
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1393
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   10
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   36
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1469
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccEditorTextField cSpeedOther
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   31
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   1359
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   12
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   32
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   1357
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
       Visible         =   True
       Width           =   24
    End
@@ -1245,6 +1565,8 @@ End
 		  if cNameDisplay.Value <> "" then
 		    xSpecies.AppendSimpleChild( "displayname", cNameDisplay.Value.Trim )
 		  end if
+		  
+		  // Ancestry
 		  if cSpeciesAncestry.Value <> "" then
 		    xSpecies.AppendSimpleChild( "ancestry", cSpeciesAncestry.Value.Trim )
 		  end if
@@ -1264,51 +1586,15 @@ End
 		    xSpecies.AppendSimpleChild( "ability", cAbility.Value )
 		  end if
 		  
-		  // Damage Vulnerable
-		  if cDamageVulnerabilities.Value.Trim <> "" then
-		    xSpecies.AppendSimpleChild( "vulnerable", cDamageVulnerabilities.Value.Trim )
-		  end if
-		  
-		  // Damage Resistance
-		  if cDamageResistance.Value <> "" then
-		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Lowercase.Trim )
-		  end if
-		  
-		  // Damage Immunity
-		  if cDamageImmunities.Value <> "" then
-		    xSpecies.AppendSimpleChild( "immune", cDamageImmunities.Value.Lowercase.Trim )
-		  end if
-		  
-		  // Condition Immune
-		  if cConditionImmunities.Value.Trim <> "" then
-		    xSpecies.AppendSimpleChild( "conditionImmune", cConditionImmunities.Value.Trim )
-		  end if
-		  
 		  // Proficiencies
 		  if cProficiencies.Value <> "" then
 		    xSpecies.AppendSimpleChild( "proficiency", cProficiencies.Value.Trim )
-		  end if
-		  
-		  // Armor Proficiency
-		  if cProficienciesArmor.Value.Trim <> "" then
-		    xSpecies.AppendSimpleChild( "armor", cProficienciesArmor.Value )
-		  end if
-		  
-		  // Weapon Proficiency
-		  if cProficienciesWeapons.Value.Trim <> "" then
-		    xSpecies.AppendSimpleChild( "weapons", cProficienciesWeapons.Value )
-		  end if
-		  
-		  // Tools Proficiency
-		  if cProficienciesTools.Value.Trim <> "" then
-		    xSpecies.AppendSimpleChild( "tools", cProficienciesTools.Value )
 		  end if
 		  
 		  // Spellcasting Ability
 		  if cSpellAbility.Value <> "" then
 		    xSpecies.AppendSimpleChild( "spellAbility", cSpellAbility.Value.Trim )
 		  end if
-		  
 		  
 		  // Traits
 		  'var traitsNode as XMLNode = cTraits.xFeaturesRoot
@@ -1351,6 +1637,63 @@ End
 		      xModifier.SetAttribute( "category", lst.CellValueAt( row, 0 ).Lowercase.Trim )
 		      xModifier.SetValue( lst.CellValueAt( row, 1 ).Replace( " + Proficiency Bonus", " +%0" ).Replace( "+Proficiency Bonus", " +%0" ).Lowercase.Trim )
 		    next
+		  end if
+		  
+		  // # Unofficial Fields
+		  
+		  // Speeds
+		  if cSpeedOther.Value <> "" then
+		    xSpecies.AppendSimpleChild( "speedOther", cSpeedOther.Value.Trim )
+		  end if
+		  
+		  // Languages Known
+		  if cLanguagesKnown.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "languages", cLanguagesKnown.Value.Trim )
+		  end if
+		  
+		  // Armor Proficiency
+		  if cProficienciesArmor.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "armor", cProficienciesArmor.Value )
+		  end if
+		  
+		  // Weapon Proficiency
+		  if cProficienciesWeapons.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "weapons", cProficienciesWeapons.Value )
+		  end if
+		  
+		  // Tools Proficiency
+		  if cProficienciesTools.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "tools", cProficienciesTools.Value )
+		  end if
+		  
+		  // Spells list
+		  if cSpells.Value <> "" then
+		    xSpecies.AppendSimpleChild( "spells", cSpells.Value.Trim )
+		  end if
+		  
+		  // Damage Vulnerable
+		  if cDamageVulnerabilities.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "vulnerable", cDamageVulnerabilities.Value.Trim )
+		  end if
+		  
+		  // Damage Resistance
+		  if cDamageResistance.Value <> "" then
+		    xSpecies.AppendSimpleChild( "resist", cDamageResistance.Value.Lowercase.Trim )
+		  end if
+		  
+		  // Damage Immunity
+		  if cDamageImmunities.Value <> "" then
+		    xSpecies.AppendSimpleChild( "immune", cDamageImmunities.Value.Lowercase.Trim )
+		  end if
+		  
+		  // Condition Resistance
+		  if cConditionResistance.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "conditionResist", cConditionResistance.Value.Trim )
+		  end if
+		  
+		  // Condition Immune
+		  if cConditionImmunities.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "conditionImmune", cConditionImmunities.Value.Trim )
 		  end if
 		  
 		  
@@ -1416,14 +1759,20 @@ End
 		          
 		          cAbility.Value = StringFromArray( abilities, ", " ).Titlecase
 		          
-		        case "speed"
+		        case "speed" // FightClub5e Official, single numerical input
 		          cSpeed.Value = xValue
+		          
+		        case "speedOther" // Future versatility, multiple comma separated labeled input
+		          cSpeedOther.Value = xValue
 		          
 		        case "resist"
 		          cDamageResistance.Value = xValue.Lowercase
 		          
 		        case "vulnerable"
 		          cDamageVulnerabilities.Value = xValue.Lowercase
+		          
+		        case "conditionResist"
+		          cConditionResistance.Value = xValue.Lowercase
 		          
 		        case "conditionImmune"
 		          cConditionImmunities.Value = xValue.Lowercase
@@ -1446,6 +1795,12 @@ End
 		          
 		        case "spellAbility"
 		          cSpellAbility.Value = xValue
+		          
+		        case "spells"
+		          cSpells.Value = xValue
+		          
+		        case "languages"
+		          cLanguagesKnown.Value = xValue
 		          
 		        case "proficiency"
 		          cProficiencies.Value = xValue
@@ -1485,6 +1840,9 @@ End
 	#tag Method, Flags = &h0
 		Sub Reset()
 		  cName.Reset
+		  cNameDisplay.Reset
+		  cSpeciesAncestry.Reset
+		  
 		  cSpellAbility.Reset
 		  cProficiencies.Reset
 		  cSize.Reset
@@ -1492,19 +1850,26 @@ End
 		  cAbility.Reset
 		  ccSourceBox.Reset
 		  
+		  cSpells.Value = ""
+		  
 		  cModifiers.Reset
 		  cTraits.Reset
+		  
+		  cSpeedOther.Reset
+		  cLanguagesKnown.Reset
+		  
+		  cProficienciesArmor.Reset
+		  cProficienciesWeapons.Reset
+		  cProficienciesTools.Reset
+		  
 		  
 		  cDamageResistance.Reset
 		  cDamageImmunities.Reset
 		  cDamageVulnerabilities.Reset
-		  cProficienciesArmor.Reset
-		  cProficienciesWeapons.Reset
-		  cProficienciesTools.Reset
+		  cConditionResistance.Reset
 		  cConditionImmunities.Reset
 		  
-		  cNameDisplay.Reset
-		  cSpeciesAncestry.Reset
+		  
 		  
 		  xNode = Nil
 		End Sub
@@ -1578,7 +1943,7 @@ End
 #tag Events cSpeed
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Speed:"
+		  me.FieldName = "Walking Speed:"
 		  me.SetMode( ccEditorTextField.Mode.Dropdown )
 		  me.ReadOnly = False
 		  
@@ -1769,7 +2134,7 @@ End
 #tag Events cDamageResistance
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Resistances:"
+		  me.FieldName = "Damage Resistances:"
 		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
 		  me.UseLowercase = True
@@ -1949,16 +2314,17 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cConditionImmunities
+#tag Events cConditionResistance
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Condition Immune:"
+		  me.FieldName = "Condition Resistance:"
 		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
 		  me.UseLowercase = True
 		  
 		  me.BaseMenu.AddMenu new MenuItem("None", "")
 		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Asleep")
 		  me.BaseMenu.AddMenu new MenuItem("Blinded")
 		  me.BaseMenu.AddMenu new MenuItem("Charmed")
 		  me.BaseMenu.AddMenu new MenuItem("Deafened")
@@ -2066,6 +2432,153 @@ End
 	#tag Event
 		Sub Pressed(segmentIndex As Integer)
 		  cName.Value = SmartTitleCase( cName.Value )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cConditionImmunities
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Condition Immune:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  me.UseLowercase = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Asleep")
+		  me.BaseMenu.AddMenu new MenuItem("Blinded")
+		  me.BaseMenu.AddMenu new MenuItem("Charmed")
+		  me.BaseMenu.AddMenu new MenuItem("Deafened")
+		  me.BaseMenu.AddMenu new MenuItem("Exhaustion")
+		  me.BaseMenu.AddMenu new MenuItem("Frightened")
+		  me.BaseMenu.AddMenu new MenuItem("Grappled")
+		  me.BaseMenu.AddMenu new MenuItem("Incapacitated")
+		  me.BaseMenu.AddMenu new MenuItem("Invisible")
+		  me.BaseMenu.AddMenu new MenuItem("Paralyzed")
+		  me.BaseMenu.AddMenu new MenuItem("Petrified")
+		  me.BaseMenu.AddMenu new MenuItem("Poisoned")
+		  me.BaseMenu.AddMenu new MenuItem("Prone")
+		  me.BaseMenu.AddMenu new MenuItem("Protecting")
+		  me.BaseMenu.AddMenu new MenuItem("Restrained")
+		  me.BaseMenu.AddMenu new MenuItem("Stunned")
+		  me.BaseMenu.AddMenu new MenuItem("Unconscious")
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cLanguagesKnown
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Languages:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  'me.UseLowercase = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Standard", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Common")
+		  me.BaseMenu.AddMenu new MenuItem("Common Sign Language")
+		  me.BaseMenu.AddMenu new MenuItem("Dwarvish")
+		  me.BaseMenu.AddMenu new MenuItem("Elvish")
+		  me.BaseMenu.AddMenu new MenuItem("Giant")
+		  me.BaseMenu.AddMenu new MenuItem("Gnomish")
+		  me.BaseMenu.AddMenu new MenuItem("Goblin")
+		  me.BaseMenu.AddMenu new MenuItem("Halfling")
+		  me.BaseMenu.AddMenu new MenuItem("Orc")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Thieves' Cant")
+		  me.BaseMenu.AddMenu new MenuItem("Druidic")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Any one language")
+		  me.BaseMenu.AddMenu new MenuItem("Any two languages")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Exotic", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Abyssal")
+		  me.BaseMenu.AddMenu new MenuItem("Celestial")
+		  me.BaseMenu.AddMenu new MenuItem("Draconic")
+		  me.BaseMenu.AddMenu new MenuItem("Deep Speech")
+		  me.BaseMenu.AddMenu new MenuItem("Infernal")
+		  me.BaseMenu.AddMenu new MenuItem("Primordial")
+		  me.BaseMenu.AddMenu new MenuItem("Sylvan")
+		  me.BaseMenu.AddMenu new MenuItem("Undercommon")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Elemental", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Auran")
+		  me.BaseMenu.AddMenu new MenuItem("Aquan")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Humblewood", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Birdfolk")
+		  me.BaseMenu.AddMenu new MenuItem("Cervan")
+		  me.BaseMenu.AddMenu new MenuItem("Hedge")
+		  me.BaseMenu.AddMenu new MenuItem("Jerbeen")
+		  me.BaseMenu.AddMenu new MenuItem("Mapach")
+		  me.BaseMenu.AddMenu new MenuItem("Vulpin")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Kobold Press", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Darakhul")
+		  me.BaseMenu.AddMenu new MenuItem("Erina")
+		  me.BaseMenu.AddMenu new MenuItem("Huginn's Speech")
+		  me.BaseMenu.AddMenu new MenuItem("Huginn's Tongue")
+		  me.BaseMenu.AddMenu new MenuItem("Ravenfolk")
+		  me.BaseMenu.AddMenu new MenuItem("Umbral")
+		  me.BaseMenu.AddMenu new MenuItem("Void Speech")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Other", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Bothii")
+		  me.BaseMenu.AddMenu new MenuItem("Bullywug")
+		  me.BaseMenu.AddMenu new MenuItem("Daelkyr")
+		  me.BaseMenu.AddMenu new MenuItem("Ergot")
+		  me.BaseMenu.AddMenu new MenuItem("Gith")
+		  me.BaseMenu.AddMenu new MenuItem("Hadozee")
+		  me.BaseMenu.AddMenu new MenuItem("Kenderspeak")
+		  me.BaseMenu.AddMenu new MenuItem("Leonin")
+		  me.BaseMenu.AddMenu new MenuItem("Loxodon")
+		  me.BaseMenu.AddMenu new MenuItem("Marquesian")
+		  me.BaseMenu.AddMenu new MenuItem("Minotaur")
+		  me.BaseMenu.AddMenu new MenuItem("Naush")
+		  me.BaseMenu.AddMenu new MenuItem("Netherese")
+		  me.BaseMenu.AddMenu new MenuItem("Ogre")
+		  me.BaseMenu.AddMenu new MenuItem("Quori")
+		  me.BaseMenu.AddMenu new MenuItem("Riedran")
+		  me.BaseMenu.AddMenu new MenuItem("Terran")
+		  me.BaseMenu.AddMenu new MenuItem("Thayan")
+		  me.BaseMenu.AddMenu new MenuItem("Thri-Kreen")
+		  me.BaseMenu.AddMenu new MenuItem("Vedalken")
+		  me.BaseMenu.AddMenu new MenuItem("Yeti")
+		  me.BaseMenu.AddMenu new MenuItem("Zemnian")
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cSpeedOther
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Other Speeds:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
+		  me.ReadOnly = False
+		  'me.UseLowercase = True
+		  
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Burrow 30 ft.")
+		  me.BaseMenu.AddMenu new MenuItem("Fly 30 ft.")
+		  me.BaseMenu.AddMenu new MenuItem("Hover 30 ft.")
+		  me.BaseMenu.AddMenu new MenuItem("Swim 30 ft.")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

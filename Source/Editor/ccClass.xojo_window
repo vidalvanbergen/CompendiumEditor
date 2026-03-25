@@ -2225,6 +2225,10 @@ End
 		  if cClassFeatures.lstTraits.SelectedRowIndex > 0 then
 		    featureName = cClassFeatures.lstTraits.CellValueAt( cClassFeatures.lstTraits.SelectedRowIndex, 1 )
 		    featureName = featureName.Replace( subclassName + ": ", "" ).Replace( " (" + subclassName + ")", "").Trim
+		    if featureName.StartsWith("Level ") then
+		      featureName = featureName.ReplaceAllRegEx( "Level (\d+): ", "" ).Trim
+		    end if
+		    
 		    
 		    featureLevel = cClassFeatures.lstTraits.CellValueAt( cClassFeatures.lstTraits.SelectedRowIndex, 0 )
 		  end if

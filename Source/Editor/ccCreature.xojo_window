@@ -3097,6 +3097,7 @@ End
 		  
 		  me.BaseMenu.AddMenu new MenuItem("None", "")
 		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Asleep")
 		  me.BaseMenu.AddMenu new MenuItem("Blinded")
 		  me.BaseMenu.AddMenu new MenuItem("Charmed")
 		  me.BaseMenu.AddMenu new MenuItem("Deafened")
@@ -3426,7 +3427,7 @@ End
 #tag Events cSpells
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Spells:"
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

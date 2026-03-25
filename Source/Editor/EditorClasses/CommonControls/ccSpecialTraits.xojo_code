@@ -23,6 +23,7 @@ Inherits ccEditorTextField
 		  me.BaseMenu.Append NewMenuItem("Special:", Nil, False)
 		  me.BaseMenu.Append new MenuItem( "Jack of all Trades" )
 		  me.BaseMenu.Append new MenuItem( "Powerful Build" )
+		  me.BaseMenu.Append new MenuItem( "Toughness" )
 		End Sub
 	#tag EndEvent
 

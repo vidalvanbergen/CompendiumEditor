@@ -439,7 +439,7 @@ Begin ContainerControl ccSourceInfoEditor
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   960
+      Left            =   374
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -450,7 +450,7 @@ Begin ContainerControl ccSourceInfoEditor
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   403
+      Top             =   308
       Transparent     =   False
       Underline       =   False
       Value           =   False

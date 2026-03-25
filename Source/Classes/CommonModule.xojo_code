@@ -353,6 +353,8 @@ Protected Module CommonModule
 		  '• Cantrips (at will): mage hand, prestidigitation
 		  '• 1st level (only ritual): detect magic, identify
 		  
+		  'You know the light cantrip. Once you reach 3rd level, you can cast the lesser restoration spell once with this trait, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the daylight spell once with this trait as a 3rd-level spell, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.
+		  
 		  TheValue = NormalizeLineEndings( TheValue )
 		  
 		  var spellText as String = TheValue 'txtSpells.Text
@@ -383,6 +385,15 @@ Protected Module CommonModule
 		      end if
 		    next
 		    spellText = StringFromArray( lines, ", " )
+		    
+		  elseif spellText.Contains("You know the") or spellText.Contains("you can cast") then
+		    var spells() as String = spellText.MatchAll("the\s+([a-zA-Z ]+?)\s+(?:spell|cantrip)", 1 )
+		    
+		    if spells.LastIndex > -1 then
+		      spellText = StringFromArray( spells, ", " )
+		    end if
+		    
+		    
 		  end if
 		  
 		  spellText = spellText.ReplaceAll( EndOfLine, ", " )

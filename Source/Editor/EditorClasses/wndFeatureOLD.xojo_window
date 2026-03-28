@@ -563,7 +563,7 @@ End
 		    next
 		  end if
 		  
-		  // Attack rolls
+		  // Dice Rolls
 		  cDiceRolls.AddDiceRollsTo( xNode )
 		End Sub
 	#tag EndMethod

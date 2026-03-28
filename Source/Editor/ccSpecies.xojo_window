@@ -10,7 +10,7 @@ Begin ContainerControl ccSpecies
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1551
+   Height          =   1569
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -376,20 +376,20 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   23
+      TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage resistances. (Unofficial)"
-      Top             =   1213
+      Top             =   1231
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
       Width           =   624
    End
-   Begin ccEditorTextField cProficienciesTools
+   Begin ccProficienciesTools cProficienciesTools
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -414,20 +414,20 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   19
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies. (Unofficial)"
-      Top             =   1141
+      Top             =   1159
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
       Width           =   624
    End
-   Begin ccEditorTextField cProficienciesWeapons
+   Begin ccProficienciesWeapons cProficienciesWeapons
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -452,20 +452,20 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies. (Unofficial)"
-      Top             =   1105
+      Top             =   1123
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
       Visible         =   True
       Width           =   624
    End
-   Begin ccEditorTextField cProficienciesArmor
+   Begin ccProficienciesArmor cProficienciesArmor
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -490,13 +490,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies. (Unofficial)"
-      Top             =   1069
+      Top             =   1087
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -535,12 +535,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   24
+      TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1211
+      Top             =   1229
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -579,12 +579,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   20
+      TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1139
+      Top             =   1157
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -623,12 +623,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1067
+      Top             =   1085
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -667,12 +667,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   18
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1103
+      Top             =   1121
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -704,13 +704,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   21
+      TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage vulnerabilities."
-      Top             =   1177
+      Top             =   1195
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -742,13 +742,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   27
+      TabIndex        =   28
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1285
+      Top             =   1303
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -780,13 +780,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   25
+      TabIndex        =   26
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Damage immunities."
-      Top             =   1249
+      Top             =   1267
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -825,12 +825,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   22
+      TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1175
+      Top             =   1193
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -869,12 +869,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   26
+      TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1247
+      Top             =   1265
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -913,12 +913,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   28
+      TabIndex        =   29
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1283
+      Top             =   1301
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1185,6 +1185,7 @@ Begin ContainerControl ccSpecies
       DoubleBuffer    =   False
       Enabled         =   True
       EraseBackground =   True
+      FieldName       =   ""
       HasBackgroundColor=   False
       Height          =   100
       Index           =   -2147483648
@@ -1196,12 +1197,13 @@ Begin ContainerControl ccSpecies
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   35
+      TabIndex        =   36
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1431
+      Top             =   1449
       Transparent     =   True
+      Value           =   ""
       Visible         =   True
       Width           =   660
    End
@@ -1230,13 +1232,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   29
+      TabIndex        =   30
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1321
+      Top             =   1339
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1275,19 +1277,19 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   30
+      TabIndex        =   31
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1319
+      Top             =   1337
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   24
    End
-   Begin ccEditorTextField cLanguagesKnown
+   Begin ccProficienciesLanguages cLanguagesKnown
       AllowAutoDeactivate=   True
       AllowFocus      =   False
       AllowFocusRing  =   False
@@ -1312,13 +1314,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   33
+      TabIndex        =   34
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1395
+      Top             =   1413
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1357,12 +1359,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   34
+      TabIndex        =   35
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1393
+      Top             =   1411
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1401,12 +1403,12 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   36
+      TabIndex        =   37
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1469
+      Top             =   1487
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -1438,13 +1440,13 @@ Begin ContainerControl ccSpecies
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   31
+      TabIndex        =   32
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Condition immunities."
-      Top             =   1359
+      Top             =   1377
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -1483,17 +1485,39 @@ Begin ContainerControl ccSpecies
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   32
+      TabIndex        =   33
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   1357
+      Top             =   1375
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   24
+   End
+   Begin Separator sepLine
+      AllowAutoDeactivate=   True
+      Enabled         =   True
+      Height          =   4
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   1069
+      Transparent     =   False
+      Visible         =   True
+      Width           =   660
    End
 End
 #tag EndWindow
@@ -2161,124 +2185,6 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events cProficienciesTools
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Tool Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem( "Alchemist's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Brewer's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Calligrapher's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Carpenter's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cartographer's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cobbler's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cook's Utensils" )
-		  me.BaseMenu.AddMenu new MenuItem( "Disguise Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Glassblower's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Herbalism Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Jeweler's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Leatherworker's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Mason's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Navigator's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Painter's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Poisoner's Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Potter's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Smith's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Thieves' Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Tinker's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Weaver's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Woodcarver's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Gaming Set")
-		  me.BaseMenu.AddMenu new MenuItem("Musical Instrument")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Air)")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Land)")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Water)")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cProficienciesWeapons
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Weapon Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Simple Weapons")
-		  me.BaseMenu.AddMenu new MenuItem("Martial Weapons")
-		  // Weapons
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
-		  me.BaseMenu.Append new MenuItem( "Club" )
-		  me.BaseMenu.Append new MenuItem( "Dagger" )
-		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
-		  me.BaseMenu.Append new MenuItem( "Flail" )
-		  me.BaseMenu.Append new MenuItem( "Glaive" )
-		  me.BaseMenu.Append new MenuItem( "Greataxe" )
-		  me.BaseMenu.Append new MenuItem( "Greatclub" )
-		  me.BaseMenu.Append new MenuItem( "Greatsword" )
-		  me.BaseMenu.Append new MenuItem( "Halberd" )
-		  me.BaseMenu.Append new MenuItem( "Handaxe" )
-		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
-		  me.BaseMenu.Append new MenuItem( "Hoopak" )
-		  me.BaseMenu.Append new MenuItem( "Javelin" )
-		  me.BaseMenu.Append new MenuItem( "Lance" )
-		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
-		  me.BaseMenu.Append new MenuItem( "Longsword" )
-		  me.BaseMenu.Append new MenuItem( "Mace" )
-		  me.BaseMenu.Append new MenuItem( "Maul" )
-		  me.BaseMenu.Append new MenuItem( "Morningstar" )
-		  me.BaseMenu.Append new MenuItem( "Pike" )
-		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
-		  me.BaseMenu.Append new MenuItem( "Rapier" )
-		  me.BaseMenu.Append new MenuItem( "Scimitar" )
-		  me.BaseMenu.Append new MenuItem( "Shortsword" )
-		  me.BaseMenu.Append new MenuItem( "Sickle" )
-		  me.BaseMenu.Append new MenuItem( "Spear" )
-		  me.BaseMenu.Append new MenuItem( "Staff" )
-		  me.BaseMenu.Append new MenuItem( "Trident" )
-		  me.BaseMenu.Append new MenuItem( "War Pick" )
-		  me.BaseMenu.Append new MenuItem( "Warhammer" )
-		  me.BaseMenu.Append new MenuItem( "Whip" )
-		  me.BaseMenu.Append new MenuItem( "Yklwa" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Blowgun" )
-		  me.BaseMenu.Append new MenuItem( "Dart" )
-		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
-		  me.BaseMenu.Append new MenuItem( "Longbow" )
-		  me.BaseMenu.Append new MenuItem( "Net" )
-		  me.BaseMenu.Append new MenuItem( "Shortbow" )
-		  me.BaseMenu.Append new MenuItem( "Sling" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cProficienciesArmor
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Armor Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Light Armor")
-		  me.BaseMenu.AddMenu new MenuItem("Medium Armor")
-		  me.BaseMenu.AddMenu new MenuItem("Heavy Armor")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Shields")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events bvlUnofficialInfo
 	#tag Event
 		Sub Action(index as Integer)
@@ -2462,103 +2368,6 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("Restrained")
 		  me.BaseMenu.AddMenu new MenuItem("Stunned")
 		  me.BaseMenu.AddMenu new MenuItem("Unconscious")
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cLanguagesKnown
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Languages:"
-		  me.SetMode ccEditorTextField.Mode.MultipleChoice
-		  me.ReadOnly = False
-		  'me.UseLowercase = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Standard", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Common")
-		  me.BaseMenu.AddMenu new MenuItem("Common Sign Language")
-		  me.BaseMenu.AddMenu new MenuItem("Dwarvish")
-		  me.BaseMenu.AddMenu new MenuItem("Elvish")
-		  me.BaseMenu.AddMenu new MenuItem("Giant")
-		  me.BaseMenu.AddMenu new MenuItem("Gnomish")
-		  me.BaseMenu.AddMenu new MenuItem("Goblin")
-		  me.BaseMenu.AddMenu new MenuItem("Halfling")
-		  me.BaseMenu.AddMenu new MenuItem("Orc")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Thieves' Cant")
-		  me.BaseMenu.AddMenu new MenuItem("Druidic")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Any one language")
-		  me.BaseMenu.AddMenu new MenuItem("Any two languages")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Exotic", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Abyssal")
-		  me.BaseMenu.AddMenu new MenuItem("Celestial")
-		  me.BaseMenu.AddMenu new MenuItem("Draconic")
-		  me.BaseMenu.AddMenu new MenuItem("Deep Speech")
-		  me.BaseMenu.AddMenu new MenuItem("Infernal")
-		  me.BaseMenu.AddMenu new MenuItem("Primordial")
-		  me.BaseMenu.AddMenu new MenuItem("Sylvan")
-		  me.BaseMenu.AddMenu new MenuItem("Undercommon")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Elemental", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Auran")
-		  me.BaseMenu.AddMenu new MenuItem("Aquan")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Humblewood", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Birdfolk")
-		  me.BaseMenu.AddMenu new MenuItem("Cervan")
-		  me.BaseMenu.AddMenu new MenuItem("Hedge")
-		  me.BaseMenu.AddMenu new MenuItem("Jerbeen")
-		  me.BaseMenu.AddMenu new MenuItem("Mapach")
-		  me.BaseMenu.AddMenu new MenuItem("Vulpin")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Kobold Press", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Darakhul")
-		  me.BaseMenu.AddMenu new MenuItem("Erina")
-		  me.BaseMenu.AddMenu new MenuItem("Huginn's Speech")
-		  me.BaseMenu.AddMenu new MenuItem("Huginn's Tongue")
-		  me.BaseMenu.AddMenu new MenuItem("Ravenfolk")
-		  me.BaseMenu.AddMenu new MenuItem("Umbral")
-		  me.BaseMenu.AddMenu new MenuItem("Void Speech")
-		  
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu NewMenuItem("Other", Nil, False)
-		  
-		  me.BaseMenu.AddMenu new MenuItem("Bothii")
-		  me.BaseMenu.AddMenu new MenuItem("Bullywug")
-		  me.BaseMenu.AddMenu new MenuItem("Daelkyr")
-		  me.BaseMenu.AddMenu new MenuItem("Ergot")
-		  me.BaseMenu.AddMenu new MenuItem("Gith")
-		  me.BaseMenu.AddMenu new MenuItem("Hadozee")
-		  me.BaseMenu.AddMenu new MenuItem("Kenderspeak")
-		  me.BaseMenu.AddMenu new MenuItem("Leonin")
-		  me.BaseMenu.AddMenu new MenuItem("Loxodon")
-		  me.BaseMenu.AddMenu new MenuItem("Marquesian")
-		  me.BaseMenu.AddMenu new MenuItem("Minotaur")
-		  me.BaseMenu.AddMenu new MenuItem("Naush")
-		  me.BaseMenu.AddMenu new MenuItem("Netherese")
-		  me.BaseMenu.AddMenu new MenuItem("Ogre")
-		  me.BaseMenu.AddMenu new MenuItem("Quori")
-		  me.BaseMenu.AddMenu new MenuItem("Riedran")
-		  me.BaseMenu.AddMenu new MenuItem("Terran")
-		  me.BaseMenu.AddMenu new MenuItem("Thayan")
-		  me.BaseMenu.AddMenu new MenuItem("Thri-Kreen")
-		  me.BaseMenu.AddMenu new MenuItem("Vedalken")
-		  me.BaseMenu.AddMenu new MenuItem("Yeti")
-		  me.BaseMenu.AddMenu new MenuItem("Zemnian")
 		  
 		End Sub
 	#tag EndEvent

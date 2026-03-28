@@ -132,7 +132,7 @@ Begin ContainerControl ccClass
          AllowRowReordering=   True
          Bold            =   False
          ColumnCount     =   5
-         ColumnWidths    =   "50,*,50,100,*"
+         ColumnWidths    =   "50,*,100,100,*"
          DataField       =   ""
          DataSource      =   ""
          DefaultRowHeight=   24
@@ -404,7 +404,7 @@ Begin ContainerControl ccClass
          Visible         =   True
          Width           =   260
       End
-      Begin ccEditorTextField cProficienciesArmor
+      Begin ccProficienciesArmor cProficienciesArmor
          AllowAutoDeactivate=   True
          AllowFocus      =   False
          AllowFocusRing  =   False
@@ -442,7 +442,7 @@ Begin ContainerControl ccClass
          Visible         =   True
          Width           =   640
       End
-      Begin ccEditorTextField cProficienciesWeapons
+      Begin ccProficienciesWeapons cProficienciesWeapons
          AllowAutoDeactivate=   True
          AllowFocus      =   False
          AllowFocusRing  =   False
@@ -480,7 +480,7 @@ Begin ContainerControl ccClass
          Visible         =   True
          Width           =   640
       End
-      Begin ccEditorTextField cProficienciesTools
+      Begin ccProficienciesTools cProficienciesTools
          AllowAutoDeactivate=   True
          AllowFocus      =   False
          AllowFocusRing  =   False
@@ -1122,7 +1122,7 @@ End
 		      var xCounter as XMLNode = xAutoLevel.AppendNewChild( "counter" )
 		      if lstCounter.CellValueAt( row, 1 ).Trim <> "" and lstCounter.CellValueAt( row, 2 ).Trim <> "" then
 		        xCounter.AppendSimpleChild( "name", lstCounter.CellValueAt( row, 1 ).Trim )
-		        xCounter.AppendSimpleChild( "value", lstCounter.CellValueAt( row, 2 ).Trim )
+		        xCounter.AppendSimpleChild( "value", lstCounter.CellTagAt( row, 2 ).StringValue ) 'lstCounter.CellValueAt( row, 2 ).Trim )
 		        xCounter.AppendSimpleChild( "reset", lstCounter.CellValueAt( row, 3 ).Trim.Left(1).Uppercase )
 		        
 		        if lstCounter.CellValueAt( row, 4 ).Trim <> "" then
@@ -1583,7 +1583,7 @@ End
 		              lstSpellsTable.CellValueAt( level.Val-1, 2 ) = xFeature.ValueOfNodeWithName("value")
 		              
 		            else
-		              var counterName, counterValue, counterSubclass, counterReset as String
+		              var counterName, counterValue, counterFormula, counterSubclass, counterReset as String
 		              
 		              for each xCounterField as XMLNode in xFeature.Children
 		                
@@ -1595,7 +1595,8 @@ End
 		                    counterName = xCounterField.FirstChild.Value
 		                    
 		                  case "value"
-		                    counterValue = xCounterField.FirstChild.Value
+		                    counterFormula = xCounterField.FirstChild.Value
+		                    counterValue = DiceCalculatorMethods.PrettifyMath( counterFormula )
 		                    
 		                  case "subclass"
 		                    counterSubclass = xCounterField.FirstChild.Value
@@ -1617,6 +1618,7 @@ End
 		              end if
 		              
 		              lstCounter.AddRow level, counterName, counterValue, counterReset, counterSubclass
+		              lstCounter.CellTagAt( lstCounter.LastAddedRowIndex, 2 ) = counterFormula
 		              lstCounter.Invalidate
 		              
 		              'var CounterColumn as Integer = -1
@@ -2115,7 +2117,7 @@ End
 		  
 		  
 		  me.ColumnTypeAt(1) = Listbox.CellTypes.TextField
-		  me.ColumnTypeAt(2) = Listbox.CellTypes.TextField
+		  'me.ColumnTypeAt(2) = Listbox.CellTypes.TextField
 		  
 		  me.ColumnAlignmentAt( 0 ) = Listbox.Alignments.Center
 		  me.ColumnAlignmentAt( 2 ) = Listbox.Alignments.Center
@@ -2161,7 +2163,7 @@ End
 	#tag EndEvent
 	#tag Event
 		Function CellClick(row as Integer, column as Integer, x as Integer, y as Integer) As Boolean
-		  if column = 0 or column = 3 or column = 4 then
+		  if column = 0 or column = 2 or column = 3 or column = 4 then
 		    
 		    var baseMenu as new MenuItem( "base" )
 		    
@@ -2170,6 +2172,13 @@ End
 		      for level as Integer = 1 to 20
 		        baseMenu.AddMenu new MenuItem( Str(level), Str(level) )
 		      next
+		      
+		    case 2
+		      baseMenu.AddMenu new MenuItem("None", "")
+		      baseMenu.AddMenu new MenuItem( "-", "" )
+		      baseMenu.AddMenu new MenuItem( "Enter Value", "" )
+		      baseMenu.AddMenu new MenuItem( "Edit Value", "" )
+		      
 		      
 		    case 3
 		      baseMenu.AddMenu new MenuItem("Short Rest", "Short Rest")
@@ -2189,7 +2198,21 @@ End
 		    var hitItem as MenuItem = baseMenu.PopUp '( self.Left + me.Left + x,  self.Top + me.Top + y )
 		    
 		    if hitItem <> Nil then
-		      me.CellValueAt( row, column ) = hitItem.Tag
+		      if hitItem.Text = "Enter Value" then
+		        var calculation as string = SummonCalculator( "", False )
+		        
+		        me.CellValueAt( row, column ) = DiceCalculatorMethods.PrettifyMath( calculation )
+		        me.CellTagAt( row, column ) = calculation
+		      elseif hitItem.Text = "Edit Value" then
+		        var calculation as string = SummonCalculator( me.CellTagAt( row, column ).StringValue, False )
+		        
+		        me.CellValueAt( row, column ) = DiceCalculatorMethods.PrettifyMath( calculation )
+		        me.CellTagAt( row, column ) = calculation
+		      else
+		        me.CellValueAt( row, column ) = hitItem.Tag
+		        me.CellTagAt( row, column ) = hitItem.Tag
+		      end if
+		      
 		    end if
 		    
 		    Return True
@@ -2234,6 +2257,7 @@ End
 		  end if
 		  
 		  lstCounter.AddRow featureLevel, featureName, "1", "Long Rest", subclassName
+		  lstCounter.CellTagAt( lstCounter.LastAddedRowIndex, 2 ) = "1"
 		End Sub
 	#tag EndEvent
 	#tag Event
@@ -2242,14 +2266,16 @@ End
 		  if lstCounter.SelectedRowIndex > -1 then
 		    var row as Integer = lstCounter.SelectedRowIndex
 		    
-		    var lvl, name, value, reset, subclass as String
+		    var lvl, name, value, formula, reset, subclass as String
 		    lvl = lstCounter.CellValueAt( row, 0 )
 		    name = lstCounter.CellValueAt( row, 1 )
 		    value = lstCounter.CellValueAt( row, 2 )
+		    formula = lstCounter.CellTagAt( row, 2 )
 		    reset = lstCounter.CellValueAt( row, 3 )
 		    subclass = lstCounter.CellValueAt( row, 4 )
 		    
 		    lstCounter.AddRow lvl, name, value, reset, subclass
+		    lstCounter.CellTagAt( lstCounter.LastAddedRowIndex, 2 ) = formula
 		    lstCounter.SelectedRowIndex = lstCounter.LastAddedRowIndex
 		  end if
 		End Sub
@@ -2319,124 +2345,6 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  me.BaseMenu.Append new MenuItem( "New dice roll" )
 		  me.BaseMenu.Append new MenuItem( "Edit dice roll" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cProficienciesArmor
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Armor Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Light Armor")
-		  me.BaseMenu.AddMenu new MenuItem("Medium Armor")
-		  me.BaseMenu.AddMenu new MenuItem("Heavy Armor")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Shields")
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cProficienciesWeapons
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Weapon Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Simple Weapons")
-		  me.BaseMenu.AddMenu new MenuItem("Martial Weapons")
-		  // Weapons
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Battleaxes" )
-		  me.BaseMenu.Append new MenuItem( "Clubs" )
-		  me.BaseMenu.Append new MenuItem( "Daggers" )
-		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitars" )
-		  me.BaseMenu.Append new MenuItem( "Flails" )
-		  me.BaseMenu.Append new MenuItem( "Glaives" )
-		  me.BaseMenu.Append new MenuItem( "Greataxes" )
-		  me.BaseMenu.Append new MenuItem( "Greatclubs" )
-		  me.BaseMenu.Append new MenuItem( "Greatswords" )
-		  me.BaseMenu.Append new MenuItem( "Halberds" )
-		  me.BaseMenu.Append new MenuItem( "Handaxes" )
-		  me.BaseMenu.Append new MenuItem( "Hooked Shortspears" )
-		  me.BaseMenu.Append new MenuItem( "Hoopaks" )
-		  me.BaseMenu.Append new MenuItem( "Javelins" )
-		  me.BaseMenu.Append new MenuItem( "Lances" )
-		  me.BaseMenu.Append new MenuItem( "Light Hammers" )
-		  me.BaseMenu.Append new MenuItem( "Longswords" )
-		  me.BaseMenu.Append new MenuItem( "Maces" )
-		  me.BaseMenu.Append new MenuItem( "Mauls" )
-		  me.BaseMenu.Append new MenuItem( "Morningstars" )
-		  me.BaseMenu.Append new MenuItem( "Pikes" )
-		  me.BaseMenu.Append new MenuItem( "Quarterstaffs" )
-		  me.BaseMenu.Append new MenuItem( "Rapiers" )
-		  me.BaseMenu.Append new MenuItem( "Scimitars" )
-		  me.BaseMenu.Append new MenuItem( "Shortswords" )
-		  me.BaseMenu.Append new MenuItem( "Sickles" )
-		  me.BaseMenu.Append new MenuItem( "Spears" )
-		  me.BaseMenu.Append new MenuItem( "Staffs" )
-		  me.BaseMenu.Append new MenuItem( "Tridents" )
-		  me.BaseMenu.Append new MenuItem( "War Picks" )
-		  me.BaseMenu.Append new MenuItem( "Warhammers" )
-		  me.BaseMenu.Append new MenuItem( "Whips" )
-		  me.BaseMenu.Append new MenuItem( "Yklwas" )
-		  me.BaseMenu.Append new MenuItem( "-" )
-		  me.BaseMenu.Append new MenuItem( "Blowguns" )
-		  me.BaseMenu.Append new MenuItem( "Darts" )
-		  me.BaseMenu.Append new MenuItem( "Hand Crossbows" )
-		  me.BaseMenu.Append new MenuItem( "Heavy Crossbows" )
-		  me.BaseMenu.Append new MenuItem( "Light Crossbows" )
-		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbows" )
-		  me.BaseMenu.Append new MenuItem( "Longbows" )
-		  me.BaseMenu.Append new MenuItem( "Nets" )
-		  me.BaseMenu.Append new MenuItem( "Shortbows" )
-		  me.BaseMenu.Append new MenuItem( "Slings" )
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events cProficienciesTools
-	#tag Event
-		Sub Open()
-		  me.FieldName = "Tool Proficiencies:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = False
-		  
-		  me.BaseMenu.AddMenu new MenuItem("None", "")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem( "Alchemist's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Brewer's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Calligrapher's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Carpenter's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cartographer's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cobbler's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Cook's Utensils" )
-		  me.BaseMenu.AddMenu new MenuItem( "Disguise Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Glassblower's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Herbalism Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Jeweler's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Leatherworker's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Mason's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Navigator's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Painter's Supplies" )
-		  me.BaseMenu.AddMenu new MenuItem( "Poisoner's Kit" )
-		  me.BaseMenu.AddMenu new MenuItem( "Potter's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Smith's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Thieves' Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Tinker's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Weaver's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem( "Woodcarver's Tools" )
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Gaming Set")
-		  me.BaseMenu.AddMenu new MenuItem("Musical Instrument")
-		  me.BaseMenu.AddMenu new MenuItem("-")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Air)")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Land)")
-		  me.BaseMenu.AddMenu new MenuItem("Vehicle (Water)")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

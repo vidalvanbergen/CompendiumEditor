@@ -1,31 +1,19 @@
 #tag Class
-Protected Class ccSpecialTraits
+Protected Class ccProficienciesArmor
 Inherits ccEditorTextField
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Special Traits:"
+		  me.FieldName = "Armor Proficiencies:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  me.ReadOnly = False
 		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Fighting Styles:", Nil, False)
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Archery")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Defense")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Dueling")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Two-Weapon Fighting")
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Unarmored Defense:", Nil, False)
-		  for each abilityname as String in DnDArrays.AbilityNames
-		    me.BaseMenu.Append new MenuItem("Unarmored Defense: " + abilityname)
-		  next
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Special:", Nil, False)
-		  me.BaseMenu.Append new MenuItem( "Jack of all Trades" )
-		  me.BaseMenu.Append new MenuItem( "Powerful Build" )
-		  me.BaseMenu.Append new MenuItem( "Toughness" )
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Light Armor")
+		  me.BaseMenu.AddMenu new MenuItem("Medium Armor")
+		  me.BaseMenu.AddMenu new MenuItem("Heavy Armor")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Shields")
 		End Sub
 	#tag EndEvent
 

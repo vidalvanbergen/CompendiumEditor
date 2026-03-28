@@ -3,9 +3,9 @@ Protected Class ccProficiencies
 Inherits ccEditorTextField
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Proficiencies:"
+		  me.FieldName = "Skill Proficiencies:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
+		  me.ReadOnly = False
 		  
 		  me.BaseMenu.Append new MenuItem("None", "")
 		  me.BaseMenu.Append new MenuItem("-")
@@ -25,6 +25,14 @@ Inherits ccEditorTextField
 
 
 	#tag ViewBehavior
+		#tag ViewProperty
+			Name="IsPrefixedNumber"
+			Visible=false
+			Group="Behavior"
+			InitialValue="False"
+			Type="Boolean"
+			EditorType=""
+		#tag EndViewProperty
 		#tag ViewProperty
 			Name="TagsForValue"
 			Visible=false

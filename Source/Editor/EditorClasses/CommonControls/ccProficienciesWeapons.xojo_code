@@ -1,31 +1,63 @@
 #tag Class
-Protected Class ccSpecialTraits
+Protected Class ccProficienciesWeapons
 Inherits ccEditorTextField
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Special Traits:"
+		  me.FieldName = "Weapon Proficiencies:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  me.ReadOnly = False
 		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Fighting Styles:", Nil, False)
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Archery")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Defense")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Dueling")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Two-Weapon Fighting")
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Unarmored Defense:", Nil, False)
-		  for each abilityname as String in DnDArrays.AbilityNames
-		    me.BaseMenu.Append new MenuItem("Unarmored Defense: " + abilityname)
-		  next
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Special:", Nil, False)
-		  me.BaseMenu.Append new MenuItem( "Jack of all Trades" )
-		  me.BaseMenu.Append new MenuItem( "Powerful Build" )
-		  me.BaseMenu.Append new MenuItem( "Toughness" )
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Simple Weapons")
+		  me.BaseMenu.AddMenu new MenuItem("Martial Weapons")
+		  me.BaseMenu.AddMenu new MenuItem("Firearms")
+		  // Weapons
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Battleaxe" )
+		  me.BaseMenu.Append new MenuItem( "Club" )
+		  me.BaseMenu.Append new MenuItem( "Dagger" )
+		  me.BaseMenu.Append new MenuItem( "Double-Bladed Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Flail" )
+		  me.BaseMenu.Append new MenuItem( "Glaive" )
+		  me.BaseMenu.Append new MenuItem( "Greataxe" )
+		  me.BaseMenu.Append new MenuItem( "Greatclub" )
+		  me.BaseMenu.Append new MenuItem( "Greatsword" )
+		  me.BaseMenu.Append new MenuItem( "Halberd" )
+		  me.BaseMenu.Append new MenuItem( "Handaxe" )
+		  me.BaseMenu.Append new MenuItem( "Hooked Shortspear" )
+		  me.BaseMenu.Append new MenuItem( "Hoopak" )
+		  me.BaseMenu.Append new MenuItem( "Javelin" )
+		  me.BaseMenu.Append new MenuItem( "Lance" )
+		  me.BaseMenu.Append new MenuItem( "Light Hammer" )
+		  me.BaseMenu.Append new MenuItem( "Longsword" )
+		  me.BaseMenu.Append new MenuItem( "Mace" )
+		  me.BaseMenu.Append new MenuItem( "Maul" )
+		  me.BaseMenu.Append new MenuItem( "Morningstar" )
+		  me.BaseMenu.Append new MenuItem( "Pike" )
+		  me.BaseMenu.Append new MenuItem( "Quarterstaff" )
+		  me.BaseMenu.Append new MenuItem( "Rapier" )
+		  me.BaseMenu.Append new MenuItem( "Scimitar" )
+		  me.BaseMenu.Append new MenuItem( "Shortsword" )
+		  me.BaseMenu.Append new MenuItem( "Sickle" )
+		  me.BaseMenu.Append new MenuItem( "Spear" )
+		  me.BaseMenu.Append new MenuItem( "Staff" )
+		  me.BaseMenu.Append new MenuItem( "Trident" )
+		  me.BaseMenu.Append new MenuItem( "War Pick" )
+		  me.BaseMenu.Append new MenuItem( "Warhammer" )
+		  me.BaseMenu.Append new MenuItem( "Whip" )
+		  me.BaseMenu.Append new MenuItem( "Yklwa" )
+		  me.BaseMenu.Append new MenuItem( "-" )
+		  me.BaseMenu.Append new MenuItem( "Blowgun" )
+		  me.BaseMenu.Append new MenuItem( "Dart" )
+		  me.BaseMenu.Append new MenuItem( "Hand Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Heavy Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Light Repeating Crossbow" )
+		  me.BaseMenu.Append new MenuItem( "Longbow" )
+		  me.BaseMenu.Append new MenuItem( "Net" )
+		  me.BaseMenu.Append new MenuItem( "Shortbow" )
+		  me.BaseMenu.Append new MenuItem( "Sling" )
 		End Sub
 	#tag EndEvent
 

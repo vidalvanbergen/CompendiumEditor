@@ -337,7 +337,7 @@ End
 		  end if
 		  
 		  if result <> "" then
-		    lstDiceRolls.AddRow result.Lowercase, level, description
+		    lstDiceRolls.AddRow result, level, description
 		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
 		    
 		    

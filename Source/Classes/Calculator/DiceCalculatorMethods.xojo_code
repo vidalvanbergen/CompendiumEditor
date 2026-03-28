@@ -58,10 +58,10 @@ Protected Module DiceCalculatorMethods
 		  DisplayText = DisplayText.ReplaceAll("INT", "%4") ' INT MOD
 		  DisplayText = DisplayText.ReplaceAll("WIS", "%5") ' WIS MOD
 		  DisplayText = DisplayText.ReplaceAll("CHA", "%6") ' CHA MOD
+		  DisplayText = DisplayText.ReplaceAll("½LVL", "%10") ' LVL 1/2
 		  DisplayText = DisplayText.ReplaceAll("LVL", "%7") ' LVL
 		  DisplayText = DisplayText.ReplaceAll("PROF", "%8") ' PROF
 		  DisplayText = DisplayText.ReplaceAll("HP", "%9") ' current HP
-		  DisplayText = DisplayText.ReplaceAll("½LVL", "%10") ' LVL 1/2
 		  DisplayText = DisplayText.ReplaceAll("[Wo]", "o") ' 1wo
 		  DisplayText = DisplayText.ReplaceAll("[W]", "w") ' 1w
 		  

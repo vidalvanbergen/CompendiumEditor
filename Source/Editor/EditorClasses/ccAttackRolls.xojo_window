@@ -239,7 +239,7 @@ End
 		Sub AddDiceRollsTo(xNode as XMLNode)
 		  
 		  
-		  // Attack rolls
+		  // Dice Rolls
 		  if lstDiceRolls.LastRowIndex > -1 then
 		    for row as Integer = 0 to lstDiceRolls.LastRowIndex
 		      var name, tohit, diceroll as string

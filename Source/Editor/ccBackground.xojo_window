@@ -10,7 +10,7 @@ Begin ContainerControl ccBackground
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   832
+   Height          =   902
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -148,7 +148,7 @@ Begin ContainerControl ccBackground
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   260
+      Height          =   240
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -259,6 +259,192 @@ Begin ContainerControl ccBackground
       Visible         =   True
       Width           =   24
    End
+   Begin ccProficienciesTools cProficienciesTools
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Tool proficiencies."
+      Top             =   822
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   4
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   820
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   11
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   658
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   856
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccProficienciesLanguages cLanguagesKnown
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   858
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin Separator sepLine
+      AllowAutoDeactivate=   True
+      Enabled         =   True
+      Height          =   4
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   804
+      Transparent     =   False
+      Visible         =   True
+      Width           =   660
+   End
 End
 #tag EndWindow
 
@@ -288,6 +474,16 @@ End
 		    xSpecies.AppendSimpleChild( "proficiency", cProficiencies.Value.Trim )
 		  else
 		    xSpecies.AppendSimpleChild( "proficiency", Nil )
+		  end if
+		  
+		  // Tools (Unofficial)
+		  if cProficienciesTools.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "tools", cProficienciesTools.Value.Trim )
+		  end if
+		  
+		  // Languages (Unofficial)
+		  if cLanguagesKnown.Value.Trim <> "" then
+		    xSpecies.AppendSimpleChild( "languages", cLanguagesKnown.Value.Trim )
 		  end if
 		  
 		  
@@ -377,6 +573,16 @@ End
 		          cProficiencies.Values = xValue.SplitString(",")
 		          cProficiencies.Tags = cProficiencies.Values
 		          
+		        case "tools"
+		          cProficienciesTools.Value = xValue
+		          cProficienciesTools.Values = xValue.SplitString(",")
+		          cProficienciesTools.Tags = cProficienciesTools.Values
+		          
+		        case "languages"
+		          cLanguagesKnown.Value = xValue
+		          cLanguagesKnown.Values = xValue.SplitString(",")
+		          cLanguagesKnown.Tags = cLanguagesKnown.Values
+		          
 		        case "trait"
 		          cFeatures.FeatureAdd( xChild )
 		          
@@ -415,6 +621,9 @@ End
 		  cModifiers.Reset
 		  ccSourceBox.Reset
 		  xNode = Nil
+		  
+		  cProficienciesTools.Reset
+		  cLanguagesKnown.Reset
 		End Sub
 	#tag EndMethod
 
@@ -496,6 +705,13 @@ End
 	#tag Event
 		Sub Pressed(segmentIndex As Integer)
 		  cName.Value = SmartTitleCase( cName.Value )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlUnofficialInfo
+	#tag Event
+		Sub Action(index as Integer)
+		  msgUnofficialFeature
 		End Sub
 	#tag EndEvent
 #tag EndEvents

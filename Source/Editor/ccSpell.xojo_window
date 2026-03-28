@@ -10,7 +10,7 @@ Begin ContainerControl ccSpell
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1527
+   Height          =   1542
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -51,7 +51,7 @@ Begin ContainerControl ccSpell
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -735,7 +735,7 @@ Begin ContainerControl ccSpell
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   274
+      Height          =   289
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -774,11 +774,11 @@ Begin ContainerControl ccSpell
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   0
+         TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   1267
+         Top             =   1283
          Transparent     =   True
          Visible         =   True
          Width           =   628
@@ -814,7 +814,7 @@ Begin ContainerControl ccSpell
          Tag             =   ""
          TagsForValue    =   False
          Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-         Top             =   1233
+         Top             =   1249
          Transparent     =   True
          UseLowercase    =   False
          Value           =   ""
@@ -858,7 +858,7 @@ Begin ContainerControl ccSpell
          TabStop         =   True
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1230
+         Top             =   1246
          Transparent     =   False
          Underline       =   False
          Value           =   False
@@ -897,17 +897,39 @@ Begin ContainerControl ccSpell
          LockTop         =   True
          MenuStyle       =   0
          Scope           =   0
-         TabIndex        =   3
+         TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
          TextColor       =   &c00000000
          Tooltip         =   ""
-         Top             =   1267
+         Top             =   1283
          Transparent     =   False
          Underline       =   False
          Value           =   False
          Visible         =   True
          Width           =   24
+      End
+      Begin Separator sepLine
+         AllowAutoDeactivate=   True
+         Enabled         =   True
+         Height          =   4
+         Index           =   -2147483648
+         InitialParent   =   "cvsPartitionClassFeatureTwo"
+         Left            =   20
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   1233
+         Transparent     =   False
+         Visible         =   True
+         Width           =   660
       End
    End
    Begin PopupMenu popSpellType
@@ -932,7 +954,7 @@ Begin ContainerControl ccSpell
       LockTop         =   True
       Scope           =   0
       SelectedRowIndex=   0
-      TabIndex        =   2
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -964,7 +986,7 @@ Begin ContainerControl ccSpell
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   1
+      TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Type:"
@@ -1095,7 +1117,7 @@ Begin ContainerControl ccSpell
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   10
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"

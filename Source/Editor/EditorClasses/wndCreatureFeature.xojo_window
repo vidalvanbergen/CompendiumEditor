@@ -369,7 +369,7 @@ End
 		  var NoSources() as String
 		  SetDescription( xNode, cDescription.Value, NoSources )
 		  
-		  // Attack rolls
+		  // Dice Rolls
 		  cAttackRolls.AddDiceRollsTo( xNode )
 		  
 		  'if lstDiceRolls.LastRowIndex > -1 then

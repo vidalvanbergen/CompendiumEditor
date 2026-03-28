@@ -1,31 +1,66 @@
 #tag Class
-Protected Class ccSpecialTraits
+Protected Class ccProficienciesTools
 Inherits ccEditorTextField
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Special Traits:"
+		  me.FieldName = "Tool Proficiencies:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
 		  me.ReadOnly = False
 		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Fighting Styles:", Nil, False)
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Archery")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Defense")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Dueling")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Two-Weapon Fighting")
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Unarmored Defense:", Nil, False)
-		  for each abilityname as String in DnDArrays.AbilityNames
-		    me.BaseMenu.Append new MenuItem("Unarmored Defense: " + abilityname)
-		  next
-		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Special:", Nil, False)
-		  me.BaseMenu.Append new MenuItem( "Jack of all Trades" )
-		  me.BaseMenu.Append new MenuItem( "Powerful Build" )
-		  me.BaseMenu.Append new MenuItem( "Toughness" )
+		  me.BaseMenu.AddMenu new MenuItem( "None", "" )
+		  me.BaseMenu.AddMenu new MenuItem( "-" )
+		  me.BaseMenu.AddMenu NewMenuItem( "Artisan's Tools", Nil, False )
+		  me.BaseMenu.AddMenu new MenuItem( "Artisan's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Alchemist's Supplies" )
+		  me.BaseMenu.AddMenu new MenuItem( "Brewer's Supplies" )
+		  me.BaseMenu.AddMenu new MenuItem( "Calligrapher's Supplies" )
+		  me.BaseMenu.AddMenu new MenuItem( "Carpenter's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Cartographer's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Cobbler's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Cook's Utensils" )
+		  me.BaseMenu.AddMenu new MenuItem( "Glassblower's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Jeweler's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Leatherworker's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Mason's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Painter's Supplies" )
+		  me.BaseMenu.AddMenu new MenuItem( "Potter's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Smith's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Tinker's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Weaver's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Woodcarver's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "-" )
+		  me.BaseMenu.AddMenu NewMenuItem( "Miscellaneous", Nil, False )
+		  me.BaseMenu.AddMenu new MenuItem( "Disguise Kit" )
+		  me.BaseMenu.AddMenu new MenuItem( "Forgery Kit" )
+		  me.BaseMenu.AddMenu new MenuItem( "Herbalism Kit" )
+		  me.BaseMenu.AddMenu new MenuItem( "Navigator's Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "Poisoner's Kit" )
+		  me.BaseMenu.AddMenu new MenuItem( "Thieves' Tools" )
+		  me.BaseMenu.AddMenu new MenuItem( "-" )
+		  me.BaseMenu.AddMenu NewMenuItem( "Gaming Set", Nil, False )
+		  me.BaseMenu.AddMenu new MenuItem( "Gaming Set" )
+		  me.BaseMenu.AddMenu new MenuItem( "Dice Set" )
+		  me.BaseMenu.AddMenu new MenuItem( "Dragonchess Set" )
+		  me.BaseMenu.AddMenu new MenuItem( "Playing Card Set" )
+		  me.BaseMenu.AddMenu new MenuItem( "Three-Dragon Ante Set" )
+		  me.BaseMenu.AddMenu new MenuItem( "-" )
+		  me.BaseMenu.AddMenu NewMenuItem( "Musical Instruments", Nil, False )
+		  me.BaseMenu.AddMenu new MenuItem( "Musical Instrument" )
+		  me.BaseMenu.AddMenu new MenuItem( "Bagpipes" )
+		  me.BaseMenu.AddMenu new MenuItem( "Drum" )
+		  me.BaseMenu.AddMenu new MenuItem( "Dulcimer" )
+		  me.BaseMenu.AddMenu new MenuItem( "Flute" )
+		  me.BaseMenu.AddMenu new MenuItem( "Lute" )
+		  me.BaseMenu.AddMenu new MenuItem( "Lyre" )
+		  me.BaseMenu.AddMenu new MenuItem( "Horn" )
+		  me.BaseMenu.AddMenu new MenuItem( "Pan FLute" )
+		  me.BaseMenu.AddMenu new MenuItem( "Shawm" )
+		  me.BaseMenu.AddMenu new MenuItem( "Viol" )
+		  me.BaseMenu.AddMenu new MenuItem( "-" )
+		  me.BaseMenu.AddMenu NewMenuItem( "Vehicles", Nil, False )
+		  me.BaseMenu.AddMenu new MenuItem( "Vehicle (Air)" )
+		  me.BaseMenu.AddMenu new MenuItem( "Vehicle (Land)" )
+		  me.BaseMenu.AddMenu new MenuItem( "Vehicle (Water)" )
 		End Sub
 	#tag EndEvent
 

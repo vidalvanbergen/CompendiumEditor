@@ -1,31 +1,99 @@
 #tag Class
-Protected Class ccSpecialTraits
+Protected Class ccProficienciesLanguages
 Inherits ccEditorTextField
 	#tag Event
 		Sub Open()
-		  me.FieldName = "Special Traits:"
-		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
+		  me.FieldName = "Languages:"
+		  me.SetMode ccEditorTextField.Mode.MultipleChoice
 		  me.ReadOnly = False
+		  'me.UseLowercase = True
 		  
-		  me.BaseMenu.Append new MenuItem("None", "")
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Fighting Styles:", Nil, False)
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Archery")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Defense")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Dueling")
-		  me.BaseMenu.Append new MenuItem("Fighting Style: Two-Weapon Fighting")
+		  me.BaseMenu.AddMenu new MenuItem("None", "")
 		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Unarmored Defense:", Nil, False)
-		  for each abilityname as String in DnDArrays.AbilityNames
-		    me.BaseMenu.Append new MenuItem("Unarmored Defense: " + abilityname)
-		  next
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Standard", Nil, False)
 		  
-		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append NewMenuItem("Special:", Nil, False)
-		  me.BaseMenu.Append new MenuItem( "Jack of all Trades" )
-		  me.BaseMenu.Append new MenuItem( "Powerful Build" )
-		  me.BaseMenu.Append new MenuItem( "Toughness" )
+		  me.BaseMenu.AddMenu new MenuItem("Common")
+		  me.BaseMenu.AddMenu new MenuItem("Common Sign Language")
+		  me.BaseMenu.AddMenu new MenuItem("Dwarvish")
+		  me.BaseMenu.AddMenu new MenuItem("Elvish")
+		  me.BaseMenu.AddMenu new MenuItem("Giant")
+		  me.BaseMenu.AddMenu new MenuItem("Gnomish")
+		  me.BaseMenu.AddMenu new MenuItem("Goblin")
+		  me.BaseMenu.AddMenu new MenuItem("Halfling")
+		  me.BaseMenu.AddMenu new MenuItem("Orc")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Thieves' Cant")
+		  me.BaseMenu.AddMenu new MenuItem("Druidic")
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu new MenuItem("Any 1 language")
+		  me.BaseMenu.AddMenu new MenuItem("Any 2 languages")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Exotic", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Abyssal")
+		  me.BaseMenu.AddMenu new MenuItem("Celestial")
+		  me.BaseMenu.AddMenu new MenuItem("Draconic")
+		  me.BaseMenu.AddMenu new MenuItem("Deep Speech")
+		  me.BaseMenu.AddMenu new MenuItem("Infernal")
+		  me.BaseMenu.AddMenu new MenuItem("Primordial")
+		  me.BaseMenu.AddMenu new MenuItem("Sylvan")
+		  me.BaseMenu.AddMenu new MenuItem("Undercommon")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Elemental", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Auran")
+		  me.BaseMenu.AddMenu new MenuItem("Aquan")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Humblewood", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Birdfolk")
+		  me.BaseMenu.AddMenu new MenuItem("Cervan")
+		  me.BaseMenu.AddMenu new MenuItem("Hedge")
+		  me.BaseMenu.AddMenu new MenuItem("Jerbeen")
+		  me.BaseMenu.AddMenu new MenuItem("Mapach")
+		  me.BaseMenu.AddMenu new MenuItem("Vulpin")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Kobold Press", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Darakhul")
+		  me.BaseMenu.AddMenu new MenuItem("Erina")
+		  me.BaseMenu.AddMenu new MenuItem("Huginn's Speech")
+		  me.BaseMenu.AddMenu new MenuItem("Huginn's Tongue")
+		  me.BaseMenu.AddMenu new MenuItem("Ravenfolk")
+		  me.BaseMenu.AddMenu new MenuItem("Umbral")
+		  me.BaseMenu.AddMenu new MenuItem("Void Speech")
+		  
+		  me.BaseMenu.AddMenu new MenuItem("-")
+		  me.BaseMenu.AddMenu NewMenuItem("Other", Nil, False)
+		  
+		  me.BaseMenu.AddMenu new MenuItem("Bothii")
+		  me.BaseMenu.AddMenu new MenuItem("Bullywug")
+		  me.BaseMenu.AddMenu new MenuItem("Daelkyr")
+		  me.BaseMenu.AddMenu new MenuItem("Ergot")
+		  me.BaseMenu.AddMenu new MenuItem("Gith")
+		  me.BaseMenu.AddMenu new MenuItem("Hadozee")
+		  me.BaseMenu.AddMenu new MenuItem("Kenderspeak")
+		  me.BaseMenu.AddMenu new MenuItem("Leonin")
+		  me.BaseMenu.AddMenu new MenuItem("Loxodon")
+		  me.BaseMenu.AddMenu new MenuItem("Marquesian")
+		  me.BaseMenu.AddMenu new MenuItem("Minotaur")
+		  me.BaseMenu.AddMenu new MenuItem("Naush")
+		  me.BaseMenu.AddMenu new MenuItem("Netherese")
+		  me.BaseMenu.AddMenu new MenuItem("Ogre")
+		  me.BaseMenu.AddMenu new MenuItem("Quori")
+		  me.BaseMenu.AddMenu new MenuItem("Riedran")
+		  me.BaseMenu.AddMenu new MenuItem("Terran")
+		  me.BaseMenu.AddMenu new MenuItem("Thayan")
+		  me.BaseMenu.AddMenu new MenuItem("Thri-Kreen")
+		  me.BaseMenu.AddMenu new MenuItem("Vedalken")
+		  me.BaseMenu.AddMenu new MenuItem("Yeti")
+		  me.BaseMenu.AddMenu new MenuItem("Zemnian")
+		  
 		End Sub
 	#tag EndEvent
 

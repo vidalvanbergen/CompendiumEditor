@@ -10,7 +10,7 @@ Begin ContainerControl ccFeat
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   848
+   Height          =   1177
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
@@ -89,7 +89,7 @@ Begin ContainerControl ccFeat
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -127,7 +127,7 @@ Begin ContainerControl ccFeat
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -162,7 +162,7 @@ Begin ContainerControl ccFeat
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Feat description."
@@ -197,7 +197,7 @@ Begin ContainerControl ccFeat
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -221,7 +221,7 @@ Begin ContainerControl ccFeat
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   260
+      Height          =   237
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -231,7 +231,7 @@ Begin ContainerControl ccFeat
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -272,7 +272,7 @@ Begin ContainerControl ccFeat
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -305,7 +305,7 @@ Begin ContainerControl ccFeat
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -329,12 +329,392 @@ Begin ContainerControl ccFeat
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   9
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
       Top             =   20
       Transparent     =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   2
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   853
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   3
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   889
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccProficienciesArmor cProficienciesArmor
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Armor and shield proficiencies."
+      Top             =   855
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin ccProficienciesWeapons cProficienciesWeapons
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Weapon proficiencies."
+      Top             =   891
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin ccProficienciesTools cProficienciesTools
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Tool proficiencies."
+      Top             =   927
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   4
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   925
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   24
+   End
+   Begin ccDiceRolls cDiceRolls
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackgroundColor=   False
+      Height          =   158
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   999
+      Transparent     =   True
+      Visible         =   True
+      Width           =   660
+   End
+   Begin Separator sepLine
+      AllowAutoDeactivate=   True
+      Enabled         =   True
+      Height          =   4
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   837
+      Transparent     =   False
+      Visible         =   True
+      Width           =   660
+   End
+   Begin ccProficienciesLanguages cLanguagesKnown
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   False
+      AllowTabs       =   True
+      Backdrop        =   0
+      BackgroundColor =   &cFFFFFF00
+      DoubleBuffer    =   False
+      Enabled         =   True
+      EraseBackground =   True
+      FieldName       =   ""
+      HasBackgroundColor=   False
+      Height          =   24
+      Index           =   -2147483648
+      InitialParent   =   ""
+      IsPrefixedNumber=   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      MultipleOption  =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tag             =   ""
+      TagsForValue    =   False
+      Tooltip         =   "Condition immunities."
+      Top             =   963
+      Transparent     =   True
+      UseLowercase    =   False
+      Value           =   ""
+      Visible         =   True
+      Width           =   624
+   End
+   Begin BevelButton bvlUnofficialInfo
+      AllowAutoDeactivate=   True
+      AllowFocus      =   True
+      BackgroundColor =   &c00000000
+      BevelStyle      =   5
+      Bold            =   False
+      ButtonStyle     =   0
+      Caption         =   "𝒾"
+      CaptionAlignment=   3
+      CaptionDelta    =   0
+      CaptionPosition =   1
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      HasBackgroundColor=   False
+      Height          =   24
+      Icon            =   0
+      IconAlignment   =   0
+      IconDeltaX      =   0
+      IconDeltaY      =   0
+      Index           =   5
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   656
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      MenuStyle       =   0
+      Scope           =   0
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   961
+      Transparent     =   False
+      Underline       =   False
+      Value           =   False
       Visible         =   True
       Width           =   24
    End
@@ -371,6 +751,20 @@ End
 		    xFeat.AppendSimpleChild( "proficiency", cProficiencies.Value )
 		  end if
 		  
+		  // Unofficial
+		  if cProficienciesArmor.Value <> "" then
+		    xNode.AppendSimpleChild( "armor", cProficienciesArmor.Value )
+		  end if
+		  if cProficienciesWeapons.Value <> "" then
+		    xNode.AppendSimpleChild( "weapons", cProficienciesWeapons.Value )
+		  end if
+		  if cProficienciesTools.Value <> "" then
+		    xNode.AppendSimpleChild( "tools", cProficienciesTools.Value )
+		  end if
+		  if cLanguagesKnown.Value <> "" then
+		    xNode.AppendSimpleChild( "languages", cLanguagesKnown.Value )
+		  end if
+		  
 		  // Description
 		  SetDescription( xFeat, cDescription.Value, ccSourceBox.GetSources )
 		  
@@ -391,6 +785,8 @@ End
 		    next
 		  end if
 		  
+		  // Unofficial Dice rolls
+		  cDiceRolls.AddDiceRollsTo( xNode )
 		  
 		  
 		  Return xFeat
@@ -453,6 +849,24 @@ End
 		        next
 		        cProficiencies.Tags = cProficiencies.Values
 		        
+		      case "tools" // Unofficial
+		        cProficienciesTools.Value = TheValue
+		        
+		        cProficienciesTools.Values = TheValue.Split(",")
+		        for i as Integer = 0 to cProficienciesTools.Values.LastIndex
+		          cProficienciesTools.Values(i) = cProficienciesTools.Values(i).Trim
+		        next
+		        cProficienciesTools.Tags = cProficienciesTools.Values
+		        
+		      case "armor" // Unofficial
+		        cProficienciesArmor.SetMultiValues SplitString( TheValue, "," )
+		        
+		      case "weapons" // Unofficial
+		        cProficienciesWeapons.SetMultiValues SplitString( TheValue, "," )
+		        
+		      case "languages" // Unofficial
+		        cLanguagesKnown.SetMultiValues SplitString( TheValue, "," )
+		        
 		      case "special"
 		        cSpecialTraits.Value = TheValue
 		        
@@ -480,6 +894,27 @@ End
 		          cModifiers.addrow "Bonus", TheValue
 		          Break
 		        end if
+		        
+		      case "roll" // Unofficial
+		        var attribute, level, attributeValue as String
+		        if xProperty.AttributeCount > 0 then
+		          for i as Integer = 0 to xProperty.AttributeCount-1
+		            var xAttribute as XMLAttribute = xProperty.GetAttributeNode(i)
+		            attribute = xAttribute.Name
+		            if attribute = "description" then
+		              attributeValue = xAttribute.Value
+		            elseif attribute = "level" then
+		              level = xAttribute.Value
+		            elseif attribute = "xmlns:xml" then
+		              var s as String = xAttribute.Value
+		            else
+		              Break
+		            end if
+		          next
+		        end if
+		        
+		        cDiceRolls.lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( TheValue ), level, attributeValue
+		        cDiceRolls.lstDiceRolls.RowTagAt( cDiceRolls.lstDiceRolls.LastAddedRowIndex ) = TheValue
 		        
 		      else
 		        Break
@@ -512,6 +947,12 @@ End
 		  
 		  cModifiers.Reset
 		  xNode = Nil
+		  
+		  cProficienciesArmor.Reset
+		  cProficienciesWeapons.Reset
+		  cProficienciesTools.Reset
+		  cDiceRolls.Reset
+		  cLanguagesKnown.Reset
 		End Sub
 	#tag EndMethod
 
@@ -564,6 +1005,13 @@ End
 	#tag Event
 		Sub Open()
 		  me.SetMode ccEditorTextField.Mode.Textfield
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDescription
+	#tag Event
+		Sub Open()
+		  me.FieldName = "Description:"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -624,6 +1072,25 @@ End
 	#tag Event
 		Sub Pressed(segmentIndex As Integer)
 		  cName.Value = SmartTitleCase( cName.Value )
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bvlUnofficialInfo
+	#tag Event
+		Sub Action(index as Integer)
+		  msgUnofficialFeature
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cDiceRolls
+	#tag Event
+		Sub FindDiceNotationsIn(ByRef Name as String, ByRef Source as String)
+		  Source = cDescription.Value
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Open()
+		  me.bvlUnofficialInfo.Visible = True
 		End Sub
 	#tag EndEvent
 #tag EndEvents

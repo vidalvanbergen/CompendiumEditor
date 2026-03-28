@@ -10,7 +10,7 @@ Begin Window wndFeature
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   636
+   Height          =   700
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -191,7 +191,7 @@ Begin Window wndFeature
       Enabled         =   True
       EraseBackground =   True
       HasBackgroundColor=   False
-      Height          =   598
+      Height          =   662
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -272,6 +272,20 @@ End
 		    xNode.AppendSimpleChild( "proficiency", cFeatures.cProficiency.Value )
 		  end if
 		  
+		  // Custom
+		  if cFeatures.cProficienciesArmor.Value <> "" then
+		    xNode.AppendSimpleChild( "armor", cFeatures.cProficienciesArmor.Value )
+		  end if
+		  if cFeatures.cProficienciesWeapons.Value <> "" then
+		    xNode.AppendSimpleChild( "weapons", cFeatures.cProficienciesWeapons.Value )
+		  end if
+		  if cFeatures.cProficienciesTools.Value <> "" then
+		    xNode.AppendSimpleChild( "tools", cFeatures.cProficienciesTools.Value )
+		  end if
+		  'if cFeatures.cProficienciesTools.Value <> "" then
+		  'xNode.AppendSimpleChild( "languages", cFeatures.c.Value )
+		  'end if
+		  
 		  // Special
 		  if cFeatures.cSpecial.Value <> "" then
 		    xNode.AppendSimpleChild( "special", cFeatures.cSpecial.Value )
@@ -289,7 +303,7 @@ End
 		    next
 		  end if
 		  
-		  // Attack rolls
+		  // Dice Rolls
 		  cFeatures.cDiceRolls.AddDiceRollsTo( xNode )
 		End Sub
 	#tag EndMethod

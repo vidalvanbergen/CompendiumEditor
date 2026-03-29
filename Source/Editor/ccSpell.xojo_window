@@ -1698,15 +1698,15 @@ End
 		  
 		  me.BaseMenu.Append new MenuItem("None", "")
 		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Action")
-		  me.BaseMenu.Append new MenuItem("1 Reaction")
-		  me.BaseMenu.Append new MenuItem("1 Bonus Action")
+		  me.BaseMenu.Append new MenuItem("1 Action", "1 action")
+		  me.BaseMenu.Append new MenuItem("1 Reaction", "1 reaction")
+		  me.BaseMenu.Append new MenuItem("1 Bonus Action", "1 bonus action")
 		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Minute")
-		  me.BaseMenu.Append new MenuItem("10 Minutes")
+		  me.BaseMenu.Append new MenuItem("1 Minute", "1 minute")
+		  me.BaseMenu.Append new MenuItem("10 Minutes", "10 minutes")
 		  me.BaseMenu.Append new MenuItem("-")
-		  me.BaseMenu.Append new MenuItem("1 Hour")
-		  me.BaseMenu.Append new MenuItem("24 Hours")
+		  me.BaseMenu.Append new MenuItem("1 Hour", "1 hour")
+		  me.BaseMenu.Append new MenuItem("24 Hours", "24 hours")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

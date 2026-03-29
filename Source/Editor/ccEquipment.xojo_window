@@ -1893,7 +1893,7 @@ End
 		    cvsArmor.Visible = False
 		    cvsWeapon.Visible = True
 		    
-		    cvsWeapon.Top = 290
+		    cvsWeapon.Top = cGoldValue.Top + cGoldValue.Height + 12 '290
 		    cvsPlacard.Top = cvsWeapon.Top + cvsWeapon.Height + 12
 		    
 		    self.Height = cvsPlacard.Top + cvsPlacard.Height + 20
@@ -1902,7 +1902,7 @@ End
 		    cvsArmor.Visible = True
 		    cvsWeapon.Visible = False
 		    
-		    cvsArmor.Top = 290
+		    cvsArmor.Top = cGoldValue.Top + cGoldValue.Height + 12 '290
 		    cvsPlacard.Top = cvsArmor.Top + cvsArmor.Height + 12
 		    
 		    self.Height = cvsPlacard.Top + cvsPlacard.Height + 20
@@ -1911,7 +1911,7 @@ End
 		    cvsArmor.Visible = False
 		    cvsWeapon.Visible = False
 		    
-		    cvsPlacard.Top = 290
+		    cvsPlacard.Top = cGoldValue.Top + cGoldValue.Height + 12 '290
 		    
 		  End Select
 		  

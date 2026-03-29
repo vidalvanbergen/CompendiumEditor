@@ -46,6 +46,8 @@ Inherits ccEditorTextField
 		  
 		  me.BaseMenu.AddMenu new MenuItem("Auran")
 		  me.BaseMenu.AddMenu new MenuItem("Aquan")
+		  me.BaseMenu.AddMenu new MenuItem("Ignan")
+		  me.BaseMenu.AddMenu new MenuItem("Terran")
 		  
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  me.BaseMenu.AddMenu NewMenuItem("Humblewood", Nil, False)

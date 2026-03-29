@@ -10,13 +10,13 @@ Begin ContainerControl ccFeatures
    Enabled         =   True
    EraseBackground =   True
    HasBackgroundColor=   False
-   Height          =   1263
+   Height          =   1217
    Index           =   -2147483648
    InitialParent   =   ""
    Left            =   0
    LockBottom      =   False
    LockLeft        =   True
-   LockRight       =   False
+   LockRight       =   True
    LockTop         =   True
    TabIndex        =   0
    TabPanelIndex   =   0
@@ -152,7 +152,7 @@ Begin ContainerControl ccFeatures
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -190,7 +190,7 @@ Begin ContainerControl ccFeatures
       EraseBackground =   True
       FieldName       =   ""
       HasBackgroundColor=   False
-      Height          =   22
+      Height          =   24
       Index           =   -2147483648
       InitialParent   =   ""
       IsPrefixedNumber=   False
@@ -209,7 +209,7 @@ Begin ContainerControl ccFeatures
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Special traits. Use the menu button to choose from the list of available traits."
-      Top             =   722
+      Top             =   616
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -241,7 +241,7 @@ Begin ContainerControl ccFeatures
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
-      Top             =   756
+      Top             =   652
       Transparent     =   True
       Visible         =   True
       Width           =   560
@@ -271,7 +271,7 @@ Begin ContainerControl ccFeatures
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   1017
+      Top             =   1039
       Transparent     =   True
       Visible         =   True
       Width           =   560
@@ -361,7 +361,7 @@ Begin ContainerControl ccFeatures
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Armor and shield proficiencies."
-      Top             =   614
+      Top             =   931
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -399,7 +399,7 @@ Begin ContainerControl ccFeatures
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Tool proficiencies."
-      Top             =   686
+      Top             =   1003
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -437,7 +437,7 @@ Begin ContainerControl ccFeatures
       Tag             =   ""
       TagsForValue    =   False
       Tooltip         =   "Weapon proficiencies."
-      Top             =   650
+      Top             =   967
       Transparent     =   True
       UseLowercase    =   False
       Value           =   ""
@@ -481,7 +481,7 @@ Begin ContainerControl ccFeatures
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   612
+      Top             =   929
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -525,7 +525,7 @@ Begin ContainerControl ccFeatures
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   648
+      Top             =   965
       Transparent     =   False
       Underline       =   False
       Value           =   False
@@ -569,12 +569,34 @@ Begin ContainerControl ccFeatures
       TabStop         =   True
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   684
+      Top             =   1001
       Transparent     =   False
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   24
+   End
+   Begin Separator Separator1
+      AllowAutoDeactivate=   True
+      Enabled         =   True
+      Height          =   4
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   913
+      Transparent     =   False
+      Visible         =   True
+      Width           =   560
    End
 End
 #tag EndWindow

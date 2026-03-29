@@ -638,6 +638,23 @@ End
 		  while result <> ""
 		    result = AddCalculation(False)
 		  wend
+		  
+		  
+		  var nameValue, Source as String
+		  RaiseEvent FindDiceNotationsIn( nameValue, Source )
+		  
+		  // Save DC
+		  var saveDCMatch as string = Source.Match("((\w+) saving throw \(DC equal to 8 \+ your (\w+) modifier \+ your proficiency bonus\))", 0)
+		  
+		  if saveDCMatch <> "" then
+		    var saveDCName as String = saveDCMatch.Match("(\w+) saving throw", 1)
+		    var saveDCModifier as String = saveDCMatch.Match("your (\w+) modifier", 1)
+		    var saveDCCalc as String = "8 + " + saveDCModifier.Left(3).Uppercase + " + PROF"
+		    
+		    lstDiceRolls.AddRowAt(0, saveDCCalc)
+		    lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 2) = saveDCName + " Save DC"
+		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( saveDCCalc )
+		  end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -152,6 +152,54 @@ Protected Class Compendium
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Shared Sub EditSubclassFeatures(xClass as XMLNode, OldSubclassName as String, NewSubclassName as String)
+		  
+		  if xClass <> Nil and xClass.ChildCount > -1 then
+		    
+		    'for index as Integer = xClass.ChildCount-1 DownTo 0
+		    for each xAutolevel as XMLNode in xClass.Children
+		      'if xClass.Child(index) <> Nil and xClass.Child(index).Name = "autolevel" then
+		      'var xAutolevel as XMLNode = xClass.Child(index)
+		      if xAutolevel <> Nil and xAutolevel.Name = "autolevel" then
+		        
+		        'for i as Integer = xAutolevel.ChildCount-1 DownTo 0
+		        'var xChild as XMLNode = xAutolevel.Child(i)
+		        
+		        for each xChild as XMLNode in xAutolevel.Children
+		          
+		          
+		          if xChild.Name = "feature" and xChild.ValueOfNodeWithName("name").Contains( OldSubclassName ) then
+		            'xAutolevel.RemoveChild( xChild )
+		            for each xLeaf as XMLNode in xChild.Children
+		              if xLeaf.Name = "name" and xLeaf.FirstChild <> Nil then
+		                xLeaf.FirstChild.Value = xLeaf.FirstChild.Value.ReplaceAll( OldSubclassName, NewSubclassName )
+		              end if
+		            next
+		            
+		            
+		          elseif xChild.Name = "counter" and xChild.ValueOfNodeWithName("subclass") = OldSubclassName then
+		            'xAutolevel.RemoveChild( xChild )
+		            
+		            for each xLeaf as XMLNode in xChild.Children
+		              if xLeaf.Name = "subclass" and xLeaf.FirstChild <> Nil then
+		                xLeaf.FirstChild.Value = NewSubclassName 'xLeaf.FirstChild.Value.ReplaceAll( OldSubclassName, NewSubclassName )
+		              end if
+		            next
+		            
+		          end if // @END xchild.name = feature or counter
+		          
+		        next // @NEXT xchild
+		        
+		      end if // @END xclass.name = autolevel
+		      
+		      
+		    next // @NEXT xAutolevel
+		    
+		  end if
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Sub FormatMonster(ByRef xNode as XMLNode)
 		  

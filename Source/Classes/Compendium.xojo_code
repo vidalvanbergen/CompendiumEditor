@@ -157,14 +157,10 @@ Protected Class Compendium
 		  
 		  if xClass <> Nil and xClass.ChildCount > -1 then
 		    
-		    'for index as Integer = xClass.ChildCount-1 DownTo 0
 		    for each xAutolevel as XMLNode in xClass.Children
-		      'if xClass.Child(index) <> Nil and xClass.Child(index).Name = "autolevel" then
-		      'var xAutolevel as XMLNode = xClass.Child(index)
+		      
 		      if xAutolevel <> Nil and xAutolevel.Name = "autolevel" then
 		        
-		        'for i as Integer = xAutolevel.ChildCount-1 DownTo 0
-		        'var xChild as XMLNode = xAutolevel.Child(i)
 		        
 		        for each xChild as XMLNode in xAutolevel.Children
 		          
@@ -183,7 +179,7 @@ Protected Class Compendium
 		            
 		            for each xLeaf as XMLNode in xChild.Children
 		              if xLeaf.Name = "subclass" and xLeaf.FirstChild <> Nil then
-		                xLeaf.FirstChild.Value = NewSubclassName 'xLeaf.FirstChild.Value.ReplaceAll( OldSubclassName, NewSubclassName )
+		                xLeaf.FirstChild.Value = NewSubclassName
 		              end if
 		            next
 		            

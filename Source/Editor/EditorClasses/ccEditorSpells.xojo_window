@@ -58,7 +58,7 @@ Begin ContainerControl ccEditorSpells
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   2
-      TabIndex        =   0
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -92,7 +92,7 @@ Begin ContainerControl ccEditorSpells
       Multiline       =   True
       Scope           =   2
       Selectable      =   False
-      TabIndex        =   1
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Comma separated list of spell names."
@@ -139,7 +139,7 @@ Begin ContainerControl ccEditorSpells
       Multiline       =   True
       ReadOnly        =   False
       Scope           =   2
-      TabIndex        =   2
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   ""
@@ -176,7 +176,7 @@ Begin ContainerControl ccEditorSpells
       Multiline       =   False
       Scope           =   2
       Selectable      =   False
-      TabIndex        =   3
+      TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Spells:"

@@ -86,7 +86,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Insert %name% where the item's name will be replaced with the base item's name."
@@ -124,7 +124,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -159,7 +159,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "This will replace existing rarity."
@@ -194,7 +194,7 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -226,7 +226,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   10
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Magic item description, added before base non-magic item's description."
@@ -264,7 +264,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -299,7 +299,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   12
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Added first to the list of sources on the base item."
@@ -333,7 +333,7 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -363,7 +363,7 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -395,7 +395,7 @@ Begin ContainerControl ccTemplate
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -426,7 +426,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   8
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Uncheck if item is not magical."
@@ -464,7 +464,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -499,7 +499,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   6
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Exclude items with these names."
@@ -537,7 +537,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -572,7 +572,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   16
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Match items which name contain one of these words. (Comma separated)"
@@ -610,7 +610,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -645,7 +645,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   18
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Match items with these properties."
@@ -680,7 +680,7 @@ Begin ContainerControl ccTemplate
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   19
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Match items with these type(s)."
@@ -718,7 +718,7 @@ Begin ContainerControl ccTemplate
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   20
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -746,7 +746,7 @@ Begin ContainerControl ccTemplate
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   21
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"

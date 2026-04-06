@@ -84,7 +84,7 @@ Begin Window wndFeatureOLD
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the feature."
@@ -119,7 +119,7 @@ Begin Window wndFeatureOLD
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -157,7 +157,7 @@ Begin Window wndFeatureOLD
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -191,7 +191,7 @@ Begin Window wndFeatureOLD
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -388,7 +388,7 @@ Begin Window wndFeatureOLD
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -451,7 +451,7 @@ Begin Window wndFeatureOLD
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -475,7 +475,7 @@ Begin Window wndFeatureOLD
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   11
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"

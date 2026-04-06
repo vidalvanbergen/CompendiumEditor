@@ -367,7 +367,7 @@ Begin ContainerControl ccSourceInfoEditor
    End
    Begin DateTimePicker dtPubDate
       AllowAutoDeactivate=   True
-      AllowFocusRing  =   False
+      AllowFocusRing  =   True
       DisplayMode     =   1
       DisplaySeconds  =   False
       Enabled         =   False

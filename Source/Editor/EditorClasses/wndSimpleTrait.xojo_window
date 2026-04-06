@@ -84,7 +84,7 @@ Begin Window wndSimpleTrait
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait."
@@ -217,7 +217,7 @@ Begin Window wndSimpleTrait
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -244,7 +244,7 @@ Begin Window wndSimpleTrait
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   4
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"

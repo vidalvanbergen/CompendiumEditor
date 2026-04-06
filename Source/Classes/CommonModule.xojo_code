@@ -418,8 +418,9 @@ Protected Module CommonModule
 		  
 		  
 		  if Keyboard.AsyncAltKey then
-		    spellText = spellText.Lowercase.ReplaceAll( "(hb)", "(HB)" )
+		    spellText = spellText.ReplaceAll( "(hb)", "(HB)" )
 		  end if
+		  spellText = spellText.ReplaceAll( "(Tp)", "(TP)" )
 		  'spellText = spellText.ReplaceAllRegEx( " \((.*?)\)", "" )
 		  
 		  
@@ -705,6 +706,7 @@ Protected Module CommonModule
 		  // Custom acronyms
 		  s = s.ReplaceAll("(hb)", "(HB)")
 		  s = s.ReplaceAll("(ua)", "(UA)")
+		  s = s.ReplaceAll("(Tp)", "(TP)")
 		  
 		  Return s
 		End Function

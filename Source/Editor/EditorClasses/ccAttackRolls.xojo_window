@@ -129,7 +129,7 @@ Begin ContainerControl ccAttackRolls
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✎\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   3
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   34
@@ -152,7 +152,7 @@ Begin ContainerControl ccAttackRolls
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   4
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically fill in all the dice rolls"

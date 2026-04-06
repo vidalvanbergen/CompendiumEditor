@@ -87,7 +87,7 @@ Begin ContainerControl ccCreature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Check this box if the creature is a named NPC."
@@ -121,7 +121,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -159,7 +159,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -197,7 +197,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -235,7 +235,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -273,7 +273,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -311,7 +311,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -349,7 +349,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   9
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -387,7 +387,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -425,7 +425,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -463,7 +463,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -501,7 +501,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   12
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -539,7 +539,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -610,7 +610,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -681,7 +681,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   19
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -752,7 +752,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -823,7 +823,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   18
+      TabIndex        =   23
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -894,7 +894,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   19
+      TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -965,7 +965,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   20
+      TabIndex        =   25
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1003,7 +1003,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   21
+      TabIndex        =   26
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1041,7 +1041,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   22
+      TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1079,7 +1079,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   23
+      TabIndex        =   28
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1117,7 +1117,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   24
+      TabIndex        =   29
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1155,7 +1155,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   25
+      TabIndex        =   30
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1193,7 +1193,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   26
+      TabIndex        =   31
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1231,7 +1231,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   28
+      TabIndex        =   33
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1267,7 +1267,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   29
+      TabIndex        =   34
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1303,7 +1303,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   30
+      TabIndex        =   35
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1339,7 +1339,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   27
+      TabIndex        =   32
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1377,7 +1377,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   32
+      TabIndex        =   37
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Passive abilities. (e.g., Legendary Resistance)"
@@ -1412,7 +1412,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   33
+      TabIndex        =   38
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Actions the creature can take."
@@ -1447,7 +1447,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   35
+      TabIndex        =   40
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Reactions it can perform."
@@ -1482,7 +1482,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   36
+      TabIndex        =   41
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Legendary actions (used outside its turn)."
@@ -1517,7 +1517,7 @@ Begin ContainerControl ccCreature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   31
+      TabIndex        =   36
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -1552,7 +1552,7 @@ Begin ContainerControl ccCreature
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   42
+      TabIndex        =   44
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Spell Slots:"
@@ -1594,7 +1594,7 @@ Begin ContainerControl ccCreature
       Password        =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   43
+      TabIndex        =   45
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   ""
@@ -1630,7 +1630,7 @@ Begin ContainerControl ccCreature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   44
+      TabIndex        =   46
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Creature's description."
@@ -1665,7 +1665,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   34
+      TabIndex        =   39
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Bonus actions the creature can take."
@@ -1700,7 +1700,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       Scope           =   0
       Source          =   ""
-      TabIndex        =   37
+      TabIndex        =   42
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Lair actions and descriptions."
@@ -1732,7 +1732,7 @@ Begin ContainerControl ccCreature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   45
+      TabIndex        =   43
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -1764,7 +1764,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   46
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -1806,7 +1806,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   47
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1850,7 +1850,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   48
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1894,7 +1894,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   49
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -1927,7 +1927,7 @@ Begin ContainerControl ccCreature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   50
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -1968,7 +1968,7 @@ Begin ContainerControl ccCreature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   51
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000

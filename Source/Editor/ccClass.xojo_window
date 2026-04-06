@@ -44,7 +44,7 @@ Begin ContainerControl ccClass
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -225,7 +225,7 @@ Begin ContainerControl ccClass
          Scope           =   0
          Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✏️\n\nFalse"
          SelectionType   =   2
-         TabIndex        =   5
+         TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   False
          Top             =   1878
@@ -290,7 +290,7 @@ Begin ContainerControl ccClass
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -319,7 +319,7 @@ Begin ContainerControl ccClass
          LockRight       =   True
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   16
+         TabIndex        =   0
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   ""
@@ -353,7 +353,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   17
+         TabIndex        =   1
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -391,7 +391,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   18
+         TabIndex        =   2
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -429,7 +429,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   19
+         TabIndex        =   3
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -467,7 +467,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   20
+         TabIndex        =   4
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -505,7 +505,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   21
+         TabIndex        =   5
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -543,7 +543,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   22
+         TabIndex        =   6
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -581,7 +581,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   23
+         TabIndex        =   7
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -619,7 +619,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   24
+         TabIndex        =   8
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -657,7 +657,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   25
+         TabIndex        =   9
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -695,7 +695,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   26
+         TabIndex        =   10
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -730,7 +730,7 @@ Begin ContainerControl ccClass
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
-         TabIndex        =   27
+         TabIndex        =   11
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Spells Optional:"
@@ -764,7 +764,7 @@ Begin ContainerControl ccClass
          LockRight       =   False
          LockTop         =   True
          Scope           =   0
-         TabIndex        =   28
+         TabIndex        =   12
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Check if the class's spell slots are optional."
@@ -816,7 +816,7 @@ Begin ContainerControl ccClass
          RequiresSelection=   False
          RowSelectionType=   0
          Scope           =   0
-         TabIndex        =   29
+         TabIndex        =   14
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Spell slots per class and spell level. Optional 'Spells Known' counter."
@@ -848,7 +848,7 @@ Begin ContainerControl ccClass
          Multiline       =   False
          Scope           =   0
          Selectable      =   False
-         TabIndex        =   30
+         TabIndex        =   13
          TabPanelIndex   =   0
          TabStop         =   True
          Text            =   "Spell Slots per Spell Level"
@@ -886,7 +886,7 @@ Begin ContainerControl ccClass
          LockTop         =   True
          Scope           =   0
          Source          =   ""
-         TabIndex        =   31
+         TabIndex        =   15
          TabPanelIndex   =   0
          TabStop         =   True
          Tooltip         =   "Optional class description traits."
@@ -965,7 +965,7 @@ Begin ContainerControl ccClass
          MultipleOption  =   False
          ReadOnly        =   False
          Scope           =   0
-         TabIndex        =   32
+         TabIndex        =   16
          TabPanelIndex   =   0
          TabStop         =   True
          Tag             =   ""
@@ -1143,12 +1143,15 @@ End
 		    end if
 		    
 		    xAutoLevel.SetAttribute("scoreImprovement", "YES")
+		    
+		  else
+		    // Remove empty xautolevels
+		    if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
+		      xAutoLevel.Parent.RemoveChild( xAutoLevel )
+		    end if
 		  end if
 		  
-		  // Remove empty xautolevels
-		  if xAutoLevel <> Nil and xAutoLevel.FirstChild = Nil then
-		    xAutoLevel.Parent.RemoveChild( xAutoLevel )
-		  end if
+		  
 		End Sub
 	#tag EndMethod
 

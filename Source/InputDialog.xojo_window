@@ -313,7 +313,7 @@ End
 		  
 		  txtInput.Text = txtInput.Text.SmartTitleCase
 		  
-		  txtInput.Text = txtInput.Text.ReplaceAll( "(hb)", "(HB)" ).ReplaceAll( "(ua)", "(UA)" )
+		  txtInput.Text = txtInput.Text.ReplaceAll( "(hb)", "(HB)" ).ReplaceAll( "(ua)", "(UA)" ).ReplaceAll("(Tp)", "(TP)")
 		End Sub
 	#tag EndEvent
 #tag EndEvents

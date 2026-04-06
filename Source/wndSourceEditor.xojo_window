@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   9
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1948,6 +1948,8 @@ End
 		  end if
 		  SourceInfoEditorPanel.SaveXML( sourceDestination, Source.XMLFiles )
 		  
+		  sourceDestination.Name = sourceDestination.Name.Lowercase
+		  
 		  Source.SetSource( sourceDestination )
 		  
 		  SetWindowInfo()
@@ -2765,7 +2767,7 @@ End
 		  'if IsHomebrew then
 		  'Postfix = " (Homebrew)"
 		  'end if
-		  TheSourceBook = TheSourceBook.Remove( " [5.5e]" )
+		  TheSourceBook = TheSourceBook.RemoveAll( " [5.5e]" )
 		  
 		  if IsHomebrew and Source.SourceInfo.Lookup("author", "").StringValue <> "" and Source.SourceInfo.Lookup("publisher", "").StringValue = "" then
 		    TheSourceBook = TheSourceBook + " by " + Source.SourceInfo.Lookup("author", "").StringValue

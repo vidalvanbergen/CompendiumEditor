@@ -201,7 +201,7 @@ Begin Window wndFeature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""

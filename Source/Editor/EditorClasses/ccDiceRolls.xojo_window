@@ -132,7 +132,7 @@ Begin ContainerControl ccDiceRolls
       Multiline       =   True
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   9
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "You can optionally add a level and a short description. Fight Club 5e doesn’t use them, but they might be useful in the future."
@@ -164,7 +164,7 @@ Begin ContainerControl ccDiceRolls
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r⿻\n\nFalse\r✎\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   10
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   34
@@ -204,7 +204,7 @@ Begin ContainerControl ccDiceRolls
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -231,7 +231,7 @@ Begin ContainerControl ccDiceRolls
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   12
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically fill in all the dice rolls"
@@ -337,7 +337,7 @@ End
 		  end if
 		  
 		  if result <> "" then
-		    lstDiceRolls.AddRow result, level, description
+		    lstDiceRolls.AddRow DiceCalculatorMethods.PrettifyMath( result ), level, description
 		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( result )
 		    
 		    
@@ -644,17 +644,20 @@ End
 		  RaiseEvent FindDiceNotationsIn( nameValue, Source )
 		  
 		  // Save DC
-		  var saveDCMatch as string = Source.Match("((\w+) saving throw \(DC equal to 8 \+ your (\w+) modifier \+ your proficiency bonus\))", 0)
-		  
-		  if saveDCMatch <> "" then
-		    var saveDCName as String = saveDCMatch.Match("(\w+) saving throw", 1)
-		    var saveDCModifier as String = saveDCMatch.Match("your (\w+) modifier", 1)
-		    var saveDCCalc as String = "8 + " + saveDCModifier.Left(3).Uppercase + " + PROF"
-		    
-		    lstDiceRolls.AddRowAt(0, saveDCCalc)
-		    lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 2) = saveDCName + " Save DC"
-		    lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( saveDCCalc )
-		  end if
+		  'var saveDCMatch as string = Source.Match("((\w+) saving throw \(DC equal to 8 \+ your (\w+) modifier \+ your proficiency bonus\))", 0)
+		  'if saveDCMatch = "" then
+		  'saveDCMatch  = Source.Match("((\w+ check \(DC equal to 8 \+ your (\w+) modifier \+ your proficiency bonus\))", 0)
+		  'end if
+		  '
+		  'if saveDCMatch <> "" then
+		  'var saveDCName as String = saveDCMatch.Match("(\w+) saving throw|(\w+) check", 1)
+		  'var saveDCModifier as String = saveDCMatch.Match("your (\w+) modifier", 1)
+		  'var saveDCCalc as String = "8 + " + saveDCModifier.Left(3).Uppercase + " + PROF"
+		  '
+		  'lstDiceRolls.AddRowAt(0, saveDCCalc)
+		  'lstDiceRolls.CellValueAt( lstDiceRolls.LastAddedRowIndex, 2) = saveDCName + " Save DC"
+		  'lstDiceRolls.RowTagAt( lstDiceRolls.LastAddedRowIndex ) = DiceCalculatorMethods.SimplifyMath( saveDCCalc )
+		  'end if
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -1239,7 +1239,7 @@ End
 		    
 		    // Time
 		    if cTime.Value <> "" then
-		      xSpell.AppendSimpleChild( "time", cTime.Value.Trim )
+		      xSpell.AppendSimpleChild( "time", cTime.Value.Trim.Lowercase )
 		    end if
 		    
 		    // Range

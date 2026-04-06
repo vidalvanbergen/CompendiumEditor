@@ -51,7 +51,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -165,7 +165,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -203,7 +203,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   5
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -237,7 +237,7 @@ Begin ContainerControl ccFeatures
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   6
+      TabIndex        =   7
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Modifiers. The category can be set to one of the following: bonus, ability score, ability modifier, saving throw, or skill. The value for this element is the modifier name, followed by its value."
@@ -267,7 +267,7 @@ Begin ContainerControl ccFeatures
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   15
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -297,7 +297,7 @@ Begin ContainerControl ccFeatures
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -321,7 +321,7 @@ Begin ContainerControl ccFeatures
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   9
+      TabIndex        =   1
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
@@ -355,7 +355,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   10
+      TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -393,7 +393,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   11
+      TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -431,7 +431,7 @@ Begin ContainerControl ccFeatures
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   12
+      TabIndex        =   11
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -476,7 +476,7 @@ Begin ContainerControl ccFeatures
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   13
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -520,7 +520,7 @@ Begin ContainerControl ccFeatures
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   14
+      TabIndex        =   12
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -564,7 +564,7 @@ Begin ContainerControl ccFeatures
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   15
+      TabIndex        =   14
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -589,7 +589,7 @@ Begin ContainerControl ccFeatures
       LockRight       =   False
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""

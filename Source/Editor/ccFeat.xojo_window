@@ -605,7 +605,7 @@ Begin ContainerControl ccFeat
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   16
+      TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -661,7 +661,7 @@ Begin ContainerControl ccFeat
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   17
+      TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -706,7 +706,7 @@ Begin ContainerControl ccFeat
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   18
+      TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000

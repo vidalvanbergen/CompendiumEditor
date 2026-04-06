@@ -1457,10 +1457,14 @@ Protected Class Compendium
 		        next // @NEXT xchild
 		        
 		        
-		        if xAutolevel.ChildCount = 0 then
-		          xClass.RemoveChild( xAutolevel )
-		        elseif xAutolevel.FirstChild = Nil then
-		          xClass.RemoveChild( xAutolevel )
+		        if xAutolevel.GetAttribute("scoreImprovement") <> "YES" and xAutolevel.GetAttribute("scoreImprovement") <> "1" then
+		          
+		          if xAutolevel.ChildCount = 0 then
+		            xClass.RemoveChild( xAutolevel )
+		          elseif xAutolevel.FirstChild = Nil then
+		            xClass.RemoveChild( xAutolevel )
+		          end if
+		          
 		        end if
 		        
 		      end if // @END xclass.name = autolevel

@@ -128,7 +128,7 @@ Begin ContainerControl ccSourceContent
       Scope           =   0
       Segments        =   "+\n\nFalse\r-\n\nFalse\r✎\n\nFalse"
       SelectionType   =   2
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   False
       Top             =   106
@@ -160,7 +160,7 @@ Begin ContainerControl ccSourceContent
       LockTop         =   False
       Scope           =   0
       SelectedRowIndex=   0
-      TabIndex        =   4
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -192,7 +192,7 @@ Begin ContainerControl ccSourceContent
       Multiline       =   False
       Scope           =   0
       Selectable      =   False
-      TabIndex        =   5
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Formatting: [Content Name] p. [page number] ([Tag]), avoid using commas in content name."

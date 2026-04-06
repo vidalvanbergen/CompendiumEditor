@@ -84,7 +84,7 @@ Begin Window wndCreatureFeature
       LockRight       =   True
       LockTop         =   True
       Scope           =   0
-      TabIndex        =   3
+      TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   "Description of the trait or attack."
@@ -210,7 +210,7 @@ Begin Window wndCreatureFeature
       MultipleOption  =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   4
+      TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
       Tag             =   ""
@@ -255,7 +255,7 @@ Begin Window wndCreatureFeature
       LockTop         =   True
       MenuStyle       =   0
       Scope           =   0
-      TabIndex        =   2
+      TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
       TextColor       =   &c00000000
@@ -288,7 +288,7 @@ Begin Window wndCreatureFeature
       LockRight       =   True
       LockTop         =   False
       Scope           =   0
-      TabIndex        =   8
+      TabIndex        =   6
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
@@ -312,7 +312,7 @@ Begin Window wndCreatureFeature
       Scope           =   0
       Segments        =   "🪄\n\nFalse"
       SelectionStyle  =   2
-      TabIndex        =   9
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   False
       Tooltip         =   "Automagically format texts. (Hold Alt key to use indent instead empty lines between paragraphs)"
@@ -612,6 +612,9 @@ End
 		  me.BaseMenu.AddMenu new MenuItem( "4/Day", "4/DAY" )
 		  me.BaseMenu.AddMenu new MenuItem( "5/Day", "5/DAY" )
 		  me.BaseMenu.AddMenu new MenuItem( "6/Day", "6/DAY" )
+		  me.BaseMenu.AddMenu new MenuItem( "7/Day", "7/DAY" )
+		  me.BaseMenu.AddMenu new MenuItem( "8/Day", "8/DAY" )
+		  me.BaseMenu.AddMenu new MenuItem( "9/Day", "9/DAY" )
 		  me.BaseMenu.AddMenu new MenuItem( "-" )
 		  me.BaseMenu.AddMenu new MenuItem( "1/Turn", "1/Turn" )
 		  me.BaseMenu.AddMenu new MenuItem( "2/Turn", "2/Turn" )

@@ -393,7 +393,7 @@ Begin WindowPro wndSourceEditor
       Tooltip         =   ""
       Top             =   123
       Transparent     =   False
-      Value           =   0
+      Value           =   2
       Visible         =   True
       Width           =   1024
       Begin DNDToolbar cvsToolbar
@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   9
+         Value           =   7
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds

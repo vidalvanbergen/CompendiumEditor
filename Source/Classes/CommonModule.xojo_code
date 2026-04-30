@@ -201,8 +201,8 @@ Protected Module CommonModule
 		      Description = Description.ReplaceAllRegEx( "Source:(.*?)\Z", "" )
 		    end if
 		    
-		    if Description.Contains("Source:") then
-		      Description = Description.Left( Description.InStr("Source:")-1 ).Trim
+		    if Description.Contains(EndOfLine + "Source:") then
+		      Description = Description.Left( Description.InStr(EndOfLine + "Source:")-1 ).Trim
 		    end if
 		    
 		  end if
@@ -720,12 +720,17 @@ Protected Module CommonModule
 
 	#tag Method, Flags = &h0
 		Function SourceFromDescription(Description as String) As String
-		  if Description.Contains("Source:") then
-		    var sourceString as string = Description.Match("Source:\s(.*?)\Z", 1)
-		    sourceString = sourceString.ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(13), " " ).ReplaceAll( chr(9), "" )
+		  var sourceString as string
+		  if Description.Contains(EndOfLine + "Source:") then
+		    sourceString = Description.Match(EndOfLine + "Source:\s(.*?)\Z", 1)
 		    
-		    Return sourceString
+		  elseif Description.StartsWith("Source:") then
+		    sourceString = Description.Match("Source:\s(.*?)\Z", 1)
+		    
 		  end if
+		  
+		  sourceString = sourceString.ReplaceAll( EndOfLine, " " ).ReplaceAll( chr(13), " " ).ReplaceAll( chr(9), "" )
+		  Return sourceString
 		End Function
 	#tag EndMethod
 

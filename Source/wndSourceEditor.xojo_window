@@ -724,7 +724,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   7
+         Value           =   0
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -2286,7 +2286,9 @@ End
 		      var xmlFile as FolderItem = me.RowTagAt( me.SelectedRowIndex )
 		      lstXML.BuildList( xmlFile )
 		      
-		      lstXML.SelectedRowIndex = 0
+		      if lstXML.LastRowIndex > -1 then
+		        lstXML.SelectedRowIndex = 0
+		      end if
 		    end if
 		    
 		    

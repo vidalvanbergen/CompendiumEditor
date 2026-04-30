@@ -1395,7 +1395,7 @@ End
 		                attributeValue = xAttribute.Value
 		              elseif attribute = "level" then
 		                level = xAttribute.Value
-		              elseif attribute = "xmlns:xml" then
+		              elseif attribute = "xmlns:xml" or attribute = "xmlns" then
 		                var s as String = xAttribute.Value
 		              else
 		                Break

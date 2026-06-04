@@ -1561,7 +1561,7 @@ End
 		  
 		  
 		  var homebrew as string
-		  if Source.SourceInfo.Lookup("category", "") = "Homebrew" and type <> "class" and type <> "monster" then
+		  if ( Source.SourceInfo.Lookup("category", "") = "Homebrew" OR Source.SourceInfo.Lookup("category", "") = "Indie" ) and type <> "class" and type <> "monster" then
 		    homebrew = " (HB)"
 		  end if
 		  

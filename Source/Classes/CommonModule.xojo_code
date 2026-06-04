@@ -137,7 +137,7 @@ Protected Module CommonModule
 		      if Category.Contains("Homebrew") or Category.Contains("Third Party") then
 		        SourceString = SourceString + " (" + Category + ")"
 		      elseif Category.Contains("Indie") then
-		        SourceString = SourceString + " (Homebrew)"
+		        SourceString = SourceString + " (Indie)"
 		      elseif Category.Contains("Partnered Content") then
 		        SourceString = SourceString + " (Third Party)"
 		      end if

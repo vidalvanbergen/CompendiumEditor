@@ -2385,6 +2385,7 @@ End
 		  me.BaseMenu.AddMenu new MenuItem("-")
 		  
 		  me.BaseMenu.AddMenu new MenuItem("Burrow 30 ft.")
+		  me.BaseMenu.AddMenu new MenuItem("Climb 30 ft.")
 		  me.BaseMenu.AddMenu new MenuItem("Fly 30 ft.")
 		  me.BaseMenu.AddMenu new MenuItem("Hover 30 ft.")
 		  me.BaseMenu.AddMenu new MenuItem("Swim 30 ft.")

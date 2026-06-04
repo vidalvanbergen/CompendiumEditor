@@ -405,7 +405,10 @@ End
 		Sub EditCalculation()
 		  var result as string
 		  if lstDiceRolls.SelectedRowIndex > -1 then
-		    result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
+		    result = lstDiceRolls.RowTagAt( lstDiceRolls.SelectedRowIndex )
+		    if result = "" then
+		      result = lstDiceRolls.CellValueAt( lstDiceRolls.SelectedRowIndex, 0 )
+		    end if
 		  end if
 		  result = SummonCalculator( result, True )
 		  

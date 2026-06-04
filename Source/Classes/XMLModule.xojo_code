@@ -173,7 +173,8 @@ Protected Module XMLModule
 		  if xNode.AttributeCount > 0 then
 		    for i as Integer = xNode.AttributeCount-1 DownTo 0
 		      var xAttribute as XMLAttribute = xNode.GetAttributeNode(i)
-		      if xAttribute <> Nil then
+		      if xAttribute <> Nil And i > 0 then
+		        
 		        xNode.RemoveAttributeNode( xAttribute )
 		      end if
 		    next

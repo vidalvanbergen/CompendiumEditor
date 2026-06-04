@@ -1292,7 +1292,15 @@ End
 		    'end if
 		    
 		    if popSpellType.SelectedRow = "Class Feature" and cPrerequisite.Value.Trim <> "" then
-		      var fullDescription as String = "Prerequisite: " + cPrerequisite.Value.Trim + EndOfLine + EndOfLine + cDescription.Value
+		      var fullDescription as String
+		      
+		      var lines() as String = cDescription.Value.Split(EndOfLine)
+		      if lines.LastIndex > -1 and lines(0).Contains(":") then
+		        fullDescription = "Prerequisite: " + cPrerequisite.Value.Trim + EndOfLine + cDescription.Value
+		      else
+		        fullDescription = "Prerequisite: " + cPrerequisite.Value.Trim + EndOfLine + EndOfLine + cDescription.Value
+		      end if
+		      
 		      
 		      SetDescription( xNode, fullDescription, ccSourceBox.GetSources )
 		    elseif cDescription.Value.Trim <> "" or ccSourceBox.GetSources.LastIndex > -1 then

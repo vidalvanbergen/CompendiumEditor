@@ -255,6 +255,7 @@ End
 		  'var multiResults() as String = Source.MatchAll( "(\d+d\d+ \+ \d+|\d+d\d+.*?|d\d+).*?(\w+|\.)", 1 )
 		  var MatchingString as String = "(\d+d\d+ \+ \d+|\d+d\d+\+\d+|\d+d\d+ \- \d+|\d+d\d+\-\d+|\d+d\d+ \× \d+|\d+d\d+.*?|d\d+)( feet| Years| Days| Hours| Minutes| Rounds| hit points| temporary hit points| expended charges|\) \w+ damage| \w+ damage| damage| \w+ \w+ damage| \| \w+ trait| \| \w+| \w+|)"
 		  
+		  var multiPrefix() as String = Source.MatchAll( "(\w+ )" + MatchingString, 1 )
 		  var multiResults() as String = Source.MatchAll( MatchingString, 1 )
 		  var multiDescription() as string = source.MatchAll( MatchingString, 2 )
 		  
@@ -308,6 +309,10 @@ End
 		    
 		    if multiDescription <> Nil and multiDescription.LastIndex >= lstDiceRolls.LastRowIndex+1 then
 		      description = multiDescription( lstDiceRolls.LastRowIndex +1 ).Replace("| ", "").Replace(")", "").Trim.Titlecase
+		      
+		      if multiPrefix.LastIndex >= multiDescription.LastIndex and multiPrefix( lstDiceRolls.LastRowIndex +1 ).Contains("extra") then
+		        description = "Extra " + description
+		      end if
 		    end if
 		  end if
 		  
@@ -326,10 +331,12 @@ End
 		  if description = "" and lstDiceRolls.LastRowIndex = -1 then
 		    description = nameValue
 		  end if
-		  if description = "Hit Points" then
-		    description = "Heal"
+		  if description.Contains "Hit Points" then
+		    description = description.ReplaceAll( "Hit Points", "Heal" ).Trim
 		  elseif description = "Expended Charges" or description = "Charges" then
 		    description = "Recharge"
+		  elseif ( description = "if" or description = "" ) and lstDiceRolls.LastRowIndex > -1 then
+		    description = lstDiceRolls.CellValueAt( lstDiceRolls.LastRowIndex, 2 )
 		  end if
 		  
 		  if description.Contains("damage") then

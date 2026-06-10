@@ -331,7 +331,7 @@ End
 		  if description = "" and lstDiceRolls.LastRowIndex = -1 then
 		    description = nameValue
 		  end if
-		  if description.Contains "Hit Points" then
+		  if description.Contains( "Hit Points" ) then
 		    description = description.ReplaceAll( "Hit Points", "Heal" ).Trim
 		  elseif description = "Expended Charges" or description = "Charges" then
 		    description = "Recharge"

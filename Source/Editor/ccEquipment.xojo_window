@@ -2309,12 +2309,15 @@ End
 		            next
 		            
 		            
-		            if rowIndex > -1 then
+		            if rowIndex > -1 and popBaseItems.IndexOfItemWithTitle( type ) > -1 then
 		              popBaseItems.SelectRowWithValue( type )
 		              if popBaseItems.SelectedRowIndex > 0 then
 		                LoadTemplate
 		              end if
 		              
+		            else
+		              'MessageBox "No template loaded."
+		              'Return
 		            end if
 		            
 		          end if

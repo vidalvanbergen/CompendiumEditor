@@ -565,7 +565,12 @@ End
 		  basemenu.Append new MenuItem("-")
 		  
 		  var fixcommontypos as new MenuItem("Fix Common OCR Typos")
+		  formatwithindent.Shortcut = "O"
 		  basemenu.Append fixcommontypos
+		  
+		  var capitalizetext as new MenuItem("Capitalize text")
+		  'formatwithindent.KeyboardShortcut = "Cmd-Alt"
+		  capitalizetext.Shortcut = "U"
 		  
 		  if txtField.SelectedText <> "" then
 		    basemenu.Append new MenuItem("-")
@@ -636,6 +641,9 @@ End
 		      case "Fix Common OCR Typos"
 		        selectedText = FixTypos( selectedText )
 		        
+		      case "Capitalize text"
+		        selectedText = SmartTitleCase( selectedText )
+		        
 		      End Select
 		      
 		      if UseSelection and txtField.SelectedText <> "" then
@@ -683,6 +691,31 @@ End
 		      
 		      
 		      FormatParagraphs( selectedText, AscKey = 108 )
+		      
+		      if txtField.SelectedText <> "" then
+		        txtField.Text = txtField.Text.Replace( originalText, selectedText )
+		        
+		        txtField.SelectionStart = txtField.Text.IndexOf( selectedText )
+		        txtField.SelectionLength = selectedText.Length
+		      else
+		        txtField.Text = selectedText
+		      end if
+		      
+		      Return True
+		      
+		      
+		    case 111
+		      var selectedText, originalText as String
+		      if txtField.SelectedText <> "" then
+		        selectedText = txtField.SelectedText
+		        originalText = txtField.SelectedText
+		      else
+		        selectedText = txtField.Text
+		      end if
+		      
+		      // Smart capitalization
+		      selectedText = SmartTitleCase( originalText )
+		      
 		      
 		      if txtField.SelectedText <> "" then
 		        txtField.Text = txtField.Text.Replace( originalText, selectedText )

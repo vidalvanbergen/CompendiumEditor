@@ -260,6 +260,10 @@ End
 		    elseif lblCategory.Text = "Optional:" and popCategory.SelectedRowValue = "YES" then
 		      xNode.SetAttribute( "optional", popCategory.RowValueAt( popCategory.SelectedRowIndex ).Uppercase )
 		    end if
+		  elseif popCategory.Visible and popCategory.SelectedRowValue = "" then
+		    xNode.RemoveAllAttributes
+		    xNode.RemoveAttribute("category")
+		    xNode.RemoveAttribute("optional")
 		  end if
 		  
 		  // Name

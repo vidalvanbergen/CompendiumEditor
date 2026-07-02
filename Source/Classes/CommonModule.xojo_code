@@ -205,9 +205,13 @@ Protected Module CommonModule
 		      Description = Description.Left( Description.InStr(EndOfLine + "Source:")-1 ).Trim
 		    end if
 		    
+		    while Description.EndsWith( EndOfLine ) or Description.EndsWith( " " )
+		      Description = Description.Left( Description.Length - 1 )
+		    wend
+		    
 		  end if
 		  
-		  Return Description.Trim
+		  Return Description
 		End Function
 	#tag EndMethod
 

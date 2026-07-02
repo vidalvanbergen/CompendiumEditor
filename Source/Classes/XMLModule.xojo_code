@@ -238,7 +238,12 @@ Protected Module XMLModule
 		      'linespacing = EndOfLine + EndOfLine
 		      'end if
 		      
+		      var startsWithTab as Boolean = Description.StartsWith( chr(9) )
+		      
 		      Description = Description.Trim + linespacing + "Source:" + chr(9) + Source
+		      if startsWithTab then
+		        Description = chr(9) + Description
+		      end if
 		    else
 		      
 		      Description = Description + "Source:" + chr(9) + Source

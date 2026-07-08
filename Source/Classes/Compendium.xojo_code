@@ -1444,10 +1444,12 @@ Protected Class Compendium
 		        'var xChild as XMLNode = xAutolevel.Child(i)
 		        
 		        for each xChild as XMLNode in xAutolevel.Children
-		          
+		          var featureName as string = xChild.ValueOfNodeWithName("name").Trim
 		          
 		          if xChild.Name = "feature" and xChild.ValueOfNodeWithName("name").Contains( SubclassName ) then
-		            xAutolevel.RemoveChild( xChild )
+		            if featureName.Contains("(" + SubclassName + ")") or featureName.Contains(": " + SubclassName) then
+		              xAutolevel.RemoveChild( xChild )
+		            end if
 		            
 		          elseif xChild.Name = "counter" and xChild.ValueOfNodeWithName("subclass") = SubclassName then
 		            xAutolevel.RemoveChild( xChild )

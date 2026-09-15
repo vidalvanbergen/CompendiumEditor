@@ -2371,7 +2371,7 @@ End
 		Sub Open()
 		  me.FieldName = "Skills:"
 		  me.SetMode( ccEditorTextField.Mode.MultipleChoice )
-		  me.ReadOnly = True
+		  'me.ReadOnly = True
 		  
 		  me.BaseMenu.Append new MenuItem("None", "")
 		  me.BaseMenu.Append new MenuItem("-")

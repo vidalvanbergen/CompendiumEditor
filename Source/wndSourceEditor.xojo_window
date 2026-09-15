@@ -607,38 +607,6 @@ Begin WindowPro wndSourceEditor
             Visible         =   True
             Width           =   75
          End
-         Begin PushButton btnMerge
-            AllowAutoDeactivate=   True
-            Bold            =   False
-            Cancel          =   False
-            Caption         =   "Merge With Base Items"
-            Default         =   False
-            Enabled         =   True
-            FontName        =   "System"
-            FontSize        =   0.0
-            FontUnit        =   0
-            Height          =   20
-            Index           =   -2147483648
-            InitialParent   =   "cvsToolbar$2"
-            Italic          =   False
-            Left            =   20
-            LockBottom      =   False
-            LockedInPosition=   False
-            LockLeft        =   True
-            LockRight       =   False
-            LockTop         =   True
-            MacButtonStyle  =   0
-            Scope           =   0
-            TabIndex        =   2
-            TabPanelIndex   =   3
-            TabStop         =   True
-            Tooltip         =   ""
-            Top             =   132
-            Transparent     =   False
-            Underline       =   False
-            Visible         =   False
-            Width           =   289
-         End
       End
       Begin EmbedControl ecSourceEditor
          AllowAutoDeactivate=   True
@@ -724,7 +692,7 @@ Begin WindowPro wndSourceEditor
          Tooltip         =   ""
          Top             =   161
          Transparent     =   False
-         Value           =   0
+         Value           =   8
          Visible         =   True
          Width           =   694
          Begin EmbedControl EmbedBackgrounds
@@ -1610,11 +1578,22 @@ End
 		        insertIndex = lstXML.SelectedRowIndex+1
 		      end if
 		      
+		      var extra as String
+		      if xNode.Name = "spell" then
+		        extra = xNode.ValueOfNodeWithName("level")
+		      elseif xNode.Name = "item" then
+		        extra = xNode.ValueOfNodeWithName("magic")
+		        if extra = "" then extra = "NO"
+		      elseif xNode.Name = "monster" then
+		        extra = xNode.ValueOfNodeWithName("cr")
+		      end if
+		      
 		      lstXML.AddRowAt( insertIndex, itemtype )
 		      
 		      'lstXML.CellTextAt( lstXML.LastAddedRowIndex, 0 ) = itemtype
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 1 ) = NodeName
 		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 2 ) = SourcePageNrFromXMLNode( xNode )
+		      lstXML.CellTextAt( lstXML.LastAddedRowIndex, 4 ) = extra
 		      
 		      lstXML.RowTagAt( lstXML.LastAddedRowIndex ) = xNode
 		      
@@ -1653,6 +1632,8 @@ End
 		      elseif xnode.Name = "item" then
 		        extra = xnode.ValueOfNodeWithName("magic")
 		        if extra = "" then extra = "NO"
+		      elseif xnode.Name = "monster" then
+		        extra = xnode.ValueOfNodeWithName("cr")
 		      end if
 		      
 		      var itemname as String = xnode.ValueOfNodeWithName("name")
@@ -1905,15 +1886,17 @@ End
 		    end if
 		    
 		    // Extra info
+		    var extra as string
 		    if newNode.Name = "spell" then
-		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 4 ) = newNode.ValueOfNodeWithName("level")
+		      extra = newNode.ValueOfNodeWithName("level")
 		    elseif newNode.Name = "item" then
-		      var extra as String = newNode.ValueOfNodeWithName("magic")
+		      extra = newNode.ValueOfNodeWithName("magic")
 		      if extra = "" then extra = "NO"
-		      lstXML.CellTextAt( lstXML.SelectedRowIndex, 4 ) = extra
+		    elseif newNode.Name = "monster" then
+		      extra = newNode.ValueOfNodeWithName("cr")
 		    end if
 		    
-		    
+		    lstXML.CellTextAt( lstXML.SelectedRowIndex, 4 ) = extra
 		  end if
 		  
 		  lstXML.SoftRebuildList
@@ -2280,7 +2263,6 @@ End
 		  else
 		    ppSourceEditor.Value = 2
 		    arSources.RemoveEnabled =  True
-		    btnMerge.Visible = DebugBuild and me.SelectedRow.Contains( "template" )
 		    
 		    if me.RowTagAt( me.SelectedRowIndex ) IsA FolderItem then
 		      var xmlFile as FolderItem = me.RowTagAt( me.SelectedRowIndex )

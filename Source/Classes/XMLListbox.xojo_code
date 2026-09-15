@@ -163,6 +163,8 @@ Inherits ListboxPro
 		      if other = "" then
 		        other = "NO"
 		      end if
+		    elseif type = "creature" then
+		      other = xNode.ValueOfNodeWithName("cr").Trim
 		    end if
 		    
 		    var pagenr as String = SourcePageNrFromXMLNode( xNode )

@@ -568,9 +568,10 @@ End
 		  formatwithindent.Shortcut = "O"
 		  basemenu.Append fixcommontypos
 		  
-		  var capitalizetext as new MenuItem("Capitalize text")
+		  var capitalizetext as new MenuItem("Capitalize Selected Text")
 		  'formatwithindent.KeyboardShortcut = "Cmd-Alt"
 		  capitalizetext.Shortcut = "U"
+		  basemenu.Append capitalizetext
 		  
 		  if txtField.SelectedText <> "" then
 		    basemenu.Append new MenuItem("-")
@@ -641,7 +642,7 @@ End
 		      case "Fix Common OCR Typos"
 		        selectedText = FixTypos( selectedText )
 		        
-		      case "Capitalize text"
+		      case "Capitalize Selected Text"
 		        selectedText = SmartTitleCase( selectedText )
 		        
 		      End Select
@@ -704,7 +705,7 @@ End
 		      Return True
 		      
 		      
-		    case 111
+		    case 117 ' U
 		      var selectedText, originalText as String
 		      if txtField.SelectedText <> "" then
 		        selectedText = txtField.SelectedText
